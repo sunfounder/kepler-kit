@@ -1,0 +1,24 @@
+IRsmallDecoder
+==============
+
+Release 1.1.0 - 08/02/2020
+--------------------------
+ * Added SAMSUNG protocol (old standard)
+ * Added SAMSUNG32 protocol
+ * Added Samsung example sketch
+ * Added support for ATtiny 24/44/84/25/45/85
+
+
+Release 1.0.0 - 24/01/2020
+--------------------------
+ This is the first public release
+
+ Main features:
+  * NEC, RC5 and SIRC protocols are supported;
+  * IR Codes' data is separated;
+  * Unwanted initial repetitions are ignored;
+  * Held keys signalization is standardized;
+  * Signal tolerances are very loose;
+  * SRAM and Flash memory usage is low;
+  * No timers required;
+  * Uses one hardware interrupt.
