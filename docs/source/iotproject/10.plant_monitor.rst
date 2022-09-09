@@ -1,0 +1,39 @@
+10. Plant Monitor in @SunFounder Controller
+================================================
+
+
+With this project, you will learn how to build a plant watering system using the Sunfounder Controller APP.
+
+In the APP, you can check the current temperature and humidity of the environment, as well as the level of water in potted plants.
+To water the plants, you can also click the button on the APP.
+
+
+.. note::
+    It is recommended that you complete the previous project :ref:`play_sc`, as that will help you get to grips with the basic use of the SunFounder Controller.
+
+#. Build the circuit.
+
+    .. image:: img/wiring/10.sc_2_bb.png
+
+#. Create a new controller, add the following widgets and change their names.
+
+    .. image:: img/10_plant2.jpg
+        :width: 800
+
+#. Open the ``10_plant_monitor.py`` under the path of ``kepler-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+
+    .. image:: img/10_plant_monitor.png
+
+
+#. Returning to the SunFounder APP, click Run after connecting to PicoW. On the APP, you will be able to see the temperature and humidity of the environment, as well as the water level of the potted plant. You can click the button to water the potted plant for five seconds if you think it's short of water.
+
+    .. image:: img/10_plant2.jpg
+        :width: 800
+
+#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+
+**How it works?**
+
+This project works basically the same way as :ref:`play_sc`.
+
+In addition the project also uses DHT11, pump and water level module, you can see the details of using these components in :ref:`py_dht11` , :ref:`py_pump`, :ref:`py_water`.

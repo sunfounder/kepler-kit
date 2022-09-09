@@ -1,0 +1,152 @@
+.. _nt_mqtt_publish:
+
+5. Cloud Calling System with @MQTT
+============================================
+
+Message Queuing Telemetry Transport (MQTT) is a simple messaging protocol.
+It is also the most common messaging protocol for the Internet of Things (IoT).
+
+MQTT protocols define the way IoT devices transfer data.
+They are event-driven and interconnected using the Pub/Sub model.
+The sender (Publisher) and the receiver (Subscriber) communicate via Topics.
+A device publishes a message on a specific topic, and all devices subscribed to that topic receive the message.
+
+In this section, a service bell system will be made using Pico W, HiveMQ (a free public MQTT broker service), and four buttons.
+The four buttons mean four tables in the restaurant, and you will be able to see which table's guests need service on HiveMQ when the customer presses the button.
+
+
+**1. Build the Circuit**
+
+    .. warning:: 
+        
+        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+
+.. image:: img/wiring/5.mqtt_pub.png
+    :width: 800
+
+**2. Visit HiveMQ**
+
+HiveMQ is an MQTT broker and client-based messaging platform that enables fast, efficient and reliable data transfer to IoT devices.。
+
+1. Open |link_hivemq| in your browser.
+
+2. Connects the client to the default public proxy.
+
+   .. image:: img/mqtt-1.png
+
+
+3. Click on **Add New Topic Subscription**.
+
+   .. image:: img/mqtt-2.png
+
+
+4. Fill in the topics you want to follow and click **Subscribe**. The topics set here should be more personal to avoid getting messages from other users, and pay attention to case sensitive.
+
+   .. image:: img/mqtt-3.png
+
+
+
+**3. Install the MQTT Module**
+
+Before we can start the project, we need to install the MQTT module for Pico W.
+
+1. Connect to the network by running ``do_connect()`` in the Shell, which we wrote earlier.
+
+    .. note::
+        * Type the following commands into the Shell and press ``Enter`` to run them.
+        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+
+    .. code-block:: python
+
+        from do_connect import *
+        do_connect()
+
+2. After a successful network connection, import the ``upip`` module in the shell and use ``upip`` to install the ``umqtt.simple`` module, which is a simplified MQTT client for MicroPython.
+
+    .. code-block:: python
+
+        import upip
+        upip.install('umqtt.simple')
+
+3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico W after completion.
+
+    .. image:: img/5_calling_system1.png
+
+**4. Run the Script**
+
+#. Open the ``5_mqtt_publish.py`` file under the path of ``kepler-kit-main/iot``.
+
+#. Click the **Run current script** button or press F5 to run it.
+
+    .. image:: img/5_calling_system2.png
+
+#. Go back to |link_hivemq| again and when you press one of the buttons on the breadboard, you will be able to see the Messages prompt on HiveMQ.
+
+    .. image:: img/mqtt-4.png
+  
+
+#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+
+**How it works?**
+
+The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+
+.. code-block:: python
+
+    from do_connect import *
+    do_connect()
+
+Initialize 4 button pins.
+
+.. code-block:: python
+
+    sensor1 = Pin(16, Pin.IN)
+    sensor2 = Pin(17, Pin.IN)
+    sensor3 = Pin(18, Pin.IN)
+    sensor4 = Pin(19, Pin.IN)
+
+Create two variables to store the ``URL`` and ``client ID`` of the MQTT broker we will use to connect to it.
+Since we are using a public broker, our ``client ID`` will not be used, even if one is required.
+
+.. code-block:: python
+
+    mqtt_server = 'broker.hivemq.com'
+    client_id = 'Jimmy'
+
+Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
+
+.. code-block:: python
+
+    try:
+        client = MQTTClient(client_id, mqtt_server, keepalive=3600)
+        client.connect()
+        print('Connected to %s MQTT Broker'%(mqtt_server))
+    except OSError as e:
+        print('Failed to connect to the MQTT Broker. Reconnecting...')
+        time.sleep(5)
+        machine.reset()
+
+Create a variable ``topic``, which is the topic that the subscriber needs to follow. It should be the same as the topic filled in **step 4** of **2. Visit HiveMQ** above.
+Incidentally, ``b`` here converts string to byte, because MQTT is a binary based protocol were the control elements are binary bytes and not text strings.
+
+.. code-block:: python
+
+    topic = b'SunFounder MQTT Test'
+
+Set interrupts for each button. When a button is pressed, a message is posted under ``topic``.
+
+.. code-block:: python
+
+    def press1(pin):
+        message = b'button 1 is pressed'
+        client.publish(topic, message)
+        print(message)
+
+    sensor1.irq(trigger=machine.Pin.IRQ_RISING, handler=press1)
+
+
+* `UMQTT Client API  <https://pypi.org/project/micropython-umqtt.simple/>`_
+
+
+
+.. https://www.tomshardware.com/how-to/send-and-receive-data-raspberry-pi-pico-w-mqtt

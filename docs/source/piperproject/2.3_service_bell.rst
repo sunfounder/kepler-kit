@@ -1,0 +1,46 @@
+.. _per_service_bell:
+
+2.3 Service Bell
+==========================
+
+For this project we used a microswitch and an active buzzer to create a service bell. Tap the switch and the buzzer makes a sound.
+
+Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed).
+
+When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+
+|img_micro_switch|
+
+* :ref:`cpn_bb`
+* :ref:`cpn_led`
+* :ref:`cpn_res`
+* :ref:`cpn_limit_sw`
+* :ref:`cpn_cap`
+* :ref:`cpn_transistor`
+* :ref:`cpn_buzzer`
+
+**Wiring**
+
+|service_bell0|
+
+* By default, pins 1 and 3 of the Micro Switch are connected together and GP14 is low. When the Micro Switch is pressed, GP14 is high.
+* GP15 outputs high to make the buzzer sound.
+
+**Code**
+
+.. note::
+
+    * You can refer to the image below to write code by dragging and dropping. 
+    * Import ``2.3_service_bell.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+
+
+|service_bell|
+
+After connecting Pico W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
+
+.. note::
+    This project code is exactly the same as the previous project :ref:`per_button`.
+
+
+
+

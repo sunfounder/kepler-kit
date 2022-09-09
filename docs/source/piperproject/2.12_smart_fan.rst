@@ -1,0 +1,74 @@
+.. _per_smart_fan:
+
+2.12 Smart Fan
+=============================
+
+Here we make a temperature controlled smart fan with thermistor, TA6586, motor, and power module. The fan rotates automatically when the set temperature is reached.
+
+* :ref:`cpn_bb`
+* :ref:`cpn_temp`
+* :ref:`cpn_res`
+* :ref:`cpn_ta6586`
+* :ref:`cpn_motor`
+* :ref:`cpn_power_module`
+
+**Wiring**
+
+|temperature_controlled_fan0|
+
+
+**Code**
+
+.. note::
+
+    * You can refer to the image below to write code by dragging and dropping. 
+    * Import ``2.12_smart_fan.png.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+
+|temperature_controlled_fan|
+
+
+* After connecting Pico W, click the **Start** button and the code starts to run.
+* Click CONSLE, you will see the current temperature in Celsius.
+* The fan starts spinning when it is above 25 degrees, and stops spinning when it is below 25 degrees.
+
+.. note::
+
+    * If the motor is still spinning after you click the Stop button, you need to reset the Run pin on the Pico W with a wire to GND at this time, and then unplug this wire to run the code again.
+    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+
+    |wiring_run_reset|
+
+
+**How it Works?**
+
+|temperature_controlled_fan1|
+
+The voltage of A0 (GP26) is read and assigned to the variable [Vr].
+
+|temperature_controlled_fan2|
+
+
+These calculations convert the thermistor values into centigrade degree. 
+
+
+.. note::
+    Here is the relation between the resistance and temperature: 
+
+    **RT =RN expB(1/TK – 1/TN)** 
+
+    * RT is the resistance of the NTC thermistor when the temperature is TK. 
+    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
+    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
+    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
+    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
+    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+
+    Convert this formula **TK=1/(ln(RT/RN)/B+1/TN)** to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+
+    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+
+
+|temperature_controlled_fan5|
+
+When the temperature is higher than 25 degrees Celsius, set GP14 to ON and GP15 to OFF to make the motor rotate, or you can reverse their levels. When the temperature is lower than 25 degrees Celsius, set GP14 and GP15 both low to stop the motor.
+

@@ -1,0 +1,57 @@
+.. _per_lucky_cat:
+
+2.9 Lucky Cat
+==========================
+
+In this project, we use pir and servo to make a lucky cat. The PIR Module is used to detect the visitors and servo is used to imitate the beckoning motion of the lucky cat.
+
+* :ref:`cpn_bb`
+* :ref:`cpn_pir`
+* :ref:`cpn_servo`
+
+
+**Wiring**
+
+|lucky_cat0|
+
+
+* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
+* The middle pin of the PIR module is connected to the GP3.
+
+**Code**
+
+
+
+.. note::
+
+    * You can refer to the image below to write code by dragging and dropping. 
+    * Import ``2.9_lucky_cat.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+
+|lucky_cat|
+
+
+
+* After connecting Pico W, click the **Start** button and the code starts to run.
+* When the PIR module detects a customer arrival, the servo oscillates back and forth five times and then stops.
+
+
+**How it Works?**
+
+
+|lucky_cat1|
+
+Set the rotation speed of pin15 (servo) to 15%.
+
+|lucky_cat2|
+
+If GP14 is low, set the variable [prestate] to 0. When the variable [prestate] is 0 and GP14 is high (human detected), set the variable [prestate] to 1.
+
+The purpose of this is to make the main code work only when the GP14 changes from low to high, and to respond only once if the PIR module keeps detecting people.
+
+|lucky_cat3|
+
+Make the servo cycle 5 times from 0 to 180 degrees rotation.
+
+* [repeat () times do]: Loop through the code inside the do block a finite number of times.
+
+

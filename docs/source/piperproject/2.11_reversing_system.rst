@@ -1,0 +1,61 @@
+.. _per_reversing_system:
+
+2.11 Reversing System
+==========================
+
+For this project we used an ultrasonic module and an active buzzer to create a reversing alarm system. The ultrasonic module is used to detect the distance, and the buzzer emits different frequencies of alarm sounds depending on the distance.
+
+* :ref:`cpn_bb`
+* :ref:`cpn_led`
+* :ref:`cpn_res`
+* :ref:`cpn_ultrasonic`
+* :ref:`cpn_transistor`
+* :ref:`cpn_buzzer`
+
+**Wiring**
+
+|reversing_system0|
+
+
+* The Echo and Trig pins of the ultrasonic module are connected to GP15 at the same time, so that the ultrasonic module sends and receives signals from GP15.
+* The middle pin of the transistor connected to the buzzer is connected to GP14 through a 1kΩ resistor.
+
+**Code**
+
+.. note::
+
+    * You can refer to the image below to write code by dragging and dropping. 
+    * Import ``2.11_reversing_system.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+
+
+|reversing_system|
+
+* After connecting Pico W, click the **Start** button and the code starts to run.
+* When the ultrasonic detection distance is less than 5cm, the buzzer emits a sharp sound (0.1s).
+* When the detection distance is between 5~10cm, the buzzer emits a slightly slow sound (0.5s).
+* When the detection distance is greater than 10cm, there is a sound prompt every 1 second.
+
+
+**How it Works?**
+
+
+|reversing_system1|
+
+Read the distance (in cm) of the ultrasonic detection, and store it in the variable [distance].
+
+|reversing_system2|
+
+When distance is less than or equal to 5, set the variable intervals to 0.1s. The variable [intervals] is the interval between buzzer sounds.
+
+|reversing_system3|
+
+When distance is greater than 5 and less than or equal to 10, set the [intervals] to 0.5s.
+
+|reversing_system4|
+
+When distance is greater than 10, set the [intervals] time to 1s.
+
+|reversing_system5|
+
+Finally, make the buzzer sound every [intervals] seconds.
+

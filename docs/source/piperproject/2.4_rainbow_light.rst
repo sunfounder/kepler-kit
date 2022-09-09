@@ -1,0 +1,44 @@
+.. _per_rainbow_light:
+
+2.4 Rainbow Light
+==================
+
+In this project, we will make the RGB LEDs display a rainbow of colors. 
+
+RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin. Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+
+* :ref:`cpn_bb`
+* :ref:`cpn_res`
+* :ref:`cpn_rgb`
+* :ref:`cpn_button`
+
+**Wiring**
+
+|img_rgb_pin|
+
+An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+
+|rgb0|
+
+
+* When using the same power supply intensity, the Red LED will be brighter than the other two, and a slightly larger resistor(330Ω) needs to be used to reduce its brightness.
+* The 3 buttons are used to control the lighting of the Red, Green and Blue LEDs respectively. 
+
+**Code**
+
+.. note::
+
+    * You can refer to the image below to write code by dragging and dropping. 
+    * Import ``2.4_rainbow_light.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+
+|rgb_led|
+
+After connecting Pico W, click the **Start** button and the code starts to run. Pressing these buttons individually will emit a single color of light, but if two of the buttons are pressed at the same time, or all 3 buttons are pressed at the same time, the RGB LEDs will emit a variety of different colors, up to a maximum of 7.
+
+.. note::
+    In fact, RGB LED can emit up to 16 million colors, but since Piper Make does not have a block to output PWM signal, here we just use the [turn pin() (ON/OFF)] block to make RGB LEDs show 7 colors.
+
+**How it Works?**
+
+You can think of this project as using three buttons to control the RGB LED, and setting three if judgment conditions to determine whether the three buttons are pressed or not.
+When the buttons are pressed, the levels of the corresponding pins are pulled high, causing the RGB LED to display different colors.
