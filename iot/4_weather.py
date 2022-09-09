@@ -70,8 +70,6 @@ def print_weather(weather_data):
     print(f'Temperature feels like: {weather_data["main"]["feels_like"]}{TEMPERATURE_UNITS[units]}')
     print(f'Humidity: {weather_data["main"]["humidity"]}%')
     print(f'Pressure: {weather_data["main"]["pressure"]}hPa')
-    print(f'Sea level: {weather_data["main"]["sea_level"]}hPa')
-    print(f'Ground level: {weather_data["main"]["grnd_level"]}hPa')
     print(f'Wind speed: {weather_data["wind"]["speed"]}{SPEED_UNITS[units]}')
     print(f'Wind gust: {weather_data["wind"]["gust"]}{SPEED_UNITS[units]}')
     print(f'Wind direction: {weather_data["wind"]["deg"]}°')
