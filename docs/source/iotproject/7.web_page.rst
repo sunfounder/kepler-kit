@@ -4,6 +4,7 @@
 
 In this article, you will learn how to make Pico W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
 
+|setup_web|
 
 **1. Build the Circuit**
 

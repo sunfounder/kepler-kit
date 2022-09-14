@@ -7,6 +7,7 @@ With this project, you will learn how to build a plant watering system using the
 In the APP, you can check the current temperature and humidity of the environment, as well as the level of water in potted plants.
 To water the plants, you can also click the button on the APP.
 
+|plant_monitor|
 
 .. note::
     It is recommended that you complete the previous project :ref:`play_sc`, as that will help you get to grips with the basic use of the SunFounder Controller.

@@ -4,6 +4,7 @@
 We will write a project to communicate bi-directionally between the Raspberry Pi Pico W and Anvil's servers.
 The temperature and humidity transmitted from the Pico W will be displayed in real time in Anvil. Additionally, you can input messages in Anvil to be displayed on the Pico W's I2C LCD1602.
 
+|anvil|
 
 **1. Build the Circuit**
 

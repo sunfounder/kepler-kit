@@ -1,7 +1,7 @@
 Introduction to Raspberry Pi Pico W
 =======================================
 
-|pico|
+|pico_w_side|
 
 Raspberry Pi Pico W brings wireless connectivity to the best-selling Raspberry Pi Pico
 product line. Built around our RP2040 silicon platform, Pico products bring our signature

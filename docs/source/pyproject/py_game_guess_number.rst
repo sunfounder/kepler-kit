@@ -9,6 +9,7 @@ Guessing Numbers is a fun party game where you and your friends input numbers (0
 
 As an example, if the lucky number is 51, which the players cannot see, and the player 1 inputs 50, the prompt changes to 50 - 99; if the player 2 inputs 70, the range changes to 50 - 70; if the player 3 inputs 51, the player is unlucky. In this case, numbers are inputted through the keypad, and outcomes are displayed on a LCD screen.
 
+|guess_number|
 
 **Schematic**
 

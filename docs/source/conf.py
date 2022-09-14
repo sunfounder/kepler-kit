@@ -358,14 +358,16 @@ rst_epilog += """
 .. |sch_bubble_level| image:: /img/schematic/sch_bubble_level.png
 """
 
-# schematic pic
+# phonomenon pic
 rst_epilog += """
 
 .. |rfid_player| image:: /img/rfid_player.png
 .. |fruit_piano| image:: /img/fruit_piano.png
 .. |sirem_alarm| image:: /img/sirem_alarm.png
-
-
+.. |guess_number| image:: /img/guess_number.png
+.. |setup_web| image:: /img/setup_web.jpg
+.. |anvil| image:: /img/anvil.jpg
+.. |plant_monitor| image:: /img/plant_monitor.jpg
 
 
 """
@@ -440,7 +442,7 @@ rst_epilog += """
 
 # pico pin
 rst_epilog += """
-.. |pico| image:: /img/pico.jpg
+.. |pico_w_side| image:: /img/pico_w_side.png
 .. |pico_pin| image:: /img/pico_pin.jpg
     :width: 800
 .. |pin_adc| image:: /img/pin_pic3.png
