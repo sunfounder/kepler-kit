@@ -101,7 +101,7 @@ Here, we will use the slider bar on the APP to control the servo angle and the g
     .. image:: img/sc-c-5.jpg
         :width: 300
 
-6. If it connects automatically, you can connect by manually entering the IP address of Pico W.
+6. If it doesn’t search automatically, you can also manually enter the IP to connect.
 
     .. image:: img/sc-c-6.png
         :width: 800
