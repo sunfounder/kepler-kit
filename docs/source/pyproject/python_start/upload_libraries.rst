@@ -9,7 +9,7 @@ In some projects, you will need additional libraries. So here we upload these li
 #. Download the relevant code from the link below.
 
 
-   * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit-main/archive/refs/heads/main.zip>`
+   * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
 
 #. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
@@ -20,7 +20,7 @@ In some projects, you will need additional libraries. So here we upload these li
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit-main/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler_kit_main/libs`` folder.
+#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler_kit_main/libs`` folder.
 
     .. image:: img/th_path.png
 

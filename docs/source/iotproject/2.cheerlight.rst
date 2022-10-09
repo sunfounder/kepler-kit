@@ -21,7 +21,7 @@ You can tweeting @cheerlights and including the color name in the tweet. This wi
 
 
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit-main/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``kepler-kit-main/iot``.
+#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``kepler-kit-main/iot``.
 
 #. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
 

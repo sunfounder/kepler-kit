@@ -24,8 +24,8 @@ In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Proje
 |per_import|
 
 Select the ``.png`` file in the path ``kepler-kit-main\piper`` and click **Import**. 
-Note that you need to download the `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit-main/archive/refs/heads/main.zip>`_ package first.
-Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit-main>`_.
+Note that you need to download the `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ package first.
+Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_.
 
 |choose_file|
 

@@ -7,9 +7,9 @@
 
 Download the relevant code from the link below.
 
-* :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit-main/archive/refs/heads/main.zip>`
+* :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit-main>`_
+* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
 
 .. _add_libraries_ar:
 
