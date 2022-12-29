@@ -1,34 +1,40 @@
 .. _cpn_lcd:
 
-I2C LCD1602 Module
-================================
+I2C LCD1602
+==============
 
-A liquid crystal display (LCD) is a flat panel display or other electronically modulated optical device using light modulation characteristics of liquid crystals with a combined polarizer. Liquid crystals do not emit light directly, but use a backlight or reflector to produce color or monochrome images.
+|i2c_lcd1602|
 
-LCDs are used in a wide range of applications, including LCD televisions, computer monitors, instrument panels, aircraft cockpit displays, and indoor and outdoor signage. Small LCDs are common in portable consumer devices, such as digital cameras, watches, digital clocks, calculators and cell phones, including smartphones. LCD screens are also used in consumer electronics, such as DVD players, video game devices and clocks.
+* **GND**: Ground
+* **VCC**: Voltage supply, 5V.
+* **SDA**: Serial data line. Connect to VCC through a pullup resistor.
+* **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
+
+As we all know, though LCD and some other displays greatly enrich the man-machine interaction, they share a common weakness. When they are connected to a controller, multiple IOs will be occupied of the controller which has no so many outer ports. Also it restricts other functions of the controller. 
+
+Therefore, LCD1602 with an I2C module is developed to solve the problem. The I2C module has a built-in PCF8574 I2C chip that converts I2C serial data to parallel data for the LCD display.        
+
+* `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
+
+**I2C Address**
+
+The default address is basically 0x27, in a few cases it may be 0x3F.
+
+Taking the default address of 0x27 as an example, the device address can be modified by shorting the A0/A1/A2 pads; in the default state, A0/A1/A2 is 1, and if the pad is shorted, A0/A1/A2 is 0.
+
+|i2c_address|
+
+**Backlight/Contrast**
+
+Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back is used to adjust the contrast (the ratio of brightness between the brightest white and the darkest black).
 
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+|back_lcd1602|
 
-|img_i2c_lcd|
-
-* `Liquid Crystal Display - Wikipedia <https://en.wikipedia.org/wiki/Liquid-crystal_display>`_
-
-
-**I2C communication**
-
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, they share a common weakness. When they are connected to a controller, multiple IOs will be occupied of the controller which has no so many outer ports. Also it restricts other functions of the controller. Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+* **Shorting Cap**: Backlight can be enabled by this cap，unplugg this cap to disable the backlight.
+* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
 
 
-I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for communication between a master device (or master devices) and a single or multiple slave devices.
-I2C main controller can be used to control IO expander, various sensors, EEPROM, ADC/DAC and so on. All of these are controlled only by the two pins of host, the serial data (SDA1) line and the serial clock line(SCL1). 
-
-* `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
-
-.. Example
-.. -------------------
-
-.. :ref:`liquid_crystal_display`
 
 
 **Example**

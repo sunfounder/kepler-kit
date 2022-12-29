@@ -20,7 +20,16 @@ An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usual
 |img_rgb_pin|
 
 
-* `RGB systems - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode#RGB_systems>`_
+**Features**
+
+* Color: Tri-Color (Red/Green/Blue)
+* Common Cathode
+* 5mm Clear Round Lens
+* Forward Voltage: Red: DC 2.0 - 2.2V; Blue&Green: DC 3.0 - 3.2V (IF=20mA)
+* 0.06 Watts DIP RGB LED
+* Luminance Brighter Up To +20%
+* Viewing Angle: 30°
+
 
 .. Example
 .. -------------------

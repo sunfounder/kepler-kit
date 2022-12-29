@@ -201,7 +201,7 @@ In order to simplify the connection of the Raspberry Pi Pico W to Anvil services
 2. Run the Anvil, now you will be able to see the display temperature and humidity from the Anvil APP. If you click the **SHOW** button after you enter a message on the text box, the I2C LCD1602 will display the message you entered.
 
     .. note:: 
-        If the character you entered is not displayed on the I2C LCD1602, you can use a screwdriver to turn the potentiometer on the back of the module to increase the contrast.
+        If the character you entered is not displayed on the I2C LCD1602, you can turn the potentiometer on the back of the module to increase the contrast.
 
     .. image:: img/anvil-r-2.png
 

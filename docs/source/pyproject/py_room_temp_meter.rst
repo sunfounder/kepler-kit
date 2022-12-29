@@ -54,3 +54,6 @@ This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to d
         lcd.clear()
 
 The LCD will display the temperature value in the current environment after the program runs.
+
+.. note:: 
+    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.

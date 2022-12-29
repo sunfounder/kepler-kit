@@ -71,7 +71,7 @@ This project involves making a smart clock that prints the weather in your city 
 
     .. note:: 
 
-        When the code is running, if the screen is blank, you can use a screwdriver to turn the potentiometer on the back of the module to increase the contrast.
+        When the code is running, if the screen is blank, you can turn the potentiometer on the back of the module to increase the contrast.
 
 #. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
 

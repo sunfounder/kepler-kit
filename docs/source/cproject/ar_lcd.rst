@@ -46,8 +46,8 @@ Here we will use the I2C0 interface to control the LCD1602 and display text.
 
 After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
 
-.. note:: When the code is running, if the screen is blank, you can use a screwdriver to turn the potentiometer on the back of the module to increase the contrast.
-
+.. note:: 
+    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
 
 **How it works?**
 

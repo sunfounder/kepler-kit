@@ -223,6 +223,14 @@ rst_epilog += """
 
 .. |lipo_wire| image:: /img/component/lipo_wire.png 
 
+.. |i2c_lcd1602| image:: /img/component/i2c_lcd1602.png 
+
+.. |i2c_address| image:: /img/component/i2c_address.jpg 
+
+.. |back_lcd1602| image:: /img/component/back_lcd1602.jpg 
+
+
+
 """
 
 

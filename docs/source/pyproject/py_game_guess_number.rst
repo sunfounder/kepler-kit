@@ -142,4 +142,7 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
 * After the code runs, press ``A`` to start the game. A random number ``point`` is produced but not displayed on the LCD, and what you need to do is to guess it. 
 * The number you have typed appears at the end of the first line till the final calculation is finished. (Press ``D`` to start the comparation.)
 * The number range of ``point`` is displayed on the second line. And you must type the number within the range. 
-* When you type a number, the range narrows; if you got the lucky number luckily or unluckily, there will appear ``GAME OVER!``
+* When you type a number, the range narrows; if you got the lucky number luckily or unluckily, there will appear ``GAME OVER!``.
+
+.. note:: 
+    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
