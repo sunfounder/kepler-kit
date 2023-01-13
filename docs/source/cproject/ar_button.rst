@@ -8,13 +8,65 @@ In the previous lessons, we used the output function, in this chapter we will us
 
 * :ref:`cpn_button`
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - Breadboard
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - Wires
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - Resistor
+        - 1(10KΩ)
+        - |link_resistor_buy|
+    *   - 6
+        - Button
+        - 1
+        - |link_button_buy|
+
 **Schematic**
 
 |sch_button|
 
 One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
-
-
 
 **Wiring**
 

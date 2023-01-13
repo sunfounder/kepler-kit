@@ -10,6 +10,72 @@ In other words, we turn fruits into keyboards that can play music just by touchi
 
 |fruit_piano|
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - Breadboard
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - Wires
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - Transistor
+        - 1(S8050)
+        - |link_transistor_buy|
+    *   - 6
+        - Resistor
+        - 4(1-1KΩ, 1-330Ω, 2-220Ω)
+        - |link_resistor_buy|
+    *   - 7
+        - Passive Buzzer
+        - 1
+        - |link_passive_buzzer_buy|
+    *   - 8
+        - RGB LED
+        - 1
+        - |link_rgb_led_buy|
+    *   - 9
+        - MPR121 Module
+        - 1
+        - 
+
 **Schematic**
 
 |sch_fruit_piano| 

@@ -16,6 +16,68 @@ Provides users with the right-of-way by alternating LEDs in three standard color
 
 In this project, we will use three colors of LEDs to implement traffic light changes and a 4-digit 7-segment display to show the time of each traffic state.
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - Breadboard
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - Wires
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - Resistor
+        - 7(220Ω)
+        - |link_resistor_buy|
+    *   - 6
+        - 4-Digit 7 Segment Display
+        - 1
+        - 
+    *   - 7
+        - 74HC595
+        - 1
+        - |link_74hc595_buy|
+    *   - 8
+        - LED
+        - 1
+        - |link_led_buy|
+
 
 **Schematic**
 

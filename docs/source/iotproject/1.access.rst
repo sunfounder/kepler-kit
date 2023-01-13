@@ -6,6 +6,45 @@
 Raspberry Pi Pico W is very similar to Raspberry Pi Pico, with the same GPIO, microUSB port, and size. The only difference is the addition of the CYW43439 2.4-GHz Wi-Fi chip from Infineon.
 Now let's see how it connects to our Wi-Fi network.
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+
+
 1. Connect to the Internet
 ------------------------------------
 

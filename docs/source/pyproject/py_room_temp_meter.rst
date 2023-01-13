@@ -8,6 +8,64 @@ Using a thermistor and an I2C LCD1602, we can create a room temperature meter.
 This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to display the temperature.
 
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - Breadboard
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - Wires
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - Resistor
+        - 1(10KΩ)
+        - |link_resistor_buy|
+    *   - 6
+        - Thermistor
+        - 1
+        - |link_thermistor_buy|
+    *   - 7
+        - I2C LCD1602
+        - 1
+        - |link_i2clcd1602_buy|
+
 **Schematic**
 
 |sch_room_temp|

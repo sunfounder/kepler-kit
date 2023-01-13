@@ -20,7 +20,7 @@ import time
 # -- Project information -----------------------------------------------------
 
 project = 'SunFounder Kepler Kit for Raspberry Pi Pico W'
-copyright = f'{time.localtime().tm_year}, SunFounder'
+copyright = '2023, SunFounder'
 author = 'www.sunfounder.com'
 
 
@@ -674,6 +674,117 @@ rst_epilog += """
 .. |link_anvil_firmware| raw:: html
 
     <a href="https://github.com/anvil-works/anvil-pico/releases" target="_blank">firmware from Anvil</a>
+
+"""
+
+# Purchase links of compoents
+
+rst_epilog += """
+
+.. |link_kepler_kit| raw:: html
+
+    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Kepler Kit</a>
+
+.. |link_picow_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/raspberry-pi-pico-w" target="_blank">BUY</a>
+    
+.. |link_led_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/500pcs-5-colors-x-100pcs-5mm-leds-with-white-red-yellow-green-blue-colors-kit-box" target="_blank">BUY</a>
+
+.. |link_resistor_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/1-4w-resistor-assortment-kit-40-values-400pcs" target="_blank">BUY</a>
+
+.. |link_wires_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/560pcs-jumper-wire-kit-with-14-lengths" target="_blank">BUY</a>
+
+.. |link_breadboard_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-breadboard-kit" target="_blank">BUY</a>
+
+.. |link_rgb_led_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/100pcs-5mm-4-pin-rgb-common-cathode-led" target="_blank">BUY</a>
+
+.. |link_button_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/100pcs-6x6x5-mm-miniature-push-button" target="_blank">BUY</a>
+
+.. |link_capacitor_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/ceramic-capacitor-assortment-kit-set-of-600-small-assorted-capacitors" target="_blank">BUY</a>
+
+.. |link_potentiometer_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/10pcs-10k-ohm-trim-potentiometer-breadboard" target="_blank">BUY</a>
+
+.. |link_photoresistor_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/100pcs-photoresistor-photo-light-sensitive-resistor-5516" target="_blank">BUY</a>
+
+.. |link_thermistor_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/50pcs-ntc-thermistor-mf11-103-10k-ohm" target="_blank">BUY</a>
+
+.. |link_transistor_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/10-values-200pcs-power-supply-general-transistor-npn-pnp-assortment-kit-bc337-bc327-2n2222-2n2907-2n3904-2n3906-s8050-s8550-a1015-c1815-set" target="_blank">BUY</a>
+
+.. |link_relay_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/10pcs-srs-05vdc-sl-c-5v-relay-coil-spdt-6-pin-pcb-electromagnetic-power-relay" target="_blank">BUY</a>
+
+.. |link_passive_buzzer_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/20pcs-3-5v-2-terminals-passive-buzzer" target="_blank">BUY</a>
+
+.. |link_ws2812_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/2pcs-8-bit-ws2812b-rgb-led-strip-5050smd-individual-addressable-60pixels-m" target="_blank">BUY</a>
+
+.. |link_i2clcd1602_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/i2c-lcd1602-module" target="_blank">BUY</a>
+
+.. |link_motor_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/5pcs-1-5v-6v-type-miniature-dc-motors" target="_blank">BUY</a>
+
+.. |link_servo_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sg90-micro-digital-servo" target="_blank">BUY</a>
+
+.. |link_keypad_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/membrane-switch-keypad" target="_blank">BUY</a>
+
+.. |link_74hc595_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/10-pcs-ic-74hc595-74595-sn74hc595n-8-bit-shift-register-dip-16" target="_blank">BUY</a>
+
+.. |link_7segment_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/30pcs-0-56-7-segment-led" target="_blank">BUY</a>
+
+.. |link_ultrasonic_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/5pcs-hc-sr04-ultrasonic-module-distance-sensor" target="_blank">BUY</a>
+
+.. |link_dht22_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/dht22-am2302-digital-temperature-and-humidity-sensor" target="_blank">BUY</a>
+
+.. |link_receiver_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/infrared-receiver-module" target="_blank">BUY</a>
+
+.. |link_rfid_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/rfid-kit-blue" target="_blank">BUY</a>
+
 
 
 

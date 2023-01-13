@@ -11,10 +11,75 @@ You can find more sheet music on the Internet, or even write your own music, put
 
 |rfid_player|
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - Breadboard
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - Wires
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - Transistor
+        - 1(S8050)
+        - |link_transistor_buy|
+    *   - 6
+        - Resistor
+        - 1(1KΩ)
+        - |link_resistor_buy|
+    *   - 7
+        - Passive Buzzer
+        - 1
+        - |link_passive_buzzer_buy|
+    *   - 8
+        - RC522 RFID Module
+        - 1
+        - |link_rfid_buy|
+    *   - 9
+        - WS2812 RGB Strip
+        - 1
+        - |link_ws2812_buy|
+
 **Schematic**
 
 |sch_music_player|
-
 
 
 **Wiring**
