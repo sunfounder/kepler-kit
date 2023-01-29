@@ -786,6 +786,10 @@ rst_epilog += """
     <a href="https://www.sunfounder.com/products/rfid-kit-blue" target="_blank">BUY</a>
 
 
+.. |link_pir_buy| raw:: html
+
+    <a href="https://www.sunfounder.com/products/hcsr501-human-sensor" target="_blank">BUY</a>
+
 
 
 """

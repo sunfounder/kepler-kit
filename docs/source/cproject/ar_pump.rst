@@ -21,6 +21,70 @@ Its power component is an electric motor, driven in exactly the same way as a no
     #. If you are watering plants, you need to avoid soil being drawn in, as this can clog the pump.
     #. If water does not come out of the tube, there may be residual water in the tube blocking the air flow and needs to be drained first.
 
+**Bill of Materials**
+
+In this project, we need the following components. 
+
+It's definitely convenient to buy a whole kit, here's the link: 
+
+.. list-table::
+    :widths: 20 20 20
+    :header-rows: 1
+
+    *   - Name	
+        - ITEMS IN THIS KIT
+        - LINK
+    *   - Kepler Kit	
+        - 450+
+        - |link_kepler_kit|
+
+You can also buy them separately from the links below.
+
+.. list-table::
+    :widths: 5 20 5 20
+    :header-rows: 1
+
+    *   - SN
+        - COMPONENT	
+        - QUANTITY
+        - LINK
+
+    *   - 1
+        - Raspberry Pi Pico W
+        - 1
+        - |link_picow_buy|
+    *   - 2
+        - Micro USB Cable
+        - 1
+        - 
+    *   - 3
+        - Breadboard
+        - 1
+        - |link_breadboard_buy|
+    *   - 4
+        - Wires
+        - Several
+        - |link_wires_buy|
+    *   - 5
+        - TA6586
+        - 1
+        - 
+    *   - 6
+        - Li-po Charger Module
+        - 1
+        -  
+    *   - 7
+        - 18650 Battery
+        - 1
+        -  
+    *   - 8
+        - Battery Holder
+        - 1
+        -  
+    *   - 9
+        - Micro Water Pump
+        - 1
+        -  
 
 **Schematic**
 

@@ -57,7 +57,7 @@ You can also buy them separately from the links below.
     *   - 5
         - PIR Module
         - 1
-        - 
+        - |link_pir_buy|
 
 
 **Schematic**

@@ -82,7 +82,7 @@ You can also buy them separately from the links below.
     *   - 12
         - PIR Module
         - 1
-        - 
+        - |link_pir_buy|
 
 **1. Build the Circuit**
 
