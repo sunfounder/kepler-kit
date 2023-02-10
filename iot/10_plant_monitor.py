@@ -56,7 +56,7 @@ def main():
         
         status,result=ws.transfer()
         
-        if status == True:
+        if status == True and "M" in result:
             #print(result['M'])
             if result['M']==True and pump_flag==False:
                 pumping("on")
