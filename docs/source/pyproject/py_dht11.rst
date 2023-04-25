@@ -116,7 +116,7 @@ In the dht library, we have integrated the relevant functionality into the ``DHT
 
 .. code-block:: python
 
-    from mpr121 import MPR121
+    from dht import DHT11
 
 Initialize the ``DHT11`` object. This device only needs a digital input to be used.
 

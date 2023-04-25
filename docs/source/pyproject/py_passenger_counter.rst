@@ -1,8 +1,8 @@
 .. _py_passage_counter:
 
 
-7.4 Passager Counter
-====================
+7.4 Passenger Counter
+==============================
 
 For large shopping malls, shopping centers, chain stores, airports, stations, museums, and public places such as exhibition halls, passenger traffic is an indispensable data.
 
@@ -12,7 +12,7 @@ As a result, we can analyze people's consumption habits and increase turnover.
 
 Passenger counters can help people understand the operation of these public places and organize their operations efficiently.
 
-A simple passager counter is created using a PIR sensor and a 4-digit 7-segment display.
+A simple passenger counter is created using a PIR sensor and a 4-digit 7-segment display.
 
 
 **Bill of Materials**
@@ -98,7 +98,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``7.4_passager_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Open the ``7.4_passenger_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
     * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
 

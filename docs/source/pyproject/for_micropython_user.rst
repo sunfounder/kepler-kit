@@ -95,7 +95,7 @@ We recommend that you read the chapters in order.
     py_light_theremin
     py_room_temp_meter
     py_alarm_siren_lamp
-    py_passager_counter
+    py_passenger_counter
     py_game_10_second
     py_traffic_light
     py_game_guess_number
