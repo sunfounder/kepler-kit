@@ -58,6 +58,7 @@ The steps are as follows.
     iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
+    video_course
     faq
 
 

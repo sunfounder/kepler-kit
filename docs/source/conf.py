@@ -669,6 +669,10 @@ rst_epilog += """
 
     <a href="https://github.com/anvil-works/anvil-pico/releases" target="_blank">firmware from Anvil</a>
 
+.. |link_paul_course| raw:: html
+
+    <a href="https://www.youtube.com/playlist?list=PLGs0VKk2DiYz8js1SJog21cDhkBqyAhC5" target="_blank">Raspberry Pi Pico W Lessons for Absolute Beginners</a>
+
 """
 
 # Purchase links of components
