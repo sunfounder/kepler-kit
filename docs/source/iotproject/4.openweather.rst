@@ -286,9 +286,13 @@ Get the local time. The ``time.localtime()`` function is called here to return a
 Note that we have already synchronized Pico W to Greenwich Mean Time, so we need to add the time zone of your location.
 
 .. code-block:: python
+    
+    # get time (+24 allows for western hemisphere)
+    # if negative, add 24
+    # hours = time.localtime()[3] + int(weather_data["timezone"] / 3600) + 24  #only for west hemisphere
 
-   hours=time.localtime()[3]+int(weather_data["timezone"] / 3600)
-   mins=time.localtime()[4]
+    hours=time.localtime()[3]+int(weather_data["timezone"] / 3600)
+    mins=time.localtime()[4]
 
 Finally, the weather information and time are just displayed in the LCD1602.
 

@@ -126,12 +126,12 @@ Before we can start the project, we need to install the MQTT module for Pico W.
         from do_connect import *
         do_connect()
 
-2. After a successful network connection, import the ``upip`` module in the shell and use ``upip`` to install the ``umqtt.simple`` module, which is a simplified MQTT client for MicroPython.
+2. After a successful network connection, import the ``mip`` module in the shell and use ``mip`` to install the ``umqtt.simple`` module, which is a simplified MQTT client for MicroPython.
 
     .. code-block:: python
 
-        import upip
-        upip.install('umqtt.simple')
+        import mip
+        mip.install('umqtt.simple')
 
 3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico W after completion.
 

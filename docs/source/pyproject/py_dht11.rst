@@ -98,15 +98,24 @@ You can also buy them separately from the links below.
 
     from machine import Pin, I2C
     import utime as time
-    from dht import DHT11
+    from dht import DHT11, InvalidPulseCount
 
-    pin = Pin(16, Pin.OUT, Pin.PULL_DOWN)
+    pin = Pin(16, Pin.IN, Pin.PULL_UP)
     sensor = DHT11(pin)
+    time.sleep(5)  # initial delay
 
     while True:
-        sensor.measure()
-        print("Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity))
-        time.sleep(1)
+        try:
+            sensor.measure()
+            string = "Temperature:{}\nHumidity: {}".format(sensor.temperature, sensor.humidity)
+            print(string)
+            time.sleep(4)
+
+        except InvalidPulseCount as e:
+            print('Bad pulse count - retrying ...')
+
+
+
 
 After the code is run, you will see the Shell continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
 
@@ -116,13 +125,13 @@ In the dht library, we have integrated the relevant functionality into the ``DHT
 
 .. code-block:: python
 
-    from dht import DHT11
+    from dht import DHT11, InvalidPulseCount
 
 Initialize the ``DHT11`` object. This device only needs a digital input to be used.
 
 .. code-block:: python
 
-    pin = Pin(16, Pin.OUT, Pin.PULL_DOWN)
+    pin = Pin(16, Pin.IN, Pin.PULL_UP)
     sensor = DHT11(pin)
 
 Use ``sensor.measure()`` to read the current temperature and humidity, which will be stored in ``sensor.temperature``, ``sensor.humidity``.
@@ -132,6 +141,11 @@ Finally the DHT11 sampling rate is 1HZ, a ``time.sleep(1)`` is needed in the loo
 .. code-block:: python
 
     while True:
-        sensor.measure()
-        print("Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity))
-        time.sleep(1)
+        try:
+            sensor.measure()
+            string = "Temperature:{}\nHumidity: {}".format(sensor.temperature, sensor.humidity)
+            print(string)
+            time.sleep(4)
+
+        except InvalidPulseCount as e:
+            print('Bad pulse count - retrying ...')

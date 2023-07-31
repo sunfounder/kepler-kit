@@ -107,7 +107,7 @@ The program will control the servo to make the corresponding deflection angle as
     mpu = MPU6050(i2c)
 
     # servo
-    servo = machine.PWM(machine.Pin(16))
+    servo = machine.PWM(machine.Pin(15))
     servo.freq(50)
 
 
