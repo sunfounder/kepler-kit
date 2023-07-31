@@ -8,7 +8,7 @@ i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 mpu = MPU6050(i2c)
 
 # servo
-servo = machine.PWM(machine.Pin(16))
+servo = machine.PWM(machine.Pin(15))
 servo.freq(50)
 
 
