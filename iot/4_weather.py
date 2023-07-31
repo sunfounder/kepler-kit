@@ -90,7 +90,10 @@ while True:
     t=weather_data["main"]["temp"]
     rh=weather_data["main"]["humidity"]
 
-    # get time
+    # get time (+24 allows for western hemisphere)
+    # if negative, add 24
+    # hours = time.localtime()[3] + int(weather_data["timezone"] / 3600) + 24  #only for west hemisphere
+    
     hours=time.localtime()[3]+int(weather_data["timezone"] / 3600)
     mins=time.localtime()[4]
 
