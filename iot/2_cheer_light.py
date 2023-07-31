@@ -7,7 +7,7 @@ from ws2812 import WS2812
 from do_connect import *
 do_connect()
 
-ws = WS2812(machine.Pin(18), 8)
+ws = WS2812(machine.Pin(0), 8)
 
 def get_colour():
     url = "http://api.thingspeak.com/channels/1417/field/2/last.json"
