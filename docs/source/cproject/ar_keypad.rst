@@ -91,11 +91,8 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
 
     * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
     * Or copy this code into **Arduino IDE**.
-    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
-
-    Here you need to use the library called ``Keypad``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The library ``Keypad`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
 
 .. raw:: html
     

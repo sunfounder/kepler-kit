@@ -87,10 +87,10 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
 
    * You can open the file ``2.9_feel_the_magnetism.ino`` under the path of ``kepler-kit-main/arduino/2.9_feel_the_magnetism``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 .. raw:: html
     
@@ -115,17 +115,17 @@ When a magnet approaches, the circuit will be closed. Just like the button in th
 
 ..    * You can open the file ``2.9_feel_the_magnetism_irq.ino`` under the path of ``kepler-kit-main/arduino/2.9_feel_the_magnetism_irq``. 
 ..    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-..    * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
-..     Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+.. 
+..     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 
 
 .. A callback function ``detected()`` is defined here, called the interrupt handler. It will be executed when an interrupt request is triggered.
 .. Then, an interrupt request is set up in ``setup``, which contains two parts: ``mode`` and ``ISR``.
 
-.. In this program, ``mode`` is ``RISING``, which indicates that the value of the pin is raised from low to high (i.e., button pressed).
+.. In this program, ``mode`` is ``RISING``, which indicates that the value of the pin is raised from low to high (i.e, button pressed).
 
 .. ``ISR`` is ``detected`` , the callback function we defined.
 

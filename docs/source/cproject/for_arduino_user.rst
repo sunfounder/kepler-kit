@@ -11,10 +11,10 @@ We recommend that you read the chapters in order.
 .. toctree::
     :maxdepth: 1
 
-    arduino_start/install_introduce
-    arduino_start/setuo_pico_ar
-    arduino_start/download_add_ar
-    arduino_start/quick_guide_on_arduino
+    arduino_start/install_arduino_ide
+    arduino_start/introduce_ide
+    arduino_start/install_pico_w
+    arduino_start/add_libraries_ar 
 
 **2. Output & input**
 

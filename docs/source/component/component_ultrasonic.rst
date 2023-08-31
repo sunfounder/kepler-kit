@@ -3,31 +3,56 @@
 Ultrasonic Module
 ================================
 
-Ultrasonic ranging module provides 2cm - 400cm non-contact measurement function, and the ranging accuracy can reach to 3mm. 
-It can ensure that the signal is stable within 5m, and the signal is gradually weakened after 5m, till the 7m position disappears.
+|ultrasonic_pic|
 
-The module includes ultrasonic transmitters, receiver and control circuit. The basic principles are as follows:
+* **TRIG**: Trigger Pulse Input
+* **ECHO**: Echo Pulse Output
+* **GND**: Ground
+* **VCC**: 5V Supply
 
-#. Use an IO flip-flop to process a high level signal of at least 10us.
+This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
 
-#. The module automatically sends eight 40khz and detects if there is a pulse signal return.
+You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
 
-#. If the signal returns, passing the high level, the high output IO duration is the time from the transmission of the ultrasonic wave to the return of it. Here, test distance = (high time x sound speed (340 m / s) / 2.
+**Features**
 
-|img_ultrasonic|
+* Working Voltage: DC5V
+* Working Current: 16mA
+* Working Frequency: 40Hz
+* Max Range: 500cm
+* Min Range: 2cm
+* Trigger Input Signal: 10uS TTL pulse
+* Echo Output Signal: Input TTL lever signal and the range in proportion
+* Connector: XH2.54-4P
+* Dimension: 46x20.5x15 mm
 
-The timing diagram is shown below. You only need to supply a short 10us
-pulse for the trigger input to start the ranging, and then the module
-will send out an 8 cycle burst of ultrasound at 40 kHz and raise its
-echo. You can calculate the range through the time interval between
-sending trigger signal and receiving echo signal.
+**Principle**
 
-Formula: us / 58 = centimeters or us / 148 =inch; or: the range = high
-level time \* velocity (340M/S) / 2; you are suggested to use
-measurement cycle over 60ms in order to prevent signal collisions of
-trigger signal and the echo signal.
+The basic principles are as follows:
 
-|img_ultrasonic_timing|
+* Using IO trigger for at least 10us high level signal.
+
+* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
+
+* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
+
+* Distance = (high level time x velocity of sound (340M/S)) / 2
+
+|ultrasonic_prin|
+
+
+Formula:
+
+* us / 58 = centimeters distance
+* us / 148 = inch distance
+* distance = high level time x velocity (340M/S) / 2
+
+.. note::
+
+    This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
+
+    The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+
 
 **Example**
 

@@ -81,10 +81,10 @@ The LED Bar Graph contains 10 LEDs, each of which is individually controllable. 
 
    * You can open the file ``2.2_display_the_level.ino`` under the path of ``kepler-kit-main/arduino/2.2_display_the_level``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 
 .. raw:: html

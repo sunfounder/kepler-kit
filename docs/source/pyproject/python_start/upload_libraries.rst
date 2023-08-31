@@ -20,7 +20,7 @@ In some projects, you will need additional libraries. So here we upload these li
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler_kit_main/libs`` folder.
+#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler-kit-main/libs`` folder.
 
     .. image:: img/th_path.png
 

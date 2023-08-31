@@ -98,10 +98,10 @@ The buzzer needs a transistor to work, here we use S8050.
 
    * You can open the file ``3.2_custom_tone.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 
 
@@ -136,10 +136,10 @@ We can simulate the specific tone according to the fundamental frequency of the 
 
    * You can open the file ``3.2_custom_tone_2.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone_2``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 
 .. raw:: html

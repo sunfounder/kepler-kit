@@ -82,11 +82,8 @@ You can also buy them separately from the links below.
 
     * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display``. 
     * Or copy this code into **Arduino IDE**.
-    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
-    
-    The libraries ``Wire`` and ``LiquidCrystal_I2C`` are used here, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The library ``LiquidCrystal_I2C`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
 
 .. raw:: html
     
@@ -183,9 +180,10 @@ Upload the codes to the Pico W, the content that you input in the serial monitor
 
    * You can open the file ``3.4_liquid_crystal_display_2.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display_2``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
+
    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
     
 
 .. raw:: html

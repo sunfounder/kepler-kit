@@ -16,19 +16,19 @@ However, you must first download the package and upload the library, as describe
 
     If you double click on it, a new window will open on the right. You can open more than one code at the same time.
 
-    |mps_open_code|
+    |open_code|
 
 #. Select correct interpreter
 
     Use a micro USB cable to connect the Pico W to your computer and select the "MicroPython (Raspberry Pi Pico)" interpreter.
 
-    |mps_sec_inter|
+    |sec_inter|
 
 #. Run the code
 
     To run the script, click the **Run current script** button or press F5.
 
-    |mps_run_it|
+    |run_it|
 
     If the code contains any information that needs to be printed, it will appear in the Shell; otherwise, only the following information will appear.
 
@@ -49,7 +49,7 @@ However, you must first download the package and upload the library, as describe
 
 #. Stop running
 
-    |mps_stop_it|
+    |stop_it|
 
     To stop the running code, click the **Stop/Restart backend** button. The **%RUN -c $EDITOR_CONTENT** command will disappear after stopping.
 
@@ -59,15 +59,15 @@ However, you must first download the package and upload the library, as describe
 
     The code can be saved as a separate file within the Raspberry Pi Pico W by clicking on **File** -> **Save As**.
 
-    |mps_save_as|
+    |save_as|
 
     Select **Raspberry Pi Pico**.
 
-    |mps_sec_pico|
+    |sec_pico|
 
     Then click **OK** after entering the file name and extension **.py**. On the Raspberry Pi Pico W drive, you will see your saved file.
 
-    |mps_sec_name|
+    |sec_name|
 
     .. note::
         Regardless of what name you give your code, it's best to describe what type of code it is, and not give it a meaningless name like ``abc.py``.
@@ -84,32 +84,32 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
     Open Thonny IDE, click **New** button to create a new blank file.
 
-    |mps_new_file|
+    |new_file|
 
 #. Copy code
 
     Copy the code from the project to the Thonny IDE.
 
-    |mps_copy_file|
+    |copy_file|
 
 #. Select correct interpreter
 
     Plug the Pico W into your computer with a micro USB cable and select the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
 
-    |mps_sec_inter|
+    |sec_inter|
 
 #. Run and save the code
 
     You need click **Run Current Script** or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to **This computer** or **Raspberry Pi Pico**.
 
-    |mps_where_save|
+    |where_save|
 
     .. note::
         Thonny saves your program on the Raspberry Pi Pico W hen you tell him to, so if you unplug the Pico W and plug it into someone else's computer, your program remains intact.
 
     Click OK after selecting the location, naming the file and adding the extension **.py**.
 
-    |mps_sec_name|
+    |sec_name|
 
     .. note::
         Regardless of what name you give your code, it's best to describe what type of code it is, and not give it a meaningless name like ``abc.py``.
@@ -136,7 +136,7 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
 
 #. Stop running
 
-    |mps_stop_it|
+    |stop_it|
 
     To stop the running code, click the **Stop/Restart backend** button. The **%RUN -c $EDITOR_CONTENT** command will disappear after stopping.
 

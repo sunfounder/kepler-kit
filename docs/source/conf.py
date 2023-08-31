@@ -136,8 +136,10 @@ rst_epilog += """
 .. |img_relay_sche| image:: /img/component/relay142.jpeg
 .. |img_relay| image:: /img/component/relay12.png
     :width: 200
-.. |img_ultrasonic| image:: /img/component/ultrasonic217.png
-.. |img_ultrasonic_timing| image:: /img/component/ultrasonic228.png
+.. |ultrasonic_pic| image:: /img/component/ultrasonic_pic.png
+    :width: 200
+.. |ultrasonic_prin| image:: /img/component/ultrasonic_prin.jpg
+    :width: 800
 .. |img_i2c_lcd| image:: /img/component/i2c_lcd1602.png
 .. |img_led| image:: /img/component/LED.png
     :width: 500
@@ -376,51 +378,51 @@ rst_epilog += """
 
 # pico micropython start
 rst_epilog += """
-.. |mps_bootsel_onboard| image:: /img/micropython_start/bootsel_onboard.png
-.. |mps_th_files| image:: /img/micropython_start/th_files .png
-.. |mps_th_path| image:: /img/micropython_start/th_path.png
-.. |mps_th_pico| image:: /img/micropython_start/th_pico.png
-.. |mps_th_upload| image:: /img/micropython_start/th_upload.png
-.. |mps_th_done| image:: /img/micropython_start/th_done.png
-.. |mps_interpreter| image:: /img/micropython_start/interpreter.png
-.. |mps_index_htm| image:: /img/micropython_start/index_htm.png
-.. |mps_welcome_pico| image:: /img/micropython_start/welcome_pico.png
-.. |mps_download_uf2| image:: /img/micropython_start/download_uf2.png
-.. |mps_move_uf2| image:: /img/micropython_start/move_uf2.png
-.. |mps_download_thonny| image:: /img/micropython_start/download_thonny.png
-.. |mps_thonny_ide.jpg| image:: /img/micropython_start/thonny_ide.jpg
-.. |mps_hello_shell| image:: /img/micropython_start/hello_shell.png
-.. |mps_hello_world_script| image:: /img/micropython_start/hello_world_script.png
-.. |mps_where_save| image:: /img/micropython_start/where_save.png
-.. |mps_hello_world_save| image:: /img/micropython_start/hello_world_save.png
-.. |mps_open_code| image:: /img/micropython_start/open_code.png
-.. |mps_sec_inter| image:: /img/micropython_start/sec_inter.png
-.. |mps_run_it| image:: /img/micropython_start/run_it.png
-.. |mps_stop_it| image:: /img/micropython_start/stop_it.png
-.. |mps_save_as| image:: /img/micropython_start/save_as.png
-.. |mps_sec_pico| image:: /img/micropython_start/sec_pico.png
-.. |mps_sec_name| image:: /img/micropython_start/sec_name.png
-.. |mps_new_file| image:: /img/micropython_start/new_file.png
-.. |mps_copy_file| image:: /img/micropython_start/copy_file.png
+.. |bootsel_onboard| image:: /img/micropython_start/bootsel_onboard.png
+.. |th_files| image:: /img/micropython_start/th_files .png
+.. |th_path| image:: /img/micropython_start/th_path.png
+.. |th_pico| image:: /img/micropython_start/th_pico.png
+.. |th_upload| image:: /img/micropython_start/th_upload.png
+.. |th_done| image:: /img/micropython_start/th_done.png
+.. |interpreter| image:: /img/micropython_start/interpreter.png
+.. |index_htm| image:: /img/micropython_start/index_htm.png
+.. |welcome_pico| image:: /img/micropython_start/welcome_pico.png
+.. |download_uf2| image:: /img/micropython_start/download_uf2.png
+.. |move_uf2| image:: /img/micropython_start/move_uf2.png
+.. |download_thonny| image:: /img/micropython_start/download_thonny.png
+.. |thonny_ide.jpg| image:: /img/micropython_start/thonny_ide.jpg
+.. |hello_shell| image:: /img/micropython_start/hello_shell.png
+.. |hello_world_script| image:: /img/micropython_start/hello_world_script.png
+.. |where_save| image:: /img/micropython_start/where_save.png
+.. |hello_world_save| image:: /img/micropython_start/hello_world_save.png
+.. |open_code| image:: /img/micropython_start/open_code.png
+.. |sec_inter| image:: /img/micropython_start/sec_inter.png
+.. |run_it| image:: /img/micropython_start/run_it.png
+.. |stop_it| image:: /img/micropython_start/stop_it.png
+.. |save_as| image:: /img/micropython_start/save_as.png
+.. |sec_pico| image:: /img/micropython_start/sec_pico.png
+.. |sec_name| image:: /img/micropython_start/sec_name.png
+.. |new_file| image:: /img/micropython_start/new_file.png
+.. |copy_file| image:: /img/micropython_start/copy_file.png
 
 """
 
-# pico arduino start
-rst_epilog += """
-.. |ars_arduino_setup1| image:: /img/arduino_start/arduino_setup1.png
-.. |ars_boards_manager| image:: /img/arduino_start/boards_manager.png
-.. |ars_install_pico| image:: /img/arduino_start/install_pico.png
-.. |ars_pico_board| image:: /img/arduino_start/pico_board.png
-.. |ars_test_blink| image:: /img/arduino_start/test_blink.png
-.. |ars_upload_blink| image:: /img/arduino_start/upload_blink.png
-.. |ars_upload_process| image:: /img/arduino_start/upload_process.png
-.. |ars_done_uploading| image:: /img/arduino_start/done_uploading.png
-.. |ars_arduino_ide| image:: /img/arduino_start/arduino_ide.png
-.. |ars_serial_monitor| image:: /img/arduino_start/serial_monitor.png
-.. |ars_baud_rate| image:: /img/arduino_start/baud_rate.png
-.. |ars_open_code| image:: /img/arduino_start/ar_open_code.png
+# # pico arduino start
+# rst_epilog += """
+# .. |ars_arduino_setup1| image:: /img/arduino_start/arduino_setup1.png
+# .. |ars_boards_manager| image:: /img/arduino_start/boards_manager.png
+# .. |ars_install_pico| image:: /img/arduino_start/install_pico.png
+# .. |ars_pico_board| image:: /img/arduino_start/pico_board.png
+# .. |ars_test_blink| image:: /img/arduino_start/test_blink.png
+# .. |ars_upload_blink| image:: /img/arduino_start/upload_blink.png
+# .. |ars_upload_process| image:: /img/arduino_start/upload_process.png
+# .. |ars_done_uploading| image:: /img/arduino_start/done_uploading.png
+# .. |ars_arduino_ide| image:: /img/arduino_start/arduino_ide.png
+# .. |ars_serial_monitor| image:: /img/arduino_start/serial_monitor.png
+# .. |ars_baud_rate| image:: /img/arduino_start/baud_rate.png
+# .. |ars_open_code| image:: /img/arduino_start/ar_open_code.png
 
-"""
+# """
 
 # appenx arduino add lib
 rst_epilog += """
@@ -436,8 +438,8 @@ rst_epilog += """
 
 # faq
 rst_epilog += """
-.. |faq_save_to_pico| image:: /img/faq/save_to_pico.png
-.. |faq_interepter_thonny| image:: /img/faq/interepter_thonny.png
+.. |save_to_pico| image:: /img/faq/save_to_pico.png
+.. |interepter_thonny| image:: /img/faq/interepter_thonny.png
 
 
 """
@@ -598,6 +600,11 @@ rst_epilog += """
 # open link in a new window
 
 rst_epilog += """
+
+.. |link_download_arduino|  raw:: html
+
+    <a href="https://www.arduino.cc/en/software" target="_blank">Arduino Software</a>
+    
 
 .. |link_micropython| raw:: html
 

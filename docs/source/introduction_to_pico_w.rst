@@ -1,4 +1,6 @@
-Introduction to Raspberry Pi Pico W
+.. _cpn_pico_w:
+
+Raspberry Pi Pico W
 =======================================
 
 |pico_w_side|

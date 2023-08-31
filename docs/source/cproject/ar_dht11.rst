@@ -86,9 +86,10 @@ You can also buy them separately from the links below.
 
     * You can open the file ``6.2_dht11.ino`` under the path of ``kepler-kit-main/arduino/6.2_dht11``. 
     * Or copy this code into **Arduino IDE**.
-    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The library ``SimpleDHT`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+
+
 
 
 .. raw:: html

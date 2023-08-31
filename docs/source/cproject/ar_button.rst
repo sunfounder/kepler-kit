@@ -85,10 +85,10 @@ One side of the button pin is connected to 3.3v, and the other side pin is conne
 
    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``kepler-kit-main/arduino/2.5_reading_button_value``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-   * Or run this code directly in the `Arduino Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
 
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 .. raw:: html
     
@@ -98,12 +98,9 @@ One side of the button pin is connected to 3.3v, and the other side pin is conne
 
 After the code runs, Click the magnifying glass icon in the upper right corner of the Arduino IDE (Serial Monitor).
 
-|ars_serial_monitor|
-
+.. image:: img/open_serial_monitor.png
 
 Now, when you press the button, the Serial Monitor will print "You pressed the button!".
-
-|ars_baud_rate|
 
 
 **How it works?**

@@ -76,13 +76,10 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-   * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-
-   Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
-
-Here you need to use the library called ``MFRC522``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+    * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
+    * Or copy this code into **Arduino IDE**.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The library ``MFRC522`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
 
 
 The main function is divided into two:
@@ -94,9 +91,10 @@ The main function is divided into two:
 
    * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
+
    
-   Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
 
@@ -110,9 +108,10 @@ After running you will be able to enter message in the serial monitor, ending wi
 
    * You can open the file ``6.5_rfid_read.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_read``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
+
    
-   Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
 
 After running, you will be able to read the message stored in the card (or key).
 

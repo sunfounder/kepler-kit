@@ -87,11 +87,8 @@ You can also buy them separately from the links below.
 
     * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip``. 
     * Or copy this code into **Arduino IDE**.
-    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
-
-    Here you need to use the library called ``Adafruit_NeoPixel``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The library ``Adafruit_NeoPixel`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
 
 
 .. raw:: html
@@ -138,9 +135,10 @@ We can randomly generate colors and make a colorful flowing light.
 
    * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
+
    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
     
 
 .. raw:: html
@@ -154,9 +152,10 @@ Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535)
 
    * You can open the file ``3.3_rgb_led_strip_rainbow.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_rainbow``. 
    * Or copy this code into **Arduino IDE**.
-   * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
+
    
-   Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
+   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+
     
 
 .. raw:: html

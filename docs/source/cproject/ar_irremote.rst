@@ -78,11 +78,8 @@ You can also buy them separately from the links below.
 
     * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``kepler-kit-main/arduino/6.4_ir_remote_control``. 
     * Or copy this code into **Arduino IDE**.
-    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
-
-    Here you need to use the library called ``IRsmallDecoder``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The library ``IRsmallDecoder`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
 
 
 .. raw:: html

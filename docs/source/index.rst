@@ -19,25 +19,9 @@ Here is the email: cs@sunfounder.com.
 
 **About the display language**
 
-In addition to English, we are working on other languages for this course. Please contact service@sunfounder.com if you are interested in helping, and we will give you a free product in return. 
-In the meantime, we recommend using Google Translate to convert English to the language you want to see.
+This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
 
-The steps are as follows.
-
-* In this course page, right-click and select **Translate to xx**. If the current language is not what you want, you can change it later.
-
-.. image:: img/translate1.png
-    :align: center
-
-* There will be a language popup in the upper right corner. Click on the menu button to **choose another language**.
-
-.. image:: img/translate2.png
-    :align: center
-
-* Select the language from the inverted triangle box, and then click **Done**.
-
-.. image:: img/translate3.png
-    :align: center
+.. image:: img/translation.png
 
 **Source Code**
 
@@ -51,6 +35,7 @@ The steps are as follows.
 .. toctree::
     :maxdepth: 2
 
+    About This Kit <self>
     introduction_to_pico_w
     component/what_is_included_in_this_kit
     bc_basic_circuit

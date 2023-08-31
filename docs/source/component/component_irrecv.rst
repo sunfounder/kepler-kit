@@ -1,15 +1,15 @@
 .. _cpn_irrecv:
 
-Infrared Receiver Module
+Infrared Receiver
 =================================
 
-IR Receiver Module
+IR Receiver
 ----------------------------
 
 |img_irrecv|
 
 * S: Signal output
-* +：VCC
+* +: VCC
 * -: GND
 
 An infrared-receiver is a component which receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission.

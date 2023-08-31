@@ -74,11 +74,9 @@ You can also buy them separately from the links below.
 
     * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``kepler-kit-main/arduino/4.3_electrode_keyboard``. 
     * Or copy this code into **Arduino IDE**.
-    * For detailed tutorials, please refer to :ref:`open_run_code_ar`.
-    
-    Don't forget to select the Raspberry Pi Pico W board and the correct port before clicking the Upload button.
 
-    Here you need to use two libraries ``Adafruit_MPR121`` and ``Adafruit_BusIO``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_ar`.
+    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * The two libraries ``Adafruit_MPR121`` and ``Adafruit_BusIO`` are used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
 
 .. raw:: html
     
