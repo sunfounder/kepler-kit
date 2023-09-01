@@ -6,7 +6,7 @@ Webhook will be used as the most basic service.
 A POST request is sent to IFTTT's service from Raspberry Pi Pico W.
 Using IFTTT, we will create an Applet to intercept the webhook and send an email.
 
-**Bill of Materials**
+**1. Required Components**
 
 In this project, we need the following components. 
 
@@ -36,7 +36,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -44,31 +44,31 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Transistor
+        - :ref:`cpn_transistor`
         - 1(S8050)
         - |link_transistor_buy|
     *   - 6
-        - Resistor
+        - :ref:`cpn_resistor`
         - 2(1KΩ, 10KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Button
+        - :ref:`cpn_button`
         - 1
         - |link_button_buy|
     *   - 8
-        - Active Buzzer
+        - Active :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
-        - Li-po Charger Module
+        - :ref:`cpn_lipo_charger`
         - 1
         -  
     *   - 10
@@ -80,11 +80,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 12
-        - PIR Module
+        - :ref:`cpn_pir`
         - 1
         - |link_pir_buy|
 
-**1. Build the Circuit**
+**2. Build the Circuit**
 
 .. warning:: 
         
@@ -94,7 +94,7 @@ You can also buy them separately from the links below.
     :width: 800
 
 
-**2. SET IFTTT**
+**3. SET IFTTT**
 
 IFTTT is a free service that provides a variety of ways to connect different data services together.
 
@@ -169,7 +169,7 @@ Please follow the steps below on IFTTT.
         :width: 500
 
 
-**3. Run the Script**
+**4. Run the Script**
 
 #. Now that we have created the IFTTT Applet, but we also need the API Key which can be obtained from the |link_webhooks| to allow Pico W to access IFTTT.
 

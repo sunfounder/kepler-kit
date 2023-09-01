@@ -11,7 +11,7 @@ We cannot reproduce the same instrument through Pico W, but we can use photoresi
 
 * `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -41,7 +41,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -49,31 +49,31 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - LED
+        - :ref:`cpn_led`
         - 1
         - |link_led_buy|
     *   - 6
-        - Transistor
+        - :ref:`cpn_transistor`
         - 1(S8050)
         - |link_transistor_buy|
     *   - 7
-        - Resistor
+        - :ref:`cpn_resistor`
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Active Buzzer
+        - Active :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
-        - Photoresistor
+        - :ref:`cpn_photoresistor`
         - 1
         - |link_photoresistor_buy|
 

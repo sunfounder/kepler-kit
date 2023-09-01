@@ -1,4 +1,4 @@
-.. _cpn_bb:
+.. _cpn_breadboard:
 
 Breadboard
 ==============

@@ -1,6 +1,6 @@
 .. _ar_74hc_led:
 
-5.1 -  Microchip - 74HC595
+5.1 Microchip - 74HC595
 ===========================
 
 Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
@@ -16,7 +16,7 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
 
 * :ref:`74HC595`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -28,7 +28,7 @@ It's definitely convenient to buy a whole kit, here's the link:
 
     *   - Name	
         - ITEMS IN THIS KIT
-        - LINK
+        - PURCHASE LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
@@ -41,12 +41,12 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
+        - COMPONENT INTRODUCTION	
         - QUANTITY
-        - LINK
+        - PURCHASE LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -54,23 +54,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 8(220Ω)
         - |link_resistor_buy|
     *   - 6
-        - LED
+        - :ref:`cpn_led`
         - 8
         - |link_led_buy|
     *   - 7
-        - 74HC595
+        - :ref:`cpn_74hc595`
         - 1
         - |link_74hc595_buy|
 

@@ -7,7 +7,7 @@ These pins have both input and output functions, as indicated by their name GPIO
 
 * :ref:`cpn_button`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -37,7 +37,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -45,19 +45,19 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(10KΩ)
         - |link_resistor_buy|
     *   - 6
-        - Button
+        - :ref:`cpn_button`
         - 1
         - |link_button_buy|
 

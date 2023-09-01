@@ -19,7 +19,7 @@ is very short (typically 5ms), and because of the optical afterglow
 effect and the principle of visual residue, we can see four characters
 at the same time.
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -49,7 +49,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -57,23 +57,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 4(220Ω)
         - |link_resistor_buy|
     *   - 6
-        - 4-Digit 7 Segment Display
+        - :ref:`cpn_4_dit_7_segment`
         - 1
         - 
     *   - 7
-        - 74HC595
+        - :ref:`cpn_74hc595`
         - 1
         - |link_74hc595_buy|
 

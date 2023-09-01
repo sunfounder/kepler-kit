@@ -13,10 +13,16 @@ Quick Links:
 <a id="about_this_kit"></a>
 ## About this kit:
 
+This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
+
+Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino) and Piper Make are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
 
 
 <a id="update"></a>
 ## Update:
+2023-09-01:
+    - Add introduction links for all components used in all projects.
+
 2023-08-31:
     - Optimized the installation of Arduino IDE, configuration of Pico W, and tutorial for adding libraries.
     - Removed all references in Arduino projects that directed to the quick guide.

@@ -14,7 +14,7 @@ Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino)
 
 Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
 
-Here is the email: cs@sunfounder.com.
+Here is the email: service@sunfounder.com.
 
 
 **About the display language**

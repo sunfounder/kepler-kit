@@ -1,4 +1,4 @@
-.. _cpn_cap:
+.. _cpn_capacitor:
 
 
 Capacitor

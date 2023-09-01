@@ -9,7 +9,7 @@ A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument
 Here we make a digital bubble level using MPU6050 and 8x8 LED matrix. When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
 
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -39,7 +39,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -47,23 +47,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - 8x8 LED Matrix
+        - :ref:`cpn_dot_matrix`
         - 1
         - 
     *   - 6
-        - 74HC595
+        - :ref:`cpn_74hc595`
         - 2
         - |link_74hc595_buy|
     *   - 7
-        - MPU6050 Module
+        - :ref:`cpn_mpu6050`
         - 1
         - 
 

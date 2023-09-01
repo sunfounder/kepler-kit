@@ -122,9 +122,9 @@ By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico W), t
 If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, black, brown and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.
 
 .. note::
-    For an introduction to resistors and how to calculate resistance values, see :ref:`cpn_res`.
+    For an introduction to resistors and how to calculate resistance values, see :ref:`cpn_resistor`.
 
-    For an introduction to resistors and how to calculate resistance values, see :ref:*cpn_res*.
+    For an introduction to resistors and how to calculate resistance values, see :ref:*cpn_resistor*.
 
 Most packaged modules only require access to the proper voltage (usually 3.3V or 5V), such as ultrasonic module.
 

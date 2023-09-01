@@ -1,6 +1,5 @@
 .. _py_guess_number:
 
-
 7.7 Guess Number
 ==============================
 
@@ -11,7 +10,7 @@ As an example, if the lucky number is 51, which the players cannot see, and the 
 
 |guess_number|
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -41,7 +40,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -49,23 +48,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 4(10KΩ)
         - |link_resistor_buy|
     *   - 6
-        - 4x4 Keypad
+        - :ref:`cpn_keypad`
         - 1
         - |link_keypad_buy|
     *   - 7
-        - I2C LCD1602
+        - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 

@@ -12,7 +12,7 @@ here we use a power module to supply power to the motor.
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -41,7 +41,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -49,23 +49,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - TA6586
+        - :ref:`cpn_ta6586`
         - 1
         - 
     *   - 6
-        - TT Motor
+        - :ref:`cpn_motor`
         - 1
         - |link_motor_buy| 
     *   - 7
-        - Li-po Charger Module
+        - :ref:`cpn_lipo_charger`
         - 1
         -  
     *   - 8

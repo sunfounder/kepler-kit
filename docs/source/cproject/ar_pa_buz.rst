@@ -14,7 +14,7 @@ Let the passive buzzer emit a melody!
 
 * :ref:`Buzzer`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -26,7 +26,7 @@ It's definitely convenient to buy a whole kit, here's the link:
 
     *   - Name	
         - ITEMS IN THIS KIT
-        - LINK
+        - PURCHASE LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
@@ -39,12 +39,12 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
+        - COMPONENT INTRODUCTION	
         - QUANTITY
-        - LINK
+        - PURCHASE LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -52,23 +52,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Transistor
+        - :ref:`cpn_transistor`
         - 1(S8050)
         - |link_transistor_buy|
     *   - 6
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive Buzzer
+        - Passive :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 

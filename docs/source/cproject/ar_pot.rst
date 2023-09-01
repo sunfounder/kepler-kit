@@ -21,9 +21,9 @@ In addition, there is a fourth analog channel, which is connected to the built-i
 
 In this project, we try to read the analog value of potentiometer.
 
-* :ref:`cpn_pot`
+* :ref:`cpn_potentiometer`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -35,7 +35,7 @@ It's definitely convenient to buy a whole kit, here's the link:
 
     *   - Name	
         - ITEMS IN THIS KIT
-        - LINK
+        - PURCHASE LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
@@ -48,12 +48,12 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
+        - COMPONENT INTRODUCTION	
         - QUANTITY
-        - LINK
+        - PURCHASE LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -61,23 +61,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(220Ω)
         - |link_resistor_buy|
     *   - 6
-        - LED
+        - :ref:`cpn_led`
         - 1
         - |link_led_buy|
     *   - 7
-        - Potentiometer
+        - :ref:`cpn_potentiometer`
         - 1
         - |link_potentiometer_buy|
 

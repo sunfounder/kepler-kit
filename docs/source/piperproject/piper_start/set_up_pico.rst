@@ -3,7 +3,7 @@
 1.1 Set up the Pico
 ----------------------
 
-First, visit Piper Make through the following link：
+First, visit Piper Make through the following link: 
 
 https://make.playpiper.com/
 

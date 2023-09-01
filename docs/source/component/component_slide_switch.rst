@@ -1,4 +1,4 @@
-.. _cpn_slide:
+.. _cpn_slide_switch:
 
 Slide Switch
 ==============
@@ -16,8 +16,8 @@ The circuit symbol of the slide switch is shown as below. The pin2 in the figure
 
 .. **Example**
 
-.. * :ref:`Reading Button Value` (For MicroPython User）
-.. * :ref:`Warning Light` (For C/C++(Arduino) User）
+.. * :ref:`Reading Button Value` (For MicroPython User)
+.. * :ref:`Warning Light` (For C/C++(Arduino) User)
 
 
 **Example**

@@ -22,17 +22,17 @@ assembly
 Features
 --------------
 
-* 21 mm × 51 mm form factor
+* 21 mm x 51 mm form factor
 * RP2040 microcontroller chip designed by Raspberry Pi in the UK
 * Dual-core Arm Cortex-M0+ processor, flexible clock running up to 133 MHz
 * 264kB on-chip SRAM
 * 2MB on-board QSPI flash
 * 2.4GHz 802.11n wireless LAN
 * 26 multifunction GPIO pins, including 3 analogue inputs
-* 2 × UART, 2 × SPI controllers, 2 × I2C controllers, 16 × PWM channels
-* 1 × USB 1.1 controller and PHY, with host and device support
-* 8 × Programmable I/O (PIO) state machines for custom peripheral support
-* Supported input power 1.8–5.5V DC
+* 2 x UART, 2 x SPI controllers, 2 x I2C controllers, 16 x PWM channels
+* 1 x USB 1.1 controller and PHY, with host and device support
+* 8 x Programmable I/O (PIO) state machines for custom peripheral support
+* Supported input power 1.8-5.5V DC
 * Operating temperature -20°C to +70°C
 * Castellated module allows soldering direct to carrier boards
 * Drag-and-drop programming using mass storage over USB
@@ -80,10 +80,10 @@ Pico's Pins
         - Switch on or off the 3V3(O) power, can also switches your Pico W off.
     *   - VSYS
         - 2-5 volts power
-        - A pin directly connected to your Pico’s internal power supply, which cannot be switched off without also switching Pico W off.
+        - A pin directly connected to your Pico's internal power supply, which cannot be switched off without also switching Pico W off.
     *   - VBUS
         - 5 volts power
-        - A source of 5 V power taken from your Pico’s micro USB port, and used to power hardware which needs more than 3.3 V.
+        - A source of 5 V power taken from your Pico's micro USB port, and used to power hardware which needs more than 3.3 V.
 
 The best place to find everything you need to get started with your Raspberry Pi Pico W is `here <https://www.raspberrypi.org/documentation/pico/getting-started/>`_
 

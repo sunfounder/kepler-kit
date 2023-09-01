@@ -1,4 +1,4 @@
-.. _cpn_water:
+.. _cpn_water_level:
 
 Water Level Sensor Module
 =================================

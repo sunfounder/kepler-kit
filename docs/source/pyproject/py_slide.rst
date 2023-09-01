@@ -7,7 +7,7 @@
 
 The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -38,7 +38,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -46,23 +46,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(10KΩ)
         - |link_resistor_buy|
     *   - 6
-        - Capacitor
+        - :ref:`cpn_capacitor`
         - 1(104)
         - |link_capacitor_buy|
     *   - 7
-        - Slide Switch
+        - :ref:`cpn_slide_switch`
         - 1
         - 
 
@@ -76,8 +76,8 @@ The purpose of the 10K resistor is to keep the GP14 low during toggling (not tog
 
 The 104 ceramic capacitor is used here to eliminate jitter.
 
-* :ref:`cpn_slide`
-* :ref:`cpn_cap`
+* :ref:`cpn_slide_switch`
+* :ref:`cpn_capacitor`
 
 **Wiring**
 

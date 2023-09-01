@@ -12,7 +12,7 @@ Create a Function
 
 .. code-block::
 
-    def function_name（parameters)：
+    def function_name(parameters): 
         """docstring"""
         statement(s)
 
@@ -120,7 +120,7 @@ By default, a function must be called with the correct number of arguments. Mean
 
     welcome("Lily", "Welcome to China!")
 
-Here，the function welcome() has 2 parameters.
+Here, the function welcome() has 2 parameters.
 
 Since we called this function with two arguments, the function runs smoothly without any errors.
 

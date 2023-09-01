@@ -20,7 +20,7 @@ It is flexible, can be docked, bent, and cut at will, and the back is equipped w
 * Consumption: 0.3w each LED
 * Working Temperature: -15-50
 * Color: Full color RGB
-* RGB Type：5050RGB（Built-in IC WS2812B）
+* RGB Type: 5050RGB(Built-in IC WS2812B)
 * Light Strip Thickness: 2mm
 * Each LED can be controlled individually
 
@@ -36,7 +36,7 @@ e-nt control part, effectively ensuring the pixel point light color height consi
 The data transfer protocol use single NZR communication mode. After the pixel power-on reset, the DIN
 port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch,
 the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade
-pixel through the DO port. After transmission for each pixel，the signal to reduce 24bit. pixel adopt auto resha
+pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. pixel adopt auto resha
 -ping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend
 on the speed of signal transmission.
 

@@ -9,7 +9,7 @@ This project uses an LED, a buzzer and an ultrasonic module to create a reversin
 We can put it on a remote control car to simulate the the actual process of reversing a car into a garage.
 
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -39,7 +39,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -47,31 +47,31 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Transistor
+        - :ref:`cpn_transistor`
         - 1(S8050)
         - |link_transistor_buy|
     *   - 6
-        - Resistor
+        - :ref:`cpn_resistor`
         - 2(1KΩ, 220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive Buzzer
+        - Passive :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
-        - LED
+        - :ref:`cpn_led`
         - 1
         - |link_led_buy|
     *   - 9
-        - Ultrasonic Sensor Module
+        - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 

@@ -1,4 +1,4 @@
-.. _cpn_4dit:
+.. _cpn_4_dit_7_segment:
 
 4-Digit 7-Segment Display
 ==================================

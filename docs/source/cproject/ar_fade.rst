@@ -10,8 +10,8 @@ Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to su
 
 A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
 
-Simply put, when we are in a short period (such as 20ms, most people’s visual retention time),
-Let the LED turn on, turn off, and turn on again, we won’t see it has been turned off, but the brightness of the light will be slightly weaker.
+Simply put, when we are in a short period (such as 20ms, most people's visual retention time),
+Let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
 During this period, the more time the LED is turned on, the higher the brightness of the LED.
 In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
 This is how PWM controls LED brightness (or motor speed).
@@ -30,7 +30,7 @@ After understanding this knowledge, let us try to achieve the effect of Fading L
 
 * :ref:`cpn_led`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -42,7 +42,7 @@ It's definitely convenient to buy a whole kit, here's the link:
 
     *   - Name	
         - ITEMS IN THIS KIT
-        - LINK
+        - PURCHASE LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
@@ -55,12 +55,12 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
+        - COMPONENT INTRODUCTION	
         - QUANTITY
-        - LINK
+        - PURCHASE LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -68,19 +68,19 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(220Ω)
         - |link_resistor_buy|
     *   - 6
-        - LED
+        - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 

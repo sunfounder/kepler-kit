@@ -10,7 +10,7 @@ In other words, we turn fruits into keyboards that can play music just by touchi
 
 |fruit_piano|
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -40,7 +40,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -48,31 +48,31 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Transistor
+        - :ref:`cpn_transistor`
         - 1(S8050)
         - |link_transistor_buy|
     *   - 6
-        - Resistor
+        - :ref:`cpn_resistor`
         - 4(1-1KΩ, 1-330Ω, 2-220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive Buzzer
+        - Passive :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
-        - RGB LED
+        - :ref:`cpn_rgb`
         - 1
         - |link_rgb_led_buy|
     *   - 9
-        - MPR121 Module
+        - :ref:`cpn_mpr121`
         - 1
         - 
 

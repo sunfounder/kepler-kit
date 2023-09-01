@@ -6,7 +6,7 @@ Arduino
 
 #. Code upload failed in Arduino IDE?
     * Check that your Pico is correctly recognised by the Arduino IDE, the port should be COMXX (Raspberry Pi Pico), for instructions please refer to :ref:`setup_pico_arduino`.
-    * Check that the Board(Raspberry Pi Pico) or port（COMXX (Raspberry Pi Pico)）is selected correctly.
+    * Check that the Board(Raspberry Pi Pico) or port(COMXX (Raspberry Pi Pico))is selected correctly.
     * If your code is OK and you have selected the correct board and port, but the upload is still not successful. At this point you can click on the **Upload** icon again, when the progress below shows "Upload...", unplug the USB cable, then press and hold the **BOOTSEL** button to plug it in and the code will be uploaded successfully.
 
 
@@ -33,7 +33,7 @@ MicroPython
     NO, you need to do some different operations.
 
     * If you used it on Arduino first, and now you want to use it on Thonny IDE, you need to :ref:`install_micropython_on_pico` on it.
-    * If you used it on Thonny first， and now you want to use it on Arduino IDE, you need to :ref:`setup_pico_arduino`.
+    * If you used it on Thonny first,  and now you want to use it on Arduino IDE, you need to :ref:`setup_pico_arduino`.
 
 
 #. If your computer is win7 and Pico W cannot be detected.

@@ -14,7 +14,7 @@ A device publishes a message on a specific topic, and all devices subscribed to 
 In this section, a service bell system will be made using Pico W, HiveMQ (a free public MQTT broker service), and four buttons.
 The four buttons mean four tables in the restaurant, and you will be able to see which table's guests need service on HiveMQ when the customer presses the button.
 
-**Bill of Materials**
+**1. Required Components**
 
 In this project, we need the following components. 
 
@@ -44,7 +44,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -52,23 +52,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 4(10KΩ)
         - |link_resistor_buy|
     *   - 6
-        - Button
+        - :ref:`cpn_button`
         - 4
         - |link_button_buy|
     *   - 7
-        - Li-po Charger Module
+        - :ref:`cpn_lipo_charger`
         - 1
         -  
     *   - 8
@@ -80,7 +80,7 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**1. Build the Circuit**
+**2. Build the Circuit**
 
     .. warning:: 
         
@@ -89,7 +89,7 @@ You can also buy them separately from the links below.
 .. image:: img/wiring/5.mqtt_pub.png
     :width: 800
 
-**2. Visit HiveMQ**
+**3. Visit HiveMQ**
 
 HiveMQ is an MQTT broker and client-based messaging platform that enables fast, efficient and reliable data transfer to IoT devices.。
 
@@ -111,7 +111,7 @@ HiveMQ is an MQTT broker and client-based messaging platform that enables fast, 
 
 
 
-**3. Install the MQTT Module**
+**4. Install the MQTT Module**
 
 Before we can start the project, we need to install the MQTT module for Pico W.
 
@@ -137,7 +137,7 @@ Before we can start the project, we need to install the MQTT module for Pico W.
 
     .. image:: img/5_calling_system1.png
 
-**4. Run the Script**
+**5. Run the Script**
 
 #. Open the ``5_mqtt_publish.py`` file under the path of ``kepler-kit-main/iot``.
 

@@ -1,4 +1,4 @@
-.. _cpn_7-seg:
+.. _cpn_7_segment:
 
 7-segment Display
 ======================

@@ -14,7 +14,7 @@ An active tag is powered by an independent energy source, such as a battery. As 
 
 * :ref:`cpn_mfrc522`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -44,7 +44,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -52,15 +52,15 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - RC522 RFID Module
+        - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 

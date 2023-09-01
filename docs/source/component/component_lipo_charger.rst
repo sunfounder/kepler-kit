@@ -1,3 +1,5 @@
+.. _cpn_lipo_charger:
+
 Li-po Charger Module
 =================================================
 

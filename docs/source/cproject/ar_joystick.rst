@@ -15,7 +15,7 @@ The joystick of this kit also has a digital input, which is activated when the j
 
 * :ref:`cpn_joystick`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -27,7 +27,7 @@ It's definitely convenient to buy a whole kit, here's the link:
 
     *   - Name	
         - ITEMS IN THIS KIT
-        - LINK
+        - PURCHASE LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
@@ -39,12 +39,12 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
+        - COMPONENT INTRODUCTION	
         - QUANTITY
-        - LINK
+        - PURCHASE LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -52,19 +52,19 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(10KΩ)
         - |link_resistor_buy|
     *   - 6
-        - Joystick Module
+        - :ref:`cpn_joystick`
         - 1
         - 
 

@@ -6,9 +6,9 @@
 The photoresistor is a typical device for analog inputs and it is used in a very similar way to a potentiometer. Its resistance value depends on the intensity of the light, the stronger the irradiated light, the smaller its resistance value; conversely, it increases.
 
 
-* :ref:`cpn_light`
+* :ref:`cpn_photoresistor`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -38,7 +38,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -46,19 +46,19 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(10KΩ)
         - |link_resistor_buy|
     *   - 6
-        - Photoresistor
+        - :ref:`cpn_photoresistor`
         - 1
         - |link_photoresistor_buy|
 

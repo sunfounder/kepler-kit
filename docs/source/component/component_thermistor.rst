@@ -1,4 +1,4 @@
-.. _cpn_temp:
+.. _cpn_thermistor:
 
 Thermistor
 ===============
@@ -22,7 +22,7 @@ In this kit we use an NTC one. Each thermistor has a normal resistance. Here it 
 
 Here is the relation between the resistance and temperature:
 
-    RT = RN * expB(1/TK – 1/TN)   
+    RT = RN * expB(1/TK - 1/TN)   
 
 * **RT** is the resistance of the NTC thermistor when the temperature is TK. 
 * **RN** is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k.

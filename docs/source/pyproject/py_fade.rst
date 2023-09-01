@@ -12,7 +12,7 @@ Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to su
 A pulse is a digital output that contains a high level and a low level. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
 
 When we are in a short period of time (like 20ms, which is most people's visual retention period), 
-let the LED turn on, turn off, and turn on again, we won’t see it has been turned off, but the brightness of the light will be slightly weaker.
+let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
 During this period, the more time the LED is on, the brighter it becomes.
 In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
 This is how PWM controls LED brightness (or motor speed).
@@ -31,7 +31,7 @@ Let's try to achieve the faded LED effect after understanding this knowledge.
 
 * :ref:`cpn_led`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -61,7 +61,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -69,19 +69,19 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(220Ω)
         - |link_resistor_buy|
     *   - 6
-        - LED
+        - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 

@@ -11,9 +11,9 @@ IR Receiver is a component with photocell that is tuned to receive to infrared l
 It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
 Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
 
-* :ref:`cpn_irrecv`
+* :ref:`cpn_ir_receiver`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -43,7 +43,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -51,15 +51,15 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - IR Receiver
+        - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 

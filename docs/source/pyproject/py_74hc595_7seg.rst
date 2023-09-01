@@ -12,9 +12,9 @@ The 7 Segment Display is essentially a device packaged by 8 LEDs, of which 7 str
 
 This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
 
-* :ref:`cpn_7-seg`
+* :ref:`cpn_7_segment`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -44,7 +44,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -52,23 +52,23 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Resistor
+        - :ref:`cpn_resistor`
         - 1(220Ω)
         - |link_resistor_buy|
     *   - 6
-        - 7 Segment Display
+        - :ref:`cpn_7_segment`
         - 1
         - |link_7segment_buy|
     *   - 7
-        - 74HC595
+        - :ref:`cpn_74hc595`
         - 1
         - |link_74hc595_buy|
 
@@ -83,8 +83,8 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
     :widths: 15 25
     :header-rows: 1
 
-    *   - 74HC595
-        - LED Segment Display
+    *   - :ref:`cpn_74hc595`
+        - :ref:`cpn_led` Segment Display
     *   - Q0
         - a
     *   - Q1

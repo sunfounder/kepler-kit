@@ -1,4 +1,4 @@
-.. _cpn_irrecv:
+.. _cpn_ir_receiver:
 
 Infrared Receiver
 =================================
@@ -28,7 +28,7 @@ Remote Control
 
 |img_controller|
 
-This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid’s room.
+This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid's room.
 
 * Size: 85x39x6mm
 * Remote control range: 8-10m

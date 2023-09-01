@@ -1,4 +1,4 @@
-.. _cpn_limit_sw:
+.. _cpn_micro_switch:
 
 Micro Switch
 ========================

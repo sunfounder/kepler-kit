@@ -13,9 +13,9 @@ It measures the water level by having a series of exposed parallel wire traces t
     
     The sensor cannot be fully submerged in water, please only leave the part where the ten Traces are located in contact with water. Also, energizing the sensor in a humid environment will accelerate the corrosion of the probe and reduce the life of the sensor, so it is recommended that you only supply power when taking readings.
 
-* :ref:`cpn_water`
+* :ref:`cpn_water_level`
 
-**Bill of Materials**
+**Required Components**
 
 In this project, we need the following components. 
 
@@ -45,7 +45,7 @@ You can also buy them separately from the links below.
         - LINK
 
     *   - 1
-        - Raspberry Pi Pico W
+        - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
@@ -53,15 +53,15 @@ You can also buy them separately from the links below.
         - 1
         - 
     *   - 3
-        - Breadboard
+        - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
-        - Wires
+        - :ref:`cpn_wire`
         - Several
         - |link_wires_buy|
     *   - 5
-        - Water Level Module
+        - :ref:`cpn_water_level`
         - 1
         - 
 

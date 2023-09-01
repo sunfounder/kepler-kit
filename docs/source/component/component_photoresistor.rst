@@ -1,4 +1,4 @@
-.. _cpn_light:
+.. _cpn_photoresistor:
 
 Photoresistor
 ==============
