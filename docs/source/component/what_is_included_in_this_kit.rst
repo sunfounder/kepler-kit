@@ -5,7 +5,7 @@ The following is a list of this kit so you can check the contents of the kit onc
 
 There are some components in the kit that are very small and look the same, and staff may miss or send them by mistake when packing the kit. You are welcome to send us the name of the missing or incorrect component if you find one.
 
-Here is the email: cs@sunfounder.com.
+Here is the email: service@sunfounder.com.
 
 |compoents_list|
 
