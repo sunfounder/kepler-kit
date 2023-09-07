@@ -160,8 +160,8 @@ Use a ``for`` statement to have all 10 pins execute the above statement.
         led.append(None)
         led[i] = machine.Pin(pin[i], machine.Pin.OUT)
 
-* :ref:`Lists`
-* :ref:`For Loops`
+* :ref:`syntax_list`
+* :ref:`syntax_forloop`
 
 Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one by one.
 

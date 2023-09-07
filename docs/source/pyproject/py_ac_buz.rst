@@ -6,7 +6,7 @@
 
 The active buzzer is a typical digital output device that is as easy to use as lighting up an LED!
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
 **Required Components**
 

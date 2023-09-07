@@ -145,5 +145,5 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
     Here are two ways to open a saved code file.
 
     * The first method is to click the open icon on the Thonny toolbar, just like when you save a program, you will be asked if you want to open it from **this computer** or **Raspberry Pi Pico**, for example, click **Raspberry Pi Pico** and you will see a list of all the programs you have saved on the Pico W.
-    * The second is to open the file preview directly by clicking **View**->**File**-> and then double-clicking on the corresponding ``.py`` file to open it.
+    * The second is to open the file preview directly by clicking **View**-> **File**-> and then double-clicking on the corresponding ``.py`` file to open it.
 

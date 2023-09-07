@@ -10,11 +10,11 @@ if
     if test expression:
         statement(s)
 
-Here, the program evaluates the `test expression` and executes the `statement` only when the `test expression` is True.
+Here, the program evaluates the ``test expression`` and executes the ``statement`` only when the ``test expression`` is True.
 
-If `test expression` is False, then `statement(s)` will not be executed.
+If ``test expression`` is False, then ``statement(s)`` will not be executed.
 
-In MicroPython, indentation means the body of the `if` statement. The body starts with an indentation and ends with the first unindented line.
+In MicroPython, indentation means the body of the ``if`` statement. The body starts with an indentation and ends with the first unindented line.
 
 Python interprets non-zero values ​​as "True". None and 0 are interpreted as "False".
 
@@ -47,9 +47,9 @@ if...else
     else:
         Body of else
 
-The `if..else` statement evaluates `test expression` and will execute the body of `if` only when the test condition is `True`.
+The ``if..else`` statement evaluates ``test expression`` and will execute the body of ``if`` only when the test condition is ``True``.
 
-If the condition is `False`, the body of `else` is executed. Indentation is used to separate the blocks.
+If the condition is ``False``, the body of ``else`` is executed. Indentation is used to separate the blocks.
 
 **if...else Statement Flowchart**
 
@@ -82,15 +82,15 @@ if...elif...else
     else: 
         Body of else
 
-`Elif` is short for `else if`. It allows us to check multiple expressions.
+``Elif`` is short for ``else if``. It allows us to check multiple expressions.
 
-If the condition of the `if` is False, the condition of the next elif block is checked, and so on.
+If the condition of the ``if`` is False, the condition of the next elif block is checked, and so on.
 
-If all conditions are `False`, the body of `else` is executed.
+If all conditions are ``False``, the body of ``else`` is executed.
 
-Only one of several `if...elif...else` blocks is executed according to the conditions.
+Only one of several ``if...elif...else`` blocks is executed according to the conditions.
 
-The `if` block can only have one `else` block. But it can have multiple `elif` blocks.
+The ``if`` block can only have one ``else`` block. But it can have multiple ``elif`` blocks.
 
 **if...elif...else Statement Flowchart**
 

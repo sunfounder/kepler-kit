@@ -1,7 +1,9 @@
+.. _syntax_forloop:
+
 For Loops
 ============
 
-The `for` loop can traverse any sequence of items, such as a list or a string.
+The ``for`` loop can traverse any sequence of items, such as a list or a string.
 
 The syntax format of for loop is as follows:
 
@@ -11,9 +13,9 @@ The syntax format of for loop is as follows:
         Body of for
 
 
-Here, `val` is a variable that gets the value of the item in the sequence in each iteration.
+Here, ``val`` is a variable that gets the value of the item in the sequence in each iteration.
 
-The loop continues until we reach the last item in the sequence. Use indentation to separate the body of the `for` loop from the rest of the code.
+The loop continues until we reach the last item in the sequence. Use indentation to separate the body of the ``for`` loop from the rest of the code.
 
 **Flowchart of for Loop**
 
@@ -59,7 +61,7 @@ The sum is 6
 The continue Statement
 --------------------------------------------
 
-With the `continue` statement we can stop the current iteration of the loop, and continue with the next:
+With the ``continue`` statement we can stop the current iteration of the loop, and continue with the next:
 
 
 
@@ -84,7 +86,7 @@ We can use the range() function to generate a sequence of numbers. range(6) will
 
 We can also define start, stop and step size as range(start, stop, step_size). If not provided, step_size defaults to 1.
 
-In a sense of range, the object is "lazy" because when we create the object, it does not generate every number it "contains". However, this is not an iterator because it supports in, len and __getitem__ operations.
+In a sense of range, the object is "lazy" because when we create the object, it does not generate every number it "contains". However, this is not an iterator because it supports in, len and ``__getitem__`` operations.
 
 This function will not store all values ​​in memory; it will be inefficient. So it will remember the start, stop, step size and generate the next number during the journey.
 
@@ -109,7 +111,7 @@ range(0, 6)
 [2, 4, 6, 8]
 
 
-We can use `range()` in a `for` loop to iterate over a sequence of numbers. It can be combined with the len() function to use the index to traverse the sequence.
+We can use ``range()`` in a ``for`` loop to iterate over a sequence of numbers. It can be combined with the len() function to use the index to traverse the sequence.
 
 
 
@@ -128,11 +130,11 @@ I like grape
 Else in For Loop
 --------------------------------
 
-The `for` loop can also have an optional `else` block. If the items in the sequence used for the loop are exhausted, the `else` part is executed.
+The ``for`` loop can also have an optional ``else`` block. If the items in the sequence used for the loop are exhausted, the ``else`` part is executed.
 
-The `break` keyword can be used to stop the `for` loop. In this case, the `else` part will be ignored.
+The ``break`` keyword can be used to stop the ``for`` loop. In this case, the ``else`` part will be ignored.
 
-Therefore, if no interruption occurs, the `else` part of the `for` loop will run.
+Therefore, if no interruption occurs, the ``else`` part of the ``for`` loop will run.
 
 
 

@@ -124,8 +124,6 @@ If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, bla
 .. note::
     For an introduction to resistors and how to calculate resistance values, see :ref:`cpn_resistor`.
 
-    For an introduction to resistors and how to calculate resistance values, see :ref:*cpn_resistor*.
-
 Most packaged modules only require access to the proper voltage (usually 3.3V or 5V), such as ultrasonic module.
 
 However, in your self-built circuits, you need to be aware of the supply voltage and resistor usage for electrical devices.

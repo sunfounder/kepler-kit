@@ -72,9 +72,9 @@ With the break statement we can stop the loop even if the while condition is tru
 
 While Loop with Else
 ----------------------
-Like the `if` loop, the `while` loop can also have an optional `else` block.
+Like the ``if`` loop, the ``while`` loop can also have an optional ``else`` block.
 
-If the condition in the `while` loop is evaluated as `False`, the `else` part is executed.
+If the condition in the ``while`` loop is evaluated as ``False``, the ``else`` part is executed.
 
 
 

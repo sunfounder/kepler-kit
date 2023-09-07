@@ -65,7 +65,7 @@ The value should be in this format: 1st Band 2nd Band 3rd Band x 10^Multiplier (
 So the resistance value of this resistor is 2(red) 2(red) 0(black) x 10^0(black) Ω = 220 Ω, 
 and the permissible error is ± 1% (brown). 
 
-.. list-table::Common resistor color band
+.. list-table:: Common resistor color band
     :header-rows: 1
 
     * - :ref:`cpn_resistor` 
