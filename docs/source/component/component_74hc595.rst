@@ -5,46 +5,46 @@
 
 |img_74hc595|
 
-The 74HC595 consists of an 8−bit shift register and a storage register with three−state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU.
+Der 74HC595 besteht aus einem 8-Bit-Schieberegister und einem Speicherregister mit dreizuständigen parallelen Ausgängen. Er wandelt serielle Eingaben in parallele Ausgaben um, sodass IO-Ports eines MCU gespart werden können.
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* Bei hohem Pegel an MR (Pin10) und niedrigem Pegel an OE (Pin13) wird die Daten am steigenden Flanken von SHcp eingelesen und durchlaufen das Speicherregister über die steigende Flanke von SHcp.
+* Wenn die beiden Taktgeber miteinander verbunden sind, liegt das Schieberegister immer einen Taktimpuls vor dem Speicherregister.
+* Im Speicherregister gibt es einen seriellen Schiebeeingangspin (Ds), einen seriellen Ausgangspin (Q) und eine asynchrone Reset-Taste (niedriger Pegel).
+* Das Speicherregister gibt einen Bus mit parallelem 8-Bit und in drei Zuständen aus.
+* Ist OE aktiviert (niedriger Pegel), werden die Daten im Speicherregister zum Bus (Q0 ~ Q7) ausgegeben.
 
-* `74HC595 Datasheet <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
+* `74HC595 Datenblatt <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
 
 |img_74jc595_pin|
 
-Pins of 74HC595 and their functions:
+Pins des 74HC595 und ihre Funktionen:
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level; 
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level. 
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7**: 8-Bit-parallele Daten-Ausgangspins, direkt für die Steuerung von 8 LEDs oder 8 Pins einer 7-Segment-Anzeige geeignet.
+* **Q7'**: Serieller Ausgangspin, verbunden mit DS eines weiteren 74HC595 zur seriellen Verknüpfung mehrerer 74HC595.
+* **MR**: Reset-Pin, aktiv bei niedrigem Pegel.
+* **SHcp**: Zeitsequenz-Eingang des Schieberegisters. An der steigenden Flanke rückt die Daten im Schieberegister jeweils um ein Bit vor, d.h. Daten in Q1 bewegen sich zu Q2 usw. An der fallenden Flanke bleiben die Daten unverändert.
+* **STcp**: Zeitsequenz-Eingang des Speicherregisters. An der steigenden Flanke wandern die Daten aus dem Schieberegister ins Speicherregister.
+* **OE**: Enable-Pin für den Ausgang, aktiv bei niedrigem Pegel.
+* **DS**: Serieller Dateneingangspin.
+* **VCC**: Positive Versorgungsspannung.
+* **GND**: Masse.
 
-.. Example
+.. Beispiel
 .. -------------------
 
 .. :ref:`Microchip - :ref:`cpn_74hc595``
 
-**Example**
+**Beispiel**
 
-* :ref:`py_74hc_led` (For MicroPython User)
-* :ref:`py_74hc_7seg` (For MicroPython User)
-* :ref:`py_74hc_4dig` (For MicroPython User)
-* :ref:`py_74hc_788bs` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_74hc_led` (For Arduino User)
-* :ref:`ar_74hc_7seg` (For Arduino User)
-* :ref:`ar_74hc_4dig` (For Arduino User)
-* :ref:`ar_74hc_788bs` (For Arduino User)
+* :ref:`py_74hc_led` (Für MicroPython-Anwender)
+* :ref:`py_74hc_7seg` (Für MicroPython-Anwender)
+* :ref:`py_74hc_4dig` (Für MicroPython-Anwender)
+* :ref:`py_74hc_788bs` (Für MicroPython-Anwender)
+* :ref:`py_passage_counter` (Für MicroPython-Anwender)
+* :ref:`py_10_second` (Für MicroPython-Anwender)
+* :ref:`py_traffic_light` (Für MicroPython-Anwender)
+* :ref:`py_bubble_level` (Für MicroPython-Anwender)
+* :ref:`ar_74hc_led` (Für Arduino-Anwender)
+* :ref:`ar_74hc_7seg` (Für Arduino-Anwender)
+* :ref:`ar_74hc_4dig` (Für Arduino-Anwender)
+* :ref:`ar_74hc_788bs` (Für Arduino-Anwender)

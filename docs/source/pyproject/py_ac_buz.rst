@@ -1,40 +1,38 @@
 .. _py_ac_buz:
 
-3.1 Beep
+3.1 Piepton
 ==================
 
+Der aktive Summer ist ein typisches digitales Ausgabegerät, dessen Anwendung genauso einfach ist wie das Einschalten einer LED!
 
-The active buzzer is a typical digital output device that is as easy to use as lighting up an LED!
+* :ref:`cpn_buzzer`
 
-* :ref:`Buzzer`
+**Erforderliche Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir folgende Bauteile.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Gesamtpaket zu kaufen ist natürlich bequemer, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Bauteile aber auch einzeln unter den folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -42,7 +40,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -51,52 +49,49 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
 
-**Schematic**
+**Schaltbild**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+Wird der GP15-Ausgang auf "High" gesetzt, wird der S8050 (NPN-Transistor) nach dem 1K-Strombegrenzungswiderstand (zum Schutz des Transistors) leitend und der Summer gibt einen Ton ab.
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+Die Aufgabe des S8050 (NPN-Transistor) besteht darin, den Strom zu verstärken, damit der Summer lauter tönt. Tatsächlich können Sie den Summer auch direkt an GP15 anschließen, werden dann aber feststellen, dass der Ton leiser ist.
 
-**Wiring**
+**Verdrahtung**
 
-Two types of buzzers are included in the kit. 
-We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
+Im Kit sind zwei verschiedene Summertypen enthalten. 
+Wir verwenden den aktiven Summer. Drehen Sie beide um, der versiegelte Rücken (nicht die freiliegende Leiterplatte) ist der, den wir benötigen.
 
 |img_buzzer|
 
-The buzzer needs to use a transistor when working, here we use S8050 (NPN Transistor).
-
+Für den Betrieb des Summers ist ein Transistor erforderlich, hier verwenden wir den S8050 (NPN-Transistor).
 
 |wiring_beep|
-
 
 **Code**
 
 .. note::
 
-    * Open the ``3.1_beep.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.1_beep.py`` im Ordner ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -112,4 +107,4 @@ The buzzer needs to use a transistor when working, here we use S8050 (NPN Transi
             utime.sleep(0.3)
         utime.sleep(1)
 
-After the code runs, you will hear a beep every second.
+Nach dem Ausführen des Codes hören Sie jede Sekunde einen Piepton.

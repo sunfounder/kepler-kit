@@ -1,33 +1,30 @@
-
 .. _add_libraries_py:
 
-1.4 Upload the Libraries to Pico
-===================================
+1.4 Bibliotheken auf den Pico hochladen
+=========================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico W first, and then we can run the code directly later.
+Für einige Projekte sind zusätzliche Bibliotheken erforderlich. In diesem Abschnitt wird erläutert, wie diese Bibliotheken zunächst auf den Raspberry Pi Pico W hochgeladen werden können, um später den Code direkt auszuführen.
 
-#. Download the relevant code from the link below.
-
+#. Laden Sie den zugehörigen Code über den folgenden Link herunter.
 
    * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
+#. Öffnen Sie die Thonny IDE und schließen Sie den Pico mit einem Mikro-USB-Kabel an Ihren Computer an. Klicken Sie dann in der unteren rechten Ecke auf den Interpreter "MicroPython (Raspberry Pi Pico).COMXX".
 
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+   .. image:: img/sec_inter.png
 
-    .. image:: img/sec_inter.png
+#. Navigieren Sie in der oberen Menüleiste zu **Ansicht** -> **Dateien**.
 
-#. In the top navigation bar, click **View** -> **Files**.
+   .. image:: img/th_files.png
 
-    .. image:: img/th_files.png
+#. Wechseln Sie den Pfad zu dem Ordner, in dem Sie zuvor das `Code-Paket <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ heruntergeladen haben. Anschließend navigieren Sie zum Ordner ``kepler-kit-main/libs``.
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler-kit-main/libs`` folder.
+   .. image:: img/th_path.png
 
-    .. image:: img/th_path.png
+#. Markieren Sie alle Dateien und Ordner im Verzeichnis ``libs/``, klicken Sie mit der rechten Maustaste und wählen Sie **Hochladen zu** aus. Der Upload kann einige Zeit dauern.
 
-#. Select all the files or folders in the ``libs/`` folder, right-click and click **Upload to**, it will take a while to upload.
+   .. image:: img/th_upload.png
 
-    .. image:: img/th_upload.png
+#. Nun sollten Sie die gerade hochgeladenen Dateien auf Ihrem Laufwerk ``Raspberry Pi Pico`` sehen können.
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
-
-    .. image:: img/th_done.png
+   .. image:: img/th_done.png

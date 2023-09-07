@@ -1,30 +1,30 @@
 .. _py_ultrasonic:
 
-6.1 Measuring Distance
+6.1 Abstandsmessung
 ======================================
 
-The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
+Das Ultraschallsensormodul funktioniert nach dem Prinzip von Sonar- und Radarsystemen, um die Entfernung zu einem Objekt zu ermitteln.
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 
 .. list-table::
@@ -32,8 +32,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -41,28 +41,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_ultrasonic|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_ultrasonic|
 
@@ -70,11 +69,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``6.1_measuring_distance.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``6.1_measuring_distance.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -104,12 +103,11 @@ You can also buy them separately from the links below.
         print ('Distance: %.2f' % dis)
         time.sleep_ms(300)
 
-Once the program is running, the Shell will print out the distance of the ultrasonic sensor from the obstacle ahead.
+Sobald das Programm läuft, wird die Shell den Abstand des Ultraschallsensors zum Hindernis vor ihm ausgeben.
 
-**How it works?**
+**Funktionsweise**
 
-Ultrasonic sensors produce high frequency sound waves (ultrasonic waves) emitted by the transmitting probe. When this ultrasonic wave hits an object, it is reflected as an echo, which is detected by the receiving probe. By calculating the time from transmission to reception, the distance can be calculated.
-Based on this principle, the function ``distance()`` can be derived.
+Ultraschallsensoren erzeugen hochfrequente Schallwellen (Ultraschallwellen), die von der Sendesonde ausgesendet werden. Trifft diese Ultraschallwelle auf ein Objekt, wird sie als Echo reflektiert und von der Empfangssonde detektiert. Durch die Berechnung der Zeit von der Aussendung bis zum Empfang lässt sich die Entfernung ermitteln. Auf diesem Prinzip basiert die Funktion ``distance()``.
 
 .. code-block:: python
 
@@ -128,7 +126,7 @@ Based on this principle, the function ``distance()`` can be derived.
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-* Among them, the first few lines are used to transmit a 10us ultrasonic wave.
+* Dabei dienen die ersten paar Zeilen dazu, eine 10µs Ultraschallwelle auszusenden.
 
 .. code-block:: python
 
@@ -138,7 +136,7 @@ Based on this principle, the function ``distance()`` can be derived.
     time.sleep_us(10)
     TRIG.low()
 
-* Then, the program is paused and the current time is recorded when the ultrasonic wave has been emitted.
+* Anschließend wird das Programm angehalten und die aktuelle Zeit erfasst, sobald die Ultraschallwelle ausgesendet wurde.
 
 .. code-block:: python
 
@@ -146,7 +144,7 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time1 = time.ticks_us()
 
-* Subsequently, the program is suspended again. After the echo is received, the current time is recorded once again.
+* Daraufhin wird das Programm erneut pausiert. Nachdem das Echo empfangen wurde, wird die aktuelle Zeit erneut erfasst.
 
 .. code-block:: python
 
@@ -154,12 +152,12 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time2 = time.ticks_us()
 
-* Finally, based on the time difference between the two recordings, the speed of sound (340m/s) is multiplied by the time to obtain double the distance between the ultrasonic module and the obstacle (i.e., one round trip of the ultrasonic waves from the module to the obstacle). Converting the units to centimeters gives us the return value we need.
+* Abschließend wird anhand der Zeitdifferenz zwischen den beiden Erfassungen die Schallgeschwindigkeit (340 m/s) mit der Zeit multipliziert, um die doppelte Entfernung zwischen dem Ultraschallmodul und dem Hindernis zu erhalten (also einen Rundflug der Ultraschallwellen vom Modul zum Hindernis). Die Umrechnung in Zentimeter liefert den benötigten Rückgabewert.
 
 .. code-block:: python
 
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
+Beachten Sie, dass der Ultraschallsensor das Programm anhält, wenn er arbeitet, was zu Verzögerungen bei der Entwicklung komplexer Projekte führen kann.
 

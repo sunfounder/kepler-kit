@@ -1,43 +1,42 @@
 .. _py_light_theremin:
 
-7.1 Light Theremin
+7.1 Licht-Theremin
 =========================
 
-Theremin is an electronic musical instrument that does not require physical contact. Based on the position of the player's hand, it produces different tones.
+Ein Theremin ist ein elektronisches Musikinstrument, das keinen physischen Kontakt erfordert. Je nach Position der Hand des Spielers erzeugt es unterschiedliche Töne.
 
-Its controlling section is usually made up of two metal antennas that sense the position of the thereminist's hands and control oscillators with one hand and volume with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+Üblicherweise besteht der Steuerungsbereich aus zwei Metallantennen, die die Position der Hände des Thereministen erfassen und Oszillatoren mit einer Hand und die Lautstärke mit der anderen steuern. Die elektrischen Signale vom Theremin werden verstärkt und an einen Lautsprecher gesendet.
 
-We cannot reproduce the same instrument through Pico W, but we can use photoresistor and passive buzzer to achieve similar gameplay.
+Zwar können wir das gleiche Instrument mit Pico W nicht nachbilden, jedoch können wir mit einem Fotowiderstand und einem passiven Summer ein ähnliches Spielgefühl erzeugen.
 
-* `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
+* `Theremin - Wikipedia <https://de.wikipedia.org/wiki/Theremin>`_
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die unten stehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -45,16 +44,16 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -69,40 +68,37 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
-        - 
+        -
     *   - 9
         - :ref:`cpn_photoresistor`
         - 1
         - |link_photoresistor_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_light_theremin|
 
-Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
+Bevor Sie mit dem Projekt beginnen, bewegen Sie Ihre Hand auf und ab über den Fotowiderstand, um den Lichtintensitätsbereich zu kalibrieren. Die mit GP16 verbundene LED dient zur Anzeige der Debugging-Zeit; sie leuchtet beim Debugging-Start und erlischt beim Debugging-Ende.
 
-When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
+Wenn GP15 ein hohes Signal ausgibt, leitet der S8050 (NPN-Transistor) und der passive Summer ertönt.
 
-When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
+Je stärker das Licht, desto kleiner ist der Wert an GP28; umgekehrt ist er größer, wenn das Licht schwächer ist. Durch Programmierung des Fotowiderstandswerts zur Beeinflussung der Frequenz des passiven Summers kann ein lichtempfindliches Gerät simuliert werden.
 
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_light_theremin|
-
 
 **Code**
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.1_light_theremin.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -144,9 +140,9 @@ By programming the value of the photoresistor to affect the frequency of the pas
             tone(buzzer,pitch,20)
         utime.sleep_ms(10)
 
-As soon as the program runs, the LED will light up, and we will have five seconds to calibrate the photoresistor's detection range.
+Sobald das Programm startet, leuchtet die LED auf, und wir haben fünf Sekunden Zeit, um den Erfassungsbereich des Fotowiderstands zu kalibrieren.
 
-This is due to the different light environments we may have when we use it (e.g., different light intensities at noon and dusk), as well as our hands' height above the photoresistor. You need to set the maximum and minimum height of your hand from the photoresistor, which is also the height at which you play the instrument.
+Dies ist auf die verschiedenen Lichtverhältnisse zurückzuführen, unter denen das Gerät eingesetzt werden könnte (z. B. unterschiedliche Lichtintensitäten zu Mittag und in der Dämmerung) sowie auf die Höhe unserer Hände über dem Fotowiderstand. Sie müssen die maximale und minimale Höhe Ihrer Hand über dem Fotowiderstand festlegen, die zugleich die Höhe ist, in der Sie das Instrument spielen.
 
-After five seconds, the LED will turn off, at which point we can wave our hands over the photoresistor and play.
+Nach Ablauf der fünf Sekunden erlischt die LED, und wir können unsere Hände über dem Fotowiderstand bewegen und spielen.
 

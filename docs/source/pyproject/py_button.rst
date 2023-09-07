@@ -1,56 +1,54 @@
 .. _py_button:
 
-2.5 Reading Button Value
+2.5 Tastenwert auslesen
 ==============================================
 
-These pins have both input and output functions, as indicated by their name GPIO (General-purpose input/output). Previously, we used the output function; in this chapter, we will use the input function to input the button value.
+Diese Pins haben sowohl Eingabe- als auch Ausgabefunktionen, wie es der Name GPIO (General-purpose input/output) bereits andeutet. Bisher haben wir die Ausgabefunktion genutzt; in diesem Kapitel verwenden wir die Eingabefunktion, um den Tastenwert einzulesen.
 
 * :ref:`cpn_button`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein vollständiges Set zu kaufen ist natürlich bequem, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM SET
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Alternativ können Sie die Komponenten auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -61,42 +59,32 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_button|
 
-As long as one side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, then when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+Solange eine Seite des Tastenpins mit 3,3 V verbunden ist und der andere Pin mit GP14 verbunden ist, wird GP14 hoch sein, wenn die Taste gedrückt wird. Wenn die Taste jedoch nicht gedrückt ist, befindet sich GP14 in einem unbestimmten Zustand und kann hoch oder niedrig sein. Um ein stabiles niedriges Signalniveau zu erhalten, wenn die Taste nicht gedrückt ist, muss GP14 über einen 10K-Pull-down-Widerstand erneut mit GND verbunden werden.
 
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_button|
 
+.. Folgen Sie der Richtung der Schaltung, um den Schaltkreis aufzubauen!
 
-.. Let's follow the direction of the circuit to build the circuit!
+.. Hinweis::
+    Ein Vierpol-Taster hat die Form eines H. Die beiden linken oder rechten Pins sind miteinander verbunden, sodass er die mittlere Lücke überspannt und somit zwei halbe Reihen mit der gleichen Reihennummer verbindet. (In meiner Schaltung sind beispielsweise E23 und F23 bereits verbunden, ebenso E25 und F25).
 
-.. 1. Connect the 3V3 pin of Pico W to the positive power bus of the breadboard.
-.. #. Insert the button into the breadboard and straddle the central dividing line.
-
-.. note::
-    A four-pin button is shaped like an H. Its left two pins or right two pins are connected, which means that when it crosses the central gap, it connects two half rows with the same row number. (For example, in my circuit, E23 and F23 are already connected, as are E25 and F25).
-
-    Until the button is pressed, the left and right pins are independent of each other and current cannot flow from one side to the other.
-
-.. #. Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).
-.. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
-.. #. Use a 10K resistor to connect the pin on the upper left corner of the button and the negative bus.
-.. #. Connect the negative power bus of the breadboard to Pico's GND.
+    Solange die Taste nicht gedrückt ist, sind die linken und rechten Pins voneinander unabhängig, und der Strom kann nicht von einer Seite zur anderen fließen.
 
 **Code**
 
-.. note::
+.. Hinweis::
 
-    * Open the ``2.5_read_button_value.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.5_read_button_value.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Eck den "MicroPython (Raspberry Pi Pico)"-Interpreter auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -108,21 +96,20 @@ As long as one side of the button pin is connected to 3.3v, and the other side p
             print("You pressed the button!")
             utime.sleep(1)
 
-As soon as the code runs, the shell prints "You pressed the button!"
+Sobald der Code ausgeführt wird, wird "Sie haben die Taste gedrückt!" in der Shell ausgegeben.
 
-**Pull-up Working Mode**
+**Pull-Up-Arbeitsmodus**
 
-
-The next part is the wiring and code when you use the button in the pull-up mode.
+Der nächste Abschnitt behandelt die Verdrahtung und den Code, wenn Sie den Taster im Pull-Up-Modus verwenden.
 
 |sch_button_pullup|
 
 |wiring_button_pullup|
 
-The only difference you will see with the pull-down mode is that the 10K resistor is connected to 3.3V and the button is connected to GND, so that when the button is pressed, GP14 will get a low level, which is the opposite of the value obtained in pull-down mode.
-So just change this code to ``if button.value() == 0:``.
+Der einzige Unterschied, den Sie im Vergleich zum Pull-Down-Modus feststellen werden, ist, dass der 10K-Widerstand mit 3,3 V und die Taste mit GND verbunden ist. Dadurch erhält GP14 ein niedriges Signalniveau, wenn die Taste gedrückt wird, was das Gegenteil vom Pull-Down-Modus ist.
+Ändern Sie also diesen Code einfach zu ``if button.value() == 0:``.
 
-
-Also see the reference here:  
+Weitere Referenzen finden Sie hier:
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_
+

@@ -1,16 +1,17 @@
 .. _cpn_wire:
 
-Jumper Wires
-==================
-Wires that connect two terminals are called jumper wires. There are various kinds of jumper wires. Here we focus on those used in breadboard. Among others, they are used to transfer electrical signals from anywhere on the breadboard to the input/output pins of a microcontroller.
+Jumperkabel
+===========
 
-Jump wires are fitted by inserting their “end connectors” into the slots provided in the breadboard, beneath whose surface there are a few sets of parallel plates that connect the slots in groups of rows or columns depending on the area. The “end connectors” are inserted into the breadboard, without soldering, in the particular slots that need to be connected in the specific prototype.
+Kabel, die zwei Anschlusspunkte miteinander verbinden, werden als Jumperkabel bezeichnet. Es gibt verschiedene Arten von Jumperkabeln. In diesem Abschnitt konzentrieren wir uns auf die Kabel, die in Steckbrettern verwendet werden. Unter anderem dienen sie dazu, elektrische Signale von beliebigen Punkten auf dem Steckbrett zu den Ein-/Ausgangspins eines Mikrocontrollers zu übertragen.
 
-There are three types of jumper wire: Female-to-Female, Male-to-Male, and Male-to-Female. The reason we call it Male-to-Female is because it has the outstanding tip in one end as well as a sunk female end. Male-to-Male means both side are male and Female-to-Female means both ends are female.
+Jumperkabel werden eingesetzt, indem ihre "Endstecker" in die dafür vorgesehenen Schlitze im Steckbrett eingeführt werden. Unter der Oberfläche des Steckbretts befinden sich mehrere Reihen von parallelen Platten, die die Schlitze in Gruppen von Reihen oder Spalten miteinander verbinden, je nach Bereich. Die "Endstecker" werden ohne Löten in die spezifischen Schlitze eingeführt, die im jeweiligen Prototypen miteinander verbunden werden sollen.
+
+Es gibt drei Typen von Jumperkabeln: Female-to-Female, Male-to-Male und Male-to-Female. Ein Male-to-Female-Kabel zeichnet sich durch einen vorstehenden Stift an einem Ende und eine eingelassene Buchse am anderen Ende aus. Male-to-Male bedeutet, dass beide Enden männlich sind, und Female-to-Female, dass beide Enden weiblich sind.
 
 |img_wire|
 
 .. note::
 
-    * More than one type of them may be used in a project.
-    * The color of the jump wires is different but it doesn't mean their function is different accordingly; it's just designed so to better identify the connection between each circuit.
+    * In einem Projekt können mehrere Typen von Jumperkabeln verwendet werden.
+    * Die Farbe der Jumperkabel hat keine Auswirkung auf deren Funktion; sie dient lediglich dazu, die Verbindungen zwischen den einzelnen Schaltkreisen besser identifizieren zu können.

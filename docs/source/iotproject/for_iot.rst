@@ -1,9 +1,10 @@
-IoT Projects
+IoT-Projekte
 ============================
 
-This section will walk you through how to get the Pico W connected to the network and complete some interesting IoT projects.
+Dieser Abschnitt führt Sie durch die Schritte, um das Pico W mit dem Netzwerk zu verbinden und spannende IoT-Projekte umzusetzen.
 
-But the first step before moving on to this section is to complete **1. Get Started** inside :ref:`micropython_user` to complete the installation of the Thonny IDE, install the Micropython firmware for the Raspberry Pi Pico W and upload the libraries.
+Bevor Sie jedoch in diesen Abschnitt einsteigen, sollten Sie unbedingt **1. Einstieg** im Abschnitt :ref:`micropython_user` abschließen. Dort erfahren Sie, wie Sie die Thonny-IDE installieren, die Micropython-Firmware für das Raspberry Pi Pico W aufspielen und die notwendigen Bibliotheken hochladen.
+
 
 .. toctree::
     :maxdepth: 1

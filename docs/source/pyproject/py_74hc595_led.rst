@@ -1,48 +1,46 @@
 .. _py_74hc_led:
 
-5.1 Microchip - 74HC595
-===========================
+5.1 Mikrochip - 74HC595
+========================
 
-Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
+Ein integrierter Schaltkreis (integrated circuit, kurz IC) ist eine Art Miniatur-Elektronikbauelement oder -komponente, das in Schaltkreisen durch das Kürzel "IC" dargestellt wird.
 
-A certain process is used to interconnect the transistors, resistors, capacitors, inductors and other components and wiring required in a circuit, fabricate on a small or several small semiconductor wafers or dielectric substrates, and then package them in a package , it has become a micro-structure with the required circuit functions; all of the components have been structured as a whole, making electronic components a big step towards micro-miniaturization, low power consumption, intelligence and high reliability.
+Mit Hilfe eines speziellen Verfahrens werden Transistoren, Widerstände, Kondensatoren, Spulen und andere für einen Schaltkreis erforderliche Bauelemente und Verbindungen auf einem oder mehreren kleinen Halbleiter-Wafern oder dielektrischen Substraten angefertigt. Anschließend werden diese in ein Gehäuse eingebettet und ergeben somit eine Mikrostruktur mit den erforderlichen Schaltkreisfunktionen. Alle Bauteile sind als eine Einheit strukturiert, was einen großen Schritt in Richtung Miniaturisierung, geringem Stromverbrauch, Intelligenz und hoher Zuverlässigkeit von elektronischen Bauelementen bedeutet.
 
-The inventors of integrated circuits are Jack Kilby (integrated circuits based on germanium (Ge)) and Robert Norton Noyce (integrated circuits based on silicon (Si)).
+Die Erfinder der integrierten Schaltkreise sind Jack Kilby (integrierte Schaltkreise auf Germaniumbasis (Ge)) und Robert Norton Noyce (integrierte Schaltkreise auf Siliziumbasis (Si)).
 
-This kit is equipped with an IC, 74HC595, which can greatly save the use of GPIO pins.
-Specifically, it can replace 8 pins for digital signal output by writing an 8-bit binary number.
+Dieses Kit enthält einen IC, den 74HC595, der die Nutzung von GPIO-Pins erheblich reduziert. Konkret kann er 8 Pins für die digitale Signalausgabe ersetzen, indem ein 8-Bit-Binärzahl geschrieben wird.
 
-* `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
+* `Binärzahl – Wikipedia <https://de.wikipedia.org/wiki/Bin%C3%A4rzahl>`_
 
 * :ref:`74HC595`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - KOMPONENTEN IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -50,20 +48,20 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 8(220Ω)
+        - 8 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -74,46 +72,43 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_74hc_led|
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* Wenn MR (Pin 10) auf hohem und OE (Pin 13) auf niedrigem Pegel ist, wird das Daten in der aufsteigenden Flanke von SHcp eingegeben und durch die aufsteigende Flanke von SHcp ins Speicherregister übertragen.
+* Sind die beiden Taktgeber verbunden, ist das Schieberegister immer einen Puls vor dem Speicherregister.
+* Im Speicherregister gibt es einen seriellen Eingangspin (Ds), einen seriellen Ausgangspin (Q) und eine asynchrone Zurücksetztaste (Low-Pegel).
+* Das Speicherregister gibt einen Bus mit einem parallelen 8-Bit und in drei Zuständen aus.
+* Ist OE aktiviert (Low-Pegel), werden die Daten im Speicherregister auf den Bus (Q0 ~ Q7) ausgegeben.
 
-**Wiring**
+**Verkabelung**
 
-.. The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
+.. Der 74HC595 ist ein IC mit 16 Pins und einer halbkreisförmigen Kerbe auf einer Seite (meist die linke Seite des Etiketts). Mit der Kerbe nach oben sind seine Pins im folgenden Diagramm dargestellt.
 
-
-.. Refer to the figure below to build the circuit.
-
+.. Beziehen Sie sich auf die untenstehende Abbildung, um den Schaltkreis aufzubauen.
 
 |wiring_74hc_led|
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico W to the SHcp pin (pin 11) of 74HC595.
-.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-.. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
-.. #. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
-
+.. 1. Verbinden Sie 3V3 und GND des Pico W mit der Stromschiene des Breadboards.
+.. #. Setzen Sie den 74HC595 quer über die mittlere Lücke in das Breadboard.
+.. #. Verbinden Sie den GP0-Pin des Pico W mit dem DS-Pin (Pin 14) des 74HC595 mit einem Jumperkabel.
+.. #. Verbinden Sie den GP1-Pin des Pico W mit dem STcp-Pin (Pin 12) des 74HC595.
+.. #. Verbinden Sie den GP2-Pin des Pico W mit dem SHcp-Pin (Pin 11) des 74HC595.
+.. #. Verbinden Sie den VCC-Pin (Pin 16) und den MR-Pin (Pin 10) am 74HC595 mit der positiven Stromschiene.
+.. #. Verbinden Sie den GND-Pin (Pin 8) und den CE-Pin (Pin 13) am 74HC595 mit der negativen Stromschiene.
+.. #. Setzen Sie 8 LEDs auf das Breadboard, und deren Anoden sind jeweils mit den Pins Q0~Q1 (15, 1, 2, 3, 4, 5, 6, 7) des 74HC595 verbunden.
+.. #. Verbinden Sie die Kathoden der LEDs über einen 220Ω-Widerstand in Reihe mit der negativen Stromschiene.
 
 **Code**
 
 .. note::
 
-    * Open the ``5.1_microchip_74hc595.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Öffnen Sie die Datei ``5.1_microchip_74hc595.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
+    
+    * Vergessen Sie nicht, im rechten unteren Eck den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen.
+    
+    * Für detaillierte Informationen über die Funktionsweise des Codes und die zu verwendenden Bibliotheken, verweisen wir auf den Kommentarbereich im Code.
 
 .. code-block:: python
 
@@ -150,9 +145,10 @@ You can also buy them separately from the links below.
         print("{:0>8b}".format(num))
         time.sleep_ms(200)
 
-When the program is running, ``num`` will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
-We can see the current value of ``num`` in the shell.
 
-**How it works?**
+Wenn das Programm läuft, wird ``num`` als achtbitige Binärzahl in den 74HC595-Chip geschrieben, um das Ein- und Ausschalten der 8 LEDs zu steuern.
+Den aktuellen Wert von ``num`` können wir im Shell-Fenster einsehen.
 
-``hc595_shift()`` will make 74HC595 output 8 digital signals. It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number “00000001” will make Q0 output high level and Q1~Q7 output low level.
+**Wie funktioniert es?**
+
+Die Funktion ``hc595_shift()`` bewirkt, dass der 74HC595 acht digitale Signale ausgibt. Dabei wird das letzte Bit der Binärzahl an Q0 und das erste Bit an Q7 ausgegeben. Mit anderen Worten: Schreibt man die Binärzahl „00000001“, so gibt Q0 ein hohes Signal aus, während Q1 bis Q7 ein niedriges Signal ausgeben.

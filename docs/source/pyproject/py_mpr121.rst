@@ -1,47 +1,46 @@
 .. _py_mpr121:
 
-4.3 Electrode Keyboard
+4.3 Elektroden-Tastatur
 ================================
 
-The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
-If you connect the electrodes to a banana, you can turn the banana into a touch switch.
+Der MPR121 ist eine hervorragende Option, wenn Sie eine Vielzahl von Berührungsschaltern in Ihr Projekt integrieren möchten. Er verfügt über Elektroden, die mit Leitern erweitert werden können. 
+Wenn Sie die Elektroden an einer Banane befestigen, können Sie diese in einen Berührungsschalter verwandeln.
 
 * :ref:`cpn_mpr121`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist durchaus praktisch, gleich ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - ARTIKEL IM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Komponenten auch einzeln über die unten stehenden Links beziehen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -50,19 +49,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpr121`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_mpr121|
 
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_mpr121|
 
@@ -70,14 +68,13 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``4.3_electrode_keyboard.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``4.3_electrode_keyboard.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Anschließend klicken Sie auf "Aktuelles Skript ausführen" oder drücken einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
+    * Sie benötigen die Bibliothek ``mpr121.py``. Prüfen Sie, ob diese bereits auf dem Pico W hochgeladen wurde. Eine ausführliche Anleitung finden Sie unter :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -88,26 +85,26 @@ You can also buy them separately from the links below.
     i2c = I2C(1, sda=Pin(6), scl=Pin(7))
     mpr = MPR121(i2c)
 
-    # check all keys
+    # Überprüfen aller Tasten
     while True:
         value = mpr.get_all_states()
         if len(value) != 0:
             print(value)
         time.sleep_ms(100)
 
-After the program runs, you can touch the twelve electrodes on the MPR121 with your hand and the touched electrodes will be printed out.
+Nachdem das Programm ausgeführt wurde, können Sie die zwölf Elektroden am MPR121 berühren, und die berührten Elektroden werden ausgegeben.
 
-You can extend the electrodes to connect other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
+Sie können die Elektroden erweitern, um andere Leiter wie Obst, Draht, Folie usw. anzuschließen. Dies eröffnet Ihnen weitere Möglichkeiten zur Auslösung dieser Elektroden.
 
-**How it works?**
+**Funktionsweise?**
 
-In the mpr121 library, we have integrated the functionality into the ``MPR121`` class.
+In der mpr121-Bibliothek haben wir die Funktionalität in die Klasse ``MPR121`` integriert.
 
 .. code-block:: python
 
     from mpr121 import MPR121
 
-MPR121 is an I2C module that requires a set of I2C pins to be defined to initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values. If the electrodes are extended, the example needs to be rerun to reset the initial values.
+Der MPR121 ist ein I2C-Modul, für dessen Initialisierung ein Satz I2C-Pins definiert werden muss. Zu diesem Zeitpunkt werden die Anfangszustände der Elektroden des Moduls aufgezeichnet. Falls die Elektroden erweitert werden, muss das Beispiel erneut ausgeführt werden, um die Anfangswerte zurückzusetzen.
 
 .. code-block:: python
 
@@ -115,10 +112,9 @@ MPR121 is an I2C module that requires a set of I2C pins to be defined to initial
     i2c = I2C(1, sda=Pin(6), scl=Pin(7))
     mpr = MPR121(i2c)
 
-* `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
+* `Inter-Integrated Circuit - Wikipedia <https://de.wikipedia.org/wiki/I%C2%B2C>`_
 
-Then use ``mpr.get_all_states()`` to read if the electrodes are triggered. If electrodes 2 and 3 are triggered, the value ``[2, 3]`` will be generated.
-
+Verwenden Sie dann ``mpr.get_all_states()`` um zu lesen, ob die Elektroden ausgelöst werden. Wenn die Elektroden 2 und 3 ausgelöst werden, wird der Wert ``[2, 3]`` erzeugt.
 
 .. code-block::
 
@@ -128,7 +124,7 @@ Then use ``mpr.get_all_states()`` to read if the electrodes are triggered. If el
             print(value)
         time.sleep_ms(100)
 
-You can also use ``mpr.is_touched(electrode)`` to detect a specific electrode. When triggered, it returns ``True``, otherwise it returns ``False``.
+Sie können auch ``mpr.is_touched(electrode)`` verwenden, um eine bestimmte Elektrode zu überprüfen. Wenn sie ausgelöst wird, gibt die Methode ``True`` zurück, andernfalls ``False``.
 
 .. code-block:: python
 

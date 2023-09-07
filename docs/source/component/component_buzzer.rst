@@ -1,46 +1,44 @@
 .. _cpn_buzzer:
 
-Buzzer
+Summer
 =======
 
+Als eine Art von elektronischem Summer mit integrierter Struktur, die von Gleichstrom versorgt werden, finden Summer weitreichende Anwendung in Computern, Druckern, Kopierern, Alarmanlagen, elektronischem Spielzeug, Kfz-Elektronik, Telefonen, Zeitgebern und anderen elektronischen Produkten oder stimmlichen Geräten.
 
-As a type of electronic buzzer with an integrated structure, buzzers, which are supplied by DC power, are widely used in computers, printers, photocopiers, alarms, electronic toys, automotive electronic devices, telephones, timers and other electronic products or voice devices. 
-
-Buzzers can be categorized as active and passive ones (see the following picture). Turn the buzzer so that its pins are facing up, and the buzzer with a green circuit board is a passive buzzer, while the one enclosed with a black tape is an active one.
-
+Summer lassen sich in aktive und passive Modelle unterteilen (siehe nachstehendes Bild). Wenn die Anschlusspins des Summers nach oben zeigen, ist der Summer mit einer grünen Platine ein passiver Summer, während der mit schwarzem Klebeband umwickelte ein aktiver Summer ist.
 
 |img_buzzer|
 
-The difference between an active buzzer and a passive buzzer: 
+Unterschied zwischen einem aktiven und einem passiven Summer:
 
-An active buzzer has a built-in oscillating source, so it will make sounds when electrified. But a passive buzzer does not have such source, so it will not beep if DC signals are used; instead, you need to use square waves whose frequency is between 2K and 5K to drive it. The active buzzer is often more expensive than the passive one because of multiple built-in oscillating circuits.
+Ein aktiver Summer verfügt über eine integrierte Oszillationsquelle und gibt beim Anlegen einer Spannung einen Ton ab. Ein passiver Summer hingegen besitzt keine solche Quelle und kann daher nicht mit Gleichstromsignalen betrieben werden; stattdessen müssen Sie ihn mit Rechteckwellen antreiben, deren Frequenz zwischen 2K und 5K liegt. Aktive Summer sind aufgrund der mehreren integrierten Oszillationskreise meist teurer als passive.
 
-The following is the electrical symbol of a buzzer. It has two pins with positive and negative poles. With a + in the surface represents the anode and the other is the cathode. 
+Im Folgenden ist das elektrische Symbol eines Summers dargestellt. Er besitzt zwei Anschlusspins für den positiven und den negativen Pol. Ein Pluszeichen auf der Oberfläche kennzeichnet die Anode, der andere Pin ist die Kathode.
 
 |img_buzzer_symbol|
 
-You can check the pins of the buzzer, the longer one is the anode and the shorter one is the cathode. Please don't mix them up when connecting, otherwise the buzzer will not make sound. 
+An den Pins des Summers können Sie erkennen, dass der längere der Anodenanschluss und der kürzere der Kathodenanschluss ist. Bitte verwechseln Sie diese nicht beim Anschließen, da sonst der Summer keinen Ton abgibt.
 
-`Buzzer - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
+`Summer - Wikipedia <https://de.wikipedia.org/wiki/Summer_(Elektrik)>`_
 
-.. Example
+.. Beispiel
 .. -------------------
 
-.. :ref:`Intruder Alarm`
+.. :ref:`Einbruchsalarm`
 
-.. :ref:`Custom Tone`
+.. :ref:`Individueller Ton`
 
-**Example**
+**Beispiel**
 
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_ac_buz` (Für MicroPython-Nutzer)
+* :ref:`py_pa_buz` (Für MicroPython-Nutzer)
+* :ref:`py_light_theremin` (Für MicroPython-Nutzer)
+* :ref:`py_alarm_lamp` (Für MicroPython-Nutzer)
+* :ref:`py_music_player` (Für MicroPython-Nutzer)
+* :ref:`py_fruit_piano` (Für MicroPython-Nutzer)
+* :ref:`py_reversing_aid` (Für MicroPython-Nutzer)
+* :ref:`ar_ac_buz` (Für Arduino-Nutzer)
+* :ref:`ar_pa_buz` (Für Arduino-Nutzer)
+* :ref:`per_service_bell` (Für Piper Make-Nutzer)
+* :ref:`per_reversing_system` (Für Piper Make-Nutzer)
+* :ref:`per_reaction_game` (Für Piper Make-Nutzer)

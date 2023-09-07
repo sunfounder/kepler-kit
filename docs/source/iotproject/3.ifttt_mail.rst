@@ -1,38 +1,37 @@
-3. Security System via @IFTTT
+3. Sicherheitssystem über @IFTTT
 ============================================
-With this project, we make a security device that uses a PIR Sensor to detect when a burglar or stray animal breaks into your home. You will receive an email alert if this is the case.
+Mit diesem Projekt erstellen wir ein Sicherheitsgerät, das mithilfe eines PIR-Sensors erkennt, wenn ein Einbrecher oder ein streunendes Tier in Ihr Zuhause eindringt. In diesem Fall erhalten Sie eine E-Mail-Benachrichtigung.
 
-Webhook will be used as the most basic service.
-A POST request is sent to IFTTT's service from Raspberry Pi Pico W.
-Using IFTTT, we will create an Applet to intercept the webhook and send an email.
+Webhook wird als grundlegendster Dienst verwendet.
+Ein POST-Request wird von Raspberry Pi Pico W an den IFTTT-Dienst gesendet.
+Mit IFTTT erstellen wir ein Applet, das den Webhook abfängt und eine E-Mail sendet.
 
-**1. Required Components**
+**1. Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplett-Set ist definitiv praktisch, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - ARTIKEL IM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Bauteile auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -40,7 +39,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -49,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -72,11 +71,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 10
-        - 18650 Battery
+        - 18650-Batterie
         - 1
         -  
     *   - 11
-        - Battery Holder
+        - Batteriehalter
         - 1
         -  
     *   - 12
@@ -84,139 +83,139 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**2. Build the Circuit**
+**2. Schaltkreis aufbauen**
 
 .. warning:: 
         
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    Achten Sie darauf, dass Ihr Li-Po-Ladegerät wie im Schaltplan dargestellt angeschlossen ist. Andernfalls kann ein Kurzschluss sowohl Ihre Batterie als auch Ihre Schaltung beschädigen.
 
 .. image:: img/wiring/3.ifttt_mail_bb.png
     :width: 800
 
 
-**3. SET IFTTT**
+**3. IFTTT-Einrichtung**
 
-IFTTT is a free service that provides a variety of ways to connect different data services together.
+IFTTT ist ein kostenloser Dienst, der vielfältige Möglichkeiten bietet, unterschiedliche Datendienste miteinander zu verknüpfen.
 
-We'll create an Applet that reacts to a webhook (custom URL) that sends data to IFTTT.
-IFTTT will then send an email for you.
+Wir erstellen ein Applet, das auf einen Webhook (benutzerdefinierte URL) reagiert und Daten an IFTTT sendet.
+Im Anschluss wird Ihnen von IFTTT eine E-Mail geschickt.
 
-Please follow the steps below on IFTTT.
+Bitte folgen Sie den unten stehenden Schritten auf IFTTT.
 
-1. Visit |link_ifttt| to log in or create an account.
+1. Besuchen Sie |link_ifttt|, um sich einzuloggen oder ein Konto zu erstellen.
 
     .. image:: img/ifttt-1.png
         :width: 500
 
-2. Click on **Create**.
+2. Klicken Sie auf **Erstellen**.
 
     .. image:: img/ifttt-2.png
         :width: 500
 
-3. Add an **If This** event.
+3. Fügen Sie ein **Wenn das** Ereignis hinzu.
 
     .. image:: img/ifttt-3.png
         :width: 500
 
-4. Search for **Webhooks**.
+4. Suchen Sie nach **Webhooks**.
 
     .. image:: img/ifttt-4.png
         :width: 500
 
-5. Tap **Receive a web request**.
+5. Wählen Sie **Web-Anforderung empfangen** aus.
 
     .. image:: img/ifttt-5.png
         :width: 500
 
-6. Fill in the event name (e.g. SecurityWarning), and click **Create trigger**.
+6. Tragen Sie den Ereignisnamen ein (z.B. Sicherheitswarnung) und klicken Sie auf **Trigger erstellen**.
 
     .. image:: img/ifttt-6.png
         :width: 500
 
-7. Add a **Then That** event.
+7. Fügen Sie ein **Dann das** Ereignis hinzu.
 
     .. image:: img/ifttt-7.png
         :width: 500
 
-8. Search for Email.
+8. Suchen Sie nach E-Mail.
 
     .. image:: img/ifttt-8.png
         :width: 500
 
-9. Click **Send me an email**.
+9. Klicken Sie auf **Mir eine E-Mail senden**.
 
     .. image:: img/ifttt-9.png
         :width: 500
 
-10. Fill in **Subject** and **Body**, then click on **Create action**.
+10. Füllen Sie **Betreff** und **Inhalt** aus und klicken Sie dann auf **Aktion erstellen**.
 
     .. image:: img/ifttt-10.png
         :width: 500
 
-11. Click **Continue** to complete the configuration.
+11. Klicken Sie auf **Weiter**, um die Konfiguration abzuschließen.
 
     .. image:: img/ifttt-11.png
         :width: 500
 
-12. Modify the title name and you're finished.
+12. Ändern Sie den Titelnamen und schon sind Sie fertig.
 
     .. image:: img/ifttt-12.png
         :width: 500
 
-13. Now you will be automatically redirected to the Applet details page, where you can see that the Applet is currently connected and you can toggle the switch to start/close it.
+13. Sie werden automatisch zur Detailseite des Applets weitergeleitet, wo Sie sehen können, dass das Applet derzeit verbunden ist. Hier können Sie den Schalter umlegen, um es zu starten bzw. zu stoppen.
 
     .. image:: img/ifttt-13.png
         :width: 500
 
 
-**4. Run the Script**
+**4. Ausführung des Skripts**
 
-#. Now that we have created the IFTTT Applet, but we also need the API Key which can be obtained from the |link_webhooks| to allow Pico W to access IFTTT.
+#. Jetzt, wo wir das IFTTT-Applet erstellt haben, benötigen wir noch den API-Schlüssel, den Sie von |link_webhooks| beziehen können, um den Zugang des Pico W zu IFTTT zu ermöglichen.
 
     .. image:: img/ifttt-14.png
         :width: 500
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico W.
+#. Kopieren Sie diesen in das ``secrets.py`` Skript auf Ihrem Raspberry Pi Pico W.
 
     .. image:: img/3_ifttt4.png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+        Falls die Skripte ``do_connect.py`` und ``secrets.py`` noch nicht auf Ihrem Pico W vorhanden sind, entnehmen Sie bitte :ref:`iot_access`, wie diese erstellt werden können.
 
     .. code-block:: python
         :emphasize-lines: 4
 
         secrets = {
         'ssid': 'SSID',
-        'password': 'PASSWORD',
+        'password': 'PASSWORT',
         'webhooks_key':'WEBHOOKS_API_KEY'
         }
 
-#. Open the ``3_ifttt_mail.py`` file under the path of ``kepler-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
+#. Öffnen Sie die Datei ``3_ifttt_mail.py`` im Verzeichnis ``kepler-kit-main/iot`` und wählen Sie dann **Datei** -> **Speichern unter** oder drücken Sie ``Strg+Umschalt+S``.
 
     .. image:: img/3_ifttt1.png
 
-#. Select **Raspberry Pi Pico** in the popup window that appears.
+#. Wählen Sie im erscheinenden Popup-Fenster **Raspberry Pi Pico** aus.
 
     .. image:: img/3_ifttt2.png
 
-#. Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico W.
+#. Benennen Sie die Datei als ``main.py`` um. Eine Aufforderung erscheint, falls bereits eine gleichnamige Datei auf Ihrem Pico W existiert.
 
     .. image:: img/3_ifttt3.png
 
-#. You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico W. You will hear a buzzer tick when the script is running. The buzzer will keep sounding if the PIR module detects a person/creature passing by, and an email alert will be sent to you. The script can be restarted by pressing the button.
+#. Nun können Sie das USB-Kabel entfernen und den Raspberry Pi Pico W über das Li-Po-Ladegerät mit Strom versorgen. Sobald das Skript läuft, ertönt ein akustisches Signal. Der Signalton setzt sich fort, wenn das PIR-Modul eine vorbeigehende Person oder ein Tier erkennt, und eine E-Mail-Warnung wird an Sie gesendet. Durch Betätigen der Taste kann das Skript neu gestartet werden.
 
-**How it works?**
+**So funktioniert es**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Der Raspberry Pi Pico W muss, wie in :ref:`iot_access` beschrieben, mit dem Internet verbunden sein. Für dieses Projekt reicht das aus.
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Reads data from the PIR module and calls the ``motion_detected()`` function if it detects someone passing by (data from 0 to 1).
+Liest Daten vom PIR-Modul und ruft die Funktion ``motion_detected()`` auf, wenn es jemanden vorbeigehen bemerkt (Daten von 0 bis 1).
 
 .. code-block:: python
 
@@ -226,9 +225,7 @@ Reads data from the PIR module and calls the ``motion_detected()`` function if i
 
     sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-Next the Pico W sends data to IFTTT. As you can see, the ``message`` that you send to IFTTT is a url string.
-IFTTT identifies the sender by ``secrets['webhooks_key']``, the triggered event is identified by ``event``.
-So, make sure they are correct.
+Als Nächstes sendet der Pico W Daten an IFTTT. Wie Sie sehen können, ist die ``message``, die Sie an IFTTT senden, eine URL-Zeichenfolge. IFTTT identifiziert den Absender über ``secrets['webhooks_key']``, das ausgelöste Ereignis wird durch ``event`` identifiziert. Stellen Sie also sicher, dass diese korrekt sind.
 
 .. code-block:: python
 
@@ -245,7 +242,7 @@ So, make sure they are correct.
         warn_flag=True
         sensor.irq(handler=None)
 
-When ``motion_detected()`` is called, the variable ``warn_flag`` is set to ``True``, causing the buzzer to keep going.
+Wenn ``motion_detected()`` aufgerufen wird, wird die Variable ``warn_flag`` auf ``True`` gesetzt, was dazu führt, dass der Signalton weitergeht.
 
 .. code-block:: python
 
@@ -254,7 +251,7 @@ When ``motion_detected()`` is called, the variable ``warn_flag`` is set to ``Tru
             alarm.toggle()
             time.sleep_ms(50)
 
-The purpose of the button here is to restart the script.
+Der Button dient hier zum Neustart des Skripts.
 
 .. code-block:: python
 

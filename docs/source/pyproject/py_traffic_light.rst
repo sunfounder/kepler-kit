@@ -1,48 +1,44 @@
 .. _py_traffic_light:
 
-
-7.6 Traffic Light
+7.6 Ampel
 =================================
 
+Eine `Ampel <https://de.wikipedia.org/wiki/Ampel>`_ ist ein Signalgerät, das an Straßenkreuzungen, Fußgängerüberwegen und anderen Orten aufgestellt ist, um den Verkehrsfluss zu steuern.
 
-`Traffic Light <https://en.wikipedia.org/wiki/Traffic_light>`_ is a signal device located at roadway intersections, crosswalks and other locations to control the flow of traffic.
+Ampeln werden durch die `Wiener Übereinkommen über Straßenverkehrszeichen <https://de.wikipedia.org/wiki/Wiener_%C3%9Cbereinkommen_%C3%BCber_Stra%C3%9Fenverkehrszeichen>`_ standardisiert und geben den Verkehrsteilnehmern durch abwechselndes Leuchten von LEDs in drei Standardfarben das Recht auf Vorfahrt.
 
-Traffic signals are standardized by the `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_.
-Provides users with the right-of-way by alternating LEDs in three standard colors.
+* **Rotes Licht**: Bei einem blinkenden roten Licht muss der Verkehr anhalten, vergleichbar mit einem Stoppschild.
+* **Gelbes Licht**: Ein Warnsignal, dass das Licht bald auf Rot umschaltet. Gelbe Lichter werden in verschiedenen Ländern (Regionen) unterschiedlich interpretiert.
+* **Grünes Licht**: Erlaubt es dem Verkehr, in die angezeigte Richtung zu fahren.
 
-* **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
-* **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).
-* **Green light**: Allows traffic to move in the indicated direction.
+In diesem Projekt werden wir drei Farben von LEDs verwenden, um die Ampelphasen darzustellen, sowie eine 4-stellige 7-Segment-Anzeige, um die Dauer jeder Verkehrsphase anzuzeigen.
 
-In this project, we will use three colors of LEDs to implement traffic light changes and a 4-digit 7-segment display to show the time of each traffic state.
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM SET
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Einzelteile auch über die unten stehenden Links separat erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -50,7 +46,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -59,11 +55,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 7(220Ω)
+        - 7 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -78,31 +74,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-
-**Schematic**
-
+**Schaltplan**
 
 |sch_traffic_light|
 
+* Diese Schaltung basiert auf dem :ref:`py_74hc_4dig`, ergänzt durch 3 LEDs.
+* Die 3 roten, gelben und grünen LEDs sind jeweils an GP7~GP9 angeschlossen.
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of 3 LEDs.
-* The 3 red, yellow and green LEDs are connected to GP7~GP9 respectively.
+**Verkabelung**
 
-**Wiring**
-
-
-|wiring_traffic_light| 
+|wiring_traffic_light|
 
 
 **Code**
 
 .. note::
 
-    * Open the ``7.6_traffic_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.6_traffic_light.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie anschließend auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Eck den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -193,4 +185,4 @@ You can also buy them separately from the links below.
         display(counter)
         lightup(color_state)
 
-When the code runs, the green LED stays on for 30 seconds, the yellow LED stays on for 5 seconds, and the green LED stays on for 30 seconds.
+Wenn der Code ausgeführt wird, leuchtet die grüne LED für 30 Sekunden, die gelbe LED für 5 Sekunden und die rote LED für 30 Sekunden.

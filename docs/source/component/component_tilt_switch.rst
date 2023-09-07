@@ -1,24 +1,23 @@
 .. _cpn_tilt:
 
-Tilt Switch
+Neigungsschalter
 =============================
 
 |img_tilt| 
 
-The tilt switch used here is a ball one with a metal ball inside. It is used to detect inclinations of a small angle.
+Der hier verwendete Neigungsschalter ist ein Kugeltyp mit einer Metallkugel im Inneren. Er dient zur Erfassung kleiner Neigungswinkel.
 
-The principle is very simple. When the switch is tilted in a certain angle, the ball inside rolls down and touches the two contacts connected to the pins outside, thus triggering circuits. Otherwise the ball will stay away from the contacts, thus breaking the circuits.
+Das Funktionsprinzip ist denkbar einfach. Wenn der Schalter in einem bestimmten Winkel geneigt wird, rollt die innenliegende Kugel herunter und berührt die beiden an die äußeren Pins angeschlossenen Kontakte, wodurch der Schaltkreis ausgelöst wird. Wird der Schalter nicht geneigt, bleibt die Kugel von den Kontakten entfernt und der Schaltkreis wird unterbrochen.
 
 |img_tilt_symbol|
 
-* `SW520D Tilt Switch Datasheet <https://www.tme.com/Document/f1e6cedd8cb7feeb250b353b6213ec6c/SW-520D.pdf>`_
+* `SW520D Neigungsschalter Datenblatt <https://www.tme.com/Document/f1e6cedd8cb7feeb250b353b6213ec6c/SW-520D.pdf>`_
 
-.. * :ref:`Reading Button Value`
+.. * :ref:`Tastenwert auslesen`
 
+**Beispiel**
 
-**Example**
-
-* :ref:`py_tilt` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`ar_tilt` (For Arduino User)
-* :ref:`per_flowing_leds` (For Piper Make User)
+* :ref:`py_tilt` (Für MicroPython-Nutzer)
+* :ref:`py_10_second` (Für MicroPython-Nutzer)
+* :ref:`ar_tilt` (Für Arduino-Nutzer)
+* :ref:`per_flowing_leds` (Für Piper Make-Nutzer)

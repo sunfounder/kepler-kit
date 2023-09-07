@@ -1,73 +1,71 @@
-For Loops
+For-Schleifen
 ============
 
-The `for` loop can traverse any sequence of items, such as a list or a string.
+Die ``for``-Schleife kann über jede Sequenz von Elementen iterieren, beispielsweise über eine Liste oder einen String.
 
-The syntax format of for loop is as follows:
+Die Syntax einer ``for``-Schleife ist wie folgt:
 
 .. code-block:: python
 
-    for val in sequence:
-        Body of for
+    for val in sequenz:
+        Schleifenkörper
 
+Hierbei ist ``val`` eine Variable, die in jeder Iteration den Wert des Elements aus der Sequenz annimmt.
 
-Here, `val` is a variable that gets the value of the item in the sequence in each iteration.
+Die Schleife wird solange ausgeführt, bis das letzte Element der Sequenz erreicht ist. Durch Einrückung wird der Schleifenkörper vom restlichen Code abgegrenzt.
 
-The loop continues until we reach the last item in the sequence. Use indentation to separate the body of the `for` loop from the rest of the code.
-
-**Flowchart of for Loop**
+**Flussdiagramm der for-Schleife**
 
 .. image:: img/for_loop.png
 
 
 
-
 .. code-block:: python
 
-    numbers = [1, 2, 3, 4]
-    sum = 0
+    zahlen = [1, 2, 3, 4]
+    summe = 0
 
-    for val in numbers:
-        sum = sum+val
+    for val in zahlen:
+        summe = summe+val
         
-    print("The sum is", sum)
+    print("Die Summe beträgt", summe)
 
 >>> %Run -c $EDITOR_CONTENT
-The sum is 10
+Die Summe beträgt 10
 
-The break Statement
+Die break-Anweisung
 -------------------------
 
-With the break statement we can stop the loop before it has looped through all the items:
+Mit der ``break``-Anweisung kann die Schleife beendet werden, bevor alle Elemente durchlaufen wurden:
 
 
 
 .. code-block:: python
 
-    numbers = [1, 2, 3, 4]
-    sum = 0
+    zahlen = [1, 2, 3, 4]
+    summe = 0
 
-    for val in numbers:
-        sum = sum+val
-        if sum == 6:
+    for val in zahlen:
+        summe = summe+val
+        if summe == 6:
             break
-    print("The sum is", sum)
+    print("Die Summe beträgt", summe)
 
 >>> %Run -c $EDITOR_CONTENT
-The sum is 6
+Die Summe beträgt 6
 
-The continue Statement
+Die continue-Anweisung
 --------------------------------------------
 
-With the `continue` statement we can stop the current iteration of the loop, and continue with the next:
+Mit der ``continue``-Anweisung kann die aktuelle Iteration der Schleife beendet und mit der nächsten fortgefahren werden:
 
 
 
 .. code-block:: python
 
-    numbers = [1, 2, 3, 4]
+    zahlen = [1, 2, 3, 4]
 
-    for val in numbers:
+    for val in zahlen:
         if val == 3:
             continue
         print(val)
@@ -77,18 +75,18 @@ With the `continue` statement we can stop the current iteration of the loop, and
 2
 4
 
-The range() function
+Die range()-Funktion
 --------------------------------------------
 
-We can use the range() function to generate a sequence of numbers. range(6) will produce numbers between 0 and 5 (6 numbers).
+Mit der ``range()``-Funktion kann eine Zahlenreihe erzeugt werden. ``range(6)`` erzeugt Zahlen von 0 bis 5 (6 Zahlen insgesamt).
 
-We can also define start, stop and step size as range(start, stop, step_size). If not provided, step_size defaults to 1.
+Man kann auch Start, Ende und Schrittgröße definieren: ``range(start, stop, step_size)``. Wenn nicht angegeben, wird die Schrittgröße standardmäßig auf 1 gesetzt.
 
-In a sense of range, the object is "lazy" because when we create the object, it does not generate every number it "contains". However, this is not an iterator because it supports in, len and __getitem__ operations.
+In gewissem Sinne ist das von ``range`` zurückgegebene Objekt "faul", da es bei seiner Erstellung nicht jede darin enthaltene Zahl generiert. Es ist jedoch kein Iterator, da es die Operationen in, len und ``__getitem__`` unterstützt.
 
-This function will not store all values ​​in memory; it will be inefficient. So it will remember the start, stop, step size and generate the next number during the journey.
+Diese Funktion speichert nicht alle Werte im Speicher; das wäre ineffizient. Sie speichert nur Start, Ende und Schrittgröße und generiert die nächste Zahl bei Bedarf.
 
-To force this function to output all items, we can use the function list().
+Um diese Funktion zu zwingen, alle Elemente auszugeben, kann man die ``list()``-Funktion verwenden.
 
 
 
@@ -108,31 +106,30 @@ range(0, 6)
 [2, 3, 4, 5]
 [2, 4, 6, 8]
 
-
-We can use `range()` in a `for` loop to iterate over a sequence of numbers. It can be combined with the len() function to use the index to traverse the sequence.
+Man kann ``range()`` in einer ``for``-Schleife verwenden, um über eine Zahlenreihe zu iterieren. Das kann in Kombination mit der ``len()``-Funktion genutzt werden, um mit dem Index über eine Sequenz zu iterieren.
 
 
 
 .. code-block:: python
 
-    fruits = ['pear', 'apple', 'grape']
+    früchte = ['Birne', 'Apfel', 'Traube']
 
-    for i in range(len(fruits)):
-        print("I like", fruits[i])
+    for i in range(len(früchte)):
+        print("Ich mag", früchte[i])
         
 >>> %Run -c $EDITOR_CONTENT
-I like pear
-I like apple
-I like grape
+Ich mag Birne
+Ich mag Apfel
+Ich mag Traube
 
-Else in For Loop
+Else in For-Schleife
 --------------------------------
 
-The `for` loop can also have an optional `else` block. If the items in the sequence used for the loop are exhausted, the `else` part is executed.
+Die ``for``-Schleife kann auch einen optionalen ``else``-Block haben. Wenn die Elemente der für die Schleife verwendeten Sequenz aufgebraucht sind, wird der ``else``-Teil ausgeführt.
 
-The `break` keyword can be used to stop the `for` loop. In this case, the `else` part will be ignored.
+Das ``break``-Schlüsselwort kann verwendet werden, um die ``for``-Schleife zu beenden. In diesem Fall wird der ``else``-Teil ignoriert.
 
-Therefore, if no interruption occurs, the `else` part of the `for` loop will run.
+Daher wird der ``else``-Teil der ``for``-Schleife ausgeführt, wenn kein Abbruch erfolgt.
 
 
 
@@ -141,7 +138,7 @@ Therefore, if no interruption occurs, the `else` part of the `for` loop will run
     for val in range(5):
         print(val)
     else:
-        print("Finished")
+        print("Fertig")
 
 >>> %Run -c $EDITOR_CONTENT
 0
@@ -149,20 +146,19 @@ Therefore, if no interruption occurs, the `else` part of the `for` loop will run
 2
 3
 4
-Finished
+Fertig
 
-The else block will NOT be executed if the loop is stopped by a break statement.
+Der Else-Block wird NICHT ausgeführt, wenn die Schleife durch eine ``break``-Anweisung gestoppt wird.
 
 
 
 .. code-block:: python
 
-
     for val in range(5):
         if val == 2: break
         print(val)
     else:
-        print("Finished")
+        print("Fertig")
 
 >>> %Run -c $EDITOR_CONTENT
 0

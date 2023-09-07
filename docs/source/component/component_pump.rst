@@ -1,33 +1,31 @@
 .. _cpn_pump:
 
-DC Water Pump
+DC-Wasserpumpe
 ================
 
 |img_pump|
 
-This pump essentially functions as a DC motor, operating at a voltage of 3V and a current of 100mA. Upon powering, the pump draws water in from the bottom of its plastic casing and expels it from the outlet pipe. It must always be kept immersed in water to function properly. Reversing the polarity won't turn it into a water intake device; it will only pump water out!
+Diese Pumpe funktioniert im Grunde genommen wie ein Gleichstrommotor, betrieben mit einer Spannung von 3V und einem Strom von 100mA. Sobald sie eingeschaltet ist, saugt die Pumpe Wasser über das untere Ende ihres Kunststoffgehäuses an und drückt es durch das Auslassrohr hinaus. Sie muss stets vollständig im Wasser eingetaucht sein, um korrekt zu arbeiten. Eine Umkehrung der Polarität führt nicht dazu, dass sie als Wassereinzugsgerät fungiert; sie pumpt weiterhin nur Wasser aus!
 
-It's highly suitable for beginners to create a fountain or plant watering project using this submersible pump, as it is incredibly user-friendly!
+Diese Tauchpumpe eignet sich hervorragend für Anfänger, die ein Springbrunnen- oder Pflanzenbewässerungsprojekt realisieren möchten, da sie extrem benutzerfreundlich ist.
 
+**Funktionen**
 
-**Features**
+* **Spannungsbereich**: DC 3 ~ 4,5V
+* **Betriebsstrom**: 120 ~ 180mA
+* **Leistung**: 0,36 ~ 0,91W
+* **Maximale Förderhöhe**: 0,35 ~ 0,55M
+* **Maximale Durchflussrate**: 80 ~ 100 L/H
+* **Kontinuierliche Betriebsdauer**: 100 Stunden
+* **Wasserdichtheitsklasse**: IP68
+* **Antriebsart**: DC, magnetischer Antrieb
+* **Material**: Technischer Kunststoff
+* **Außendurchmesser des Auslasses**: 7,8 mm
+* **Innendurchmesser des Auslasses**: 6,5 mm
+* Es handelt sich um eine Tauchpumpe, die auch so verwendet werden sollte. Bei ungetauchtem Betrieb besteht Überhitzungsgefahr.
+* Sie ist mit einem 25 cm langen Steckdraht ausgestattet, der sich einfach in ein Steckbrett einsetzen lässt.
 
-* **Voltage Scope**: DC 3 ~ 4.5V
-* **Operating Current**: 120 ~ 180mA
-* **Power**: 0.36 ~ 0.91W
-* **Max Water Head**: 0.35 ~ 0.55M
-* **Max Flow Rate**: 80 ~ 100 L/H
-* **Continuous Working Life**: 100 hours
-* **Water Fing Grade**: IP68
-* **Driving Mode**: DC, Magnetic Driving
-* **Material**: Engineering Plastic
-* **Outlet Outside Diameter**: 7.8 mm
-* **Outlet Inside Diameter**: 6.5 mm
-* It is a submersible pump and should be used that way. It tends to heat too much that there's a risk of overheating if you turn it on unsubmerged.
-* It comes with a 25cm male wire, allowing for easy insertion into a breadboard.
+**Beispiel**
 
-
-**Example**
-
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
+* :ref:`py_pump` (Für MicroPython-Nutzer)
+* :ref:`ar_pump` (Für Arduino-Nutzer)

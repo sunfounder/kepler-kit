@@ -5,41 +5,41 @@ LED
 
 |img_led|
 
-Semiconductor light-emitting diode is a type of component which can turn electric energy into light energy via PN junctions. By wavelength, it can be categorized into laser diode, infrared light-emitting diode and visible light-emitting diode which is usually known as light-emitting diode (LED). 
-                    
-Diode has unidirectional conductivity, so the current flow will be as the arrow indicates in figure circuit symbol. You can only provide the anode with a positive power and the cathode with a negative. Thus the LED will light up. 
+Halbleiterlichtemittierende Dioden sind Bauteile, die elektrische Energie durch PN-Übergänge in Lichtenergie umwandeln können. Je nach Wellenlänge können sie in Laserdioden, infrarotemittierende Dioden und sichtbare lichtemittierende Dioden eingeteilt werden, wobei die letztere allgemein als lichtemittierende Diode (LED) bekannt ist.
+
+Dioden haben eine unidirektionale Leitfähigkeit, sodass der Stromfluss so verläuft, wie im Schaltzeichensymbol durch den Pfeil angezeigt wird. Das Anodenende sollte positiv und das Kathodenende negativ polarisiert werden. Dann leuchtet die LED.
 
 |img_led_symbol|
 
-An LED has two pins. The longer one is the anode, and shorter one, the cathode. Pay attention not to connect them inversely. There is fixed forward voltage drop in the LED, so it cannot be connected with the circuit directly because the supply voltage can outweigh this drop and cause the LED to be burnt. The forward voltage of the red, yellow, and green LED is 1.8 V and that of the white one is 2.6 V. Most LEDs can withstand a maximum current of 20 mA, so we need to connect a current limiting resistor in series.                   
+Eine LED hat zwei Anschlüsse. Der längere ist die Anode und der kürzere die Kathode. Achten Sie darauf, sie nicht umgekehrt anzuschließen. LEDs haben eine festgelegte Vorwärtsspannung. Sie können nicht direkt an eine Schaltung angeschlossen werden, da die Versorgungsspannung diese Vorwärtsspannung übersteigen und die LED beschädigen könnte. Die Vorwärtsspannung von roten, gelben und grünen LEDs beträgt 1,8 V, während die von weißen LEDs 2,6 V beträgt. Die meisten LEDs können einen maximalen Strom von 20 mA vertragen, daher sollte ein strombegrenzender Widerstand in Reihe geschaltet werden.
 
-The formula of the resistance value is as follows:
+Die Formel für den Widerstandswert lautet:
 
     R = (Vsupply – VD)/I
 
-**R** stands for the resistance value of the current limiting resistor, **Vsupply** for voltage supply, **VD** for voltage drop and **I** for the working current of the LED.
+Dabei steht **R** für den Widerstandswert des strombegrenzenden Widerstands, **Vsupply** für die Versorgungsspannung, **VD** für den Spannungsabfall und **I** für den Arbeitsstrom der LED.
 
-Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
+Hier finden Sie eine detaillierte Einführung in die LED: `LED - Wikipedia <https://de.wikipedia.org/wiki/Leuchtdiode>`_.
 
-.. **Example**
+.. **Beispiel**
 
-.. * :ref:`Hello, Breadboard!` (For MicroPython User)
-.. * :ref:`fading_led_micropython` (For MicroPython User)
-.. * :ref:`fading_led_arduino` (For C/C++(Arduino) User)
-.. * :ref:`hello_led_arduino` (For C/C++(Arduino) User)
+.. * :ref:`Hello, Breadboard!` (Für MicroPython-Nutzer)
+.. * :ref:`fading_led_micropython` (Für MicroPython-Nutzer)
+.. * :ref:`fading_led_arduino` (Für C/C++(Arduino)-Nutzer)
+.. * :ref:`hello_led_arduino` (Für C/C++(Arduino)-Nutzer)
 
+**Beispiel**
 
-**Example**
+* :ref:`py_led` (Für MicroPython-Nutzer)
+* :ref:`py_fade` (Für MicroPython-Nutzer)
+* :ref:`py_alarm_lamp` (Für MicroPython-Nutzer)
+* :ref:`py_traffic_light` (Für MicroPython-Nutzer)
+* :ref:`py_reversing_aid` (Für MicroPython-Nutzer)
+* :ref:`ar_led` (Für Arduino-Nutzer)
+* :ref:`ar_fade` (Für Arduino-Nutzer)
+* :ref:`per_blink` (Für Piper Make-Nutzer)
+* :ref:`per_button` (Für Piper Make-Nutzer)
+* :ref:`per_service_bell` (Für Piper Make-Nutzer)
+* :ref:`per_reversing_system` (Für Piper Make-Nutzer)
+* :ref:`per_reaction_game` (Für Piper Make-Nutzer)
 
-* :ref:`py_led` (For MicroPython User)
-* :ref:`py_fade` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_led` (For Arduino User)
-* :ref:`ar_fade` (For Arduino User)
-* :ref:`per_blink` (For Piper Make User)
-* :ref:`per_button` (For Piper Make User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)

@@ -1,21 +1,22 @@
 .. _cpn_led_bar:
 
-LED Bar Graph
-=============
+LED-Balkendiagramm
+==================
 
 |img_led_bar|
 
-LED Bar Graph is an LED array, which is used to connect with electronic circuit or microcontroller. It's easy to connect LED bar graph with the circuit like as connecting 10 individual LEDs with 10 output pins. Generally we can use the LED bar graph as a Battery level Indicator, Audio equipments, and Industrial Control panels. There are many other applications of LED bar graphs.
+Ein LED-Balkendiagramm ist ein LED-Array, das zur Verbindung mit elektronischen Schaltungen oder Mikrocontrollern verwendet wird. Es ist genauso einfach, ein LED-Balkendiagramm mit der Schaltung zu verbinden, wie 10 einzelne LEDs mit 10 Ausgangspins zu verbinden. In der Regel können LED-Balkendiagramme als Batteriestandsanzeige, in Audiogeräten oder in industriellen Steuerungspanels eingesetzt werden. Darüber hinaus gibt es zahlreiche weitere Anwendungsmöglichkeiten für LED-Balkendiagramme.
 
-The following is the internal schematic diagram of LED Bar Graph. Generally speaking, the side with the label is the anode and the other side is the cathode.
+Im Folgenden ist das interne Schaltbild des LED-Balkendiagramms dargestellt. Allgemein gilt: Die Seite mit der Beschriftung ist die Anode, die gegenüberliegende Seite die Kathode.
 
 |img_led_bar_pin|
 
 |img_led_bar_sche1|
 
 
-**Example**
+**Beispiel**
 
-* :ref:`py_led_bar` (For MicroPython User)
-* :ref:`ar_led_bar` (For Arduino User)
-* :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_led_bar` (Für MicroPython-Nutzer)
+* :ref:`ar_led_bar` (Für Arduino-Nutzer)
+* :ref:`per_light_display` (Für Piper Make-Nutzer)
+

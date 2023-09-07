@@ -1,31 +1,31 @@
 .. _py_slide:
 
-2.7 Toggle Left and Right
+2.7 Nach Links und Rechts Schalten
 ====================================
 
 |img_slide|
 
-The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
+Der Schiebeschalter ist ein Gerät mit drei Anschlüssen, wobei der mittlere Anschluss (Pin 2) der gemeinsame Anschluss ist. Wird der Schalter nach links geschaltet, sind die beiden linken Pins miteinander verbunden. Wird er nach rechts geschaltet, sind die beiden rechten Pins verbunden.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit zu kaufen, ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
+Sie können die Bauteile auch einzeln über die folgenden Links erwerben.
 
 
 .. list-table::
@@ -33,8 +33,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -42,7 +42,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -51,7 +51,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,20 +66,20 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+Bei einer Schaltung nach rechts oder links wird GP14 einen unterschiedlichen Pegel erreichen.
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+Der 10K-Widerstand dient dazu, GP14 während des Umschaltens auf einem niedrigen Pegel zu halten (nicht ganz nach links und nicht ganz nach rechts geschaltet).
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+Der 104-Keramikkondensator wird hier eingesetzt, um Rauschen zu eliminieren.
 
 * :ref:`cpn_slide_switch`
 * :ref:`cpn_capacitor`
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_slide|
 
@@ -87,11 +87,11 @@ The 104 ceramic capacitor is used here to eliminate jitter.
 
 .. note::
 
-    * Open the ``2.7_slide_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.7_slide_switch.py`` im Ordner ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -103,5 +103,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
             print("The switch works!")
             utime.sleep(1)
 
-
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the shell.
+Nach dem Ausführen des Programms erscheint im Shell die Meldung "The switch works!", wenn der Schiebeschalter nach rechts geschaltet wird.

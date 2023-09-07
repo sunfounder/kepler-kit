@@ -1,35 +1,35 @@
 .. _py_micro:
 
-2.8 Press Gently
+2.8 Sanft Drücken
 ==========================
 
 |img_micro_switch|
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed) .
+Ein Mikroschalter ist ebenfalls ein Gerät mit 3 Anschlüssen. Die Reihenfolge der Anschlüsse ist C (gemeinsamer Pin), NO (normalerweise offen) und NC (normalerweise geschlossen).
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+Wenn der Mikroschalter nicht gedrückt ist, sind 1 (C) und 3 (NC) miteinander verbunden. Wird er gedrückt, sind 1 (C) und 2 (NO) miteinander verbunden.
 
 * :ref:`cpn_micro_switch`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set	
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
+Sie können die einzelnen Teile auch über die untenstehenden Links kaufen.
 
 
 .. list-table::
@@ -37,8 +37,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -46,7 +46,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -55,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -71,19 +71,19 @@ You can also buy them separately from the links below.
         - 
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_limit_sw|
 
-By default, GP14 is low and when pressed, GP14 is high.
+Standardmäßig ist GP14 niedrig und wird hoch, wenn der Schalter gedrückt wird.
 
-The purpose of the 10K resistor is to keep the GP14 low during pressing.
+Der 10K-Widerstand dient dazu, GP14 während des Drückens niedrig zu halten.
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+Der 104 Keramikkondensator wird hier verwendet, um Rauschen zu eliminieren.
 
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_limit_sw|
 
@@ -92,11 +92,11 @@ The 104 ceramic capacitor is used here to eliminate jitter.
 
 .. note::
 
-    * Open the ``2.8_micro_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.8_micro_switch.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Bereich auf den "MicroPython (Raspberry Pi Pico)"-Interpreter zu klicken. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -109,4 +109,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
             utime.sleep(1)
 
 
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the shell.
+Nachdem das Programm gelaufen ist, erscheint "Der Schalter funktioniert!" im Shell-Fenster, wenn Sie den Schiebeschalter nach rechts bewegen.

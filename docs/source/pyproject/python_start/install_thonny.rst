@@ -1,27 +1,23 @@
 .. _thonny_ide:
 
-1.2 Install Thonny IDE
+1.2 Installation der Thonny IDE
 =======================================
 
-Before you can start to program Pico with MicroPython, you need an integrated development environment (IDE), here we recommend Thonny. Thonny comes with Python 3.7 built in, just one simple installer is needed and you're ready to learn programming.
-
+Bevor Sie mit der Programmierung des Pico mit MicroPython beginnen können, benötigen Sie eine integrierte Entwicklungsumgebung (IDE). Hier empfehlen wir Thonny. Thonny bringt Python 3.7 bereits integriert mit, sodass nur ein einfacher Installer benötigt wird und Sie sofort mit dem Programmieren beginnen können.
 
 .. note::
 
-    Since the Raspberry Pi Pico interpreter only works with Thonny version 3.3.3 or later, you can skip this chapter if you have it; otherwise, please update or install it.
+    Da der Raspberry Pi Pico Interpreter nur mit der Thonny-Version 3.3.3 oder höher funktioniert, können Sie dieses Kapitel überspringen, wenn Sie diese Version bereits haben; anderenfalls aktualisieren oder installieren Sie sie bitte.
 
-
-#. You can download it by visiting the |link_thonny| website. Once open the page, you will see a light gray box in the upper right corner, click on the link that applies to your operating system.
+#. Den Download finden Sie auf der |link_thonny| Website. Sobald Sie die Seite öffnen, sehen Sie oben rechts ein hellgraues Kästchen. Klicken Sie auf den für Ihr Betriebssystem zutreffenden Link.
 
     .. image:: img/download_thonny.png
 
-
-
-
-#. The installers have been signed with a new certificate which hasn't built up its reputation yet. You may need to click through your browser warning (e.g. choose "Keep" instead of "Discard" in Chrome) and Windows Defender warning (**More info** ⇒ **Run anyway**).
+#. Die Installationsprogramme sind mit einem neuen Zertifikat signiert, das noch keinen guten Ruf hat. Möglicherweise müssen Sie Browser-Warnmeldungen bestätigen (z.B. in Chrome "Behalten" anstelle von "Verwerfen" wählen) sowie die Warnung des Windows Defenders (**Mehr Infos** ⇒ **Trotzdem ausführen**).
 
     .. image:: img/install_thonny1.png
 
-#. Next, click **Next** and **Install** to finish installing Thonny.
+#. Klicken Sie anschließend auf **Weiter** und **Installieren**, um die Installation von Thonny abzuschließen.
 
     .. image:: img/install_thonny6.png
+

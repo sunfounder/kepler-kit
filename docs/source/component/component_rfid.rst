@@ -1,34 +1,18 @@
 .. _cpn_mfrc522:
 
-MFRC522 Module
+MFRC522 Modul
 ====================
 
 |img_mfrc522|
 
-MFRC522 is a kind of integrated read and write card chip. It is commonly
-used in the radio at 13.56MHz. Launched by the NXP Company, it is a
-low-voltage, low-cost, and small-sized non-contact card chip, a best
-choice of intelligent instrument and portable handheld device.
+Der MFRC522 ist eine Art integrierter Lese- und Schreibkartenchip, der üblicherweise im 13,56-MHz-Radiofrequenzbereich eingesetzt wird. Herausgebracht von NXP, handelt es sich um einen kostengünstigen, niederspannungs- und kompakten kontaktlosen Kartenchip, der sich optimal für intelligente Instrumente und tragbare Handgeräte eignet.
 
-The MF RC522 uses advanced modulation and demodulation concept which
-fully presented in all types of 13.56MHz passive contactless
-communication methods and protocols. In addition, it supports rapid
-CRYPTO1 encryption algorithm to verify MIFARE products. MFRC522 also
-supports MIFARE series of high-speed non-contact communication, with a
-two-way data transmission rate up to 424kbit/s. As a new member of the
-13.56MHz highly integrated reader card series, MF RC522 is much similar
-to the existing MF RC500 and MF RC530 but there also exists great
-differences. It communicates with the host machine via the serial manner
-which needs less wiring. You can choose between SPI, I2C and serial UART
-mode (similar to RS232), which helps reduce the connection, save PCB
-board space (smaller size), and reduce cost.
+Das MFRC522 Modul nutzt fortschrittliche Modulations- und Demodulationskonzepte, die alle Arten von 13,56-MHz-passiven, kontaktlosen Kommunikationsmethoden und -protokollen vollständig abdecken. Darüber hinaus unterstützt es den schnellen CRYPTO1-Verschlüsselungsalgorithmus zur Verifizierung von MIFARE-Produkten. Der MFRC522 ermöglicht zudem Hochgeschwindigkeitskommunikation mit MIFARE-Serienprodukten und bietet eine bidirektionale Datenübertragungsrate von bis zu 424 kbit/s. Als neues Mitglied der 13,56-MHz-Hochintegrierten-Lesekarten-Serie ähnelt der MFRC522 den existierenden Modellen MF RC500 und MF RC530, weist jedoch auch signifikante Unterschiede auf. Die Kommunikation mit der Host-Maschine erfolgt seriell, was den Verdrahtungsaufwand reduziert. Wahlweise stehen SPI, I2C und serieller UART-Modus (vergleichbar mit RS232) zur Verfügung, was die Anschlussmöglichkeiten minimiert, Platz auf der Leiterplatte spart und die Kosten senkt.
 
+* `MFRC522 Datenblatt <https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf>`_
 
-* `MFRC522 Data sheet <https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf>`_
+**Beispiel**
 
-
-**Example**
-
-* :ref:`py_rfid` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`ar_rfid` (For Arduino User)
+* :ref:`py_rfid` (Für MicroPython-Nutzer)
+* :ref:`py_music_player` (Für MicroPython-Nutzer)
+* :ref:`ar_rfid` (Für Arduino-Nutzer)

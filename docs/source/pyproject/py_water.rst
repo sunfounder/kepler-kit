@@ -1,47 +1,46 @@
 .. _py_water:
 
-2.14 Feel the Water Level
+2.14 Wasserstand erfühlen
 =====================================
 
 |img_water_sensor|
 
-Water sensor is designed for water detection, which can be widely used in sensing rainfall, water level, and even liquid leakage.
+Der Wasserstandssensor ist zur Wasserdetektion konzipiert und kann vielfältig zur Messung von Regenfällen, Wasserstand und sogar Flüssigkeitsaustritt eingesetzt werden.
 
-It measures the water level by having a series of exposed parallel wire traces to measure the size of the water drops/volume. The water volume is easily converted to an analog signal, and the output analog value can be read directly by the main control board to achieve the water level alarm effect.
+Er misst den Wasserstand, indem er eine Reihe von freiliegenden parallelen Drahtspuren verwendet, um die Größe der Wassertropfen/das Volumen zu messen. Das Wasserstandsvolumen lässt sich leicht in ein analoges Signal umwandeln, und der ausgegebene Analogwert kann direkt vom Hauptsteuerboard abgelesen werden, um den Wasserstandsalarm auszulösen.
 
-.. warning:: 
-    
-    The sensor cannot be fully submerged in water, please only leave the part where the ten Traces are located in contact with water. Also, energizing the sensor in a humid environment will accelerate the corrosion of the probe and reduce the life of the sensor, so it is recommended that you only supply power when taking readings.
+.. warning::
+
+    Der Sensor darf nicht vollständig unter Wasser getaucht werden. Lassen Sie nur den Teil, an dem sich die zehn Spuren befinden, mit Wasser in Kontakt kommen. Zudem wird das Einschalten des Sensors in einer feuchten Umgebung die Korrosion der Sonde beschleunigen und die Lebensdauer des Sensors verkürzen. Es wird daher empfohlen, den Sensor nur beim Ablesen einzuschalten.
 
 * :ref:`cpn_water_level`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -49,7 +48,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -58,22 +57,19 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_water_level`
         - 1
         - 
 
-
-
-**Schematic**
+**Schaltplan**
 
 |sch_water|
 
 
-**Wiring**
-
+**Verdrahtung**
 
 |wiring_water|
 
@@ -81,12 +77,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``2.14_feel_the_water_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.14_feel_the_water_level.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie anschließend auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Für ausführliche Tutorials verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -101,22 +96,21 @@ You can also buy them separately from the links below.
         utime.sleep_ms(200)
 
 
-After the program is run, submerge the Water Sensor module slowly into the water, and as the depth increases, the Shell will print a larger value.
+Nachdem das Programm ausgeführt wurde, tauchen Sie das Wasserstandsmodul langsam ins Wasser. Mit zunehmender Tiefe wird die Shell einen höheren Wert ausgeben.
 
-**Learn More**
+**Mehr erfahren**
 
-There is a way to use the analog input module as a digital module.
+Es gibt eine Möglichkeit, das Analogeingangsmodul als digitales Modul zu verwenden.
 
-First, take a reading of the Water Sensor in a dry environment first, record it, and use it as a threshold value. Then, complete the programming and re-read the reading of the water sensor. When the reading of the water sensor deviates significantly from the reading in a dry environment, it is exposed to liquid. In other words, by placing this device near a water pipe, it can detect if a water pipe is leaking.
-
+Zunächst ermitteln Sie den Wert des Wasserstandssensors in einer trockenen Umgebung und verwenden diesen als Schwellenwert. Dann führen Sie die Programmierung durch und lesen den Wert des Wasserstandssensors erneut ab. Weicht der Messwert des Sensors deutlich vom Wert in einer trockenen Umgebung ab, ist er Flüssigkeiten ausgesetzt. Mit anderen Worten: Platzieren Sie dieses Gerät in der Nähe eines Wasserrohrs, kann es feststellen, ob ein Leck im Rohr vorliegt.
 
 .. note::
 
-    * Open the ``2.14_water_level_threshold.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.14_water_level_threshold.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie anschließend auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für ausführliche Tutorials verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -124,10 +118,11 @@ First, take a reading of the Water Sensor in a dry environment first, record it,
     import utime
 
     sensor = machine.ADC(28)
-    threshold = 30000 #This value needs to be modified with the environment.
+    threshold = 30000 #Dieser Wert muss an die Umgebung angepasst werden.
 
     while True:
         value=sensor.read_u16()
         if value > threshold :
             print("Liquid leakage!")
         utime.sleep_ms(200)
+

@@ -1,42 +1,42 @@
 .. _py_servo:
 
-3.7 Swinging Servo
-===================
+3.7 Schwingender Servo
+=======================
 
-In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
+In diesem Bausatz befinden sich neben LEDs und passivem Summer auch ein durch PWM-Signale gesteuertes Gerät, nämlich der Servo.
 
-Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
+Der Servo ist ein Positions- (Winkel-) Servo, ideal geeignet für Steuerungssysteme, die konstante Winkeländerungen erfordern und aufrechterhalten können. Er findet häufig Anwendung in hochwertigen ferngesteuerten Spielzeugen, wie etwa Flugzeug-, U-Boot-Modellen und ferngesteuerten Robotern.
 
-Now, try to make the servo sway!
+Versuchen wir nun, den Servo zum Schwingen zu bringen!
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, das gesamte Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - BAUTEILE IM SET
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Die Bauteile können auch einzeln über die nachstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -44,7 +44,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -53,45 +53,40 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_servo|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* Das orangefarbene Kabel ist das Signal- und wird an GP15 angeschlossen.
+* Das rote Kabel ist VCC und wird an VBUS(5V) angeschlossen.
+* Das braune Kabel ist GND und wird an GND angeschlossen.
 
-
-.. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-.. #. Connect **VBUS** (not 3V3) and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the red lead of the servo to the positive power bus with a jumper.
-.. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-.. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
-
+.. 1. Setzen Sie den Servoarm auf die Servo-Ausgangswelle. Bei Bedarf mit Schrauben fixieren.
+.. #. Verbinden Sie **VBUS** (nicht 3V3) und GND des Pico W mit der Stromschiene des Steckbretts.
+.. #. Verbinden Sie das rote Kabel des Servos mit der positiven Stromschiene mithilfe eines Jumperkabels.
+.. #. Verbinden Sie das gelbe Kabel des Servos mit dem GP15-Pin mithilfe eines Jumperkabels.
+.. #. Verbinden Sie das braune Kabel des Servos mit der negativen Stromschiene mithilfe eines Jumperkabels.
 
 **Code**
 
 .. note::
 
-    * Open the ``3.7_swinging_servo.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.7_swinging_servo.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie den Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Eck auf den Interpreter "MicroPython (Raspberry Pi Pico)" zu klicken.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -118,33 +113,33 @@ You can also buy them separately from the links below.
             utime.sleep_ms(20)
 
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+Während das Programm läuft, sehen wir den Servoarm, der zwischen 0° und 180° hin- und herschwingt.
 
-The program will always run because of the ``while True`` loop, we need to press the Stop button to end the program.
+Das Programm wird durch die Schleife ``while True`` ständig ausgeführt, daher müssen wir den Stopp-Button drücken, um es zu beenden.
 
-**How it works?**
+**Wie funktioniert es?**
 
-We defined the ``servo_write()`` function to make the servo run.
+Wir haben die Funktion ``servo_write()`` definiert, um den Servo zu steuern.
 
-This function has two parameters:
+Diese Funktion hat zwei Parameter:
 
-* ``pin``, the GPIO pin that controls the servo.
-* ``Angle``, the angle of the shaft output.
+* ``pin``, der GPIO-Pin, der den Servo steuert.
+* ``Angle``, der Ausgangswinkel der Welle.
 
-In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 180 to the pulse width range 0.5 ~ 2.5ms.
+In dieser Funktion wird ``interval_mapping()`` aufgerufen, um den Winkelbereich von 0 ~ 180 Grad auf die Pulsdauer von 0,5 ~ 2,5 ms abzubilden.
 
 .. code-block:: python
 
     pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
 
-Why is it 0.5~2.5? This is determined by the working mode of the Servo. 
+Warum genau 0,5 ~ 2,5 ms? Das ist durch den Arbeitsmodus des Servos bestimmt.
 
 :ref:`Servo`
 
-Next, convert the pulse width from period to duty. Since ``duty_u16()`` cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
+Anschließend wird die Pulsdauer von der Periode in die Tastverhältnis umgewandelt. Da ``duty_u16()`` keine Dezimalstellen akzeptiert, verwenden wir ``int()``, um das Tastverhältnis in einen Ganzzahltyp umzuwandeln.
 
 .. code-block:: python
 
     duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
 
-Finally, write the duty value into ``duty_u16()``.
+Schließlich wird der Tastverhältniswert in ``duty_u16()`` geschrieben.

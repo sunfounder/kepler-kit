@@ -1,16 +1,15 @@
-What is Included in This Kit
-=============================
+Was ist in diesem Kit enthalten?
+================================
 
-The following is a list of this kit so you can check the contents of the kit once you receive it.
+Nachfolgend finden Sie eine Liste des Kits, damit Sie den Inhalt überprüfen können, sobald Sie es erhalten haben.
 
-There are some components in the kit that are very small and look the same, and staff may miss or send them by mistake when packing the kit. You are welcome to send us the name of the missing or incorrect component if you find one.
+Einige Komponenten im Kit sind sehr klein und sehen gleich aus. Es kann vorkommen, dass unser Personal beim Verpacken des Kits etwas übersieht oder versehentlich falsche Teile beilegt. Sollten Sie einen fehlenden oder falschen Bestandteil feststellen, können Sie uns gerne den Namen der betreffenden Komponente mitteilen.
 
-Here is the email: service@sunfounder.com.
+Hier ist die E-Mail: service@sunfounder.com.
 
 |compoents_list|
 
-
-**Basic**
+**Grundlagen**
 
 .. toctree::
     :maxdepth: 1
@@ -23,8 +22,7 @@ Here is the email: service@sunfounder.com.
     component_diode
     component_lipo_charger
 
-
-**Chip**
+**Chips**
 
 .. toctree::
     :maxdepth: 1
@@ -32,7 +30,7 @@ Here is the email: service@sunfounder.com.
     component_74hc595
     component_ta6585
 
-**Display**
+**Anzeigeelemente**
 
 .. toctree::
     :maxdepth: 1
@@ -46,14 +44,14 @@ Here is the email: service@sunfounder.com.
     component_i2clcd1602
     component_ws2812
 
-**Sound**
+**Akustische Elemente**
 
 .. toctree::
     :maxdepth: 1
 
     component_buzzer
 
-**Actuators**
+**Aktuatoren**
 
 .. toctree::
     :maxdepth: 1
@@ -63,9 +61,7 @@ Here is the email: service@sunfounder.com.
     component_pump
     component_relay
 
-
-
-**Controller**
+**Steuerelemente**
 
 .. toctree::
     :maxdepth: 1
@@ -80,7 +76,7 @@ Here is the email: service@sunfounder.com.
     component_mpr121
     component_rfid
 
-**Sensor**
+**Sensoren**
 
 .. toctree::
     :maxdepth: 1
@@ -94,14 +90,4 @@ Here is the email: service@sunfounder.com.
     component_ultrasonic
     component_humiture
     component_mpu6050
-    
-
-
-
-
-
-
-
-
-
 

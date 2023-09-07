@@ -1,41 +1,38 @@
 .. _py_bubble_level:
 
-7.12 Digital Bubble Level
-============================
+7.12 Digitaler Wasserwaage
+===========================
 
+Ein `Wasserwaage <https://de.wikipedia.org/wiki/Wasserwaage>`_ ist ein Instrument, das dazu dient, zu zeigen, ob eine Fläche horizontal (waagerecht) oder vertikal (senkrecht) ist. Verschiedene Typen von Wasserwaagen werden von Zimmerleuten, Steinmetzen, Maurern und anderen Handwerkern im Baugewerbe, von Vermessungsingenieuren, Mühlenbauern und anderen Metallarbeitern sowie in einigen fotografischen und videografischen Arbeiten verwendet.
 
-A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb). There are different types of spirit levels used by carpenters, stonemasons, bricklayers, other building trades workers, surveyors, millwrights, and other metalworkers, as well as in some photographic and videographic work.
+In diesem Projekt erstellen wir eine digitale Wasserwaage mit einem MPU6050 und einer 8x8 LED-Matrix. Wenn Sie den MPU6050 kippen, wird die Blase auf der LED-Matrix ebenfalls kippen.
 
-Here we make a digital bubble level using MPU6050 and 8x8 LED matrix. When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
+**Erforderliche Komponenten**
 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-**Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein gesamtes Kit zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -43,7 +40,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -67,33 +64,29 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_bubble_level|
 
-The MPU6050 takes the acceleration values in each direction and calculates the attitude angle.
+Der MPU6050 nimmt die Beschleunigungswerte in jeder Richtung auf und berechnet den Neigungswinkel.
 
-As a result, the program draws a 2x2 dot on the dot matrix based on data from the two 74HC595 chips.
+Das Programm erzeugt dann auf Basis der Daten von den beiden 74HC595-Chips einen 2x2-Punkt auf der Punktmatrix.
 
-As the attitude angle changes, the program sends different data to the 74HC595 chips, and the position of the dot changes, creating a bubble effect.
+Je nach Veränderung des Neigungswinkels sendet das Programm unterschiedliche Daten an die 74HC595-Chips, und die Position des Punkts ändert sich, was einen Blaseneffekt erzeugt.
 
-**Wiring**
-
+**Verkabelung**
 
 |wiring_digital_bubble_level| 
 
-
 **Code**
-
 
 .. note::
 
-    * Open the ``7.12_digital_bubble_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Öffnen Sie die Datei ``7.12_digital_bubble_level.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
+    * Vergewissern Sie sich, dass der Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke ausgewählt ist.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
+    * Hier müssen Sie auch die Dateien ``imu.py`` und ``vector3d.py`` verwenden. Bitte überprüfen Sie, ob sie auf dem Pico W hochgeladen wurden. Detaillierte Anweisungen finden Sie unter :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -187,6 +180,8 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
         matrix=drop_bubble(matrix,bubble) # drop the bubble into empty matrix
         display(matrix_2_glyph(matrix)) # show matrix
 
-Once you have run the program, place the breadboard on a level surface.
-A dot will appear in the center of the LED matrix (if it isn't in the center, the MPU6050 may not be level).
-When you deflect the breadboard, the dot will move in the direction you deflected.
+
+Stellen Sie das Steckbrett auf eine ebene Fläche, nachdem Sie das Programm ausgeführt haben.
+Ein Punkt wird in der Mitte der LED-Matrix erscheinen (falls dies nicht der Fall ist, ist der MPU6050 möglicherweise nicht waagerecht).
+Wenn Sie das Steckbrett kippen, wird der Punkt in die Richtung wandern, in die Sie es gekippt haben.
+

@@ -1,50 +1,49 @@
+
+
 .. _py_fruit_piano:
 
-7.9 Fruit Piano
-============================
+7.9 Frucht-Klavier
+=============================
 
-
-Electrical conductivity is found in many metal objects, as well as in the human body and fruits.
-This property can be used to create a fun little project: a fruit piano.
-In other words, we turn fruits into keyboards that can play music just by touching them.
+Elektrische Leitfähigkeit findet man in vielen Metallgegenständen, ebenso wie im menschlichen Körper und in Früchten.
+Diese Eigenschaft kann genutzt werden, um ein amüsantes kleines Projekt zu schaffen: ein Frucht-Klavier.
+Mit anderen Worten, wir verwandeln Früchte in Tastaturen, die Musik abspielen können, einfach indem man sie berührt.
 
 |fruit_piano|
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können diese auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -53,7 +52,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - 4(1-1KΩ, 1-330Ω, 2-220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -76,35 +75,31 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
-|sch_fruit_piano| 
+|sch_fruit_piano|
 
-To turn the fruit into a piano key, you still need to connect the electrodes on the MPR121 to the fruit (e.g. into the banana handle).
+Um die Früchte in Klaviertasten zu verwandeln, müssen Sie noch die Elektroden am MPR121 mit der Frucht verbinden (z.B. in den Bananenstiel stecken).
 
-In the beginning, MPR121 will initialize and each electrode will get a value based on the current charge; when a conductor (such as a human body) touches an electrode, the charge will shift and rebalance.
-As a result, the electrode's value is different from its initial value, telling the main control board that it has been touched.
-During this process, ensure that the wiring of each electrode is stable so that its charge is balanced when initializing.
+Am Anfang wird der MPR121 initialisiert und jeder Elektrode wird ein Wert basierend auf der aktuellen Ladung zugewiesen. Wenn ein Leiter (zum Beispiel der menschliche Körper) eine Elektrode berührt, verschiebt und balanciert sich die Ladung. 
+Das führt dazu, dass der Wert der Elektrode vom Ausgangswert abweicht und dem Hauptsteuerungsboard mitteilt, dass sie berührt wurde.
+Während dieses Vorgangs ist sicherzustellen, dass die Verkabelung jeder Elektrode stabil ist, damit ihre Ladung bei der Initialisierung ausgeglichen ist.
 
+**Verkabelung**
 
-**Wiring**
-
-
-|wiring_fruit_piano| 
-
+|wiring_fruit_piano|
 
 **Code**
 
-
 .. note::
 
-    * Open the ``7.9_fruit_piano.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.9_fruit_piano.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
+
+    * Hier müssen Sie die Bibliothek ``mpr121.py`` verwenden. Prüfen Sie, ob sie auf dem Pico W hochgeladen wurde. Eine detaillierte Anleitung finden Sie unter :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -185,5 +180,6 @@ During this process, ensure that the wiring of each electrode is stable so that 
             dark()
         lastState = currentState
 
-Please do not touch the fruit before the program runs to avoid getting a non-correct reference during initialization.
-After the program runs, touch the fruit gently, the buzzer will sound the corresponding tone and the RGB light will flash once randomly.
+Berühren Sie die Früchte nicht, bevor das Programm ausgeführt wird, um eine fehlerhafte Referenz bei der Initialisierung zu vermeiden.
+Nachdem das Programm ausgeführt wurde, berühren Sie die Früchte sanft. Der Summer gibt den entsprechenden Ton ab und das RGB-Licht blinkt einmal zufällig auf.
+

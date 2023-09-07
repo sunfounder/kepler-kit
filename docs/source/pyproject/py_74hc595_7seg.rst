@@ -1,46 +1,45 @@
 .. _py_74hc_7seg:
 
-5.2 Number Display
+5.2 Nummernanzeige
 =======================
 
-7 Segment Display can be seen everywhere in life.
-For example, on an air conditioner, it can be used to display temperature; on a traffic indicator, it can be used to display a timer.
+7-Segment-Anzeigen begegnen uns im Alltag an vielen Stellen.
+Sie finden beispielsweise in Klimaanlagen Verwendung zur Temperaturanzeige oder in Verkehrsleitsystemen als Timer.
 
-The 7 Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an "8" shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.
+Im Grunde genommen handelt es sich bei einer 7-Segment-Anzeige um ein aus 8 LEDs bestehendes Paket, von denen 7 in Streifenform ein "8" bilden, während eine etwas kleinere punktförmige LED als Dezimalpunkt dient. Diese LEDs sind als a, b, c, d, e, f, g und dp markiert. Sie haben eigene Anodenstifte und teilen sich Kathoden. Ihre Stiftpositionen sind in der untenstehenden Abbildung dargestellt.
 
 |img_7seg_cathode|
 
-This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
+Das bedeutet, dass zur vollständigen Steuerung 8 digitale Signale gleichzeitig benötigt werden, und der 74HC595 kann dies leisten.
 
 * :ref:`cpn_7_segment`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist natürlich besonders praktisch, hier der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - TEILE IM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können natürlich auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -48,7 +47,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,11 +56,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_7_segment`
@@ -72,19 +71,18 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_74hc_7seg|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 7 Segment Display.
+Hier ist das Verdrahtungsprinzip im Wesentlichen das gleiche wie bei :ref:`py_74hc_led`. Der einzige Unterschied besteht darin, dass Q0-Q7 an die Pins a ~ g der 7-Segment-Anzeige angeschlossen sind.
 
-.. list-table:: Wiring
+.. list-table:: Verdrahtung
     :widths: 15 25
     :header-rows: 1
 
     *   - :ref:`cpn_74hc595`
-        - :ref:`cpn_led` Segment Display
+        - :ref:`cpn_led` Segmentanzeige
     *   - Q0
         - a
     *   - Q1
@@ -102,31 +100,31 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
     *   - Q7
         - dp
 
-**Wiring**
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico W to the SHcp pin (pin 11) of 74HC595.
-.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-.. #. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
-.. #. Follow the table below to connect the 74hc595 and LED Segment Display.
+**Verdrahtung**
+
+.. 1. Verbinden Sie 3V3 und GND des Pico W mit der Stromschiene des Steckbretts.
+.. #. Setzen Sie den 74HC595 in die mittlere Lücke des Steckbretts ein.
+.. #. Verbinden Sie den GP0-Pin des Pico W mit dem DS-Pin (Pin 14) des 74HC595 mittels eines Verbindungskabels.
+.. #. Verbinden Sie den GP1-Pin des Pico W mit dem STcp-Pin (12-Pin) des 74HC595.
+.. #. Verbinden Sie den GP2-Pin des Pico W mit dem SHcp-Pin (Pin 11) des 74HC595.
+.. #. Verbinden Sie den VCC-Pin (16 Pin) und den MR-Pin (10 Pin) am 74HC595 mit der positiven Stromschiene.
+.. #. Verbinden Sie den GND-Pin (8-Pin) und den CE-Pin (13-Pin) am 74HC595 mit der negativen Stromschiene.
+.. #. Setzen Sie die LED-Segmentanzeige in das Steckbrett ein und schließen Sie einen 220Ω-Widerstand in Reihe zum GND-Pin an die negative Stromschiene an.
+.. #. Folgen Sie der untenstehenden Tabelle, um den 74HC595 und die LED-Segmentanzeige zu verbinden.
 
 |wiring_74hc_7seg|
-
 
 
 **Code**
 
 .. note::
 
-    * Open the ``5.2_number_display.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``5.2_number_display.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Eck den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -160,32 +158,31 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
             hc595_shift(SEGCODE[num])
             time.sleep_ms(500)
 
-When the program is running, you will be able to see the LED Segment Display display 0~9 in sequence.
+Während das Programm läuft, werden die Zahlen 0 bis 9 sequenziell auf der LED-Segmentanzeige dargestellt.
 
-**How it works?**
+**Wie funktioniert das?**
 
-``hc595_shift()`` will make 74HC595 output 8 digital signals.
-It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
+``hc595_shift()`` wird 74HC595 dazu bringen, 8 digitale Signale auszugeben. Es gibt das letzte Bit der Binärzahl an Q0 aus und das Ausgangssignal des ersten Bits an Q7. Mit anderen Worten, wenn die Binärzahl "00000001" geschrieben wird, gibt Q0 ein hohes Signal aus und Q1~Q7 geben niedrige Signale aus.
 
-Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
+Angenommen, die 7-Segment-Anzeige zeigt die Zahl "1" an, müssen wir ein hohes Signal für b und c schreiben und ein niedriges Signal für a, d, e, f, g und dg schreiben.
 
 |img_1_segment|
 
-That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
+Das bedeutet, die Binärzahl "00000110" muss geschrieben werden. Zur besseren Lesbarkeit verwenden wir die hexadezimale Schreibweise "0x06".
 
-* `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_
+* `Hexadezimal <https://de.wikipedia.org/wiki/Hexadezimalsystem>`_
 
-* `BinaryHex Converter <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
+* `Binär-Hex-Konverter <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
 
-Similarly, we can also make the LED Segment Display display other numbers in the same way. The following table shows the codes corresponding to these numbers.
+In gleicher Weise können auch andere Zahlen auf der LED-Segmentanzeige dargestellt werden. Die nachfolgende Tabelle zeigt die entsprechenden Codes.
 
-.. list-table:: Glyph Code
+.. list-table:: Glyph-Code
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - Zahlen	
+        - Binärcode
+        - Hex-Code  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -217,4 +214,4 @@ Similarly, we can also make the LED Segment Display display other numbers in the
         - 01101111	
         - 0x6f
 
-Write these codes into ``hc595_shift()`` to make the LED Segment Display display the corresponding numbers.
+Geben Sie diese Codes in ``hc595_shift()`` ein, um die entsprechenden Zahlen auf der LED-Segmentanzeige darzustellen.

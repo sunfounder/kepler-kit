@@ -1,44 +1,45 @@
 .. _cpn_ir_receiver:
 
-Infrared Receiver
+Infrarotempfänger
 =================================
 
-IR Receiver
+IR-Empfänger
 ----------------------------
 
 |img_irrecv|
 
-* S: Signal output
+* S: Signalausgang
 * +: VCC
 * -: GND
 
-An infrared-receiver is a component which receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission.
+Ein Infrarotempfänger ist eine Komponente, die Infrarotsignale empfangen kann. Er ist in der Lage, eigenständig Infrarotstrahlung zu detektieren und TTL-kompatible Signale auszugeben. Von der Größe her entspricht er einem herkömmlichen Transistor im Kunststoffgehäuse und eignet sich für alle Anwendungsgebiete von Infrarot-Fernbedienungen bis zu Infrarot-Datenübertragung.
 
-Infrared, or IR, communication is a popular, low-cost, easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, so it is imperceptible to the human eye - ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+Infrarot (IR) ist eine populäre, kosteneffiziente und einfach zu verwendende Technologie für drahtlose Kommunikation. Infrarotlicht liegt in einem Wellenlängenbereich, der für das menschliche Auge unsichtbar ist, was es ideal für drahtlose Übertragungen macht. Häufig wird eine 38-kHz-Modulation für die Infrarotkommunikation verwendet.
 
-* Adopted HX1838 IR Receiver Sensor, high sensitivity
-* Can be used for remote control
-* Power Supply: 3.3~5V
-* Interface: Digital
-* Modulate Frequency: 38Khz
+* Verwendet den hochsensiblen HX1838 IR-Empfänger-Sensor
+* Für den Einsatz in Fernbedienungen geeignet
+* Stromversorgung: 3,3 bis 5V
+* Digitale Schnittstelle
+* Modulationsfrequenz: 38 kHz
 
 
-Remote Control
+Fernbedienung
 -------------------------
 
 |img_controller|
 
-This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid's room.
+Diese kompakte Infrarot-Fernbedienung verfügt über 21 Funktionstasten und eine Übertragungsreichweite von bis zu 8 Metern. Sie ist optimal zur Steuerung diverser Geräte im Kinderzimmer einsetzbar.
 
-* Size: 85x39x6mm
-* Remote control range: 8-10m
-* Battery: 3V button type lithium manganese battery
-* Infrared carrier frequency: 38KHz
-* Surface paste material: 0.125mm PET
-* Effective life: more than 20,000 times
+* Abmessungen: 85x39x6mm
+* Reichweite: 8 bis 10m
+* Batterietyp: 3V Knopfzellen-Lithium-Mangan-Batterie
+* Trägerfrequenz für Infrarot: 38 kHz
+* Oberflächenmaterial: 0,125 mm PET
+* Effektive Nutzungsdauer: über 20.000 Betätigungen
 
 
-**Example**
+**Beispiele**
 
-* :ref:`py_irremote` (For MicroPython User)
-* :ref:`ar_irremote` (For Arduino User)
+* :ref:`py_irremote` (Für MicroPython-Anwender)
+* :ref:`ar_irremote` (Für Arduino-Anwender)
+

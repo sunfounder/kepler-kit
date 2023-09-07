@@ -1,51 +1,49 @@
 .. _py_lcd:
 
-3.4 Liquid Crystal Display
+3.4 Flüssigkristallanzeige
 ===============================
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+LCD1602 ist eine Zeichen-Flüssigkristallanzeige, die gleichzeitig 32 (16*2) Zeichen anzeigen kann.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, 
-they share a common weakness. When they are connected to a controller, 
-multiple IOs will be occupied of the controller which has no so many outer ports. 
-Also it restricts other functions of the controller. 
-Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+Wie wir alle wissen, haben LCDs und andere Displays, obwohl sie die Mensch-Maschine-Interaktion erheblich bereichern, 
+eine gemeinsame Schwachstelle. Wenn sie an einen Controller angeschlossen sind, 
+werden mehrere IOs des Controllers belegt, der nicht so viele externe Anschlüsse hat. 
+Das schränkt auch andere Funktionen des Controllers ein. 
+Deshalb wurde LCD1602 mit einem I2C-Bus entwickelt, um dieses Problem zu lösen.
 
 * :ref:`cpn_i2c_lcd`
-* `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
-
+* `Inter-Integrated Circuit - Wikipedia <https://de.wikipedia.org/wiki/I%C2%B2C>`_
 
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+Hier verwenden wir die I2C0-Schnittstelle, um den LCD1602 zu steuern und Text anzuzeigen.
 
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können diese auch separat über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -53,7 +51,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -62,18 +60,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_lcd|
 
-**Wiring**
+**Verkabelung**
 
 |wiring_lcd|
 
@@ -81,14 +79,13 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``3.4_liquid_crystal_display.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.4_liquid_crystal_display.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, dann klicken Sie auf "Aktuelles Skript ausführen" oder drücken einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`. 
 
+    * Hier benötigen Sie die Bibliothek ``lcd1602.py``. Bitte überprüfen Sie, ob sie auf Pico W hochgeladen wurde. Eine detaillierte Anleitung finden Sie unter :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -96,7 +93,7 @@ You can also buy them separately from the links below.
     import utime
 
     lcd = LCD()
-    string = " Hello!\n"
+    string = " Hallo!\n"
     lcd.message(string)
     utime.sleep(2)
     string = "    Sunfounder!"   
@@ -104,34 +101,33 @@ You can also buy them separately from the links below.
     utime.sleep(2)
     lcd.clear()   
 
-After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+Nachdem das Programm ausgeführt wurde, erscheinen nacheinander zwei Textzeilen auf dem LCD und verschwinden dann wieder.
 
-.. note:: When the code is running, if the screen is blank, you can turn the potentiometer on the back to increase the contrast.
+.. note:: Wenn der Code läuft und der Bildschirm leer bleibt, können Sie das Potentiometer auf der Rückseite drehen, um den Kontrast zu erhöhen.
 
-**How it works?**
+**Wie funktioniert das?**
 
-In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.
+In der lcd1602-Bibliothek integrieren wir die relevanten Funktionen von lcd1602 in die LCD-Klasse.
 
-Import lcd1602 library
+Importieren der lcd1602-Bibliothek
 
 .. code-block:: python
 
     from lcd1602 import LCD    
 
-Declare an object of the LCD class and name it lcd.
+Deklarieren eines Objekts der LCD-Klasse und nennen es lcd.
 
 .. code-block:: python
 
     lcd = LCD()
 
-This statement will display the text on the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement ``str()``.
+Mit dieser Anweisung wird der Text auf dem LCD angezeigt. Es sollte beachtet werden, dass das Argument ein String sein muss. Wenn wir eine Ganzzahl oder Fließkommazahl übergeben wollen, müssen wir die Umwandlungsanweisung ``str()`` verwenden.
 
 .. code-block:: python
 
     lcd.message(string)
 
-
-If you call this statement multiple times, lcd will superimpose the texts. This requires the use of the following statement to clear the display.
+Wenn Sie diese Anweisung mehrmals aufrufen, überlagert lcd die Texte. Dafür muss die folgende Anweisung verwendet werden, um die Anzeige zu löschen.
 
 .. code-block:: python
 

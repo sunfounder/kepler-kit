@@ -1,64 +1,61 @@
 .. _py_passage_counter:
 
+7.4 Personen Zähler
+===================
 
-7.4 Passenger Counter
-==============================
+In großen Einkaufszentren, Flughäfen, Bahnhöfen, Museen und anderen öffentlichen Räumen wie Ausstellungshallen ist die Erfassung der Besucherströme unerlässlich.
 
-For large shopping malls, shopping centers, chain stores, airports, stations, museums, and public places such as exhibition halls, passenger traffic is an indispensable data.
+In Flughäfen und Bahnhöfen beispielsweise muss die Personenanzahl strikt überwacht werden, um für Sicherheit und einen reibungslosen Ablauf zu sorgen.
+Auch in Einkaufszentren lässt sich so herausfinden, zu welchen Zeiten besonders viele Besucher anwesend sind und welches Umsatzpotenzial pro Besucher besteht. 
+Daraus können Verbrauchsgewohnheiten analysiert und der Umsatz gesteigert werden.
 
-In airports and stations, for example, the number of people needs to be strictly controlled to ensure safety and smooth flow.
-It is also possible to know when there are more visitors in shopping centers and chain stores, how many orders each user can generate, etc.
-As a result, we can analyze people's consumption habits and increase turnover.
+Personenzähler helfen dabei, den Betrieb dieser öffentlichen Einrichtungen effizient zu organisieren.
 
-Passenger counters can help people understand the operation of these public places and organize their operations efficiently.
-
-A simple passenger counter is created using a PIR sensor and a 4-digit 7-segment display.
+Ein einfacher Personenzähler wird hier mit einem PIR-Sensor und einer 4-stelligen 7-Segment-Anzeige realisiert.
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Gesamtset ist sicherlich praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - ELEMENTE IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -67,7 +64,7 @@ You can also buy them separately from the links below.
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
         - 1
-        - 
+        -
     *   - 7
         - :ref:`cpn_74hc595`
         - 1
@@ -77,33 +74,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**Schematic**
+**Schaltplan**
 
-|sch_passager_counter| 
+|sch_passager_counter|
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
-* The PIR will send a high signal of about 2.8s long when someone passes by.
-* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+* Diese Schaltung basiert auf dem :ref:`py_74hc_4dig` und wird durch ein PIR-Modul ergänzt.
+* Der PIR-Sensor sendet ein etwa 2,8 Sekunden langes High-Signal aus, wenn jemand vorbeigeht.
+* Das PIR-Modul hat zwei Potentiometer: eines für die Empfindlichkeit und eines für die Erfassungsreichweite. Um das PIR-Modul optimal einzustellen, sollten beide Potentiometer vollständig gegen den Uhrzeigersinn gedreht werden.
 
     |img_PIR_TTE|
 
+**Verkabelung**
 
-**Wiring**
-
-
-|wiring_passager_counter| 
+|wiring_passager_counter|
 
 
 **Code**
 
 .. note::
 
-    * Open the ``7.4_passenger_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.4_passenger_counter.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -172,5 +166,5 @@ You can also buy them separately from the links below.
         hc595_shift(SEGCODE[count%10000//1000])
 
 
-When the code is run, the number on the 4-digit 7-segment display will be added by one if someone passes in front of the PIR module.
+Beim Ausführen des Codes wird die Zahl auf der 4-stelligen 7-Segment-Anzeige um eins erhöht, sobald jemand vor dem PIR-Modul vorbeigeht.
 

@@ -1,30 +1,29 @@
 .. _cpn_photoresistor:
 
-Photoresistor
+Fotowiderstand
 ==============
 
 |img_photoresistor|
 
-A photoresistor or photocell is a light-controlled variable resistor. 
-The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photo conductivity. 
+Ein Fotowiderstand oder auch Fotodiode ist ein lichtgesteuerter variabler Widerstand. Die Widerstandsfähigkeit eines Fotowiderstands nimmt ab, sobald die Intensität des einfallenden Lichts zunimmt; anders ausgedrückt zeigt er eine Fotoleitfähigkeit.
 
-A photoresistor can be applied in light-sensitive detector circuits and light-activated and dark-activated switching circuits acting as a resistance semiconductor. In the dark, a photoresistor can have a resistance as high as several megaohms (MΩ), while in the light, a photoresistor can have a resistance as low as a few hundred ohms.
+Fotowiderstände finden Anwendung in lichtempfindlichen Detektorschaltungen sowie in licht- und dunkelaktivierten Schaltkreisen als halbleitender Widerstand. Im Dunkeln kann der Widerstand eines Fotowiderstands mehrere Megaohm (MΩ) betragen, während er bei Lichteinfall auf wenige hundert Ohm sinken kann.
 
-Here is the electronic symbol of photoresistor.
+Hier ist das Elektroniksymbol für einen Fotowiderstand.
 
 |img_photoresistor_symbol|
 
-* `Photoresistor - Wikipedia <https://en.wikipedia.org/wiki/Photoresistor#:~:text=A%20photoresistor%20(also%20known%20as,on%20the%20component's%20sensitive%20surface>`_
+* `Fotowiderstand - Wikipedia <https://de.wikipedia.org/wiki/Fotowiderstand>`_
 
-.. Example
+.. Beispiel
 .. -------------------
 
-.. :ref:`Light Theremin`
+.. :ref:`Licht-Theremin`
 
 
-**Example**
+**Beispiel**
 
-* :ref:`py_photoresistor` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`ar_photoresistor` (For Arduino User)
-* :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_photoresistor` (Für MicroPython-Nutzer)
+* :ref:`py_light_theremin` (Für MicroPython-Nutzer)
+* :ref:`ar_photoresistor` (Für Arduino-Nutzer)
+* :ref:`per_light_display` (Für Piper Make-Nutzer)

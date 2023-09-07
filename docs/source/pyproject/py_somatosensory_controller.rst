@@ -1,46 +1,45 @@
+
+
 .. _py_somato_controller:
 
 
-7.11 Somatosensory Controller
-=============================
+7.11 Somatosensorische Steuerung
+===============================
 
-If you watch a lot of robot movies, you've probably seen images like this.
-The protagonist turned his wrist and the giant robot followed; the protagonist shakes his fist, and the robot follows, which is very cool.
+Wenn Sie viele Robotik-Filme gesehen haben, ist Ihnen diese Vorstellung wahrscheinlich nicht fremd. Der Protagonist bewegt sein Handgelenk und der riesige Roboter folgt der Bewegung; der Protagonist ballt die Faust, und auch der Roboter tut dies. Es sieht einfach cool aus.
 
-The use of this technology is already common in universities and research institutes, and the arrival of 5G will greatly expand its application areas.
-"Surgical robot da Vinci" remote surgery medical is a typical example.
+Diese Technologie findet bereits breite Anwendung in Universitäten und Forschungsinstituten. Die Einführung von 5G wird ihre Einsatzmöglichkeiten erheblich erweitern. Ein typisches Beispiel hierfür ist die Fernbedienung des "Chirurgie-Roboters da Vinci".
 
-A robotic system of this type is typically composed of two modules: a human motion capture module and a robotic arm actuation module (some application scenarios also include a data communication module).
+Ein Robotiksystem dieser Art besteht in der Regel aus zwei Modulen: einem Modul zur Erfassung menschlicher Bewegungen und einem Aktuator-Modul für den Roboterarm (in manchen Anwendungen gibt es auch ein Datenkommunikationsmodul).
 
-The MPU6050 is used here to implement human motion capture (by mounting it on a glove) and the servo is used to represent robotic arm motion.
+Hier kommt der MPU6050 zum Einsatz, um menschliche Bewegungen zu erfassen (indem er an einem Handschuh befestigt wird), während ein Servomotor die Bewegung des Roboterarms simuliert.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Gesamtkit zu erwerben ist definitiv praktisch. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Alternativ können die Komponenten auch einzeln über die unten stehenden Links gekauft werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -48,7 +47,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
@@ -69,29 +68,28 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_somato|
 
-The MPU6050 calculates the attitude angle based on the acceleration values in each direction.
+Der MPU6050 berechnet den Neigungswinkel basierend auf den Beschleunigungswerten in jeder Richtung.
 
-The program will control the servo to make the corresponding deflection angle as the attitude angle changes.
+Das Programm steuert den Servomotor so, dass er den entsprechenden Auslenkwinkel gemäß dem sich ändernden Neigungswinkel ausführt.
 
-**Wiring**
+**Verdrahtung**
 
-|wiring_somatosensory_controller| 
+|wiring_somatosensory_controller|
 
 
 **Code**
 
-
 .. note::
 
-    * Open the ``7.11_somatosensory_controller.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Öffnen Sie die Datei ``7.11_somatosensory_controller.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie den unten stehenden Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
+    * Vergewissern Sie sich, dass der Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke ausgewählt ist.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
+    * Hier müssen Sie auch die Dateien ``imu.py`` und ``vector3d.py`` verwenden. Bitte überprüfen Sie, ob sie auf Pico W hochgeladen wurden. Detaillierte Anweisungen finden Sie unter :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -143,5 +141,6 @@ The program will control the servo to make the corresponding deflection angle as
         average_angle=int(total/times) # make the value smooth
         servo_write(servo,interval_mapping(average_angle,-90,90,0,180))
 
+Sobald das Programm läuft, wird der Servomotor sich nach links und rechts drehen, wenn Sie den MPU6050 neigen (oder Ihr Handgelenk bewegen, falls er an einem Handschuh montiert ist).
 
-As soon as the program runs, the servo will turn left and right as you tilt the MPU6050 (or turn your wrist if it is mounted on a glove).
+

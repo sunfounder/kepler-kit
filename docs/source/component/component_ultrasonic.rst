@@ -1,62 +1,61 @@
 .. _cpn_ultrasonic:
 
-Ultrasonic Module
+Ultraschallmodul
 ================================
 
 |ultrasonic_pic|
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: Trigger-Impulseingang
+* **ECHO**: Echo-Impulsausgang
+* **GND**: Masse
+* **VCC**: 5V Versorgungsspannung
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+Es handelt sich hierbei um den HC-SR04 Ultraschall-Distanzsensor, der eine berührungslose Messung von 2 cm bis 400 cm mit einer Reichweitengenauigkeit von bis zu 3 mm ermöglicht. Das Modul umfasst einen Ultraschall-Sender, einen Empfänger und eine Steuerschaltung.
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+Zur Inbetriebnahme sind lediglich 4 Pins anzuschließen: VCC (Stromversorgung), Trig (Trigger), Echo (Empfang) und GND (Masse). Dies macht das Modul besonders benutzerfreundlich für Ihre Messprojekte.
 
-**Features**
+**Merkmale**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* Betriebsspannung: DC5V
+* Arbeitsstrom: 16mA
+* Arbeitsfrequenz: 40Hz
+* Maximale Reichweite: 500cm
+* Minimale Reichweite: 2cm
+* Trigger-Eingangssignal: 10uS TTL-Impuls
+* Echo-Ausgangssignal: TTL-Pegelsignal und reichweitenproportionales Signal
+* Anschluss: XH2.54-4P
+* Abmessungen: 46x20.5x15 mm
 
-**Principle**
+**Funktionsprinzip**
 
-The basic principles are as follows:
+Die Grundlagen sind wie folgt:
 
-* Using IO trigger for at least 10us high level signal.
+* Auslösung über IO mit einem mindestens 10us hohen Pegelsignal.
 
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
+* Das Modul sendet eine 8-Zyklus-Ultraschall-Burst bei 40 kHz aus und prüft, ob ein Pulssignal zurückkommt.
 
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
+* Echo gibt ein Hochpegelsignal aus, wenn ein Signal zurückkommt; die Dauer dieses Hochpegels entspricht der Zeit von der Aussendung bis zur Rückkehr.
 
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* Distanz = (Hochpegelzeit x Schallgeschwindigkeit (340M/S)) / 2
 
 |ultrasonic_prin|
 
+Formel:
 
-Formula:
-
-* us / 58 = centimeters distance
-* us / 148 = inch distance
-* distance = high level time x velocity (340M/S) / 2
+* us / 58 = Entfernung in Zentimetern
+* us / 148 = Entfernung in Zoll
+* Distanz = Hochpegelzeit x Schallgeschwindigkeit (340M/S) / 2
 
 .. note::
 
-    This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
+    Dieses Modul sollte nicht unter Spannung angeschlossen werden. Falls notwendig, sollte zuerst der GND-Pin des Moduls verbunden werden, um eine Beeinträchtigung der Funktionalität zu vermeiden.
 
-    The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+    Die Fläche des zu messenden Objekts sollte mindestens 0,5 Quadratmeter betragen und möglichst flach sein. Andernfalls werden die Messergebnisse beeinträchtigt.
 
 
-**Example**
+**Beispiel**
 
-* :ref:`py_ultrasonic` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ultrasonic` (For Arduino User)
-* :ref:`per_reversing_system` (For Piper Make User)
+* :ref:`py_ultrasonic` (Für MicroPython-Anwender)
+* :ref:`py_reversing_aid` (Für MicroPython-Anwender)
+* :ref:`ar_ultrasonic` (Für Arduino-Anwender)
+* :ref:`per_reversing_system` (Für Piper Make-Anwender)

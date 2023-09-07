@@ -1,45 +1,43 @@
 .. _py_reed:
 
-2.9 Feel the Magnetism
+2.9 Fühle den Magnetismus
 ================================
 
-The most common type of reed switch contains a pair of magnetizable, flexible, metal reeds whose end portions are separated by a small gap when the switch is open. 
+Der gebräuchlichste Typ eines Reed-Schalters besteht aus einem Paar magnetisierbarer, flexibler Metallzungen, deren Enden bei geöffnetem Schalter durch eine kleine Lücke getrennt sind.
 
-A magnetic field from an electromagnet or a permanent magnet will cause the reeds to attract each other, thus completing an electrical circuit.
-The spring force of the reeds causes them to separate, and open the circuit, when the magnetic field ceases.
+Ein Magnetfeld, erzeugt entweder durch einen Elektromagneten oder einen Permanentmagneten, führt dazu, dass sich die Zungen anziehen und somit einen elektrischen Stromkreis schließen. 
+Die Federkraft der Zungen bewirkt, dass sie sich trennen und den Stromkreis unterbrechen, sobald das Magnetfeld erlischt.
 
-A common example of a reed switch application is to detect the opening of a door or windows, for a security alarm.
+Ein typisches Anwendungsbeispiel für einen Reed-Schalter ist die Überwachung des Öffnens von Türen oder Fenstern in einer Alarmanlage.
 
 * :ref:`cpn_reed`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset zu kaufen, ist definitiv praktisch. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+Die Teile können auch einzeln über die folgenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -47,7 +45,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -56,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -67,28 +65,27 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_reed|
 
-By default, GP14 is low; and will go high when the magnet is near the reed switch.
+Standardmäßig ist GP14 niedrig; der Wert wird hoch, sobald ein Magnet in der Nähe des Reed-Schalters ist.
 
-The purpose of the 10K resistor is to keep the GP14 at a steady low level when no magnet is near.
+Der 10K-Widerstand dient dazu, GP14 auf einem konstant niedrigen Level zu halten, wenn kein Magnet in der Nähe ist.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_reed|
 
 **Code**
 
-
 .. note::
 
-    * Open the ``2.9_feel_the_magnetism.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.9_feel_the_magnetism.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für ausführliche Anleitungen beachten Sie bitte :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -100,24 +97,23 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
             print("There are magnets here!!")
             utime.sleep(1)
 
-When the code is run, GP14 goes high when a magnet is near the reed switch, otherwise it goes low. Just like the button in the :ref:`py_button` chapter.
+Läuft der Code, wird GP14 hoch, wenn ein Magnet in der Nähe des Reed-Schalters ist, ansonsten niedrig. Ganz wie der Knopf im Kapitel :ref:`py_button`.
 
-**Learn More**
+**Mehr erfahren**
 
-This time, we tried a flexible way of using switches: interrupt requests, or IRQs.: interrupt requests, or IRQs.
+Dieses Mal haben wir eine flexible Art der Schalterbenutzung erprobt: Unterbrechungsanfragen, auch IRQs genannt.
 
-For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.
+Stellen Sie sich zum Beispiel vor, Sie lesen Seite für Seite ein Buch, als wäre ein Programm einen Thread am Ausführen. Plötzlich kommt jemand und stellt Ihnen eine Frage, unterbricht also Ihre Lektüre. Diese Person führt die Unterbrechungsanfrage aus: Sie sollen kurz stoppen, die Frage beantworten und dann Ihre Lektüre fortsetzen.
 
-MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. 
-
+Die Unterbrechungsanfragen in MicroPython funktionieren ähnlich, sie erlauben bestimmten Aktionen, das Hauptprogramm zu unterbrechen.
 
 .. note::
 
-    * Open the ``2.9_feel_the_magnetism_irq.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.9_feel_the_magnetism_irq.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für ausführliche Anleitungen beachten Sie bitte :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -131,12 +127,11 @@ MicroPython interrupt request also works in the same way, it allows certain oper
 
     reed_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=detected)
 
+Zunächst wird eine Callback-Funktion ``detected(pin)`` definiert, die als Unterbrechungsbehandler dient. Sie wird ausgeführt, wenn eine Unterbrechungsanfrage ausgelöst wird. Dann wird im Hauptprogramm eine Unterbrechungsanfrage eingerichtet, die aus zwei Teilen besteht: dem ``trigger`` und dem ``handler``.
 
-Here first a callback function ``detected(pin)`` is defined, called the interrupt handler. It will be executed when an interrupt request is triggered. Then, an interrupt request is set up in the main program, which contains two parts: the ``trigger`` and the ``handler``.
+Im Programm ist ``trigger`` ``IRQ_RISING``, was bedeutet, dass der Wert des Pins von niedrig auf hoch wechselt (also beim Tastendruck).
 
-In this program, ``trigger`` is ``IRQ_RISING``, which indicates that the value of the pin is raised from low to high (i.e., button press).
+``handler`` ist ``detected``, die vorher definierte Callback-Funktion.
 
-``handler`` is ``detected`` , the callback function we defined before.
+* `machine.Pin.irq - Micropython Docs <https://docs.micropython.org/en/latest/library/machine.Pin.html#machine.Pin.irq>`
 
-
-* `machine.Pin.irq - Micropython Docs <https://docs.micropython.org/en/latest/library/machine.Pin.html#machine.Pin.irq>`_

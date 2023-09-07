@@ -1,35 +1,35 @@
 .. _cpn_7_segment:
 
-7-segment Display
+7-Segment-Anzeige
 ======================
 
 |img_7seg|
 
 
-A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
+Eine 7-Segment-Anzeige ist ein acht-förmiges Bauteil, das aus 7 LEDs besteht. Jede dieser LEDs wird als Segment bezeichnet - sobald es aktiviert ist, bildet ein Segment einen Teil einer darzustellenden Zahl.
 
-There are two types of pin connection: Common Cathode (CC) and Common Anode (CA). As the name suggests, a CC display has all the cathodes of the 7 LEDs connected when a CA display has all the anodes of the 7 segments connected.
+Es gibt zwei Arten von Pin-Verbindungen: Gemeinsame Kathode (Common Cathode, CC) und Gemeinsame Anode (Common Anode, CA). Wie der Name bereits verrät, sind bei einer CC-Anzeige alle Kathoden der 7 LEDs verbunden, während bei einer CA-Anzeige alle Anoden der 7 Segmente miteinander verbunden sind.
 
-In this kit, we use the Common Cathode 7-segment display, here is the electronic symbol.
+In diesem Bausatz verwenden wir die 7-Segment-Anzeige mit gemeinsamer Kathode, hier ist das entsprechende elektronische Symbol.
 
 |img_7seg_cathode|
 
-Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from "a" through to "g" representing each individual LED. The other LED pins are connected together forming a common pin. So by forward biasing the appropriate pins of the LED segments in a particular order, some segments will brighten and others stay dim, thus showing the corresponding character on the display. 
+Jedes der LEDs in der Anzeige hat eine positionelle Bezeichnung und einen der Anschlusspins, der aus dem rechteckigen Kunststoffgehäuse herausgeführt wird. Diese LED-Pins sind von "a" bis "g" beschriftet und repräsentieren jeweils eine einzelne LED. Die anderen LED-Pins sind zusammengeführt und bilden einen gemeinsamen Pin. Durch die Vorwärtsvorspannung der entsprechenden Pins der LED-Segmente in einer bestimmten Reihenfolge leuchten einige Segmente auf, während andere gedimmt bleiben, sodass der entsprechende Charakter auf der Anzeige dargestellt wird. 
 
 
-* `Seven-segment Display - Wikipedia <https://en.wikipedia.org/wiki/Seven-segment_display>`_
+* `7-Segment-Anzeige - Wikipedia <https://de.wikipedia.org/wiki/7-Segment-Anzeige>`_
 
-**Display Codes** 
+**Anzeigecodes**
 
-To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
+Um Ihnen zu helfen, zu verstehen, wie 7-Segment-Anzeigen (Gemeinsame Kathode) Zahlen darstellen, haben wir die folgende Tabelle erstellt. Die Zahlen sind die Zahlen von 0 bis F, die auf der 7-Segment-Anzeige dargestellt werden; (DP) GFEDCBA bezieht sich auf das jeweilige LED-Set, das auf 0 oder 1 gesetzt ist. Zum Beispiel bedeutet 00111111, dass DP und G auf 0 gesetzt sind, während die anderen auf 1 gesetzt sind. Daher wird die Zahl 0 auf der 7-Segment-Anzeige angezeigt, während der HEX-Code der entsprechenden Hexadezimalzahl entspricht.
 
 .. list-table:: Glyph Code
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - Zahlen	
+        - Binärer Code
+        - Hex-Code  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -79,12 +79,12 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
         - 01110001	
         - 0x71
 
-.. Example
+.. Beispiel
 .. -------------------
 
-.. :ref:`LED Segment Display`
+.. :ref:`LED-Segmentanzeige`
 
-**Example**
+**Beispiel**
 
-* :ref:`py_74hc_7seg` (For MicroPython User)
-* :ref:`ar_74hc_7seg` (For Arduino User)
+* :ref:`py_74hc_7seg` (Für MicroPython-Nutzer)
+* :ref:`ar_74hc_7seg` (Für Arduino-Nutzer)

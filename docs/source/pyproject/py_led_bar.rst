@@ -1,41 +1,40 @@
 .. _py_led_bar:
 
-2.2 Display the Level
+2.2 Anzeige des Pegels
 =============================
 
-The first project is simply to make the LED blink. For this project, let's use the LED Bar Graph, which contains 10 LEDs in a plastic enclosure, generally used to display power or volume levels.
+Das erste Projekt besteht einfach darin, eine LED blinken zu lassen. Für dieses Projekt verwenden wir die LED-Balkenanzeige, die aus 10 LEDs in einem Kunststoffgehäuse besteht und normalerweise zur Anzeige von Leistung oder Lautstärke verwendet wird.
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -43,7 +42,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,26 +51,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 10(220Ω)
+        - 10 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led_bar`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_ledbar|
 
-In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individually. Each LED's anode is connected to GP6*GP15, and its cathode to a 220ohm resistor, and then to GND.
+In der LED-Balkenanzeige gibt es 10 LEDs, von denen jede individuell gesteuert werden kann. Die Anode jeder LED ist mit GP6*GP15 verbunden, die Kathode über einen 220-Ohm-Widerstand mit GND.
 
-
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_ledbar|
 
@@ -79,11 +76,11 @@ In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individ
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.2_display_the_level.py`` im Ordner ``kepler-kit-main/micropython`` oder kopieren Sie den Code in Thonny und klicken Sie dann auf "Run Current Script" oder drücken einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
+  
+    * Für detaillierte Anleitungen beachten Sie bitte :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -101,69 +98,69 @@ In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individ
             led[i].toggle()
             utime.sleep(0.2)
 
-On the LED Bar Graph, you'll see LEDs lighting up and then turning off in sequence when the program is running.
+Auf der LED-Balkenanzeige sehen Sie, dass die LEDs in einer Sequenz aufleuchten und wieder erlöschen, während das Programm läuft.
 
-**How it works?**
 
-The LED Bar consists of ten LEDs that are controlled by ten pins, which means that we must define these pins.
-The process would be too tedious if we defined them one by one. So, here we use ``Lists``.
+**Wie funktioniert das?**
+
+Die LED-Balkenanzeige besteht aus zehn LEDs, die von zehn Pins gesteuert werden. Das bedeutet, dass wir diese Pins definieren müssen.
+Es wäre zu mühsam, sie einzeln zu definieren. Daher verwenden wir hier ``Lists``.
 
 .. note::
-    Python lists are one of the most versatile data types that allow us to work with multiple elements at once, and created by placing elements inside square brackets [], separated by commas.
+    Python-Listen sind einer der vielseitigsten Datentypen, die es uns ermöglichen, mit mehreren Elementen gleichzeitig zu arbeiten. Sie werden durch das Platzieren von Elementen in eckigen Klammern [] erstellt, die durch Kommas getrennt sind.
 
 .. code-block:: python
 
     pin = [6,7,8,9,10,11,12,13,14,15]    
 
-A list ``pin`` is defined by this line of code, which contains the ten elements ``6,7,8,9,10,11,12,13,14,15``.
-We can use the index operator [] to access an item in a list. In Python, indices start at 0. So, a list having 10 elements will have an index from 0 to 9.
-Using this list as an example, ``pin[0]`` is ``6`` and ``pin[4]`` is ``10``.
+Mit dieser Codezeile wird eine Liste ``pin`` definiert, die die zehn Elemente ``6,7,8,9,10,11,12,13,14,15`` enthält.
+Wir können den Index-Operator [] verwenden, um auf ein Element in einer Liste zuzugreifen. In Python beginnen die Indizes bei 0. Daher wird eine Liste mit 10 Elementen einen Index von 0 bis 9 haben.
+Bei dieser Liste als Beispiel ist ``pin[0]`` gleich ``6`` und ``pin[4]`` gleich ``10``.
 
-Next, declare an empty list ``led`` that will be used to define ten LED objects.
+Als Nächstes deklarieren Sie eine leere Liste ``led``, die zur Definition von zehn LED-Objekten verwendet wird.
 
 .. code-block:: python
 
     led = []    
 
-Due to the length of the list, which is 0, direct operations on the array, such as printing led[0]**, won't work. There are new items we need to add.
-
+Aufgrund der Länge der Liste, die 0 beträgt, funktionieren direkte Operationen auf dem Array, wie zum Beispiel das Drucken von ``led[0]``, nicht. Es gibt neue Elemente, die wir hinzufügen müssen.
 
 .. code-block:: python
 
     led.append(None)
 
-As a result of this ``append()`` method, the list ``led`` has its first item, of length 1, and ``led[0]`` becomes a valid element despite its current value of ``None`` (which stands for null).
+Durch diese ``append()`` Methode hat die Liste ``led`` ihr erstes Element erhalten, mit einer Länge von 1, und ``led[0]`` wird zu einem gültigen Element, obwohl sein aktueller Wert ``None`` ist (was für Null steht).
 
-Our next step is to define ``led[0]``, the LED connected to pin 6, as the first LED object.
+Der nächste Schritt besteht darin, ``led[0]``, die an Pin 6 angeschlossene LED, als das erste LED-Objekt zu definieren.
 
 .. code-block:: python
 
     led[0] = machine.Pin(6, machine.Pin.OUT)
 
-The first LED object has now been defined.
+Das erste LED-Objekt ist nun definiert.
 
-As you can see, we have created the ten pin numbers as a list **pin**, which we can substitute into this line to make it easier to do bulk operations.
+Wie Sie sehen können, haben wir die zehn Pin-Nummern als Liste **pin** erstellt, die wir in diese Zeile einfügen können, um Massenoperationen zu erleichtern.
 
 .. code-block:: python
 
     led[0] = machine.Pin(pin[0], machine.Pin.OUT)
 
-Use a ``for`` statement to have all 10 pins execute the above statement.
+Verwenden Sie eine ``for``-Schleife, damit alle 10 Pins den obigen Befehl ausführen.
 
 .. code-block:: python
 
     import machine
 
     pin = [6,7,8,9,10,11,12,13,14,15]
-    led= []
+    led = []
     for i in range(10):
         led.append(None)
         led[i] = machine.Pin(pin[i], machine.Pin.OUT)
 
-* :ref:`Lists`
-* :ref:`For Loops`
+* :ref:`syntax_list`
+* :ref:`For-Schleifen`
 
-Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one by one.
+Verwenden Sie eine weitere ``for``-Schleife, um die zehn LEDs auf der LED-Balkenanzeige nacheinander umzuschalten.
 
 .. code-block:: python
 
@@ -171,7 +168,7 @@ Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one b
         led[i].toggle()
         utime.sleep(0.2)
 
-The code is finished by putting the above piece of code in a while loop.
+Der Code wird abgeschlossen, indem der obige Codeblock in eine While-Schleife eingefügt wird.
 
 .. code-block:: python
 
@@ -179,7 +176,7 @@ The code is finished by putting the above piece of code in a while loop.
     import utime
 
     pin = [6,7,8,9,10,11,12,13,14,15]
-    led= []
+    led = []
     for i in range(10):
         led.append(None)
         led[i] = machine.Pin(pin[i], machine.Pin.OUT)
@@ -188,5 +185,4 @@ The code is finished by putting the above piece of code in a while loop.
         for i in range(10):
             led[i].toggle()
             utime.sleep(0.2)
-
 

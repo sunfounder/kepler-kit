@@ -1,136 +1,120 @@
-Electronic Circuit
-====================
+Elektrischer Schaltkreis
+==========================
 
-There are many things you use every day that are powered by electricity, such as the lights in your home and the computer you are reading this on.
+Viele Dinge, die du täglich benutzt, werden elektrisch betrieben, sei es die Beleuchtung in deinem Zuhause oder der Computer, auf dem du gerade dies liest.
 
-In order to use electricity, you must create an electrical circuit. An electric circuit consists of metal wires and electrical and electronic components.
+Um Elektrizität nutzen zu können, muss ein elektrischer Schaltkreis geschaltet werden. Ein solcher besteht aus Metallleitungen sowie elektrischen und elektronischen Bauteilen.
 
-Circuits require power from somewhere. In your home, most appliances (e.g., TVs, lights) are powered by wall outlets. But many smaller, portable circuits (e.g., electronic toys, cell phones) are powered by batteries. A battery has two terminals, one of which is called the positive terminal and is marked with a plus sign (+). Negative terminals are symbolized by minus signs (-), but are not usually printed on batteries.
+Jeder Schaltkreis benötigt eine Stromquelle. In deinem Haushalt werden die meisten Geräte (z.B. Fernseher, Lampen) über Steckdosen mit Energie versorgt. Viele kleinere, mobile Schaltkreise (z.B. elektronisches Spielzeug, Mobiltelefone) hingegen laufen auf Batterien. Eine Batterie hat zwei Anschlüsse: einen positiven, der mit einem Pluszeichen (+) markiert ist, und einen negativen, der durch ein Minuszeichen (-) symbolisiert wird, jedoch meist nicht auf der Batterie vermerkt ist.
 
-For current to flow, a conductive path must connect the positive terminal of the battery to the negative terminal, which is referred to as a closed circuit(If it is disconnected, it is called an open circuit.). Electric current will flow through appliances such as lamps to make them work (e.g., light up).
+Damit ein Stromfluss entsteht, muss ein leitfähiger Pfad den positiven mit dem negativen Anschluss der Batterie verbinden. Man spricht dann von einem geschlossenen Schaltkreis (im Gegensatz dazu steht der offene Schaltkreis, bei dem die Verbindung getrennt ist). Elektrischer Strom durchfließt dann Geräte wie Lampen und bringt sie zum Leuchten.
 
 |bc1|
 
+Ein Pico W hat einige Ausgangspins für die Stromversorgung (positiv) und einige Massepins (negativ). Diese Pins können als positive und negative Anschlüsse für die Stromversorgung verwendet werden, indem der Pico W an eine Energiequelle angeschlossen wird.
 
-A Pico W has some power output pins (positive) and some ground pins (negative).
-You can use these pins as the positive and negative sides of the power supply by plugging the Pico W into a power source.
+|bc2|
 
-|bc2| 
+Mit Elektrizität lassen sich Werke mit Licht, Ton und Bewegung realisieren. Man kann eine LED zum Leuchten bringen, indem man den längeren Pin an den positiven und den kürzeren an den negativen Anschluss anschließt. Ohne Vorkehrungen würde die LED jedoch schnell kaputtgehen, weshalb ein 220*-Ohm-Widerstand im Schaltkreis eingefügt werden muss.
 
-With electricity, you can create works with light, sound, and motion.
-You can light up an LED by connecting the long pin to the positive terminal and the short pin to the negative terminal.
-The LED will break down very quickly if you do this, so you need to add a 220* resistor inside the circuit to protect it.
+Die darzustellende Schaltung sieht wie folgt aus.
 
-The circuit they form is shown below.
+|bc2.5|
 
-|bc2.5| 
+Vielleicht fragst du dich jetzt: Wie baue ich diesen Schaltkreis zusammen? Halte ich die Kabel mit der Hand oder klebe ich die Pins und Kabel fest?
 
-You may have questions this time: how do I build this circuit? Hold the wires by hand, or tape the pins and wires?
-
-In this situation, solderless breadboards will be your strongest allies.
+In diesem Fall sind steckbare Experimentierplatinen (Breadboards) deine besten Helfer.
 
 .. _bc_bb:
 
-Hello, Breadboard!
+Hallo, Steckplatine!
 ------------------------------
 
-
-A breadboard is a rectangular plastic plate with a bunch of small holes. 
-These holes allow us to easily insert electronic components and build electronic circuits. 
-Breadboards do not permanently fix electronic components, so we can easily repair a circuit and start over if something goes wrong.
+Eine Steckplatine ist eine rechteckige Kunststoffplatte mit vielen kleinen Löchern. Diese erlauben es uns, elektronische Bauteile einfach einzustecken und elektrische Schaltungen zu bauen. Die Bauteile werden nicht permanent fixiert, sodass wir bei einem Fehler den Schaltkreis einfach reparieren oder von vorn beginnen können.
 
 .. note::
-    There is no need for special tools to use breadboards. However, many electronic components are very small, and a pair of tweezers can help us to pick up small parts better.
+    Spezielle Werkzeuge sind für die Verwendung von Steckplatinen nicht erforderlich. Da jedoch viele elektronische Bauteile sehr klein sind, können Pinzetten hilfreich sein, um kleinere Teile besser greifen zu können.
 
-On the Internet, we can find a lot of information about breadboards.
+Im Internet finden sich zahlreiche Informationen zu Steckplatinen.
 
-* `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
+* `Wie benutzt man eine Steckplatine - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-* `What is a BREADBOARD? - Makezine <https://cdn.makezine.com/uploads/2012/10/breadboardworkshop.pdf>`_
-
-
-Here are some things you should know about breadboards.
-
-#. Each half-row group (such as column A-E in row 1 or column F-J in row 3) is connected. Therefore, if an electrical signal flows in from A1, it can flow out from B1, C1, D1, E1, but not from F1 or A2.
-
-#. In most cases, both sides of the breadboard are used as power buses, and the holes in each column (about 50 holes) are connected together. As a general rule, positive power supplies are connected to the holes near the red wire, and negative power supplies are connected to the holes near the blue wire.
-
-#. In a circuit, current flows from the positive pole to the negative pole after passing through the load. In this case, a short circuit may occur.
-
-|bc3| 
+* `Was ist eine STECKPLATINE? - Makezine <https://cdn.makezine.com/uploads/2012/10/breadboardworkshop.pdf>`_
 
 
-Let us follow the direction of the current to build the circuit!
+Es gibt ein paar Dinge, die du über Steckplatinen wissen solltest.
 
-1. In this circuit, we use the 3V3 pin of the Pico W board to power the LED. Use a male-to-male (M2M) jumper wire to connect it to the red power bus.
-#. To protect the LED, the current must pass through a 220 ohm resistor. Connect one end (either end) of the resistor to the red power bus, and the other end to the free row of the breadboard (row 24 in my circuit).
+#. Jede halbe Reihengruppe (wie die Spalte A-E in Reihe 1 oder Spalte F-J in Reihe 3) ist intern verbunden. Wenn also ein elektrisches Signal an A1 anliegt, kann es auch an B1, C1, D1, E1, jedoch nicht an F1 oder A2 austreten.
 
-    .. note::
-        The color ring of the 220 ohm resistor is red, red, black, black and brown.
+#. In den meisten Fällen werden beide Seiten der Steckplatine als Stromschienen verwendet, und die Löcher in jeder Spalte (etwa 50 Löcher) sind miteinander verbunden. Üblicherweise werden positive Stromanschlüsse in der Nähe des roten Drahts und negative in der Nähe des blauen Drahts angeschlossen.
 
-#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
+#. In einem Schaltkreis fließt der Strom vom positiven zum negativen Pol, nachdem er die Last durchquert hat. In diesem Fall könnte ein Kurzschluss auftreten.
 
-    .. note::
-        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
+|bc3|
 
-        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
+Lassen Sie uns nun den Schaltkreis entsprechend der Stromflussrichtung aufbauen!
 
-#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico W to the negative power bus using a jumper.
+1. In diesem Schaltkreis verwenden wir den 3V3-Pin des Pico W-Boards, um die LED mit Strom zu versorgen. Verwenden Sie ein Steckbrückenkabel (M2M), um es mit der roten Stromschiene zu verbinden.
+#. Um die LED zu schützen, muss der Strom durch einen 220-Ohm-Widerstand fließen. Verbinden Sie ein Ende (es ist egal welches) des Widerstands mit der roten Stromschiene und das andere mit einer freien Reihe der Steckplatine (in meiner Schaltung Reihe 24).
 
-Beware of short circuits
+   .. note::
+       Die Farbringe des 220-Ohm-Widerstands sind rot, rot, schwarz, schwarz und braun.
+
+#. Wenn Sie die LED aufheben, sehen Sie, dass einer der Anschlüsse länger ist als der andere. Verbinden Sie den längeren Anschluss mit derselben Reihe wie der Widerstand und den kürzeren Anschluss mit einer Reihe auf der gegenüberliegenden Seite der Mittellücke auf der Steckplatine.
+
+   .. note::
+       Der längere Anschluss ist die Anode und repräsentiert die positive Seite des Schaltkreises; der kürzere ist die Kathode und steht für die negative Seite.
+
+       Die Anode sollte über einen Widerstand mit dem GPIO-Pin verbunden werden; die Kathode sollte mit dem GND-Pin verbunden werden.
+
+#. Verwenden Sie ein Steckbrückenkabel (M2M), um den kürzeren LED-Anschluss mit der negativen Stromschiene der Steckplatine zu verbinden.
+#. Verbinden Sie den GND-Pin des Pico W mit der negativen Stromschiene über ein Steckbrückenkabel.
+
+Vorsicht vor Kurzschlüssen
 ------------------------------
-Short circuits can occur when two components that shouldn't be connected are "accidentally" connected. 
-This kit includes resistors, transistors, capacitors, LEDs, etc. that have long metal pins that can bump into each other and cause a short. Some circuits are simply prevented from functioning properly when a short occurs. Occasionally, a short circuit can damage components permanently, especially between the power supply and the ground bus, causing the circuit to get very hot, melting the plastic on the breadboard and even burning the components!
+Kurzschlüsse können entstehen, wenn zwei Bauteile, die eigentlich nicht miteinander verbunden sein sollten, "versehentlich" Kontakt aufnehmen. Dieses Set beinhaltet Widerstände, Transistoren, Kondensatoren, LEDs und mehr, deren lange Metallstifte sich berühren und einen Kurzschluss verursachen können. Manche Schaltkreise funktionieren einfach nicht mehr richtig, wenn ein Kurzschluss auftritt. In Einzelfällen kann ein Kurzschluss die Bauteile dauerhaft beschädigen, insbesondere wenn die Stromversorgung und die Masseleitung betroffen sind. Das kann dazu führen, dass der Schaltkreis stark erhitzt, das Plastik auf der Steckplatine schmilzt und sogar die Bauteile verbrennen!
 
-Therefore, always make sure that the pins of all the electronics on the breadboard are not touching each other.
+Stellen Sie deshalb immer sicher, dass die Stifte der elektronischen Bauteile auf der Steckplatine einander nicht berühren.
 
-Direction of the circuit
+Ausrichtung des Schaltkreises
 -------------------------------
-There is an orientation to circuits, and the orientation plays a significant role in certain electronic components. There are some devices with polarity, which means they must be connected correctly based on their positive and negative poles. Circuits built with the wrong orientation will not function properly.
+Schaltkreise haben eine Orientierung, die bei bestimmten elektronischen Bauteilen eine entscheidende Rolle spielt. Einige Geräte haben eine Polarität, d.h., sie müssen gemäß ihrer positiven und negativen Pole korrekt angeschlossen werden. Falsch ausgerichtete Schaltkreise funktionieren nicht einwandfrei.
 
-|bc3| 
+|bc3|
 
-If you reverse the LED in this simple circuit that we built earlier, you will find that it no longer works.
+Wenn Sie die LED in diesem einfachen Schaltkreis, den wir zuvor gebaut haben, umdrehen, werden Sie feststellen, dass sie nicht mehr funktioniert.
 
-In contrast, some devices have no direction, such as the resistors in this circuit, so you can try inverting them without affecting the LEDs' normal operation.
+Im Gegensatz dazu haben manche Bauteile keine Ausrichtung, wie zum Beispiel die Widerstände in diesem Schaltkreis. Diese können Sie umkehren, ohne den normalen Betrieb der LEDs zu beeinträchtigen.
 
-Most components and modules with labels such as "+", "-", "GND", "VCC" or have pins of different lengths must be connected to the circuit in a specific way.
+Die meisten Komponenten und Module mit Beschriftungen wie "+", "-", "GND", "VCC" oder unterschiedlich langen Pins müssen auf eine spezielle Weise an den Schaltkreis angeschlossen werden.
 
-
-Protection of the circuit
+Schutz des Schaltkreises
 -------------------------------------
+Stromstärke ist die Geschwindigkeit, mit der Elektronen an einem Punkt in einem vollständigen elektrischen Stromkreis fließen. Einfach ausgedrückt: Strom = Fluss. Ein Ampere (Amper), oder kurz Amp, ist die internationale Einheit für die Messung der Stromstärke. Sie drückt die Menge der Elektronen (manchmal als "elektrische Ladung" bezeichnet) aus, die an einem Punkt im Stromkreis über eine bestimmte Zeit hinweg fließen.
 
-Current is the rate at which electrons flow past a point in a complete electrical circuit. At its most basic, current = flow. An ampere (AM-pir), or amp, is the international unit used for measuring current. It expresses the quantity of electrons (sometimes called "electrical charge") flowing past a point in a circuit over a given time.
+Die treibende Kraft (Spannung) hinter dem Stromfluss wird als Spannung bezeichnet und in Volt (V) gemessen.
 
-The driving force (voltage) behind the flow of current is called voltage and is measured in volts (V).
+Widerstand (R) ist die Eigenschaft des Materials, die den Stromfluss einschränkt, und wird in Ohm (Ω) gemessen.
 
-Resistance (R) is the property of the material that restricts the flow of current, and it is measured in ohms (Ω).
+Laut Ohmschem Gesetz (solange die Temperatur konstant bleibt), sind Stromstärke, Spannung und Widerstand proportional zueinander. Die Stromstärke eines Schaltkreises ist proportional zu seiner Spannung und umgekehrt proportional zu seinem Widerstand.
 
-According to Ohm's law (as long as the temperature remains constant), current, voltage, and resistance are proportional.
-A circuit's current is proportional to its voltage and inversely proportional to its resistance. 
+Daher gilt: Stromstärke (I) = Spannung (V) / Widerstand (R).
 
-Therefore, current (I) = voltage (V) / resistance (R).
+* `Ohmsches Gesetz - Wikipedia <https://de.wikipedia.org/wiki/Ohmsches_Gesetz>`_
 
-* `Ohm's law - Wikipedia <https://en.wikipedia.org/wiki/Ohm%27s_law>`_
+Zum Ohmschen Gesetz können wir ein einfaches Experiment durchführen.
 
-About Ohm's law we can do a simple experiment.
+|bc3|
 
-|bc3| 
-
-By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico W), the LED will become brighter.
-If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, black, brown and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.
+Wenn Sie den Draht, der 3V3 mit 5V verbindet (d.h. VBUS, der 40. Pin des Pico W), ändern, wird die LED heller. Wenn Sie den Widerstand von 220 Ohm auf 1000 Ohm ändern (Farbring: braun, schwarz, schwarz, braun, braun), werden Sie feststellen, dass die LED dunkler wird. Je größer der Widerstand, desto dunkler die LED.
 
 .. note::
-    For an introduction to resistors and how to calculate resistance values, see :ref:`cpn_resistor`.
-
-    For an introduction to resistors and how to calculate resistance values, see :ref:*cpn_resistor*.
-
-Most packaged modules only require access to the proper voltage (usually 3.3V or 5V), such as ultrasonic module.
-
-However, in your self-built circuits, you need to be aware of the supply voltage and resistor usage for electrical devices.
+    Für eine Einführung in Widerstände und wie man den Widerstand berechnet, siehe :ref:`cpn_resistor`.
 
 
-As an example, LEDs usually consume 20mA of current, and their voltage drop is about 1.8V. According to Ohm's law, if we use 5V power supply, we need to connect a minimum of 160ohm ((5-1.8)/20mA) resistor in order not to burn out the LED.
+Die meisten vorgepackten Module benötigen lediglich Zugang zur richtigen Spannung (meistens 3,3V oder 5V), wie beispielsweise Ultraschallmodule.
 
+In Ihren selbstgebauten Schaltkreisen sollten Sie jedoch auf die Versorgungsspannung und den Einsatz von Widerständen für elektrische Geräte achten.
+
+Als Beispiel verbrauchen LEDs normalerweise 20mA und haben einen Spannungsabfall von etwa 1,8V. Laut Ohmschem Gesetz benötigen wir bei einer 5V-Stromversorgung mindestens einen 160-Ohm-Widerstand ((5-1,8)/20mA), um die LED nicht durchbrennen zu lassen.
 

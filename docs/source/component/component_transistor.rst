@@ -5,56 +5,54 @@ Transistor
 
 |img_NPN&PNP|
 
-Transistor is a semiconductor device that controls current by current. It functions by amplifying weak signal to larger amplitude signal and is also used for non-contact switch. 
+Ein Transistor ist ein Halbleiterbauelement, das Strom mittels Strom steuert. Seine Hauptfunktionen bestehen darin, schwache Signale zu verstärken und als berührungsloser Schalter zu agieren.
 
-A transistor is a three-layer structure composed of P-type and N-type semiconductors. They form the three regions internally. The thinner in the middle is the base region; the other two are both N-type or P-type ones – the smaller region with intense majority carriers is the emitter region, when the other one is the collector region. This composition enables the transistor to be an amplifier. 
-From these three regions, three poles are generated respectively, which are base (b), emitter (e), and collector (c). They form two P-N junctions, namely, the emitter junction and collection junction. The direction of the arrow in the transistor circuit symbol indicates that of the emitter junction. 
+Ein Transistor besteht aus einer dreischichtigen Struktur aus P-Typ und N-Typ Halbleitern. Diese bilden die drei internen Regionen: Die dünnere Mitte ist die Basisregion; die beiden anderen sind entweder N-Typ oder P-Typ – die kleinere Region mit einer hohen Anzahl an Ladungsträgern ist die Emitterregion, während die andere als Kollektorregion fungiert. Diese Anordnung ermöglicht die Verstärkerfunktion des Transistors. 
+Aus diesen drei Regionen gehen jeweils drei Pole hervor: Basis (b), Emitter (e) und Kollektor (c). Sie bilden zwei P-N-Übergänge, nämlich den Emitter- und den Kollektorübergang. Die Pfeilrichtung im Transistorsymbol gibt die Richtung des Emitterübergangs an.
 
-* `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
+* `P-N-Übergang – Wikipedia <https://de.wikipedia.org/wiki/Pn-Übergang>`_
 
-Based on the semiconductor type, transistors can be divided into two groups, the NPN and PNP ones. From the abbreviation, we can tell that the former is made of two N-type semiconductors and one P-type and that the latter is the opposite. See the figure below. 
+Je nach Halbleitertyp lassen sich Transistoren in zwei Gruppen einteilen: NPN und PNP. Aus den Abkürzungen geht hervor, dass der erstere aus zwei N-Typ und einem P-Typ Halbleiter besteht, während der letztere das Gegenteil darstellt. Siehe die untenstehende Abbildung.
 
 .. note::
-    s8550 is PNP transistor and the s8050 is the NPN one, They look very similar, and we need to check carefully to see their labels.
+    Der s8550 ist ein PNP-Transistor und der s8050 ein NPN-Transistor. Sie sehen sehr ähnlich aus; es ist also wichtig, die Beschriftungen genau zu prüfen.
 
 |img_transistor_symbol|
 
-When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+Ein NPN-Transistor wird durch ein Hochpegelsignal aktiviert, während für einen PNP-Transistor ein Lowpegelsignal erforderlich ist. Beide Transistortypen werden häufig als berührungslose Schalter eingesetzt, wie in diesem Experiment.
 
+* `S8050 Transistor Datenblatt <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_
+* `S8550 Transistor Datenblatt <https://www.mouser.com/datasheet/2/149/SS8550-118608.pdf>`_
 
-* `S8050 Transistor Datasheet <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_
-* `S8550 Transistor Datasheet <https://www.mouser.com/datasheet/2/149/SS8550-118608.pdf>`_
-
-Put the label side facing us and the pins facing down. The pins from left to right are emitter(e), base(b), and collector(c).
+Richten Sie die beschriftete Seite zu sich und die Pins nach unten. Die Pins von links nach rechts sind Emitter (e), Basis (b) und Kollektor (c).
 
 |img_ebc|
 
 .. note::
-    * The base is the gate controller device for the larger electrical supply. 
-    * In the NPN transistor, the collector is the larger electrical supply and the emitter is the outlet for that supply, the PNP transistor is just the opposite.
+    * Die Basis dient als Steuereinheit für die größere Stromquelle.
+    * Im NPN-Transistor ist der Kollektor die größere Stromquelle und der Emitter der Ausgang, im PNP-Transistor ist es genau umgekehrt.
 
-
-.. Example
+.. Beispiel
 .. -------------------
 
-.. :ref:`Two Kinds of Transistors`
+.. :ref:`Zwei Arten von Transistoren`
 
 
-**Example**
+**Beispiel**
 
-* :ref:`py_transistor` (For MicroPython User)
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-* :ref:`ar_transistor` (For Arduino User)
-* :ref:`ar_relay` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_transistor` (Für MicroPython-Nutzer)
+* :ref:`py_relay` (Für MicroPython-Nutzer)
+* :ref:`py_ac_buz` (Für MicroPython-Nutzer)
+* :ref:`py_pa_buz` (Für MicroPython-Nutzer)
+* :ref:`py_light_theremin` (Für MicroPython-Nutzer)
+* :ref:`py_alarm_lamp` (Für MicroPython-Nutzer)
+* :ref:`py_music_player` (Für MicroPython-Nutzer)
+* :ref:`py_fruit_piano` (Für MicroPython-Nutzer)
+* :ref:`py_reversing_aid` (Für MicroPython-Nutzer)
+* :ref:`ar_ac_buz` (Für Arduino-Nutzer)
+* :ref:`ar_pa_buz` (Für Arduino-Nutzer)
+* :ref:`ar_transistor` (Für Arduino-Nutzer)
+* :ref:`ar_relay` (Für Arduino-Nutzer)
+* :ref:`per_service_bell` (Für Piper Make-Nutzer)
+* :ref:`per_reversing_system` (Für Piper Make-Nutzer)
+* :ref:`per_reaction_game` (Für Piper Make-Nutzer)

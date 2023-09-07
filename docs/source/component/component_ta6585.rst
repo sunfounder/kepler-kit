@@ -1,42 +1,35 @@
 .. _cpn_ta6586:
 
-TA6586 - Motor Driver Chip
+TA6586 - Motorsteuerungs-Chip
 =================================
 
 |img_ta6586|
 
-TA6586 is a monolithic IC designed for driving bi-directional DC motor. It has
-two pins of logic inputs for controlling the direction, forward and backward.
-The circuit feature good anti-interference performance, small standby current and
-low output saturation pressure drop. It has a built-in clamp diode to reverse the impact
-of the release of inductive load current, making it in the drive relays, DC motors,
-stepper motors or control the use of switching power safe and reliable.
-TA6586 is suitable for toy vehicles, remote-controlled aircraft motor drive, automatic
-valve motor, electromagnetic lock drive, precision instruments and other circuits.
+Der TA6586 ist ein monolithischer IC, der zur Steuerung bidirektionaler Gleichstrommotoren entwickelt wurde. Er verfügt über zwei Logikeingangspins zur Kontrolle der Fahrtrichtung, vorwärts und rückwärts. Der Schaltkreis zeichnet sich durch gute Störfestigkeit, geringen Ruhestrom und niedrigen Ausgangssättigungsdruckabfall aus. Ein integrierte Klemmdiode kehrt den Einfluss des Freisetzens des induktiven Laststroms um, wodurch der IC beim Steuern von Relais, Gleichstrommotoren, Schrittmotoren oder beim Einsatz in Schaltnetzteilen sicher und zuverlässig ist. Der TA6586 eignet sich für Spielzeugfahrzeuge, ferngesteuerte Flugzeugantriebe, automatische Ventilmotoren, elektromagnetische Schlossantriebe, Präzisionsinstrumente und andere Schaltungen.
 
-**Features**
+**Eigenschaften**
 
-* Low stand-by current: ≦2uA
-* Wide supply voltage range
-* Built-in Brake Function
-* Thermal Shutdown protection
-* Over Current Limit and Short Circuit Protect Function
-* DIP8 Pb-Free package.
+* Niedriger Ruhestrom: ≦2uA
+* Weiter Versorgungsspannungsbereich
+* Integrierte Bremsfunktion
+* Thermischer Überlastschutz
+* Überstrombegrenzung und Kurzschlussschutz
+* DIP8 bleifreies Gehäuse.
 
-**Pin Function**
+**Pin-Funktion**
 
 |img_ta6586_pin|
 
 
-**Input Truth Table**
+**Eingangswahrheitstabelle**
 
 |img_ta6586_priciple|
 
 
-**Example**
+**Beispiel**
 
-* :ref:`py_motor` (For MicroPython User)
-* :ref:`ar_motor` (For Arduino User)
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
-* :ref:`per_smart_fan` (For Piper Make User)
+* :ref:`py_motor` (Für MicroPython-Anwender)
+* :ref:`ar_motor` (Für Arduino-Anwender)
+* :ref:`py_pump` (Für MicroPython-Anwender)
+* :ref:`ar_pump` (Für Arduino-Anwender)
+* :ref:`per_smart_fan` (Für Piper Make-Anwender)

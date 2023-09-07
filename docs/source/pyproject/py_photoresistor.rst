@@ -1,40 +1,38 @@
-.. _py_photoresistor:
+.. _py_fotoresistor:
 
-2.12 Feel the Light
+2.12 Das Licht spüren
 =============================
 
-The photoresistor is a typical device for analog inputs and it is used in a very similar way to a potentiometer. Its resistance value depends on the intensity of the light, the stronger the irradiated light, the smaller its resistance value; conversely, it increases.
+Der Fotowiderstand ist ein typisches Bauelement für analoge Eingänge und funktioniert sehr ähnlich wie ein Potentiometer. Sein Widerstandswert ist abhängig von der Lichtintensität: Je stärker das Licht, desto geringer der Widerstandswert und umgekehrt.
 
+* :ref:`cpn_fotoresistor`
 
-* :ref:`cpn_photoresistor`
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Set zu erwerben. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -42,7 +40,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -51,48 +49,44 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_photoresistor`
         - 1
         - |link_photoresistor_buy|
 
+**Schaltplan**
 
-**Schematic**
+|sch_fotoresistor|
 
-|sch_photoresistor|
+In dieser Schaltung sind der 10K-Widerstand und der Fotowiderstand in Reihe geschaltet; der durch sie fließende Strom ist identisch. Der 10K-Widerstand dient als Schutz, und GP28 liest den umgewandelten Spannungswert des Fotowiderstands.
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the photoresistor.
+Wenn das Licht intensiver wird, sinkt der Widerstand des Fotowiderstands, und somit auch seine Spannung. Daraufhin wird auch der Wert von GP28 niedriger. Sollte das Licht ausreichend stark sein, nähert sich der Widerstand des Fotowiderstands dem Wert 0 an, und der Wert von GP28 wird ebenfalls nahe 0 liegen. In diesem Fall spielt der 10K-Widerstand eine schützende Rolle, um einen Kurzschluss zwischen 3,3V und GND zu vermeiden.
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from GP28 will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+Platziert man den Fotowiderstand in einer dunklen Umgebung, wird der Wert von GP28 ansteigen. In völliger Dunkelheit wäre der Widerstand des Fotowiderstands unendlich, und seine Spannung wäre nahe 3,3V (der 10K-Widerstand ist vernachlässigbar), und der Wert von GP28 würde sich dem Maximalwert von 65535 annähern.
 
-If you place the photoresistor in a dark situation, the value of GP28 will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
-
-
-The calculation formula is shown below.
+Die Berechnungsformel lautet wie folgt:
 
     (Vp/3.3V) x 65535 = Ap
 
+**Verdrahtung**
 
-
-**Wiring**
-
-|wiring_photoresistor|
+|wiring_fotoresistor|
 
 **Code**
 
 .. note::
 
-    * Open the ``2.12_feel_the_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.12_feel_the_light.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und führen Sie ihn mit "Aktuelles Skript ausführen" oder einfach mit F5 aus.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergewissern Sie sich, dass der Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke ausgewählt ist.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für ausführliche Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -106,5 +100,5 @@ The calculation formula is shown below.
         print(light_value)
         utime.sleep_ms(10)
 
-After the program runs, the Shell prints out the photoresistor values. You can shine a flashlight on it or cover it up with your hand to see how the value will change.
+Nachdem das Programm läuft, werden die Werte des Fotowiderstands in der Shell ausgegeben. Man kann die Werte verändern, indem man eine Taschenlampe darauf richtet oder den Fotowiderstand mit der Hand abdeckt.
 

@@ -1,41 +1,40 @@
-SunFounder Kepler Kit for Raspberry Pi Pico W
+SunFounder Kepler Kit für Raspberry Pi Pico W
 ===========================================================
 
-Thank you for choosing the SunFounder Kepler Kit
+Vielen Dank, dass Sie sich für das SunFounder Kepler Kit entschieden haben.
 
-This is an learning kit based on the Raspberry Pi Pico W. 
+Dies ist ein Lernkit, das auf dem Raspberry Pi Pico W basiert.
 
-Raspberry Pi Pico W adds on-board single-band 2.4GHz wireless interfaces (802.11n) using the Infineon CYW4343 while retaining the Pico form factor, so in addition to the basic GPIO function, it can also connect to the network so we can use it for some IoT projects.
-For example, using IFTTT for a security system, building a cloud player and a cloud service bell system using MQTT and so on.
+Der Raspberry Pi Pico W verfügt über integrierte Einzelband-2,4-GHz-WLAN-Schnittstellen (802.11n) mittels des Infineon CYW4343 und behält gleichzeitig den Pico-Formfaktor bei. Neben den grundlegenden GPIO-Funktionen ermöglicht er auch die Netzwerkanbindung, sodass er für diverse IoT-Projekte einsetzbar ist. Beispielsweise lässt sich IFTTT für ein Sicherheitssystem nutzen oder ein Cloud-Player und ein Cloud-Klingelsystem mit MQTT realisieren.
 
-This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
+Das Kit enthält eine breite Palette an Komponenten wie Displays, Tonausgabe, Treiber, Steuerungen und Sensoren, wodurch Sie ein umfassendes Verständnis für elektronische Bauteile erhalten.
 
-Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino) and Piper Make are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
+Darüber hinaus stehen Ihnen drei Programmiersprachen zur Verfügung: MicroPython, C/C++ (Arduino) und Piper Make. Um den Einstieg zu erleichtern, bietet jede Sprache gezielte und interessante Projekte, sodass Sie je nach Bedarf wählen können.
 
-Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+Bei Interesse an weiteren Projekten, die wir bisher nicht anbieten, können Sie uns gerne per E-Mail kontaktieren. Wir werden unsere Online-Tutorials so schnell wie möglich aktualisieren.
 
-Here is the email: service@sunfounder.com.
+Hier ist die E-Mail-Adresse: service@sunfounder.com.
 
 
-**About the display language**
+**Zur Anzeigesprache**
 
-This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+Dieses Dokument ist auch in anderen Sprachen verfügbar. Um die Anzeigesprache zu wechseln, klicken Sie bitte auf das Icon **Read the Docs**, das sich in der unteren linken Ecke der Seite befindet.
 
 .. image:: img/translation.png
 
-**Source Code**
+**Quellcode**
 
 * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* Oder sehen Sie sich den Code unter `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ an.
 
 
-**Content**
+**Inhalt**
 
 .. toctree::
     :maxdepth: 2
 
-    About This Kit <self>
+    Über dieses Kit <self>
     introduction_to_pico_w
     component/what_is_included_in_this_kit
     bc_basic_circuit
@@ -47,8 +46,7 @@ This document is available in other languages as well. To switch the display lan
     faq
 
 
-Copyright Notice
+Urheberrechtshinweis
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+Sämtliche Inhalte dieses Handbuchs, einschließlich, jedoch nicht beschränkt auf Texte, Bilder und Code, sind Eigentum der SunFounder Company. Sie dürfen diese nur für persönliche Studien, Recherchen, Vergnügen oder andere nichtkommerzielle oder gemeinnützige Zwecke unter Einhaltung der jeweiligen Vorschriften und Urheberrechtsgesetze verwenden, ohne die rechtlichen Ansprüche des Autors und der betreffenden Rechteinhaber zu verletzen. Bei kommerzieller Nutzung ohne Genehmigung behält sich die Firma das Recht vor, rechtliche Schritte einzuleiten.

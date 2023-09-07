@@ -1,39 +1,38 @@
 Print()
 =====================
 
-The ``print()`` function prints the specified message to the screen, or other standard output device.
-The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+Die Funktion ``print()`` gibt die angegebene Nachricht auf dem Bildschirm oder einem anderen Standardausgabegerät aus. Die Nachricht kann eine Zeichenkette oder ein beliebiges anderes Objekt sein. Das Objekt wird vor der Ausgabe auf dem Bildschirm in eine Zeichenkette umgewandelt.
 
-Print multiple objects:
+Mehrere Objekte ausgeben:
 
 
 
 .. code-block:: python
 
-    print("Welcome!", "Enjoy yourself!")
+    print("Willkommen!", "Viel Spaß!")
 
 >>> %Run -c $EDITOR_CONTENT
-Welcome! Enjoy yourself!
+Willkommen! Viel Spaß!
 
-Print tuples:
+Tupel ausgeben:
 
 
 
 .. code-block:: python
 
-    x = ("pear", "apple", "grape")
+    x = ("Birne", "Apfel", "Traube")
     print(x)
 
 >>> %Run -c $EDITOR_CONTENT
-('pear', 'apple', 'grape')
+('Birne', 'Apfel', 'Traube')
 
-Print two messages and specify the separator:
+Zwei Nachrichten ausgeben und das Trennzeichen festlegen:
 
 
 
 .. code-block:: python
 
-    print("Hello", "how are you?", sep="---")
+    print("Hallo", "wie geht's?", sep="---")
 
 >>> %Run -c $EDITOR_CONTENT
-Hello---how are you?
+Hallo---wie geht's?

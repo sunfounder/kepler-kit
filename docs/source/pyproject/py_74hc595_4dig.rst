@@ -1,51 +1,40 @@
 .. _py_74hc_4dig:
 
-5.3 Time Counter
+5.3 Zeitmesser
 ================================
 
+Ein 4-stelliges 7-Segment-Display besteht aus vier zusammenarbeitenden 7-Segment-Anzeigen.
 
-4-digit 7-segment display consists of four 7-segment displays working
-together.
+Das 4-stellige 7-Segment-Display arbeitet unabhängig voneinander. Es nutzt das Prinzip der visuellen Persistenz des menschlichen Auges, um die Zeichen jedes 7-Segments schnell in einer Schleife anzuzeigen und so fortlaufende Zeichenfolgen zu bilden.
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+Zum Beispiel, wenn "1234" auf dem Display angezeigt wird, erscheint "1" auf dem ersten 7-Segment, während "234" nicht angezeigt wird. Nach einer kurzen Zeit zeigt das zweite 7-Segment "2", die 1., 3. und 4. 7-Segment-Anzeige bleiben aus, und so weiter. Dieser Vorgang ist sehr kurz (typischerweise 5ms), und durch den optischen Nachleuchteffekt sowie das Prinzip der visuellen Persistenz sehen wir alle vier Zeichen gleichzeitig.
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit ist sicherlich praktisch, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch separat über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -53,7 +42,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -62,11 +51,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(220Ω)
+        - 4 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -77,15 +66,15 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+Der Verdrahtungsansatz ist im Grunde der gleiche wie bei :ref:`py_74hc_led`, der einzige Unterschied besteht darin, dass die Pins Q0-Q7 an die a ~ g Pins des 4-stelligen 7-Segment-Displays angeschlossen sind.
 
-Then G10 ~ G13 will select which 7-segment display to work.
+Anschließend wählen G10 ~ G13 aus, welches 7-Segment-Display aktiv sein soll.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_4dig|
 
@@ -93,11 +82,11 @@ Then G10 ~ G13 will select which 7-segment display to work.
 
 .. note::
 
-    * Open the ``5.3_time_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``5.3_time_counter.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen beziehen Sie sich bitte auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -158,14 +147,15 @@ Then G10 ~ G13 will select which 7-segment display to work.
         hc595_shift(SEGCODE[count%1000//100])
         
         pickDigit(3)
-        hc595_shift(SEGCODE[count%10000//1000])     
+        hc595_shift(SEGCODE[count%10000//1000])
 
-After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
 
-**How it works?**
+Nachdem das Programm ausgeführt wurde, verwandelt sich die 4-stellige 7-Segment-Anzeige in einen Zähler, und die Zahl erhöht sich jede Sekunde um 1.
 
-Writing signals to each 7-segment display is done in the same way as :ref:`py_74hc_7seg`, using the ``hc595_shift()`` function.
-The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
+**Wie funktioniert es?**
+
+Das Senden von Signalen an jede 7-Segment-Anzeige erfolgt auf die gleiche Weise wie bei :ref:`py_74hc_7seg`, indem die Funktion ``hc595_shift()`` verwendet wird.
+Der Kernpunkt der 4-stelligen 7-Segment-Anzeige besteht darin, selektiv jede 7-Segment-Anzeige zu aktivieren. Der damit verbundene Code ist wie folgt:
 
 .. code-block:: python
 
@@ -194,16 +184,15 @@ The core point of the 4-digit 7-segment display is to selectively activate each 
         hc595_shift(SEGCODE[count%10000//1000])
         pickDigit(3)   
 
-Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the 4-digit 7-segment display individually.
-When the state of these pins is ``0``, the corresponding 7-segment display is active; when the state is ``1``, the opposite is true.
+An dieser Stelle werden vier Pins (GP10, GP11, GP12, GP13) verwendet, um jeden Bit der 4-stelligen 7-Segment-Anzeige individuell zu steuern.
+Wenn der Zustand dieser Pins ``0`` ist, ist das entsprechende 7-Segment-Display aktiv; bei Zustand ``1`` gilt das Gegenteil.
 
-Here the ``pickDigit(digit)`` function is used to unable all four digits and then enable a particular digit individually.
-After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
+Hier wird die Funktion ``pickDigit(digit)`` verwendet, um alle vier Ziffern zu deaktivieren und dann eine bestimmte Ziffer einzeln zu aktivieren.
+Danach wird ``hc595_shift()`` verwendet, um den entsprechenden 8-Bit-Code für die 7-Segment-Anzeige zu schreiben.
 
-The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
-However, we need to add a timing function to this example, and if we add a ``sleep(1)``, we will know that it has four digits.
-we will see through the illusion of 4-digit 7-segment display working at the same time, exposing the fact that only one 7-segment display is illuminated at a time.
-Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excellent way to do this.
+Die 4-stellige 7-Segment-Anzeige muss kontinuierlich abwechselnd aktiviert werden, damit wir sie sehen können.
+Jedoch dürfen wir im Hauptprogramm keinen Code hinzufügen, der das Timing beeinflussen würde.
+Zu diesem Zweck ist die Verwendung der Funktion ``time.ticks_ms()`` aus der ``time``-Bibliothek eine ausgezeichnete Methode.
 
 .. code-block:: python
 
@@ -217,10 +206,10 @@ Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excel
     while True:
         count = timer1()
 
+Die Funktion ``time.ticks_ms()`` ermittelt eine (nicht explizite) Zeit, und wir speichern den ersten ermittelten Zeitwert als ``timerStart``.
+Wenn später die Zeit benötigt wird, wird die Funktion ``time.ticks_ms()`` erneut aufgerufen, und der Wert wird von ``timerStart`` abgezogen, um die bisherige Laufzeit des Programms (in Millisekunden) zu ermitteln.
 
-The ``time.ticks_ms()`` function gets a (non-explicit) time, and we record the first time value we get as ``timerStart``.
-Subsequently, when the time is needed, the ``time.ticks_ms()`` function is called again, and the value is subtracted from ``timerStart`` to get how long the program has been running (in milliseconds).
-
-Finally, convert and output this time value to the 4-digit 7-segment display and you're done.
+Abschließend wird dieser Zeitwert in die 4-stellige 7-Segment-Anzeige umgewandelt und ausgegeben, und das war's.
 
 * `Time - MicroPython Docs <https://docs.micropython.org/en/latest/library/time.html>`_
+

@@ -1,52 +1,47 @@
 .. _py_temp:
 
-
 2.13 Thermometer
 ===========================
 
-A thermometer is a device that measures temperature or a temperature gradient (the degree of hotness or coldness of an object). 
-A thermometer has two important elements: (1) a temperature sensor (e.g. the bulb of a mercury-in-glass thermometer or the pyrometric sensor in an infrared thermometer) in which some change occurs with a change in temperature; 
-and (2) some means of converting this change into a numerical value (e.g. the visible scale that is marked on a mercury-in-glass thermometer or the digital readout on an infrared model). 
-Thermometers are widely used in technology and industry to monitor processes, in meteorology, in medicine, and in scientific research.
+Ein Thermometer ist ein Gerät, das die Temperatur oder einen Temperaturgradienten misst (das Maß für die Wärme oder Kälte eines Objekts). 
+Ein Thermometer hat zwei wichtige Elemente: (1) einen Temperatursensor (z.B. die Birne eines Quecksilber-Thermometers oder den pyrometrischen Sensor in einem Infrarot-Thermometer), bei dem eine Veränderung mit einer Temperaturänderung eintritt; 
+und (2) eine Möglichkeit, diese Änderung in einen numerischen Wert umzuwandeln (z.B. die sichtbare Skala, die auf einem Quecksilber-Thermometer markiert ist, oder die digitale Anzeige bei einem Infrarot-Modell). 
+Thermometer werden in Technik und Industrie zur Prozessüberwachung, in der Meteorologie, in der Medizin und in der wissenschaftlichen Forschung weit verbreitet verwendet.
 
+Ein Thermistor ist eine Art Temperatursensor, dessen Widerstand stark temperaturabhängig ist, und es gibt zwei Typen:
+Negative Temperaturkoeffizient (NTC) und Positiver Temperaturkoeffizient (PTC), 
+auch bekannt als NTC und PTC. Der Widerstand des PTC-Thermistors steigt mit der Temperatur, während der Zustand des NTC dem des PTC entgegengesetzt ist.
 
-
-A thermistor is a type of temperature sensor whose resistance is strongly dependent on temperature, and it has two types: 
-Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), 
-also known as NTC and PTC. The resistance of PTC thermistor increases with temperature, while the condition of NTC is opposite to the former.
-
-In this experiment we use an **NTC thermistor** to make a thermometer.
-
+In diesem Experiment verwenden wir einen **NTC-Thermistor**, um ein Thermometer herzustellen.
 
 * :ref:`cpn_thermistor`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können diese auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -54,7 +49,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -63,7 +58,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -74,46 +69,47 @@ You can also buy them separately from the links below.
         - 1
         - |link_thermistor_buy|
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_temp|
 
-In this circuit, the 10K resistor and the thermistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the thermistor.
+In dieser Schaltung sind der 10K Widerstand und der Thermistor in Reihe geschaltet, und der durch sie fließende Strom ist derselbe. Der 10K Widerstand dient als Schutz, und der GP28 liest den Wert nach der Spannungsumwandlung des Thermistors.
 
-When the temperature increases, the resistance value of NTC thermistor decreases, then its voltage decreases, so the value from GP28 will decrease; If the temperature is high enough, the resistance of the thermistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+Wenn die Temperatur steigt, verringert sich der Widerstandswert des NTC-Thermistors, dann sinkt seine Spannung, sodass der Wert von GP28 abnimmt; Wenn die Temperatur hoch genug ist, wird der Widerstand des Thermistors nahezu 0 sein, und der Wert von GP28 wird nahezu 0 sein. In dieser Zeit spielt der 10K Widerstand eine schützende Rolle, sodass 3,3V und GND nicht miteinander verbunden sind, was zu einem Kurzschluss führt.
 
-When the temperature drops, the value of GP28 will increase. When the temperature is low enough, the resistance of the thermistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+Wenn die Temperatur sinkt, wird der Wert von GP28 steigen. Wenn die Temperatur niedrig genug ist, wird der Widerstand des Thermistors unendlich sein, und seine Spannung wird nahe 3,3V liegen (der 10K Widerstand ist vernachlässigbar), und der Wert von GP28 wird nahe dem Maximalwert von 65535 sein.
 
-
-The calculation formula is shown below.
+Die Berechnungsformel ist unten dargestellt.
 
     (Vp/3.3V) x 65535 = Ap
 
 
-**Wiring**
+
+
+
+**Verdrahtung**
 
 
 |wiring_temp|
  
-.. #. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
-.. #. Connect another lead of thermistor to the negative power bus.
+.. #. Verbinden Sie 3V3 und GND von Pico W mit dem Stromschienenbereich des Steckbretts.
+.. #. Verbinden Sie ein Ende des Thermistors mit dem GP28-Pin und schließen Sie dann dasselbe Ende über einen 10K Ohm Widerstand mit der positiven Stromschiene an.
+.. #. Verbinden Sie das andere Ende des Thermistors mit der negativen Stromschiene.
 
 .. note::
-    * The thermistor is black and marked 103.
-    * The color ring of the 10K ohm resistor is red, black, black, red and brown.
+    * Der Thermistor ist schwarz und mit 103 markiert.
+    * Der Farbring des 10K Ohm Widerstands ist rot, schwarz, schwarz, rot und braun.
 
 **Code**
 
 
 .. note::
 
-    * Open the ``2.13_thermometer.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.13_thermometer.py`` unter dem Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, dann klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, in der rechten unteren Ecke den "MicroPython (Raspberry Pi Pico)"-Interpreter zu wählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Detaillierte Anleitungen finden Sie unter :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -134,21 +130,21 @@ The calculation formula is shown below.
         print ('Celsius: %.2f C  Fahrenheit: %.2f F' % (Cel, Fah))
         utime.sleep_ms(200)
 
-After the program runs, the Shell will print out the Celsius and Fahrenheit temperatures.
+Nachdem das Programm ausgeführt wurde, gibt die Shell die Temperaturen in Celsius und Fahrenheit aus.
 
-**How it works?**
+**Wie funktioniert es?**
 
-Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius. 
+Jeder Thermistor hat einen Normalwiderstand. Hier beträgt er 10k Ohm, gemessen bei 25 Grad Celsius.
 
-When the temperature gets higher, the resistance of the thermistor decreases. Then the voltage data is converted to digital quantities by the A/D adapter. 
+Wenn die Temperatur steigt, verringert sich der Widerstand des Thermistors. Dann werden die Spannungsdaten durch den A/D-Adapter in digitale Mengen umgewandelt.
 
-The temperature in Celsius or Fahrenheit is output via programming. 
+Die Temperatur in Celsius oder Fahrenheit wird mittels Programmierung ausgegeben.
 
 .. code-block:: python
 
     import math 
 
-There is a numerics library which declares a set of functions to compute common mathematical operations and transformations. 
+Hierbei handelt es sich um eine numerische Bibliothek, die eine Reihe von Funktionen zur Berechnung gängiger mathematischer Operationen und Transformationen deklariert.
 
 * `math <https://docs.micropython.org/en/latest/library/math.html>`_
 
@@ -156,7 +152,7 @@ There is a numerics library which declares a set of functions to compute common 
 
     temperature_value = thermistor.read_u16()
 
-This function is used to read the value of the thermistor. 
+Diese Funktion wird verwendet, um den Wert des Thermistors auszulesen.
 
 .. code-block:: python
 
@@ -168,51 +164,52 @@ This function is used to read the value of the thermistor.
     print ('Celsius: %.2f C  Fahrenheit: %.2f F' % (Cel, Fah))
     utime.sleep_ms(200)
 
-These calculations convert the thermistor values into centigrade degree and Fahrenheit degree. 
+Diese Funktion wird verwendet, um den Wert des Thermistors auszulesen.
 
 .. code-block:: python
 
     Vr = 3.3 * float(temperature_value) / 65535
     Rt = 10000 * Vr / (3.3 - Vr)
 
-In the two lines of code above, the voltage is first calculated using the read analoge value, and then get Rt (the resistance of the thermistor).
+In den beiden obigen Codezeilen wird zuerst die Spannung anhand des gelesenen analogen Wertes berechnet und anschließend Rt (der Widerstand des Thermistors) ermittelt.
 
 .. code-block:: python
 
-    temp = 1/(((math.log(Rt / 10000)) / 3950) + (1 / (273.15+25))) 
+    temp = 1/(((math.log(Rt / 10000)) / 3950) + (1 / (273.15+25)))
 
 .. note::
-    Here is the relation between the resistance and temperature: 
+    Hier ist die Beziehung zwischen Widerstand und Temperatur: 
 
     **RT =RN expB(1/TK – 1/TN)** 
 
-    * RT is the resistance of the NTC thermistor when the temperature is TK. 
-    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
-    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
-    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
-    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+    * RT ist der Widerstand des NTC-Thermistors bei einer Temperatur von TK.
+    * RN ist der Widerstand des NTC-Thermistors bei der Nenntemperatur TN. Hier beträgt der Zahlenwert von RN 10k.
+    * TK ist eine Kelvin-Temperatur, deren Einheit K ist. Hier beträgt der Zahlenwert von TK 273,15 + Grad Celsius.
+    * TN ist eine Nenn-Kelvin-Temperatur; die Einheit ist auch K. Hier beträgt der Zahlenwert von TN 273,15+25.
+    * Und B(beta), die Materialkonstante des NTC-Thermistors, wird auch als Wärmeempfindlichkeitsindex bezeichnet und hat einen Zahlenwert von 3950.
+    * exp ist die Abkürzung für exponentiell, und die Basiszahl e ist eine natürliche Zahl und beträgt ungefähr 2,7.
 
-    Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+    Wandeln Sie diese Formel TK=1/(ln(RT/RN)/B+1/TN) um, um eine Kelvin-Temperatur zu erhalten, die minus 273,15 Grad Celsius entspricht.
 
-    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+    Diese Beziehung ist eine empirische Formel. Sie ist nur dann genau, wenn Temperatur und Widerstand innerhalb des wirksamen Bereichs liegen.
 
-This code refers to plugging Rt into the formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature. 
+Dieser Code bezieht sich darauf, Rt in die Formel TK=1/(ln(RT/RN)/B+1/TN) einzusetzen, um die Kelvin-Temperatur zu erhalten.
 
 .. code-block:: python
 
     temp = temp - 273.15 
 
-Convert Kelvin temperature into centigrade degree. 
+Umwandlung der Kelvin-Temperatur in Grad Celsius.
 
 .. code-block:: python
 
     Fah = Cel * 1.8 + 32 
 
-Convert the centigrade degree into Fahrenheit degree. 
+Umwandlung des Celsius-Grades in Fahrenheit.
 
 .. code-block:: python
 
-    print ('Celsius: %.2f °C Fahrenheit: %.2f ℉' % (Cel, Fah)) 
+    print ('Celsius: %.2f °C Fahrenheit: %.2f ℉' % (Cel, Fah))
 
-Print centigrade degree, Fahrenheit degree and their units in the shell.
+Geben Sie Grad Celsius, Fahrenheit und deren Einheiten in der Shell aus.
+

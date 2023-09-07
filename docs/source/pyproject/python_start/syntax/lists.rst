@@ -1,190 +1,191 @@
-Lists
+.. _syntax_list:
+
+Listen
 ===================
 
-Lists are used to store multiple items in a single variable, and are created using square brackets:
+Listen dienen dazu, mehrere Elemente in einer einzigen Variable zu speichern und werden mit eckigen Klammern erstellt:
 
 .. code-block:: python
 
-    B_list = ["Blossom", "Bubbles","Buttercup"]
-    print(B_list)
+    B_Liste = ["Blossom", "Bubbles", "Buttercup"]
+    print(B_Liste)
 
 
-List items are changeable, ordered, and allow duplicate values.
-The list items are indexed, with the first item having index [0], the second item having index [1], and so on.
+Listenelemente sind veränderbar, geordnet und erlauben doppelte Werte.
+Die Elemente der Liste sind indiziert, wobei das erste Element den Index [0], das zweite den Index [1] usw. hat.
 
 .. code-block:: python
 
-    C_list = ["Red", "Blue", "Green", "Blue"]
-    print(C_list)            # duplicate
-    print(C_list[0]) 
-    print(C_list[1])         # ordered
-    C_list[2] = "Purple"     # changeable
-    print(C_list)
+    C_Liste = ["Rot", "Blau", "Grün", "Blau"]
+    print(C_Liste)            # Duplikate erlaubt
+    print(C_Liste[0]) 
+    print(C_Liste[1])         # geordnet
+    C_Liste[2] = "Lila"       # veränderbar
+    print(C_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Red', 'Blue', 'Green', 'Blue']
-Red
-Blue
-['Red', 'Blue', 'Purple', 'Blue']
+['Rot', 'Blau', 'Grün', 'Blau']
+Rot
+Blau
+['Rot', 'Blau', 'Lila', 'Blau']
 
 
-A list can contain different data types:
+Eine Liste kann unterschiedliche Datentypen enthalten:
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    print(A_list)
+    A_Liste = ["Banane", 255, False, 3.14]
+    print(A_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Banana', 255, False, 3.14]
+['Banane', 255, False, 3.14]
 
 
-List Length
+Listenlänge
 ------------------
-To determine how many items are in the list, use the len() function.
+Um herauszufinden, wie viele Elemente in der Liste enthalten sind, verwenden Sie die Funktion len().
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    print(len(A_list))
+    A_Liste = ["Banane", 255, False, 3.14]
+    print(len(A_Liste))
 
 >>> %Run -c $EDITOR_CONTENT
 4
 
-Check List items
+Listenelemente überprüfen
 -----------------------
 
-Print the second item of the list:
+Drucken Sie das zweite Element der Liste aus:
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    print(A_list[1])
+    A_Liste = ["Banane", 255, False, 3.14]
+    print(A_Liste[1])
 
 >>> %Run -c $EDITOR_CONTENT
 [255]
 
-Print the last one item of the list:
+Drucken Sie das letzte Element der Liste aus:
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    print(A_list[-1])
+    A_Liste = ["Banane", 255, False, 3.14]
+    print(A_Liste[-1])
 
 >>> %Run -c $EDITOR_CONTENT
 [3.14]
 
-Print the second, third item:
+Drucken Sie das zweite und dritte Element aus:
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    print(A_list[1:3])
+    A_Liste = ["Banane", 255, False, 3.14]
+    print(A_Liste[1:3])
 
 >>> %Run -c $EDITOR_CONTENT
 [255, False]
 
 
-Change List Items
+Listen-Elemente ändern
 ----------------------
-Change the second, third item:
+Ändere das zweite und dritte Element:
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    A_list[1:3] = [True,"Orange"] 
-    print(A_list)
+    A_Liste = ["Banane", 255, False, 3.14]
+    A_Liste[1:3] = [True, "Orange"] 
+    print(A_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Banana', True, 'Orange', 3.14]
+['Banane', True, 'Orange', 3.14]
 
-Change the second value by replacing it with two values:
+Ersetze das zweite Element durch zwei Werte:
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14]
-    A_list[1:2] = [True,"Orange"] 
-    print(A_list)
+    A_Liste = ["Banane", 255, False, 3.14]
+    A_Liste[1:2] = [True, "Orange"] 
+    print(A_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Banana', True, 'Orange', False, 3.14]
+['Banane', True, 'Orange', False, 3.14]
 
 
-Add List Items
+Listenelemente hinzufügen
 -------------------
 
-Using the append() method to add an item:
+Mit der append()-Methode ein Element hinzufügen:
 
 .. code-block:: python
 
-    C_list = ["Red", "Blue", "Green"]
-    C_list.append("Orange")
-    print(C_list)
+    C_Liste = ["Rot", "Blau", "Grün"]
+    C_Liste.append("Orange")
+    print(C_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Red', 'Blue', 'Green', 'Orange']
+['Rot', 'Blau', 'Grün', 'Orange']
 
-Insert an item as the second position:
+Ein Element an der zweiten Position einfügen:
 
 .. code-block:: python
 
-    C_list = ["Red", "Blue", "Green"]
-    C_list.insert(1, "Orange")
-    print(C_list)
+    C_Liste = ["Rot", "Blau", "Grün"]
+    C_Liste.insert(1, "Orange")
+    print(C_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Red', 'Orange', 'Blue', 'Green']
+['Rot', 'Orange', 'Blau', 'Grün']
 
 
-
-Remove List Items
+Listenelemente entfernen
 -----------------------
 
-The remove() method removes the specified item.
+Die remove()-Methode entfernt das angegebene Element.
 
 .. code-block:: python
 
-    C_list = ["Red", "Blue", "Green"]
-    C_list.remove("Blue")
-    print(C_list)
+    C_Liste = ["Rot", "Blau", "Grün"]
+    C_Liste.remove("Blau")
+    print(C_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Red', 'Green']
+['Rot', 'Grün']
 
-The pop() method removes the specified index. If you do not specify the index, the pop() method removes the last item.
+Die pop()-Methode entfernt das Element am angegebenen Index. Wenn kein Index angegeben wird, entfernt die pop()-Methode das letzte Element.
 
 .. code-block:: python
 
-    A_list = ["Banana", 255, False, 3.14, True,"Orange"]
-    A_list.pop(1)
-    print(A_list)
-    A_list.pop()
-    print(A_list)
+    A_Liste = ["Banane", 255, False, 3.14, True, "Orange"]
+    A_Liste.pop(1)
+    print(A_Liste)
+    A_Liste.pop()
+    print(A_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
 255
-['Banana', False, 3.14, True, 'Orange']
+['Banane', False, 3.14, True, 'Orange']
 'Orange'
-['Banana', False, 3.14, True]
+['Banane', False, 3.14, True]
 
-The ``del`` keyword also removes the specified index:
+Das Schlüsselwort ``del`` entfernt ebenfalls den angegebenen Index:
 
 .. code-block:: python
 
-    C_list = ["Red", "Blue", "Green"]
-    del C_list[1]
-    print(C_list)
+    C_Liste = ["Rot", "Blau", "Grün"]
+    del C_Liste[1]
+    print(C_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
-['Red', 'Green']
+['Rot', 'Grün']
 
-The clear() method empties the list. The list still remains, but it has no content.
+Die clear()-Methode leert die Liste. Die Liste bleibt bestehen, hat aber keinen Inhalt mehr.
 
 .. code-block:: python
 
-    C_list = ["Red", "Blue", "Green"]
-    C_list.clear()
-    print(C_list)
+    C_Liste = ["Rot", "Blau", "Grün"]
+    C_Liste.clear()
+    print(C_Liste)
 
 >>> %Run -c $EDITOR_CONTENT
 []

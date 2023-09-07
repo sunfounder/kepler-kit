@@ -1,45 +1,46 @@
-Operators
+Operatoren
 ============
-Operators are used to perform operations on variables and values.
 
-* :ref:`Arithmetic operators`
+Operatoren dienen zur Durchführung von Operationen auf Variablen und Werten.
 
-* :ref:`Assignment operators`
+* :ref:`Arithmetische Operatoren`
 
-* :ref:`Comparison operators`
+* :ref:`Zuweisungsoperatoren`
 
-* :ref:`Logical operators`
+* :ref:`Vergleichsoperatoren`
 
-* :ref:`Identity operators`
+* :ref:`Logische Operatoren`
 
-* :ref:`Membership operators`
+* :ref:`Identitätsoperatoren`
 
-* :ref:`Bitwise operators`
+* :ref:`Mitgliedschaftsoperatoren`
 
-Arithmetic Operators
-----------------------
-You can use arithmetic operators to do some common mathematical operations.
+* :ref:`Bitweise Operatoren`
+
+Arithmetische Operatoren
+---------------------------
+Mit arithmetischen Operatoren können Sie gängige mathematische Operationen durchführen.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
     *   - Operator
-        - Name
-    *   - `+`
+        - Bezeichnung
+    *   - ``+``
         - Addition
-    *   - `-`
-        - Subtraction
-    *   - `*`
-        - Multiplication
-    *   - `/`
+    *   - ``-``
+        - Subtraktion
+    *   - ``*``
+        - Multiplikation
+    *   - ``/``
         - Division
-    *   - `%`
-        - Modulus
-    *   - `**`
-        - Exponentiation
-    *   - `//`
-        - Floor division
+    *   - ``%``
+        - Modulo
+    *   - ``**``
+        - Potenzierung
+    *   - ``//``
+        - Ganzzahlige Division
 
 
 
@@ -77,55 +78,55 @@ You can use arithmetic operators to do some common mathematical operations.
 15
 >>> 
 
-Assignment operators
+Zuweisungsoperatoren
 ---------------------
 
-Assignment operators can used to assign values to variables.
+Zuweisungsoperatoren werden verwendet, um Werte Variablen zuzuweisen.
 
 .. list-table:: 
     :widths: 10 30 30
     :header-rows: 1
 
     *   - Operator
-        - Example
-        - Same As
-    *   - `=`
+        - Beispiel
+        - Entsprechend
+    *   - ``=``
         - a = 6
-        - a =6
-    *   - `+=`
+        - a = 6
+    *   - ``+=``
         - a += 6
         - a = a + 6
-    *   - `-=`
+    *   - ``-=``
         - a -= 6
         - a = a - 6
-    *   - `*=`
-        - a `*=` 6
+    *   - ``*=``
+        - a \*= 6
         - a = a * 6
-    *   - `/=`
+    *   - ``/=``
         - a /= 6
         - a = a / 6
-    *   - `%=`
+    *   - ``%=``
         - a %= 6
         - a = a % 6
-    *   - `**=`
-        - a `**=` 6
-        - a = a ** 6
-    *   - `//=`
+    *   - ``**=``
+        - a \*\*= 6
+        - a = a \*\* 6
+    *   - ``//=``
         - a //= 6
         - a = a // 6
-    *   - `&=`
+    *   - ``&=``
         - a &= 6
         - a = a & 6
-    *   - `|=`
-        - a `|=` 6
+    *   - ``|=``
+        - a \|= 6
         - a = a | 6
-    *   - `^=`
+    *   - ``^=``
         - a ^= 6
         - a = a ^ 6
-    *   - `>>=`
+    *   - ``>>=``
         - a >>= 6
         - a = a >> 6
-    *   - `<<=`
+    *   - ``<<=``
         - a <<= 6
         - a = a << 6
 
@@ -142,28 +143,29 @@ Assignment operators can used to assign values to variables.
 36
 >>> 
 
-Comparison Operators
+
+Vergleichsoperatoren
 ------------------------
-Comparison operators are used to compare two values.
+Vergleichsoperatoren werden verwendet, um zwei Werte miteinander zu vergleichen.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
     *   - Operator
-        - Name
-    *   - ==
-        - Equal
-    *   - !=
-        - Not equal
-    *   - <
-        - Less than
-    *   - >
-        - Greater than
-    *   - >=
-        - Greater than or equal to
-    *   - <=
-        - Less than or equal to
+        - Bezeichnung
+    *   - ``==``
+        - Gleich
+    *   - ``!=``
+        - Ungleich
+    *   - ``<``
+        - Kleiner als
+    *   - ``>``
+        - Größer als
+    *   - ``>=``
+        - Größer oder gleich
+    *   - ``<=``
+        - Kleiner oder gleich
 
 
 
@@ -173,31 +175,31 @@ Comparison operators are used to compare two values.
     a = 6
     b = 8
 
-    print(a>b)
+    print(a > b)
 
 >>> %Run test.py
 False
 >>> 
 
-Return **False**, beause the **a** is less than the **b**.
+Gibt **False** zurück, weil **a** kleiner als **b** ist.
 
-Logical Operators
+Logische Operatoren
 -----------------------
 
-Logical operators are used to combine conditional statements.
+Logische Operatoren werden verwendet, um Bedingungsanweisungen zu kombinieren.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
     *   - Operator
-        - Description
-    *   - and
-        - Returns True if both statements are true
-    *   - or
-        - Returns True if one of the statements is true
-    *   - not
-        - Reverse the result, returns False if the result is true
+        - Beschreibung
+    *   - ``and``
+        - Gibt True zurück, wenn beide Aussagen wahr sind
+    *   - ``or``
+        - Gibt True zurück, wenn eine der Aussagen wahr ist
+    *   - ``not``
+        - Kehrt das Ergebnis um, gibt False zurück, wenn das Ergebnis wahr ist
 
 .. code-block:: python
 
@@ -208,21 +210,21 @@ Logical operators are used to combine conditional statements.
 True
 >>> 
 
-Identity Operators
+Identitätsoperatoren
 ------------------------
 
-Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location.
+Identitätsoperatoren dienen zum Vergleich von Objekten, nicht ob sie gleich sind, sondern ob es sich tatsächlich um dasselbe Objekt mit demselben Speicherort handelt.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
     *   - Operator
-        - Description
-    *   - is
-        - Returns True if both variables are the same object
-    *   - is not
-        - Returns True if both variables are not the same object
+        - Beschreibung
+    *   - ``is``
+        - Gibt True zurück, wenn beide Variablen dasselbe Objekt sind
+    *   - ``is not``
+        - Gibt True zurück, wenn beide Variablen nicht dasselbe Objekt sind
 
 .. code-block:: python
 
@@ -231,13 +233,13 @@ Identity operators are used to compare the objects, not if they are equal, but i
     c = a
 
     print(a is c)
-    # returns True because z is the same object as x
+    # Gibt True zurück, da c dasselbe Objekt wie a ist
 
     print(a is b)
-    # returns False because x is not the same object as y, even if they have the same content
+    # Gibt False zurück, da a nicht dasselbe Objekt wie b ist, auch wenn sie denselben Inhalt haben
 
     print(a == b)
-    # returns True because x is equal to y
+    # Gibt True zurück, da a gleich b ist
 
 >>> %Run -c $EDITOR_CONTENT
 True
@@ -245,20 +247,21 @@ False
 True
 >>> 
 
-Membership Operators
+
+Mitgliedschaftsoperatoren
 ----------------------
-Membership operators are used to test if a sequence is presented in an object.
+Mitgliedschaftsoperatoren werden verwendet, um zu testen, ob eine Sequenz in einem Objekt enthalten ist.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
     *   - Operator
-        - Description
-    *   - in
-        - Returns True if a sequence with the specified value is present in the object
-    *   - not in
-        - Returns True if a sequence with the specified value is not present in the object
+        - Beschreibung
+    *   - ``in``
+        - Gibt True zurück, wenn eine Sequenz mit dem angegebenen Wert im Objekt vorhanden ist
+    *   - ``not in``
+        - Gibt True zurück, wenn eine Sequenz mit dem angegebenen Wert nicht im Objekt vorhanden ist
 
 .. code-block:: python
 
@@ -270,10 +273,10 @@ Membership operators are used to test if a sequence is presented in an object.
 True
 >>> 
 
-Bitwise Operators
+Bitweise Operatoren
 ------------------------
 
-Bitwise operators are used to compare (binary) numbers.
+Bitweise Operatoren werden zum Vergleichen von (binären) Zahlen verwendet.
 
 .. list-table:: 
     :widths: 10 20 50
@@ -281,25 +284,25 @@ Bitwise operators are used to compare (binary) numbers.
 
     *   - Operator
         - Name
-        - Description
-    *   - &
-        - AND
-        - Sets each bit to 1 if both bits are 1
-    *   - |
-        - OR
-        - Sets each bit to 1 if one of two bits is 1
-    *   - ^
+        - Beschreibung
+    *   - ``&``
+        - UND
+        - Setzt jedes Bit auf 1, wenn beide Bits 1 sind
+    *   - ``|``
+        - ODER
+        - Setzt jedes Bit auf 1, wenn eines von zwei Bits 1 ist
+    *   - ``^``
         - XOR
-        - Sets each bit to 1 if only one of two bits is 1
-    *   - ~
-        - NOT
-        - Inverts all the bits
-    *   - <<
-        - Zero fill left shift
-        - Shift left by pushing zeros in from the right and let the leftmost bits fall off
-    *   - >>
-        - Signed right shift
-        - Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+        - Setzt jedes Bit auf 1, wenn nur eines von zwei Bits 1 ist
+    *   - ``~``
+        - NICHT
+        - Kehrt alle Bits um
+    *   - ``<<``
+        - Zero-fill Linksschiebung
+        - Verschiebt nach links, indem von rechts Nullen eingefügt werden und die am weitesten links stehenden Bits herausfallen
+    *   - ``>>``
+        - Signierte Rechtsschiebung
+        - Verschiebt nach rechts, indem Kopien des am weitesten links stehenden Bits von links eingefügt werden und die am weitesten rechts stehenden Bits herausfallen
 
 .. code-block:: python
 
@@ -314,3 +317,4 @@ Bitwise operators are used to compare (binary) numbers.
 3
 4
 >>>
+

@@ -5,28 +5,26 @@ Servo
 
 |img_servo|
 
-A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board.  
+Ein Servo setzt sich in der Regel aus den folgenden Teilen zusammen: Gehäuse, Welle, Getriebesystem, Potentiometer, Gleichstrommotor und eingebettete Platine. 
 
-It works like this: The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. As a result, the motor drives the gear system and then motivates the shaft after deceleration. The shaft and potentiometer of the servo are connected together. When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there.
+Die Funktionsweise ist wie folgt: Der Mikrocontroller sendet PWM-Signale an den Servo, welche von der eingebetteten Platine im Servo über den Signaleingang empfangen werden. Die Platine steuert daraufhin den internen Motor an, der das Getriebe in Bewegung setzt und so die Welle antreibt. Die Welle und das Potentiometer des Servos sind miteinander verbunden. Wenn die Welle sich dreht, wird das Potentiometer mitbewegt, das dann eine Spannung an die Platine sendet. Basierend auf dieser Spannung bestimmt die Platine die Drehrichtung und -geschwindigkeit und stoppt die Welle exakt in der vorgegebenen Position.
 
 |img_servo_i|
 
-The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the motor turns. For example, a 1.5ms pulse will make the motor turn to the 90 degree position (neutral position).
-When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point. When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide.
+Der Winkel wird durch die Dauer eines Pulses bestimmt, der auf das Steuerkabel aufgebracht wird. Dies wird als Pulsweitenmodulation bezeichnet. Der Servo erwartet alle 20 ms einen Puls. Die Länge dieses Pulses bestimmt, wie weit sich der Motor dreht. Ein 1,5 ms langer Puls beispielsweise bringt den Motor in die 90-Grad-Position (Neutralstellung). Wird ein kürzerer Puls als 1,5 ms an den Servo gesendet, dreht dieser seine Ausgangswelle um eine bestimmte Anzahl von Grad gegen den Uhrzeigersinn von der Neutralposition aus. Ein Puls, der länger als 1,5 ms ist, bewirkt das Gegenteil. Die minimale und maximale Pulsbreite, die den Servo zu einer gültigen Position steuert, hängt vom jeweiligen Servo ab. Üblicherweise beträgt die minimale Pulsbreite etwa 0,5 ms und die maximale etwa 2,5 ms.
 
 |img_servo_duty|
 
-
-.. Example
+.. Beispiel
 .. -------------------
 
-.. :ref:`Swinging Servo`
+.. :ref:`Schwingender Servo`
 
-**Example**
+**Beispiel**
 
-* :ref:`py_servo` (For MicroPython User)
-* :ref:`py_somato_controller` (For MicroPython User)
-* :ref:`ar_servo` (For Arduino User)
-* :ref:`per_water_tank` (For Piper Make User)
-* :ref:`per_swing_servo` (For Piper Make User)
-* :ref:`per_lucky_cat` (For Piper Make User)
+* :ref:`py_servo` (Für MicroPython-Nutzer)
+* :ref:`py_somato_controller` (Für MicroPython-Nutzer)
+* :ref:`ar_servo` (Für Arduino-Nutzer)
+* :ref:`per_water_tank` (Für Piper Make-Nutzer)
+* :ref:`per_swing_servo` (Für Piper Make-Nutzer)
+* :ref:`per_lucky_cat` (Für Piper Make-Nutzer)

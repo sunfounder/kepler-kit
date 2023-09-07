@@ -65,6 +65,7 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
+language = 'de'
 
 # new
 rst_epilog = """

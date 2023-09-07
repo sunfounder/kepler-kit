@@ -1,54 +1,50 @@
 .. _py_rfid:
 
+6.5 Funkfrequenz-Identifikation
+==============================================
 
-6.5 Radio Frequency Identification
-================================================
+Die Funkfrequenz-Identifikation (RFID) ist eine Technologie, die drahtlose Kommunikation zwischen einem Objekt (oder Tag) und einem abfragenden Gerät (oder Lesegerät) zur Identifizierung und Nachverfolgung nutzt. Die Übertragungsreichweite des Tags ist auf einige Meter begrenzt. Eine direkte Sichtlinie zwischen Lesegerät und Tag ist nicht zwingend erforderlich.
 
-Radio Frequency Identification (RFID) is a technology that uses wireless communication between an object (or tag) and an interrogating device (or reader) to track and identify it. The tag's transmission range is limited to several meters. Readers and tags do not necessarily require a line of sight.
-
-An integrated circuit (IC) and an antenna are usually present on most tags. 
-As well as storing information, the microchip manages communication with the reader via radio frequency (RF).
-In passive tags, there is no independent energy source and they rely on an external electromagnetic signal from the reader for power. 
-An active tag is powered by an independent energy source, such as a battery. As a result, they may be more powerful in terms of processing, transmission, and range.
-
+Die meisten Tags verfügen über einen integrierten Schaltkreis (IC) und eine Antenne.
+Neben der Datenspeicherung ermöglicht der Mikrochip die Kommunikation mit dem Lesegerät via Funkfrequenz (RF).
+Passive Tags haben keine eigenständige Energiequelle und sind für ihre Stromversorgung auf ein externes elektromagnetisches Signal des Lesegeräts angewiesen.
+Aktive Tags hingegen verfügen über eine unabhängige Energiequelle, etwa eine Batterie, was ihnen eine höhere Leistungsfähigkeit bei der Verarbeitung, Übertragung und Reichweite ermöglicht.
 
 * :ref:`cpn_mfrc522`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist natürlich praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - ARTIKEL IN DIESEM KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können auch separat über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,36 +53,33 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_rfid|
 
-**Wiring**
-
-
+**Verkabelung**
 
 |wiring_rfid|
 
 **Code**
 
-Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+Bitte verwenden Sie die Bibliotheken im Ordner ``mfrc522``. Stellen Sie sicher, dass diese auf dem Pico W hochgeladen wurden. Eine detaillierte Anleitung finden Sie unter :ref:`add_libraries_py`.
 
-The main function is divided into two:
+Die Hauptfunktion ist zweigeteilt:
 
-* ``6.5_rfid_write.py``: Used to write information to the card (or key).
-* ``6.5_rfid_read.py``: used to read the information in the card (or key)
+* ``6.5_rfid_write.py``: Dient dem Beschreiben der Karte (oder des Schlüssels).
+* ``6.5_rfid_read.py``: Dient dem Auslesen der Karte (oder des Schlüssels).
 
+Öffnen Sie die Datei ``6.5_rfid_write.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-Open the ``6.5_rfid_write.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-
-After running you will be able to type message in the shell and then put the card (or key) close to the MFRC522 module to write the message in.
+Nach dem Ausführen können Sie eine Nachricht im Shell-Fenster eingeben und die Karte (oder den Schlüssel) in die Nähe des MFRC522-Moduls halten, um die Nachricht darauf zu schreiben.
 
 .. code-block:: python
 
@@ -102,9 +95,9 @@ After running you will be able to type message in the shell and then put the car
 
     write()
 
-Open the ``6.5_rfid_read.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+Öffnen Sie die Datei ``6.5_rfid_read.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen.
 
-After running, you will be able to read the message stored in the card (or key).
+Nach dem Ausführen können Sie die auf der Karte (oder dem Schlüssel) gespeicherte Nachricht auslesen.
 
 .. code-block:: python
 
@@ -119,8 +112,7 @@ After running, you will be able to read the message stored in the card (or key).
 
     read()
 
-**How it works?**
-
+**Wie funktioniert es?**
 
 .. code-block:: python
 
@@ -128,17 +120,17 @@ After running, you will be able to read the message stored in the card (or key).
 
     reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
 
-Instantiate ``SimpleMFRC522()`` class.
+Instanzierung der Klasse ``SimpleMFRC522()``.
 
 .. code-block:: python
 
     id, text = reader.read()
 
-This function is used to read card data. If the reading is successful, id and text will be returned.
+Diese Funktion dient dem Auslesen der Kartendaten. Bei erfolgreichem Auslesen werden ID und Text zurückgegeben.
 
 .. code-block:: python
 
     id, text = reader.write("text")
 
-This function is used to write information to the card, press **Enter** key to finish writing. 
-``text`` is the information to be written to the card.
+Diese Funktion dient dem Beschreiben der Karte. Drücken Sie die **Eingabetaste**, um den Vorgang abzuschließen.
+``text`` sind die auf die Karte zu schreibenden Informationen.

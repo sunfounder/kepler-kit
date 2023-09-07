@@ -1,54 +1,52 @@
 .. _py_dht11:
 
-6.2 Temperature - Humidity
+6.2 Temperatur - Feuchtigkeit
 =======================================
 
+Feuchtigkeit und Temperatur stehen sowohl im Hinblick auf die physikalische Größe selbst als auch im tatsächlichen Leben der Menschen in engem Zusammenhang. 
+Die Temperatur und Feuchtigkeit unserer Umgebung beeinflussen direkt die Thermoregulationsfunktion und den Wärmeübertragungseffekt des menschlichen Körpers. 
+Dies beeinflusst weiterhin die Denkaktivität und den geistigen Zustand und somit die Effizienz unserer Lern- und Arbeitsprozesse.
 
-Humidity and temperature are closely related from the physical quantity itself to the actual people's life.
-The temperature and humidity of human environment will directly affect the thermoregulatory function and heat transfer effect of human body.
-It will further affect the thinking activity and mental state, thus affecting the efficiency of our study and work.
+Temperatur ist eine der sieben grundlegenden physikalischen Größen im Internationalen Einheitensystem und dient zur Messung des Wärme- oder Kältegrades eines Objekts. 
+Celsius ist eine der weltweit am häufigsten verwendeten Temperaturskalen und wird durch das Symbol "℃" ausgedrückt.
 
-Temperature is one of the seven basic physical quantities in the International System of Units, which is used to measure the degree of hot and cold of an object.
-Celsius is one of the more widely used temperature scales in the world, expressed by the symbol "℃".
-
-Humidity is the concentration of water vapor present in the air.
-The relative humidity of air is commonly used in life and is expressed in %RH. Relative humidity is closely related to temperature.
-For a certain volume of sealed gas, the higher the temperature, the lower the relative humidity, and the lower the temperature, the higher the relative humidity.
+Feuchtigkeit ist die Konzentration von Wasserdampf in der Luft. 
+Die relative Luftfeuchtigkeit wird im Alltag häufig verwendet und in %RH ausgedrückt. Sie steht in engem Zusammenhang mit der Temperatur. 
+Für ein bestimmtes Volumen von abgeschlossenem Gas gilt: Je höher die Temperatur, desto niedriger die relative Feuchtigkeit und umgekehrt.
 
 |img_Dht11|
 
-A basic digital temperature and humidity sensor, the **DHT11**, is provided in this kit.
-It uses a capacitive humidity sensor and thermistor to measure the surrounding air and outputs a digital signal on the data pins (no analog input pins are required).
+Ein grundlegender digitaler Temperatur- und Feuchtigkeitssensor, der **DHT11**, ist in diesem Kit enthalten.
+Er verwendet einen kapazitiven Feuchtigkeitssensor und einen Thermistor, um die umgebende Luft zu messen und gibt ein digitales Signal an den Datenpins aus (analoge Eingangspins sind nicht erforderlich).
 
 * :ref:`cpn_dht11`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein gesamtes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können diese auch über die nachfolgenden Links einzeln erwerben:
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -56,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -65,20 +63,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
         - 1
         - |link_dht22_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_dht11|
 
-
-**Wiring**
-
+**Verkabelung**
 
 |wiring_dht11|
 
@@ -86,13 +82,13 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``6.2_temperature_humidity.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``6.2_temperature_humidity.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Detaillierte Anleitungen finden Sie unter :ref:`open_run_code_py`.
     
-    * Here you need to use the library called ``dht.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Hier müssen Sie die Bibliothek ``dht.py`` verwenden. Bitte überprüfen Sie, ob sie auf Pico W hochgeladen wurde. Eine detaillierte Anleitung finden Sie unter :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -115,28 +111,25 @@ You can also buy them separately from the links below.
             print('Bad pulse count - retrying ...')
 
 
+Nachdem der Code ausgeführt wurde, werden Temperatur und Feuchtigkeit kontinuierlich in der Shell ausgegeben. Mit fortlaufender Programmausführung werden diese Werte immer genauer.
 
+**Wie funktioniert es?**
 
-After the code is run, you will see the Shell continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
-
-**How it works?**
-
-In the dht library, we have integrated the relevant functionality into the ``DHT11`` class.
+In der dht-Bibliothek haben wir die relevante Funktionalität in die Klasse ``DHT11`` integriert.
 
 .. code-block:: python
 
     from dht import DHT11, InvalidPulseCount
 
-Initialize the ``DHT11`` object. This device only needs a digital input to be used.
+Initialisieren Sie das ``DHT11``-Objekt. Für dieses Gerät wird nur ein digitaler Eingang benötigt.
 
 .. code-block:: python
 
     pin = Pin(16, Pin.IN, Pin.PULL_UP)
     sensor = DHT11(pin)
 
-Use ``sensor.measure()`` to read the current temperature and humidity, which will be stored in ``sensor.temperature``, ``sensor.humidity``.
-They are then printed out.
-Finally the DHT11 sampling rate is 1HZ, a ``time.sleep(1)`` is needed in the loop.
+Verwenden Sie ``sensor.measure()``, um die aktuelle Temperatur und Feuchtigkeit zu lesen, die in ``sensor.temperature`` und ``sensor.humidity`` gespeichert werden. Diese Werte werden dann ausgegeben. 
+Die Abtastrate des DHT11 beträgt 1HZ, daher wird in der Schleife ein ``time.sleep(1)`` benötigt.
 
 .. code-block:: python
 
@@ -149,3 +142,4 @@ Finally the DHT11 sampling rate is 1HZ, a ``time.sleep(1)`` is needed in the loo
 
         except InvalidPulseCount as e:
             print('Bad pulse count - retrying ...')
+

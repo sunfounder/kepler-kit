@@ -1,44 +1,43 @@
 .. _py_keypad:
 
-4.2 4x4 Keypad
+4.2 4x4 Tastenfeld
 ========================
 
-The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
+Das 4x4 Tastenfeld, auch Matrix-Tastenfeld genannt, besteht aus einer Anordnung von 16 Tasten in einer einzigen Einheit.
 
-The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+Solche Tastenfelder findet man hauptsächlich in Geräten, die digitale Eingaben erfordern, wie Taschenrechner, Fernbedienungen, Tastentelefone, Verkaufsautomaten, Geldautomaten, Zahlenschlösser und digitale Türschlösser.
 
-In this project, we will learn how to determine which key is pressed and get the related key value.
+In diesem Projekt lernen wir, wie man ermittelt, welche Taste gedrückt wurde und den entsprechenden Tastenwert erhält.
 
 * :ref:`cpn_keypad`
-* `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
+* `E.161 – Wikipedia <https://de.wikipedia.org/wiki/E.161>`_
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist definitiv praktisch. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - ARTIKEL IM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Set	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die einzelnen Komponenten können auch über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -46,7 +45,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,34 +65,31 @@ You can also buy them separately from the links below.
         - 1
         - |link_keypad_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_keypad|
 
-4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+An jede der vier Spalten des Matrix-Tastenfelds ist ein Pull-Down-Widerstand angeschlossen, sodass die Anschlüsse G6 bis G9 auf einem stabilen niedrigen Pegel sind, wenn keine Taste gedrückt ist.
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+Die Reihen des Tastenfelds (G2 bis G5) sind so programmiert, dass sie auf High gehen; wird einer der Anschlüsse G6 bis G9 als High gelesen, wissen wir, welche Taste gedrückt wurde.
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+Zum Beispiel, wenn G6 als High gelesen wird, dann wurde die Nummerntaste 1 gedrückt; denn die Steuerpins der Nummerntaste 1 sind G2 und G6, wenn die Taste 1 gedrückt wird, werden G2 und G6 miteinander verbunden und G6 ist ebenfalls High.
 
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_keypad|
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
-
+Um die Verdrahtung zu vereinfachen, sind im obigen Schaltplan die Reihen und Spalten des Matrix-Tastenfelds sowie die 10K-Widerstände gleichzeitig in die Löcher eingesteckt, in denen sich G6 bis G9 befinden.
 
 **Code**
 
 .. note::
 
-    * Open the ``4.2_4x4_keypad.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``4.2_4x4_keypad.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie den Code in Thonny, und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im rechten unteren Eck den "MicroPython (Raspberry Pi Pico)"-Interpreter auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -137,9 +133,8 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
             print(current_key)
         time.sleep(0.1)
 
-After the program runs, the Shell will print out the keys you pressed on the Keypad.
-
-**How it works**
+Nachdem das Programm ausgeführt wurde, wird die Shell die Tasten ausgeben, die Sie auf dem Keypad gedrückt haben.
+**Funktionsweise**
 
 .. code-block:: python
 
@@ -160,7 +155,7 @@ After the program runs, the Shell will print out the keys you pressed on the Key
         col.append(None)
         col[i] = machine.Pin(pin[i], machine.Pin.IN)
 
-Declare each key of the matrix keyboard to the array ``characters[]`` and define the pins on each row and column.
+Definiert jede Taste der Matrix-Tastatur im Array ``characters[]`` und legt die Pins für jede Reihe und Spalte fest.
 
 .. code-block:: python
 
@@ -174,18 +169,18 @@ Declare each key of the matrix keyboard to the array ``characters[]`` and define
             print(current_key)
         time.sleep(0.1)
 
-This is the part of the main function that reads and prints the button value.
+Dies ist der Teil der Hauptfunktion, der den Wert der gedrückten Taste liest und ausgibt.
 
-The function ``readKey()`` will read the state of every button.
+Die Funktion ``readKey()`` liest den Zustand jeder Taste aus.
 
-The statement ``if current_key != None`` and ``if current_key == last_key`` 
-is used to judge whether a key is pressed and the state of the pressed button. 
-(If you press \'3\' when you press \'1\', the judgement is tenable.)
+Die Anweisungen ``if current_key != None`` und ``if current_key == last_key`` 
+dienen dazu, festzustellen, ob eine Taste gedrückt ist und wie der Zustand der gedrückten Taste ist.
+(Wenn Sie beispielsweise '3' drücken, während Sie '1' drücken, ist die Bewertung gültig.)
 
-Prints the value of the currently pressed key when the condition is tenable.
+Gibt den Wert der aktuell gedrückten Taste aus, wenn die Bedingung gültig ist.
 
-The statement ``last_key = current_key`` assigns the state of each judgment 
-to an array ``last_key`` to facilitate the next round of conditional judgment.
+Die Anweisung ``last_key = current_key`` speichert den Zustand jeder Auswertung 
+in einem Array ``last_key``, um die nächste Runde der bedingten Bewertung zu erleichtern.
 
 .. code-block:: python
 
@@ -202,24 +197,23 @@ to an array ``last_key`` to facilitate the next round of conditional judgment.
         else:
             return key
 
-This function assigns a high level to each row in turn, and when the button is pressed, 
-the column in which the key is located gets a high level. 
-After the two-layer loop is judged, the value of the button whose state is 1 is stored in the array ``key`` .
+Diese Funktion setzt jede Reihe der Matrix-Tastatur nacheinander auf ein hohes Niveau. Wenn eine Taste gedrückt wird, 
+erhält die entsprechende Spalte ein hohes Niveau. 
+Nach Durchlaufen der zweistufigen Schleife wird der Wert der Taste, deren Zustand 1 ist, im Array ``key`` gespeichert.
 
-If you press the key \'3\':
+Wenn Sie die Taste '3' drücken:
 
 |img_keypad_pressed|
 
+``row[0]`` wird auf ein hohes Niveau gesetzt und ``col[2]`` erhält ebenfalls ein hohes Niveau.
 
-``row[0]`` is written in high level, and ``col[2]`` gets high level.
+``col[0]``, ``col[1]``, ``col[3]`` erhalten ein niedriges Niveau.
 
-``col[0]``, ``col[1]``, ``col[3]`` get low level.
+Es gibt vier Zustände: 0, 0, 1, 0; und wir schreiben '3' in ``pressed_keys``.
 
-There are four states:0, 0, 1, 0; and we write \'3\' into ``pressed_keys``.
+Wenn ``row[1]``, ``row[2]``, ``row[3]`` auf ein hohes Niveau gesetzt werden,
+erhalten ``col[0]`` ~ ``col[4]`` ein niedriges Niveau.
 
-When ``row[1]`` , ``row[2]`` , ``row[3]`` are written into high level,
-``col[0]`` ~ ``col[4]`` get low level.
+Die Schleife stoppt und gibt key = '3' zurück.
 
-The loop stopped, there returns key = \'3\'.
-
-If you press the buttons \'1\' and \'3\', there will return key = [\'1\',\'3\'].
+Wenn Sie die Tasten '1' und '3' drücken, wird key = ['1','3'] zurückgegeben.

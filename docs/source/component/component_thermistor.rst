@@ -5,44 +5,43 @@ Thermistor
 
 |img_thermistor|
 
-A thermistor is a type of resistor whose resistance is strongly dependent on temperature, more so than in standard resistors. The word is a combination of thermal and resistor. Thermistors are widely used as inrush current limiters, temperature sensors (negative temperature coefficient or NTC type typically), self-resetting overcurrent protectors, and self-regulating heating elements (positive temperature coefficient or PTC type typically).
+Ein Thermistor ist eine spezielle Form eines Widerstands, dessen Widerstandswert stark temperaturabhängig ist, viel stärker als bei Standardwiderständen. Der Begriff setzt sich aus den Wörtern "thermal" und "resistor" zusammen. Thermistoren werden häufig als Einschaltstrombegrenzer, Temperatursensoren (in der Regel vom NTC-Typ mit negativem Temperaturkoeffizienten), selbstzurücksetzende Überstromschutzvorrichtungen und selbstregelnde Heizelemente (in der Regel vom PTC-Typ mit positivem Temperaturkoeffizienten) eingesetzt.
 
-* `Thermistor - Wikipedia <https://en.wikipedia.org/wiki/Thermistor>`_
+* `Thermistor - Wikipedia <https://de.wikipedia.org/wiki/Thermistor>`_
 
-Here is the electronic symbol of thermistor.
+Hier ist das Elektroniksymbol für einen Thermistor.
 
 |img_thermistor_symbol|
 
-Thermistors are of two opposite fundamental types:
+Es gibt zwei grundlegend unterschiedliche Arten von Thermistoren:
 
-* With NTC thermistors, resistance decreases as temperature rises usually due to an increase in conduction electrons bumped up by thermal agitation from valency band. An NTC is commonly used as a temperature sensor, or in series with a circuit as an inrush current limiter.
-* With PTC thermistors, resistance increases as temperature rises usually due to increased thermal lattice agitations particularly those of impurities and imperfections. PTC thermistors are commonly installed in series with a circuit, and used to protect against overcurrent conditions, as resettable fuses.
+* Bei NTC-Thermistoren nimmt der Widerstand mit steigender Temperatur ab. Dies ist in der Regel auf eine Zunahme der durch thermische Anregung angeregten Leitungselektronen zurückzuführen. NTCs werden häufig als Temperatursensoren eingesetzt oder in Reihe zu einer Schaltung als Einschaltstrombegrenzer.
+* Bei PTC-Thermistoren steigt der Widerstand mit zunehmender Temperatur, in der Regel durch eine Zunahme der thermischen Gitteranregungen, insbesondere von Verunreinigungen und Unvollkommenheiten. PTC-Thermistoren werden oft in Reihe zu einer Schaltung eingesetzt und dienen als rückstellbare Sicherungen gegen Überstrombedingungen.
 
-In this kit we use an NTC one. Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius.
+In diesem Bausatz verwenden wir einen NTC-Thermistor. Jeder Thermistor hat einen Nennwiderstand. Hier beträgt dieser 10 kOhm, gemessen bei einer Temperatur von 25 Grad Celsius.
 
-Here is the relation between the resistance and temperature:
+Hier ist die Beziehung zwischen dem Widerstand und der Temperatur:
 
-    RT = RN * expB(1/TK - 1/TN)   
+    RT = RN * exp(B * (1/TK - 1/TN))
 
-* **RT** is the resistance of the NTC thermistor when the temperature is TK. 
-* **RN** is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k.
-* **TK** is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius.
-* **TN** is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-* And **B(beta)**, the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950.      
-* **exp** is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately.  
+* **RT** ist der Widerstand des NTC-Thermistors bei der Temperatur TK.
+* **RN** ist der Widerstand des NTC-Thermistors bei der Nenntemperatur TN. Hier beträgt der Zahlenwert von RN 10k.
+* **TK** ist eine Temperatur in Kelvin, die Einheit ist K. Hier beträgt der Zahlenwert von TK 273,15 + Grad Celsius.
+* **TN** ist eine Nenntemperatur in Kelvin; die Einheit ist ebenfalls K. Hier beträgt der Zahlenwert von TN 273,15+25.
+* **B(Beta)**, die Materialkonstante des NTC-Thermistors, wird auch als Temperaturkoeffizient bezeichnet und hat den Zahlenwert 3950.
+* **exp** steht für die Exponentialfunktion, deren Basis die natürliche Zahl e ist und die ungefähr 2,7 beträgt.
 
-Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius.
+Diese Beziehung wird durch die Formel TK=1/(ln(RT/RN)/B+1/TN) hergeleitet, wobei die resultierende Temperatur in Kelvin um 273,15 reduziert wird, um Grad Celsius zu erhalten.
 
-This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+Diese Beziehung ist eine empirische Formel und gilt nur, wenn Temperatur und Widerstand innerhalb des wirksamen Bereichs liegen.
 
-.. Example
+.. Beispiel
 .. -------------------
 
 .. :ref:`Thermometer`
 
+**Beispiel**
 
-**Example**
-
-* :ref:`py_temp` (For MicroPython User)
-* :ref:`py_room_temp` (For MicroPython User)
-* :ref:`ar_temp` (For Arduino User)
+* :ref:`py_temp` (Für MicroPython-Nutzer)
+* :ref:`py_room_temp` (Für MicroPython-Nutzer)
+* :ref:`ar_temp` (Für Arduino-Nutzer)

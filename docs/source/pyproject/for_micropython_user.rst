@@ -1,17 +1,15 @@
 .. _micropython_user:
 
-For MicroPython User
+Für MicroPython-Nutzer
 ======================
-In this section, you will learn the history of MicroPython, how to install MicroPython in Pico W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
+In diesem Abschnitt erfahren Sie die Geschichte von MicroPython, wie Sie MicroPython auf dem Pico W installieren können, die Grundlagen der Syntax und eine Reihe interessanter sowie praktischer Projekte, die Ihnen beim schnellen Erlernen von MicroPython helfen.
 
-We recommend that you read the chapters in order.
+Wir empfehlen, die Kapitel in der vorgeschlagenen Reihenfolge zu lesen.
 
-
-**1. Get Started**
+**1. Einstieg**
 
 .. toctree::
     :maxdepth: 1
-
 
     python_start/introduction_micropython
     python_start/install_thonny
@@ -20,9 +18,7 @@ We recommend that you read the chapters in order.
     python_start/quick_guide_thonny
     python_start/syntax/micropython_basic_syntax
 
-
-
-**2. Output & Input**
+**2. Ausgabe & Eingabe**
 
 .. toctree::
     :maxdepth: 1
@@ -44,7 +40,7 @@ We recommend that you read the chapters in order.
     py_transistor
     py_relay
 
-**3. Sound & Display & Movement**
+**3. Ton & Anzeige & Bewegung**
 
 .. toctree::
     :maxdepth: 1
@@ -57,7 +53,7 @@ We recommend that you read the chapters in order.
     py_pump
     py_servo
 
-**4. Controller**
+**4. Steuerung**
 
 .. toctree::
     :maxdepth: 1
@@ -66,7 +62,7 @@ We recommend that you read the chapters in order.
     py_keypad
     py_mpr121
 
-**5. Microchip**
+**5. Mikrochip**
 
 .. toctree::
     :maxdepth: 1
@@ -76,7 +72,7 @@ We recommend that you read the chapters in order.
     py_74hc595_4dig
     py_74hc595_matrix
 
-**6. Advanced**
+**6. Fortgeschritten**
 
 .. toctree::
     :maxdepth: 1
@@ -87,7 +83,7 @@ We recommend that you read the chapters in order.
     py_irremote
     py_rfid
 
-**7. Funny Project**
+**7. Unterhaltsame Projekte**
 
 .. toctree::
     :maxdepth: 1
@@ -104,5 +100,3 @@ We recommend that you read the chapters in order.
     py_reversing_aid
     py_somatosensory_controller
     py_digital_bubble_level
-
-

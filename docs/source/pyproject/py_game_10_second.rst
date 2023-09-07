@@ -1,39 +1,36 @@
 .. _py_10_second:
 
-7.5 GAME - 10 Second
+7.5 SPIEL - 10 Sekunden
 =======================
 
+Um Ihre Konzentration auf die Probe zu stellen, bauen Sie mit mir ein Spielgerät. Kreieren Sie einen Zauberstab, indem Sie den Kipp-Schalter mit einem Stab verbinden. Wenn Sie den Zauberstab schütteln, beginnt die 4-stellige 7-Segment-Anzeige mit dem Zählen. Schütteln Sie ihn erneut, stoppt das Zählen. Um zu gewinnen, muss der angezeigte Zählerstand bei **10.00** stehen bleiben. Spielen Sie das Spiel mit Ihren Freunden, um herauszufinden, wer der Zeitmagier ist.
 
-To challenge your concentration, follow me next to make a game device. 
-Make a magic wand by connecting the tilt switch with a stick. When you shake the wand, the 4-digit segment display will start counting, and when you shake it again, it will stop counting. In order to win, you must keep the displayed count at **10.00**. You can play the game with your friends to see who is the time wizard.
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist natürlich praktisch, ein komplettes Set zu kaufen. Hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch separat unter den folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -41,7 +38,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -50,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -69,31 +66,27 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
-
+**Schaltplan**
 
 |sch_10_second|
 
+* Diese Schaltung basiert auf :ref:`py_74hc_4dig`, ergänzt durch einen Kipp-Schalter.
+* GP16 ist hoch, wenn der Kipp-Schalter aufrecht ist; niedrig, wenn gekippt.
 
-* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* GP16 is high when the tilt switch is upright; low when tilted.
+**Verkabelung**
 
-**Wiring**
-
-|wiring_game_10_second| 
+|wiring_game_10_second|
 
 
 **Code**
 
-
 .. note::
 
-    * Open the ``7.5_game_10_second.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.5_game_10_second.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -170,5 +163,5 @@ You can also buy them separately from the links below.
             count = int((time.ticks_ms()-timeStart)/10)
         display(count)
 
-The 4-digit 7-segment display will begin counting when you shake the wand, and will stop counting when you shake it again. 
-You win if you manage to keep the displayed count at 10.00. The game will continue after one more shake.
+Die 4-stellige 7-Segment-Anzeige beginnt mit dem Zählen, sobald Sie den Zauberstab schütteln, und stoppt, wenn Sie ihn erneut schütteln.
+Sie gewinnen, wenn es Ihnen gelingt, den angezeigten Zählstand bei 10,00 zu halten. Das Spiel wird mit einem weiteren Schütteln fortgesetzt.

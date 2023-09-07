@@ -1,23 +1,21 @@
-Data Types
+Datentypen
 ===========
 
-Built-in Data Types
+Eingebaute Datentypen
 ---------------------
-MicroPython has the following data types:
+MicroPython unterstützt die folgenden Datentypen:
 
-* Text Type: str
-* Numeric Types: int, float, complex
-* Sequence Types: list, tuple, range
-* Mapping Type: dict
-* Set Types: set, frozenset
-* Boolean Type: bool
-* Binary Types: bytes, bytearray, memoryview
+* Texttyp: str
+* Numerische Typen: int, float, complex
+* Sequenztypen: list, tuple, range
+* Abbildungstyp: dict
+* Mengentypen: set, frozenset
+* Boolescher Typ: bool
+* Binärtypen: bytes, bytearray, memoryview
 
-Getting the Data Type
+Den Datentyp ermitteln
 -----------------------------
-You can get the data type of any object by using the `type()` function:
-
-
+Mit der Funktion ``type()`` können Sie den Datentyp eines beliebigen Objekts herausfinden:
 
 .. code-block:: python
 
@@ -27,17 +25,15 @@ You can get the data type of any object by using the `type()` function:
 >>> %Run -c $EDITOR_CONTENT
 <class 'float'>
 
-Setting the Data Type
+Datentyp setzen
 ----------------------
-MicroPython does not need to set the data type specifically, it has been determined when you assign a value to the variable.
-
-
+In MicroPython muss der Datentyp nicht explizit festgelegt werden; er wird automatisch bei der Wertzuweisung an eine Variable bestimmt:
 
 .. code-block:: python
 
-    x = "welcome"
+    x = "willkommen"
     y = 45
-    z = ["apple", "banana", "cherry"]
+    z = ["Apfel", "Banane", "Kirsche"]
 
     print(type(x))
     print(type(y))
@@ -49,36 +45,35 @@ MicroPython does not need to set the data type specifically, it has been determi
 <class 'list'>
 >>> 
 
-Setting the Specific Data Type
+Spezifischen Datentyp festlegen
 ----------------------------------
-
-If you want to specify the data type, you can use the following constructor functions:
+Möchten Sie den Datentyp explizit angeben, können Sie die folgenden Konstruktorfunktionen verwenden:
 
 .. list-table:: 
     :widths: 25 10
     :header-rows: 1
 
-    *   - Example
-        - Date Type
+    *   - Beispiel
+        - Datentyp
     *   - x = int(20)
         - int
     *   - x = float(20.5)
         - float
     *   - x = complex(1j)
         - complex
-    *   - x = str("Hello World")
+    *   - x = str("Hallo Welt")
         - str
-    *   - x = list(("apple", "banana", "cherry"))
+    *   - x = list(("Apfel", "Banane", "Kirsche"))
         - list
-    *   - x = tuple(("apple", "banana", "cherry"))
+    *   - x = tuple(("Apfel", "Banane", "Kirsche"))
         - tuple
     *   - x = range(6)
         - range
     *   - x = dict(name="John", age=36)
         - dict
-    *   - x = set(("apple", "banana", "cherry"))
+    *   - x = set(("Apfel", "Banane", "Kirsche"))
         - set
-    *   - x = frozenset(("apple", "banana", "cherry"))
+    *   - x = frozenset(("Apfel", "Banane", "Kirsche"))
         - frozenset
     *   - x = bool(5)
         - bool
@@ -89,14 +84,12 @@ If you want to specify the data type, you can use the following constructor func
     *   - x = memoryview(bytes(5))
         - memoryview
 
-You can print some of them to see the result.
-
-
+Einige von ihnen können Sie ausgeben, um das Ergebnis zu sehen.
 
 .. code-block:: python
 
     a = float(20.5)
-    b = list(("apple", "banana", "cherry"))
+    b = list(("Apfel", "Banane", "Kirsche"))
     c = bool(5)
 
     print(a)
@@ -105,20 +98,17 @@ You can print some of them to see the result.
 
 >>> %Run -c $EDITOR_CONTENT
 20.5
-['apple', 'banana', 'cherry']
-True
+['Apfel', 'Banane', 'Kirsche']
+Wahr
 >>> 
 
-Type Conversion
+Typumwandlung
 ----------------
-You can convert from one type to another with the int(), float(), and complex() methods:
-Casting in python is therefore done using constructor functions:
+Mit den Methoden int(), float() und complex() können Sie von einem Typ in einen anderen konvertieren. In Python erfolgt das Casting mithilfe von Konstruktorfunktionen:
 
-* int() - constructs an integer number from an integer literal, a float literal (by removing all decimals), or a string literal (providing the string represents a whole number)
-* float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)
-* str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals
-
-
+* int() - erstellt eine Ganzzahl aus einem Ganzzahl-, Fließkomma- oder Zeichenliteral (vorausgesetzt, die Zeichenfolge stellt eine ganze Zahl dar)
+* float() - erstellt eine Fließkommazahl aus einem Ganzzahl-, Fließkomma- oder Zeichenliteral (vorausgesetzt, die Zeichenfolge stellt eine Fließkommazahl oder eine ganze Zahl dar)
+* str() - erstellt eine Zeichenfolge aus einer Vielzahl von Datentypen, einschließlich Zeichenfolgen, Ganzzahl- und Fließkommaliteralen
 
 .. code-block:: python
 
@@ -130,4 +120,4 @@ Casting in python is therefore done using constructor functions:
     print(b)
     print(c)
 
-Note: You cannot convert complex numbers into another number type.
+Hinweis: Komplexe Zahlen können nicht in einen anderen Zahlenwert umgewandelt werden.

@@ -1,42 +1,40 @@
 .. _py_guess_number:
 
-7.7 Guess Number
+7.7 Zahlenraten
 ==============================
 
+Zahlenraten ist ein unterhaltsames Partyspiel, bei dem Sie und Ihre Freunde Zahlen von 0 bis 99 eingeben. Mit jeder Eingabe schrumpft der Zahlenbereich, bis ein Spieler das Rätsel richtig löst. Dann ist dieser Spieler besiegt und wird bestraft.
 
-Guessing Numbers is a fun party game where you and your friends input numbers (0-99). With each input of the number, the range will shrink until a player answers the riddle correctly. Then the player is defeated and punished. 
-
-As an example, if the lucky number is 51, which the players cannot see, and the player 1 inputs 50, the prompt changes to 50 - 99; if the player 2 inputs 70, the range changes to 50 - 70; if the player 3 inputs 51, the player is unlucky. In this case, numbers are inputted through the keypad, and outcomes are displayed on a LCD screen.
+Zum Beispiel, wenn die Glückszahl 51 ist, die für die Spieler unsichtbar ist, und Spieler 1 die Zahl 50 eingibt, ändert sich die Aufforderung zu 50 - 99; wenn Spieler 2 die Zahl 70 eingibt, ändert sich der Bereich zu 50 - 70; wenn Spieler 3 die Zahl 51 eingibt, hat er Pech gehabt. In diesem Fall werden die Zahlen über eine Tastatur eingegeben und die Ergebnisse auf einem LCD-Bildschirm angezeigt.
 
 |guess_number|
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -44,7 +42,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -53,7 +51,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -68,31 +66,29 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-
-**Schematic**
-
+**Schaltplan**
 
 |sch_guess_number|
 
-This circuit is based on :ref:`py_keypad` with the addition of an I2C LCD1602 to display the pressed keys.
+Diese Schaltung basiert auf :ref:`py_keypad` und wird durch ein I2C LCD1602 ergänzt, um die gedrückten Tasten anzuzeigen.
 
+**Verkabelung**
 
-**Wiring**
+|wiring_game_guess_number|
 
-|wiring_game_guess_number| 
+Um die Verkabelung zu erleichtern, sind in der obigen Darstellung die Spalten und Reihen der Matrix-Tastatur sowie die 10K-Widerstände gleichzeitig in die Löcher eingefügt, wo G10 ~ G13 liegen.
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G10 ~ G13 are located at the same time.
 
 
 **Code**
 
 .. note::
 
-    * Open the ``7.7_game_guess_number.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.7_game_guess_number.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Eck den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -100,7 +96,6 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
     import machine
     import time
     import urandom
-
 
     # keypad function
     characters = [["1","2","3","A"],["4","5","6","B"],["7","8","9","C"],["*","0","#","D"]]
@@ -170,7 +165,7 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
         elif count == pointValue:
             return True
         count = 0
-        return False 
+        return False
 
     ## start
     lcd = LCD()
@@ -197,10 +192,10 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
             lcd_show(result) # show 
         time.sleep(0.1)
 
-* After the code runs, press ``A`` to start the game. A random number ``point`` is produced but not displayed on the LCD, and what you need to do is to guess it. 
-* The number you have typed appears at the end of the first line till the final calculation is finished. (Press ``D`` to start the comparation.)
-* The number range of ``point`` is displayed on the second line. And you must type the number within the range. 
-* When you type a number, the range narrows; if you got the lucky number luckily or unluckily, there will appear ``GAME OVER!``.
+* Nach dem Ausführen des Codes drücken Sie ``A``, um das Spiel zu starten. Eine zufällige Zahl ``point`` wird erzeugt, jedoch nicht auf dem LCD angezeigt. Ihre Aufgabe ist es, diese zu erraten.
+* Die eingegebene Zahl wird am Ende der ersten Zeile angezeigt, bis die endgültige Berechnung abgeschlossen ist. (Drücken Sie ``D``, um den Vergleich zu starten.)
+* Der Zahlenbereich von ``point`` wird in der zweiten Zeile angezeigt. Ihre eingegebene Zahl muss in diesem Bereich liegen.
+* Wenn Sie eine Zahl eingeben, verengt sich der Bereich; wenn Sie die Glückszahl zufällig oder unglücklicherweise erraten, erscheint ``GAME OVER!``.
 
-.. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+.. note::
+    Falls der Code und die Verkabelung in Ordnung sind, das LCD jedoch keinen Inhalt anzeigt, können Sie das Potentiometer auf der Rückseite drehen, um den Kontrast zu erhöhen.

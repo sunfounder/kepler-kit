@@ -1,59 +1,35 @@
 .. _cpn_relay:
 
-Relay
+Relais
 ==========================================
 
 |img_relay|
 
-As we may know, relay is a device which is used to provide connection
-between two or more points or devices in response to the input signal
-applied. In other words, relays provide isolation between the controller
-and the device as devices may work on AC as well as on DC. However, they
-receive signals from a microcontroller which works on DC hence requiring
-a relay to bridge the gap. Relay is extremely useful when you need to
-control a large amount of current or voltage with small electrical
-signal.
+Wie bekannt ist, dient ein Relais dazu, eine Verbindung zwischen zwei oder mehr Punkten oder Geräten herzustellen, die auf ein eingegebenes Signal reagieren. Anders ausgedrückt, bieten Relais eine Isolation zwischen dem Controller und dem Gerät, da diese sowohl mit Wechselstrom (AC) als auch mit Gleichstrom (DC) betrieben werden können. Da sie jedoch Signale von einem Mikrocontroller erhalten, der mit Gleichstrom arbeitet, ist ein Relais erforderlich, um die Lücke zu schließen. Relais sind besonders nützlich, wenn man einen großen Strom oder eine hohe Spannung mit einem kleinen elektrischen Signal steuern muss.
 
-There are 5 parts in every relay:
+Ein Relais besteht aus fünf Hauptkomponenten:
 
-**Electromagnet** - It consists of an iron core wounded by coil of
-wires. When electricity is passed through, it becomes magnetic.
-Therefore, it is called electromagnet.
+**Elektromagnet** - Er besteht aus einem Eisenkern, der von einer Spule umwickelt ist. Wenn Strom durchfließt, wird er magnetisch. Deshalb wird er als Elektromagnet bezeichnet.
 
-**Armature** - The movable magnetic strip is known as armature. When
-current flows through them, the coil is it energized thus producing a
-magnetic field which is used to make or break the normally open (N/O) or
-normally close (N/C) points. And the armature can be moved with direct
-current (DC) as well as alternating current (AC).
+**Anker** - Der bewegliche magnetische Streifen wird als Anker bezeichnet. Wenn Strom durch die Spule fließt, wird sie magnetisiert und erzeugt ein Magnetfeld, das dazu dient, die normalerweise offenen (N/O) oder normalerweise geschlossenen (N/C) Kontakte herzustellen oder zu trennen. Der Anker kann sowohl mit Gleichstrom (DC) als auch mit Wechselstrom (AC) bewegt werden.
 
-**Spring** - When no currents flow through the coil on the
-electromagnet, the spring pulls the armature away so the circuit cannot
-be completed.
+**Feder** - Wenn kein Strom durch die Spule des Elektromagneten fließt, zieht die Feder den Anker zurück, sodass der Stromkreis nicht geschlossen werden kann.
 
-Set of electrical **contacts** - There are two contact points:
+**Elektrische Kontakte** - Es gibt zwei Kontaktstellen:
 
--  Normally open - connected when the relay is activated, and disconnected when it is inactive.
+-  Normalerweise offen - verbunden, wenn das Relais aktiviert ist, und getrennt, wenn es inaktiv ist.
+  
+-  Normalerweise geschlossen - nicht verbunden, wenn das Relais aktiviert ist, und verbunden, wenn es inaktiv ist.
 
--  Normally close - not connected when the relay is activated, and connected when it is inactive.
+**Gehäuse** - Relais sind zum Schutz mit Kunststoff ummantelt.
 
-**Molded frame** - Relays are covered with plastic for protection.
-
-The working principle of relay is simple. When power is supplied to the
-relay, currents start flowing through the control coil; as a result, the
-electromagnet starts energizing. Then the armature is attracted to the
-coil, pulling down the moving contact together thus connecting with the
-normally open contacts. So the circuit with the load is energized. Then
-breaking the circuit would a similar case, as the moving contact will be
-pulled up to the normally closed contacts under the force of the spring.
-In this way, the switching on and off of the relay can control the state
-of a load circuit.
+Das Funktionsprinzip eines Relais ist einfach. Wenn Strom an das Relais angelegt wird, fließt der Strom durch die Steuerspule; daraufhin beginnt der Elektromagnet sich zu magnetisieren. Der Anker wird dann zur Spule hingezogen, und der bewegliche Kontakt zieht mit und verbindet sich mit den normalerweise offenen Kontakten. Somit wird der Laststromkreis eingeschaltet. Um den Stromkreis wieder zu unterbrechen, wird der bewegliche Kontakt durch die Kraft der Feder zu den normalerweise geschlossenen Kontakten zurückgezogen. Auf diese Weise kann das Ein- und Ausschalten des Relais den Zustand eines Laststromkreises steuern.
 
 |img_relay_sche|
 
+* `Relais - Wikipedia <https://de.wikipedia.org/wiki/Relais>`_
 
-* `Relay - Wikipedia <https://en.wikipedia.org/wiki/Relay>`_
+**Beispiel**
 
-**Example**
-
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`ar_relay` (For Arduino User)
+* :ref:`py_relay` (Für MicroPython-Nutzer)
+* :ref:`ar_relay` (Für Arduino-Nutzer)

@@ -1,47 +1,45 @@
 .. _py_led:
 
-2.1 Hello, LED! 
+2.1 Hallo, LED!
 =======================================
 
-Just as printing "Hello, world!" is the first step in learning to program, using a program to drive an LED is the traditional introduction to learning physical programming.
+Genau wie das Ausgeben von "Hallo, Welt!" der erste Schritt beim Erlernen der Programmierung ist, stellt die Ansteuerung einer LED mit einem Programm die traditionelle Einführung in die physische Programmierung dar.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Einzelteile können auch über die unten stehenden Links separat erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -50,162 +48,54 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_led|
 
-This circuit works on a simple principle, and the current direction is shown in the figure. The LED will light up after the 220ohm current limiting resistor when GP15 outputs high level (3.3v). The LED will turn off when GP15 outputs low level (0v).
+Dieser Schaltkreis funktioniert nach einem einfachen Prinzip, die Stromrichtung ist in der Abbildung dargestellt. Die LED leuchtet auf, wenn GP15 eine hohe Ausgangsspannung (3,3 V) liefert, und erlischt, wenn GP15 eine niedrige Ausgangsspannung (0 V) liefert.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_led|
 
-To build the circuit, let's follow the current's direction!
+Um den Schaltkreis aufzubauen, folgen wir der Stromrichtung!
 
-1. The LED is powered by the GP15 pin of the Pico W board, and the circuit begins here.
-#. To protect the LED, the current must pass through a 220 ohm resistor. One end of the resistor should be inserted into the same row as the Pico W GP15 pin (row 20 in my circuit), and the other end should be inserted into the free row of the breadboard (row 24).
+1. Die LED wird über den GP15-Pin der Pico-W-Platine mit Strom versorgt; hier beginnt der Schaltkreis.
+#. Um die LED zu schützen, muss der Strom durch einen 220-Ohm-Widerstand fließen. Ein Ende des Widerstands sollte in die gleiche Reihe wie der Pico-W GP15-Pin (Reihe 20 in meinem Schaltkreis) eingefügt werden, das andere Ende in eine freie Reihe des Steckbretts (Reihe 24).
 
-    .. note::
-        The color ring of the 220 ohm resistor is red, red, black, black and brown.
+   .. note::
+       Der Farbring des 220-Ohm-Widerstands ist rot, rot, schwarz, schwarz und braun.
 
-#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
+#. Wenn Sie die LED aufnehmen, stellen Sie fest, dass einer der Anschlüsse länger ist als der andere. Verbinden Sie den längeren Anschluss mit der gleichen Reihe wie der Widerstand und den kürzeren Anschluss mit der Reihe gegenüber der Mittellücke auf dem Steckbrett.
 
-    .. note::
-        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
+   .. note::
+       Der längere Anschluss ist die Anode und repräsentiert die positive Seite des Schaltkreises; der kürzere ist die Kathode und steht für die negative Seite.
 
-        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
+       Die Anode muss über einen Widerstand mit dem GPIO-Pin verbunden sein; die Kathode muss mit dem GND-Pin verbunden sein.
 
-#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico W to the negative power bus using a jumper.
-
+#. Verwenden Sie ein Stecker-zu-Stecker (M2M) Verbindungskabel, um den kurzen Anschluss der LED mit der negativen Stromschiene des Steckbretts zu verbinden.
+#. Verbinden Sie den GND-Pin des Pico W mit der negativen Stromschiene des Steckbretts mithilfe eines Verbindungskabels.
 
 **Code**
 
 .. note::
 
-    * Open the ``2.1_hello_led.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+   * Öffnen Sie die Datei ``2.1_hello_led.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5, um es auszuführen.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+   * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-.. code-block:: python
-
-    import machine
-    import utime
-    
-    led = machine.Pin(15, machine.Pin.OUT)
-    while True:
-        led.value(1)
-        utime.sleep(2)
-        led.value(0)
-        utime.sleep(2)
-
-After the code runs, you will see the LED blinking.
-
-
-**How it works?**
-
-
-The machine library is required to use GPIO.
-
-.. code-block:: python
-
-    import machine
-
-The library contains all the instructions needed to communicate between MicroPython and Pico W. 
-In the absence of this line of code, we will not be able to control any GPIOs.
-
-The next thing to notice is this line:
-
-.. code-block:: python
-
-    led = machine.Pin(15, machine.Pin.OUT)
-
-The object ``led`` is defined here. Technically, it can be any name, such as x, y, banana, Michael_Jackson, or any character. 
-To ensure that the program is easy to read, it is best to use a name that describes the purpose.
-
-In the second part of this line (the part after the equal sign), we call the Pin function found in the ``machine`` library. It is used to tell Pico's GPIO pins what to do.
-A ``Pin`` function has two parameters: the first (15) represents the pin to set; 
-The second parameter (machine.Pin.OUT) specifies that the pin should be output rather than input.
-
-The above code has "set" the pin, but it will not light up the LED. To do this, we also need to "use" the pin.
-
-.. code-block:: python
-
-    led.value(1)
-
-The GP15 pin has been set up previously and named ``led``. The function of this statement is to set the value of ``led`` to 1 to turn the LED on.
-
-All in all, to use GPIO, these steps are necessary:
-
-* **import machine library**: This is necessary, and it is only executed once.
-* **Set GPIO**: Before using, each pin should be set.
-* **Use**: Change the working state of the pin by assigning a value to it.
-
-If we follow the above steps to write an example, then you will get code like this:
-
-.. code-block:: python
-
-    import machine
-    led = machine.Pin(15, machine.Pin.OUT)
-    led.value(1)
-
-Run it and you will be able to light up the LED.
-
-Next, we try to add the "extinguished" statement:
-
-.. code-block:: python
-
-    import machine   
-    led = machine.Pin(15, machine.Pin.OUT)
-    led.value(1)
-    led.value(0)
-
-Based on the code line, this program will turn on the LED first, then turn it off. 
-But when you use it, you will find that this is not the case. 
-There is no light coming from the LED. This is due to the very rapid execution speed between the two lines, much faster than the human eye can react. 
-When the LED lights up, we don't perceive the light instantly. This can be fixed by slowing down the program.
-
-The second line of the program should contain the following statement:
-
-.. code-block:: python
-
-    import utime
-
-Similarly to ``machine``, the ``utime`` library is imported here, which handles all things time-related.
-The delays we need to use are included in this. Add a delay statement between ``led.value(1)`` and ``led.value(0)`` and let them be separated by 2 seconds.
-
-.. code-block:: python
-
-    utime.sleep(2)
-
-This is how the code should look now. 
-We will see that the LED turns on first, then turns off when we run it:
-
-.. code-block:: python
-
-    import machine 
-    import utime  
-    led = machine.Pin(15, machine.Pin.OUT)
-    led.value(1)
-    utime.sleep(2)
-    led.value(0)
-
-Finally, we should make the LED blink. 
-Create a loop, rewrite the program, and it will be what you saw at the beginning of this chapter.
+   * Für detaillierte Anleitungen beziehen Sie sich bitte auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -219,29 +109,128 @@ Create a loop, rewrite the program, and it will be what you saw at the beginning
         led.value(0)
         utime.sleep(2)
 
-* :ref:`While Loops`
+Nachdem der Code ausgeführt wurde, sehen Sie die LED blinken.
 
-**Learn More**
+**Wie funktioniert es?**
 
+Die Bibliothek „machine“ wird benötigt, um GPIO zu nutzen.
 
-There will usually be an API (Application Programming Interface) file associated with the library. 
-It contains all the information necessary to use this library, including detailed descriptions of functions, classes, return types, parameter types, etc.
+.. code-block:: python
 
-In this article, we used MicroPython's ``machine`` and ``utime`` libraries, we can find more ways to use them here.
+    import machine
+
+Diese Bibliothek enthält alle Anweisungen, die zur Kommunikation zwischen MicroPython und Pico W erforderlich sind. Fehlt diese Zeile im Code, können wir keine GPIOs steuern.
+
+Das Nächste, was auffällt, ist diese Zeile:
+
+.. code-block:: python
+
+    led = machine.Pin(15, machine.Pin.OUT)
+
+Hier wird das Objekt ``led`` definiert. Technisch gesehen könnte es jeden beliebigen Namen haben, wie x, y, Banane oder Michael_Jackson. Um die Lesbarkeit des Programms zu gewährleisten, sollte ein beschreibender Name gewählt werden.
+
+Im zweiten Teil dieser Zeile (dem Teil nach dem Gleichheitszeichen) rufen wir die Funktion „Pin“ aus der „machine“-Bibliothek auf. Diese dient dazu, den GPIO-Pins des Pico W zu sagen, was sie tun sollen. Die Funktion „Pin“ hat zwei Parameter: Der erste (15) gibt an, welcher Pin eingestellt werden soll; der zweite Parameter (machine.Pin.OUT) gibt an, dass der Pin als Ausgang und nicht als Eingang fungieren soll.
+
+Der oben stehende Code hat den Pin "eingestellt", aber er wird die LED noch nicht zum Leuchten bringen. Dazu müssen wir den Pin auch "nutzen".
+
+.. code-block:: python
+
+    led.value(1)
+
+Der GP15-Pin wurde zuvor eingerichtet und heißt ``led``. Die Funktion dieser Anweisung besteht darin, den Wert von ``led`` auf 1 zu setzen.
+
+Um GPIO zu verwenden, sind folgende Schritte notwendig:
+
+* **`machine`-Bibliothek importieren**: Dies ist ein notwendiger Schritt und wird nur einmal durchgeführt.
+* **GPIO einstellen**: Vor der Nutzung muss jeder Pin konfiguriert werden.
+* **Verwenden**: Durch Zuweisung eines Wertes wird der Arbeitszustand des Pins verändert.
+
+Folgt man diesen Anweisungen, erhält man beispielsweise folgenden Code:
+
+.. code-block:: python
+
+    import machine
+    led = machine.Pin(15, machine.Pin.OUT)
+    led.value(1)
+
+Führt man diesen aus, wird die LED leuchten.
+
+Als nächstes fügen wir die "Ausschalt"-Anweisung hinzu:
+
+.. code-block:: python
+
+    import machine
+    led = machine.Pin(15, machine.Pin.OUT)
+    led.value(1)
+    led.value(0)
+
+Gemäß dem Code sollte das Programm die LED zunächst einschalten und dann wieder ausschalten. 
+In der Praxis stellt sich jedoch heraus, dass dies nicht der Fall ist.
+Die LED leuchtet nicht, da die beiden Zeilen sehr schnell nacheinander ausgeführt werden, schneller als das menschliche Auge reagieren kann.
+Das lässt sich beheben, indem das Programm verlangsamt wird.
+
+Für diesen Zweck sollte die zweite Zeile des Programms wie folgt aussehen:
+
+.. code-block:: python
+
+    import utime
+
+Ähnlich wie bei ``machine`` importieren wir hier die Bibliothek ``utime``, die Zeitfunktionen verwaltet. 
+Nun fügen wir zwischen ``led.value(1)`` und ``led.value(0)`` eine Verzögerung von 2 Sekunden ein.
+
+.. code-block:: python
+
+    utime.sleep(2)
+
+So sollte der Code jetzt aussehen.
+Beim Ausführen wird nun zuerst die LED eingeschaltet und dann ausgeschaltet:
+
+.. code-block:: python
+
+    import machine
+    import utime
+    led = machine.Pin(15, machine.Pin.OUT)
+    led.value(1)
+    utime.sleep(2)
+    led.value(0)
+
+Zuletzt soll die LED blinken. 
+Dafür erstellen wir eine Schleife und ändern das Programm entsprechend.
+
+.. code-block:: python
+
+    import machine
+    import utime
+    
+    led = machine.Pin(15, machine.Pin.OUT)
+    while True:
+        led.value(1)
+        utime.sleep(2)
+        led.value(0)
+        utime.sleep(2)
+
+* :ref:`While-Schleifen`
+
+**Weitere Informationen**
+
+Normalerweise gibt es eine API-Dokumentation, die mit der Bibliothek verknüpft ist. 
+Diese enthält alle notwendigen Informationen für die Verwendung der Bibliothek, einschließlich detaillierter Beschreibungen von Funktionen, Klassen, Rückgabetypen, Parameterarten usw.
+
+In diesem Artikel haben wir MicroPythons ``machine`` und ``utime`` Bibliotheken verwendet; weitere Verwendungsmöglichkeiten finden Sie hier:
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_
 
 * `utime <https://docs.micropython.org/en/latest/library/utime.html>`_
 
-Please read the API file to understand this example of making the LED blink!
+Um dieses Beispiel des LED-Blinkens zu verstehen, lesen Sie bitte die API-Dokumentation!
 
 .. note::
 
-    * Open the ``2.1_hello_led_2.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Öffnen Sie die Datei ``2.1_hello_led_2.py`` im Ordner ``kepler-kit-main/micropython`` oder kopieren Sie den Code in Thonny. Dann klicken Sie auf "Aktuelles Skript ausführen" oder drücken einfach F5.
+  
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der rechten unteren Ecke auszuwählen.
+  
+    * Für detaillierte Anleitungen beachten Sie bitte :ref:`open_run_code_py`.
 
 .. code-block:: python
 

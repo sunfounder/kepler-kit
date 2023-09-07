@@ -1,43 +1,42 @@
 .. _py_motor:
 
-3.5 Small Fan
+3.5 Kleiner Ventilator
 =======================
 
 
-Now we use the TA6586 to drive the DC motor to make it rotate clockwise and counterclockwise. 
-Since the DC motor requires a relatively large current, for safety reasons, 
-here we use a power module to supply power to the motor.
+Nun verwenden wir den TA6586, um den Gleichstrommotor im Uhrzeigersinn und gegen den Uhrzeigersinn anzutreiben.
+Da der Gleichstrommotor einen vergleichsweise hohen Strom benötigt, setzen wir hier aus Sicherheitsgründen ein Netzteilmodul zur Stromversorgung des Motors ein.
 
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist durchaus praktisch, ein komplettes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - TEILE IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Bauteile auch einzeln über die unten stehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - BAUTEIL
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -45,7 +44,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -69,28 +68,26 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650 Batterie
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Batteriehalter
         - 1
         -  
 
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_motor|
 
 
-
-**Wiring**
+**Verdrahtung**
 
 .. note::
 
-    * Since DC motors require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    * Da Gleichstrommotoren einen hohen Strom benötigen, verwenden wir hier aus Sicherheitsgründen ein Li-Po-Ladegerätmodul zur Stromversorgung des Motors.
+    * Stellen Sie sicher, dass Ihr Li-Po-Ladegerätmodul wie im Schaltplan gezeigt angeschlossen ist. Andernfalls besteht die Gefahr eines Kurzschlusses, der Ihre Batterie und Schaltung beschädigen könnte.
 
 
 |wiring_motor|
@@ -100,11 +97,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``3.5_small_fan.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.5_small_fan.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -136,13 +133,12 @@ You can also buy them separately from the links below.
         stopMotor()
         utime.sleep(1)
 
-
-Once the program is running, the motor will rotate back and forth in a regular pattern.
+Sobald das Programm läuft, wird der Motor in einem regelmäßigen Muster hin und her drehen.
 
 
 .. note::
 
-    * If the motor is still spinning after you click the Stop button, you need to reset the **RUN** pin on the Pico W with a wire to GND at this time, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * Wenn der Motor sich nach dem Klicken auf die Stop-Taste weiterdreht, müssen Sie zu diesem Zeitpunkt den **RUN**-Pin am Pico W mit einem Draht auf GND zurücksetzen und dann diesen Draht entfernen, um den Code erneut auszuführen.
+    * Dies liegt daran, dass der Motor mit zu hohem Strom arbeitet, was dazu führen kann, dass der Pico W die Verbindung zum Computer verliert.
 
     |wiring_run_reset|

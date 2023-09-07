@@ -1,34 +1,32 @@
 .. _cpn_lipo_charger:
 
-Li-po Charger Module
+Li-Po-Lademodul
 =================================================
-
 
 |lipo_module|
 
-This is a Li-po charger module designed for Raspberry Pi Pico/Pico H/Pico W. Just plug it and the Pico into the breadboard as shown below, and then connect the battery at the other end and you are ready to use.
+Dies ist ein Li-Po-Lademodul, konzipiert für Raspberry Pi Pico/Pico H/Pico W. Einfach einstecken und den Pico auf dem Steckbrett wie unten gezeigt positionieren. Danach die Batterie am anderen Ende anschließen und schon kann es losgehen.
 
-When you plug in the Pico W with a USB cable connected to a computer or socket, the indicator light on the Li-po Charger module lights up, representing the battery will be charged at the same time. When you unplug the USB cable, the Pico W will be powered by the battery, so you can keep your project running.
-
+Wenn das Pico W über ein USB-Kabel an einen Computer oder eine Steckdose angeschlossen wird, leuchtet die Kontrollleuchte auf dem Li-Po-Lademodul auf. Dies signalisiert, dass die Batterie gleichzeitig geladen wird. Wird das USB-Kabel entfernt, wird das Pico W von der Batterie versorgt, sodass Ihr Projekt weiterhin läuft.
 
 .. note::
-    For some computers with poor performance, sometimes if you plug in your Pico W to your computer with this charging module attached, it may cause the computer not to recognize your Pico W.
+    Bei einigen leistungsschwachen Computern kann es vorkommen, dass das Pico W nicht erkannt wird, wenn es mit dem angeschlossenen Lademodul an den Computer angeschlossen wird.
 
-    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico W power supply is insufficient to be recognized by the computer.
-    
-    In this case, you need to pull out the Li-Po charging module and then plug in the Pico W again.
+    Der Grund dafür ist, dass die USB-Port-Spannung beim Laden der Batterie abfällt, was dazu führt, dass die Stromversorgung des Pico W nicht ausreicht, um vom Computer erkannt zu werden.
+
+    In diesem Fall muss das Li-Po-Lademodul entfernt und das Pico W erneut eingesteckt werden.
 
 |lipo_wire|
 
-**Features**
+**Eigenschaften**
 
-* Input voltage: 5V
-* Output voltage: 3.3V
-* Size: 20mmx7mm
-* Interface model: PH2.0
-* There is a matching 1A battery holder as well as an 800mAh 18650 used together.
+* Eingangsspannung: 5V
+* Ausgangsspannung: 3,3V
+* Größe: 20mmx7mm
+* Schnittstellenmodell: PH2.0
+* Es gibt einen passenden 1A-Batteriehalter sowie einen 800mAh 18650, der zusammen verwendet werden kann.
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_lipo_charger|
+

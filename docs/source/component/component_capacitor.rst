@@ -1,26 +1,23 @@
 .. _cpn_capacitor:
 
-
-Capacitor
+Kondensator
 =============
 
 |img_capacitor|
 
-Capacitance, refers to the amount of charge storage under a given potential difference, denoted as C, and the international unit is farad (F). 
-Generally speaking, electric charges move under force in an electric field. When there is a medium between conductors, the movement of electric charges is hindered and the electric charges accumulate on the conductors, resulting in accumulation of electric charges. 
+Die Kapazität gibt an, wie viel elektrische Ladung bei einer gegebenen Spannung gespeichert werden kann. Sie wird mit C bezeichnet und ihre internationale Einheit ist das Farad (F). 
+In einem elektrischen Feld bewegen sich elektrische Ladungen grundsätzlich durch die wirkende Kraft. Ist zwischen den Leitern jedoch ein Medium vorhanden, wird die Bewegung der Ladungen behindert und sie sammeln sich an den Leitern an. 
 
-The amount of stored electric charges is called capacitance. Because capacitors are one of the most widely used electronic components in electronic equipment, they are widely used in direct current isolation, coupling, bypass, filtering, tuning loops, energy conversion, and control circuits. Capacitors are divided into electrolytic capacitors, solid capacitors, etc.
+Diese Ansammlung von elektrischen Ladungen wird als Kapazität bezeichnet. Kondensatoren sind aufgrund ihrer vielfältigen Einsatzmöglichkeiten in der Elektronik allgegenwärtig. Sie finden Anwendung in Gleichstrom-Isolierung, Kopplung, Bypass, Filterung, Schwingkreisen, Energieumwandlung und Steuerschaltungen. Es gibt verschiedene Arten von Kondensatoren, wie etwa Elektrolytkondensatoren und Festkörperkondensatoren.
 
-According to material characteristics, capacitors can be divided into: aluminum electrolytic capacitors, film capacitors, tantalum capacitors, ceramic capacitors, super capacitors, etc.
+Je nach Materialbeschaffenheit unterscheidet man zudem Aluminium-Elektrolytkondensatoren, Folienkondensatoren, Tantalkondensatoren, Keramikkondensatoren und Superkondensatoren.
 
-In this kit, ceramic capacitors and electrolytic capacitors are used. 
+In diesem Bausatz werden Keramik- und Elektrolytkondensatoren verwendet.
 
-* `Ceramic Capacitor - Wikipedia <https://en.wikipedia.org/wiki/Ceramic_capacitor>`_
+* `Keramikkondensator – Wikipedia <https://de.wikipedia.org/wiki/Keramikkondensator>`_
+* `Elektrolytkondensator – Wikipedia <https://de.wikipedia.org/wiki/Elektrolytkondensator>`_
 
-* `Electrolytic Capacitor - Wikipedia <https://en.wikipedia.org/wiki/Electrolytic_capacitor>`_
+Auf den Keramikkondensatoren finden sich Beschriftungen wie 103 oder 104, die den Kapazitätswert angeben. Dabei steht 103 für 10x10^3pF und 104 für 10x10^4pF.
 
-There are 103 or 104 label on the ceramic capacitors, which represent the capacitance value, 103=10x10^3pF, 104=10x10^4pF
-
-**Unit Conversion**
+**Einheitenumrechnung**
     1F=10^3mF=10^6uF=10^9nF=10^12pF
-

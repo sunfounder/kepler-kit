@@ -1,38 +1,37 @@
 .. _iot_access:
 
-1. Access to the Network
+1. Zugang zum Netzwerk
 ===========================
 
-Raspberry Pi Pico W is very similar to Raspberry Pi Pico, with the same GPIO, microUSB port, and size. The only difference is the addition of the CYW43439 2.4-GHz Wi-Fi chip from Infineon.
-Now let's see how it connects to our Wi-Fi network.
+Das Raspberry Pi Pico W ähnelt stark dem Raspberry Pi Pico und bietet die gleichen GPIOs, den gleichen Micro-USB-Anschluss und die gleiche Größe. Der einzige Unterschied ist der zusätzliche CYW43439 2,4-GHz-WLAN-Chip von Infineon.
+Jetzt schauen wir uns an, wie es sich mit unserem WLAN-Netzwerk verbindet.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können diese auch separat über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -40,47 +39,44 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
 
-
-1. Connect to the Internet
+1. Internetverbindung herstellen
 ------------------------------------
 
-With just five lines of MicroPython, our Raspberry Pi Pico W is happily connected to the Internet.
+Mit nur fünf Zeilen MicroPython ist unser Raspberry Pi Pico W problemlos mit dem Internet verbunden.
 
-These 5 lines of code can be run directly from the Shell, pressing the ``Enter`` after you typing.
-Or refer to the following method and create a new ``.py`` file to run it.
+Sie können den folgenden Code direkt in der Shell ausführen. Drücken Sie nach der Eingabe die ``Enter``-Taste.
+Alternativ folgen Sie der untenstehenden Anleitung und legen eine neue ``.py``-Datei an, um den Code auszuführen.
 
 .. code-block:: python
 
     import network
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
-    wlan.connect("SSID","PASSWORD")
+    wlan.connect("SSID","PASSWORT")
     print(wlan.isconnected())
 
-#. Create a new script by clicking the **New** button on Thonny, and copy and paste the above code, changing the ``SSID`` and ``PASSWORD`` to your own.
+#. Erstellen Sie ein neues Skript, indem Sie in Thonny auf die Schaltfläche **Neu** klicken. Kopieren Sie dann den oben stehenden Code und ändern Sie ``SSID`` und ``PASSWORT`` entsprechend Ihren Angaben.
 
     .. image:: img/access1.png
 
-#. To run the script, click the **Run current script** button or press F5. If the connection is successful, ``true`` will be printed. 
+#. Um das Skript auszuführen, klicken Sie auf die Schaltfläche **Aktuelles Skript ausführen** oder drücken Sie F5. Bei erfolgreicher Verbindung wird ``true`` ausgegeben.
 
     .. note::
 
-        Make sure the Raspberry Pi Pico W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
+        Vergewissern Sie sich, dass das Raspberry Pi Pico W per USB-Kabel mit dem Computer verbunden ist. Wählen Sie dann unten rechts MicroPython (Raspberry Pi Pico).COMXxx als Interpreter.
 
     .. image:: img/access2.png
 
-
-2. Timeout Judgment and Show IP
+2. Zeitüberschreitung und IP-Anzeige
 -----------------------------------------------
 
+Angesichts potenziell schlechter Netzwerkbedingungen fügen wir dem Code eine Überprüfung für Zeitüberschreitungen hinzu.
 
-Considering some poor network conditions, let's add some timeout judgment to the code.
-
-If the connection is successful, the IP of Pico W will be displayed after copying and running the script.
+Ist die Verbindung erfolgreich, wird die IP-Adresse des Pico W nach dem Ausführen des Skripts angezeigt.
 
 .. code-block:: python
 
@@ -109,68 +105,69 @@ If the connection is successful, the IP of Pico W will be displayed after copyin
 
 .. image:: img/access3.png
 
-* ``wlan.status()`` function: Returns the current status of the wireless connection, the return value is shown in the table below.
 
+* ``wlan.status()`` Funktion: Gibt den aktuellen Status der WLAN-Verbindung zurück. Die Rückgabewerte sind in der folgenden Tabelle aufgeführt.
 
     .. list-table::
         :widths: 40 10 50
 
         * - Status
-          - Value
-          - Description
-        * - STAT_IDLE 
-          - 0 
-          - no connection and no activity,
-        * - STAT_CONNECTING 
-          - 1 
-          - connecting in progress,
-        * - STAT_WRONG_PASSWORD 
-          - -3 
-          - failed due to incorrect password,
-        * - STAT_NO_AP_FOUND 
-          - -2 
-          - failed because no access point replied,
-        * - STAT_CONNECT_FAIL 
-          - -1 
-          - failed due to other problems,
-        * - STAT_GOT_IP 
-          - 3 
-          - connection successful.
+          - Wert
+          - Beschreibung
+        * - STAT_IDLE
+          - 0
+          - keine Verbindung und keine Aktivität,
+        * - STAT_CONNECTING
+          - 1
+          - Verbindungsaufbau läuft,
+        * - STAT_WRONG_PASSWORD
+          - -3
+          - fehlgeschlagen wegen falschem Passwort,
+        * - STAT_NO_AP_FOUND
+          - -2
+          - fehlgeschlagen, weil kein Zugangspunkt antwortete,
+        * - STAT_CONNECT_FAIL
+          - -1
+          - fehlgeschlagen aus anderen Gründen,
+        * - STAT_GOT_IP
+          - 3
+          - Verbindung erfolgreich.
 
-* ``wlan.ifconfig()`` function: Obtains IP addresses, subnet masks, gateways, and DNS servers. This method will return a 4-tuple containing the above information when called directly. In this case, we only print the IP address.
+* ``wlan.ifconfig()`` Funktion: Ermittelt IP-Adressen, Subnetzmasken, Gateways und DNS-Server. Bei direktem Aufruf wird ein 4-Tupel mit den genannten Informationen zurückgegeben. In diesem Fall zeigen wir nur die IP-Adresse an.
 
 *  `class WLAN – MicroPython Docs <https://docs.micropython.org/en/latest/library/network.WLAN.html>`_
 
 .. _create_secrets:
 
-3. Save private information to ``secrets.py``
+
+
+3. Speichern privater Informationen in ``secrets.py``
 ----------------------------------------------------------
 
-When you share your Pico W project, you should not want others to see your Wi-Fi password or API key.
-For good security, we can create a ``secrets.py`` file to store your private information.
+Wenn Sie Ihr Pico W-Projekt teilen möchten, wollen Sie sicher nicht, dass andere Ihr WLAN-Passwort oder Ihren API-Schlüssel einsehen können. Aus Sicherheitsgründen legen wir daher eine ``secrets.py``-Datei an, um diese sensiblen Informationen zu schützen.
 
-#. Copy the following code into a new script file on Thonny. Note to change ``SSID`` and ``PASSWORD`` to yours.
+# Fügen Sie den folgenden Code in eine neue Skriptdatei in Thonny ein. Passen Sie ``SSID`` und ``PASSWORT`` Ihren eigenen Anmeldedaten an.
 
     .. code-block:: python
 
         secrets = {
         'ssid': 'SSID',
-        'password': 'PASSWORD',
+        'password': 'PASSWORT',
         }
 
-#. Choose Raspberry Pi Pico in the pop-up window that appears when you click the Save button or press ``Ctrl+S``.
+# Wählen Sie Raspberry Pi Pico im Popup-Fenster aus, das erscheint, wenn Sie auf "Speichern" klicken oder ``Strg+S`` drücken.
 
     .. image:: img/access4.png
 
-#. Set the name to ``secrets.py``.
+# Vergeben Sie den Dateinamen ``secrets.py``.
 
     .. image:: img/access5.png
 
-#. Now you can see this script in your Raspberry Pi Pico W.
+# Nun ist das Skript auf Ihrem Raspberry Pi Pico W einsehbar.
 
     .. image:: img/access6.png
 
-#. In other scripts, you can call it as follows. If you run it, you will see a successful Wi-Fi connection. The ``secrets.py`` file is imported as a library, so we need not worry about leakage of information.
+# In anderen Skripten können Sie die Datei folgendermaßen einbinden. Nach der Ausführung sollten Sie eine erfolgreiche WLAN-Verbindung feststellen. Die ``secrets.py``-Datei wird als Bibliothek importiert, sodass kein Risiko eines Informationslecks besteht.
 
     .. code-block:: python
         :emphasize-lines: 3,7
@@ -203,12 +200,12 @@ For good security, we can create a ``secrets.py`` file to store your private inf
 
 .. _do_connect:
 
-4. Connect to the Internet via ``do_connect.py``
+4. Internetverbindung über ``do_connect.py``
 --------------------------------------------------------------
 
-Considering that each of our next projects will require a network connection, why don't we create a new ``do_connect.py`` file and write the relevant functions into it for reuse, which can greatly streamline the code of complex projects.
+Da unsere zukünftigen Projekte aller Voraussicht nach eine Netzwerkverbindung benötigen, bietet es sich an, eine separate ``do_connect.py``-Datei anzulegen und darin die relevanten Funktionen zu speichern. So können wir den Code für komplexere Projekte erheblich vereinfachen.
 
-#. Copy the following code into a new script file, and save it to Raspberry Pi Pico as ``do_connect.py``.
+# Kopieren Sie den nachfolgenden Code in eine neue Skriptdatei und speichern Sie diese auf dem Raspberry Pi Pico als ``do_connect.py``.
 
     .. code-block:: python
 
@@ -241,14 +238,11 @@ Considering that each of our next projects will require a network connection, wh
 
     .. image:: img/access7.png
 
-#. Calling it in other scripts by the following will allow the Raspberry Pi Pico W to connect to the network.
+# Ein Aufruf in anderen Skripten nach dem folgenden Schema ermöglicht die Netzwerkverbindung des Raspberry Pi Pico W.
 
     .. code-block:: python
 
         from do_connect import *
         do_connect()
 
-
-.. https://www.tomshardware.com/reviews/raspberry-pi-pico-w
-
-
+.. https://www.tomshardware.com/de/reviews/raspberry-pi-pico-w

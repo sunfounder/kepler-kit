@@ -1,41 +1,40 @@
 .. _cpn_micro_switch:
 
-Micro Switch
+Mikroschalter
 ========================
 
 |img_micro_switch|
 
-The construction of a micro switch is really simple. The main parts of the switch are:
+Der Aufbau eines Mikroschalters ist wirklich simpel. Die Hauptkomponenten des Schalters sind:
 
 |img_micro_switch2|
 
-* 1.Plunger (Actuator)
-* 2.Cover
-* 3.Moving piece
-* 4.Support
-* 5.Case
-* 6.NO terminal: normally open
-* 7.NC terminal: normally closed
-* 8.Contact
-* 9.Moving arm
+* 1. Betätigungsstößel (Aktuator)
+* 2. Abdeckung
+* 3. Bewegliches Teil
+* 4. Halterung
+* 5. Gehäuse
+* 6. NO-Klemme: normalerweise offen
+* 7. NC-Klemme: normalerweise geschlossen
+* 8. Kontakt
+* 9. Bewegungsarm
 
+Nachdem der Mikroschalter physischen Kontakt mit einem Objekt hergestellt hat, ändert er die Position seiner Kontakte. Das grundlegende Funktionsprinzip ist wie folgt.
 
-After a micro switch makes physical contact with an object, its contacts change position. The basic working principle is as follows.
+Wenn der Betätigungsstößel in der Ausgangs- oder Ruheposition ist:
 
-When the plunger is in the released or rest position.
+* Der normalerweise geschlossene Stromkreis ist stromführend.
+* Der normalerweise offene Stromkreis ist elektrisch isoliert.
 
-* The normally closed circuit can carry current.
-* The normally open circuit is electrically insulated.
+Wenn der Betätigungsstößel gedrückt oder umgeschaltet wird:
 
-When the plunger is depressed or switched.
-
-* The normally closed circuit is open.
-* The normally open circuit is closed.
+* Der normalerweise geschlossene Stromkreis ist unterbrochen.
+* Der normalerweise offene Stromkreis ist geschlossen.
 
 |img_micro_switch1|
 
- **Example**
+**Beispiel**
 
-* :ref:`py_micro` (For MicroPython User)
-* :ref:`ar_micro` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
+* :ref:`py_micro` (Für MicroPython-Anwender)
+* :ref:`ar_micro` (Für Arduino-Anwender)
+* :ref:`per_service_bell` (Für Piper Make-Anwender)

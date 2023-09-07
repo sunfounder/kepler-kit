@@ -1,32 +1,30 @@
 .. _py_tilt:
 
-
-2.6 Tilt It！
+2.6 Neige es!
 ==========================
 
 |img_tilt|
 
-The tilt switch is a 2-pin device with a metal ball in the middle. When the switch is upright, the two pins are connected; when it is tilted, the two pins are disconnected.
+Der Kippschalter ist ein Gerät mit zwei Anschlüssen und einer Metallkugel in der Mitte. Wenn der Schalter aufrecht ist, sind die beiden Pins verbunden; wird er geneigt, sind sie getrennt.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 
 .. list-table::
@@ -34,8 +32,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -43,7 +41,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -63,31 +61,30 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_tilt|
 
-When you put it upright, GP14 will get high; after tilting it, GP14 will get low.
+Wenn der Schalter aufrecht steht, wird GP14 hoch; neigen Sie ihn, wird GP14 niedrig.
 
-The purpose of the 10K resistor is to keep the GP14 in a stable low state when the tilt switch is in a tilted state.
+Der 10K-Widerstand dient dazu, GP14 in einem stabilen Niedrigzustand zu halten, wenn der Kippschalter geneigt ist.
 
 * :ref:`cpn_tilt`
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_tilt|
-
 
 
 **Code**
 
 .. note::
 
-    * Open the ``2.6_tilt_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.6_tilt_switch.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den "MicroPython (Raspberry Pi Pico)"-Interpreter in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen verweisen wir auf :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -99,4 +96,4 @@ The purpose of the 10K resistor is to keep the GP14 in a stable low state when t
             print("The switch works!")
             utime.sleep(1)
 
-After the program runs, when you tilt the breadboard (tilt switch), "The switch works!" will appear in the shell.
+Nach dem Ausführen des Programms wird im Shell "The switch works!" angezeigt, wenn Sie das Breadboard (Kippschalter) neigen.

@@ -1,33 +1,33 @@
 .. _py_alarm_lamp:
 
-7.3 Alarm Siren Lamp
+7.3 Alarmanlagenlampe
 =======================
 
-Police lights are often visible in real life (or in movies). Usually, it is used to maintain traffic, serve as a warning device, and serve as an important safety prop for officers, emergency vehicles, fire trucks, and engineering vehicles. When you see its lights or hear its sound, you must be careful, which means you (or those around you) may be in danger.
+Polizeilichter sind oft im wirklichen Leben (oder in Filmen) zu sehen. In der Regel werden sie zur Verkehrsregelung, als Warnmittel und als wichtiges Sicherheitszubehör für Polizeibeamte, Rettungsfahrzeuge, Feuerwehrautos und Baufahrzeuge eingesetzt. Wenn Sie ihre Lichter sehen oder ihre Sirene hören, sollten Sie vorsichtig sein, denn das bedeutet, dass Sie (oder die Menschen in Ihrer Umgebung) möglicherweise in Gefahr sind.
 
-An LED and buzzer are used here to create a small warning light, which is activated by a slide switch.
+In diesem Projekt nutzen wir eine LED und einen Summer, um ein kleines Warnlicht zu schaffen, das über einen Schiebeschalter aktiviert wird.
 
 |sirem_alarm|
 
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden folgende Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 
 .. list-table::
@@ -35,8 +35,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -44,7 +44,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -53,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -68,7 +68,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 9
@@ -80,18 +80,15 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_alarm_siren_lamp|
 
-* GP17 is connected to the middle pin of the slider, along with a 10K resistor and a capacitor (filter) in parallel to GND, which allows the slider to output a steady high or low level when toggled to the left or right.
-* As soon as GP15 is high, the NPN transistor conducts, causing the passive buzzer to start sounding. This passive buzzer is programmed to gradually increase in frequency to produce a siren sound.
-* An LED is connected to GP16 and is programmed to periodically change its brightness in order to simulate a siren.
+* GP17 ist mit dem mittleren Pin des Schiebeschalters verbunden, parallel dazu sind ein 10K-Widerstand und ein Kondensator (Filter) an GND angeschlossen. Dies ermöglicht dem Schiebeschalter, ein konstant hohes oder niedriges Signal auszugeben, wenn er nach links oder rechts bewegt wird.
+* Sobald GP15 hoch ist, leitet der NPN-Transistor und der passive Summer beginnt zu tönen. Dieser Summer wird programmiert, um in der Frequenz allmählich anzusteigen und so einen Sirenenton zu erzeugen.
+* An GP16 ist eine LED angeschlossen, die so programmiert ist, dass ihre Helligkeit periodisch wechselt, um eine Sirene zu simulieren.
 
-
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_alarm_siren_lamp|
 
@@ -100,11 +97,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``7.3_alarm_siren_lamp.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.3_alarm_siren_lamp.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Bereich auf den "MicroPython (Raspberry Pi Pico)"-Interpreter zu klicken.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für ausführliche Anleitungen beziehen Sie sich bitte auf :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -144,7 +141,6 @@ You can also buy them separately from the links below.
     switch.irq(trigger=machine.Pin.IRQ_RISING, handler=toggle)
 
 
-
     while True:
         if bell_flag == True:
             for i in range(0,100,2):
@@ -155,4 +151,4 @@ You can also buy them separately from the links below.
             noTone(buzzer)
             led.duty_u16(0)
 
-Once the program is running, toggle the slide switch to the left (yours may be to the right, depending on how your slide switch is wired) and the buzzer will emit a progressive warning tone and the LED will change its brightness accordingly; toggle the slide switch to the right and the buzzer and LED will stop working.
+Sobald das Programm läuft, verschieben Sie den Schiebeschalter nach links (bei Ihnen kann es auch rechts sein, je nachdem, wie Ihr Schiebeschalter verdrahtet ist). Der Summer gibt dann einen aufsteigenden Warnton ab und die LED ändert entsprechend ihre Helligkeit; verschieben Sie den Schiebeschalter nach rechts und der Summer und die LED hören auf zu arbeiten.

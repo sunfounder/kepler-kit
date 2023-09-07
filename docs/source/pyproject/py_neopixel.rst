@@ -1,46 +1,44 @@
 .. _py_neopixel:
 
-3.3 RGB LED Strip
+3.3 RGB LED-Streifen
 ======================
 
-WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
-It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. 
-Also include a precision internal oscillator and a programmable constant current control part, 
-effectively ensuring the pixel point light color height consistent.
+WS2812 ist eine intelligente LED-Lichtquelle, bei der die Steuerschaltung und der RGB-Chip in einem 5050-Komponentenpaket integriert sind.
+Sie enthält eine intelligente digitale Port-Datenverriegelung und eine Signalformungsverstärkungs-Antriebsschaltung.
+Zusätzlich verfügt sie über einen präzisen internen Oszillator und einen programmierbaren Konstantstromregler, der effektiv die Farbkonsistenz der einzelnen Pixel gewährleistet.
 
-The data transfer protocol use single NZR communication mode. 
-After the pixel power-on reset, the DIN port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch, the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. 
-pixel adopt auto reshaping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend on the speed of signal transmission.
-
+Das Datenübertragungsprotokoll verwendet den einzelnen NZR-Kommunikationsmodus.
+Nach dem Einschalten des Pixels empfängt der DIN-Port Daten vom Controller. Das erste Pixel sammelt die ersten 24-Bit-Daten und sendet sie an die interne Datenverriegelung. Die weiteren, durch die interne Signalformungsverstärkung geformten Daten werden durch den DO-Port zum nächsten Kaskadenpixel gesendet. Nach der Übertragung für jedes Pixel verringert sich das Signal um 24 Bit. 
+Das Pixel verwendet die automatische Signalumformungstechnologie, wodurch die Anzahl der kaskadierten Pixel nur von der Geschwindigkeit der Signalübertragung abhängt.
 
 * :ref:`cpn_ws2812`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden folgende Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein vollständiges Kit ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - TEILE IM KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Komponenten auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -48,7 +46,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
@@ -65,36 +63,34 @@ You can also buy them separately from the links below.
         - |link_ws2812_buy|
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_ws2812|
 
 
-**Wiring**
-
+**Verkabelung**
 
 |wiring_ws2812|
 
-
 .. warning::
-    One thing you need to pay attention to is current.
+    Ein Punkt, den Sie beachten müssen, ist der Strom.
 
-    Although the LED Strip with any number of LEDs can be used in Pico W, the power of its VBUS pin is limited.
-    Here, we will use eight LEDs, which are safe.
-    But if you want to use more LEDs, you need to add a separate power supply.
-    
+    Obwohl der LED-Streifen mit beliebig vielen LEDs am Pico W betrieben werden kann, ist die Leistung seines VBUS-Pins begrenzt.
+    Hier verwenden wir acht LEDs, was sicher ist.
+    Wenn Sie jedoch mehr LEDs verwenden möchten, benötigen Sie eine separate Stromversorgung.
+
 
 **Code**
 
 .. note::
 
-    * Open the ``3.3_rgb_led_strip.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.3_rgb_led_strip.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``ws2812.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
+
+    * Hier benötigen Sie die Bibliothek ``ws2812.py``, prüfen Sie, ob sie auf dem Pico W hochgeladen wurde. Eine detaillierte Anleitung finden Sie unter :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -115,59 +111,58 @@ You can also buy them separately from the links below.
     ws.write()
 
 
-Let's select some favorite colors and display them on the RGB LED Strip!
+Wählen Sie einige Ihrer Lieblingsfarben aus und zeigen Sie sie auf dem RGB-LED-Streifen an!
 
-**How it works?**
+**Wie funktioniert das?**
 
-In the ws2812 library, we have integrated related functions into the WS2812 class.
+In der ws2812-Bibliothek haben wir alle relevanten Funktionen in die Klasse WS2812 integriert.
 
-You can use the RGB LED Strip with the following statement.
+Sie können den RGB-LED-Streifen mit dem folgenden Befehl nutzen.
 
 .. code-block:: python
 
     from ws2812 import WS2812
 
-Declare a WS2812 type object, named "ws", it is connected to "pin", there are "number" RGB LEDs on the WS2812 strip.
+Deklarieren Sie ein WS2812-Objekt mit dem Namen "ws", das an den "Pin" angeschlossen ist, auf dem sich "Anzahl" RGB-LEDs befinden.
 
 .. code-block:: python
 
-    ws = WS2812(pin,number)
+    ws = WS2812(pin, number)
 
-ws is an array object, each element corresponds to one RGB LED on the WS2812 strip, for example, ws[0] is the first one, ws[7] is the eighth.
+ws ist ein Array-Objekt, dessen Elemente den einzelnen RGB-LEDs auf dem WS2812-Streifen entsprechen, beispielsweise ist ws[0] die erste und ws[7] die achte.
 
-We can assign color values to each RGB LED, these values must be 24-bit color (represented with six hexadecimal digits) or list of 3 8-bit RGB.
+Sie können jeder RGB-LED Farbwerte zuweisen. Diese Werte müssen eine 24-Bit-Farbe sein (dargestellt durch sechs Hexadezimalziffern) oder eine Liste von drei 8-Bit-RGB-Werten.
 
-For example, the red value is "0xFF0000" or "[255,0,0]".
+Beispiel: Der rote Wert ist "0xFF0000" oder "[255,0,0]".
 
 .. code-block:: python
 
     ws[i] = color value
 
-Then use this statement to write the color for the LED Strip and light it up.
+Verwenden Sie dann diesen Befehl, um die Farbe für den LED-Streifen zu setzen und ihn zum Leuchten zu bringen.
 
 .. code-block:: python
 
     ws.write()
 
-
-You can also directly use the following statement to make all LEDs light up the same color.
+Sie können auch direkt den folgenden Befehl verwenden, um alle LEDs in derselben Farbe leuchten zu lassen.
 
 .. code-block:: python
 
     ws.write_all(color value)
 
 
-**Learn More**
+**Mehr erfahren**
 
-We can randomly generate colors and make a colorful flowing light.
+Wir können zufällig Farben generieren und ein buntes, fließendes Licht erzeugen.
 
 .. note::
 
-    * Open the ``3.3_rgb_led_strip_2.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.3_rgb_led_strip_2.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 

@@ -2,31 +2,29 @@
 
 .. _py_reversing_aid:
 
-7.10 Reversing Aid
+7.10 Einparkhilfe
 ======================
 
-This project uses an LED, a buzzer and an ultrasonic module to create a reversing assist system.
-We can put it on a remote control car to simulate the the actual process of reversing a car into a garage.
+Dieses Projekt nutzt eine LED, einen Summer und ein Ultraschallmodul, um ein Einparkassistenzsystem zu realisieren. Es lässt sich auf ein ferngesteuertes Auto setzen, um den realen Vorgang des Einparkens in eine Garage zu simulieren.
 
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - IN DIESEM SET ENTHALTENE ARTIKEL
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 
 .. list-table::
@@ -34,8 +32,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -43,7 +41,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,18 +50,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 2(1KΩ, 220Ω)
+        - 2 (1KΩ, 220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Passiver :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -75,12 +73,11 @@ You can also buy them separately from the links below.
         - 1
         - |link_ultrasonic_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_reversing_aid|
 
-
-**Wiring**
+**Verkabelung**
 
 |wiring_reversing_aid| 
 
@@ -88,13 +85,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``7.10_reversing_aid.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.10_reversing_aid.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
+  
+    * Vergessen Sie nicht, im unteren rechten Eck den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -173,9 +168,10 @@ You can also buy them separately from the links below.
         if time.ticks_diff(currentMills,previousMills)>=intervals:
             beep()
             previousMills=currentMills
-        
-* As soon as the program runs, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you will be able to see the exact distance value on the shell.
-* The LED and buzzer will change the frequency of blinking and beeping depending on the distance value, thus indicating the approach of the obstacle.
-* The :ref:`py_ultrasonic` article mentioned that when the ultrasonic sensor works, the program will be paused.
-* To avoid interfering with the LED or buzzer timing, we created a separate thread for ranging in this example.
+
+
+* Sobald das Programm läuft, wird der Ultraschallsensor kontinuierlich die Entfernung zum vor Ihnen befindlichen Hindernis messen, und Sie können den genauen Entfernungswert in der Shell sehen.
+* Je nach Entfernungswert ändern die LED und der Summer die Frequenz ihres Blinkens und Piepsens und signalisieren so die Annäherung an das Hindernis.
+* Im Artikel :ref:`py_ultrasonic` wurde erwähnt, dass das Programm pausiert, während der Ultraschallsensor arbeitet.
+* Um die Timing von LED und Summer nicht zu beeinträchtigen, haben wir in diesem Beispiel einen separaten Thread für die Entfernungsmessung erstellt.
 

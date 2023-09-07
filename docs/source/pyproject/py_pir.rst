@@ -1,49 +1,47 @@
 .. _py_pir:
 
-2.10 Detect Human Movement
-========================================
+2.10 Bewegungserkennung beim Menschen
+=====================================
 
-Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
-Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
-More specifically, it tells the main control board that someone has entered your room.
+Ein passiver Infrarotsensor (PIR-Sensor) ist ein weit verbreiteter Sensor, der Infrarotstrahlung (IR) von Objekten in seinem Sichtfeld misst. 
+Einfach ausgedrückt: Er nimmt die von einem Körper abgestrahlte Infrarotstrahlung auf und erkennt so die Bewegung von Menschen und anderen Tieren.
+Konkret informiert er die Hauptsteuerplatine darüber, dass jemand den Raum betreten hat.
 
 :ref:`cpn_pir`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset zu kaufen ist sicherlich bequem, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung
+        - ELEMENTE IM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Set
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_pir`
@@ -60,18 +58,18 @@ You can also buy them separately from the links below.
         - |link_pir_buy|
 
 
-**Schematic**
+**Schaltplan**
 
 |sch_pir|
 
-When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+Wenn das PIR-Modul eine vorbeigehende Person erkennt, wird GP14 auf "hoch" gesetzt, andernfalls bleibt er "niedrig".
 
 .. note::
-    The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+    Das PIR-Modul verfügt über zwei Potentiometer: eines zur Einstellung der Empfindlichkeit, das andere zur Anpassung der Erfassungsreichweite. Für optimale Ergebnisse sollten beide Potentiometer ganz nach links gedreht werden.
 
     |img_PIR_TTE|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_pir|
 
@@ -79,11 +77,11 @@ When the PIR module detects someone passing by, GP14 will be high, otherwise it 
 
 .. note::
 
-    * Open the ``2.10_detect_human_movement.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.10_detect_human_movement.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Anschließend klicken Sie auf "Aktuelles Skript ausführen" oder drücken einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Detaillierte Anleitungen finden Sie unter :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -97,20 +95,19 @@ When the PIR module detects someone passing by, GP14 will be high, otherwise it 
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-After the program runs, if the PIR module detects someone nearby, the Shell will print out "Somebody here!" 
+Nach dem Ausführen des Programms wird in der Shell "Somebody here!" ausgegeben, wenn das PIR-Modul eine nahe Person erkennt.
 
-**Learn More**
+**Weitere Informationen**
 
-PIR is a very sensitive sensor. In order to adapt it to the environment of use, it needs to be adjusted. Let the side with the 2 potentiometers facing you, turn both potentiometers counterclockwise to the end and insert the jumper cap on the pin with L and the middle pin.
-
+Das PIR-Modul ist sehr empfindlich. Um es an die Einsatzumgebung anzupassen, sind Einstellungen erforderlich. Richten Sie die Seite mit den beiden Potentiometern auf sich aus und drehen Sie beide Potentiometer ganz nach links. Setzen Sie die Jumperkappe auf den Pin mit L und den mittleren Pin.
 
 .. note::
 
-    * Open the ``2.10_pir_adjustment.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``2.10_pir_adjustment.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Anschließend klicken Sie auf "Aktuelles Skript ausführen" oder drücken einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Detaillierte Anleitungen finden Sie unter :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -139,35 +136,35 @@ PIR is a very sensitive sensor. In order to adapt it to the environment of use, 
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_in_high_level) 
 
-Let us analyze its adjustment method along with the experimental results.
+Lassen wir uns die Anpassungsmethode anhand der experimentellen Ergebnisse analysieren.
 
 |img_pir_back|
 
-1. Trigger Mode
+1. Auslösemodus
 
-    Let's take a look at the pins with jumper cap at the corner.
-    It allows PIR to enter Repeatable trigger mode or Non-repeatable trigger mode
+   Werfen wir einen Blick auf die Pins mit der Jumperkappe in der Ecke.
+   Sie ermöglichen dem PIR, in den wiederholbaren oder nicht wiederholbaren Auslösemodus zu wechseln.
 
-    At present, our jumper cap connects the middle Pin and L Pin, which makes the PIR in non-repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism, it will send a high-level signal for about 2.8 seconds to the main control board.
-    We can see in the printed data that the duration of work will always be around 2800ms.
+   Aktuell ist unsere Jumperkappe mit dem mittleren Pin und dem L-Pin verbunden, was den PIR in den nicht wiederholbaren Auslösemodus versetzt.
+   In diesem Modus sendet der PIR bei Erkennung einer Bewegung ein Hochpegelsignal für etwa 2,8 Sekunden an die Hauptsteuerplatine.
+   Anhand der ausgegebenen Daten können wir erkennen, dass die Arbeitsdauer stets rund 2800 ms beträgt.
 
-    Next, we modify the position of the lower jumper cap and connect it to the middle Pin and H Pin to make the PIR in repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism (note that it is movement, not static in front of the sensor), as long as the organism keeps moving within the detection range, the PIR will continue to send a high-level signal to the main control board.
-    We can see in the printed data that the duration of work is an uncertain value.
+   Als Nächstes ändern wir die Position der unteren Jumperkappe und verbinden sie mit dem mittleren Pin und dem H-Pin, um den PIR in den wiederholbaren Auslösemodus zu versetzen.
+   In diesem Modus sendet der PIR ein Hochpegelsignal an die Hauptsteuerplatine, solange innerhalb des Erfassungsbereichs eine Bewegung stattfindet (beachten Sie, dass es sich um eine Bewegung handelt, nicht um ein statisches Verharren vor dem Sensor).
+   In den ausgegebenen Daten ist die Arbeitsdauer ein variabler Wert.
 
-#. Delay Adjustment
+#. Verzögerungsanpassung
 
-    The potentiometer on the left is used to adjust the interval between two jobs.
-    
-    At present, we screw it counterclockwise to the end, which makes the PIR need to enter a sleep time of about 5 seconds after finishing sending the high level work. During this time, the PIR will no longer detect the infrared radiation in the target area.
-    We can see in the printed data that the dormancy duration is always no less than 5000ms.
+   Das linke Potentiometer dient zur Einstellung des Intervalls zwischen zwei Arbeitszyklen.
+   
+   Derzeit haben wir es ganz gegen den Uhrzeigersinn gedreht, was dazu führt, dass der PIR nach Beendigung der Hochpegel-Arbeit eine Ruhezeit von etwa 5 Sekunden einlegen muss. In dieser Zeit erfasst der PIR keine Infrarotstrahlung im Zielbereich mehr.
+   Anhand der ausgegebenen Daten können wir erkennen, dass die Ruhezeit immer mindestens 5000 ms beträgt.
 
-    If we turn the potentiometer clockwise, the sleep time will also increase. When it is turned clockwise to the end, the sleep time will be as high as 300s.
+   Drehen wir das Potentiometer im Uhrzeigersinn, verlängert sich auch die Ruhezeit. Wenn es ganz im Uhrzeigersinn gedreht wird, kann die Ruhezeit bis zu 300 Sekunden betragen.
 
-#. Distance Adjustment
+#. Entfernungsanpassung
 
-    The centered potentiometer is used to adjust the sensing distance range of the PIR.
-
-    Turn the knob of the distance adjustment potentiometer **clockwise** to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
-    If it rotates **counterclockwise**, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.
+   Das mittlere Potentiometer dient zur Einstellung des Erfassungsbereichs des PIR.
+   
+   Drehen Sie den Knopf des Entfernungsanpassungspotentiometers **im Uhrzeigersinn**, um den Erfassungsbereich zu erweitern. Der maximale Erfassungsbereich beträgt etwa 0 bis 7 Meter.
+   Wird es **gegen den Uhrzeigersinn** gedreht, verringert sich der Erfassungsbereich, und der minimale Erfassungsbereich beträgt etwa 0 bis 3 Meter.

@@ -1,40 +1,39 @@
-If Else
+If-Else-Anweisungen
 =============
 
-Decision making is required when we want to execute a code only if a certain condition is satisfied.
+Entscheidungsfindung ist erforderlich, wenn ein bestimmter Code nur bei Erfüllung einer bestimmten Bedingung ausgeführt werden soll.
 
 if
 --------------------
 .. code-block:: python
 
-    if test expression:
-        statement(s)
+    if Testausdruck:
+        Anweisung(en)
 
-Here, the program evaluates the `test expression` and executes the `statement` only when the `test expression` is True.
+In diesem Fall wertet das Programm den ``Testausdruck`` aus und führt die ``Anweisung`` nur aus, wenn der ``Testausdruck`` wahr ist.
 
-If `test expression` is False, then `statement(s)` will not be executed.
+Ist der ``Testausdruck`` falsch, werden die ``Anweisung(en)`` nicht ausgeführt.
 
-In MicroPython, indentation means the body of the `if` statement. The body starts with an indentation and ends with the first unindented line.
+In MicroPython signalisiert die Einrückung den Körper der ``if``-Anweisung. Der Körper beginnt mit einer Einrückung und endet mit der ersten nicht eingerückten Zeile.
 
-Python interprets non-zero values ​​as "True". None and 0 are interpreted as "False".
+Python interpretiert Werte ungleich Null als "True". None und 0 werden als "False" interpretiert.
 
-**if Statement Flowchart**
+**Flussdiagramm für if-Anweisungen**
 
 .. image:: img/if_statement.png
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
     num = 8
     if num > 0:
-        print(num, "is a positive number.")
-    print("End with this line")
+        print(num, "ist eine positive Zahl.")
+    print("Ende mit dieser Zeile")
 
 >>> %Run -c $EDITOR_CONTENT
-8 is a positive number.
-End with this line
-
+8 ist eine positive Zahl.
+Ende mit dieser Zeile
 
 
 if...else
@@ -42,32 +41,31 @@ if...else
 
 .. code-block:: python
 
-    if test expression:
-        Body of if
+    if Testausdruck:
+        Körper von if
     else:
-        Body of else
+        Körper von else
 
-The `if..else` statement evaluates `test expression` and will execute the body of `if` only when the test condition is `True`.
+Die ``if..else``-Anweisung wertet den ``Testausdruck`` aus und führt den Körper von ``if`` nur aus, wenn die Testbedingung ``True`` ist.
 
-If the condition is `False`, the body of `else` is executed. Indentation is used to separate the blocks.
+Ist die Bedingung ``False``, wird der Körper von ``else`` ausgeführt. Einrückungen dienen zur Abgrenzung der Blöcke.
 
-**if...else Statement Flowchart**
+**Flussdiagramm für if...else-Anweisungen**
 
 .. image:: img/if_else.png
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
     num = -8
     if num > 0:
-        print(num, "is a positive number.")
+        print(num, "ist eine positive Zahl.")
     else:
-        print(num, "is a negative number.")
+        print(num, "ist eine negative Zahl.")
 
 >>> %Run -c $EDITOR_CONTENT
--8 is a negative number.
-
+-8 ist eine negative Zahl.
 
 
 if...elif...else
@@ -75,28 +73,28 @@ if...elif...else
 
 .. code-block:: python
 
-    if test expression:
-        Body of if
-    elif test expression:
-        Body of elif
-    else: 
-        Body of else
+    if Testausdruck:
+        Körper von if
+    elif Testausdruck:
+        Körper von elif
+    else:
+        Körper von else
 
-`Elif` is short for `else if`. It allows us to check multiple expressions.
+``Elif`` steht für ``else if``. Damit können wir mehrere Ausdrücke prüfen.
 
-If the condition of the `if` is False, the condition of the next elif block is checked, and so on.
+Ist die Bedingung des ``if`` falsch, wird die Bedingung des nächsten ``elif``-Blocks geprüft und so weiter.
 
-If all conditions are `False`, the body of `else` is executed.
+Sind alle Bedingungen `falsch`, wird der Körper von ``else`` ausgeführt.
 
-Only one of several `if...elif...else` blocks is executed according to the conditions.
+Nur einer der ``if...elif...else``-Blöcke wird je nach Bedingung ausgeführt.
 
-The `if` block can only have one `else` block. But it can have multiple `elif` blocks.
+Der ``if``-Block kann nur einen ``else``-Block haben, jedoch mehrere ``elif``-Blöcke.
 
-**if...elif...else Statement Flowchart**
+**Flussdiagramm für if...elif...else-Anweisungen**
 
 .. image:: img/if_elif_else.png
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
@@ -104,34 +102,34 @@ The `if` block can only have one `else` block. But it can have multiple `elif` b
     y = 9
 
     if x > y:
-        print("x is greater than y")
+        print("x ist größer als y")
     elif x == y:
-        print("x and y are equal")
+        print("x und y sind gleich")
     else:
-        print("x is greater than y")
+        print("y ist größer als x")
 
 >>> %Run -c $EDITOR_CONTENT
-x is greater than y
+x ist größer als y
 
 
-Nested if
+Verschachtelte if-Anweisungen
 ---------------------
 
-We can embed an if statement into another if statement, and then call it a nested if statement.
+Wir können eine if-Anweisung in eine andere if-Anweisung einbetten; das nennen wir dann eine verschachtelte if-Anweisung.
 
-**Example**
+**Beispiel**
 
 .. code-block:: python
 
     x = 67
 
     if x > 10:
-        print("Above ten,")
+        print("Über zehn,")
         if x > 20:
-            print("and also above 20!")
+            print("und auch über 20!")
         else:
-            print("but not above 20.")
+            print("aber nicht über 20.")
 
 >>> %Run -c $EDITOR_CONTENT
-Above ten,
-and also above 20!
+Über zehn,
+und auch über 20!

@@ -1,46 +1,45 @@
 .. _py_joystick:
 
-4.1 Toggle the Joystick
+4.1 Den Joystick umschalten
 ================================
 
-If you play a lot of video games, then you should be very familiar with the Joystick.
-It is usually used to move the character around, rotate the screen, etc.
+Wenn du viele Videospiele spielst, solltest du mit dem Joystick bestens vertraut sein.
+Er wird normalerweise verwendet, um die Spielfigur zu bewegen, den Bildschirm zu drehen usw.
 
-The principle behind Joystick's ability to allow the computer to read our actions is very simple.
-It can be thought of as consisting of two potentiometers that are perpendicular to each other.
-These two potentiometers measure the analog value of the joystick vertically and horizontally, resulting in a value (x,y) in a planar right-angle coordinate system.
+Das Grundprinzip hinter der Fähigkeit des Joysticks, dem Computer unsere Aktionen mitzuteilen, ist sehr einfach.
+Man kann ihn sich als zwei senkrecht zueinander stehende Potentiometer vorstellen.
+Diese beiden Potentiometer messen den analogen Wert des Joysticks in vertikaler und horizontaler Richtung, was in einem Wert (x,y) in einem ebenen rechtwinkligen Koordinatensystem resultiert.
 
-
-The joystick of this kit also has a digital input, which is activated when the joystick is pressed.
+Der Joystick dieses Sets hat auch einen digitalen Eingang, der aktiviert wird, wenn der Joystick gedrückt wird.
 
 * :ref:`cpn_joystick`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Set
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -48,7 +47,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,26 +56,24 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_joystick`
         - 1
         - 
 
-
-
-**Schematic**
+**Schaltplan**
 
 |sch_joystick|
 
-The SW pin is connected to a 10K pull-up resistor, the reason is to be able to get a stable high level on the SW pin (Z axis) when the joystick is not pressed; otherwise the SW is in a suspended state and the output value may vary between 0/1.
+Der SW-Pin ist mit einem 10K Pull-up-Widerstand verbunden, um ein stabiles High-Level am SW-Pin (Z-Achse) zu erhalten, wenn der Joystick nicht gedrückt ist; sonst wäre der SW in einem unbestimmten Zustand und der Ausgangswert könnte zwischen 0/1 variieren.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_joystick|
 
@@ -85,11 +82,11 @@ The SW pin is connected to a 10K pull-up resistor, the reason is to be able to g
 
 .. note::
 
-    * Open the ``4.1_toggle_the_joystick.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``4.1_toggle_the_joystick.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny und klicken dann auf "Aktuelles Skript ausführen" oder drücken einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, den Interpreter "MicroPython (Raspberry Pi Pico)" in der unteren rechten Ecke auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -105,9 +102,9 @@ The SW pin is connected to a 10K pull-up resistor, the reason is to be able to g
         y_value = y_joystick.read_u16()
         z_value = z_switch.value()
         print(x_value,y_value,z_value)
-        utime.sleep_ms(200)    
+        utime.sleep_ms(200) 
 
-After the program runs, the Shell prints out the x,y,z values of joystick.
+Nachdem das Programm ausgeführt wurde, gibt die Shell die Werte x, y und z des Joysticks aus.
 
-* The x-axis and y-axis values are analog values that vary from 0 to 65535.
-* The Z-axis is a digital value with a status of 1 or 0.
+* Die Werte der x- und y-Achse sind analoge Werte, die zwischen 0 und 65535 variieren.
+* Die Z-Achse ist ein digitaler Wert mit einem Status von 1 oder 0.

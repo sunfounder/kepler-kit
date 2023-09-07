@@ -1,31 +1,31 @@
 .. _py_room_temp:
 
-7.2 Room Temperature Meter
+7.2 Raumtemperaturmessgerät
 ======================================
 
-Using a thermistor and an I2C LCD1602, we can create a room temperature meter.
+Mit einem Thermistor und einem I2C LCD1602 können wir ein Raumtemperaturmessgerät erstellen.
 
-This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to display the temperature.
+Dieses Projekt ist sehr einfach und basiert auf :ref:`py_temp`, wobei ein I2C LCD1602 zur Anzeige der Temperatur verwendet wird.
 
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können sie auch separat über die unten stehenden Links erwerben.
 
 
 .. list-table::
@@ -33,8 +33,8 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - MENGE
         - LINK
 
     *   - 1
@@ -42,7 +42,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -51,7 +51,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,12 +66,12 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_room_temp|
 
 
-**Wiring**
+**Verkabelung**
 
 |wiring_room_temp|
 
@@ -79,11 +79,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``7.2_room_temperature_meter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``7.2_room_temperature_meter.py`` im Pfad ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, im unteren rechten Eck den "MicroPython (Raspberry Pi Pico)"-Interpreter auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -110,8 +110,7 @@ You can also buy them separately from the links below.
         lcd.message(string)
         utime.sleep(1)
         lcd.clear()
-
-The LCD will display the temperature value in the current environment after the program runs.
+Nach dem Ausführen des Programms wird die LCD die aktuelle Temperatur im Raum anzeigen.
 
 .. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+    Wenn der Code und die Verkabelung in Ordnung sind, aber das LCD dennoch keinen Inhalt anzeigt, können Sie das Potentiometer auf der Rückseite drehen, um den Kontrast zu erhöhen.

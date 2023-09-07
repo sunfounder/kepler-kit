@@ -1,45 +1,43 @@
 .. _py_irremote:
 
+6.4 Infrarot-Fernbedienung
+===========================
 
-6.4 IR Remote Control
-================================
+In der Unterhaltungselektronik dienen Fernbedienungen zur Steuerung von Geräten wie Fernsehern und DVD-Playern.
+In einigen Fällen ermöglichen sie die Bedienung von Geräten, die außerhalb der Reichweite liegen, wie beispielsweise Zentral-Klimaanlagen.
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
+Der IR-Empfänger ist eine Komponente mit einer auf Infrarotlicht abgestimmten Fotodiode.
+Er kommt fast immer bei der Erkennung von Fernbedienungssignalen zum Einsatz - jeder Fernseher und DVD-Player ist an der Frontseite mit einem solchen Modul ausgestattet, um das IR-Signal von der Fernbedienung zu empfangen.
+In der Fernbedienung selbst befindet sich eine dazu passende IR-LED, die IR-Impulse aussendet, um den Fernseher ein- oder auszuschalten oder den Sender zu wechseln.
 
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+* :ref:`cpn_ir_empfaenger`
 
-* :ref:`cpn_ir_receiver`
+**Benötigte Bauteile**
 
-**Required Components**
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplett-Kit ist natürlich praktisch, hier der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Bezeichnung	
+        - KOMPONENTEN IM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die einzelnen Komponenten können auch über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -47,7 +45,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Mikro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -56,34 +54,33 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_irrecv|
 
-**Wiring**
-
+**Verdrahtung**
 
 |wiring_irrecv|
-
 
 **Code**
 
 .. note::
 
-    * Open the ``6.4_ir_remote_control.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``6.4_ir_remote_control.py` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie den Code in Thonny und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Wählen Sie in der unteren rechten Ecke den Interpreter "MicroPython (Raspberry Pi Pico)" aus.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Für detaillierte Anleitungen siehe :ref:`open_run_code_py`.
     
-    * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Die benötigten Bibliotheken finden Sie im Ordner ``ir_rx``. Vergewissern Sie sich, dass diese auf den Pico hochgeladen wurden. Detaillierte Anleitungen finden Sie unter :ref:`add_libraries_py`.
+
 
 
 .. code-block:: python
@@ -157,12 +154,12 @@ You can also buy them separately from the links below.
         ir.close()
 
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Shell will print out the key you pressed.
+Die neue Fernbedienung besitzt ein Plastikteil am Ende, um die innenliegende Batterie zu isolieren. Um die Fernbedienung zu aktivieren, muss dieses Plastikteil entfernt werden.
+Sobald das Programm läuft und Sie eine Taste auf der Fernbedienung drücken, wird die gedrückte Taste in der Shell ausgegeben.
 
-**How it works?**
+**Wie funktioniert es?**
 
-This program looks slightly complicated, but it actually does the basic functions of the IR receiver with just a few lines.
+Das Programm mag auf den ersten Blick komplex erscheinen, erfüllt jedoch die Grundfunktionen des IR-Empfängers mit nur wenigen Codezeilen.
 
 .. code-block:: python
 
@@ -172,24 +169,24 @@ This program looks slightly complicated, but it actually does the basic function
 
     pin_ir = Pin(17, Pin.IN)
 
-    # User callback
+    # Benutzerdefinierte Rückruffunktion
     def callback(data, addr, ctrl):
-        if data < 0:  # NEC protocol sends repeat codes.
+        if data < 0:  # NEC-Protokoll sendet Wiederholungscodes.
             pass
         else:
             print(decodeKeyValue(data))
 
-    ir = NEC_8(pin_ir, callback)  # Instantiate receiver
+    ir = NEC_8(pin_ir, callback)  # Empfänger instanziieren
 
-Here an ``ir`` object is instantiated, which reads the signals acquired by the IR receiver at any time.
+Hier wird ein ``ir``-Objekt instanziiert, das ständig die vom IR-Empfänger empfangenen Signale liest.
 
-The result will be recorded in ``data`` of the callback function.
+Die Ergebnisse werden im ``data``-Parameter der Rückruffunktion gespeichert.
 
-* `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
+* `Rückruffunktion - Wikipedia <https://de.wikipedia.org/wiki/R%C3%BCckruffunktion>`_
 
-If the IR receiver receives duplicate values (e.g. pressing a key and not releasing it), then data < 0 and this data needs to be filtered.
+Falls der IR-Empfänger doppelte Werte erhält (z. B. durch gedrückt Halten einer Taste), wird `data < 0`, und diese Daten müssen gefiltert werden.
 
-Otherwise data would be a usable value, but some unspeakable code, and the ``decodeKeyValue(data)`` function is used to decode it.
+Ansonsten wäre `data` ein verwendbarer Wert, jedoch in unverständlichem Code, und die Funktion ``decodeKeyValue(data)`` dient zur Entschlüsselung.
 
 .. code-block:: python
 
@@ -238,17 +235,17 @@ Otherwise data would be a usable value, but some unspeakable code, and the ``dec
             return "MODE" 
         return "ERROR"
 
-If we press key **1**, the IR receiver outputs a value like ``0x0C``, which needs to be decoded to correspond to the specific key.
+Falls wir die Taste **1** drücken, gibt der IR-Empfänger einen Wert wie ``0x0C`` aus, der entschlüsselt werden muss, um der spezifischen Taste zu entsprechen.
 
-Next are some debug functions. They are important, but not related to the effect we need to achieve, so we just put them in the program.
+Es folgen einige Debug-Funktionen. Diese sind wichtig, stehen jedoch nicht im direkten Zusammenhang mit dem gewünschten Effekt, daher sind sie im Programm enthalten.
 
 .. code-block:: python
 
     from ir_rx.print_error import print_error
 
-    ir.error_function(print_error) # Show debug information
+    ir.error_function(print_error) # Debug-Informationen anzeigen
 
-Finally, we use an empty loop as the main program. And use try-except to make the program exit with the ``ir`` object terminated.
+Abschließend verwenden wir eine leere Schleife als Hauptprogramm und nutzen `try-except`, um das Programm mit Beendigung des ``ir``-Objekts zu schließen.
 
 .. code-block:: python
 
@@ -258,6 +255,4 @@ Finally, we use an empty loop as the main program. And use try-except to make th
     except KeyboardInterrupt:
         ir.close()
 
-
-
-* `Try Statement - Python Docs <https://docs.python.org/3/reference/compound_stmts.html?#the-try-statement>`_
+* `Try-Anweisung - Python-Dokumentation <https://docs.python.org/3/reference/compound_stmts.html?#the-try-statement>`_

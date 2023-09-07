@@ -1,45 +1,43 @@
 .. _py_pa_buz:
 
-3.2 Custom Tone
+3.2 Eigener Ton
 ==========================================
 
+Im vorherigen Projekt haben wir einen aktiven Summer verwendet, diesmal setzen wir einen passiven Summer ein.
 
-We have used active buzzer in the previous project, this time we will use passive buzzer.
+Wie der aktive Summer arbeitet auch der passive Summer mit dem Phänomen der elektromagnetischen Induktion. Der Unterschied besteht darin, dass ein passiver Summer keine eigene Schwingungsquelle hat. Daher wird er bei Verwendung von Gleichstromsignalen keinen Ton erzeugen. 
+Dies ermöglicht es dem passiven Summer jedoch, seine eigene Schwingungsfrequenz anzupassen und unterschiedliche Töne wie "do, re, mi, fa, sol, la, ti" auszusenden.
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
-But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
+Lassen Sie den passiven Summer eine Melodie erklingen!
 
-Let the passive buzzer emit a melody!
+* :ref:`cpn_buzzer`
 
-* :ref:`Buzzer`
+**Erforderliche Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Komponenten. 
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Gesamtpaket zu kaufen ist natürlich praktisch, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können auch einzeln über die unten stehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - MENGE
         - LINK
 
     *   - 1
@@ -47,7 +45,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -56,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -71,41 +69,41 @@ You can also buy them separately from the links below.
         - 1
         - |link_passive_buzzer_buy|
 
-**Schematic**
+**Schaltbild**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+Wird der GP15-Ausgang auf "High" gesetzt, wird nach dem 1K-Strombegrenzungswiderstand (zum Schutz des Transistors) der S8050 (NPN-Transistor) leitend, und der Summer gibt einen Ton ab.
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+Die Rolle des S8050 (NPN-Transistor) besteht darin, den Strom zu verstärken und somit den Ton des Summers zu erhöhen. Tatsächlich können Sie den Summer auch direkt an GP15 anschließen, dann werden Sie allerdings feststellen, dass der Ton leiser ist.
 
-
-**Wiring**
+**Verdrahtung**
 
 |img_buzzer|
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back).
+Im Kit sind zwei verschiedene Summertypen enthalten; wir verwenden einen passiven Summer (den mit der freiliegenden Leiterplatte auf der Rückseite).
 
-The buzzer needs a transistor to work, here we use S8050.
+Für den Betrieb des Summers ist ein Transistor erforderlich, hier verwenden wir den S8050.
 
 |wiring_buzzer|
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the positive pin of the buzzer to the positive power bus.
-.. #. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
-.. #. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
-.. #. Connect the **emitter** lead of the transistor to the negative power bus.
+.. 1. Verbinden Sie 3V3 und GND des Pico W mit der Stromschiene des Breadboards.
+.. #. Verbinden Sie den Pluspol des Summers mit der positiven Stromschiene.
+.. #. Verbinden Sie den Kathodenpin des Summers mit dem **Kollektor**-Anschluss des Transistors.
+.. #. Verbinden Sie den **Basis**-Anschluss des Transistors über einen 1kΩ-Widerstand mit dem GP15-Pin.
+.. #. Verbinden Sie den **Emitter**-Anschluss des Transistors mit der negativen Stromschiene.
+
 
 
 **Code**
 
 .. note::
 
-    * Open the ``3.2_custom_tone.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.2_custom_tone.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, unten rechts den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Für ausführliche Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -127,38 +125,33 @@ The buzzer needs a transistor to work, here we use S8050.
     tone(buzzer,523,250)
 
 
-**How it works?**
+**Wie funktioniert es?**
 
-If the passive buzzer given a digital signal, it can only keep pushing the diaphragm without producing sound.
+Wenn der passive Summer ein digitales Signal erhält, kann er nur die Membran bewegen, ohne einen Ton zu erzeugen.
 
-Therefore, we use the ``tone()`` function to generate the PWM signal to make the passive buzzer sound.
+Daher verwenden wir die Funktion ``tone()`` um ein PWM-Signal zu generieren und den passiven Summer zum Klingen zu bringen.
 
-This function has three parameters:
+Diese Funktion hat drei Parameter:
 
-* **pin**, the GPIO pin that controls the buzzer.
-* **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-* **Duration**, the duration of the tone.
+* **pin**, der GPIO-Pin, der den Summer steuert.
+* **Frequenz**, die Tonhöhe des Summers wird durch die Frequenz bestimmt. Je höher die Frequenz, desto höher die Tonhöhe.
+* **Dauer**, die Dauer des Tons.
 
-We use the ``duty_u16()`` function to set the duty cycle to 30000(about 50%). It can be other numbers, and it only needs to generate a discontinuous electrical signal to oscillate.
+Wir nutzen die Funktion ``duty_u16()`` um den Tastgrad auf 30000 (etwa 50%) zu setzen. Es können auch andere Werte sein; wichtig ist nur, ein diskontinuierliches elektrisches Signal zu erzeugen.
 
+**Mehr erfahren**
 
+Wir können den spezifischen Ton gemäß der Grundfrequenz des Klaviers simulieren, um ein vollständiges Musikstück zu spielen.
 
-**Learn More**
-
-We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
-
-* `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
-
-
+* `Frequenzen der Klaviertasten - Wikipedia <https://de.wikipedia.org/wiki/Frequenzen_der_gleichstufigen_Stimmung>`_
 
 .. note::
 
-    * Open the ``3.2_custom_tone_2.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Öffnen Sie die Datei ``3.2_custom_tone_2.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny. Klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Vergessen Sie nicht, unten rechts den Interpreter "MicroPython (Raspberry Pi Pico)" auszuwählen.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Für ausführliche Anleitungen siehe :ref:`open_run_code_py`.
 
 .. code-block:: python
 

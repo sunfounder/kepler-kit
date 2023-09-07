@@ -1,60 +1,58 @@
-Comments
+Kommentare
 =============
 
-The comments in the code help us understand the code, make the entire code more readable and comment out part of the code during testing, so that this part of the code does not run.
+Kommentare im Code helfen uns, den Code zu verstehen, machen den gesamten Code lesefreundlicher und ermöglichen es, während des Testens Teile des Codes auszukommentieren, sodass diese Teile nicht ausgeführt werden.
 
-Single-line Comment
+Einzeilige Kommentare
 ----------------------------
 
-Single-line comments in MicroPython begin with #, and the following text is considered a comment until the end of the line. Comments can be placed before or after the code.
+Einzeilige Kommentare in MicroPython beginnen mit einem #, und der darauf folgende Text wird bis zum Ende der Zeile als Kommentar betrachtet. Kommentare können vor oder nach dem Code platziert werden.
 
 .. code-block:: python
 
-    print("hello world") #This is a annotationhello world
-
+    print("Hallo Welt")  # Das ist ein Kommentar
 >>> %Run -c $EDITOR_CONTENT
-hello world
+Hallo Welt
 
-Comments are not necessarily text used to explain the code. You can also comment out part of the code to prevent micropython from running the code.
-
+Kommentare sind nicht zwangsläufig Text, der dazu dient, den Code zu erklären. Sie können auch Teile des Codes auskommentieren, um zu verhindern, dass MicroPython den Code ausführt.
 
 .. code-block:: python
 
-    #print("Can't run it！")
-    print("hello world") #This is a annotationhello world
+    #print("Wird nicht ausgeführt!")
+    print("Hallo Welt")  # Das ist ein Kommentar
 
 >>> %Run -c $EDITOR_CONTENT
-hello world
+Hallo Welt
 
-Multi-line comment
+Mehrzeilige Kommentare
 ------------------------------
 
-If you want to comment on multiple lines, you can use multiple # signs.
+Wenn Sie mehrere Zeilen kommentieren möchten, können Sie mehrere # Zeichen verwenden.
 
 .. code-block:: python
 
-    #This is a comment
-    #written in
-    #more than just one line
+    # Das ist ein Kommentar
+    # der über mehrere 
+    # Zeilen geht
+    print("Hallo Welt!")
+
+>>> %Run -c $EDITOR_CONTENT
+Hallo Welt!
+
+Alternativ können Sie auch mehrzeilige Zeichenketten verwenden.
+
+Da MicroPython Zeichenfolgen, die keiner Variablen zugewiesen werden, ignoriert, können Sie mehrzeilige Zeichenketten (Dreifach-Anführungszeichen) zum Code hinzufügen und dort Kommentare einfügen:
+
+.. code-block:: python
+
+    """
+    Das ist ein Kommentar
+    der über mehrere 
+    Zeilen geht
+    """
     print("Hello, World!")
 
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-Or, you can use multi-line strings instead of expected.
-
-Since MicroPython ignores string literals that are not assigned to variables, you can add multiple lines of strings (triple quotes) to the code and put comments in them:
-
-.. code-block:: python
-
-    """
-    This is a comment
-    written in
-    more than just one line
-    """
-    print("Hello, World!")
-
->>> %Run -c $EDITOR_CONTENT
-Hello, World!
-
-As long as the string is not assigned to a variable, MicroPython will ignore it after reading the code and treat it as if you made a multi-line comment.
+Solange die Zeichenfolge keiner Variablen zugewiesen ist, wird MicroPython sie nach dem Lesen des Codes ignorieren und so behandeln, als hätten Sie einen mehrzeiligen Kommentar verfasst.

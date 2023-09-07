@@ -1,95 +1,89 @@
-Functions
+Funktionen
 ==============
 
-In MicroPython, a function is a group of related statements that perform a specific task.
+In MicroPython ist eine Funktion eine Gruppe von verwandten Anweisungen, die eine bestimmte Aufgabe ausführen.
 
-Functions help break our program into smaller modular blocks. As our plan becomes larger and larger, functions make it more organized and manageable.
+Funktionen helfen dabei, unser Programm in kleinere, modulare Blöcke zu zerlegen. Je umfangreicher unser Projekt wird, desto übersichtlicher und handhabbarer wird es durch die Verwendung von Funktionen.
 
-In addition, it avoids duplication and makes the code reusable.
+Zudem vermeiden Funktionen Duplikate und machen den Code wiederverwendbar.
 
-Create a Function
+Eine Funktion erstellen
 ------------------
 
 .. code-block::
 
-    def function_name(parameters): 
-        """docstring"""
-        statement(s)
+    def funktions_name(parameter): 
+        """Dokumentationszeichenfolge"""
+        Anweisung(en)
 
-* A function is defined using the ``def`` keyword
+* Eine Funktion wird mit dem Schlüsselwort ``def`` definiert.
 
-* A function name to uniquely identify the function. Function naming is the same as variable naming, and both follow the following rules.
+* Ein Funktionsname zur eindeutigen Identifizierung der Funktion. Die Benennung von Funktionen und Variablen folgt denselben Regeln:
     
-   * Can only contain numbers, letters, and underscores.
-   * The first character must be a letter or underscore.
-   * Case sensitive.
+   * Darf nur Zahlen, Buchstaben und Unterstriche enthalten.
+   * Das erste Zeichen muss ein Buchstabe oder Unterstrich sein.
+   * Groß- und Kleinschreibung wird unterschieden.
 
-* Parameters (arguments) through which we pass values to a function. They are optional.
+* Parameter (Argumente), über die Werte an eine Funktion übergeben werden. Diese sind optional.
 
-* The colon (:) marks the end of the function header.
+* Der Doppelpunkt (:) markiert das Ende der Funktionskopfzeile.
 
-* Optional docstring, used to describe the function of the function, we usually use triple quotes so that the docstring can be expanded to multiple lines.
+* Eine optionale Dokumentationszeichenfolge, die in der Regel durch dreifache Anführungszeichen mehrzeilig gestaltet werden kann, dient zur Beschreibung der Funktion.
 
-* One or more valid Micropython statements that make up the function body. Statements must have the same indentation level (usually 4 spaces).
+* Eine oder mehrere gültige MicroPython-Anweisungen, die den Funktionskörper bilden. Die Anweisungen müssen die gleiche Einrückungsebene haben (in der Regel 4 Leerzeichen).
 
-* Each function needs at least one statement, but if for some reason there is a function that does not contain any statement, please put in the pass statement to avoid errors.
+* Jede Funktion benötigt mindestens eine Anweisung. Sollte aus irgendeinem Grund eine Funktion keine Anweisung enthalten, verwenden Sie bitte die Anweisung ``pass``, um Fehler zu vermeiden.
 
-* An optional ``return`` statement to return a value from the function.
+* Eine optionale ``return``-Anweisung, um einen Wert aus der Funktion zurückzugeben.
 
 
-Calling a Function
+Eine Funktion aufrufen
 -------------------
 
-To call a function, add parentheses after the function name.
-
-
+Um eine Funktion aufzurufen, fügen Sie Klammern hinter den Funktionsnamen.
 
 .. code-block:: python
 
-    def my_function():
-        print("Your first function")
+    def meine_funktion():
+        print("Deine erste Funktion")
 
-    my_function()
+    meine_funktion()
 
 >>> %Run -c $EDITOR_CONTENT
-Your first function
+Deine erste Funktion
 
-The return Statement
+Die return-Anweisung
 -----------------------
 
-The return statement is used to exit a function and return to the place where it was called.
+Die ``return``-Anweisung wird verwendet, um eine Funktion zu verlassen und an die Stelle zurückzukehren, von der aus sie aufgerufen wurde.
 
-**Syntax of return**
-
-.. code-block:: python
-
-    return [expression_list]
-
-The statement can contain an expression that is evaluated and returns a value. If there is no expression in the statement, or the ``return`` statement itself does not exist in the function, the function will return a ``None`` object.
-
-
+**Syntax von return**
 
 .. code-block:: python
 
-    def my_function():
-            print("Your first function")
+    return [Ausdrucksliste]
 
-    print(my_function())
+Die Anweisung kann einen Ausdruck enthalten, der ausgewertet wird und einen Wert zurückgibt. Wenn in der Anweisung kein Ausdruck enthalten ist oder die ``return``-Anweisung in der Funktion selbst nicht vorhanden ist, gibt die Funktion ein ``None``-Objekt zurück.
+
+.. code-block:: python
+
+    def meine_funktion():
+            print("Deine erste Funktion")
+
+    print(meine_funktion())
 
 >>> %Run -c $EDITOR_CONTENT
-Your first function
+Deine erste Funktion
 None
 
-Here, ``None`` is the return value, because the ``return`` statement is not used.
+In diesem Fall ist ``None`` der Rückgabewert, da die ``return``-Anweisung nicht verwendet wird.
 
-Arguments
+Argumente
 -------------
 
-Information can be passed to the function as arguments.
+Informationen können der Funktion als Argumente übergeben werden.
 
-Specify arguments in parentheses after the function name. You can add as many arguments as you need, just separate them with commas.
-
-
+Geben Sie die Argumente in Klammern hinter dem Funktionsnamen an. Sie können so viele Argumente hinzufügen wie nötig, trennen Sie diese einfach durch Kommas.
 
 .. code-block:: python
 
@@ -104,12 +98,10 @@ Specify arguments in parentheses after the function name. You can add as many ar
 Hello Lily, Welcome to China!
 
 
-Number of Arguments
+Anzahl der Argumente
 *************************
 
-By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 parameters, you have to call the function with 2 arguments, not more, and not less.
-
-
+Standardmäßig muss eine Funktion mit der korrekten Anzahl an Argumenten aufgerufen werden. Das heißt, wenn Ihre Funktion zwei Parameter erwartet, müssen Sie die Funktion auch mit genau zwei Argumenten aufrufen, weder mehr noch weniger.
 
 .. code-block:: python
 
@@ -120,13 +112,13 @@ By default, a function must be called with the correct number of arguments. Mean
 
     welcome("Lily", "Welcome to China!")
 
-Here, the function welcome() has 2 parameters.
+Hier hat die Funktion welcome() zwei Parameter.
 
-Since we called this function with two arguments, the function runs smoothly without any errors.
+Da wir diese Funktion mit zwei Argumenten aufgerufen haben, wird sie fehlerfrei ausgeführt.
 
-If it is called with a different number of arguments, the interpreter will display an error message.
+Wird sie jedoch mit einer abweichenden Anzahl an Argumenten aufgerufen, gibt der Interpreter eine Fehlermeldung aus.
 
-The following is the call to this function, which contains one and one no arguments and their respective error messages.
+Folgende Aufrufe der Funktion, die entweder ein oder gar kein Argument enthalten, erzeugen jeweils eine entsprechende Fehlermeldung.
 
 .. code-block::
 
@@ -147,14 +139,12 @@ Traceback (most recent call last):
 TypeError: function takes 2 positional arguments but 0 were given
 
 
-Default Arguments
+Standardargumente
 *************************
 
-In MicroPython, we can use the assignment operator (=) to provide a default value for the parameter.
+In MicroPython können wir den Zuweisungsoperator (=) verwenden, um einen Standardwert für den Parameter festzulegen.
 
-If we call the function without argument, it uses the default value.
-
-
+Wenn wir die Funktion ohne Argument aufrufen, wird der Standardwert verwendet.
 
 .. code-block:: python
 
@@ -167,21 +157,21 @@ If we call the function without argument, it uses the default value.
 >>> %Run -c $EDITOR_CONTENT
 Hello Lily, Welcome to China!
 
-In this function, the parameter ``name`` has no default value and is required (mandatory) during the call.
+In dieser Funktion ist der Parameter ``name`` zwingend erforderlich, da er keinen Standardwert hat.
 
-On the other hand, the default value of the parameter ``msg`` is "Welcome to China!". Therefore, it is optional during the call. If a value is provided, it will overwrite the default value.
+Andererseits ist der Standardwert des Parameters ``msg`` "Willkommen in China!". Daher ist er beim Aufruf der Funktion optional. Wird ein Wert angegeben, überschreibt dieser den Standardwert.
 
-Any number of arguments in the function can have a default value. However, once there is a default argument, all arguments on its right must also have default values.
+In der Funktion können beliebig viele Argumente einen Standardwert haben. Sobald jedoch ein Argument einen Standardwert hat, müssen alle folgenden Argumente ebenfalls Standardwerte haben.
 
-This means that non-default arguments cannot follow default arguments. 
+Das bedeutet, dass Standardargumente immer am Ende der Parameterliste stehen müssen.
 
-For example, if we define the above function header as:
+Zum Beispiel, wenn wir die obenstehende Funktionsdeklaration wie folgt definieren:
 
 .. code-block:: python
 
     def welcome(name = "Lily", msg):
 
-We will receive the following error message:
+Dann erhalten wir die folgende Fehlermeldung:
 
 >>> %Run -c $EDITOR_CONTENT
 Traceback (most recent call last):
@@ -189,82 +179,78 @@ Traceback (most recent call last):
 SyntaxError: non-default argument follows default argument
 
 
-Keyword Arguments
+
+Schlüsselwortargumente
 **************************
 
-When we call a function with certain values, these values ​​will be assigned to arguments based on their position.
+Wenn wir eine Funktion mit bestimmten Werten aufrufen, werden diese Werte basierend auf ihrer Position den Argumenten zugewiesen.
 
-For example, in the above function welcome(), when we called it as welcome("Lily", "Welcome to China"), the value "Lily" gets assigned to the ``name`` and similarly "Welcome to China" to parameter ``msg``.
+Beispielsweise wird im oben erwähnten Fall der Funktion welcome(), wenn wir sie mit welcome("Lily", "Willkommen in China") aufrufen, der Wert "Lily" dem Parameter ``name`` und entsprechend "Willkommen in China" dem Parameter ``msg`` zugewiesen.
 
-MicroPython allows calling functions with keyword arguments. When we call the function in this way, the order (position) of the arguments can be changed. 
-
-.. code-block:: python
-
-    # keyword arguments
-    welcome(name = "Lily",msg = "Welcome to China!")
-
-    # keyword arguments (out of order)
-    welcome(msg = "Welcome to China！",name = "Lily") 
-
-    #1 positional, 1 keyword argument
-    welcome("Lily", msg = "Welcome to China!")
-
-As we can see, we can mix positional arguments and keyword arguments during function calls. But we must remember that the keyword arguments must come after the positional arguments.
-
-Having a positional argument after a keyword argument will result in an error. 
-
-For example, if the function call as follows:
+MicroPython ermöglicht das Aufrufen von Funktionen mit Schlüsselwortargumenten. Bei dieser Art des Aufrufs kann die Reihenfolge der Argumente variiert werden. 
 
 .. code-block:: python
 
-    welcome(name="Lily","Welcome to China!")
+    # Schlüsselwortargumente
+    welcome(name = "Lily", msg = "Willkommen in China!")
 
-Will result in an error:
+    # Schlüsselwortargumente (in unterschiedlicher Reihenfolge)
+    welcome(msg = "Willkommen in China!", name = "Lily") 
+
+    # Ein Positionsargument, ein Schlüsselwortargument
+    welcome("Lily", msg = "Willkommen in China!")
+
+Wie zu sehen ist, können Positionsargumente und Schlüsselwortargumente in Funktionsaufrufen gemischt werden. Es ist jedoch wichtig, dass die Schlüsselwortargumente immer nach den Positionsargumenten stehen.
+
+Ein Positionsargument nach einem Schlüsselwortargument führt zu einem Fehler.
+
+Zum Beispiel resultiert der folgende Funktionsaufruf in einem Fehler:
+
+.. code-block:: python
+
+    welcome(name="Lily", "Willkommen in China!")
 
 >>> %Run -c $EDITOR_CONTENT
 Traceback (most recent call last):
   File "<stdin>", line 5, in <module>
-SyntaxError: non-keyword arg after keyword arg
+SyntaxError: positional argument follows keyword argument
 
 
-Arbitrary Arguments
+Beliebige Argumente
 ********************
 
-Sometimes, if you do not know the number of arguments that will be passed to the function in advance. 
+Manchmal wissen wir im Voraus nicht, wie viele Argumente an die Funktion übergeben werden.
 
-In the function definition, we can add an asterisk (*) before the parameter name.
-
-
+In der Funktionsdefinition können wir ein Sternchen (*) vor dem Parameternamen setzen.
 
 .. code-block:: python
 
     def welcome(*names):
-        """This function welcomes all the person
-        in the name tuple"""
-        #names is a tuple with arguments
+        """Diese Funktion begrüßt alle Personen
+        im Namens-Tupel"""
         for name in names:
-            print("Welcome to China!", name)
+            print("Willkommen in China!", name)
             
-    welcome("Lily","John","Wendy")
+    welcome("Lily", "John", "Wendy")
 
 >>> %Run -c $EDITOR_CONTENT
-Welcome to China! Lily
-Welcome to China! John
-Welcome to China! Wendy
+Willkommen in China! Lily
+Willkommen in China! John
+Willkommen in China! Wendy
 
-Here, we have called the function with multiple arguments. These arguments are packed into a tuple before being passed into the function. 
+Hier haben wir die Funktion mit mehreren Argumenten aufgerufen, die in ein Tupel verpackt und dann an die Funktion übergeben werden.
 
-Inside the function, we use a for loop to retrieve all the arguments.
+Innerhalb der Funktion verwenden wir eine Schleife, um alle Argumente abzurufen.
 
-Recursion
+
+Rekursion
 ----------------
-In Python, we know that a function can call other functions. It is even possible for the function to call itself. These types of construct are termed as recursive functions.
 
-This has the benefit of meaning that you can loop through data to reach a result.
+In Python ist es bekanntlich möglich, dass eine Funktion andere Funktionen aufruft. Sie kann sogar sich selbst aufrufen. Solche Konstrukte werden als rekursive Funktionen bezeichnet.
 
-The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.
+Dies hat den Vorteil, dass man durch Daten iterieren kann, um ein Ergebnis zu erreichen.
 
-
+Entwickler sollten bei der Verwendung von Rekursion sehr vorsichtig sein, da leicht eine Funktion entstehen kann, die niemals endet oder übermäßig viel Speicher bzw. Prozessorleistung verbraucht. Bei korrekter Implementierung kann Rekursion jedoch ein sehr effizienter und mathematisch eleganter Ansatz zur Programmierung sein.
 
 .. code-block:: python
 
@@ -286,18 +272,18 @@ The developer should be very careful with recursion as it can be quite easy to s
 15
 21
 
-In this example, rec_func() is a function that we have defined to call itself ("recursion"). We use the ``i`` variable as the data, and it will decrement (-1) every time we recurse. When the condition is not greater than 0 (that is, 0), the recursion ends.
+In diesem Beispiel ruft rec_func() sich selbst auf ("Rekursion"). Wir verwenden die Variable ``i`` als Datenwert, der bei jedem Rekursionsschritt um 1 verringert wird. Wenn die Bedingung nicht größer als 0 ist (also 0), endet die Rekursion.
 
-For new developers, it may take some time to determine how it works, and the best way to test it is to test and modify it.
+Für neue Entwickler kann es etwas Zeit in Anspruch nehmen, die Funktionsweise zu verstehen; der beste Weg zur Überprüfung ist das Ausprobieren und Anpassen.
 
-**Advantages of Recursion**
+**Vorteile der Rekursion**
 
-* Recursive functions make the code look clean and elegant.
-* A complex task can be broken down into simpler sub-problems using recursion.
-* Sequence generation is easier with recursion than using some nested iteration.
+* Rekursive Funktionen machen den Code sauber und elegant.
+* Komplexe Aufgaben können durch Rekursion in einfachere Teilprobleme zerlegt werden.
+* Die Erzeugung von Sequenzen ist mit Rekursion einfacher als mit verschachtelten Schleifen.
 
-**Disadvantages of Recursion**
+**Nachteile der Rekursion**
 
-* Sometimes the logic behind recursion is hard to follow through.
-* Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
-* Recursive functions are hard to debug.
+* Manchmal ist die Logik hinter der Rekursion schwer nachzuvollziehen.
+* Rekursive Aufrufe sind ressourcenintensiv, da sie viel Speicher und Zeit verbrauchen.
+* Rekursive Funktionen sind schwer zu debuggen.

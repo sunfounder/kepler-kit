@@ -1,28 +1,27 @@
 .. _cpn_slide_switch:
 
-Slide Switch
+Schiebeschalter
 ==============
 
 |img_slide|
 
-A slide switch, just as its name implies, is to slide the switch bar to connect or break the circuit, and further switch circuits. The common-used types are SPDT, SPTT, DPDT, DPTT etc. The slide switch is commonly used in low-voltage circuit. It has the features of flexibility and stability, and  applies in electric instruments and electric toys widely.
-How it works: Set the middle pin as the fixed one. When you pull the slide to the left, the  two pins on the left are connected; when you pull it to the right, the two pins on the right are connected. Thus, it works as a switch connecting or disconnecting circuits. See the figure below:
+Ein Schiebeschalter funktioniert, wie der Name schon sagt, durch das Verschieben der Schaltleiste, um den Stromkreis zu schließen oder zu unterbrechen und weitere Schaltkreise umzuschalten. Gebräuchliche Typen sind SPDT, SPTT, DPDT, DPTT usw. Der Schiebeschalter wird häufig in Niederspannungsschaltkreisen eingesetzt. Er zeichnet sich durch Flexibilität und Stabilität aus und findet breite Anwendung in elektrischen Instrumenten und elektronischem Spielzeug.
+Funktionsweise: Der mittlere Pin dient als fester Anschlusspunkt. Wenn Sie den Schieber nach links ziehen, werden die beiden linken Pins miteinander verbunden; ziehen Sie ihn nach rechts, werden die beiden rechten Pins verbunden. So fungiert er als Schalter, der Schaltkreise verbindet oder trennt. Siehe nachstehende Abbildung:
 
 |img_slide_prin|
 
-The circuit symbol of the slide switch is shown as below. The pin2 in the figure refers to the middle pin.
+Das Schaltzeichen des Schiebeschalters ist unten dargestellt. Der Pin2 in der Abbildung bezieht sich auf den mittleren Pin.
 
 |img_slide_symbol|
 
-.. **Example**
+.. **Beispiel**
 
-.. * :ref:`Reading Button Value` (For MicroPython User)
-.. * :ref:`Warning Light` (For C/C++(Arduino) User)
+.. * :ref:`Abfrage des Tastenwertes` (Für MicroPython-Anwender)
+.. * :ref:`Warnleuchte` (Für C/C++(Arduino)-Anwender)
 
+**Beispiel**
 
-**Example**
-
-* :ref:`py_slide` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`ar_slide` (For Arduino User)
-* :ref:`per_drum_kit` (For Piper Make User)
+* :ref:`py_slide` (Für MicroPython-Anwender)
+* :ref:`py_alarm_lamp` (Für MicroPython-Anwender)
+* :ref:`ar_slide` (Für Arduino-Anwender)
+* :ref:`per_drum_kit` (Für Piper Make-Anwender)
