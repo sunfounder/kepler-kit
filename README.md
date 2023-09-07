@@ -20,6 +20,8 @@ This Kepler kit applies to the Raspberry Pi Pico W. It includes various componen
 
 <a id="update"></a>
 ## Update:
+2023-09-06:
+ - Turn the folders in arduino/libraries into a zip file.
 
 2022-09-06:
  - New Release
