@@ -60,6 +60,7 @@ html_static_path = ['_static']
 
 html_js_files = [
     'https://ezblock.cc/readDocFile/custom.js',
+    './lang.js',
 ]
 html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
