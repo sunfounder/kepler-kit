@@ -109,7 +109,7 @@ By calling the library ``LiquidCrystal_I2C.h``, you can easily drive the LCD.
 
     LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
 
-Creates a new instance of the ``LiquidCrystal_I2`` C class that represents a particular LCD attached to your Arduino board.
+Creates a new instance of the ``LiquidCrystal_I2C`` class that represents a particular LCD attached to your Arduino board.
 
  **lcd_AddR**: The address of the LCD defaults to 0x27.
  **lcd_cols**: The LCD1602 has 16 columns.

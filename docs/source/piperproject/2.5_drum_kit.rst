@@ -58,11 +58,11 @@ You can also buy them separately from the links below.
         - :ref:`cpn_button`
         - 3
         - |link_button_buy|
-    *   - 6
+    *   - 7
         - :ref:`cpn_capacitor`
         - 1(104)
         - |link_capacitor_buy|
-    *   - 7
+    *   - 8
         - :ref:`cpn_micro_switch`
         - 1
         - 
