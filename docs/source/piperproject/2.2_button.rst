@@ -1,37 +1,36 @@
 .. _per_button:
 
-2.2 Button
-=================
+2.2 Taster
+===============
 
-In this project, we will learn how to turn on or off the LED by using a button.
+In diesem Projekt werden wir lernen, wie man eine LED mit Hilfe eines Tasters ein- oder ausschaltet.
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist natürlich praktisch, ein ganzes Kit zu kaufen, hier der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Bauteile können auch einzeln über die unten stehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -39,7 +38,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -48,11 +47,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 2(220Ω, 10KΩ)
+        - 2 (220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -63,33 +62,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
 
-**Wiring**
-
+**Verdrahtung**
 
 |button0|
 
-
-* One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. 
-* However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
-
+* Ein Pin des Tasters ist mit 3,3V verbunden, der gegenüberliegende Pin mit GP14. Wenn der Taster gedrückt wird, liegt an GP14 eine hohe Spannung an.
+* Wenn der Taster nicht gedrückt ist, befindet sich GP14 in einem unbestimmten Zustand und kann hoch oder niedrig sein. Um einen stabilen niedrigen Pegel zu erhalten, wenn der Taster nicht gedrückt ist, muss GP14 über einen 10K-Pull-down-Widerstand erneut mit GND verbunden werden.
 
 **Code**
 
-.. note::
+.. Hinweis::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.2_button.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Sie können den Code durch Ziehen und Ablegen gemäß dem unten stehenden Bild schreiben.
+    * Importieren Sie ``2.2_button.png`` aus dem Pfad ``kepler-kit-main\piper``. Für detaillierte Anleitungen siehe :ref:`import_code_piper`.
 
 |2.2_button|
 
-After connecting Pico W, click the **Start** button and the code starts to run. When the button is pressed, the LED will be lit. When the button is released, the LED will go out.
+Nachdem der Pico W angeschlossen wurde, klicken Sie auf die **Start**-Schaltfläche und der Code beginnt auszuführen. Wenn der Taster gedrückt wird, leuchtet die LED auf. Wird der Taster losgelassen, erlischt die LED.
 
+**Funktionsweise**
 
-**How it Works?**
+Wenn der Taster gedrückt ist, ist Pin14 hoch. Wenn also Pin14 hoch gelesen wird, schalten Sie Pin15 ein (LED leuchtet); andernfalls schalten Sie Pin15 aus (LED ist aus).
 
-When the button is pressed, pin14 is high. So if the read pin14 is high, turn the pin15 on (LED is lit); else, turn off the pin15 (LED is off).
-
-* [if () do () else ()]: This is a judgment block, depending on the condition after the [if] block to determine whether to run the blocks inside the [do] block, or the blocks inside the [else] block.
-* [is pin () HIGH]: This is used to read the level of a specific pin, if the level read is the same as the set HIGH/LOW, then execute the blocks inside [do] block, otherwise execute the blocks inside [else].
-
+* [if () do () else ()]: Dies ist ein Bedingungsblock. Je nach Zustand nach dem [if]-Block wird entschieden, ob die Blöcke im [do]-Block oder die Blöcke im [else]-Block ausgeführt werden.
+* [is pin () HIGH]: Dient zum Auslesen des Pegels eines bestimmten Pins. Wenn der gelesene Pegel mit dem eingestellten HIGH/LOW übereinstimmt, werden die Blöcke im [do]-Block ausgeführt, andernfalls die Blöcke im [else]-Block.

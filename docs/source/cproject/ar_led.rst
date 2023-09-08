@@ -1,49 +1,46 @@
 .. _ar_led:
 
-
-
-2.1 - Hello, LED! 
+2.1 - Hallo, LED!
 =======================================
 
-Just as printing “Hello, world!” is the first step in learning to program, using a program to drive an LED is the traditional introduction to learning physical programming.
+Genauso wie der Ausdruck „Hallo Welt!“ der erste Schritt beim Programmierenlernen ist, stellt das Ansteuern einer LED mittels Programm die klassische Einführung in die physische Programmierung dar.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist definitiv praktisch, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM SET
+        - KAUF-LINK
+    *   - Kepler-Set
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Bauteile auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,65 +49,61 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_led|
 
-The principle of this circuit is simple and the current direction is shown in the figure. When GP15 outputs high level(3.3v), the LED will light up after the 220ohm current limiting resistor. When GP15 outputs low level (0v), the LED will turn off.
+Das Prinzip dieser Schaltung ist simpel und die Stromrichtung ist in der Abbildung dargestellt. Wenn GP15 ein hohes Signal (3,3 V) ausgibt, leuchtet die LED nach dem 220-Ohm-Vorwiderstand auf. Bei einem niedrigen Signal (0 V) geht die LED aus.
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_led|
 
-Let us follow the direction of the current to build the circuit!
+Lassen Sie uns den Stromfluss folgen und die Schaltung aufbauen!
 
-1. Here we use the electrical signal from the GP15 pin of the Pico W board to make the LED work, and the circuit starts from here.
-#. The current needs to pass through a 220 ohm resistor (used to protect the LED). Insert one end (either end) of the resistor into the same row as the Pico W GP15 pin (row 20 in my circuit), and insert the other end into the free row of the breadboard (row 24 in my circuit).
-#. Pick up the LED, you will see that one of its leads is longer than the other. Insert the longer lead into the same row as the end of the resistor, and connect the shorter lead across the middle gap of the breadboard to the same row.
-#. Insert the male-to-male (M2M) jumper wire into the same row as the LED short pin, and then connect it to the negative power bus of the breadboard.
-#. Use a jumper to connect the negative power bus to the GND pin of Pico W.
-
+1. Wir verwenden das elektrische Signal vom GP15-Pin der Pico W-Platine, um die LED zum Leuchten zu bringen; hier beginnt die Schaltung.
+#. Der Strom muss durch einen 220-Ohm-Widerstand fließen (zum Schutz der LED). Stecken Sie ein Ende des Widerstands (beliebiges Ende) in die gleiche Reihe wie den GP15-Pin des Pico W (Reihe 20 in meiner Schaltung) und das andere Ende in eine freie Reihe des Steckbretts (Reihe 24 in meiner Schaltung).
+#. Nehmen Sie die LED; ein Bein ist länger als das andere. Stecken Sie das längere Bein in dieselbe Reihe wie das Ende des Widerstands und das kürzere Bein über die mittlere Lücke des Steckbretts in die gleiche Reihe.
+#. Stecken Sie das Stecker-zu-Stecker-Kabel (M2M) in dieselbe Reihe wie das kurze Bein der LED und verbinden Sie es mit der negativen Stromschiene des Steckbretts.
+#. Verbinden Sie die negative Stromschiene mit dem GND-Pin des Pico W.
 
 **Code**
 
 .. note::
 
-   * You can open the file ``2.1_hello_led.ino`` under the path of ``kepler-kit-main/arduino/2.1_hello_led``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``2.1_hello_led.ino`` im Pfad ``kepler-kit-main/arduino/2.1_hello_led`` öffnen.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den richtigen Anschluss auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/898b8ba7-9bdf-468d-9181-ca8535e8dca6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Nachdem der Code ausgeführt wurde, wird die LED blinken.
 
-After the code runs, you will see the LED blinking.
+**Wie funktioniert es?**
 
-**How it works?**
-
-Here, we connect the LED to the digital pin 15, so we need to declare an int variable called ledpin at the beginning of the program and assign a value of 15.
+Hier schließen wir die LED an den digitalen Pin 15 an, daher müssen wir zu Beginn des Programms eine int-Variable namens ledPin deklarieren und den Wert 15 zuweisen.
 
 .. code-block:: C
 
     const int ledPin = 15;
 
-
-Now, initialize the pin in the ``setup()`` function, where you need to initialize the pin to ``OUTPUT`` mode.
+Jetzt initialisieren Sie den Pin in der ``setup()``-Funktion, wo Sie den Pin auf den ``OUTPUT``-Modus setzen müssen.
 
 .. code-block:: C
 
@@ -118,22 +111,20 @@ Now, initialize the pin in the ``setup()`` function, where you need to initializ
         pinMode(ledPin, OUTPUT);
     }
 
-In ``loop()``, ``digitalWrite()`` is used to provide 3.3V high level signal for ledpin, which will cause voltage difference between LED pins and light LED up.
+In der ``loop()``-Funktion wird ``digitalWrite()`` verwendet, um ein 3,3-V-Hochpegelsignal für ledPin bereitzustellen, was eine Spannungsdifferenz zwischen den LED-Pins erzeugt und die LED zum Leuchten bringt.
 
 .. code-block:: C
 
     digitalWrite(ledPin, HIGH);
 
-If the level signal is changed to LOW, the ledPin's signal will be returned to 0 V to turn LED off.
+Wenn das Pegelsignal auf LOW geändert wird, wird das Signal von ledPin auf 0 V zurückgesetzt, um die LED auszuschalten.
 
 .. code-block:: C
 
     digitalWrite(ledPin, LOW);
 
-
-An interval between on and off is required to allow people to see the change, 
-so we use a ``delay(1000)`` code to let the controller do nothing for 1000 ms.
+Für einen sichtbaren Wechsel zwischen Ein- und Ausschalten ist eine Verzögerung notwendig, daher verwenden wir den Befehl ``delay(1000)``, um den Controller für 1000 ms inaktiv zu halten.
 
 .. code-block:: C
 
-    delay(1000);   
+    delay(1000);

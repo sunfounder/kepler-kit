@@ -1,45 +1,43 @@
 .. _per_reversing_system:
 
-2.11 Reversing System
+2.11 Rückfahrsystem
 ==========================
 
-For this project we used an ultrasonic module and an active buzzer to create a reversing alarm system. The ultrasonic module is used to detect the distance, and the buzzer emits different frequencies of alarm sounds depending on the distance.
+Für dieses Projekt haben wir ein Ultraschallmodul und einen aktiven Summer verwendet, um ein Rückfahralarmsystem zu erstellen. Das Ultraschallmodul dient zur Entfernungsmessung, und der Summer gibt je nach Entfernung unterschiedliche Alarmfrequenzen aus.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Set zu kaufen ist definitiv praktisch. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
+        - KOMPONENTEN IN DIESEM SET
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE	
+        - ANZAHL
         - LINK
-
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -48,7 +46,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -59,7 +57,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
     *   - 8
@@ -68,50 +66,47 @@ You can also buy them separately from the links below.
         - |link_ultrasonic_buy|
 
 
-**Wiring**
+**Verkabelung**
 
 |reversing_system0|
 
-
-* The Echo and Trig pins of the ultrasonic module are connected to GP15 at the same time, so that the ultrasonic module sends and receives signals from GP15.
-* The middle pin of the transistor connected to the buzzer is connected to GP14 through a 1kΩ resistor.
+* Die Echo- und Trig-Pins des Ultraschallmoduls sind gleichzeitig mit GP15 verbunden, damit das Ultraschallmodul Signale von GP15 sendet und empfängt.
+* Der mittlere Pin des Transistors, der mit dem Summer verbunden ist, ist über einen 1kΩ-Widerstand mit GP14 verbunden.
 
 **Code**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.11_reversing_system.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Sie können sich an der Abbildung unten orientieren, um den Code per Drag-and-Drop zu schreiben. 
+    * Importieren Sie ``2.11_reversing_system.png`` aus dem Verzeichnis ``kepler-kit-main\piper``. Detaillierte Anleitungen finden Sie unter :ref:`import_code_piper`.
 
 |reversing_system|
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the ultrasonic detection distance is less than 5cm, the buzzer emits a sharp sound (0.1s).
-* When the detection distance is between 5~10cm, the buzzer emits a slightly slow sound (0.5s).
-* When the detection distance is greater than 10cm, there is a sound prompt every 1 second.
+* Nach dem Anschluss des Pico W klicken Sie auf die **Start**-Taste, und der Code wird ausgeführt.
+* Wenn die Ultraschallerkennung eine Entfernung von weniger als 5 cm misst, gibt der Summer einen scharfen Ton (0,1 s) aus.
+* Wenn die erkannte Entfernung zwischen 5~10 cm liegt, gibt der Summer einen etwas langsameren Ton (0,5 s) aus.
+* Wenn die erkannte Entfernung größer als 10 cm ist, erfolgt alle 1 Sekunde ein Tonsignal.
 
 
-**How it Works?**
-
+**Funktionsweise**
 
 |reversing_system1|
 
-Read the distance (in cm) of the ultrasonic detection, and store it in the variable [distance].
+Lesen Sie die Entfernung (in cm) der Ultraschallerkennung und speichern Sie sie in der Variable [distance].
 
 |reversing_system2|
 
-When distance is less than or equal to 5, set the variable intervals to 0.1s. The variable [intervals] is the interval between buzzer sounds.
+Wenn die Entfernung weniger als oder gleich 5 ist, setzen Sie die Variable [intervals] auf 0,1 s. Die Variable [intervals] ist das Intervall zwischen den Summerklängen.
 
 |reversing_system3|
 
-When distance is greater than 5 and less than or equal to 10, set the [intervals] to 0.5s.
+Wenn die Entfernung größer als 5 und weniger als oder gleich 10 ist, setzen Sie [intervals] auf 0,5 s.
 
 |reversing_system4|
 
-When distance is greater than 10, set the [intervals] time to 1s.
+Wenn die Entfernung größer als 10 ist, setzen Sie die [intervals]-Zeit auf 1 s.
 
 |reversing_system5|
 
-Finally, make the buzzer sound every [intervals] seconds.
+Lassen Sie den Summer schließlich alle [intervals] Sekunden ertönen.
 

@@ -1,64 +1,62 @@
 .. _ar_74hc_7seg:
 
-5.2 - Number Display
+5.2 - Zahlenanzeige
 =======================
 
-LED Segment Display can be seen everywhere in life.
-For example, on an air conditioner, it can be used to display temperature; on a traffic indicator, it can be used to display a timer.
+LED-Segmentanzeigen sind überall im Alltag zu finden.
+Zum Beispiel kann sie auf einer Klimaanlage zur Temperaturanzeige verwendet werden oder an einer Verkehrsanzeige, um einen Timer anzuzeigen.
 
-The LED Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an "8" shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.
+Die LED-Segmentanzeige besteht im Wesentlichen aus einem Gerät, das mit 8 LEDs verpackt ist, von denen 7 streifenförmige LEDs eine "8"-Form bilden und eine etwas kleinere gepunktete LED als Dezimalpunkt dient. Diese LEDs sind als a, b, c, d, e, f, g und dp gekennzeichnet. Sie haben eigene Anodenpins und teilen sich Kathoden. Ihre Pin-Positionen sind im untenstehenden Bild dargestellt.
 
 |img_7seg_cathode|
 
-This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
+Das bedeutet, dass sie von 8 digitalen Signalen gleichzeitig gesteuert werden muss, um vollständig zu funktionieren, und der 74HC595 kann dies leisten.
 
 * :ref:`cpn_7_segment`
 
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -73,21 +71,20 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_74hc_7seg|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_74hc_7seg|
 
-
-.. list-table:: Wiring
+.. list-table:: Verdrahtung
     :widths: 15 25
     :header-rows: 1
 
     *   - :ref:`cpn_74hc595`
-        - :ref:`cpn_led` Segment Display
+        - :ref:`cpn_led` Segmentanzeige
     *   - Q0
         - a
     *   - Q1
@@ -105,74 +102,72 @@ You can also buy them separately from the links below.
     *   - Q7
         - dp
 
-
 **Code**
 
 .. note::
 
-   * You can open the file ``5.2_number_display.ino`` under the path of ``kepler-kit-main/arduino/5.2_number_display``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``5.2_number_display.ino`` im Pfad ``kepler-kit-main/arduino/5.2_number_display`` öffnen. 
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Upload** klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a237801f-40d7-4920-80fb-a349307b1e05/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
-When the program is running, you will be able to see the LED Segment Display display 0~9 in sequence.
+Wenn das Programm läuft, können Sie sehen, dass die LED-Segmentanzeige die Zahlen 0~9 nacheinander anzeigt.
 
-**How it works?**
+**Wie funktioniert es?**
 
-``shiftOut()`` will make 74HC595 output 8 digital signals.
-It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
+``shiftOut()`` lässt den 74HC595 8 digitale Signale ausgeben.
+Es gibt das letzte Bit der Binärzahl an Q0 aus und den Ausgang des ersten Bits an Q7. Das bedeutet, dass beim Schreiben der Binärzahl "00000001" Q0 ein hohes Signal ausgibt und Q1~Q7 ein niedriges Signal.
 
-Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
-That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
+Nehmen wir an, das 7-Segment-Display zeigt die Zahl "1" an, wir müssen ein hohes Signal für b, c schreiben und ein niedriges Signal für a, d, e, f, g und dg.
+Das heißt, die Binärzahl "00000110" muss geschrieben werden. Aus Gründen der Lesbarkeit verwenden wir die Hexadezimalnotation als "0x06".
 
-* `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_
+* `Hexadezimal <https://de.wikipedia.org/wiki/Hexadezimalsystem>`_
 
-* `BinaryHex Converter <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
+* `BinaryHex Konverter <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
 
-Similarly, we can also make the LED Segment Display display other numbers in the same way. The following table shows the codes corresponding to these numbers.
+Ebenso können wir das LED-Segmentdisplay auf die gleiche Weise zur Anzeige anderer Zahlen verwenden. Die folgende Tabelle zeigt die entsprechenden Codes für diese Zahlen.
 
-.. list-table:: Glyph Code
+.. list-table:: Glyphen-Code
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
-    *   - 0	
-        - 00111111	
+    *   - Zahlen
+        - Binärcode
+        - Hex-Code  
+    *   - 0
+        - 00111111
         - 0x3f
-    *   - 1	
-        - 00000110	
+    *   - 1
+        - 00000110
         - 0x06
-    *   - 2	
-        - 01011011	
+    *   - 2
+        - 01011011
         - 0x5b
-    *   - 3	
-        - 01001111	
+    *   - 3
+        - 01001111
         - 0x4f
-    *   - 4	
-        - 01100110	
+    *   - 4
+        - 01100110
         - 0x66
-    *   - 5	
-        - 01101101	
+    *   - 5
+        - 01101101
         - 0x6d
-    *   - 6	
-        - 01111101	
+    *   - 6
+        - 01111101
         - 0x7d
-    *   - 7	
-        - 00000111	
+    *   - 7
+        - 00000111
         - 0x07
-    *   - 8	
-        - 01111111	
+    *   - 8
+        - 01111111
         - 0x7f
-    *   - 9	
-        - 01101111	
+    *   - 9
+        - 01101111
         - 0x6f
 
-Write these codes into ``shiftOut()`` to make the LED Segment Display display the corresponding numbers.
+Fügen Sie diese Codes in die Funktion ``shiftOut()`` ein, um die jeweiligen Zahlen auf dem LED-Segmentdisplay darzustellen.
+

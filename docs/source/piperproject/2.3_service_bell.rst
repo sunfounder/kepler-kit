@@ -1,44 +1,42 @@
 .. _per_service_bell:
 
-2.3 Service Bell
+2.3 Serviceklingel
 ==========================
 
-For this project we used a microswitch and an active buzzer to create a service bell. Tap the switch and the buzzer makes a sound.
+Für dieses Projekt haben wir einen Mikroschalter und einen aktiven Summer verwendet, um eine Serviceklingel zu erstellen. Betätigen Sie den Schalter, und der Summer gibt einen Ton aus.
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed).
+Der Mikroschalter ist ebenfalls ein 3-poliges Bauteil, die Reihenfolge der 3 Pins lautet C (gemeinsamer Pin), NO (normalerweise offen) und NC (normalerweise geschlossen).
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+Wenn der Mikroschalter nicht gedrückt ist, sind 1 (C) und 3 (NC) miteinander verbunden, wenn gedrückt, sind 1 (C) und 2 (NO) miteinander verbunden.
 
 |img_micro_switch|
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir folgende Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist sicherlich praktisch, ein komplettes Kit zu kaufen, hier der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+Sie können die Bauteile auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -46,7 +44,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -55,15 +53,15 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 2(1KΩ, 10KΩ)
+        - 2 (1KΩ, 10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_micro_switch`
@@ -71,35 +69,31 @@ You can also buy them separately from the links below.
         - 
     *   - 8
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 9
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
 
-**Wiring**
+**Verdrahtung**
 
 |service_bell0|
 
-* By default, pins 1 and 3 of the Micro Switch are connected together and GP14 is low. When the Micro Switch is pressed, GP14 is high.
-* GP15 outputs high to make the buzzer sound.
+* Standardmäßig sind die Pins 1 und 3 des Mikroschalters miteinander verbunden, und GP14 ist niedrig. Wenn der Mikroschalter gedrückt wird, ist GP14 hoch.
+* GP15 gibt ein Hochpegelsignal aus, um den Summer ertönen zu lassen.
 
 **Code**
 
-.. note::
+.. Hinweis::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.3_service_bell.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Sie können den unten stehenden Bildern folgen, um den Code per Drag-and-Drop zu schreiben.
+    * Importieren Sie ``2.3_service_bell.png`` aus dem Verzeichnis ``kepler-kit-main\piper``. Für detaillierte Anleitungen siehe :ref:`import_code_piper`.
 
 |service_bell|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
+Nachdem der Pico W angeschlossen wurde, klicken Sie auf die **Start**-Schaltfläche und der Code beginnt auszuführen. Tippen Sie auf den Schalter, und der Summer gibt einen Ton aus.
 
-.. note::
-    This project code is exactly the same as the previous project :ref:`per_button`.
-
-
-
+.. Hinweis::
+    Der Code dieses Projekts ist genau derselbe wie im vorherigen Projekt :ref:`per_button`.
 

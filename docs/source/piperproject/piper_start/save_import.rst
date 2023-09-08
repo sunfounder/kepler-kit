@@ -1,34 +1,35 @@
 .. _per_save_import:
 
-1.3 How to Save or Import Code?
-=========================================
+1.3 Wie speichert oder importiert man Code?
+=============================================
 
-Save the Code
+Code speichern
 --------------------
 
-After writing the code, you can change the code name and description, and then click the **Download** button to save the code locally or share it with others.
+Nachdem Sie den Code geschrieben haben, können Sie den Codenamen und die Beschreibung ändern und dann auf die Schaltfläche **Herunterladen** klicken, um den Code lokal zu speichern oder ihn mit anderen zu teilen.
 
 |save_download|
 
-Then enter the file name and click the **Download** button again to save the code as a ``.png`` file.
+Geben Sie anschließend den Dateinamen ein und klicken Sie erneut auf die Schaltfläche **Herunterladen**, um den Code als ``.png``-Datei zu speichern.
 
 |download_per|
 
 .. _import_code_piper:
 
-Import the Code
---------------------
+Code importieren
+---------------------
 
-In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Project**.
+Auf der `Startseite <https://make.playpiper.com/>`_ von Piper Make klicken Sie auf **Projekt importieren**.
 
 |per_import|
 
-Select the ``.png`` file in the path ``kepler-kit-main\piper`` and click **Import**. 
-Note that you need to download the `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ package first.
-Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_.
+Wählen Sie die ``.png``-Datei im Pfad ``kepler-kit-main\piper`` aus und klicken Sie auf **Importieren**.
+Beachten Sie, dass Sie zuerst das `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ Paket herunterladen müssen.
+Oder sehen Sie sich den Code unter `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ an.
 
 |choose_file|
 
-Now you can see the file you imported.
+Jetzt können Sie die Datei sehen, die Sie importiert haben.
 
 |import_led|
+

@@ -1,46 +1,45 @@
 .. _ar_ac_buz:
 
-3.1 - Beep
+3.1 - Piepton
 ==================
-The active buzzer is a typical digital output device that is as easy to use as lighting up an LED!
+Der aktive Summer ist ein typisches digitales Ausgabegerät, das genauso einfach zu bedienen ist wie eine LED zum Leuchten zu bringen!
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist durchaus praktisch, ein gesamtes Set zu kaufen, hier der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung	
+        - ELEMENTE IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -49,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -60,27 +59,26 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+Wenn der GP15-Ausgang auf "High" geschaltet ist, lässt der 1K-Strombegrenzungswiderstand (zum Schutz des Transistors) den S8050 (NPN-Transistor) durchschalten, sodass der Summer ertönt.
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+Die Aufgabe des S8050 (NPN-Transistor) ist es, den Strom zu verstärken und den Summer lauter klingen zu lassen. Tatsächlich könnten Sie den Summer auch direkt an GP15 anschließen, würden jedoch feststellen, dass der Ton dann leiser ist.
 
-**Wiring**
+**Verkabelung**
 
-Two types of buzzers are included in the kit. 
-We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
+Im Kit sind zwei verschiedene Summertypen enthalten.
+Wir benötigen den aktiven Summer. Drehen Sie sie um, der versiegelte Rücken (nicht die freiliegende PCB) ist der, den wir verwenden möchten.
 
 |img_buzzer|
 
-The buzzer needs to use a transistor when working, here we use S8050 (NPN Transistor).
-
+Für den Betrieb des Summers ist ein Transistor erforderlich, hier verwenden wir den S8050 (NPN-Transistor).
 
 |wiring_beep|
 
@@ -90,15 +88,14 @@ The buzzer needs to use a transistor when working, here we use S8050 (NPN Transi
 
 .. note::
 
-   * You can open the file ``3.1_beep.ino`` under the path of ``kepler-kit-main/arduino/3.1_beep``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``3.1_beep.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/3.1_beep``.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * Vergessen Sie nicht, vor dem Klicken auf die Schaltfläche **Hochladen** das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
 
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/62bf2c5d-9890-4f3a-b02a-119c2f6b0bf1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the code runs, you will hear a beep every second.
+Nachdem der Code ausgeführt wurde, hören Sie jede Sekunde einen Piepton.

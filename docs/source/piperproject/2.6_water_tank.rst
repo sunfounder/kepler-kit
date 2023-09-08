@@ -1,36 +1,36 @@
 .. _per_water_tank:
 
-2.6 Smart Water Tank
+2.6 Intelligenter Wassertank
 =============================
 
-In this project, we use a water level sensor module and a servo to simulate a smart water tank. The water level sensor is fixed inside the tank to measure the water level, and when the water level is below a threshold, the valve controlled by the servo is allowed to open to let water in.
+In diesem Projekt verwenden wir einen Wasserstandssensor und ein Servo, um einen intelligenten Wassertank zu simulieren. Der Wasserstandssensor ist im Tank angebracht, um den Wasserstand zu messen. Sobald dieser unter einen bestimmten Schwellenwert fällt, öffnet das vom Servo gesteuerte Ventil, um Wasser nachzufüllen.
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - KOMPONENTEN IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Alternativ können die Komponenten auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -38,7 +38,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -47,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -58,52 +58,46 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Wiring**
+**Verkabelung**
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
-
+Der Pico W verfügt über drei GPIO-Pins, die analoge Eingaben nutzen können: GP26, GP27, GP28, also die analogen Kanäle 0, 1 und 2.
+Darüber hinaus gibt es einen vierten analogen Kanal, der mit dem eingebauten Temperatursensor verbunden ist und hier nicht weiter behandelt wird.
 
 |water_tank0|
 
-* S of water level sensor is connected to GP26(A0), + to VBUS, - pin to GND.
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
+* S des Wasserstandssensors ist mit GP26(A0) verbunden, + mit VBUS, - Pin mit GND.
+* Das orangefarbene Kabel (Signal) des Servos ist mit GP15 verbunden, das rote Kabel (Strom) mit VBUS und das braune Kabel (Masse) mit GND.
 
 **Code**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.6_water_tank.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Sie können sich am untenstehenden Bild orientieren, um den Code per Drag-and-Drop zu erstellen.
+    * Importieren Sie ``2.6_water_tank.png`` aus dem Verzeichnis ``kepler-kit-main\piper``. Für detaillierte Anleitungen siehe :ref:`import_code_piper`.
 
 |water_tank|
 
+Nach dem Anschluss von Pico W klicken Sie auf die **Start**-Taste und der Code wird ausgeführt. Wenn der Wasserstand unter ein Drittel des Sensors fällt, dreht sich das Servo auf 180 Grad, um den Einlass zu öffnen; ist der Wasserstand höher als ein Drittel des Sensors, dreht sich das Servo auf 0 Grad, um den Einlass zu schließen.
 
-
-After connecting Pico W, click the **Start** button and the code starts to run. When the water level is lower than 1/3 of the water level sensor, the servo rotates to 180 degrees to simulate the inlet opening; when the water level is higher than 1/3 of the water level sensor, the servo rotates to 0 degrees to imitate the inlet closing.
-
-**How it Works?**
+**Funktionsweise**
 
 |water_tank1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+Stellen Sie die Rotationsgeschwindigkeit von Pin 15 (Servo) auf 15% ein.
 
-* [servo pin() set speed to ()%]: Used to set the rotation speed of the servo pin, the range is 0%~100%.
+* [servo pin() set speed to ()%]: Dient zur Einstellung der Rotationsgeschwindigkeit des Servo-Pins. Der Bereich liegt zwischen 0% und 100%.
 
 |water_tank2|
 
-Reads the value of pin A0 and stores it in the variable [water_level].
+Liest den Wert von Pin A0 und speichert ihn in der Variable [water_level].
 
-* [set (water_level) to]: Used to set the value of the variable, you need to create the variable from the **Variables** palette.
-* [read voltage from pin ()]: Used to read the voltage of the analog pins (A0~A2), the range is 0 ~ 3.3V.
+* [set (water_level) to]: Dient zur Einstellung des Variablenwerts. Die Variable muss aus der **Variables**-Palette erstellt werden.
+* [read voltage from pin ()]: Dient zum Ablesen der Spannung der analogen Pins (A0~A2). Der Bereich liegt zwischen 0 und 3,3 V.
 
 |water_tank3|
 
-Set the voltage threshold to 1. When the voltage of water level sensor is less than 1, let the servo rotate to 180° position, otherwise rotate to 0° position.
+Legen Sie den Spannungsschwellenwert auf 1 fest. Wenn die Spannung des Wasserstandssensors unter 1 liegt, soll sich das Servo auf die 180°-Position drehen, andernfalls auf die 0°-Position.
 
-* [servo pin () set angle to ()]: Set the angle of servo pin to, the range is 0 ~ 180°.
-
-
-
+* [servo pin () set angle to ()]: Stellt den Winkel des Servo-Pins ein. Der Bereich liegt zwischen 0 und 180 Grad.

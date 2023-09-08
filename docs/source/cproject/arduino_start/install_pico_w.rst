@@ -1,93 +1,93 @@
 .. _setup_pico_arduino:
 
-1.3 Setting Up the Raspberry Pi Pico W (Important)
+1.3 Raspberry Pi Pico W einrichten (Wichtig)
 ==================================================
 
-1. Installing UF2 Firmware
+1. UF2-Firmware installieren
 ---------------------------------
 
-When you initially connect the Raspberry Pi Pico W or hold down the BOOTSEL button while inserting it, you'll see the device showing up as a drive without being assigned a COM port. This makes it impossible to upload code.
+Wenn Sie den Raspberry Pi Pico W zum ersten Mal anschließen oder währenddessen die BOOTSEL-Taste gedrückt halten, erscheint das Gerät als Laufwerk, dem jedoch kein COM-Port zugewiesen ist. Dies verhindert das Hochladen von Code.
 
-To fix this, you need to install UF2 firmware. This firmware supports MicroPython and is also compatible with the Arduino IDE.
+Um dieses Problem zu beheben, müssen Sie die UF2-Firmware installieren. Diese Firmware ist sowohl mit MicroPython als auch mit der Arduino IDE kompatibel.
 
-1. Download the UF2 Firmware from the link below.
+1. Laden Sie die UF2-Firmware über den folgenden Link herunter.
 
-    * :download:`Raspberry Pi Pico W UF2 Firmware <https://micropython.org/download/rp2-pico-w/rp2-pico-w-latest.uf2>`
+    * :download:`Raspberry Pi Pico W UF2-Firmware <https://micropython.org/download/rp2-pico-w/rp2-pico-w-latest.uf2>`
 
-2. Connect your Raspberry Pi Pico W to your computer using a Micro USB cable. Your Pico W will mount as a Mass Storage Device named **RPI-RP2**.
+2. Verbinden Sie Ihren Raspberry Pi Pico W über ein Micro-USB-Kabel mit Ihrem Computer. Ihr Pico W wird als Massenspeichergerät mit dem Namen **RPI-RP2** eingebunden.
 
     .. image:: img/install_pico_plugin.png
 
-3. Drag and drop the downloaded UF2 firmware into the **RPI-RP2** drive.
+3. Ziehen Sie die heruntergeladene UF2-Firmware in das Laufwerk **RPI-RP2**.
 
     .. image:: img/install_pico_uf2.png
 
-4. After this, the **RPI-RP2** drive will disappear, and you can proceed with the following steps.
+4. Nach diesem Vorgang verschwindet das Laufwerk **RPI-RP2**, und Sie können mit den nächsten Schritten fortfahren.
 
-
-2. Installing the Board Package
+2. Das Board-Paket installieren
 --------------------------------------
 
-To program the Raspberry Pi Pico W, you'll need to install the corresponding package in the Arduino IDE. Here's a step-by-step guide:
+Um den Raspberry Pi Pico W zu programmieren, müssen Sie das entsprechende Paket in der Arduino IDE installieren. Hier ist eine Schritt-für-Schritt-Anleitung:
 
-1. In the **Boards Manager** window, search for **pico**. Click the **Install** button to commence the installation. This will install the **Arduino Mbed OS RP2040 Boards** package, which includes support for the Raspberry Pi Pico W.
+1. Im **Boards Manager**-Fenster suchen Sie nach **pico**. Klicken Sie auf die Schaltfläche **Installieren**, um die Installation zu starten. Damit installieren Sie das **Arduino Mbed OS RP2040 Boards**-Paket, das die Unterstützung für den Raspberry Pi Pico W enthält.
 
     .. image:: img/install_pico.png
 
-2. During the process, a few pop-up prompts will appear for the installation of specific device drivers. Select **"Install"**.
+2. Während des Vorgangs erscheinen einige Popup-Aufforderungen zur Installation spezifischer Gerätetreiber. Wählen Sie **"Installieren"**.
 
     .. image:: img/install_pico_sa.png
 
-3. Afterwards, there will be a notification indicating that the installation is complete.
+3. Anschließend erscheint eine Benachrichtigung, die den erfolgreichen Abschluss der Installation bestätigt.
 
-3. Selecting the Board and Port
+3. Auswahl von Board und Port
 ------------------------------------------
 
-1. To select the appropriate board, navigate to **Tools** -> **Board** -> **Arduino Mbed OS RP2040 Boards** -> **Raspberry Pi Pico**.
+1. Um das passende Board auszuwählen, navigieren Sie zu **Werkzeuge** -> **Board** -> **Arduino Mbed OS RP2040 Boards** -> **Raspberry Pi Pico**.
 
     .. image:: img/install_pico_tool_board.png
 
-2. If your Raspberry Pi Pico W is connected to the computer, set the right port by navigating to **Tools** -> **Port**.
+2. Falls Ihr Raspberry Pi Pico W am Computer angeschlossen ist, stellen Sie den richtigen Port ein, indem Sie zu **Werkzeuge** -> **Port** navigieren.
 
     .. image:: img/install_pico_tool_port.png
 
-3. Arduino 2.0 offers a new quick-select feature. For the Raspberry Pi Pico W, which is typically not auto-recognized, click **Select other board and port**.
+3. Arduino 2.0 bietet eine neue Schnellauswahl-Funktion. Für den Raspberry Pi Pico W, der normalerweise nicht automatisch erkannt wird, klicken Sie auf **Andere Boards und Ports auswählen**.
 
     .. image:: img/install_pico_select.png
 
-4. Type **Raspberry Pi Pico** into the search bar, select it when it shows up, choose the appropriate port, and click **OK**.
+4. Geben Sie **Raspberry Pi Pico** in die Suchleiste ein, wählen Sie es aus, wenn es erscheint, wählen Sie den entsprechenden Port und klicken Sie auf **OK**.
 
     .. image:: img/install_pico_board.png
 
-5. You can easily reselect it later through this quick access window.
+5. Später können Sie es über dieses Schnellzugriffsfenster einfach erneut auswählen.
 
     .. image:: img/install_pico_quick.png
 
-6. Either of these methods will enable you to set the correct board and port. You're now all set to upload code to the Raspberry Pi Pico W.
+6. Mit einer dieser Methoden können Sie das korrekte Board und den Port einstellen. Nun können Sie Code auf den Raspberry Pi Pico W hochladen.
 
-4. Uploading Code
+4. Code hochladen
 --------------------------
 
-Now let's dive into how to upload code to your Raspberry Pi Pico W.
+Jetzt gehen wir darauf ein, wie Sie Code auf Ihren Raspberry Pi Pico W hochladen können.
 
-1. Open any ``.ino`` file or use the empty sketch currently displayed. Then, click the **Upload** button.
+1. Öffnen Sie eine beliebige ``.ino``-Datei oder verwenden Sie den aktuell angezeigten leeren Sketch. Klicken Sie dann auf die Schaltfläche **Hochladen**.
 
     .. image:: img/install_pico_upload.png
 
-2. Wait for the uploading message to appear, as shown below.
+2. Warten Sie, bis die Hochlademeldung erscheint, wie unten gezeigt.
 
     .. image:: img/install_pico_upload_dot.png
 
-3. Hold down the **BOOTSEL** button, quickly unplug your Raspberry Pi Pico W, and plug it back in.
+3. Halten Sie die **BOOTSEL**-Taste gedrückt, ziehen Sie Ihren Raspberry Pi Pico W kurz ab und stecken Sie ihn wieder ein.
 
     .. image:: img/led_onboard.png 
 
     .. note::
         
-        * This step is crucial, especially for first-time users on the Arduino IDE. Skipping this step will result in a failed upload.
+        * Dieser Schritt ist entscheidend, insbesondere für Erstnutzer der Arduino IDE. Wenn Sie diesen Schritt überspringen, wird das Hochladen fehlschlagen.
 
-        * Once you successfully upload the code this time, your Pico W will be recognized by the computer. For future uses, simply plug it into the computer.
+        * Sobald der Code erfolgreich hochgeladen wurde, wird Ihr Pico W vom Computer erkannt. Für die zukünftige Nutzung stecken Sie ihn einfach an den Computer.
 
-4. A prompt indicating successful upload will appear.
+4. Ein Hinweis auf den erfolgreichen Upload wird angezeigt.
 
     .. image:: img/install_pico_upload_done.png
+

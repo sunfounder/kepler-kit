@@ -1,53 +1,52 @@
 .. _ar_rfid:
 
 
-6.5 - Radio Frequency Identification
-================================================
+6.5 - Funkfrequenz-Identifikation
+==============================================
 
-Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required.
+Funkfrequenz-Identifikation (RFID) bezeichnet Technologien, die drahtlose Kommunikation zwischen einem Objekt (oder Tag) und einem Abfragegerät (oder Lesegerät) nutzen, um solche Objekte automatisch zu verfolgen und zu identifizieren. Die Reichweite der Tag-Übertragung ist auf einige Meter vom Lesegerät begrenzt. Eine direkte Sichtlinie zwischen dem Lesegerät und dem Tag ist nicht zwingend erforderlich.
 
-Most tags contain at least one integrated circuit (IC) and an antenna. 
-The microchip stores information and is responsible for managing the radio frequency (RF) communication with the reader. Passive tags do not have an independent energy source and depend on an external electromagnetic signal, provided by the reader, to power their operations. 
-Active tags contain an independent energy source, such as a battery. 
-Thus, they may have increased processing, transmission capabilities and range.
+Die meisten Tags enthalten mindestens einen integrierten Schaltkreis (IC) und eine Antenne. 
+Der Mikrochip speichert Informationen und ist für die Verwaltung der Funkfrequenzkommunikation (RF) mit dem Lesegerät verantwortlich. Passive Tags verfügen nicht über eine unabhängige Energiequelle und sind auf ein externes elektromagnetisches Signal angewiesen, das vom Lesegerät bereitgestellt wird, um ihren Betrieb zu ermöglichen. 
+Aktive Tags verfügen über eine eigenständige Energiequelle, etwa eine Batterie. 
+Dadurch können sie erweiterte Verarbeitungs-, Übertragungsfähigkeiten und Reichweite haben.
 
 * :ref:`cpn_mfrc522`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist durchaus praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die einzelnen Komponenten auch separat über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -56,19 +55,19 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_rfid|
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_rfid|
 
@@ -76,28 +75,23 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``MFRC522`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Die Datei ``6.5_rfid_write.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.5_rfid_write``.
+    * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
+    * Vergessen Sie nicht, vor dem Klicken auf den **Hochladen**-Button das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
+    * Die Bibliothek ``MFRC522`` wird hier verwendet. Weitere Informationen zum Hinzufügen in die Arduino IDE finden Sie unter :ref:`add_libraries_ar`.
 
+Die Hauptfunktion ist in zwei Teile gegliedert:
 
-The main function is divided into two:
-
-* ``6.5_rfid_write.ino``: Used to write information to the card (or key).
-* ``6.5_rfid_read.ino``: used to read the information in the card (or key)
+* ``6.5_rfid_write.ino``: Dient zum Schreiben von Informationen auf die Karte (oder den Schlüssel).
+* ``6.5_rfid_read.ino``: Dient zum Lesen der Informationen auf der Karte (oder dem Schlüssel).
 
 .. note::
 
-   * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``6.5_rfid_write.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.5_rfid_write``.
+   * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
+   * Vergessen Sie nicht, vor dem Klicken auf den **Hochladen**-Button das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
 
-   
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
-
+Nach dem Ausführen können Sie eine Nachricht im seriellen Monitor eingeben, die mit ``#`` endet. Anschließend schreiben Sie die Nachricht auf die Karte, indem Sie die Karte (oder den Schlüssel) nahe am MFRC522-Modul platzieren.
 
 .. raw:: html
     
@@ -106,21 +100,18 @@ After running you will be able to enter message in the serial monitor, ending wi
 
 .. note::
 
-   * You can open the file ``6.5_rfid_read.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_read``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``6.5_rfid_read.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.5_rfid_read``.
+   * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
+   * Vergessen Sie nicht, vor dem Klicken auf den **Hochladen**-Button das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
 
-   
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-After running, you will be able to read the message stored in the card (or key).
+Nach dem Ausführen können Sie die auf der Karte (oder dem Schlüssel) gespeicherte Nachricht lesen.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-**How it works?**
+**Funktionsweise?**
 
 .. code-block:: arduino
 
@@ -131,20 +122,19 @@ After running, you will be able to read the message stored in the card (or key).
 
     MFRC522 mfrc522(SS_PIN, RST_PIN);
 
-First, instantiate ``MFRC522()`` class.
+Zunächst wird die Klasse ``MFRC522()`` instanziiert.
 
-For simplicity of use, the ``MFRC522`` library is further encapsulated with the following functions.
+Für eine einfachere Handhabung wird die ``MFRC522``-Bibliothek durch die folgenden Funktionen weiter abstrahiert.
 
-* ``void simple_mfrc522_init()`` : Starts SPI communication and initializes the mfrc522 module.
-* ``void simple_mfrc522_get_card()`` : Suspends the program until the card (or key) is detected, prints the card UID and PICC type.
-* ``void simple_mfrc522_write(String text)`` : Write a string for the card (or key).
-* ``void simple_mfrc522_write(byte* buffer)`` : Writes information for the card (or key), which usually comes from the serial port.
-* ``void simple_mfrc522_write(byte section, String text)`` : Writes a string for a specific sector. ``section`` is set to 0 to write sectors 1-2; ``section`` is set to 1 to write sectors 3-4.
-* ``void simple_mfrc522_write(byte section, byte* buffer)`` : Writes information for a specific sector, usually from the serial port. ``section`` set to 0, writes 1-2 sectors; ``section`` set to 1, writes 3-4 sectors.
-* ``String simple_mfrc522_read()`` : Reads the information in the card (or key), returns a string.
-* ``String simple_mfrc522_read(byte section)`` : Reads the information in a specific sector, returns a string. ``section`` is set to 0, writes 1-2 sectors; ``section`` is set to 1, writes 3-4 sectors.
+* ``void simple_mfrc522_init()``: Startet die SPI-Kommunikation und initialisiert das MFRC522-Modul.
+* ``void simple_mfrc522_get_card()``: Hält das Programm an, bis die Karte (oder der Schlüssel) erkannt wird, und gibt die UID der Karte sowie den PICC-Typ aus.
+* ``void simple_mfrc522_write(String text)``: Schreibt einen Text auf die Karte (oder den Schlüssel).
+* ``void simple_mfrc522_write(byte* buffer)``: Schreibt Informationen auf die Karte (oder den Schlüssel), die üblicherweise vom seriellen Port stammen.
+* ``void simple_mfrc522_write(byte section, String text)``: Schreibt einen Text in einen bestimmten Sektor. Bei ``section`` auf 0 werden die Sektoren 1-2 beschrieben; bei ``section`` auf 1 die Sektoren 3-4.
+* ``void simple_mfrc522_write(byte section, byte* buffer)``: Schreibt Informationen in einen bestimmten Sektor, die üblicherweise vom seriellen Port stammen. Bei ``section`` auf 0 werden die Sektoren 1-2 beschrieben; bei ``section`` auf 1 die Sektoren 3-4.
+* ``String simple_mfrc522_read()``: Liest die Informationen auf der Karte (oder dem Schlüssel) und gibt einen String zurück.
+* ``String simple_mfrc522_read(byte section)``: Liest die Informationen in einem bestimmten Sektor und gibt einen String zurück. Bei ``section`` auf 0 werden die Sektoren 1-2 beschrieben; bei ``section`` auf 1 die Sektoren 3-4.
 
+Im Beispiel ``6.5_rfid_write.ino`` wird die Funktion ``Serial.readBytesUntil()`` verwendet, eine gängige Methode für serielle Eingaben.
 
-In the ``6.5_rfid_write.ino`` example, the ``Serial.readBytesUntil()`` function is used, which is a common serial input method.
-
-* `Serial.readBytesUntil <https://www.arduino.cc/reference/en/language/functions/communication/serial/readbytesuntil/>`_
+* `Serial.readBytesUntil <https://www.arduino.cc/reference/de/language/functions/communication/serial/readbytesuntil/>`_

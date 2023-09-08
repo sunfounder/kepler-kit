@@ -1,70 +1,69 @@
 .. _ar_fade:
 
-2.3 - Fading LED
-=====================
+2.3 - Verblassende LED
+======================
 
-So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
-However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-In the past, a slider that can adjust the resistance was used to achieve this goal, but this is always unreliable and inefficient.
-Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
+Bislang haben wir lediglich zwei Ausgangssignale verwendet: hohes und niedriges Signal (oder auch als 1 & 0, EIN & AUS bezeichnet), was als digitale Ausgabe bezeichnet wird.
+In der Praxis funktionieren jedoch viele Geräte nicht einfach durch Ein- oder Ausschalten, etwa bei der Geschwindigkeitsregelung eines Motors oder der Helligkeitsregulierung einer Schreibtischlampe.
+Früher wurde ein regelbarer Widerstand genutzt, um diese Ziele zu erreichen, was jedoch stets unzuverlässig und ineffizient war.
+Deshalb hat sich die Pulsweitenmodulation (PWM) als praktikable Lösung für solche komplexen Probleme etabliert.
 
-A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
+Ein digitales Ausgangssignal, das aus einem hohen und einem niedrigen Signal besteht, wird als Puls bezeichnet. Die Pulsdauer dieser Pins kann durch Änderung der Ein-/Ausschaltgeschwindigkeit angepasst werden.
 
-Simply put, when we are in a short period (such as 20ms, most people's visual retention time),
-Let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is turned on, the higher the brightness of the LED.
-In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
-This is how PWM controls LED brightness (or motor speed).
+Kurz gesagt, wenn wir in einer kurzen Zeitspanne (wie etwa 20 ms, die durchschnittliche visuelle Verweilzeit der meisten Menschen)
+die LED einschalten, ausschalten und wieder einschalten, werden wir nicht bemerken, dass sie ausgeschaltet wurde, jedoch wird die Helligkeit etwas geringer sein.
+Je länger die LED in diesem Zeitraum eingeschaltet ist, desto heller wird sie sein.
+Mit anderen Worten, je breiter der Puls im Zyklus ist, desto größer ist die "elektrische Signalstärke", die vom Mikrocontroller ausgegeben wird.
+So steuert PWM die Helligkeit der LED (oder die Geschwindigkeit des Motors).
 
-* `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
+* `Pulsweitenmodulation – Wikipedia <https://de.wikipedia.org/wiki/Pulsweitenmodulation>`_
 
-There are some points to pay attention to when Pico W uses PWM. Let's take a look at this picture.
+Beim Einsatz von PWM mit dem Pico W gibt es einige Punkte zu beachten. Werfen wir einen Blick auf dieses Bild.
 
 |pin_pwm|
 
-Each GPIO pin of Pico W supports PWM, but it actually has a total of 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the PWM output of the right GPIO is equivalent to the left copy.
+Jeder GPIO-Pin des Pico W unterstützt PWM, tatsächlich stehen jedoch insgesamt nur 16 unabhängige PWM-Ausgänge zur Verfügung (statt 30), die zwischen GP0 bis GP15 auf der linken Seite verteilt sind, und der PWM-Ausgang der rechten GPIO ist dem der linken Seite gleichwertig.
 
-What we need to pay attention to is to avoid setting the same PWM channel for different purposes during programming. (For example, GP0 and GP16 are both PWM_0A)
+Worauf wir achten müssen, ist, denselben PWM-Kanal während der Programmierung nicht für verschiedene Zwecke einzusetzen. (Zum Beispiel sind GP0 und GP16 beide PWM_0A)
 
-After understanding this knowledge, let us try to achieve the effect of Fading LED.
+Nachdem wir dieses Wissen erworben haben, versuchen wir nun, den Effekt einer verblassenden LED zu erzielen.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist sicherlich praktisch, ein komplettes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
     *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+        - ARTIKEL IM SET
+        - KAUF-LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG	
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -73,66 +72,58 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Schematic**
+
+**Schaltplan**
 
 |sch_led|
 
-This project is the same circuit as the first project :ref:`ar_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+Dieses Projekt nutzt denselben Schaltkreis wie das erste Projekt :ref:`ar_led`, allerdings mit einem unterschiedlichen Signaltyp. Im ersten Projekt wurden digitale Hoch- und Niedrigpegel (0&1) direkt von GP15 ausgegeben, um die LEDs ein- oder auszuschalten. In diesem Projekt wird ein PWM-Signal von GP15 ausgegeben, um die Helligkeit der LED zu steuern.
 
-
-
-**Wiring**
-
+**Verdrahtung**
 
 |wiring_led|
 
-
 **Code**
-
 
 .. note::
 
-   * You can open the file ``2.3_fading_led.ino`` under the path of ``kepler-kit-main/arduino/2.3_fading_led``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * Die Datei ``2.3_fading_led.ino`` können Sie im Pfad ``kepler-kit-main/arduino/2.3_fading_led`` finden.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+   
+   * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Upload**-Button klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/86807da4-4714-4d3c-b6af-0f1b9a62223b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Mit der Ausführung des Programms wird die LED allmählich heller.
 
-The LED will gradually become brighter as the program runs.
+**Funktionsweise**
 
-**How it works?**
-
-Declare pin 15 as ledPin.
+Pin 15 wird als ledPin deklariert.
 
 .. code-block:: C
 
     const int ledPin = 15;
 
-``analogWrite()`` in ``loop()`` assigns ledPin an analog value (PWM wave) between 0 and 255 to change the brightness of LED.
+``analogWrite()`` weist im ``loop()`` dem ledPin einen analogen Wert (PWM-Welle) zwischen 0 und 255 zu, um die Helligkeit der LED zu ändern.
 
 .. code-block:: C
 
     analogWrite(ledPin, value);
 
-Using a for loop, the value of ``analogWrite()`` can be changed step by step between the minimum value (0) and the maximum value (255).
+Mithilfe einer for-Schleife kann der Wert von ``analogWrite()`` schrittweise zwischen dem Minimalwert (0) und dem Maximalwert (255) geändert werden.
 
 .. code-block:: C
 
@@ -140,7 +131,7 @@ Using a for loop, the value of ``analogWrite()`` can be changed step by step bet
         analogWrite(ledPin, value);
     }
 
-In order to see the experimental phenomenon clearly, a ``delay(30)`` needs to be added to the for cycle to control the brightness change time.
+Um das experimentelle Phänomen deutlich zu sehen, muss der for-Schleife ein ``delay(30)`` hinzugefügt werden, um die Zeit der Helligkeitsänderung zu steuern.
 
 .. code-block:: C
 

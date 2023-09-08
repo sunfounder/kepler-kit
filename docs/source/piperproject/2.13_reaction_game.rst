@@ -1,38 +1,36 @@
 .. _per_reaction_game:
 
-2.13 Reaction Game
+2.13 Reaktionsspiel
 ===========================
 
+In diesem Projekt verwenden wir mehrere Tasten, einen Summer und LEDs, um ein Reaktionsspiel zu erstellen. Drücken Sie die Schiedsrichtertaste, um das Spiel zu starten; der Summer gibt dabei kontinuierlich Töne aus, um das Fortsetzen des Spiels anzuzeigen. Betätigen Sie schnell die beiden Spielertasten; wenn die Schiedsrichtertaste erneut gedrückt wird, ist das Spiel beendet und der Summer hört auf zu summen. Überprüfen Sie dann auf Piper Make in der Konsole, welcher Spieler schneller war.
 
-Here we use several buttons, buzzer and LEDs to make a reaction game.Press the referee button to start the game, the buzzer will also keep ringing to prompt the game to continue; press the 2 player buttons quickly respectively; when the referee button is pressed again, the game is over the buzzer stops working.  At this point, look at the CONSOLE on Piper Make to see whose hand speed is fast.
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir folgende Komponenten:
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit ist natürlich praktisch. Hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die einzelnen Komponenten auch über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -40,7 +38,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USB Kabel
         - 1
         - 
     *   - 3
@@ -49,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -60,7 +58,7 @@ You can also buy them separately from the links below.
         - 6(2-220Ω, 1-1KΩ, 3-10KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Aktiver :ref:`cpn_buzzer`
         - 1
         - 
     *   - 8
@@ -72,59 +70,48 @@ You can also buy them separately from the links below.
         - 2
         - |link_led_buy|
 
-
-**Wiring**
+**Verkabelung**
 
 |button_race0|
 
-
-* Define 2 buttons as player1 (GP14) and player2 (GP12), both have a pull-up resistor connected. When the buttons are pressed, GP14 and GP12 are each low.
-* Their indicators are connected to GP15 and GP13,  and output high to light them up.
-* Define a referee button connected to GP10, when the button is pressed, GP10 goes low.
-* Active buzzer is connected to GP11, when GP11 output high, the buzzer will sound.
+* Definieren Sie zwei Tasten als Spieler1 (GP14) und Spieler2 (GP12), beide sind mit einem Pull-up-Widerstand verbunden. Bei Betätigung der Tasten gehen GP14 und GP12 jeweils auf niedrig.
+* Die zugehörigen Indikatoren sind mit GP15 und GP13 verbunden und leuchten auf, wenn diese Pins auf hoch gesetzt sind.
+* Definieren Sie eine Schiedsrichtertaste, die mit GP10 verbunden ist. Bei Betätigung geht GP10 auf niedrig.
+* Der aktive Summer ist mit GP11 verbunden. Wenn GP11 auf hoch gesetzt ist, gibt der Summer einen Ton aus.
 
 **Code**
 
-
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.13_reaction_game.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
-
-
+    * Die Abbildung unten können Sie als Orientierung für das Schreiben des Codes per Drag-and-Drop verwenden.
+    * Importieren Sie ``2.13_reaction_game.png`` aus dem Verzeichnis ``kepler-kit-main\piper``. Detaillierte Anleitungen finden Sie unter :ref:`import_code_piper`.
 
 |button_race|
 
+* Nach dem Anschluss von Pico W klicken Sie auf die **Start**-Taste, und der Code wird ausgeführt.
+* Betätigen Sie die Schiedsrichtertaste und der Summer gibt einen kontinuierlichen Ton aus, was den Spielstart signalisiert.
+* Drücken Sie nun die **Spielertasten** einzeln und schnell. Die zugehörigen LEDs werden aufleuchten.
+* Wird die **Schiedsrichtertaste** erneut gedrückt, stoppt der Summer, was das Spielende bedeutet.
+* Klicken Sie auf diesem Punkt auf die Konsole, um zu sehen, welcher Spieler mehr Betätigungen hatte.
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* Press the referee button and the buzzer starts to sound (continuously), representing the start of the game.
-* At this point, press the **player** buttons separately and quickly, and the corresponding LEDs will light up.
-* When the **referee** button is pressed again, the buzzer stops, which means the game is over.
-* Click CONSOLE at this point to see who presses it more times.
-
-**How it Works?**
+**Funktionsweise**
 
 |button_race1|
 
-
-GP10 is the referee button, when the referee button is not pressed it is high, the game has not started yet.
-When GP10 is low (referee button pressed), the game starts; set GP11 to high (buzzer), create variables and set initial values.
+GP10 ist die Schiedsrichtertaste. Wenn diese nicht gedrückt ist (hoch), hat das Spiel noch nicht begonnen. Wenn GP10 niedrig ist (Schiedsrichtertaste gedrückt), beginnt das Spiel; setzen Sie GP11 auf hoch (Summer), erstellen Sie Variablen und setzen Sie die Anfangswerte.
 
 |button_race2|
 
-When flag equals to 1 for game start, then read the value of GP14 (player1); if player1 button is pressed, store the number of presses in variable [count1], and make the indicator of GP15 light up.
-
+Wenn die Flagge 1 für den Spielstart ist, dann lesen Sie den Wert von GP14 (Spieler1); wenn die Spieler1-Taste gedrückt wird, speichern Sie die Anzahl der Betätigungen in der Variablen [count1] und lassen Sie den Indikator von GP15 aufleuchten.
 
 |button_race3|
 
-Read the number of presses of GP12(player2) in the same way.
-
+Lesen Sie die Anzahl der Betätigungen von GP12 (Spieler2) auf die gleiche Weise.
 
 |button_race4|
 
-Print the number of presses for player1 and player2 respectively.
+Drucken Sie die Anzahl der Betätigungen für Spieler1 und Spieler2 jeweils aus.
 
 |button_race5|
 
-When the referee button is pressed again, the buzzer stops working and the game ends.
+Wenn die Schiedsrichtertaste erneut gedrückt wird, hört der Summer auf zu arbeiten und das Spiel endet.

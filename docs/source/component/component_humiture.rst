@@ -1,7 +1,7 @@
 .. _cpn_dht11:
 
 DHT11 Temperatur- und Feuchtigkeitssensor
-=============================
+===========================================
 
 Der digitale Temperatur- und Feuchtigkeitssensor DHT11 ist ein Verbundsensor, der kalibrierte digitale Signalausgaben für Temperatur und Feuchtigkeit liefert.
 Dank der Anwendung von speziellen digitalen Modulen und Sensortechnologie für Temperatur und Feuchtigkeit zeichnet sich das Produkt durch hohe Zuverlässigkeit und ausgezeichnete Langzeitstabilität aus.

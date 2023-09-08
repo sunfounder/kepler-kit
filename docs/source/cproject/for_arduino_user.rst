@@ -1,12 +1,11 @@
-For Arduino User
+Für Arduino-Nutzer
 ======================
-This chapter includes installing Arduino IDE, 
-uploading code to Raspberry Pi with Arduino IDE and a dozen interesting and practical projects to help you learn Arduino code quickly.
 
-We recommend that you read the chapters in order.
+Dieses Kapitel beinhaltet die Installation der Arduino-IDE, das Hochladen von Code auf den Raspberry Pi mit der Arduino-IDE und eine Vielzahl von interessanten und praxisnahen Projekten, die Ihnen einen schnellen Einstieg in die Arduino-Programmierung ermöglichen.
 
+Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
 
-**1. Get Started**
+**1. Erste Schritte**
 
 .. toctree::
     :maxdepth: 1
@@ -16,7 +15,7 @@ We recommend that you read the chapters in order.
     arduino_start/install_pico_w
     arduino_start/add_libraries_ar 
 
-**2. Output & input**
+**2. Ausgabe & Eingabe**
 
 .. toctree::
     :maxdepth: 1
@@ -38,7 +37,7 @@ We recommend that you read the chapters in order.
     ar_transistor
     ar_relay
 
-**3. Sound & Display & Movement**
+**3. Ton & Anzeige & Bewegung**
 
 .. toctree::
     :maxdepth: 1
@@ -51,7 +50,6 @@ We recommend that you read the chapters in order.
     ar_pump
     ar_servo
 
-
 **4. Controller**
 
 .. toctree::
@@ -61,7 +59,7 @@ We recommend that you read the chapters in order.
     ar_keypad
     ar_mpr121
 
-**5. Microchip**
+**5. Mikrochip**
 
 .. toctree::
     :maxdepth: 1
@@ -71,7 +69,7 @@ We recommend that you read the chapters in order.
     ar_74hc595_4dig
     ar_74hc595_matrix
 
-**6. Advanced**
+**6. Fortgeschritten**
 
 .. toctree::
     :maxdepth: 1
@@ -81,4 +79,3 @@ We recommend that you read the chapters in order.
     ar_mpu6050
     ar_irremote
     ar_rfid
-

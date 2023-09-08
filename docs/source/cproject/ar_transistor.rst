@@ -1,52 +1,50 @@
 .. _ar_transistor:
 
-2.15 - Two Kinds of Transistors
+2.15 - Zwei Arten von Transistoren
 ==========================================
 
-This kit is equipped with two types of transistors, S8550 and S8050, the former is PNP and the latter is NPN. They look very similar, and we need to check carefully to see their labels.
-When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+Dieses Kit enthält zwei Typen von Transistoren, S8550 und S8050. Ersterer ist ein PNP-Transistor und der Letztere ein NPN-Transistor. Beide sehen sehr ähnlich aus, daher ist es wichtig, ihre Beschriftungen genau zu prüfen.
+Während ein NPN-Transistor durch ein High-Level-Signal aktiviert wird, benötigt ein PNP-Transistor ein Low-Level-Signal. Beide Transistortypen finden häufig Anwendung in berührungslosen Schaltern, wie in diesem Experiment.
 
 |img_NPN&PNP|
 
-Let's use LED and button to understand how to use transistor!
+Verwenden wir eine LED und einen Taster, um den Umgang mit Transistoren zu verstehen!
 
 :ref:`cpn_transistor`
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt sind folgende Komponenten erforderlich.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist durchaus praktisch, hier der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - INHALT DES KITS
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -55,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -74,66 +72,51 @@ You can also buy them separately from the links below.
         - 1(S8050/S8550)
         - |link_transistor_buy|
 
-**Way to connect NPN (S8050) transistor**
+**Anschluss des NPN (S8050) Transistors**
 
 |sch_s8050|
 
-In this circuit, when the button is pressed, GP14 is high.
+In dieser Schaltung ist GP14 high, wenn der Taster gedrückt wird.
 
-By programming GP15 to output high, after a 1k current limiting resistor (to protect the transistor), the S8050 (NPN transistor) is allowed to conduct, thus allowing the LED to light up.
-
+Durch Programmierung von GP15 auf High und nach einem 1k-Strombegrenzungswiderstand (zum Schutz des Transistors) wird der S8050 (NPN-Transistor) zum Leiten gebracht, sodass die LED aufleuchtet.
 
 |wiring_s8050|
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.
-.. #. Connect the cathode lead of the LED to the **collector** lead of the transistor.
-.. #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
-.. #. Connect the **emitter** lead of the transistor to the negative power bus.
-.. #. Connect one side of the button to the GP14 pin, and use a 10kΩ resistor connect the same side and negative power bus. The other side to the positive power bus.
 
-.. .. note::
-..     * The color ring of 220Ω resistor is red, red, black, black and brown.
-..     * The color ring of the 1kΩ resistor is brown, black, black, brown and brown.
-..     * The color ring of the 10kΩ resistor is brown, black, black, red and brown.
 
-**Way to connect PNP(S8550) transistor**
+**Anschluss des PNP (S8550) Transistors**
 
 |sch_s8550|
 
-In this circuit, GP14 is low by the default and will change to high when the button is pressed.
+In dieser Schaltung ist GP14 standardmäßig auf Low und wird auf High gesetzt, wenn der Taster gedrückt wird.
 
-By programming GP15 to output **low**, after a 1k current limiting resistor (to protect the transistor), the S8550 (PNP transistor) is allowed to conduct, thus allowing the LED to light up.
+Durch Programmierung von GP15 auf **Low** und nach einem 1k-Strombegrenzungswiderstand wird der S8550 (PNP-Transistor) zum Leiten gebracht, sodass die LED leuchtet.
 
-The only difference you will notice between this circuit and the previous one is that in the previous circuit the cathode of the LED is connected to the **collector** of the **S8050 (NPN transistor)**, while this one is connected to the **emitter** of the **S8550 (PNP transistor)**.
+Der einzige Unterschied, den Sie zwischen dieser und der vorherigen Schaltung feststellen werden, ist, dass in der vorherigen Schaltung die Kathode der LED mit dem **Kollektor** des **S8050 (NPN-Transistor)** verbunden ist, während sie hier mit dem **Emitter** des **S8550 (PNP-Transistor)** verbunden ist.
 
 |wiring_s8550|
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the anode lead of the LED to the positive power bus via a 220Ω resistor.
-.. #. Connect the cathode lead of the LED to the **emitter** lead of the transistor.
-.. #. Connect the base lead of the transistor to the GP15 pin through a 1kΩ resistor.
-.. #. Connect the **collector** lead of the transistor to the negative power bus.
-.. #. Connect o
+.. 1. Verbinden Sie 3V3 und GND des Pico W mit der Stromschiene des Steckbretts.
+.. #. Verbinden Sie die Anode der LED über einen 220Ω-Widerstand mit der positiven Stromschiene.
+.. #. Verbinden Sie die Kathode der LED mit dem **Emitter**-Anschluss des Transistors.
+.. #. Verbinden Sie den **Basis**-Anschluss des Transistors über einen 1kΩ-Widerstand mit dem GP15-Pin.
+.. #. Verbinden Sie den **Kollektor**-Anschluss des Transistors mit der negativen Stromschiene.
 
 **Code**
 
 .. note::
 
-   * You can open the file ``2.15_transistor.ino`` under the path of ``kepler-kit-main/arduino/2.15_transistor``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``2.15_transistor.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.15_transistor``.
+   * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/77c437de-028f-47c1-9d79-177e90eb0599/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Two kinds of transistors can be controlled with the same code. When we press the button, Pico W will send a high-level signal to the transistor; when we release it, it will send a low-level signal.
-We can see that diametrically opposite phenomena have occurred in the two circuits.
+Beide Transistortypen können mit demselben Code gesteuert werden. Wenn wir den Taster drücken, sendet der Pico W ein High-Level-Signal an den Transistor; lassen wir ihn los, sendet er ein Low-Level-Signal.
+Man wird feststellen, dass in den beiden Schaltungen diametral entgegengesetzte Phänomene auftreten.
 
-* The circuit using the S8050 (NPN transistor) will light up when the button is pressed, which means it is receiving a high-level conduction circuit;
-* The circuit that uses the S8550 (PNP transistor) will light up when it is released, which means it is receiving a low-level conduction circuit.
+* Die Schaltung mit dem S8050 (NPN-Transistor) leuchtet auf, wenn der Taster gedrückt wird, was bedeutet, dass sie ein High-Level-Leitungssignal erhält;
+* Die Schaltung mit dem S8550 (PNP-Transistor) leuchtet auf, wenn sie losgelassen wird, was bedeutet, dass sie ein Low-Level-Leitungssignal erhält.

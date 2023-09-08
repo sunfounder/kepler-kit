@@ -72,7 +72,7 @@ Mit der Break-Anweisung können wir die Schleife abbrechen, selbst wenn die Whil
 
 
 While-Schleife mit Else
-----------------------
+----------------------------
 Ähnlich wie die ``if``-Schleife kann auch die ``while``-Schleife einen optionalen ``else``-Block haben.
 
 Wenn die Bedingung in der ``while``-Schleife als ``False`` bewertet wird, wird der ``else``-Teil ausgeführt.

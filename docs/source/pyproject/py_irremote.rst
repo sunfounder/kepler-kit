@@ -10,7 +10,7 @@ Der IR-Empfänger ist eine Komponente mit einer auf Infrarotlicht abgestimmten F
 Er kommt fast immer bei der Erkennung von Fernbedienungssignalen zum Einsatz - jeder Fernseher und DVD-Player ist an der Frontseite mit einem solchen Modul ausgestattet, um das IR-Signal von der Fernbedienung zu empfangen.
 In der Fernbedienung selbst befindet sich eine dazu passende IR-LED, die IR-Impulse aussendet, um den Fernseher ein- oder auszuschalten oder den Sender zu wechseln.
 
-* :ref:`cpn_ir_empfaenger`
+* :ref:`cpn_ir_receiver`
 
 **Benötigte Bauteile**
 

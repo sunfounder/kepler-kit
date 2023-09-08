@@ -1,7 +1,7 @@
 .. _cpn_slide_switch:
 
 Schiebeschalter
-==============
+==================
 
 |img_slide|
 

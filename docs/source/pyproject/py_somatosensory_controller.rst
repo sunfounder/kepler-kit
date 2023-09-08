@@ -4,7 +4,7 @@
 
 
 7.11 Somatosensorische Steuerung
-===============================
+====================================
 
 Wenn Sie viele Robotik-Filme gesehen haben, ist Ihnen diese Vorstellung wahrscheinlich nicht fremd. Der Protagonist bewegt sein Handgelenk und der riesige Roboter folgt der Bewegung; der Protagonist ballt die Faust, und auch der Roboter tut dies. Es sieht einfach cool aus.
 

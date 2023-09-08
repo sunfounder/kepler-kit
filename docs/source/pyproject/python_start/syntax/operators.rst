@@ -249,7 +249,7 @@ True
 
 
 Mitgliedschaftsoperatoren
-----------------------
+----------------------------
 Mitgliedschaftsoperatoren werden verwendet, um zu testen, ob eine Sequenz in einem Objekt enthalten ist.
 
 .. list-table:: 

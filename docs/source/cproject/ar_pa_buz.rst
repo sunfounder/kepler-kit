@@ -1,54 +1,50 @@
 .. _ar_pa_buz:
 
-
-3.2 - Custom Tone
+3.2 - Individueller Ton
 ==========================================
 
+Im vorherigen Projekt haben wir einen aktiven Summer verwendet. Diesmal greifen wir auf einen passiven Summer zurück.
 
-We have used active buzzer in the previous project, this time we will use passive buzzer.
+Ähnlich wie der aktive Summer funktioniert auch der passive Summer auf Grundlage der elektromagnetischen Induktion. Der Unterschied besteht darin, dass ein passiver Summer keine eigene Schwingungsquelle hat. Deshalb gibt er keinen Ton ab, wenn Gleichstromsignale verwendet werden. Dies ermöglicht es jedoch dem passiven Summer, seine eigene Schwingungsfrequenz anzupassen und unterschiedliche Töne wie "Do, Re, Mi, Fa, Sol, La, Si" auszugeben.
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
-But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
+Lassen Sie den passiven Summer eine Melodie spielen!
 
-Let the passive buzzer emit a melody!
+* :ref:`cpn_buzzer`
 
-* :ref:`Buzzer`
+**Erforderliche Bauteile**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Set zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - ELEMENTE IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Alternativ können Sie die Teile auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,91 +53,83 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
         - Passive :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+Wenn der GP15-Ausgang hoch ist, leitet der S8050 (NPN-Transistor) nach dem 1K-Strombegrenzungswiderstand (zum Schutz des Transistors) den Strom, sodass der Summer ertönt.
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+Die Aufgabe des S8050 (NPN-Transistor) besteht darin, den Strom zu verstärken und den Klang des Summers lauter zu machen. Tatsächlich könnten Sie den Summer auch direkt an GP15 anschließen, würden jedoch feststellen, dass der Ton leiser ist.
 
-
-**Wiring**
+**Verkabelung**
 
 |img_buzzer|
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back).
+Im Kit sind zwei Summer enthalten; wir verwenden einen passiven Summer (einen mit freiliegender Leiterplatte auf der Rückseite).
 
-The buzzer needs a transistor to work, here we use S8050.
+Für die Funktion des Summers ist ein Transistor erforderlich; hier verwenden wir den S8050.
 
 |wiring_buzzer|
 
 **Code**
 
-
 .. note::
 
-   * You can open the file ``3.2_custom_tone.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``3.2_custom_tone.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/3.2_custom_tone``.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/69c55e56-9eeb-46bb-b3a8-b354c500cc17/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
+**Wie funktioniert es?**
 
-**How it works?**
+Wenn dem passiven Summer ein digitales Signal gegeben wird, kann er nur die Membran bewegen, ohne einen Ton zu erzeugen.
 
-If the passive buzzer given a digital signal, it can only keep pushing the diaphragm without producing sound.
+Daher verwenden wir die Funktion ``tone()`` um das PWM-Signal zu erzeugen, das den passiven Summer zum Klingen bringt.
 
-Therefore, we use the ``tone()`` function to generate the PWM signal to make the passive buzzer sound.
+Diese Funktion hat drei Parameter:
 
-This function has three parameters:
+  * **pin**, der GPIO-Pin, der den Summer steuert.
+  * **frequency**, die Tonhöhe des Summers wird durch die Frequenz bestimmt; je höher die Frequenz, desto höher die Tonhöhe.
+  * **Duration**, die Dauer des Tons.
 
-  * **pin**, the GPIO pin that controls the buzzer.
-  * **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-  * **Duration**, the duration of the tone.
+* `tone <https://www.arduino.cc/reference/de/language/functions/advanced-io/tone/>`_
 
+**Mehr erfahren**
 
-* `tone <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>`_
+Wir können den spezifischen Ton gemäß der Grundfrequenz des Klaviers simulieren, um ein vollständiges Musikstück zu spielen.
 
-**Learn More**
-
-We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
-
-* `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
+* `Piano key frequencies - Wikipedia <https://de.wikipedia.org/wiki/Frequenzen_der_gleichstufigen_Stimmung>`_
 
 .. note::
 
-   * You can open the file ``3.2_custom_tone_2.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone_2``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``3.2_custom_tone_2.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/3.2_custom_tone_2``.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f934c785-7204-4972-aae5-01edde3c79cc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>

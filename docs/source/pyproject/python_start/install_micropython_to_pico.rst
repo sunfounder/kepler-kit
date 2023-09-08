@@ -1,7 +1,7 @@
 .. _install_micropython_on_pico:
 
 1.3 Installation von MicroPython auf Ihrem Pico
-==========================================
+===================================================
 
 Jetzt geht es darum, MicroPython auf dem Raspberry Pi Pico zu installieren. Die Thonny IDE ermöglicht Ihnen eine äußerst komfortable Installation mit nur einem Klick.
 

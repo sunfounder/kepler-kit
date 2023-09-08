@@ -1,13 +1,12 @@
 .. _ar_pump:
 
-3.6 - Pumping
+3.6 - Pumpensteuerung
 =======================
 
+Kleine Kreiselpumpen eignen sich hervorragend für Projekte zur automatischen Pflanzenbewässerung.
+Sie können ebenfalls für den Bau kleiner, intelligenter Wasserspiele verwendet werden.
 
-Small centrifugal pumps are suitable for projects with automatic plant watering.
-It can also be used to make tiny smart water features.
-
-Its power component is an electric motor, driven in exactly the same way as a normal motor.
+Als Antriebskomponente dient ein Elektromotor, der genau wie ein herkömmlicher Motor betrieben wird.
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
@@ -16,45 +15,45 @@ Its power component is an electric motor, driven in exactly the same way as a no
 
 .. note::
 
-    #. Connect the tube to the motor outlet, submerge the pump in water, and then power it on.
-    #. You need to make sure that the water level is always higher than the motor. Idling may damage the motor due to heat generation and will also generate noise.
-    #. If you are watering plants, you need to avoid soil being drawn in, as this can clog the pump.
-    #. If water does not come out of the tube, there may be residual water in the tube blocking the air flow and needs to be drained first.
+    #. Schließen Sie den Schlauch an den Motoranschluss an, tauchen Sie die Pumpe ins Wasser und schalten Sie sie ein.
+    #. Achten Sie darauf, dass der Wasserstand stets höher als der des Motors ist. Leerlauf kann den Motor durch Hitzegenerierung beschädigen und zusätzlich Lärm verursachen.
+    #. Falls Sie Pflanzen bewässern, sollte vermieden werden, dass Erde angesaugt wird, da dies die Pumpe verstopfen könnte.
+    #. Wenn kein Wasser aus dem Schlauch kommt, könnte Restwasser im Schlauch den Luftstrom blockieren und muss zuerst abgelassen werden.
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Bauteile benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - KOMPONENTEN IM SET
+        - KAUF-LINK
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Komponenten auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -63,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -74,11 +73,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650-Akku
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - Batteriehalter
         - 1
         -  
     *   - 9
@@ -86,18 +85,16 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**Schematic**
+**Schaltplan**
 
 |sch_pump|
 
-
-**Wiring**
+**Verkabelung**
 
 .. note::
 
-    * Since pump require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * Da Pumpen einen hohen Strombedarf haben, nutzen wir hier aus Sicherheitsgründen ein Li-Po-Ladegerät-Modul zur Stromversorgung des Motors.
+    * Achten Sie darauf, dass Ihr Li-Po-Ladegerät-Modul wie im Diagramm dargestellt angeschlossen ist. Andernfalls könnte ein Kurzschluss Ihren Akku und die Schaltung beschädigen.
 
 |wiring_pump|
 
@@ -105,27 +102,20 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``3.6_pumping.ino`` under the path of ``kepler-kit-main/arduino/3.6_pumping``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``3.6_pumping.ino`` im Pfad ``kepler-kit-main/arduino/3.6_pumping`` öffnen.
+   * Oder kopieren Sie den Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
-
+   * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die **Upload**-Schaltfläche klicken.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/4194feb8-92d4-4ab4-b51c-286d014af0a6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe> 
 
-
-
-After the code is run, the pump starts working and you will see water flowing out of the tube at the same time.
-
+Nachdem der Code ausgeführt wurde, beginnt die Pumpe zu arbeiten, und Sie werden gleichzeitig sehen, wie das Wasser aus dem Schlauch fließt.
 
 .. note::
 
-    * If you can not upload the code again, this time you need to connect the **RUN** pin on the Pico W with a wire to GND to reset it, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * Wenn ein erneutes Hochladen des Codes nicht möglich ist, verbinden Sie den **RUN**-Pin am Pico W mit einem Draht mit GND, um ihn zurückzusetzen. Dann entfernen Sie den Draht, um den Code erneut auszuführen.
+    * Dies liegt daran, dass der Motor mit zu hohem Strom betrieben wird, was dazu führen kann, dass der Pico W die Verbindung zum Computer verliert.
 
     |wiring_run_reset|

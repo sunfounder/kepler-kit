@@ -1,52 +1,50 @@
 .. _ar_micro:
 
-2.8 - Press Gently
-==========================
+2.8 - Sanft Drücken
+===================
 
 |img_micro_switch|
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed) .
+Ein Mikroschalter ist ebenfalls ein 3-poliges Gerät, die Reihenfolge der drei Pins sind C (Common Pin), NO (Normalerweise offen) und NC (Normalerweise geschlossen).
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+Wenn der Mikroschalter nicht gedrückt ist, sind 1 (C) und 3 (NC) miteinander verbunden. Wird er gedrückt, sind 1 (C) und 2 (NO) miteinander verbunden.
 
 * :ref:`cpn_micro_switch`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die untenstehenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -55,47 +53,44 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_micro_switch`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_limit_sw|
 
-By default, GP14 is low and when pressed, GP14 is high.
+Standardmäßig ist GP14 niedrig und wird beim Drücken hoch.
 
-The purpose of the 10K resistor is to keep the GP14 low during pressing.
+Der Zweck des 10K-Widerstands ist es, GP14 während des Drückens niedrig zu halten.
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+Der 104-Keramikkondensator wird hier verwendet, um Rauschen zu eliminieren.
 
-
-**Wiring**
+**Verkabelung**
 
 |wiring_limit_sw|
-
 
 **Code**
 
 .. note::
 
-   * You can open the file ``2.8_press_gently.ino`` under the path of ``kepler-kit-main/arduino/2.8_press_gently``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``2.8_press_gently.ino`` im Pfad ``kepler-kit-main/arduino/2.8_press_gently`` öffnen.
+   * Oder kopieren Sie diesen Code in die **Arduino-IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 
 .. raw:: html
@@ -103,4 +98,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
     <iframe src=https://create.arduino.cc/editor/sunfounder01/92a2e356-35da-4e34-92cd-80234e1b59c4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the Serial Monitor.
+Nach dem Start des Programms erscheint "The switch works!" im seriellen Monitor, wenn Sie den Schiebeschalter nach rechts bewegen.

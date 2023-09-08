@@ -1,5 +1,5 @@
 If-Else-Anweisungen
-=============
+======================
 
 Entscheidungsfindung ist erforderlich, wenn ein bestimmter Code nur bei Erfüllung einer bestimmten Bedingung ausgeführt werden soll.
 
@@ -113,7 +113,7 @@ x ist größer als y
 
 
 Verschachtelte if-Anweisungen
----------------------
+------------------------------
 
 Wir können eine if-Anweisung in eine andere if-Anweisung einbetten; das nennen wir dann eine verschachtelte if-Anweisung.
 

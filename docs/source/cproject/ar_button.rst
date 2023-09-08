@@ -1,48 +1,47 @@
 .. _ar_button:
 
-2.5 - Reading Button Value
+2.5 - Tastenwert auslesen
 ==============================================
 
-From the name of GPIO (General-purpose input/output), we can see that these pins have both input and output functions. 
-In the previous lessons, we used the output function, in this chapter we will use the input function to input read the button value.
+Anhand der Bezeichnung GPIO (General-purpose input/output) lässt sich erkennen, dass diese Pins sowohl Eingabe- als auch Ausgabefunktionen haben. 
+In den vorherigen Lektionen haben wir die Ausgabefunktion verwendet, in diesem Kapitel werden wir die Eingabefunktion nutzen, um den Wert der Taste auszulesen.
 
 * :ref:`cpn_button`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein komplettes Kit zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - ELEMENTE IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Teile können auch einzeln über die folgenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -51,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -62,66 +61,60 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_button|
 
-One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+Ein Anschluss des Tastenpins ist mit 3,3V verbunden, und der andere Anschluss ist mit GP14 verbunden. Wenn die Taste gedrückt wird, wird GP14 auf "High" gesetzt. Ist die Taste jedoch nicht gedrückt, befindet sich GP14 in einem schwebenden Zustand und könnte sowohl "High" als auch "Low" sein. Um einen stabilen "Low"-Zustand zu erhalten, wenn die Taste nicht gedrückt ist, muss GP14 über einen 10K-Pull-down-Widerstand erneut mit GND verbunden werden.
 
-**Wiring**
+**Verkabelung**
 
 |wiring_button|
 
 
 .. note::
-    We can think of the four-legged button as an H-shaped button. Its left (right) two feet are connected, which means that after it straddles the central dividing line, it will connect the two half rows of the same row number together. (For example, in my circuit, E23 and F23 have been connected, as are E25 and F25).
+    Man kann den vierbeinigen Taster als H-förmigen Taster betrachten. Seine linken (rechten) beiden Beine sind miteinander verbunden, was bedeutet, dass er nach Überqueren der mittleren Trennlinie die beiden halben Reihen derselben Reihennummer verbindet. (Beispielsweise sind in meiner Schaltung E23 und F23 verbunden, ebenso wie E25 und F25).
 
-    Before the button is pressed, the left and right sides are independent of each other, and current cannot flow from one side to the other.
+    Bevor die Taste gedrückt wird, sind die linke und rechte Seite voneinander unabhängig, und der Strom kann nicht von einer Seite zur anderen fließen.
+
 
 
 **Code**
 
 .. note::
 
-   * You can open the file ``2.5_reading_button_value.ino`` under the path of ``kepler-kit-main/arduino/2.5_reading_button_value``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``2.5_reading_button_value.ino`` unter dem Pfad ``kepler-kit-main/arduino/2.5_reading_button_value`` öffnen. 
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6fcb7cac-e866-4a2d-8162-8e0c6fd17660/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-
-After the code runs, Click the magnifying glass icon in the upper right corner of the Arduino IDE (Serial Monitor).
+Nachdem der Code ausgeführt wurde, klicken Sie auf das Lupensymbol in der oberen rechten Ecke der Arduino IDE (Serial Monitor).
 
 .. image:: img/open_serial_monitor.png
 
-Now, when you press the button, the Serial Monitor will print "You pressed the button!".
+Jetzt, wenn Sie den Knopf drücken, wird im Serial Monitor "Sie haben den Knopf gedrückt!" angezeigt.
 
+**Wie funktioniert das?**
 
-**How it works?**
-
-To enable Serial Monitor, you need to start serial communication in ``setup()`` and set the datarate to 9600.
+Um den Serial Monitor zu aktivieren, müssen Sie die serielle Kommunikation in ``setup()`` starten und die Datenrate auf 9600 einstellen.
 
 .. code-block:: arduino
 
     Serial.begin(115200);
 
-    
 * `Serial <https://www.arduino.cc/reference/en/language/functions/communication/serial/>`_
 
-
-For button, we need to set their mode to ``INPUT`` in order to be able to get their values.
+Für den Knopf müssen wir ihren Modus auf ``INPUT`` setzen, um ihre Werte abrufen zu können.
 
 .. code-block:: arduino
 
     pinMode(buttonPin, INPUT);
 
-Read the status of the ``buttonPin`` in ``loop()`` and assign it to the variable ``buttonState``.
+Lesen Sie den Status von ``buttonPin`` in ``loop()`` und weisen Sie ihn der Variablen ``buttonState`` zu.
 
 .. code-block:: arduino
 
@@ -129,9 +122,8 @@ Read the status of the ``buttonPin`` in ``loop()`` and assign it to the variable
     
 * `digitalRead() <https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/>`_
 
-
-If the ``buttonState`` is HIGH, the LED will flash. 
-print "You pressed the button!" on the Serial monitor.
+Wenn der ``buttonState`` HIGH ist, wird die LED blinken.
+Im Serial Monitor wird "You pressed the button!" angezeigt.
 
 .. code-block:: arduino
 
@@ -139,19 +131,18 @@ print "You pressed the button!" on the Serial monitor.
         Serial.println("You pressed the button!");
     }
 
+**Pull-up Arbeitsmodus**
 
-**Pull-up Working Mode**
-
-Next is the wiring and code when the button in the pull-up working mode, please try it.
+Als nächstes folgt die Verdrahtung und der Code, wenn der Knopf im Pull-up-Arbeitsmodus ist, probieren Sie es bitte aus.
 
 |wiring_button_pullup|
 
-.. 1. Connect the 3V3 pin of Pico W to the positive power bus of the breadboard.
-.. #. Insert the button into the breadboard and straddle the central dividing line.
-.. #. Use a jumper wire to connect one of the button pins to the **negative** bus (mine is the pin on the upper right).
-.. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
-.. #. Use a 10K resistor to connect the pin on the upper left corner of the button and the **positive** bus.
-.. #. Connect the negative power bus of the breadboard to Pico's GND.
+.. 1. Verbinden Sie den 3V3-Pin von Pico W mit der positiven Stromschiene des Steckbretts.
+.. #. Setzen Sie den Knopf in das Steckbrett ein und überbrücken Sie die mittlere Trennlinie.
+.. #. Verwenden Sie ein Jumperkabel, um einen der Knopfpins mit der **negativen** Schiene zu verbinden (meiner ist der Pin oben rechts).
+.. #. Verbinden Sie den anderen Pin (oben links oder unten links) mit GP14 über ein Jumperkabel.
+.. #. Verwenden Sie einen 10K-Widerstand, um den Pin in der oberen linken Ecke des Knopfes und der **positiven** Schiene zu verbinden.
+.. #. Verbinden Sie die negative Stromschiene des Steckbretts mit Picos GND.
 
-The only difference you will see with the pull-down mode is that the 10K resistor is connected to 3.3V and the button is connected to GND, so that when the button is pressed, GP14 will get a low level, which is the opposite of the value obtained in pull-down mode.
-So just change this code to ``if (buttonState == LOW)``.
+Der einzige Unterschied, den Sie im Vergleich zum Pull-down-Modus sehen werden, ist, dass der 10K-Widerstand mit 3,3V verbunden ist und der Knopf mit GND verbunden ist. Wenn der Knopf also gedrückt wird, erhält GP14 ein niedriges Signal, was das Gegenteil des im Pull-down-Modus erhaltenen Wertes ist.
+Ändern Sie diesen Code also zu ``if (buttonState == LOW)``.

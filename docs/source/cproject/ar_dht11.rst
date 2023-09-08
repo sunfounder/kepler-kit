@@ -1,62 +1,60 @@
 .. _ar_dht11:
 
-
-6.2 - Temperature - Humidity
+6.2 - Temperatur - Feuchtigkeit
 =======================================
 
-Humidity and temperature are closely related from the physical quantity itself to the actual people's life.
-The temperature and humidity of human environment will directly affect the thermoregulatory function and heat transfer effect of human body.
-It will further affect the thinking activity and mental state, thus affecting the efficiency of our study and work.
+Temperatur und Feuchtigkeit sind sowohl in Bezug auf die physikalische Größe selbst als auch auf das alltägliche Leben der Menschen eng miteinander verbunden.
+Die Temperatur und Feuchtigkeit der menschlichen Umgebung haben direkten Einfluss auf die thermoregulatorische Funktion und den Wärmeübertragungseffekt des menschlichen Körpers.
+Dies wirkt sich weiter auf die Denkaktivität und den mentalen Zustand aus und beeinflusst damit die Effizienz unseres Lernens und Arbeitens.
 
-Temperature is one of the seven basic physical quantities in the International System of Units, which is used to measure the degree of hot and cold of an object.
-Celsius is one of the more widely used temperature scales in the world, expressed by the symbol "℃".
+Die Temperatur ist eine der sieben grundlegenden physikalischen Größen im Internationalen Einheitensystem und dient zur Messung des Wärmezustands eines Objekts.
+Das Grad Celsius ist eine der weltweit am häufigsten verwendeten Temperaturskalen und wird durch das Symbol "℃" ausgedrückt.
 
-Humidity is the concentration of water vapor present in the air.
-The relative humidity of air is commonly used in life and is expressed in %RH. Relative humidity is closely related to temperature.
-For a certain volume of sealed gas, the higher the temperature, the lower the relative humidity, and the lower the temperature, the higher the relative humidity.
+Feuchtigkeit ist die Konzentration von Wasserdampf in der Luft.
+Die relative Luftfeuchtigkeit wird im Alltag häufig verwendet und in %RH angegeben. Sie steht in engem Zusammenhang mit der Temperatur.
+Für ein bestimmtes Volumen eingeschlossenen Gases gilt: Je höher die Temperatur, desto niedriger die relative Feuchtigkeit und umgekehrt.
 
 |img_Dht11|
 
-A basic digital temperature and humidity sensor, the **DHT11**, is provided in this kit.
-It uses a capacitive humidity sensor and thermistor to measure the surrounding air and outputs a digital signal on the data pins (no analog input pins are required).
+In diesem Kit ist ein grundlegender digitaler Temperatur- und Feuchtigkeitssensor, der **DHT11**, enthalten.
+Er verwendet einen kapazitiven Feuchtigkeitssensor und einen Thermistor, um die umgebende Luft zu messen und gibt ein digitales Signal an den Datenpins aus (keine analogen Eingangspins erforderlich).
 
 * :ref:`cpn_dht11`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die einzelnen Komponenten auch über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -65,18 +63,19 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
         - 1
         - |link_dht22_buy|
 
-**Schematic**
+
+**Schaltplan**
 
 |sch_dht11|
 
-**Wiring**
+**Verkabelung**
 
 |wiring_dht11|
 
@@ -84,30 +83,27 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``6.2_dht11.ino`` under the path of ``kepler-kit-main/arduino/6.2_dht11``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``SimpleDHT`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
-
-
-
+    * Die Datei ``6.2_dht11.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.2_dht11``.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Hochladen**-Button klicken.
+    * Hier wird die Bibliothek ``SimpleDHT`` verwendet. Wie Sie diese zur Arduino IDE hinzufügen, erfahren Sie unter :ref:`add_libraries_ar`.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b9e96e99-59d4-48ca-b41f-c03577acfb8f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the code is run, you will see the Serial Monitor continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
+Nach dem Ausführen des Codes werden Sie sehen, dass der Serielle Monitor kontinuierlich die Temperatur und die Feuchtigkeit ausgibt. Im Laufe der stabilen Programmausführung werden diese beiden Werte immer präziser.
 
-**How it works?**
+**Wie funktioniert es?**
 
-Initialize the DHT11 object. This device requires only a digital input to be used.
+Initialisierung des DHT11-Objekts. Für dieses Gerät ist lediglich ein digitaler Eingang erforderlich.
 
 .. code-block:: arduino
 
     int pinDHT11 = 16;
     SimpleDHT11 dht11(pinDHT11);
 
-Reads the current temperature and humidity, which are stored in the variables ``temperature`` and ``humidity``. ``err`` is used to determine the validity of the data.
+Auslesen der aktuellen Temperatur und Feuchtigkeit, die in den Variablen ``temperature`` und ``humidity`` gespeichert werden. ``err`` dient zur Überprüfung der Gültigkeit der Daten.
 
 .. code-block:: arduino
 
@@ -115,7 +111,7 @@ Reads the current temperature and humidity, which are stored in the variables ``
     byte humidity = 0;
     int err = dht11.read(&temperature, &humidity, NULL);
 
-Filter invalid data.
+Filtern ungültiger Daten.
 
 .. code-block:: arduino
 
@@ -126,18 +122,18 @@ Filter invalid data.
         Serial.println(SimpleDHTErrDuration(err)); 
         delay(1000);
         return;
-    }    
+    }     
 
-Print temperature and humidity.
+Ausgabe der Temperatur und Feuchtigkeit.
 
 .. code-block:: arduino
 
     Serial.print((int)temperature); 
-    Serial.print(" *C, "); 
+    Serial.print(" °C, "); 
     Serial.print((int)humidity); 
-    Serial.println(" H");
+    Serial.println(" %RH");
 
-Finally, the DHT11 sampling rate is 1HZ, a ``delay(1500)`` is needed in the loop.
+Abschließend ist die Abtastrate des DHT11 1 HZ, daher ist eine ``delay(1500)`` in der Schleife erforderlich.
 
 .. code-block:: arduino
 

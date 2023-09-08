@@ -1,47 +1,45 @@
 .. _ar_ultrasonic:
 
-6.1 - Measuring Distance
+6.1 - Abstandsmessung
 ======================================
 
-The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
+Das Ultraschall-Sensormodul arbeitet nach dem Prinzip von Sonar- und Radarsystemen, um den Abstand zu einem Objekt zu ermitteln.
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist definitiv praktisch, hier der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - INHALT DES KITS
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Komponenten können auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -50,18 +48,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_ultrasonic|
 
-**Wiring**
+**Verkabelung**
 
 |wiring_ultrasonic|
 
@@ -69,32 +67,26 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``6.1_ultrasonic.ino`` under the path of ``kepler-kit-main/arduino/6.1_ultrasonic``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * Die Datei ``6.1_ultrasonic.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/6.1_ultrasonic``.
+   * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
+  
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/631a1663-ce45-4d46-b8f0-7d10f32097a9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Sobald das Programm läuft, wird die serielle Monitoranzeige den Abstand des Ultraschallsensors zum vorausliegenden Hindernis ausgeben.
 
-Once the program is running, the Serial Monitor will print out the distance of the ultrasonic sensor from the obstacle ahead.
+**Wie funktioniert es?**
 
-
-**How it works?**
-
-About the application of ultrasonic sensor, we can directly check the
-subfunction.
+Für die Anwendung des Ultraschallsensors können wir direkt die Unterfunktion überprüfen.
 
 .. code-block:: arduino
 
     float readSensorData(){// ...}
 
-``PING`` is triggered by a HIGH pulse of 2 or more microseconds. (Give a
-short ``LOW`` pulse beforehand to ensure a clean ``HIGH`` pulse.)
+Ein ``PING`` wird durch einen HIGH-Puls von 2 oder mehr Mikrosekunden ausgelöst. (Geben Sie vorher einen kurzen ``LOW``-Puls aus, um einen sauberen ``HIGH``-Puls zu gewährleisten.)
 
 .. code-block:: arduino
 
@@ -102,25 +94,20 @@ short ``LOW`` pulse beforehand to ensure a clean ``HIGH`` pulse.)
     delayMicroseconds(2);
     digitalWrite(trigPin, HIGH); 
     delayMicroseconds(10);
-    digitalWrite(trigPin, LOW); 
+    digitalWrite(trigPin, LOW);
 
-The echo pin is used to read signal from PING, a ``HIGH`` pulse whose
-duration is the time (in microseconds) from the sending of the ping to
-the reception of echo of the object.
+Der Echo-Pin wird verwendet, um das Signal von PING zu lesen, ein ``HIGH``-Puls, dessen Dauer die Zeit (in Mikrosekunden) von der Aussendung des Pings bis zum Empfang des Echos des Objekts ist.
 
 .. code-block:: arduino
 
-    microsecond=pulseIn(echoPin, HIGH);
+    microsecond = pulseIn(echoPin, HIGH);
 
-The speed of sound is 340 m/s or 29 microseconds per centimeter.
+Die Schallgeschwindigkeit beträgt 340 m/s oder 29 Mikrosekunden pro Zentimeter.
 
-This gives the distance travelled by the ping, outbound and return, so
-we divide by 2 to get the distance of the obstacle.
+Dies gibt die vom Ping zurückgelegte Strecke an, hin und zurück, also teilen wir durch 2, um den Abstand des Hindernisses zu erhalten.
 
 .. code-block:: arduino
 
-    float distance = microsecond / 29.00 / 2;  
+    float distance = microsecond / 29.00 / 2;
 
-
-Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
-
+Beachten Sie, dass der Ultraschallsensor das Programm pausiert, während er arbeitet, was bei komplexen Projekten zu Verzögerungen führen kann.

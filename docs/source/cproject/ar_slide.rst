@@ -1,48 +1,46 @@
 .. _ar_slide:
 
-2.7 - Toggle Left and Right
-====================================
+2.7 - Links und Rechts Umschalten
+=====================================
 
 |img_slide|
 
-The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
+Der Schiebeschalter ist ein 3-poliges Bauteil. Der mittlere Pin (Pin 2) dient als gemeinsamer Anschluss. Wenn der Schalter nach links geschoben wird, werden die beiden linken Pins miteinander verbunden. Bei Verschiebung nach rechts werden die beiden rechten Pins verbunden.
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Gesamtpaket zu kaufen ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -51,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,21 +64,21 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+GP14 erhält ein unterschiedliches Signalniveau, je nachdem, ob der Schiebeschalter nach rechts oder links verschoben wird.
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+Der Zweck des 10K-Widerstands besteht darin, GP14 während des Umschaltens auf einem niedrigen Pegel zu halten (nicht ganz links und nicht ganz rechts).
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+Der 104-Keramikkondensator dient hier zur Eliminierung von Störungen.
 
 * :ref:`cpn_slide_switch`
 * :ref:`cpn_capacitor`
 
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_slide|
 
@@ -88,16 +86,16 @@ The 104 ceramic capacitor is used here to eliminate jitter.
 
 .. note::
 
-   * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``2.7_toggle_left_right.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.7_toggle_left_right``.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a20c0733-f234-4d4b-862d-db87f2c249e9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Während das Programm läuft, wird im seriellen Monitor "EIN" oder "AUS" angezeigt, je nachdem, in welche Richtung Sie den Schalter schieben.
 
-When the program is running, the serial monitor will show "ON" or "OFF" when you toggle the switch to the left or right.

@@ -110,6 +110,7 @@ Sie können sie auch separat über die unten stehenden Links erwerben.
         lcd.message(string)
         utime.sleep(1)
         lcd.clear()
+        
 Nach dem Ausführen des Programms wird die LCD die aktuelle Temperatur im Raum anzeigen.
 
 .. note:: 

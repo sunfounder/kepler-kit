@@ -11,6 +11,7 @@ Einzeilige Kommentare in MicroPython beginnen mit einem #, und der darauf folgen
 .. code-block:: python
 
     print("Hallo Welt")  # Das ist ein Kommentar
+    
 >>> %Run -c $EDITOR_CONTENT
 Hallo Welt
 

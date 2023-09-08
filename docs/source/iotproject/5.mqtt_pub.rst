@@ -129,31 +129,30 @@ Bevor wir mit dem Projekt starten können, müssen wir das MQTT-Modul für Pico 
 
     .. image:: img/5_calling_system1.png
 
-**5. Run the Script**
+**5. Skript ausführen**
 
-#. Open the ``5_mqtt_publish.py`` file under the path of ``kepler-kit-main/iot``.
+#. Öffnen Sie die Datei ``5_mqtt_publish.py`` im Verzeichnis ``kepler-kit-main/iot``.
 
-#. Click the **Run current script** button or press F5 to run it.
+#. Klicken Sie auf die Schaltfläche **Aktuelles Skript ausführen** oder drücken Sie F5, um es zu starten.
 
     .. image:: img/5_calling_system2.png
 
-#. Go back to |link_hivemq| again and when you press one of the buttons on the breadboard, you will be able to see the Messages prompt on HiveMQ.
+#. Kehren Sie zu |link_hivemq| zurück und sobald Sie eine der Tasten auf dem Steckbrett drücken, werden Sie die Nachrichten im HiveMQ erscheinen sehen.
 
     .. image:: img/mqtt-4.png
-  
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Falls Sie möchten, dass dieses Skript beim Hochfahren ausgeführt wird, speichern Sie es auf dem Raspberry Pi Pico W als ``main.py``.
 
-**How it works?**
+**Wie funktioniert es?**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Das Raspberry Pi Pico W muss mit dem Internet verbunden sein, wie in :ref:`iot_access` beschrieben. Für dieses Projekt reicht das aus.
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Initialize 4 button pins.
+Initialisieren Sie 4 Tasten-Pins.
 
 .. code-block:: python
 
@@ -162,15 +161,15 @@ Initialize 4 button pins.
     sensor3 = Pin(18, Pin.IN)
     sensor4 = Pin(19, Pin.IN)
 
-Create two variables to store the ``URL`` and ``client ID`` of the MQTT broker we will use to connect to it.
-Since we are using a public broker, our ``client ID`` will not be used, even if one is required.
+Erstellen Sie zwei Variablen, um die ``URL`` und die ``Client-ID`` des MQTT-Brokers zu speichern, mit dem wir uns verbinden werden.
+Da wir einen öffentlichen Broker verwenden, wird unsere ``Client-ID`` nicht verwendet, selbst wenn eine erforderlich ist.
 
 .. code-block:: python
 
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
+Verbinden Sie sich mit dem MQTT-Agenten und halten Sie die Verbindung für eine Stunde. Bei einem Fehlschlag wird der Pico W zurückgesetzt.
 
 .. code-block:: python
 
@@ -183,14 +182,14 @@ Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
         time.sleep(5)
         machine.reset()
 
-Create a variable ``topic``, which is the topic that the subscriber needs to follow. It should be the same as the topic filled in **step 4** of **2. Visit HiveMQ** above.
-Incidentally, ``b`` here converts string to byte, because MQTT is a binary based protocol were the control elements are binary bytes and not text strings.
+Erstellen Sie eine Variable ``topic``, die das Thema angibt, dem der Abonnent folgen muss. Es sollte dasselbe wie das im **Schritt 4** unter **2. HiveMQ besuchen** ausgefüllte Thema sein.
+Übrigens konvertiert ``b`` hier den String in Bytes, da MQTT ein binärbasiertes Protokoll ist, bei dem die Steuerelemente Binärbytes und keine Textstrings sind.
 
 .. code-block:: python
 
     topic = b'SunFounder MQTT Test'
 
-Set interrupts for each button. When a button is pressed, a message is posted under ``topic``.
+Setzen Sie Unterbrechungen für jede Taste. Wenn eine Taste gedrückt wird, wird eine Nachricht unter ``topic`` veröffentlicht.
 
 .. code-block:: python
 
@@ -201,9 +200,6 @@ Set interrupts for each button. When a button is pressed, a message is posted un
 
     sensor1.irq(trigger=machine.Pin.IRQ_RISING, handler=press1)
 
-
 * `UMQTT Client API  <https://pypi.org/project/micropython-umqtt.simple/>`_
-
-
 
 .. https://www.tomshardware.com/how-to/send-and-receive-data-raspberry-pi-pico-w-mqtt

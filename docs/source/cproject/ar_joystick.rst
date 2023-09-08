@@ -1,54 +1,53 @@
 .. _ar_joystick:
 
-4.1 - Toggle the Joystick
-================================
+4.1 - Den Joystick bedienen
+============================
 
-If you play a lot of video games, then you should be very familiar with the Joystick.
-It is usually used to move the character around, rotate the screen, etc.
+Wenn du häufig Videospiele spielst, dürfte dir der Joystick bestens bekannt sein.
+Er wird normalerweise verwendet, um die Spielfigur zu bewegen, den Bildschirm zu drehen usw.
 
-The principle behind Joystick's ability to allow the computer to read our actions is very simple.
-It can be thought of as consisting of two potentiometers that are perpendicular to each other.
-These two potentiometers measure the analog value of the joystick vertically and horizontally, resulting in a value (x,y) in a planar right-angle coordinate system.
+Das Prinzip hinter der Fähigkeit des Joysticks, dem Computer unsere Bewegungen mitzuteilen, ist recht simpel.
+Man kann sich den Joystick als Kombination aus zwei senkrecht zueinander stehenden Potentiometern vorstellen.
+Diese beiden Potentiometer messen den analogen Wert des Joysticks in vertikaler und horizontaler Richtung, was in einem Wert (x,y) in einem rechtwinkligen Koordinatensystem resultiert.
 
-
-The joystick of this kit also has a digital input, which is activated when the joystick is pressed.
+Der Joystick dieses Sets verfügt auch über einen digitalen Eingang, der aktiviert wird, wenn der Joystick gedrückt wird.
 
 * :ref:`cpn_joystick`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, gleich ein ganzes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM SET
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Die Bauteile können auch einzeln über die folgenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -68,14 +67,13 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_joystick|
 
-The SW pin is connected to a 10K pull-up resistor, the reason is to be able to get a stable high level on the SW pin (Z axis) when the joystick is not pressed; otherwise the SW is in a suspended state and the output value may vary between 0/1.
+Der SW-Pin ist über einen 10K Pull-up-Widerstand angeschlossen. Der Grund dafür ist, ein stabiles hohes Signal am SW-Pin (Z-Achse) zu erhalten, wenn der Joystick nicht gedrückt wird; andernfalls befindet sich der SW in einem unbestimmten Zustand und der Ausgabewert kann zwischen 0/1 variieren.
 
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_joystick|
 
@@ -83,19 +81,16 @@ The SW pin is connected to a 10K pull-up resistor, the reason is to be able to g
 
 .. note::
 
-   * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``4.1_toggle_the_joyostick.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``.
+   * Oder kopieren Sie den Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Hochladen**-Button klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/dfe53878-7cb4-4543-bb97-7f5ef5aad15a/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program runs, the Shell prints out the x,y,z values of joystick.
+Nach dem Ausführen des Programms gibt die Shell die x,y,z-Werte des Joysticks aus.
 
-* The x-axis and y-axis values are analog values that vary from 0 to 65535.
-* The Z-axis is a digital value with a status of 1 or 0.
+* Die Werte der x- und y-Achse sind analoge Werte, die zwischen 0 und 65535 variieren.
+* Die Z-Achse hat einen digitalen Wert mit einem Status von 1 oder 0.

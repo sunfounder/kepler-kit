@@ -1,38 +1,36 @@
-10. Plant Monitor in @SunFounder Controller
-================================================
+10. Pflanzenüberwachung mit dem @SunFounder Controller
+========================================================
 
-With this project, you will learn how to build a plant watering system using the Sunfounder Controller APP.
+In diesem Projekt lernen Sie, wie Sie mit der Sunfounder Controller-App ein automatisches Bewässerungssystem für Pflanzen aufbauen können.
 
-In the APP, you can check the current temperature and humidity of the environment, as well as the level of water in potted plants.
-To water the plants, you can also click the button on the APP.
+In der App können Sie die aktuelle Temperatur und Luftfeuchtigkeit der Umgebung sowie den Wasserstand in den Blumentöpfen überprüfen. Zum Gießen der Pflanzen können Sie ebenfalls den Button in der App drücken.
 
+**Benötigte Komponenten**
 
-**Required Components**
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist natürlich bequem, ein ganzes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ELEMENTE IN DIESEM SET
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Einzelteile auch über die folgenden Links separat erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -40,7 +38,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -49,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
@@ -68,11 +66,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - 18650 Batterie
         - 1
         -  
     *   - 10
-        - Battery Holder
+        - Batteriehalter
         - 1
         -  
     *   - 11
@@ -80,34 +78,33 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**Steps**
+**Ablauf**
 
 .. note::
-    It is recommended that you complete the previous project :ref:`play_sc`, as that will help you get to grips with the basic use of the SunFounder Controller.
+    Es wird empfohlen, das vorherige Projekt :ref:`play_sc` abzuschließen, da es Ihnen den grundlegenden Umgang mit dem SunFounder Controller näherbringt.
 
-#. Build the circuit.
+#. Verdrahten Sie den Schaltkreis.
 
     .. image:: img/wiring/10.sc_2_bb.png
 
-#. Create a new controller, add the following widgets and change their names.
+#. Erstellen Sie einen neuen Controller, fügen Sie die folgenden Widgets hinzu und ändern Sie deren Namen.
 
     .. image:: img/10_plant2.jpg
         :width: 800
 
-#. Open the ``10_plant_monitor.py`` under the path of ``kepler-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+#. Öffnen Sie die Datei ``10_plant_monitor.py`` im Pfad ``kepler-kit-main/iot``. Klicken Sie auf die Schaltfläche **Aktuelles Skript ausführen** oder drücken Sie F5, um es zu starten. Nach erfolgreicher Verbindung wird die IP von Pico W angezeigt.
 
     .. image:: img/10_plant_monitor.png
 
-
-#. Returning to the SunFounder APP, click Run after connecting to PicoW. On the APP, you will be able to see the temperature and humidity of the environment, as well as the water level of the potted plant. You can click the button to water the potted plant for five seconds if you think it's short of water.
+#. Kehren Sie zur SunFounder-App zurück und klicken Sie auf "Start", nachdem Sie sich mit PicoW verbunden haben. In der App können Sie die Temperatur und Luftfeuchtigkeit der Umgebung sowie den Wasserstand der Topfpflanze sehen. Wenn Sie der Meinung sind, dass die Pflanze mehr Wasser benötigt, können Sie den Button drücken, um sie für fünf Sekunden zu bewässern.
 
     .. image:: img/10_plant2.jpg
         :width: 800
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Wenn Sie möchten, dass dieses Skript automatisch startet, können Sie es als ``main.py`` auf dem Raspberry Pi Pico W speichern.
 
-**How it works?**
+**Wie funktioniert das Ganze?**
 
-This project works basically the same way as :ref:`play_sc`.
+Dieses Projekt funktioniert im Grunde genommen genauso wie :ref:`play_sc`.
 
-In addition the project also uses DHT11, pump and water level module, you can see the details of using these components in :ref:`py_dht11` , :ref:`py_pump`, :ref:`py_water`.
+Zusätzlich verwendet das Projekt auch den DHT11, eine Pumpe und ein Wasserstandmodul. Details zur Verwendung dieser Komponenten finden Sie unter :ref:`py_dht11`, :ref:`py_pump`, :ref:`py_water`.

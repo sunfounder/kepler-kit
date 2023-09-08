@@ -1,11 +1,11 @@
-.. _py_fotoresistor:
+.. _py_photoresistor:
 
 2.12 Das Licht spüren
 =============================
 
 Der Fotowiderstand ist ein typisches Bauelement für analoge Eingänge und funktioniert sehr ähnlich wie ein Potentiometer. Sein Widerstandswert ist abhängig von der Lichtintensität: Je stärker das Licht, desto geringer der Widerstandswert und umgekehrt.
 
-* :ref:`cpn_fotoresistor`
+* :ref:`cpn_photoresistor`
 
 **Benötigte Komponenten**
 
@@ -62,7 +62,7 @@ Sie können die Komponenten auch einzeln über die folgenden Links erwerben.
 
 **Schaltplan**
 
-|sch_fotoresistor|
+|sch_photoresistor|
 
 In dieser Schaltung sind der 10K-Widerstand und der Fotowiderstand in Reihe geschaltet; der durch sie fließende Strom ist identisch. Der 10K-Widerstand dient als Schutz, und GP28 liest den umgewandelten Spannungswert des Fotowiderstands.
 
@@ -76,7 +76,7 @@ Die Berechnungsformel lautet wie folgt:
 
 **Verdrahtung**
 
-|wiring_fotoresistor|
+|wiring_photoresistor|
 
 **Code**
 

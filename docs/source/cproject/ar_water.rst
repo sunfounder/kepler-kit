@@ -1,55 +1,54 @@
 .. _ar_water:
 
-2.14 - Feel the Water Level
+2.14 - Den Wasserstand erfühlen
 =====================================
 
 |img_water_sensor|
 
-Water sensor is designed for water detection, which can be widely used in sensing rainfall, water level, and even liquid leakage.
+Der Wassersensor ist für die Wassererkennung konzipiert und kann vielseitig zur Erfassung von Niederschlägen, Wasserständen und sogar Flüssigkeitsaustritten eingesetzt werden.
 
-It measures the water level by having a series of exposed parallel wire traces to measure the size of the water drops/volume. The water volume is easily converted to an analog signal, and the output analog value can be read directly by the main control board to achieve the water level alarm effect.
+Der Sensor misst den Wasserstand durch eine Reihe von freiliegenden parallelen Drahtspuren, um die Größe der Wassertropfen/das Volumen zu messen. Das Wasservolumen lässt sich leicht in ein analoges Signal umwandeln, und der ausgegebene analoge Wert kann direkt vom Hauptsteuerbrett abgelesen werden, um den Wasserstandsalarm zu aktivieren.
 
-.. warning:: 
-    
-    The sensor cannot be fully submerged in water, please only leave the part where the ten Traces are located in contact with water. Also, energizing the sensor in a humid environment will accelerate the corrosion of the probe and reduce the life of the sensor, so it is recommended that you only supply power when taking readings.
+.. warning::
+
+    Der Sensor darf nicht vollständig ins Wasser getaucht werden; bitte lassen Sie nur den Teil, an dem sich die zehn Spuren befinden, mit dem Wasser in Kontakt kommen. Das Einschalten des Sensors in einer feuchten Umgebung beschleunigt die Korrosion der Sonde und verkürzt die Lebensdauer des Sensors. Es wird daher empfohlen, den Sensor nur dann mit Strom zu versorgen, wenn Messungen durchgeführt werden.
 
 * :ref:`cpn_water_level`
 
-**Required Components**
+**Benötigte Bauteile**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist natürlich praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - INHALT DES KITS
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Bauteile können auch einzeln über die untenstehenden Links erworben werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -58,19 +57,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_water_level`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_water|
 
-
-**Wiring**
+**Verkabelung**
 
 |wiring_water|
 
@@ -78,35 +76,29 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``kepler-kit-main/arduino/2.14_feel_the_water_level``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``2.14_feel_the_water_level.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.14_feel_the_water_level``.
+   * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/32ee87a1-08eb-482f-bf4c-b12b24ef05c4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program is run, submerge the Water Sensor module slowly into the water, and as the depth increases, the Shell will print a larger value.
+Nachdem das Programm gestartet ist, tauchen Sie das Wassersensormodul langsam ins Wasser. Mit zunehmender Tiefe wird die Shell einen größeren Wert ausgeben.
 
+**Mehr erfahren**
 
-**Learn More**
+Es gibt eine Möglichkeit, das Analogeingabemodul als digitales Modul zu verwenden.
 
-There is a way to use the analog input module as a digital module.
-
-First, take a reading of the Water Sensor in a dry environment first, record it, and use it as a threshold value. Then, complete the programming and re-read the reading of the water sensor. When the reading of the water sensor deviates significantly from the reading in a dry environment, it is exposed to liquid. In other words, by placing this device near a water pipe, it can detect if a water pipe is leaking.
-
+Zuerst messen Sie den Wert des Wassersensors in einer trockenen Umgebung und verwenden diesen als Schwellenwert. Anschließend führen Sie die Programmierung durch und lesen den Wert des Wassersensors erneut. Weicht der Wert des Wassersensors erheblich von dem in einer trockenen Umgebung ab, wurde er einer Flüssigkeit ausgesetzt. Das heißt, dieses Gerät kann neben einem Wasserrohr platziert werden, um festzustellen, ob das Rohr undicht ist.
 
 .. note::
 
-   * You can open the file ``2.14_water_level_threshold.ino`` under the path of ``kepler-kit-main/arduino/2.14_water_level_threshold``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``2.14_water_level_threshold.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.14_water_level_threshold``.
+   * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 .. :raw-code:
+

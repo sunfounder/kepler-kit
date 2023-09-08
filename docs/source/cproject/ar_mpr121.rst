@@ -1,47 +1,47 @@
 .. _ar_mpr121:
 
-4.3 - Electrode Keyboard
+4.3 - Elektroden-Tastatur
 ================================
 
-The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
-If you connect the electrodes to a banana, you can turn the banana into a touch switch.
+Der MPR121 ist eine gute Wahl, wenn Sie Ihrem Projekt eine Vielzahl von Berührungsschaltern hinzufügen möchten. Das Modul besitzt Elektroden, die mit Leitern erweitert werden können.
+Verbinden Sie die Elektroden beispielsweise mit einer Banane, verwandeln Sie diese in einen Berührungsschalter.
 
 * :ref:`cpn_mpr121`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten:
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Einen Komplettbausatz zu kaufen ist sicherlich praktisch, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Alternativ können Sie die Teile auch einzeln über die folgenden Links beziehen:
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -50,48 +50,44 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpr121`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_mpr121|
 
-
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_mpr121|
 
 **Code**
 
-
 .. note::
 
-    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``kepler-kit-main/arduino/4.3_electrode_keyboard``. 
-    * Or copy this code into **Arduino IDE**.
+    * Die Datei ``4.3_electrode_keyboard.ino`` finden Sie im Verzeichnis ``kepler-kit-main/arduino/4.3_electrode_keyboard``.
+    * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The two libraries ``Adafruit_MPR121`` and ``Adafruit_BusIO`` are used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Vergessen Sie nicht, das richtige Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf **Hochladen** klicken.
+    * Die Bibliotheken ``Adafruit_MPR121`` und ``Adafruit_BusIO`` werden hier verwendet. Bitte lesen Sie :ref:`add_libraries_ar`, um zu erfahren, wie sie zur Arduino IDE hinzugefügt werden können.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f31048b7-0f98-4d49-8c2e-26b3908e98cb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Sobald das Programm läuft, können Sie die zwölf Elektroden auf dem MPR121-Modul berühren, und der Berührungsstatus wird in einem 12-Bit-Booleschen Array gespeichert und im seriellen Monitor angezeigt.
+Wenn die erste und die elfte Elektrode berührt werden, wird ``100000000010`` ausgegeben.
 
-After the program runs, you can touch the twelve electrodes on the MPR121 module by hand and the touch status of these electrodes will be recorded in a 12-bit Boolean type array that will be printed on the serial monitor.
-If the first and eleventh electrodes are touched, ``100000000010`` is printed.
+Sie können die Elektroden durch Anschluss anderer Leiter wie Früchte, Draht, Folie usw. erweitern. Dadurch eröffnen sich Ihnen weitere Möglichkeiten, diese Elektroden zu betätigen.
 
-You can extend the electrodes by connecting other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
+**Wie funktioniert es?**
 
-**How it works?**
-
-Initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values.
-If you extend the electrodes, you need to rerun the example to reset the initial values.
+Initialisieren Sie das ``MPR121``-Objekt. Ab diesem Zeitpunkt werden die Zustände der Modul-Elektroden als Ausgangswerte gespeichert.
+Wenn Sie die Elektroden erweitern, müssen Sie das Beispiel neu starten, um die Ausgangswerte zurückzusetzen.
 
 .. code-block:: arduino
 
@@ -109,7 +105,7 @@ If you extend the electrodes, you need to rerun the example to reset the initial
         Serial.println("MPR121 found!");
     }
 
-Gets the value of the current electrode, it will get a 12-bit binary value. If you touch the first and the eleventh electrode, it gets ``100000000010``.
+Erhält den Wert der aktuellen Elektrode, es wird ein 12-Bit-Binärwert erhalten. Wenn Sie die erste und die elfte Elektrode berühren, erhält sie "100000000010".
 
 .. code-block:: arduino
 
@@ -128,7 +124,7 @@ Determine if the electrode state has changed.
         lasttouched = currtouched;
     }
 
-If a change in electrode state is detected, the values of ``currtouched`` are stored in the ``touchStates[12]`` array bit by bit. Finally, the array is printed.
+Wenn eine Änderung des Elektrodenzustands erkannt wird, werden die Werte von ``currtouched`` bitweise im Array ``touchStates[12]`` gespeichert. Schließlich wird das Array ausgegeben.
 
 .. code-block:: arduino
 

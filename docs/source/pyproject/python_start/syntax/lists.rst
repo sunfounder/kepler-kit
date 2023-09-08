@@ -54,7 +54,7 @@ Um herauszufinden, wie viele Elemente in der Liste enthalten sind, verwenden Sie
 4
 
 Listenelemente überprüfen
------------------------
+---------------------------
 
 Drucken Sie das zweite Element der Liste aus:
 
@@ -113,7 +113,7 @@ Ersetze das zweite Element durch zwei Werte:
 
 
 Listenelemente hinzufügen
--------------------
+---------------------------
 
 Mit der append()-Methode ein Element hinzufügen:
 
@@ -139,7 +139,7 @@ Ein Element an der zweiten Position einfügen:
 
 
 Listenelemente entfernen
------------------------
+---------------------------
 
 Die remove()-Methode entfernt das angegebene Element.
 

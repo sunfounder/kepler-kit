@@ -1,41 +1,40 @@
 .. _ar_rgb:
 
-
-2.4 - Colorful Light
+2.4 - Farbenfrohes Licht
 ==============================================
 
-As we know, light can be superimposed. For example, mix blue light and green light give cyan light, red light and green light give yellow light.
-This is called "The additive method of color mixing".
+Wie wir wissen, kann Licht überlagert werden. Zum Beispiel ergibt die Mischung aus blauem und grünem Licht Zyan-Licht, rotes und grünes Licht ergibt gelbes Licht.
+Dies wird als "additive Farbmischung" bezeichnet.
 
-* `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
+* `Additive Farbmischung - Wikipedia <https://de.wikipedia.org/wiki/Additive_Farbmischung>`_
 
-Based on this method, we can use the three primary colors to mix the visible light of any color according to different specific gravity. For example, orange can be produced by more red and less green.
+Basierend auf dieser Methode können wir mit den drei Grundfarben Licht in jeder sichtbaren Farbe erzeugen, je nach spezifischem Mischungsverhältnis. Zum Beispiel lässt sich Orange durch mehr Rot und weniger Grün erzeugen.
 
-In this chapter, we will use RGB LED to explore the mystery of additive color mixing!
+In diesem Kapitel werden wir die Geheimnisse der additiven Farbmischung mit einer RGB-LED ergründen!
 
-RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin.
-Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+Eine RGB-LED ist im Grunde eine Kapselung einer roten, einer grünen und einer blauen LED unter einer Lampenkappe; alle drei LEDs teilen sich einen gemeinsamen Kathodenpin.
+Da jedem Anodenpin ein elektrisches Signal zugeführt wird, kann das Licht der entsprechenden Farbe angezeigt werden. Durch Veränderung der elektrischen Signalstärke an jedem Anodenpin können diverse Farben erzeugt werden.
 
 * :ref:`cpn_rgb`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist natürlich praktisch, hier ist der Link dazu:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IM SET
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die folgenden Links kaufen.
 
 
 .. list-table::
@@ -43,16 +42,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -61,7 +60,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -72,19 +71,18 @@ You can also buy them separately from the links below.
         - 1
         - |link_rgb_led_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_rgb|
 
-The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+Die PWM-Pins GP13, GP14 und GP15 steuern die roten, grünen und blauen Pins der RGB-LED. Der gemeinsame Kathodenpin ist mit GND verbunden. So kann die RGB-LED durch Überlagerung des Lichts an diesen Pins mit unterschiedlichen PWM-Werten eine spezifische Farbe anzeigen.
 
 
-
-**Wiring**
+**Verkabelung**
 
 |img_rgb_pin|
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+Eine RGB-LED hat 4 Pins: Der längste Pin ist der gemeinsame Kathodenpin, der normalerweise mit GND verbunden ist. Der linke Pin neben dem längsten Pin ist Rot, die beiden Pins rechts sind Grün und Blau.
 
 
 |wiring_rgb|
@@ -92,16 +90,15 @@ An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usual
 
 **Code**
 
-Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
+Hier können wir unsere Lieblingsfarbe in einer Zeichensoftware (wie Paint) auswählen und sie mit der RGB-LED darstellen.
 
 .. note::
 
-   * You can open the file ``2.4_colorful_light.ino`` under the path of ``kepler-kit-main/arduino/2.4_colorful_light``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``2.4_colorful_light.ino`` im Verzeichnis ``kepler-kit-main/arduino/2.4_colorful_light`` öffnen.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die **Upload**-Schaltfläche klicken.
 
 
 
@@ -110,15 +107,14 @@ Here, we can choose our favorite color in drawing software (such as paint) and d
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c869191c-026c-4aac-8396-09eaf6ee2204/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-
 |img_take_color|
 
-Write the RGB value into ``color_set()``, you will be able to see the RGB light up the colors you want.
+Tragen Sie den RGB-Wert in ``color_set()`` ein, dann wird die RGB-LED die gewünschten Farben leuchten.
 
 
-**How it works?**
+**Funktionsweise**
 
-In this example, the function used to assign values to the three pins of RGB is packaged in an independent subfunction ``color()``.
+In diesem Beispiel ist die Funktion zum Zuweisen von Werten an die drei Pins der RGB-LED in einer eigenständigen Unterfunktion ``color()`` verpackt.
 
 .. code-block:: C
 
@@ -129,18 +125,17 @@ In this example, the function used to assign values to the three pins of RGB is 
         analogWrite(bluePin, blue);
     }
 
-In ``loop()``, RGB value works as an input argument to call the function ``color()`` to realize that the RGB can emit different colors.
+In ``loop()``, dient der RGB-Wert als Eingabeargument, um die Funktion ``color()`` aufzurufen und damit die RGB-LED in verschiedenen Farben leuchten zu lassen.
 
 .. code-block:: C
 
     void loop() 
     {    
-        color(255, 0, 0); //  red 
+        color(255, 0, 0); // Rot
         delay(1000); 
-        color(0,255, 0); //  green  
+        color(0, 255, 0); // Grün
         delay(1000);  
-        color(0, 0, 255); //  blue  
+        color(0, 0, 255); // Blau
         delay(1000);
     }
 
-    

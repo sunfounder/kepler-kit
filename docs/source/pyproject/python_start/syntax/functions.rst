@@ -8,7 +8,7 @@ Funktionen helfen dabei, unser Programm in kleinere, modulare Blöcke zu zerlege
 Zudem vermeiden Funktionen Duplikate und machen den Code wiederverwendbar.
 
 Eine Funktion erstellen
-------------------
+-------------------------
 
 .. code-block::
 
@@ -38,7 +38,7 @@ Eine Funktion erstellen
 
 
 Eine Funktion aufrufen
--------------------
+---------------------------
 
 Um eine Funktion aufzurufen, fügen Sie Klammern hinter den Funktionsnamen.
 

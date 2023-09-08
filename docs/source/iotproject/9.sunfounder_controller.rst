@@ -1,40 +1,38 @@
 .. _play_sc:
 
-9. Play in @SunFounder Controller
-====================================
+9. Spiel mit dem @SunFounder Controller
+=======================================
 
-In this project, you will learn how to build a remote project using Sunfounder Controller APP.
-In a LAN environment, you can control your Pico W circuit with your phone/tablet.
-You will find this app very useful if you want to build a simple robot with Pico W.
+In diesem Projekt lernen Sie, wie Sie ein Fernsteuerungsprojekt mit der Sunfounder Controller-App realisieren können. Innerhalb eines lokalen Netzwerks können Sie die Pico W-Schaltung mit Ihrem Smartphone oder Tablet steuern. Diese App ist besonders nützlich, wenn Sie einen einfachen Roboter mit Pico W bauen möchten.
 
-Here, we will use the slider bar on the APP to control the servo angle and the gauge on the APP to show the distance detected by ultrasonic.
+Wir werden die Schiebeleiste in der App verwenden, um den Servowinkel zu steuern, und die Anzeige in der App, um die vom Ultraschallsensor erfasste Entfernung anzuzeigen.
 
-**1. Required Components**
+**1. Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein komplettes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Name
+        - ARTIKEL IM KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Sie können die Teile auch einzeln über die folgenden Links kaufen.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - KOMPONENTE
+        - ANZAHL
         - LINK
 
     *   - 1
@@ -42,16 +40,16 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
-        - 
+        -
     *   - 3
         - :ref:`cpn_breadboard`
         - 1
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -66,120 +64,118 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650 Akku
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Batteriehalter
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Schaltung aufbauen**
 
-.. warning:: 
-        
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+.. warning::
+
+    Stellen Sie sicher, dass Ihr Li-Po-Ladegerät gemäß dem Schaltplan angeschlossen ist. Andernfalls besteht die Gefahr eines Kurzschlusses, der Ihren Akku und die Schaltung beschädigen könnte.
 
 .. image:: img/wiring/9.sc_bb.png
     :width: 800
 
 
-**3. Setup SunFounder Controller**
+**3. SunFounder Controller einrichten**
 
-1. Install `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+1. Laden Sie die `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ aus dem **APP Store(iOS)** oder **Google Play(Android)** herunter.
 
-2. Open the APP and click the **+** button on the home page to create a controller.
+2. Öffnen Sie die App und klicken Sie auf die **+**-Schaltfläche auf der Startseite, um einen Controller zu erstellen.
 
     .. image:: img/sc-a-2.jpg
         :width: 800
 
-3. Here we choose **Blank** and **Dual Stick**.
+3. Hier wählen wir **Leer** und **Zwei-Stick-Steuerung** aus.
 
     .. image:: img/sc-a-3.jpg
         :width: 800
 
-4. Now we get an empty controller.
+4. Nun erhalten wir einen leeren Controller.
 
     .. image:: img/sc-a-4.jpg
         :width: 800
 
-5. Click on the **H** area and add a **Slider** widget.
+5. Klicken Sie im Bereich **H** und fügen Sie ein **Schieberegler**-Widget hinzu.
 
     .. image:: img/sc-a-5.jpg
         :width: 800
 
-6. Click the gear on the control to open the settings window.
+6. Klicken Sie auf das Zahnrad des Steuerelements, um das Einstellungsfenster zu öffnen.
 
     .. image:: img/sc-a-6.png
         :width: 300
 
-7. Set Maximum to 180 and Minimum to 0, then click to **Confirm**.
+7. Setzen Sie Maximum auf 180 und Minimum auf 0, dann klicken Sie auf **Bestätigen**.
 
     .. image:: img/sc-a-7.jpg
         :width: 800
 
-8. Click on the L area and add a Gauge widget.
+8. Klicken Sie im Bereich L und fügen Sie ein **Anzeige**-Widget hinzu.
 
     .. image:: img/sc-a-8.jpg
         :width: 800
 
-9. Click the gear of the Gauge, open the settings window, set Maximum to 100, Minimum to 0, and unit to cm.
+9. Klicken Sie auf das Zahnrad der Anzeige, öffnen Sie das Einstellungsfenster, setzen Sie das Maximum auf 100, das Minimum auf 0 und die Einheit auf cm.
 
     .. image:: img/sc-a-9.jpg
         :width: 800
 
-10. After finishing the widget settings, click Save.
+10. Nach Abschluss der Widget-Einstellungen klicken Sie auf Speichern.
 
     .. image:: img/sc-a-10.png
         :width: 300
 
 
 
-**4. Run the Code**
+**4. Code ausführen**
 
 .. note:: 
-    If your Pico W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
+    Falls Ihr Pico W momentan die Anvil-Firmware verwendet, müssen Sie :ref:`install_micropython_on_pico`.
 
-
-1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``kepler-kit-main/libs`` to the Raspberry Pi Pico W.
+1. Laden Sie ``ws.py`` und ``websocket_helper.py`` aus dem Verzeichnis ``kepler-kit-main/libs`` auf den Raspberry Pi Pico W hoch.
 
     .. image:: img/9_sc3.png
 
-2. Double click the ``ws.py`` script and fill your WiFi's ``SSID`` and ``PASSWORD``.
+2. Doppelklicken Sie auf das Skript ``ws.py`` und geben Sie den ``SSID`` und das ``PASSWORT`` Ihres WLANs ein.
 
     .. image:: img/9_sc1.png
 
-3. Open the ``9_sunfounder_controller.py`` under the path of ``kepler-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+3. Öffnen Sie die Datei ``9_sunfounder_controller.py`` im Verzeichnis ``kepler-kit-main/iot``. Klicken Sie auf die Schaltfläche **Dieses Skript ausführen** oder drücken Sie F5. Nach erfolgreicher Verbindung wird die IP-Adresse des Pico W angezeigt.
 
     .. image:: img/9_sc2.png
 
     .. note::
-        If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+        Falls Sie dieses Skript beim Hochfahren ausführen lassen möchten, können Sie es als ``main.py`` auf dem Raspberry Pi Pico W speichern.
 
-4. Back to SunFounder Controller APP, click the **Connect** button.
+4. Kehren Sie zur SunFounder Controller APP zurück und klicken Sie auf die Schaltfläche **Verbinden**.
 
     .. image:: img/sc-c-4.jpg
         :width: 300
 
-5. If PicoW is detected, tap it directly to connect.
+5. Wenn der PicoW erkannt wird, tippen Sie direkt darauf, um die Verbindung herzustellen.
 
     .. image:: img/sc-c-5.jpg
         :width: 300
 
-6. If it doesn't search automatically, you can also manually enter the IP to connect.
+6. Falls keine automatische Suche erfolgt, können Sie auch manuell die IP-Adresse eingeben, um eine Verbindung herzustellen.
 
     .. image:: img/sc-c-6.png
         :width: 800
 
-7. When you slide the slider bar in the H area after clicking the Run button, the servo will adjust its angle. The gauge in the L area will show the distance if your hand is within 100cm of the ultrasonic sensor.
+7. Wenn Sie den Schieberegler im H-Bereich bewegen, nachdem Sie auf die Schaltfläche **Ausführen** geklickt haben, wird der Servo seinen Winkel einstellen. Die Anzeige im L-Bereich zeigt die Entfernung an, falls sich Ihre Hand innerhalb von 100 cm vor dem Ultraschallsensor befindet.
 
     .. image:: img/sc-c-8.jpg
         :width: 300
 
-**How it works?**
+**Wie funktioniert das?**
 
-
-The ``WS_Server`` class in the ``ws.py`` library implements communication with the APP. Below is the framework for implementing its basic functionality.
+Die Klasse ``WS_Server`` in der Bibliothek ``ws.py`` implementiert die Kommunikation mit der APP. Im Folgenden ist das Grundgerüst für die Implementierung der wesentlichen Funktionalitäten dargestellt.
 
 .. code-block:: python
 
@@ -200,21 +196,19 @@ The ``WS_Server`` class in the ``ws.py`` library implements communication with t
     finally:
         ws.stop()
 
-
-First, we need to create a ``WS_Server`` object.
+Zuerst müssen wir ein ``WS_Server``-Objekt erstellen.
 
 .. code-block:: python
 
     ws = WS_Server(8765) 
 
-Star it.
+Starten Sie es.
 
 .. code-block:: python
 
     ws.start()
 
-
-Next, a ``while True`` loop is used to perform the data transfer between Pico W and the SunFounder Controller APP.
+Anschließend wird eine ``while True``-Schleife verwendet, um den Datenaustausch zwischen dem Pico W und der SunFounder Controller APP durchzuführen.
 
 .. code-block:: python
 
@@ -234,16 +228,15 @@ Next, a ``while True`` loop is used to perform the data transfer between Pico W 
         
         time.sleep_ms(100)
 
-``status`` is ``False`` if it fails to get data from the SunFounder Controller APP.
+``status`` ist ``False``, wenn es fehlschlägt, Daten von der SunFounder Controller APP zu erhalten.
 
-And ``result`` is the data that Pico W fetched from the SunFounder Controller APP.
-Print it out and you will see something like the following. This is the value of all Widget areas.
+Und ``result`` sind die Daten, die der Pico W von der SunFounder Controller APP abgerufen hat. Drucken Sie diese aus, und es wird etwas Ähnliches wie das Folgende erscheinen. Dies sind die Werte aller Widget-Bereiche.
 
 .. code-block:: 
 
     {'C': None, 'B': None, 'M': None,,,,, 'A': None, 'R': None}
 
-As in this case, we print the values of the H area separately and use them to operate the circuit.
+In diesem Fall drucken wir die Werte des H-Bereichs separat aus und verwenden sie zur Steuerung des Schaltkreises.
 
 .. code-block:: python
 
@@ -252,26 +245,25 @@ As in this case, we print the values of the H area separately and use them to op
         if status == True:
             print(result['H'])
 
+Und das ``ws.send_dict`` Wörterbuch enthält die Daten, die der Pico W an die SunFounder Controller APP sendet. Dieses Wörterbuch wird in der ``WS_Server`` Klasse erstellt und versendet, wenn die Methode ``ws.transfer()`` aufgerufen wird.
 
-And the ``ws.send_dict`` dictionary is the data that Pico W sends to the SunFounder Controller APP. It is created in the ``WS_Server`` class. It will be sent when ``ws.transfer()`` is executed.
+Die entsprechende Nachricht wird unten dargestellt.
 
-Its message is shown below.
 
 .. code-block:: python
 
     {'Check': 'SunFounder Controller', 'Name': 'PicoW', 'Type': 'Blank'}
 
-This is a blank message, to copy it to the widget on SunFounder Controller APP, we need to assign the value to the corresponding area in the dictionary. For example, assign the value ``50`` to the L area.
+Dies ist eine leere Nachricht. Um sie ins Widget der SunFounder Controller APP zu kopieren, müssen wir den jeweiligen Bereichen im Wörterbuch Werte zuweisen. Beispielsweise weisen wir dem L-Bereich den Wert ``50`` zu.
 
 .. code-block:: python
 
         ws.send_dict['L'] = 50
 
-The data is shown below:
+Die unten dargestellten Daten sehen dann wie folgt aus:
 
 .. code-block:: python
 
     {'L': 50, 'Type': 'Blank', 'Name': 'PicoW', 'Check': 'SunFounder Controller'}
 
-
-For more details on using SunFounder Controller, please see `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.
+Für weitere Informationen zur Verwendung des SunFounder Controllers, siehe bitte `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.

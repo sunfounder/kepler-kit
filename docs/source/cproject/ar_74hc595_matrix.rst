@@ -1,56 +1,54 @@
 .. _ar_74hc_788bs:
 
+5.4 - 8x8 Pixelgrafik
+======================
 
-5.4 - 8x8 Pixel Graphics
-=============================
+Eine ED-Matrix ist ein Display mit geringer Auflösung, das auf einer Dot-Matrix-Technologie basiert. Sie nutzt ein Array aus lichtemittierenden Dioden als Pixel für strukturierte Darstellungen.
 
-ED matrix is a low-resolution dot-matrix display. it uses an array of light-emitting diodes as pixels for patterned displays.
+Diese Anzeigen sind hell genug, um bei Tageslicht im Freien sichtbar zu sein, und finden sich zum Beispiel an Geschäften, Werbetafeln, Schildern und variablen Anzeigesystemen (wie sie in öffentlichen Verkehrsmitteln verwendet werden).
 
-They are bright enough to be visible in outdoor sunlight, and you can see them on some stores, billboards, signs, and variable message displays (such as those on public transit vehicles).
+In diesem Bausatz wird eine 8x8-Dot-Matrix mit 16 Pins verwendet. Die Anoden sind in Reihen und die Kathoden in Spalten (auf Schaltungsebene) verbunden, die gemeinsam diese 64 LEDs steuern.
 
-Used in this kit is an 8x8 dot matrix with 16 pins. Their anodes are connected in rows and their cathodes are connected in columns (at the circuit level), which together control these 64 LEDs.
-
-To light the first LED, you should provide a high level for Row1 and a low level for Col1. To light the second LED, it should provide a high level for Row1, a low level for Col2, and so on.
-By controlling the current through each pair of rows and columns, each LED can be controlled individually to display characters or pictures.
+Um die erste LED zu beleuchten, muss für Row1 ein hoher Pegel und für Col1 ein niedriger Pegel bereitgestellt werden. Für die zweite LED gilt: hoher Pegel für Row1, niedriger Pegel für Col2, und so weiter.
+Durch die Steuerung des Stromflusses zwischen den einzelnen Reihen und Spalten kann jede LED individuell angesteuert werden, um Zeichen oder Bilder darzustellen.
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettbausatz ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - TEILE IM KIT
+        - KAUF-LINK
+    *   - Kepler-Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -59,7 +57,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -70,55 +68,36 @@ You can also buy them separately from the links below.
         - 2
         - |link_74hc595_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_ledmatrix|
 
-The 8x8 dot matrix is controlled by two 74HC595 chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico W board. 
+Die 8x8 Dot-Matrix wird von zwei 74HC595-Chips gesteuert, wobei einer die Reihen und der andere die Spalten kontrolliert. Beide Chips teilen sich die Ports G18~G20, was die Anzahl der benötigten I/O-Ports des Pico W Boards deutlich reduziert.
 
-Pico W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
+Der Pico W muss jeweils eine 16-Bit-Binärzahl ausgeben, wobei die ersten 8 Bits an den 74HC595 gehen, der die Reihen steuert, und die letzten 8 Bits an den 74HC595, der die Spalten steuert. Auf diese Weise kann die Dot-Matrix ein spezifisches Muster anzeigen.
 
-Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.
+Q7': Serieller Ausgangspin, verbunden mit dem DS eines weiteren 74HC595, um mehrere 74HC595s in Reihe zu schalten.
 
-**Wiring**
+**Verkabelung**
 
-Build the circuit. Since the wiring is complicated, let's
-make it step by step.
+Bauen wir den Schaltkreis auf. Die Verkabelung ist etwas komplex, daher gehen wir am besten schrittweise vor.
 
-**Step 1:**  First, insert the Pico W, the LED dot matrix
-and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico W to holes on the two sides of the board, then hook up pin16 and
-10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
+**Schritt 1:** Zunächst setzen Sie den Pico W, die LED-Punktmatrix und zwei 74HC595-Chips ins Steckbrett ein. Schließen Sie die 3,3V und GND-Anschlüsse des Pico W an die äußeren Steckbuchsen der Platine an. Verbinden Sie dann Pin 16 und 10 der beiden 74HC595-Chips mit VCC und Pin 13 und Pin 8 mit GND.
 
 .. note::
-   In the Fritzing image above, the side with label is at the bottom.
+   In der oberen Fritzing-Grafik ist die Seite mit dem Label unten abgebildet.
 
 |wiring_ledmatrix_4|
 
-**Step 2:** Connect pin 11 of the two 74HC595 together, and then to
-GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
-74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
-74HC595.
+**Schritt 2:** Verknüpfen Sie den Pin 11 beider 74HC595-Chips miteinander und dann mit GP20. Verfahren Sie genauso mit Pin 12 und GP19. Anschließend verbinden Sie Pin 14 des linken 74HC595 mit GP18 und Pin 9 mit Pin 14 des rechten 74HC595.
 
 |wiring_ledmatrix_3|
 
-**Step 3:** The 74HC595 on the right side is to control columns of the
-LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
-pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
-respectively.
-
-+--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
-| **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
-+--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
-| **LED Dot Matrix** | **13** | **3**  | **4**  | **10** | **6**  | **11** | **15** | **16** |
-+--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
+**Schritt 3:** Der rechte 74HC595 ist für die Steuerung der Spalten der LED-Punktmatrix zuständig. Die Zuordnung finden Sie in der untenstehenden Tabelle. Somit korrespondieren die Pins Q0-Q7 des 74HC595 mit den Pins 13, 3, 4, 10, 6, 11, 15 und 16 der LED-Matrix.
 
 |wiring_ledmatrix_2|
 
-**Step 4:** Now connect the ROWs of the LED dot matrix. The 74HC595 on
-the left controls ROW of the LED dot matrix. See the table below for the
-mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
-pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
+**Schritt 4:** Jetzt geht es an die Reihen der LED-Punktmatrix. Der linke 74HC595 steuert diese. Auch hier finden Sie die Zuordnung in der untenstehenden Tabelle. Die Pins Q0-Q7 dieses Chips sind mit den Pins 9, 14, 8, 12, 1, 7, 2 und 5 der LED-Matrix verknüpft.
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -132,35 +111,23 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 .. note::
 
-   * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * Öffnen Sie die Datei ``5.4_8x8_pixel_graphics.ino`` im Verzeichnis ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``.
+   * Alternativ können Sie den Code auch in die **Arduino IDE** kopieren.
+   * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Upload** klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b3682592-17d4-4690-a730-1c0a6fcbd353/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Sobald das Programm läuft, wird ein **X**-Symbol auf der 8x8-Punktmatrix dargestellt.
 
+**Wie funktioniert es?**
 
-Once the program is running, you will see a **x** graphic displayed on the 8x8 dot matrix.
+Wir verwenden zwei 74HC595-Chips, um Signale für die Zeilen und Spalten der Punktmatrix bereitzustellen. Die Signalübertragung funktioniert ähnlich wie bei ``shiftOut()`` in den vorherigen Kapiteln, allerdings schreiben wir hier eine 16-Bit-Binärzahl auf einmal.
 
+Die Hauptfunktion ruft ``shiftOut()`` zweimal auf, schreibt zwei 8-Bit-Binärzahlen und sendet sie dann an den Bus, sodass ein Muster angezeigt werden kann.
 
-
-**How it works?**
-
-Here we use two 74HC595s to provide signals for the rows and columns of the dot matrix.
-The method of supplying signals is the same as ``shiftOut()`` in the previous chapters, except that here we need to write the 16-bit binary number at a time.
-
-The main loop calls ``shiftOut()`` twice, writes two 8-bit binary numbers and then outputs them to the bus, so that a pattern can be displayed.
-
-However, since the LEDs in the dot matrix use common poles, controlling multiple rows/multiple columns at the same time will interfere with each other (e.g, if (1,1) and (2,2) are lit at the same time, (1,2) and (2,1) will inevitably be lit together).
-Therefore, it is necessary to activate one column (or one row) at a time, cycle 8 times, and use the residual image principle to let the human eye merge 8 patterns, so as to let get a pair of patterns containing 8x8 amount of information.
-
-
+Allerdings verursacht die gemeinsame Polung der LEDs in der Punktmatrix bei gleichzeitiger Steuerung mehrerer Reihen oder Spalten Interferenzen (z.B. wenn (1,1) und (2,2) gleichzeitig leuchten, werden (1,2) und (2,1) unweigerlich ebenfalls leuchten). Daher ist es notwendig, jeweils nur eine Spalte (oder eine Reihe) zu aktivieren, das Ganze 8-mal zu wiederholen und nach dem Prinzip des Nachbildes das menschliche Auge die 8 Muster zusammenführen zu lassen, um ein Gesamtbild aus 8x8 Informationspunkten zu erhalten.
 
 .. code-block:: arduino
 
@@ -174,15 +141,13 @@ Therefore, it is necessary to activate one column (or one row) at a time, cycle 
       digitalWrite(STcp,HIGH); //pull the ST_CPST_CP to save the data
    }
 
-In this example, the main function nests a ``for`` loop, and when ``i`` is 1, only the first line is activated (the chip in the control line gets the value ``0x80`` ) and the image of the first line is written. 
-When ``i`` is 2, the second line is activated (the chip of the control line gets the value ``0x40``) and the image of the second line is written. And so on, completing 8 outputs.
+In diesem Beispiel nutzt die Hauptfunktion eine verschachtelte ``for``-Schleife. Bei einem Wert von ``i`` gleich 1 wird nur die erste Zeile aktiviert (der Chip der Steuerzeile erhält den Wert ``0x80``), und das Muster der ersten Zeile wird geschrieben. Bei ``i`` gleich 2 wird die zweite Zeile aktiviert (der Chip der Steuerzeile erhält den Wert ``0x40``), und das Muster der zweiten Zeile wird geschrieben. Und so weiter, bis alle 8 Ausgaben vollzogen sind.
 
-Incidentally, like the 4-digit 7-segment display, it has to maintain the refresh rate to prevent flickering by the human eye, so the extra ``sleep()`` in the main loop should be avoided as much as possible.
+Ähnlich wie bei der 4-stelligen 7-Segment-Anzeige muss die Aktualisierungsrate hochgehalten werden, um ein Flackern des menschlichen Auges zu vermeiden. Daher sollten zusätzliche ``sleep()``-Aufrufe in der Hauptfunktion möglichst vermieden werden.
 
+**Mehr erfahren**
 
-**Learn More**
-
-Try replacing ``datArray`` with the following array and see what images appear!
+Ersetzen Sie ``datArray`` durch eines der folgenden Arrays und schauen Sie, welche Muster erscheinen!
 
 .. code-block:: arduino
 
@@ -193,4 +158,5 @@ Try replacing ``datArray`` with the following array and see what images appear!
    int datArray5[] = {0xFF,0xBB,0xD7,0xEF,0xD7,0xBB,0xFF,0xFF};
    int datArray6[] = {0xFF,0xFF,0xF7,0xEB,0xDF,0xBF,0xFF,0xFF};
 
-Or, you can try drawing your own graphics.
+Oder versuchen Sie, eigene Grafiken zu entwerfen.
+

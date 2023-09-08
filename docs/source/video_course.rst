@@ -1,14 +1,15 @@
-Video Courses
+Videokurse
 ========================
 
-If you're finding the content in the online documentation a bit challenging to grasp, don't worry. 
-A step-by-step video course is here to make your learning journey smoother and more engaging.
+Falls Sie den Inhalt der Online-Dokumentation etwas herausfordernd finden, keine Sorge. 
+Ein schrittweiser Videokurs ist hier, um Ihren Lernprozess angenehmer und ansprechender zu gestalten.
 
 .. image:: img/video_course.png
 
-You can access the video course at: |link_paul_course|.
+Den Videokurs können Sie unter folgendem Link abrufen: |link_paul_course|.
 
-These videos focus on Raspberry Pi Pico W, guiding you through the learning of MicroPython, the working principles of various components,
-as well as associated circuitry knowledge. Each video is designed to be both entertaining and educational, presenting concepts 
-in an engaging and interactive manner. Dive into this video course and engage in the hands-on activities, 
-transforming your Raspberry Pi Pico W learning journey into an enriching and enjoyable experience.
+Diese Videos konzentrieren sich auf den Raspberry Pi Pico W und führen Sie durch das Erlernen von MicroPython, die Funktionsweisen verschiedener Komponenten 
+sowie das dazugehörige Schaltungswissen. Jedes Video ist so konzipiert, dass es sowohl unterhaltsam als auch lehrreich ist und Konzepte 
+auf eine ansprechende und interaktive Weise präsentiert. Tauchen Sie in diesen Videokurs ein und beteiligen Sie sich an den praktischen Übungen. 
+So verwandelt sich Ihre Lernreise mit dem Raspberry Pi Pico W in ein bereicherndes und vergnügliches Erlebnis.
+

@@ -1,49 +1,48 @@
 .. _ar_pir:
 
-2.10 - Detect Human Movement
+2.10 - Menschliche Bewegung erfassen
 =========================================
 
-Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
-Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
-More specifically, it tells the main control board that someone has entered your room.
+Der passive Infrarotsensor (PIR-Sensor) ist ein gängiger Sensor, der infrarotes (IR) Licht messen kann, das von Objekten in seinem Sichtfeld abgestrahlt wird.
+Einfach ausgedrückt, erfasst er die von Körpern abgestrahlte Infrarotstrahlung und kann dadurch die Bewegung von Menschen und anderen Lebewesen erkennen.
+Konkret informiert er die Hauptsteuerung darüber, dass jemand den Raum betreten hat.
 
 :ref:`cpn_pir`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Set zu kaufen. Hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Bezeichnung
+        - ELEMENTE IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Die Teile können auch einzeln über die folgenden Links gekauft werden.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -52,81 +51,67 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_pir`
         - 1
         - |link_pir_buy|
 
-
-**Schematic**
+**Schaltplan**
 
 |sch_pir|
 
-When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+Wenn das PIR-Modul eine vorbeigehende Person erkennt, wird GP14 auf "High" gesetzt, ansonsten bleibt es auf "Low".
 
-
-
-**Wiring**
+**Verdrahtung**
 
 |wiring_pir|
 
-**Code**
+**Programmcode**
 
 .. note::
 
-   * You can open the file ``2.10_detect_human_movement.ino`` under the path of ``kepler-kit-main/arduino/2.10_detect_human_movement``. 
-   * Or copy this code into **Arduino IDE**.
+   * Die Datei ``2.10_detect_human_movement.ino`` befindet sich im Verzeichnis ``kepler-kit-main/arduino/2.10_detect_human_movement``.
+   * Alternativ können Sie den Code auch direkt in die **Arduino IDE** kopieren.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * Denken Sie daran, vor dem Hochladen das richtige Board (Raspberry Pi Pico) und den entsprechenden Port auszuwählen.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/bb3ff9f1-127d-4279-84b9-cba28b9667e8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
 
-After the program runs, if the PIR module detects someone nearby, the Serial Monitor will print out "Somebody here!" 
+Nach dem Start des Programms wird im seriellen Monitor "Somebody here!" ausgegeben, wenn das PIR-Modul jemanden in der Nähe erkennt.
 
+**Mehr erfahren**
 
-**Learn More**
-
-PIR is a very sensitive sensor. In order to adapt it to the environment of use, 
-it needs to be adjusted. Let the side with the 2 potentiometers facing you, 
-turn both potentiometers counterclockwise to the end and insert the jumper cap on the pin with L and the middle pin.
-
-
+Der PIR ist ein sehr empfindlicher Sensor. Um ihn an die Einsatzumgebung anzupassen, muss er justiert werden. Richten Sie die Seite mit den beiden Potentiometern zu sich aus und drehen Sie beide Potentiometer gegen den Uhrzeigersinn ganz nach links. Setzen Sie dann die Jumperkappe auf den Pin mit L und den mittleren Pin.
 
 |img_pir_back|
 
-1. Trigger Mode
+1. Auslösemodus
 
-    Let's take a look at the pins with jumper cap at the corner.
-    It allows PIR to enter Repeatable trigger mode or Non-repeatable trigger mode
+    Der Jumper in der Ecke ermöglicht dem PIR, in den wiederholbaren oder nicht-wiederholbaren Auslösemodus zu wechseln.
 
-    At present, our jumper cap connects the middle Pin and L Pin, which makes the PIR in non-repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism, it will send a high-level signal for about 2.8 seconds to the main control board.
-    .. We can see in the printed data that the duration of work will always be around 2800ms.
+    Derzeit ist der Jumper so gesetzt, dass der PIR im nicht-wiederholbaren Modus arbeitet. In diesem Modus sendet der PIR bei erkannter Bewegung für etwa 2,8 Sekunden ein High-Signal an die Hauptsteuerung.
+    .. In den ausgegebenen Daten sehen wir, dass die Arbeitsdauer stets rund 2800 ms beträgt.
 
-    Next, we modify the position of the lower jumper cap and connect it to the middle Pin and H Pin to make the PIR in repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism (note that it is movement, not static in front of the sensor), as long as the organism keeps moving within the detection range, the PIR will continue to send a high-level signal to the main control board.
-    .. We can see in the printed data that the duration of work is an uncertain value.
+    Als nächstes ändern wir die Position der Jumperkappe und verbinden den mittleren Pin mit dem H-Pin, um den PIR in den wiederholbaren Auslösemodus zu versetzen.
+    In diesem Modus sendet der PIR, solange sich ein Lebewesen im Erfassungsbereich bewegt, kontinuierlich ein High-Signal an die Hauptsteuerung.
+    .. In den ausgegebenen Daten sehen wir, dass die Arbeitsdauer variabel ist.
 
-#. Delay Adjustment
+#. Verzögerungseinstellung
 
-    The potentiometer on the left is used to adjust the interval between two jobs.
+    Das linke Potentiometer dient zur Einstellung des Intervalls zwischen zwei Arbeitszyklen.
     
-    At present, we screw it counterclockwise to the end, which makes the PIR need to enter a sleep time of about 5 seconds after finishing sending the high level work. During this time, the PIR will no longer detect the infrared radiation in the target area.
-    .. We can see in the printed data that the dormancy duration is always no less than 5000ms.
+    Aktuell ist es ganz nach links gedreht, sodass der PIR nach Beendigung des High-Signal-Zyklus eine Ruhephase von etwa 5 Sekunden einlegt. In dieser Zeit werden keine Infrarotstrahlen im Zielbereich erfasst.
+    .. In den ausgegebenen Daten sehen wir, dass die Ruhezeit immer mindestens 5000 ms beträgt.
 
-    If we turn the potentiometer clockwise, the sleep time will also increase. When it is turned clockwise to the end, the sleep time will be as high as 300s.
+    Wenn wir das Potentiometer im Uhrzeigersinn drehen, verlängert sich auch die Ruhezeit. Wenn es ganz im Uhrzeigersinn gedreht ist, beträgt die Ruhezeit bis zu 300 Sekunden.
 
-#. Distance Adjustment
+#. Reichweiteneinstellung
 
-    The centered potentiometer is used to adjust the sensing distance range of the PIR.
+    Das mittlere Potentiometer dient zur Einstellung des Erfassungsbereichs des PIR.
 
-    Turn the knob of the distance adjustment potentiometer **clockwise** to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
-    If it rotates **counterclockwise**, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.
+    Drehen Sie den Knopf des Potentiometers **im Uhrzeigersinn**, um den Erfassungsbereich zu erhöhen. Der maximale Erfassungsbereich beträgt etwa 0-7 Meter.
+    Dreht man es **gegen den Uhrzeigersinn**, verringert sich der Erfassungsbereich. Der minimale Erfassungsbereich beträgt dann etwa 0-3 Meter.

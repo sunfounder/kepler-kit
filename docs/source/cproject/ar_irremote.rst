@@ -1,53 +1,47 @@
 .. _ar_irremote:
 
+6.4 - IR-Fernbedienung
+=======================
 
-6.4 - IR Remote Control
-================================
+Im Bereich der Unterhaltungselektronik dienen Fernbedienungen zur Steuerung von Geräten wie Fernsehern und DVD-Playern. In einigen Fällen ermöglichen sie die Bedienung von Geräten, die außer Reichweite sind, etwa Zentral-Klimaanlagen.
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
-
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+Ein IR-Empfänger ist ein Bauteil mit einer Fotozelle, die auf Infrarotlicht abgestimmt ist. Er wird fast immer zur Fernbedienungserkennung eingesetzt - jeder Fernseher und DVD-Player hat einen solchen an der Vorderseite, um das IR-Signal vom Bediengerät zu empfangen. In der Fernbedienung selbst ist eine passende IR-LED, die IR-Impulse sendet, um den Fernseher ein- oder auszuschalten oder den Kanal zu wechseln.
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt werden die folgenden Komponenten benötigt. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist durchaus praktisch, ein komplettes Set zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM SET
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Komponenten auch einzeln über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -56,41 +50,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Schaltplan**
 
 |sch_irrecv|
 
-**Wiring**
+**Verdrahtung**
 
 |wiring_irrecv|
-
 
 **Code**
 
 .. note::
 
-    * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``kepler-kit-main/arduino/6.4_ir_remote_control``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``IRsmallDecoder`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
-
+    * Die Datei ``6.4_ir_remote_control.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/6.4_ir_remote_control``.
+    * Oder kopieren Sie den Code in die **Arduino IDE**.
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Hochladen**-Button klicken.
+    * Die Bibliothek ``IRsmallDecoder`` wird hier verwendet. Bitte beziehen Sie sich auf :ref:`add_libraries_ar`, um sie in die Arduino IDE hinzuzufügen.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/71f50561-d1ad-4d9e-9db2-8eb7727df0a4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Die neue Fernbedienung enthält ein Plastikstück am Ende, das die Batterie isoliert. Dieses Plastikstück muss entfernt werden, um die Fernbedienung in Betrieb zu nehmen. Sobald das Programm läuft und Sie die Fernbedienung drücken, wird der Serial Monitor den gedrückten Knopf ausgeben.
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Serial Monitor will print out the key you pressed.
-
-
-.. **How it works?**
-
-
+.. **Funktionsweise**

@@ -1,53 +1,51 @@
 .. _ar_reed:
 
-2.9 - Feel the Magnetism
+2.9 - Magnetismus spüren
 ===============================
 
-The most common type of reed switch contains a pair of magnetizable, flexible, metal reeds whose end portions are separated by a small gap when the switch is open. 
+Der am häufigsten verwendete Reed-Schalter enthält ein Paar magnetisierbarer, flexibler Metallzungen, deren Enden bei geöffnetem Schalter durch eine kleine Lücke getrennt sind. 
 
-A magnetic field from an electromagnet or a permanent magnet will cause the reeds to attract each other, thus completing an electrical circuit.
-The spring force of the reeds causes them to separate, and open the circuit, when the magnetic field ceases.
+Ein Magnetfeld eines Elektromagneten oder eines Permanentmagneten führt dazu, dass die Metallzungen sich gegenseitig anziehen und somit einen elektrischen Stromkreis schließen.
+Die Federkraft der Zungen lässt sie sich wieder trennen und den Kreislauf öffnen, sobald das Magnetfeld aufhört.
 
-A common example of a reed switch application is to detect the opening of a door or windows, for a security alarm.
+Ein geläufiges Anwendungsbeispiel für Reed-Schalter ist die Überwachung des Öffnens von Türen oder Fenstern in einem Sicherheitssystem.
 
 * :ref:`cpn_reed`
 
-**Required Components**
+**Erforderliche Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Komponenten.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es ist definitiv praktisch, ein ganzes Kit zu kaufen, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+Sie können diese auch separat über die folgenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - MENGE
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -56,28 +54,26 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_reed`
         - 1
         - 
 
-**Schematic**
+**Schaltplan**
 
 |sch_reed|
 
-By default, GP14 is low; and will go high when the magnet is near the reed switch.
+Standardmäßig ist GP14 niedrig; er wird hoch, wenn der Magnet in der Nähe des Reed-Schalters ist.
 
-The purpose of the 10K resistor is to keep the GP14 at a steady low level when no magnet is near.
+Der 10K-Widerstand dient dazu, den GP14 auf einem konstant niedrigen Niveau zu halten, wenn kein Magnet in der Nähe ist.
 
-
-**Wiring**
-
+**Verdrahtung**
 
 |wiring_reed|
 
@@ -85,48 +81,14 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
 
 .. note::
 
-   * You can open the file ``2.9_feel_the_magnetism.ino`` under the path of ``kepler-kit-main/arduino/2.9_feel_the_magnetism``. 
-   * Or copy this code into **Arduino IDE**.
+   * Sie können die Datei ``2.9_feel_the_magnetism.ino`` im Pfad ``kepler-kit-main/arduino/2.9_feel_the_magnetism`` öffnen.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Anschluss auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/62bba18c-7921-4df9-806f-deffce17de9a/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Wenn sich ein Magnet nähert, schließt sich der Stromkreis. Genau wie der Knopf im Kapitel :ref:`ar_button`.
 
-
-When a magnet approaches, the circuit will be closed. Just like the button in the :ref:`ar_button` chapter.
-
-
-.. **Learn More**
-
-.. This time, we tried a flexible way of using switches: interrupt requests, or IRQs.:  interrupt requests, or IRQs.
-
-.. For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.
-
-.. The interrupt request also works in the same way, it allows certain operations to interrupt the main program. 
-
-.. .. :raw-code:
-
-.. .. note::
-
-..    * You can open the file ``2.9_feel_the_magnetism_irq.ino`` under the path of ``kepler-kit-main/arduino/2.9_feel_the_magnetism_irq``. 
-..    * Or copy this code into **Arduino IDE**.
-
-.. 
-..     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-
-
-.. A callback function ``detected()`` is defined here, called the interrupt handler. It will be executed when an interrupt request is triggered.
-.. Then, an interrupt request is set up in ``setup``, which contains two parts: ``mode`` and ``ISR``.
-
-.. In this program, ``mode`` is ``RISING``, which indicates that the value of the pin is raised from low to high (i.e, button pressed).
-
-.. ``ISR`` is ``detected`` , the callback function we defined.
-
-.. * `attachInterrupt() - Arduino Reference <https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/>`_

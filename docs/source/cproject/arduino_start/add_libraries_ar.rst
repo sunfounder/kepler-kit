@@ -1,52 +1,42 @@
+1.4 Bibliotheken installieren (Wichtig)
+===========================================
 
-1.4 Install libraries (Important)
-======================================
+**Code herunterladen**
 
-**Download the Code**
+Laden Sie den relevanten Code über den untenstehenden Link herunter.
 
-Download the relevant code from the link below.
+* :download:`SunFounder Kepler Kit Beispiel <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
-
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* Oder schauen Sie sich den Code auf `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ an.
 
 .. _add_libraries_ar:
 
-Add libraries
-----------------------
-A library, gathering some function definitions and header files, usually
-contains two files: .h (header file, including function statement, Macro
-definition, constructor definition, etc.) and .cpp (execution file, with
-function implementation, variable definition, and so on). When you need
-to use a function in some library, you just need to add a header file
-(e.g. #include <dht.h>), and then call that function. This can make your
-code more concise. If you don't want to use the library, you can also
-write that function definition directly. Though as a result, the code
-will be long and inconvenient to read.
+Bibliotheken hinzufügen
+--------------------------
+Eine Bibliothek, die einige Funktionsdefinitionen und Header-Dateien zusammenfasst, enthält normalerweise zwei Dateien: .h (Header-Datei, inklusive Funktionsdeklaration, Makrodefinition, Konstruktordefinition usw.) und .cpp (Ausführungsdatei, mit Funktionsimplementierung, Variablendefinition etc.). Wenn Sie eine Funktion aus einer solchen Bibliothek nutzen möchten, müssen Sie lediglich die entsprechende Header-Datei einfügen (z.B. #include <dht.h>) und dann die Funktion aufrufen. Dies macht Ihren Code kompakter. Falls Sie die Bibliothek nicht verwenden möchten, können Sie die Funktionsdefinition auch direkt im Code hinterlegen. Dies führt jedoch zu einem längeren und weniger übersichtlichen Code.
 
-Some libraries are already built in the Arduino IDE, when some others
-may need to be added. So now let's see how to add them.
+Einige Bibliotheken sind bereits in der Arduino IDE integriert, während andere erst hinzugefügt werden müssen. Sehen wir uns nun an, wie das funktioniert.
 
-
-#. Open the Arduino IDE and go to **Sketch** -> **Include Library** -> **Add .ZIP Library**.
+#. Öffnen Sie die Arduino IDE und navigieren Sie zu **Skizze** -> **Bibliothek einbinden** -> **.ZIP-Bibliothek hinzufügen**.
 
    .. image:: img/a2dp_add_zip.png
 
-#. Navigate to the directory where the library files are located, such as the ``kepler-kit-main\arduino\libraries`` folder, and select the desired library file, like ``LiquidCrystal_I2C.zip``. Then, click **Open**.
+#. Navigieren Sie zu dem Verzeichnis, in dem sich die Bibliotheksdateien befinden, etwa dem Ordner ``kepler-kit-main\arduino\libraries``, und wählen Sie die gewünschte Bibliotheksdatei aus, wie z.B. ``LiquidCrystal_I2C.zip``. Klicken Sie dann auf **Öffnen**.
 
    .. image:: img/a2dp_choose.png
 
-#. After a short while, you will receive a notification indicating a successful installation.
+#. Nach kurzer Zeit erhalten Sie eine Benachrichtigung, die eine erfolgreiche Installation bestätigt.
 
    .. image:: img/a2dp_success.png
 
-#. Repeat the same process to add the other libraries.
+#. Wiederholen Sie diesen Vorgang, um weitere Bibliotheken hinzuzufügen.
 
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Die installierten Bibliotheken finden Sie im Standardbibliotheksverzeichnis der Arduino IDE, das normalerweise unter ``C:\Users\xxx\Documents\Arduino\libraries`` zu finden ist.
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   Falls Ihr Bibliotheksverzeichnis abweicht, können Sie dieses überprüfen, indem Sie zu **Datei** -> **Einstellungen** navigieren.
 
       .. image:: img/install_lib1.png
+

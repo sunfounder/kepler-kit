@@ -1,61 +1,59 @@
 .. _ar_relay:
 
+2.16 - Steuern eines weiteren Stromkreises
+==========================================
 
-2.16 - Control Another Circuit
-=================================
+Im Alltag können wir einen Schalter betätigen, um eine Lampe ein- oder auszuschalten.
+Aber was, wenn Sie die Lampe mit einem Pico W so steuern möchten, dass sie automatisch nach zehn Minuten ausgeht?
 
-In our daily life, we can press the switch to light up or turn off the lamp.
-But what if you want to control the lamp with Pico W so that it can turn off automatically after ten minutes?
+Ein Relais kann Ihnen dabei helfen.
 
-A relay can help you accomplish this idea.
-
-A relay is actually a special kind of switch that is controlled by one side of the circuit (usually a low-voltage circuit) and used to control the other side of the circuit (usually a high-voltage circuit).
-This makes it practical to modify our home appliances to be controlled by a program, to become smart devices, or even to access the Internet.
+Ein Relais ist im Grunde ein spezieller Schalter, der von einer Seite des Stromkreises (in der Regel einem Niederspannungsstromkreis) gesteuert wird und dazu dient, die andere Seite des Stromkreises (meist ein Hochspannungsstromkreis) zu steuern.
+Dies macht es praktisch, unsere Haushaltsgeräte umzurüsten, damit sie programmgesteuert, zu intelligenten Geräten oder sogar internetfähig werden.
 
 .. warning::
-    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
+    Das Modifizieren von Elektrogeräten ist sehr gefährlich. Versuchen Sie es nicht leichtfertig und bitte nur unter professioneller Anleitung.
 
 * :ref:`cpn_relay`
 
-Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
+In diesem Beispiel verwenden wir einen einfachen, mit einem Breadboard-Strommodul betriebenen Stromkreis, um zu zeigen, wie man ihn mit einem Relais steuert.
 
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Benötigte Komponenten**
 
-In this project, we need the following components. 
+Für dieses Projekt benötigen wir die folgenden Bauteile.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Ein Komplettset ist definitiv praktisch, hier ist der Link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Name
+        - ARTIKEL IN DIESEM KIT
+        - KAUF-LINK
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Sie können die Teile auch einzeln über die untenstehenden Links erwerben.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - KOMPONENTENBESCHREIBUNG
+        - ANZAHL
+        - KAUF-LINK
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro-USB-Kabel
         - 1
         - 
     *   - 3
@@ -64,11 +62,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Mehrere
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_diode`
@@ -79,66 +77,57 @@ You can also buy them separately from the links below.
         - 1
         - |link_relay_buy|
 
-**Wiring**
+**Verdrahtung**
 
-First, build a low-voltage circuit for controlling a relay.
-Driving the relay requires a high current, so a transistor is needed, and here we use the S8050.
+Bauen Sie zunächst einen Niederspannungsstromkreis, um ein Relais zu steuern.
+Für das Schalten des Relais ist ein hoher Strom erforderlich, weshalb ein Transistor erforderlich ist. Hier verwenden wir den S8050.
 
 |sch_relay_1|
 
 |wiring_relay_1|
 
+Eine Diode (Freilaufdiode) dient hier zum Schutz des Stromkreises. Die Kathode ist das Ende mit dem Silberstreifen, das mit der Stromquelle verbunden ist, die Anode ist mit dem Transistor verbunden.
 
+Wenn die Eingangsspannung von Hoch (5V) auf Niedrig (0V) wechselt, ändert der Transistor seinen Zustand von Sättigung zu Sperrzustand und der Strom kann plötzlich nicht mehr durch die Spule fließen.
 
-A diode (continuity diode) is used here to protect the circuit. The cathode is the end with the silver ribbon connected to the power supply, and the anode is connected to the transistor.
+Wird diese Freilaufdiode nicht eingebaut, kann die Spule eine selbstinduzierte elektrische Spannung erzeugen, die mehrere Male höher ist als die Versorgungsspannung. Diese Spannung könnte den Transistor zerstören.
 
-When the voltage input changes from High (5V) to Low (0V), the transistor changes from saturation (amplification, saturation, and cutoff) to cutoff, and there is suddenly no way for current to flow through the coil. 
+Durch das Hinzufügen der Diode wird ein neuer Stromkreis zwischen Spule und Diode gebildet, der durch die in der Spule gespeicherte Energie entladen wird. Dadurch wird übermäßige Spannung vermieden, die Bauteile wie Transistoren im Stromkreis beschädigen könnte.
 
-At this point, if this freewheeling diode does not exist, the coil will produce a self-induced electric potential at both ends that is several times higher than the supply voltage, and this voltage plus the voltage from the transistor power supply is enough to burn it.  
+* :ref:`cpn_diode`
+* `Flyback Diode - Wikipedia <https://de.wikipedia.org/wiki/Freilaufdiode>`_
 
-After adding the diode, the coil and the diode instantly form a new circuit powered by the energy stored in the coil to discharge, thus avoiding the excessive voltage will damage devices such as transistors on the circuit.
+Nach dem Hochladen des Programms hören Sie ein "Klick-Klack"-Geräusch, das vom Kontaktor im Inneren des Relais stammt.
 
-* :ref:`cpn_diode`    
-* `Flyback Diode - Wikipedia <https://en.wikipedia.org/wiki/Flyback_diode>`_
+Anschließend verbinden wir die beiden Enden des Laststromkreises mit den Pins 3 und 6 des Relais.
 
-At this point the program is ready to run, and after running you will hear the "tik tok" sound, which is the sound of the contactor coil inside the relay sucking and breaking.
-
-Then we connect the two ends of the load circuit to pins 3 and 6 of the relay respectively.
-
-..(Take the simple circuit powered by the breadboard power module described in the previous article as an example.)
+..(Nehmen Sie den einfachen, mit dem Breadboard-Strommodul betriebenen Stromkreis aus dem vorherigen Artikel als Beispiel.)
 
 |sch_relay_2|
 
 |wiring_relay_2|
 
-At this point, the relay will be able to control the load circuit on and off.
-
+Jetzt kann das Relais den Laststromkreis ein- und ausschalten.
 
 **Code**
 
-
 .. note::
 
-   * You can open the file ``2.16_relay.ino`` under the path of ``kepler-kit-main/arduino/2.16_relay``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * Sie können die Datei ``2.16_relay.ino`` im Verzeichnis ``kepler-kit-main/arduino/2.16_relay`` öffnen.
+   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+   
+   * Vergessen Sie nicht, die korrekte Platine (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/3be98f10-8223-49f2-8238-2acc53ebbf80/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Nach dem Ausführen des Codes wird das Relais den Betriebszustand des gesteuerten Stromkreises alle zwei Sekunden ändern.
+Sie können eine der Zeilen manuell auskommentieren, um die Zuordnung zwischen Relaisschaltung und Laststromkreis genauer darzustellen.
 
-When the code is run, the relay will switch the operating state of the controlled circuit every two seconds.
-You can manually comment out one of the lines to further clarify the correspondence between the relay circuit and the load circuit.
+**Mehr erfahren**
 
+Pin 3 des Relais ist normalerweise offen und wird nur dann geschlossen, wenn der Kontaktor aktiv ist; Pin 4 ist normalerweise geschlossen und öffnet sich, wenn der Kontaktor aktiviert wird.
+Pin 1 ist mit Pin 6 verbunden und stellt den gemeinsamen Anschluss des Laststromkreises dar.
 
-**Learn More**
-
-Pin 3 of the relay is normally open and only turns on when the contactor coil is operating; pin 4 is normally closed and turns on when the contactor coil is energized.
-Pin 1 is connected to pin 6 and is the common terminal of the load circuit.
-
-By switching one end of the load circuit from pin 3 to pin 4, you will be able to get exactly the opposite operating state.
+Durch das Umschalten eines Endes des Laststromkreises von Pin 3 auf Pin 4 erhalten Sie genau den entgegengesetzten Betriebszustand.
