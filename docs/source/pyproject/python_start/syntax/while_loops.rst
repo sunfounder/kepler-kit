@@ -1,3 +1,5 @@
+.. _py_syntax_while:
+
 While Loops
 ====================
 

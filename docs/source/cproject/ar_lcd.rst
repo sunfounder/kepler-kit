@@ -111,9 +111,9 @@ By calling the library ``LiquidCrystal_I2C.h``, you can easily drive the LCD.
 
 Creates a new instance of the ``LiquidCrystal_I2C`` class that represents a particular LCD attached to your Arduino board.
 
- **lcd_AddR**: The address of the LCD defaults to 0x27.
- **lcd_cols**: The LCD1602 has 16 columns.
- **lcd_rows**: The LCD1602 has 2 rows.
+- **lcd_AddR**: The address of the LCD defaults to 0x27.
+- **lcd_cols**: The LCD1602 has 16 columns.
+- **lcd_rows**: The LCD1602 has 2 rows.
 
 
 .. code-block:: arduino
@@ -164,9 +164,9 @@ Set the cursor position to col,row.
 
 Prints text to the LCD.
 
-**data**: The data to print (char, byte, int, long, or string).
+- **data**: The data to print (char, byte, int, long, or string).
 
-**BASE (optional)**: The base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
+- **BASE (optional)**: The base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
 
 
 
@@ -182,7 +182,7 @@ Upload the codes to the Pico W, the content that you input in the serial monitor
    * Or copy this code into **Arduino IDE**.
 
    
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
     
 

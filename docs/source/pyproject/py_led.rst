@@ -219,7 +219,7 @@ Create a loop, rewrite the program, and it will be what you saw at the beginning
         led.value(0)
         utime.sleep(2)
 
-* :ref:`While Loops`
+* :ref:`py_syntax_while` 
 
 **Learn More**
 

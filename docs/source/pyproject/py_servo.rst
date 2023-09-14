@@ -139,7 +139,7 @@ In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 18
 
 Why is it 0.5~2.5? This is determined by the working mode of the Servo. 
 
-:ref:`Servo`
+:ref:`cpn_servo`
 
 Next, convert the pulse width from period to duty. Since ``duty_u16()`` cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
 
