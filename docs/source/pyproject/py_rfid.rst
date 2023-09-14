@@ -1,54 +1,53 @@
 .. _py_rfid:
 
 
-6.5 Radio Frequency Identification
+6.5 無線周波識別（RFID）
 ================================================
 
-Radio Frequency Identification (RFID) is a technology that uses wireless communication between an object (or tag) and an interrogating device (or reader) to track and identify it. The tag's transmission range is limited to several meters. Readers and tags do not necessarily require a line of sight.
+無線周波識別（RFID）は、オブジェクト（またはタグ）と問い合わせ装置（またはリーダー）との間で無線通信を使用して、それを追跡および識別する技術です。タグの送信範囲は数メートルに限られています。リーダーとタグは、必ずしも視界を必要としません。
 
-An integrated circuit (IC) and an antenna are usually present on most tags. 
-As well as storing information, the microchip manages communication with the reader via radio frequency (RF).
-In passive tags, there is no independent energy source and they rely on an external electromagnetic signal from the reader for power. 
-An active tag is powered by an independent energy source, such as a battery. As a result, they may be more powerful in terms of processing, transmission, and range.
+ほとんどのタグには、通常、集積回路（IC）とアンテナが搭載されています。
+このマイクロチップは、無線周波（RF）を介してリーダーとの通信を管理するだけでなく、情報も保存します。
+パッシブタグには独立したエネルギー源がなく、リーダーからの外部電磁信号に電力供給を依存しています。
+アクティブタグは、バッテリーなどの独立したエネルギー源で動作し、その結果、処理、送信、範囲の面でより高性能かもしれません。
 
 
 * :ref:`cpn_mfrc522`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入すると非常に便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -57,36 +56,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 
-**Schematic**
+**回路図**
 
 |sch_rfid|
 
-**Wiring**
-
-
+**配線**
 
 |wiring_rfid|
 
-**Code**
 
-Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+**コード**
 
-The main function is divided into two:
+ここでは、 ``mfrc522`` フォルダ内のライブラリを使用する必要があります。Pico Wにアップロードされているかどうか確認してください。詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
-* ``6.5_rfid_write.py``: Used to write information to the card (or key).
-* ``6.5_rfid_read.py``: used to read the information in the card (or key)
+主要な関数は二つに分かれています：
 
+* ``6.5_rfid_write.py`` ：カード（またはキー）に情報を書き込むために使用されます。
+* ``6.5_rfid_read.py`` ：カード（またはキー）に格納されている情報を読み取るために使用されます。
 
-Open the ``6.5_rfid_write.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+``kepler-kit-main/micropython`` のパスの下で ``6.5_rfid_write.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「現在のスクリプトを実行」をクリックするか、単にF5を押して実行します。
 
-After running you will be able to type message in the shell and then put the card (or key) close to the MFRC522 module to write the message in.
+実行後、シェルでメッセージを入力し、その後MFRC522モジュールに近づけてメッセージを書き込むことができます。
 
 .. code-block:: python
 
@@ -102,9 +99,9 @@ After running you will be able to type message in the shell and then put the car
 
     write()
 
-Open the ``6.5_rfid_read.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+``kepler-kit-main/micropython`` のパスの下で ``6.5_rfid_read.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「現在のスクリプトを実行」をクリックするか、単にF5を押して実行します。
 
-After running, you will be able to read the message stored in the card (or key).
+実行後、カード（またはキー）に格納されたメッセージを読み取ることができます。
 
 .. code-block:: python
 
@@ -119,8 +116,7 @@ After running, you will be able to read the message stored in the card (or key).
 
     read()
 
-**How it works?**
-
+**どのように動作するか？**
 
 .. code-block:: python
 
@@ -128,17 +124,17 @@ After running, you will be able to read the message stored in the card (or key).
 
     reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
 
-Instantiate ``SimpleMFRC522()`` class.
+``SimpleMFRC522()`` クラスをインスタンス化します。
 
 .. code-block:: python
 
     id, text = reader.read()
 
-This function is used to read card data. If the reading is successful, id and text will be returned.
+この関数はカードデータを読み取るために使用されます。読み取りが成功すると、idとtextが返されます。
 
 .. code-block:: python
 
     id, text = reader.write("text")
 
-This function is used to write information to the card, press **Enter** key to finish writing. 
-``text`` is the information to be written to the card.
+この関数は、カードに情報を書き込むために使用されます。 **Enter** キーを押して書き込みを完了します。
+``text`` はカードに書き込む情報です。

@@ -1,52 +1,42 @@
 .. _cpn_mpr121:
 
-MPR121 Module
+MPR121モジュール
 ===========================
 
 |img_mpr121|
 
+* **3.3V**: 電源供給
+* **IRQ**: アクティブローのオープンコレクタ割り込み出力ピン
+* **SCL**: I2Cクロック
+* **SDA**: I2Cデータ
+* **ADD**: I2Cアドレス選択入力ピン。ADDRピンをVSS、VDD、SDA、SCLラインに接続すると、それぞれのI2Cアドレスは0x5A、0x5B、0x5C、0x5Dになります。
+* **GND**: グラウンド
+* **0~11**: 電極0~11、電極はタッチセンサーです。通常、電極は金属片やワイヤーで構成されています。しかし、ワイヤーの長さや電極が乗っている材料によっては、センサーのトリガーが難しくなる場合があります。そのため、MPR121では電極のトリガーおよびアントリガーに必要な設定を行うことができます。
 
-* **3.3V**: Power supply
-* **IRQ**: Open Collector Interrupt Output Pin, active low
-* **SCL**: I2C Clock
-* **SDA**: I2C Data
-* **ADD**: I2C Address Select Input Pin. Connect the ADDR pin to the VSS, VDD, SDA or SCL line, the resulting I2C addresses are 0x5A, 0x5B, 0x5C and 0x5D respectively
-* **GND**: Ground
-* **0~11**: Electrode 0~11, electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode.
+**MPR121概要**
 
-**MPR121 OVERVIEW**
+MPR121は、初代MPR03xシリーズデバイスのリリース後の第二世代の静電容量式タッチセンサーコントローラーです。MPR121には、内部のインテリジェンスが強化され、主な追加点としては電極数の増加、ハードウェアで設定可能なI2Cアドレス、デバウンスを備えた拡張フィルタリングシステム、および自動構成が組み込まれた完全に独立した電極があります。このデバイスには、多重化されたセンシング入力を使用して近接検出を行うための13番目のシミュレーションされたセンシングチャネルも備えています。
 
-The MPR121 is the second generation capacitive touch sensor controller after
-the initial release of the MPR03x series devices. The MPR121 features
-increased internal intelligence, some of the major additions include an
-increased electrode count, a hardware configurable I2C address, an
-expanded filtering system with debounce, and completely independent
-electrodes with auto-configuration built in. The device also features a 13th
-simulated sensing channel dedicated for near proximity detection using the
-multiplexed sensing inputs.
+* `MPR121データシート <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
 
-* `MPR121 Datasheet <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
+**特長**
 
-**Features**
+* 低消費電力動作
+    • 1.71Vから3.6Vまでの供給動作
+    • 16msのサンプリング間隔での29μAの供給電流
+    • 3μAのストップモード電流
+* 12の静電容量センシング入力
+    • 8つの入力はLEDドライバーおよびGPIOとして多機能
+* 完全なタッチ検出
+    • 各センシング入力に対する自動構成
+    • 各センシング入力に対する自動キャリブレーション
+    • タッチ検出のためのタッチ/リリース閾値およびデバウンス
+* I2Cインターフェース、割り込み出力付き
+* 3mm x 3mm x 0.65mm 20リードQFNパッケージ
+* -40°Cから+85°Cの動作温度範囲
 
-* Low power operation
-    • 1.71 V to 3.6 V supply operation
-    • 29 μA supply current at 16 ms sampling interval period
-    • 3 μA Stop mode current
-* 12 capacitance sensing inputs
-    • 8 inputs are multifunctional for LED driver and GPIO
-* Complete touch detection
-    • Auto-configuration for each sensing input
-    • Auto-calibration for each sensing input
-    • Touch/release threshold and debounce for touch detection
-* I2C interface, with Interrupt output
-* 3 mm x 3 mm x 0.65 mm 20 lead QFN package
-* -40°C to +85°C operating temperature range
+**例**
 
-
-
-**Example**
-
-* :ref:`py_mpr121` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`ar_mpr121` (For Arduino User)
+* :ref:`py_mpr121` (MicroPythonユーザー向け)
+* :ref:`py_fruit_piano` (MicroPythonユーザー向け)
+* :ref:`ar_mpr121` (Arduinoユーザー向け)

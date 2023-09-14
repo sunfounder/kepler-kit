@@ -1,58 +1,55 @@
 .. _ar_lcd:
 
-3.4 - Liquid Crystal Display
+3.4 - 液晶ディスプレイ
 ===============================
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+LCD1602は、文字型の液晶ディスプレイで、同時に32（16×2）文字を表示することができます。
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, 
-they share a common weakness. When they are connected to a controller, 
-multiple IOs will be occupied of the controller which has no so many outer ports. 
-Also it restricts other functions of the controller. 
-Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+ご存知のように、LCDやその他のディスプレイは人間と機械とのインタラクションを大いに豊かにしていますが、一つ共通の弱点があります。
+それは、コントローラーに接続すると、多数のI/Oポートを占有し、コントローラーの他の機能に制限をかけてしまうことです。
+そのため、この問題を解決するためにI2Cバスを備えたLCD1602が開発されました。
 
 * :ref:`cpn_i2c_lcd`
 * `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
 
-
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+ここでは、I2C0インターフェースを使用してLCD1602を制御し、テキストを表示します。
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトには、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個々にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - 部品紹介
+        - 個数
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -61,172 +58,163 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**回路図**
 
 |sch_lcd|
 
-**Wiring**
+**配線**
 
 |wiring_lcd|
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``LiquidCrystal_I2C`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * ファイル ``3.4_liquid_crystal_display.ino`` は、 ``kepler-kit-main/arduino/3.4_liquid_crystal_display`` のパスで開くことができます。
+    * または、このコードを **Arduino IDE** にコピーペーストしてください。
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
+    * ここで使用されているライブラリは ``LiquidCrystal_I2C`` です。それをArduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f464967-5937-473a-8a0d-8e4577c85e7d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+プログラムが実行された後、LCDに順番に2行のテキストが表示され、その後消えます。
 
-.. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+.. note::
+    コードと配線が正しくても、LCDが内容を表示しない場合は、背面のポテンショメータを回してコントラストを上げてみてください。
 
-**How it works?**
+    
+**どのように動作するか？**
 
-By calling the library ``LiquidCrystal_I2C.h``, you can easily drive the LCD. 
+ライブラリ ``LiquidCrystal_I2C.h`` を呼び出すことで、LCDを簡単に制御できます。
 
 .. code-block:: arduino
 
     #include "LiquidCrystal_I2C.h"
 
-**Library Functions**
+**ライブラリ関数**
 
 .. code-block:: arduino
 
     LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
 
-Creates a new instance of the ``LiquidCrystal_I2C`` class that represents a particular LCD attached to your Arduino board.
+Arduinoボードに接続された特定のLCDを表す ``LiquidCrystal_I2C`` クラスの新しいインスタンスを作成します。
 
- **lcd_AddR**: The address of the LCD defaults to 0x27.
- **lcd_cols**: The LCD1602 has 16 columns.
- **lcd_rows**: The LCD1602 has 2 rows.
-
+- **lcd_Addr** : LCDのアドレスはデフォルトで0x27です。
+- **lcd_cols** : LCD1602は16列です。
+- **lcd_rows** : LCD1602は2行です。
 
 .. code-block:: arduino
 
     void init()
 
-Initialize the lcd.
+LCDを初期化します。
 
 .. code-block:: arduino
 
     void backlight()
 
-Turn the (optional) backlight on.
+（オプションの）バックライトをオンにします。
 
 .. code-block:: arduino
 
     void nobacklight()
 
-Turn the (optional) backlight off.
+（オプションの）バックライトをオフにします。
 
 .. code-block:: arduino
 
     void display()
 
-Turn the LCD display on.
+LCDディスプレイをオンにします。
 
 .. code-block:: arduino
 
     void nodisplay()
 
-Turn the LCD display off quickly.
+LCDディスプレイを素早くオフにします。
 
 .. code-block:: arduino
 
     void clear()
 
-Clear display, set cursor position to zero.
+ディスプレイをクリアし、カーソル位置をゼロに設定します。
 
 .. code-block:: arduino
 
     void setCursor(uint8_t col,uint8_t row)
 
-Set the cursor position to col,row.
+カーソル位置をcol,rowに設定します。
 
 .. code-block:: arduino
 
     void print(data,BASE)
 
-Prints text to the LCD.
+テキストをLCDに出力します。
 
-**data**: The data to print (char, byte, int, long, or string).
+- **data**: 出力するデータ（char、byte、int、long、またはstring）。
 
-**BASE (optional)**: The base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
+- **BASE（オプション）**: 数値を出力する際の基数：BIN（2進数）、DEC（10進数）、OCT（8進数）、HEX（16進数）。
 
+**詳しくは**
 
-
-
-**Learn More**
-
-
-Upload the codes to the Pico W, the content that you input in the serial monitor will be printed on the LCD.
+Pico Wにコードをアップロードすると、シリアルモニターで入力した内容がLCDに表示されます。
 
 .. note::
 
-   * You can open the file ``3.4_liquid_crystal_display_2.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display_2``. 
-   * Or copy this code into **Arduino IDE**.
-
+   * ファイル ``3.4_liquid_crystal_display_2.ino`` は、 ``kepler-kit-main/arduino/3.4_liquid_crystal_display_2`` のパスで開くことができます。
+   * または、このコードを **Arduino IDE** にコピーペーストしてください。
    
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/631e0380-d594-4a8b-9bac-eb0688079b97/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-In addition to reading data from the electronic components, the Pico W
-can read the data input in the serial port monitor, and you can
-use ``Serial.read()`` as the controller of the circuit experiment. 
+Pico Wは、電子部品からのデータを読み取るだけでなく、シリアルポートモニターで入力されたデータも読み取れます。
+そのため、 ``Serial.read()`` を回路実験のコントローラーとして使用できます。
 
-Run the serial communication in ``setup()`` and set the data rate to 9600.
+``setup()`` でシリアル通信を実行し、データレートを9600に設定します。
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-The state of serial port monitor is judged in ``loop()``, and the information processing will be carried out only when the data are received.
+``loop()`` でシリアルポートモニターの状態を判断し、データが受信された場合のみ情報処理が行われます。
 
 .. code-block:: arduino
 
     if (Serial.available() > 0){}
 
-Clear the screen.
+画面をクリアします。
 
 .. code-block:: arduino
 
     lcd.clear();
 
-Reads the input value in the serial port monitor and stores it to the variable incomingByte.
+シリアルポートモニターで入力値を読み取り、それを変数incomingByteに格納します。
 
 .. code-block:: arduino
 
     char incomingByte = Serial.read();
 
-Display each character to the LCD and skip the line-feed character.
+各文字をLCDに表示し、改行文字はスキップします。
 
 .. code-block:: arduino
 
     while (Serial.available() > 0) {
         char incomingByte=Serial.read();
-        if(incomingByte==10){break;}// skip the line-feed character
-        lcd.print(incomingByte);// display each character to the LCD  
+        if(incomingByte==10){break;}// 改行文字をスキップ
+        lcd.print(incomingByte);// 各文字をLCDに表示
     } 
-
 
 * `Serial Read <https://www.arduino.cc/reference/en/language/functions/communication/serial/read/>`_

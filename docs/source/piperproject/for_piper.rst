@@ -1,26 +1,25 @@
-For Piper Make
+Piper Makeについて
 ===================
 
-This chapter contains an introduction to Piper Make, how to connect and program Pico W win Piper Make, and several interesting projects to help you get up and running with Piper quickly.
+この章では、Piper Makeの紹介、Piper MakeでPico Wを接続およびプログラムする方法、そしてPiperをすぐに使いこなすためのいくつかの面白いプロジェクトについて説明します。
 
-We recommend that you read this chapter in order.
+この章は順番に読むことをお勧めします。
 
-Piper Make is a super easy and fun way to make projects using Raspberry Pi Pico W. It uses blocks like Scratch, so you don't need any programming experience to use it.
-The underlying principle is to use CircuitPython with auxiliary libraries.
+Piper Makeは、Raspberry Pi Pico Wを使ってプロジェクトを作成するための非常に簡単で楽しい方法です。Scratchのようなブロックを使用しているため、プログラミング経験は必要ありません。
+基本的な原理は、補助ライブラリとともにCircuitPythonを使用することです。
 
 
-**1. Get Started**
+**1. はじめに**
 
 .. toctree::
     :maxdepth: 1
-    
+
     piper_start/set_up_pico
     piper_start/quick_guide_piper
     piper_start/save_import
 
 
-**2. Projects**
-
+**2. プロジェクト**
 
 .. toctree::
     :maxdepth: 2
@@ -38,5 +37,3 @@ The underlying principle is to use CircuitPython with auxiliary libraries.
     2.11_reversing_system
     2.12_smart_fan
     2.13_reaction_game
-
-

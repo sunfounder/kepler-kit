@@ -1,42 +1,42 @@
 .. _per_smart_fan:
 
-2.12 Smart Fan
+2.12 スマートファン
 =============================
 
-Here we make a temperature controlled smart fan with thermistor, TA6586, motor, and power module. The fan rotates automatically when the set temperature is reached.
+このプロジェクトでは、サーミスター、TA6586、モーター、および電源モジュールを使用して、温度制御型のスマートファンを作成します。設定温度に達すると、ファンは自動的に回転します。
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個々にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -45,7 +45,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -60,11 +60,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         - 
     *   - 10
@@ -76,63 +76,58 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Wiring**
+**配線**
 
 |temperature_controlled_fan0|
 
-
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.12_smart_fan.png.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * 以下の画像を参照して、ドラッグアンドドロップでコードを作成できます。
+    * ``kepler-kit-main\piper`` のパスから ``2.12_smart_fan.png.png`` をインポートしてください。詳細なチュートリアルは、 :ref:`import_code_piper` を参照してください。
 
 |temperature_controlled_fan|
 
-
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* Click CONSLE, you will see the current temperature in Celsius.
-* The fan starts spinning when it is above 25 degrees, and stops spinning when it is below 25 degrees.
+* Pico Wに接続した後、 **スタート** ボタンをクリックしてコードが実行されます。
+* CONSLEをクリックすると、現在の温度が摂氏で表示されます。
+* 温度が25度以上の場合、ファンは回転を開始し、25度未満の場合は停止します。
 
 .. note::
 
-    * If the motor is still spinning after you click the Stop button, you need to reset the Run pin on the Pico W with a wire to GND at this time, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * モーターが停止ボタンをクリックした後も回転し続ける場合、この時点でPico WのRunピンをGNDにワイヤーでリセットしてから、再度このワイヤーを抜いてコードを実行する必要があります。
+    * これは、モーターが多くの電流を使用しているため、Pico Wがコンピュータから切断される可能性があるからです。
 
     |wiring_run_reset|
 
-
-**How it Works?**
+**仕組み**
 
 |temperature_controlled_fan1|
 
-The voltage of A0 (GP26) is read and assigned to the variable [Vr].
+A0（GP26）の電圧が読み取られ、変数[Vr]に割り当てられます。
 
 |temperature_controlled_fan2|
 
-
-These calculations convert the thermistor values into centigrade degree. 
-
+これらの計算は、サーミスターの値を摂氏度に変換します。
 
 .. note::
-    Here is the relation between the resistance and temperature: 
+
+    ここでは、抵抗と温度の関係があります：
 
     **RT =RN expB(1/TK – 1/TN)** 
 
-    * RT is the resistance of the NTC thermistor when the temperature is TK. 
-    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
-    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
-    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
-    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+    * RTは、温度がTKの場合のNTCサーミスターの抵抗です。
+    * RNは、定格温度TNでのNTCサーミスターの抵抗です。ここでは、RNの数値は10kです。
+    * TKはケルビン温度で、単位はKです。ここでは、TKの数値は273.15 + 摂氏度です。
+    * TNは、定格ケルビン温度で、単位もKです。ここでは、TNの数値は273.15+25です。
+    * B（ベータ）はNTCサーミスターの材料定数であり、また熱感度指数とも呼ばれ、数値は3950です。
+    * expは指数の略で、底数eは自然数であり、約2.7です。
 
-    Convert this formula **TK=1/(ln(RT/RN)/B+1/TN)** to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+    この式 **TK=1/(ln(RT/RN)/B+1/TN)** を変換して、ケルビン温度から273.15を引くと摂氏度になります。
 
-    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
-
+    この関係式は経験式です。温度と抵抗が有効範囲内である場合のみ正確です。
 
 |temperature_controlled_fan5|
 
-When the temperature is higher than 25 degrees Celsius, set GP14 to ON and GP15 to OFF to make the motor rotate, or you can reverse their levels. When the temperature is lower than 25 degrees Celsius, set GP14 and GP15 both low to stop the motor.
+温度が25度摂氏を超える場合は、GP14をONにしてGP15をOFFに設定してモーターを回転させます。逆に、温度が25度摂氏以下の場合は、GP14とGP15の両方を低く設定してモーターを停止させます。
 

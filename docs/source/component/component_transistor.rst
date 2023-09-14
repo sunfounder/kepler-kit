@@ -1,60 +1,58 @@
 .. _cpn_transistor:
 
-Transistor
+トランジスタ
 ============
 
 |img_NPN&PNP|
 
-Transistor is a semiconductor device that controls current by current. It functions by amplifying weak signal to larger amplitude signal and is also used for non-contact switch. 
+トランジスタは電流によって電流を制御する半導体デバイスです。弱い信号を大きな振幅の信号に増幅する機能を持ち、非接触スイッチとしても使用されます。
 
-A transistor is a three-layer structure composed of P-type and N-type semiconductors. They form the three regions internally. The thinner in the middle is the base region; the other two are both N-type or P-type ones – the smaller region with intense majority carriers is the emitter region, when the other one is the collector region. This composition enables the transistor to be an amplifier. 
-From these three regions, three poles are generated respectively, which are base (b), emitter (e), and collector (c). They form two P-N junctions, namely, the emitter junction and collection junction. The direction of the arrow in the transistor circuit symbol indicates that of the emitter junction. 
+トランジスタはP型とN型の半導体で構成された3層の構造です。これにより内部には3つの領域が形成されます。中央の薄い部分がベース領域であり、他の2つはいずれもN型かP型です。多数キャリアが豊富な小さい領域がエミッタ領域であり、もう一方がコレクタ領域です。この構造によって、トランジスタは増幅器として機能します。
+これら3つの領域からそれぞれ3つの端子が生成され、これがベース(b)、エミッタ(e)、コレクタ(c)です。これらは2つのP-N接合、すなわちエミッタ接合とコレクタ接合を形成します。トランジスタの回路記号の矢印の方向はエミッタ接合の方向を示しています。
 
-* `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
+* `P–N接合 - Wikipedia <https://ja.wikipedia.org/wiki/Pn%E6%8E%A5%E5%90%88>`_
 
-Based on the semiconductor type, transistors can be divided into two groups, the NPN and PNP ones. From the abbreviation, we can tell that the former is made of two N-type semiconductors and one P-type and that the latter is the opposite. See the figure below. 
+半導体のタイプに基づいて、トランジスタはNPNとPNPの2つのグループに分けられます。略称から、前者は2つのN型半導体と1つのP型で作られ、後者はその逆です。下の図を参照してください。
 
 .. note::
-    s8550 is PNP transistor and the s8050 is the NPN one, They look very similar, and we need to check carefully to see their labels.
+    s8550はPNPトランジスタで、s8050はNPNです。見た目は非常によく似ているため、ラベルを注意深く確認する必要があります。
 
 |img_transistor_symbol|
 
-When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+NPNトランジスタにハイレベルの信号が通ると、エネルギーが供給されます。しかし、PNPトランジスタはローレベルの信号で制御されます。両方のタイプのトランジスタは非接触スイッチとして頻繁に使用されます。
 
+* `S8050トランジスタのデータシート <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_
+* `S8550トランジスタのデータシート <https://www.mouser.com/datasheet/2/149/SS8550-118608.pdf>`_
 
-* `S8050 Transistor Datasheet <https://components101.com/asset/sites/default/files/component_datasheet/S8050%20Transistor%20Datasheet.pdf>`_
-* `S8550 Transistor Datasheet <https://www.mouser.com/datasheet/2/149/SS8550-118608.pdf>`_
-
-Put the label side facing us and the pins facing down. The pins from left to right are emitter(e), base(b), and collector(c).
+ラベル面を自分たちに向け、ピンを下に向けます。左から右に、エミッタ(e)、ベース(b)、コレクタ(c)のピンがあります。
 
 |img_ebc|
 
 .. note::
-    * The base is the gate controller device for the larger electrical supply. 
-    * In the NPN transistor, the collector is the larger electrical supply and the emitter is the outlet for that supply, the PNP transistor is just the opposite.
-
+    * ベースは、より大きな電気供給のゲートコントローラーです。
+    * NPNトランジスタでは、コレクタが大きな電気供給であり、エミッタがその供給の出口です。PNPトランジスタはその逆です。
 
 .. Example
 .. -------------------
 
-.. :ref:`Two Kinds of Transistors`
+.. :ref:`2種類のトランジスタ`
 
 
-**Example**
+**例**
 
-* :ref:`py_transistor` (For MicroPython User)
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-* :ref:`ar_transistor` (For Arduino User)
-* :ref:`ar_relay` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_transistor` (MicroPythonユーザー向け)
+* :ref:`py_relay` (MicroPythonユーザー向け)
+* :ref:`py_ac_buz` (MicroPythonユーザー向け)
+* :ref:`py_pa_buz` (MicroPythonユーザー向け)
+* :ref:`py_light_theremin` (MicroPythonユーザー向け)
+* :ref:`py_alarm_lamp` (MicroPythonユーザー向け)
+* :ref:`py_music_player` (MicroPythonユーザー向け)
+* :ref:`py_fruit_piano` (MicroPythonユーザー向け)
+* :ref:`py_reversing_aid` (MicroPythonユーザー向け)
+* :ref:`ar_ac_buz` (Arduinoユーザー向け)
+* :ref:`ar_pa_buz` (Arduinoユーザー向け)
+* :ref:`ar_transistor` (Arduinoユーザー向け)
+* :ref:`ar_relay` (Arduinoユーザー向け)
+* :ref:`per_service_bell` (Piper Makeユーザー向け)
+* :ref:`per_reversing_system` (Piper Makeユーザー向け)
+* :ref:`per_reaction_game` (Piper Makeユーザー向け)

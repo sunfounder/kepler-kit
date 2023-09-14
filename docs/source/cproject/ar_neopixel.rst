@@ -1,54 +1,52 @@
 .. _ar_neopixel:
 
-3.3 WS2812 RGB Strip
-======================
+3.3 WS2812 RGB ストリップ
+==========================
 
-WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
-It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. 
-Also include a precision internal oscillator and a programmable constant current control part, 
-effectively ensuring the pixel point light color height consistent.
+WS2812は、制御回路とRGBチップが5050コンポーネントのパッケージ内に統合されているインテリジェントなLED光源です。
+この中には、インテリジェントなデジタルポートデータラッチと信号整形増幅駆動回路が内蔵されています。
+さらに、高精度の内部オシレーターとプログラム可能な定電流制御部も含まれており、ピクセルポイントの光色の高度な一貫性を効果的に確保します。
 
-The data transfer protocol use single NZR communication mode. 
-After the pixel power-on reset, the DIN port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch, the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. 
-pixel adopt auto reshaping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend on the speed of signal transmission.
-
+データ転送プロトコルは、シングルNZR通信モードを使用します。
+ピクセルが電源投入リセット後、DINポートはコントローラからデータを受信し、最初のピクセルが初期の24ビットデータを収集して内部データラッチに送ります。その他のデータは、内部信号整形増幅回路によって整形され、DOポートを介して次のカスケードピクセルに送信されます。各ピクセルの伝送後、信号は24ビット減少します。
+ピクセルは、自動的に形状を整える伝送技術を採用しており、ピクセルのカスケード数は信号伝送の速度にのみ依存しています。
 
 * :ref:`cpn_ws2812`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+便利なのは、一式を購入することです。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -57,51 +55,49 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
         - 1
         - |link_ws2812_buy|
 
-**Schematic**
+**回路図**
 
 |sch_ws2812|
 
-**Wiring**
+**配線**
 
 |wiring_ws2812|
 
-
 .. warning::
-    One thing you need to pay attention to is current.
+    注目すべき一点は電流です。
 
-    Although the LED Strip with any number of LEDs can be used in Pico W, the power of its VBUS pin is limited.
-    Here, we will use eight LEDs, which are safe.
-    But if you want to use more LEDs, you need to add a separate power supply.
+    Pico Wで任意の数のLEDを使用することは可能ですが、そのVBUSピンの電力は限られています。
+    ここでは、安全な範囲内である8つのLEDを使用します。
+    ただし、より多くのLEDを使用したい場合は、別の電源を追加する必要があります。
+
     
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Adafruit_NeoPixel`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
-
+    * ファイル ``3.3_rgb_led_strip.ino`` を ``kepler-kit-main/arduino/3.3_rgb_led_strip`` のパスで開けます。
+    * または、このコードを **Arduino IDE** にコピーしてください。
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
+    * ここではライブラリ ``Adafruit_NeoPixel`` を使用しています。Arduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/efe5d60f-ea0f-4446-bc5b-30c76197fedf/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+お気に入りの色を選んで、RGB LEDストリップで表示してみましょう！
 
-Let's select some favorite colors and display them on the RGB LED Strip!
+**動作の仕組み**
 
-**How it works?**
-
-Declare a Adafruit_NeoPixel type object,  it is connected to ``PIXEL_PIN``, 
-there are ``PIXEL_COUNT`` RGB LEDs on the strip.
+Adafruit_NeoPixel型のオブジェクトを宣言し、 ``PIXEL_PIN`` に接続されています。
+ストリップには ``PIXEL_COUNT`` 個のRGB LEDがあります。
 
 .. code-block:: arduino
 
@@ -119,55 +115,44 @@ there are ``PIXEL_COUNT`` RGB LEDs on the strip.
     //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
     //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
 
-Initialize strip object and initialize all pixels to 'off'.
+ストリップオブジェクトを初期化し、すべてのピクセルを「オフ」に設定します。
 
-Function
-    * ``strip.begin()`` : Initialize NeoPixel strip object (REQUIRED).
-    * ``strip.setPixelColor(index, color)`` : Set pixel's color (in RAM), the ``color`` must be a single 'packed' 32-bit value.
-    * ``strip.Color(red, green, blue)`` : Color as a single 'packed' 32-bit value.
-    * ``strip.show()`` : Update strip with new contents.
-  
-**Learn More**
+関数
 
-We can randomly generate colors and make a colorful flowing light.
+    * ``strip.begin()`` : NeoPixelストリップオブジェクトを初期化（必須）。
+    * ``strip.setPixelColor(index, color)`` : ピクセルの色を設定（RAM内）。 ``color`` は単一の'パックされた' 32ビット値でなければなりません。
+    * ``strip.Color(red, green, blue)`` : 単一の'パックされた' 32ビット値としての色。
+    * ``strip.show()`` : 新しい内容でストリップを更新。
+
+**さらに学ぶ**
+
+ランダムに色を生成し、カラフルな流れる光を作成することができます。
 
 .. note::
 
-   * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing``. 
-   * Or copy this code into **Arduino IDE**.
-
+   * ファイル ``3.3_rgb_led_strip_flowing.ino`` を ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing`` のパスで開けます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
    
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a3d7c520-b4f8-4445-9454-5fe7d2a24fd9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535).
+または、このWS2812 LEDストリップで色の輪（範囲65535）をサイクルさせることができます。
 
 .. note::
 
-   * You can open the file ``3.3_rgb_led_strip_rainbow.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_rainbow``. 
-   * Or copy this code into **Arduino IDE**.
-
+   * ファイル ``3.3_rgb_led_strip_rainbow.ino`` を ``kepler-kit-main/arduino/3.3_rgb_led_strip_rainbow`` のパスで開けます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
    
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
 .. raw:: html
     
-    <iframe src=https://create.arduino.cc/editor/sunfounder01/47d84804-3560-48fa-86df-49f8e2f6ad63/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>   
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/47d84804-3560-48fa-86df-49f8e2f6ad63/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-* ``strip.getPixelColor(index)`` : Query the color of a previously-set pixel.
-* ``strip.ColorHSV(pixelHue)`` : Convert hue, saturation and value into a packed 32-bit RGB color that can be passed to ``setPixelColor()`` or other RGB-compatible functions.
-* ``strip.gamma32()`` : Provides a "truer" color before assigning to each pixel.
-
-
-
-
+* ``strip.getPixelColor(index)`` : 以前に設定されたピクセルの色をクエリします。
+* ``strip.ColorHSV(pixelHue)`` : 色相、彩度、明度を ``setPixelColor()`` または他のRGB互換関数に渡すことができるパックされた32ビットRGB色に変換します。
+* ``strip.gamma32()`` : 各ピクセルに割り当てる前に"より真実な"色を提供します。
 

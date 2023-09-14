@@ -1,90 +1,79 @@
-Variables
-==========
-Variables are containers used to store data values.
+変数
+========== 
+変数はデータ値を格納するためのコンテナです。
 
-Creating a variable is very simple. You only need to name it and assign it a value. You don't need to specify the data type of the variable when assigning it, because the variable is a reference, and it accesses objects of different data types through assignment.
+変数を作成するのは非常に簡単です。名前を付けて値を割り当てるだけです。変数は参照であり、割り当てを通じて異なるデータ型のオブジェクトにアクセスするので、データ型を指定する必要はありません。
 
-Naming variables must follow the following rules:
+変数の命名には次のルールに従う必要があります：
 
-* Variable names can only contain numbers, letters, and underscores
-* The first character of the variable name must be a letter or underscore
-* Variable names are case sensitive
+* 変数名は数字、文字、アンダースコアしか含めることができません
+* 変数名の最初の文字は文字またはアンダースコアでなければなりません
+* 変数名は大文字と小文字を区別します
 
-Create Variable
-------------------
-There is no command for declaring variables in MicroPython. Variables are created when you assign a value to it for the first time. It does not need to use any specific type declaration, and you can even change the type after setting the variable.
-
-
+変数の作成
+------------------ 
+MicroPythonには変数を宣言するコマンドはありません。初めて値を割り当てたときに変数が作成されます。特定の型宣言を使用する必要はありませんし、変数を設定した後に型を変更することもできます。
 
 .. code-block:: python
 
-    x = 8       # x is of type int
-    x = "lily" # x is now of type str
+    x = 8       # xはint型です
+    x = "lily"  # xは現在str型です
     print(x)
 
 >>> %Run -c $EDITOR_CONTENT
 lily
 
+型変換（キャスティング）
+--------------------------
 
-Casting
--------------
-If you want to specify the data type for the variable, you can do it by casting.
-
-
+変数のデータ型を明示的に指定したい場合は、キャスティングを使用できます。
 
 .. code-block:: python
 
-    x = int(5)    # y will be 5
-    y = str(5)    # x will be '5'
-    z = float(5)  # z will be 5.0
-    print(x,y,z)
+    x = int(5)    # yは5になります
+    y = str(5)    # xは'5'になります
+    z = float(5)  # zは5.0になります
+    print(x, y, z)
 
 >>> %Run -c $EDITOR_CONTENT
 5 5 5.0
 
-Get the Type
--------------------
-You can get the data type of a variable with the `type()` function.
-
-
+型の取得
+------------------- 
+`type()` 関数を使用して変数のデータ型を取得できます。
 
 .. code-block:: python
 
     x = 5
     y = "hello"
     z = 5.0
-    print(type(x),type(y),type(z))
+    print(type(x), type(y), type(z))
 
 >>> %Run -c $EDITOR_CONTENT
 <class 'int'> <class 'str'> <class 'float'>
 
-Single or Double Quotes?
----------------------------
+シングルクォートかダブルクォートか？
+--------------------------------------
 
-In MicroPython, single quotes or double quotes can be used to define string variables.
-
-
+MicroPythonでは、文字列変数を定義するためにシングルクォートまたはダブルクォートを使用できます。
 
 .. code-block:: python
 
     x = "hello"
-    # is the same as
+    # は
     x = 'hello'
+    # と同じです
 
-Case-Sensitive
+大文字・小文字の区別
 ---------------------
-Variable names are case-sensitive.
-
-
+変数名は大文字と小文字を区別します。
 
 .. code-block:: python
 
     a = 5
     A = "lily"
-    #A will not overwrite a
+    # Aはaを上書きしません
     print(a, A)
 
 >>> %Run -c $EDITOR_CONTENT
 5 lily
-
-

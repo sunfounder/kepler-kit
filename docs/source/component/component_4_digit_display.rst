@@ -1,38 +1,29 @@
 .. _cpn_4_dit_7_segment:
 
-4-Digit 7-Segment Display
+4桁の7セグメントディスプレイ
 ==================================
 
-4-Digit 7-segment display consists of four 7- segment displays working
-together.
+4桁の7セグメントディスプレイは、4つの7セグメントディスプレイが連動して動作します。
 
 |img_4-digit-sche|
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+この4桁の7セグメントディスプレイは独立して動作します。人間の視覚の残像の原理を利用して、各7セグメントの文字を高速でループ表示し、連続する文字列を形成します。
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+例えば、"1234"がディスプレイに表示される場合、最初の7セグメントには"1"が、"234"は表示されません。一定時間後、2番目の7セグメントに"2"が表示され、1番目、3番目、4番目の7セグメントは表示されません。このようにして、4つのディジタルディスプレイが順番に表示されます。このプロセスは非常に短い（通常5ms）ため、光の残光効果と視覚残留の原理により、4つの文字が同時に見えます。
 
-|img_4-digit-sche-ca| 
+|img_4-digit-sche-ca|
 
-**Display Codes** 
+**表示コード**
 
-To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
+7セグメントディスプレイ（共通カソード）がどのように数字を表示するかを理解するために、以下の表を作成しました。数字は7セグメントディスプレイに表示される0-Fの数字であり、(DP) GFEDCBAは対応するLEDが0または1に設定されています。例えば、00111111はDPとGが0に設定され、他は1に設定されていることを意味します。そのため、7セグメントディスプレイには数字の0が表示され、HEXコードは16進数に対応します。
 
-.. list-table:: Glyph Code
+.. list-table:: グリフコード
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - 数字
+        - 二進数コード
+        - 16進数コード  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -82,11 +73,10 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
         - 01110001	
         - 0x71
 
+**例**
 
-**Example**
-
-* :ref:`py_74hc_4dig` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`ar_74hc_4dig` (For Arduino User)
+* :ref:`py_74hc_4dig` (MicroPythonユーザー向け)
+* :ref:`py_passage_counter` (MicroPythonユーザー向け)
+* :ref:`py_10_second` (MicroPythonユーザー向け)
+* :ref:`py_traffic_light` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_4dig` (Arduinoユーザー向け)

@@ -1,49 +1,45 @@
-
-
 .. _py_reversing_aid:
 
-7.10 Reversing Aid
+7.10 バックアップ支援
 ======================
 
-This project uses an LED, a buzzer and an ultrasonic module to create a reversing assist system.
-We can put it on a remote control car to simulate the the actual process of reversing a car into a garage.
+このプロジェクトでは、LED、ブザー、および超音波モジュールを使用して、バックアップ支援システムを作成します。
+これをリモートコントロールカーに取り付けて、ガレージに車をバックして入れる実際のプロセスをシミュレーションすることができます。
 
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトには、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+便利なのは、一式をまとめて購入することです。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクからそれぞれ個別に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -60,10 +56,10 @@ You can also buy them separately from the links below.
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 2(1KΩ, 220Ω)
+        - 2(1KΩ、220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -75,51 +71,47 @@ You can also buy them separately from the links below.
         - 1
         - |link_ultrasonic_buy|
 
-**Schematic**
+**回路図**
 
 |sch_reversing_aid|
 
 
-**Wiring**
+**配線**
 
 |wiring_reversing_aid| 
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``7.10_reversing_aid.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下で ``7.10_reversing_aid.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
-
 
     import machine
     import time
     import _thread
 
-
     buzzer = machine.Pin(15, machine.Pin.OUT)
     led = machine.Pin(14, machine.Pin.OUT)
 
-    TRIG = machine.Pin(17,machine.Pin.OUT)
-    ECHO = machine.Pin(16,machine.Pin.IN)
+    TRIG = machine.Pin(17, machine.Pin.OUT)
+    ECHO = machine.Pin(16, machine.Pin.IN)
 
     dis = 100
 
     def distance():
-        timeout=10000*5/340 
+        timeout = 10000 * 5 / 340
         TRIG.low()
         time.sleep_us(2)
         TRIG.high()
         time.sleep_us(10)
         TRIG.low()
-        timeout_start = time.ticks_ms() # For timeout, re-read distance
+        timeout_start = time.ticks_ms()
         while not ECHO.value():
             waiting_time = time.ticks_ms()
             if waiting_time - timeout_start > timeout:
@@ -130,7 +122,7 @@ You can also buy them separately from the links below.
             if waiting_time - timeout_start > timeout:
                 return -1
         time2 = time.ticks_us()
-        during = time.ticks_diff(time2 ,time1)
+        during = time.ticks_diff(time2, time1)
         return during * 340 / 2 / 10000
 
     def ultrasonic_thread():
@@ -149,33 +141,32 @@ You can also buy them separately from the links below.
         time.sleep(0.1)
 
     intervals = 10000000
-    previousMills=time.ticks_ms()
-    time.sleep(1) 
+    previousMills = time.ticks_ms()
+    time.sleep(1)
 
     while True:
-        if dis<0:
+        if dis < 0:
             pass
         elif dis <= 10:
             intervals = 300
         elif dis <= 20:
-            intervals =500
-        elif dis <=50:
-            intervals =1000
+            intervals = 500
+        elif dis <= 50:
+            intervals = 1000
         else:
             intervals = 2000
-        if dis!=-1:
-            print ('Distance: %.2f' % dis)
+        if dis != -1:
+            print('Distance: %.2f' % dis)
             time.sleep_ms(100)
 
-        
-        currentMills=time.ticks_ms()
-        
-        if time.ticks_diff(currentMills,previousMills)>=intervals:
+        currentMills = time.ticks_ms()
+
+        if time.ticks_diff(currentMills, previousMills) >= intervals:
             beep()
-            previousMills=currentMills
-        
-* As soon as the program runs, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you will be able to see the exact distance value on the shell.
-* The LED and buzzer will change the frequency of blinking and beeping depending on the distance value, thus indicating the approach of the obstacle.
-* The :ref:`py_ultrasonic` article mentioned that when the ultrasonic sensor works, the program will be paused.
-* To avoid interfering with the LED or buzzer timing, we created a separate thread for ranging in this example.
+            previousMills = currentMills
+
+* プログラムが動作するとすぐに、超音波センサーは前方の障害物までの距離を連続して読み取ります。シェル上で正確な距離値を確認できます。
+* LEDとブザーは、距離値に応じて点滅とビープの頻度が変わり、障害物が近づいていることを示します。
+* :ref:`py_ultrasonic` の記事で、超音波センサーが動作すると、プログラムが一時停止すると言及されています。
+* この例でLEDやブザーのタイミングに干渉しないように、測定用に別のスレッドを作成しました。
 

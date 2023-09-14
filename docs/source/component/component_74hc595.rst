@@ -5,46 +5,46 @@
 
 |img_74hc595|
 
-The 74HC595 consists of an 8−bit shift register and a storage register with three−state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU.
+74HC595は、8ビットのシフトレジスタと、3状態の並列出力を持つストレージレジスタで構成されています。シリアル入力を並列出力に変換するため、MCUのIOポートを節約することができます。
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* MR（ピン10）がハイレベルで、OE（ピン13）がローレベルの場合、SHcpの立ち上がりエッジでデータが入力され、SHcpの立ち上がりエッジを介してメモリレジスタに移動します。
+* 2つのクロックが一緒に接続されている場合、シフトレジスタは常にメモリレジスタよりも1パルス早いです。
+* メモリレジスタには、シリアルシフト入力ピン（Ds）、シリアル出力ピン（Q）、および非同期リセットボタン（ローレベル）があります。
+* メモリレジスタは、3つの状態で並列の8ビットバスを出力します。
+* OEが有効（ローレベル）の場合、メモリレジスタのデータがバス（Q0〜Q7）に出力されます。
 
-* `74HC595 Datasheet <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
+* `74HC595 データシート <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
 
 |img_74jc595_pin|
 
-Pins of 74HC595 and their functions:
+74HC595のピンとその機能：
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level; 
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level. 
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7**: 8ビットの並列データ出力ピン。直接8つのLEDまたは7セグメントディスプレイの8ピンを制御可能。
+* **Q7'**: シリーズ出力ピン。別の74HC595のDSに接続して、複数の74HC595を直列に接続。
+* **MR**: リセットピン。ローレベルでアクティブ。
+* **SHcp**: シフトレジスタのタイムシーケンス入力。立ち上がりエッジで、シフトレジスタ内のデータが1ビットずつ順次移動します。
+* **STcp**: ストレージレジスタのタイムシーケンス入力。立ち上がりエッジで、シフトレジスタ内のデータがメモリレジスタに移動。
+* **CE**: 出力許可ピン。ローレベルでアクティブ。
+* **DS**: シリアルデータ入力ピン。
+* **VCC**: 正の電源電圧。
+* **GND**: グラウンド。
 
 .. Example
 .. -------------------
 
 .. :ref:`Microchip - :ref:`cpn_74hc595``
 
-**Example**
+**例**
 
-* :ref:`py_74hc_led` (For MicroPython User)
-* :ref:`py_74hc_7seg` (For MicroPython User)
-* :ref:`py_74hc_4dig` (For MicroPython User)
-* :ref:`py_74hc_788bs` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_74hc_led` (For Arduino User)
-* :ref:`ar_74hc_7seg` (For Arduino User)
-* :ref:`ar_74hc_4dig` (For Arduino User)
-* :ref:`ar_74hc_788bs` (For Arduino User)
+* :ref:`py_74hc_led` (MicroPythonユーザー向け)
+* :ref:`py_74hc_7seg` (MicroPythonユーザー向け)
+* :ref:`py_74hc_4dig` (MicroPythonユーザー向け)
+* :ref:`py_74hc_788bs` (MicroPythonユーザー向け)
+* :ref:`py_passage_counter` (MicroPythonユーザー向け)
+* :ref:`py_10_second` (MicroPythonユーザー向け)
+* :ref:`py_traffic_light` (MicroPythonユーザー向け)
+* :ref:`py_bubble_level` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_led` (Arduinoユーザー向け)
+* :ref:`ar_74hc_7seg` (Arduinoユーザー向け)
+* :ref:`ar_74hc_4dig` (Arduinoユーザー向け)
+* :ref:`ar_74hc_788bs` (Arduinoユーザー向け)

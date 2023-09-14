@@ -1,63 +1,60 @@
 .. _py_pot:
 
-2.11 Turn the Knob
+2.11 ノブを回してみよう
 ===========================
 
-In the previous projects, we have used the digital input on the Pico W.
-For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
+以前のプロジェクトでは、Pico Wのデジタル入力を使用していました。
+たとえば、ボタンでピンのレベルを低（オフ）から高（オン）に変えることができます。これはバイナリの動作状態です。
 
-However, Pico W can receive another type of input signal: analog input.
-It can be in any state from fully closed to fully open, and has a range of possible values.
-The analog input allows the microcontroller to sense the light intensity, sound intensity, temperature, humidity, etc. of the physical world.
+しかし、Pico Wは別のタイプの入力信号、すなわちアナログ入力も受け取ることができます。
+完全に閉じている状態から完全に開いている状態まで、様々な値をとることができます。
+アナログ入力により、マイクロコントローラは物理世界の光強度、音強度、温度、湿度などを感知することができます。
 
-Usually, a microcontroller needs an additional hardware to implement analog input-the analogue-to-digital converter (ADC).
-But Pico W itself has a built-in ADC for us to use directly.
-
+通常、マイクロコントローラにはアナログ入力を実装するための追加ハードウェア、すなわちアナログ-デジタルコンバータ（ADC）が必要です。
+しかし、Pico W自体にはADCが組み込まれているので、直接使用することができます。
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
+Pico Wにはアナログ入力が使用できるGPIOピンが3つあります：GP26、GP27、GP28。つまり、アナログチャンネル0、1、2です。
+さらに、内蔵温度センサに接続された第4のアナログチャンネルもありますが、ここでは紹介しません。
 
-In this project, we try to read the analog value of potentiometer.
+このプロジェクトでは、ポテンショメータのアナログ値を読み取ることに挑戦します。
 
 * :ref:`cpn_potentiometer`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入することは確かに便利です、以下がそのリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+下記のリンクから別々にも購入することができます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -66,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -82,38 +79,34 @@ You can also buy them separately from the links below.
         - |link_potentiometer_buy|
 
 
-**Schematic**
+**回路図**
 
 |sch_pot|
 
-The potentiometer is an analog device and when you turn it in 2 different directions.
+ポテンショメータはアナログデバイスであり、2つの異なる方向に回転させることができます。
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico W wcontains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+ポテンショメータの中央のピンをアナログピンGP28に接続します。Raspberry Pi Pico Wは、マルチチャネル、16ビットのアナログ-デジタルコンバータを搭載しています。これにより、入力電圧が0から動作電圧（3.3V）の間で0から65535の整数値にマッピングされます。したがって、GP28の値の範囲は0から65535です。
 
-The calculation formula is shown below.
+計算式は以下の通りです。
 
     (Vp/3.3V) x 65535 = Ap
 
-Then program the value of GP28 (potentiometer) as the PWM value of GP15 (LED).
-This way you will find that by rotating the potentiometer, the brightness of the LED will change at the same time.
+次に、GP28（ポテンショメータ）の値をGP15（LED）のPWM値としてプログラムします。
+これにより、ポテンショメータを回転させると、LEDの明るさも同時に変化することがわかります。
 
-**Wiring**
-
-
+**配線**
 
 |wiring_pot|
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``2.11_turn_the_knob.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下にある ``2.11_turn_the_knob.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするかF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅にある"MicroPython（Raspberry Pi Pico）"インタプリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -125,28 +118,28 @@ This way you will find that by rotating the potentiometer, the brightness of the
     led.freq(1000)
 
     while True:
-        value=potentiometer.read_u16()
+        value = potentiometer.read_u16()
         print(value)
         led.duty_u16(value)
         utime.sleep_ms(200)
 
-When the program is running, we can see the analog value currently read by the GP28 pin in the shell. 
-Turn the knob, and the value will change from 0 to 65535.
-At the same time, the brightness of the LED will increase as the analog value increases.
+プログラムが動作しているとき、シェルでGP28ピンが現在読み取っているアナログ値を確認できます。
+ノブを回すと、その値は0から65535に変化します。
+同時に、アナログ値が増加するにつれて、LEDの明るさも増加します。
 
-**How it works?**
+**動作原理は？**
 
 .. code-block:: python
 
     potentiometer = machine.ADC(28)
 
-Access the ADC associated with a source identified by id. In this example it is GP28.
+この例では、idによって識別されたソースに関連付けられたADCにアクセスします。この場合、それはGP28です。
 
 .. code-block:: python
 
     potentiometer.read_u16()
 
-Take an analog reading and return an integer in the range 0-65535. The return value represents the raw reading taken by the ADC, scaled such that the minimum value is 0 and the maximum value is 65535.
-
+アナログ読み取りを行い、0〜65535の範囲の整数を返します。返り値は、ADCによって取られた生の読み取り値を表し、最小値が0で最大値が65535になるようにスケーリングされています。
 
 * `machine.ADC - MicroPython Docs <https://docs.micropython.org/en/latest/library/machine.ADC.html>`_
+

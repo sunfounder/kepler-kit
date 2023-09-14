@@ -1,57 +1,53 @@
 .. _py_mpu6050:
 
-6.3 6-axis Motion Tracking
+6.3 6軸モーショントラッキング
 =====================================
 
+MPU-6050は6軸（3軸ジャイロスコープ、3軸加速度計）のモーショントラッキングデバイスです。
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices.
+加速度計は、適切な加速度を測定するツールです。例えば、地球上で静止している加速度計は、地球の重力による上向きの加速度[3]（定義上）を約9.81 m/s²として測定します。
 
+加速度計は、産業や科学で多くの用途があります。例としては、航空機やミサイルの慣性航法システム、タブレットやデジタルカメラの画像を縦に保つためなどがあります。
 
-An accelerometer is a tool that measures proper acceleration.For example, an accelerometer at rest on the surface of the Earth will measure an acceleration due to Earth's gravity, straight upwards[3] (by definition) of g ≈ 9.81 m/s2.
-
-Accelerometers have many uses in industry and science. For example: inertial navigation systems for aircraft and missiles, for keeping images on tablets and digital cameras vertical, etc.
-
-Gyroscopes are used to measure orientation and angular velocity of a device or maintenance.
-Applications of gyroscopes include anti-rollover and airbag systems for automobiles, motion sensing systems for smart devices, attitude stabilization systems for drones, and more.
+ジャイロスコープは、デバイスまたは機器の方向と角速度を測定するために使用されます。
+ジャイロスコープの応用例としては、自動車の反転防止とエアバッグシステム、スマートデバイスのモーションセンシングシステム、ドローンの姿勢安定化システムなどがあります。
 
 * :ref:`cpn_mpu6050`
 
+**必要な部品**
 
-**Required Components**
+このプロジェクトには、以下の部品が必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+全てを一つのキットで購入するのも便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+もちろん、以下のリンクから個々の部品を購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - 項番
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -60,34 +56,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_mpu6050|
 
-
-**Wiring**
+**配線**
 
 |wiring_mpu6050|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``6.3_6axis_motion_tracking.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パス下の ``6.3_6axis_motion_tracking.py`` ファイルを開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある "MicroPython (Raspberry Pi Pico)" インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
+    * このプロジェクトでは ``imu.py`` と ``vector3d.py`` が必要です。Pico Wにアップロードされているか確認してください。詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -104,14 +98,14 @@ You can also buy them separately from the links below.
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
         time.sleep(0.1)
 
-After running the program, you can see the 3-axis accelerometer values and 3-axis gyroscope values cycling through the output.
-At this point you rotate the MPU6050 at random, and these values will appear to change accordingly.
-To make it easier to see the changes, you can comment out one of the print lines and concentrate on another set of data.
+プログラムを実行すると、3軸加速度計の値と3軸ジャイロスコープの値が出力で循環します。
+この時点でMPU6050を自由に回転させると、これらの値もそれに応じて変わるでしょう。
+変更を容易に確認するために、print文の一つをコメントアウトして、他のデータセットに集中することもできます。
 
-**How it works?**
+**仕組みは？**
 
-In the imu library, we have integrated the relevant functions into the ``MPU6050`` class.
-MPU6050 is an I2C module and requires a set of I2C pins to be defined for initialization.
+imuライブラリでは、関連する関数を ``MPU6050`` クラスに統合しています。
+MPU6050はI2Cモジュールであり、初期化のためにI2Cピンのセットを定義する必要があります。
 
 .. code-block:: python
 
@@ -121,7 +115,7 @@ MPU6050 is an I2C module and requires a set of I2C pins to be defined for initia
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-Subsequently, you will be able to get real-time acceleration and angular velocity values in ``mpu.accel.x``, ``mpu.accel.y``, ``mpu.accel.z``, ``mpu.gyro.x``, ``mpu.gyro.y``, ``mpu.gyro.z``.
+その後、 ``mpu.accel.x`` 、 ``mpu.accel.y`` 、 ``mpu.accel.z`` 、 ``mpu.gyro.x`` 、 ``mpu.gyro.y`` 、 ``mpu.gyro.z`` でリアルタイムの加速度と角速度の値を取得できます。
 
 .. code-block:: python
 

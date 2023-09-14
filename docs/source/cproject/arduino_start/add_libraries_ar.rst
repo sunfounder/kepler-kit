@@ -1,52 +1,40 @@
-
-1.4 Install libraries (Important)
+1.4 ライブラリのインストール（重要）
 ======================================
 
-**Download the Code**
+**コードをダウンロードする**
 
-Download the relevant code from the link below.
+以下のリンクから関連するコードをダウンロードしてください。
 
-* :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+* :download:`SunFounder Kepler Kitのサンプル <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* または、 `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ でコードを確認できます。
 
 .. _add_libraries_ar:
 
-Add libraries
+ライブラリを追加
 ----------------------
-A library, gathering some function definitions and header files, usually
-contains two files: .h (header file, including function statement, Macro
-definition, constructor definition, etc.) and .cpp (execution file, with
-function implementation, variable definition, and so on). When you need
-to use a function in some library, you just need to add a header file
-(e.g. #include <dht.h>), and then call that function. This can make your
-code more concise. If you don't want to use the library, you can also
-write that function definition directly. Though as a result, the code
-will be long and inconvenient to read.
+ライブラリは、いくつかの関数定義やヘッダーファイルを集めたもので、通常は .h（ヘッダーファイル、関数の宣言、マクロの定義、コンストラクタの定義など）と .cpp（実行ファイル、関数の実装、変数の定義など）の2つのファイルで構成されています。何らかのライブラリの関数を使用する必要がある場合は、ヘッダーファイル（例：#include <dht.h>）を追加し、その関数を呼び出すだけです。これにより、コードが簡潔になります。ライブラリを使用したくない場合は、その関数定義を直接書くこともできます。ただし、その結果としてコードが長くなり、読みにくくなる可能性があります。
 
-Some libraries are already built in the Arduino IDE, when some others
-may need to be added. So now let's see how to add them.
+Arduino IDEには既にいくつかのライブラリが組み込まれていますが、追加する必要があるものもあります。それでは、ライブラリを追加する方法を見ていきましょう。
 
-
-#. Open the Arduino IDE and go to **Sketch** -> **Include Library** -> **Add .ZIP Library**.
+#. Arduino IDEを開き、 **スケッチ** -> **ライブラリをインクルード** -> **.ZIPライブラリを追加** へ進んでください。
 
    .. image:: img/a2dp_add_zip.png
 
-#. Navigate to the directory where the library files are located, such as the ``kepler-kit-main\arduino\libraries`` folder, and select the desired library file, like ``LiquidCrystal_I2C.zip``. Then, click **Open**.
+#. ライブラリファイルが保存されているディレクトリ（例： ``kepler-kit-main\arduino\libraries`` フォルダ）へ移動し、必要なライブラリファイル（例： ``LiquidCrystal_I2C.zip`` ）を選択して、 **開く** をクリックしてください。
 
    .. image:: img/a2dp_choose.png
 
-#. After a short while, you will receive a notification indicating a successful installation.
+#. しばらくすると、インストールが成功したことを示す通知が表示されます。
 
    .. image:: img/a2dp_success.png
 
-#. Repeat the same process to add the other libraries.
-
+#. 他のライブラリも同様の手順で追加してください。
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   インストールされたライブラリはArduino IDEのデフォルトのライブラリディレクトリ、通常は ``C:\Users\xxx\Documents\Arduino\libraries`` に保存されます。
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   ライブラリディレクトリが異なる場合は、 **ファイル** -> **環境設定** で確認できます。
 
       .. image:: img/install_lib1.png

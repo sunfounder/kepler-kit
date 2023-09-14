@@ -1,47 +1,43 @@
 .. _py_ultrasonic:
 
-6.1 Measuring Distance
+6.1 距離の測定
 ======================================
 
-The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
+超音波センサーモジュールは、物体までの距離を決定するために、ソナーおよびレーダーシステムの原理に基づいて動作します。
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+このプロジェクトには、以下のコンポーネントが必要です。
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Keplerキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+    *   - S/N
+        - コンポーネント
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -50,39 +46,39 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_ultrasonic|
 
-**Wiring**
+**配線**
 
 |wiring_ultrasonic|
 
-**Code**
+
+**コード**
 
 .. note::
 
-    * Open the ``6.1_measuring_distance.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下にある ``6.1_measuring_distance.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面右下隅の「MicroPython（Raspberry Pi Pico）」インタプリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
     import machine
     import time
 
-    TRIG = machine.Pin(17,machine.Pin.OUT)
-    ECHO = machine.Pin(16,machine.Pin.IN)
+    TRIG = machine.Pin(17, machine.Pin.OUT)
+    ECHO = machine.Pin(16, machine.Pin.IN)
 
     def distance():
         TRIG.low()
@@ -96,20 +92,20 @@ You can also buy them separately from the links below.
         while ECHO.value():
             pass
         time2 = time.ticks_us()
-        during = time.ticks_diff(time2,time1)
+        during = time.ticks_diff(time2, time1)
         return during * 340 / 2 / 10000
 
     while True:
         dis = distance()
-        print ('Distance: %.2f' % dis)
+        print('Distance: %.2f' % dis)
         time.sleep_ms(300)
 
-Once the program is running, the Shell will print out the distance of the ultrasonic sensor from the obstacle ahead.
+プログラムが動作すると、シェルは前方の障害物からの超音波センサーの距離を出力します。
 
-**How it works?**
+**動作原理は？**
 
-Ultrasonic sensors produce high frequency sound waves (ultrasonic waves) emitted by the transmitting probe. When this ultrasonic wave hits an object, it is reflected as an echo, which is detected by the receiving probe. By calculating the time from transmission to reception, the distance can be calculated.
-Based on this principle, the function ``distance()`` can be derived.
+超音波センサーは、送信プローブによって発生された高周波の音波（超音波）を生成します。この超音波が物体に衝突すると、エコーとして反射され、受信プローブによって検出されます。送信から受信までの時間を計算することで、距離を求めることができます。
+この原理に基づいて、 ``distance()`` 関数が導出されます。
 
 .. code-block:: python
 
@@ -125,10 +121,10 @@ Based on this principle, the function ``distance()`` can be derived.
         while ECHO.value():
             pass
         time2 = time.ticks_us()
-        during = time.ticks_diff(time2,time1)
+        during = time.ticks_diff(time2, time1)
         return during * 340 / 2 / 10000
 
-* Among them, the first few lines are used to transmit a 10us ultrasonic wave.
+* その中で、最初の数行は10usの超音波を送信するために使用されます。
 
 .. code-block:: python
 
@@ -138,7 +134,7 @@ Based on this principle, the function ``distance()`` can be derived.
     time.sleep_us(10)
     TRIG.low()
 
-* Then, the program is paused and the current time is recorded when the ultrasonic wave has been emitted.
+* 次に、超音波が発射された瞬間にプログラムが一時停止し、現在の時間が記録されます。
 
 .. code-block:: python
 
@@ -146,7 +142,7 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time1 = time.ticks_us()
 
-* Subsequently, the program is suspended again. After the echo is received, the current time is recorded once again.
+* その後、プログラムは再び一時停止します。エコーが受信された後、再度現在の時間が記録されます。
 
 .. code-block:: python
 
@@ -154,12 +150,12 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time2 = time.ticks_us()
 
-* Finally, based on the time difference between the two recordings, the speed of sound (340m/s) is multiplied by the time to obtain double the distance between the ultrasonic module and the obstacle (i.e., one round trip of the ultrasonic waves from the module to the obstacle). Converting the units to centimeters gives us the return value we need.
+* 最後に、2つの記録の時間差に音速（340m/s）を掛けて、超音波モジュールと障害物の間の距離（すなわち、モジュールから障害物までの超音波の往復）を2倍にします。単位をセンチメートルに変換すると、必要な戻り値が得られます。
 
 .. code-block:: python
 
-        during = time.ticks_diff(time2,time1)
+        during = time.ticks_diff(time2, time1)
         return during * 340 / 2 / 10000
 
-Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
+注意：超音波センサーが動作している間、プログラムは一時停止するため、複雑なプロジェクトを作成する際には遅延が発生する可能性があります。
 

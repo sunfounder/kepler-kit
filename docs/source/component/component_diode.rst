@@ -1,47 +1,44 @@
 .. _cpn_diode:
 
-Diode
+ダイオード
 =================
 
 |img_diode|
 
-A diode is an electronic component with two electrodes. It allows current to flow in only one direction, which is often called the "Rectifying" function.
-Thus, a diode can be thought of as an electronic version of a check valve.
+ダイオードは、二つの電極を持つ電子部品です。電流は一方向にしか流れないため、この機能はしばしば「整流」と呼ばれます。
+そのため、ダイオードは一種の電子版の逆止弁と考えることができます。
 
+ダイオードの二つの端子は極性があり、正の端子をアノード、負の端子をカソードと呼びます。
+カソードは通常、銀製であるか、色の帯があります。
+電流の流れる方向を制御するのがダイオードの重要な特性であり、アノードからカソードに向かって電流が流れます。ダイオードの動作は逆止弁の動作に似ています。ダイオードの最も重要な特性の一つは、非線形の電流電圧特性です。アノードに高い電圧がかかると、アノードからカソードに電流が流れ、このプロセスは順方向バイアスと呼ばれます。しかし、カソードに高い電圧がかかると、ダイオードは電気を通さず、このプロセスは逆方向バイアスと呼ばれます。
 
-The two terminals of a diode are polarized, with the positive end called anode and the negative end called cathode. 
-The cathode is usually made of silver or has a color band. 
-Controlling the direction of current flow is one of the key features of diodes — the current in a diode flows from anode to cathode. The behavior of a diode is similar to the behavior of a check valve. One of the most important characteristics of a diode is the non-linear current voltage. If higher voltage is connected to the anode, then current flows from anode to cathode, and the process is known as forward bias. However, if the higher voltage is connected to the cathode, then the diode does not conduct electricity, and the process is called reverse bias.
+その一方向の導電性のために、ダイオードは複雑な電子回路にほぼ必ず用いられます。ダイオードは最初に作成された半導体デバイスの一つで、その用途は広範です。
 
-Because of its unidirectional conductivity, the diode is used in almost all electronic circuits of some complexity. It was one of the first semiconductor devices to be created, and its applications are widespread.
+しかし、実際にはダイオードは完璧なオンオフ方向性を持っているわけではなく、むしろ特定のダイオード技術によって決まるより複雑な非線形電子特性を持っています。
 
-However in reality diodes do not exhibit such perfect on and off directionality, but rather more complex non-linear electronic characteristics - which are determined by the specific type of diode technology.
+ダイオードはp型半導体とn型半導体によって形成されたp-n接合であり、その界面の両側に空間電荷層が形成され、自己生成された電場があります。これは、p-n接合の両側のキャリア濃度の差による拡散電流と、自己生成された電場によるドリフト電流が等しいため、外部電圧がかかっていないときに電気的に平衡状態にある。順方向バイアスが発生すると、外部電場と自己生成された電場との相互抑制により、キャリアの拡散電流が増加し、順方向電流（すなわち、導電性の理由）が発生します。逆方向バイアスが発生すると、外部電場と自己生成された電場がさらに強化され、逆方向バイアス電圧の値に依存しない一定の逆方向飽和電流I0が形成されます（これが非導電性の理由です）。
+逆方向バイアス電圧がある程度まで高くなると、p-n接合の空間電荷層内の電場強度が臨界値に達し、キャリアの増倍プロセスが発生し、多数の電子-ホール対が生成され、逆方向のブレークダウン電流が大きくなります。これをダイオードのブレークダウン現象と呼びます。
 
-A diode is a p-n junction formed by a p-type semiconductor and an n-type semiconductor, with a space charge layer formed on both sides at its interface and a self-built electric field, which is in electrical equilibrium when no applied voltage is present because the diffusion current due to the difference in carrier concentration between the two sides of the p-n junction and the drift current due to the self-built electric field are equal. When the forward voltage bias is generated, the mutual suppression of the external electric field and the self-built electric field increases the diffusion current of the carriers causing the forward current (that is, the reason for the conductivity). When the reverse voltage bias is generated, the external electric field and the self-built electric field are further strengthened to form a reverse saturation current I0 in a certain reverse voltage range independent of the value of the reverse bias voltage (which is the reason for non-conductivity).
-When the applied reverse voltage is high to a certain extent, the electric field strength in the p-n junction space charge layer reaches a critical value to produce a multiplication process of carriers, generating a large number of electron-hole pairs, resulting in a large value of the reverse breakdown current, called the diode breakdown phenomenon.
+**1. 順方向特性**
 
-**1. Forward Characteristic**
+外部から順方向電圧がかかった場合、順方向特性の初めでは順方向電圧は非常に小さく、p-n接合の電場の遮断効果を克服できません。順方向電流はほぼゼロで、この部分をデッドゾーンと呼びます。
+このダイオードが導電しない順方向電圧をデッドバンド電圧と呼びます。順方向電圧がデッドバンド電圧より大きくなると、p-n接合の電場が克服され、ダイオードは順方向に導電します。電流は電圧とともに急増します。
+通常の使用電流範囲内で、ダイオードの端子電圧は導通中ほぼ一定であり、この電圧をダイオードの順方向電圧と呼びます。
 
-When the external forward voltage is applied, in the beginning of the forward characteristic, the forward voltage is very small, not enough to overcome the blocking effect of the electric field in the p-n junction, the forward current is almost zero, this section is called the dead zone.
-This forward voltage that does not allow the diode to conduct is called the deadband voltage. When the forward voltage is greater than the deadband voltage, p-n junction electric field is overcome, the diode forward conduction, the current increases with the voltage and rises rapidly.
-In the normal use of the current range, the terminal voltage of the diode during conduction remains almost constant, this voltage is called the forward voltage of the diode.
+**2. 逆方向特性**
 
-**2. Reverse Characteristic**
+逆方向電圧がかかり、一定の範囲を超えない場合、ダイオードを通る電流はわずかなキャリアが漂流運動によって形成される逆方向電流です。
+逆方向電流は非常に小さく、ダイオードは遮断状態にあります。この逆方向電流は逆方向飽和電流または漏れ電流とも呼ばれ、温度に大きく影響を受けます。
 
-When the applied reverse voltage, and does not exceed a certain range, the current through the diode is a few carriers drifting movement formed by the reverse current.
-As the reverse current is very small, the diode is in the cutoff state. This reverse current is also known as reverse saturation current or leakage current, and is greatly influenced by temperature.
+**3. ブレークダウン**
 
-**3. Breakdown**
+逆方向電圧が一定の値を超えると、逆方向電流は急激に増加し、これを電気的ブレークダウンと呼びます。
+電気的ブレークダウンを引き起こす臨界電圧を逆方向ブレークダウン電圧と呼びます。電気的ブレークダウンが発生すると、ダイオードは一方向の導電性を失います。
+したがって、逆方向電圧が高すぎる場合は、ダイオードの使用を避ける必要があります。
 
-When the applied reverse voltage exceeds a certain value, the reverse current will suddenly increase, a phenomenon known as electrical breakdown.
-The critical voltage that causes electrical breakdown is called the reverse breakdown voltage, the diode will loses its unidirectional conductivity at the time of electrical breakdown.
-Therefore, the use of the diode should be avoided when the applied reverse voltage is too high.
+初期のダイオードは「キャットウィスカー」結晶と真空管（「熱電子管」とも呼ばれる）で構成されていました。今日の最も一般的なダイオードは、シリコンやゲルマニウムなどの半導体材料を使用しています。
 
-
-Early diodes consisted of "Cat's Whisker" Crystals and Vacuum tubes (also called "Thermionic Valves"). Most of today's most common diodes use semiconductor materials such as silicon or germanium.
-
-* `P–N junction - Wikipedia <https://en.wikipedia.org/wiki/P-n_junction>`_
+* `P–N接合 - Wikipedia <https://ja.wikipedia.org/wiki/Pn%E6%8E%A5%E5%90%88>`_
  
-* `Diode - Wikipedia <https://en.wikipedia.org/wiki/Diode>`_
-
+* `ダイオード - Wikipedia <https://en.wikipedia.org/wiki/Diode>`_
 

@@ -5,41 +5,38 @@ I2C LCD1602
 
 |i2c_lcd1602|
 
-* **GND**: Ground
-* **VCC**: Voltage supply, 5V.
-* **SDA**: Serial data line. Connect to VCC through a pullup resistor.
-* **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
+* **GND**: グラウンド
+* **VCC**: 電源供給、5V
+* **SDA**: シリアルデータライン。プルアップ抵抗を通してVCCに接続。
+* **SCL**: シリアルクロックライン。プルアップ抵抗を通してVCCに接続。
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, they share a common weakness. When they are connected to a controller, multiple IOs will be occupied of the controller which has no so many outer ports. Also it restricts other functions of the controller. 
+LCDやその他のディスプレイは、人間と機械の対話を豊かにするものの、一般的には欠点があります。それは、コントローラに接続すると多くのIOポートを占有し、その結果、コントローラの他の機能が制限されてしまうことです。
 
-Therefore, LCD1602 with an I2C module is developed to solve the problem. The I2C module has a built-in PCF8574 I2C chip that converts I2C serial data to parallel data for the LCD display.        
+この問題を解決するために、I2Cモジュールを備えたLCD1602が開発されました。I2Cモジュールは、内蔵されたPCF8574 I2Cチップを使用して、I2CシリアルデータをLCDディスプレイの並列データに変換します。
 
-* `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
+* `PCF8574 データシート <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
 
-**I2C Address**
+**I2Cアドレス**
 
-The default address is basically 0x27, in a few cases it may be 0x3F.
+デフォルトのアドレスは基本的に0x27で、稀に0x3Fである場合もあります。
 
-Taking the default address of 0x27 as an example, the device address can be modified by shorting the A0/A1/A2 pads; in the default state, A0/A1/A2 is 1, and if the pad is shorted, A0/A1/A2 is 0.
+デフォルトのアドレスが0x27の場合を例にすると、A0/A1/A2パッドを短絡することでデバイスのアドレスを変更できます。デフォルト状態ではA0/A1/A2は1で、パッドが短絡されると、A0/A1/A2は0になります。
 
 |i2c_address|
 
-**Backlight/Contrast**
+**バックライト/コントラスト**
 
-Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back is used to adjust the contrast (the ratio of brightness between the brightest white and the darkest black).
-
+バックライトはジャンパーキャップで有効にでき、ジャンパーキャップを外すとバックライトを無効にできます。背面の青いポテンショメータは、コントラスト（最も明るい白と最も暗い黒の明るさの比率）を調整するために使用されます。
 
 |back_lcd1602|
 
-* **Shorting Cap**: Backlight can be enabled by this cap, unplugg this cap to disable the backlight.
-* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
+* **ショーティングキャップ**: このキャップでバックライトを有効にでき、キャップを外すとバックライトを無効にできます。
+* **ポテンショメータ**: これはコントラスト（表示されるテキストの明瞭度）を調整するために使用され、時計回りに回すと増加し、反時計回りに回すと減少します。
 
+**例**
 
+* :ref:`py_lcd` （MicroPythonユーザー向け）
+* :ref:`py_room_temp` （MicroPythonユーザー向け）
+* :ref:`py_guess_number` （MicroPythonユーザー向け）
+* :ref:`ar_lcd` （Arduinoユーザー向け）
 
-
-**Example**
-
-* :ref:`py_lcd` (For MicroPython User)
-* :ref:`py_room_temp` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`ar_lcd` (For Arduino User)

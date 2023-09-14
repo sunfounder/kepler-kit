@@ -1,53 +1,50 @@
 .. _py_pa_buz:
 
-3.2 Custom Tone
+3.2 カスタムトーン
 ==========================================
 
+前回のプロジェクトではアクティブブザーを使用しましたが、今回はパッシブブザーを使用します。
 
-We have used active buzzer in the previous project, this time we will use passive buzzer.
+アクティブブザーと同様に、パッシブブザーも電磁誘導の現象を利用して動作します。違いは、パッシブブザーには振動源がないため、直流信号を使っても音を出さない点です。
+しかし、これによりパッシブブザーは自分自身の振動周波数を調整し、"ド、レ、ミ、ファ、ソ、ラ、シ"などの異なる音を出すことができます。
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
-But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
+パッシブブザーでメロディを鳴らしましょう！
 
-Let the passive buzzer emit a melody!
+* :ref:`cpn_buzzer`
 
-* :ref:`Buzzer`
+**必要な部品**
 
-**Required Components**
+このプロジェクトで必要な部品は以下の通りです。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入すると非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - 部品
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -56,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -67,45 +64,38 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
-**Schematic**
+**回路図**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+GP15出力が高い場合、1Kの電流制限抵抗を経て（トランジスタを保護するため）、S8050（NPNトランジスタ）が導通し、ブザーが鳴ります。
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+S8050（NPNトランジスタ）の役割は、電流を増幅してブザーの音を大きくすることです。実際、GP15に直接ブザーを接続することもできますが、ブザーの音が小さくなることに気づくでしょう。
 
-
-**Wiring**
+**配線**
 
 |img_buzzer|
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back).
+キットには2つのブザーが含まれていますが、ここではパッシブブザー（背面に露出したPCBがあるもの）を使用します。
 
-The buzzer needs a transistor to work, here we use S8050.
+ブザーはトランジスタが必要なため、ここではS8050を使用します。
 
 |wiring_buzzer|
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the positive pin of the buzzer to the positive power bus.
-.. #. Connect the cathode pin of the buzzer to the **collector** lead of the transistor.
-.. #. Connect the **base** lead of the transistor to the GP15 pin through a 1kΩ resistor.
-.. #. Connect the **emitter** lead of the transistor to the negative power bus.
 
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``3.2_custom_tone.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下にある ``3.2_custom_tone.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするか、単にF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -114,38 +104,38 @@ The buzzer needs a transistor to work, here we use S8050.
 
     buzzer = machine.PWM(machine.Pin(15))
 
-    def tone(pin,frequency,duration):
+    def tone(pin, frequency, duration):
         pin.freq(frequency)
         pin.duty_u16(30000)
         utime.sleep_ms(duration)
         pin.duty_u16(0)
 
-    tone(buzzer,440,250)
+    tone(buzzer, 440, 250)
     utime.sleep_ms(500)
-    tone(buzzer,494,250)
+    tone(buzzer, 494, 250)
     utime.sleep_ms(500)
-    tone(buzzer,523,250)
+    tone(buzzer, 523, 250)
 
 
-**How it works?**
+**動作原理**
 
-If the passive buzzer given a digital signal, it can only keep pushing the diaphragm without producing sound.
+パッシブブザーにデジタル信号が与えられると、振動板を押し続けるだけで音は発生しません。
 
-Therefore, we use the ``tone()`` function to generate the PWM signal to make the passive buzzer sound.
+したがって、 ``tone()`` 関数を使用して、PWM信号を生成し、パッシブブザーに音を出させます。
 
-This function has three parameters:
+この関数には3つのパラメーターがあります：
 
-* **pin**, the GPIO pin that controls the buzzer.
-* **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-* **Duration**, the duration of the tone.
+* **pin** 、ブザーを制御するGPIOピン。
+* **frequency** 、ブザーの音程は周波数で決まり、周波数が高いほど音程も高くなります。
+* **duration** 、音の持続時間。
 
-We use the ``duty_u16()`` function to set the duty cycle to 30000(about 50%). It can be other numbers, and it only needs to generate a discontinuous electrical signal to oscillate.
+``duty_u16()`` 関数を使用して、デューティーサイクルを30000（約50%）に設定します。他の数値でも構いませんが、振動させるためには不連続な電気信号を生成する必要があります。
 
 
 
-**Learn More**
+**詳細**
 
-We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
+ピアノの基本周波数に従って特定の音をシミュレートし、完全な楽曲を演奏することができます。
 
 * `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
 
@@ -153,12 +143,11 @@ We can simulate the specific tone according to the fundamental frequency of the 
 
 .. note::
 
-    * Open the ``3.2_custom_tone_2.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下にある ``3.2_custom_tone_2.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするか、単にF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -170,16 +159,17 @@ We can simulate the specific tone according to the fundamental frequency of the 
     NOTE_A3 = 220
     NOTE_B3 = 247
 
-    melody =[NOTE_C4,NOTE_G3,NOTE_G3,NOTE_A3,NOTE_G3,NOTE_B3,NOTE_C4]
+    melody = [NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, NOTE_B3, NOTE_C4]
 
     buzzer = machine.PWM(machine.Pin(15))
 
-    def tone(pin,frequency,duration):
+    def tone(pin, frequency, duration):
         pin.freq(frequency)
         pin.duty_u16(30000)
         utime.sleep_ms(duration)
         pin.duty_u16(0)
 
     for note in melody:
-        tone(buzzer,note,250)
+        tone(buzzer, note, 250)
         utime.sleep_ms(150)
+

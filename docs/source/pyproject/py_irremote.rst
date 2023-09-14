@@ -1,53 +1,50 @@
 .. _py_irremote:
 
-
-6.4 IR Remote Control
+6.4 IRリモートコントロール
 ================================
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
+消費者向け電子機器では、テレビやDVDプレーヤーなどの機器を操作するためにリモートコントロールが使用されます。
+場合によっては、リモートコントロールによって手の届かない場所にある機器、例えばセントラルエアコンを操作することもあります。
 
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+IRレシーバーは、赤外線を受信するように調整されたフォトセルを搭載したコンポーネントです。
+このタイプのレシーバーはほぼ常にリモートコントロールの検出に使用されています。すべてのテレビやDVDプレーヤーの前面には、クリッカーからのIR信号を受信するためのものがあります。
+リモートコントロールの内部には、テレビをオン/オフにしたりチャンネルを変更するためのIRパルスを発生する対応するIR LEDがあります。
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+便利なのは、全体のキットを購入することです。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - キット内容
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント	
+        - 個数
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -56,34 +53,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**回路図**
 
 |sch_irrecv|
 
-**Wiring**
-
+**配線**
 
 |wiring_irrecv|
 
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``6.4_ir_remote_control.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス内の ``6.4_ir_remote_control.py`` ファイルを開くか、このコードをThonnyにコピペして、"Run Current Script"をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の "MicroPython (Raspberry Pi Pico)" インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
     
-    * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * ここでは ``ir_rx`` フォルダ内のライブラリが必要です。Picoにアップロードされているか確認してください。詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
 
 .. code-block:: python
@@ -156,13 +151,12 @@ You can also buy them separately from the links below.
     except KeyboardInterrupt:
         ir.close()
 
+この新しいリモートコントロールには、バッテリーを隔離するためのプラスチック片が最後にあります。それを使用する際には、このプラスチック片を引き抜いてリモートを起動する必要があります。
+プログラムが実行されているとき、リモートコントロールのボタンを押すと、Shellに押したキーが表示されます。
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Shell will print out the key you pressed.
+**仕組みは？**
 
-**How it works?**
-
-This program looks slightly complicated, but it actually does the basic functions of the IR receiver with just a few lines.
+このプログラムは少し複雑に見えますが、実際はIRレシーバーの基本機能を数行で実装しています。
 
 .. code-block:: python
 
@@ -181,15 +175,15 @@ This program looks slightly complicated, but it actually does the basic function
 
     ir = NEC_8(pin_ir, callback)  # Instantiate receiver
 
-Here an ``ir`` object is instantiated, which reads the signals acquired by the IR receiver at any time.
+ここでは ``ir`` オブジェクトがインスタンス化され、IRレシーバーによって取得された信号を常に読み取ります。
 
-The result will be recorded in ``data`` of the callback function.
+結果はコールバック関数の ``data`` に記録されます。
 
-* `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
+* `コールバック関数 - ウィキペディア <https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%90%E3%83%83%E3%82%AF_(%E6%83%85%E5%A0%B1%E5%B7%A5%E5%AD%A6)>`_
 
-If the IR receiver receives duplicate values (e.g. pressing a key and not releasing it), then data < 0 and this data needs to be filtered.
+IRレシーバーが重複値（例：キーを押して離さない場合）を受け取ると、data < 0 となり、このデータはフィルタリングする必要があります。
 
-Otherwise data would be a usable value, but some unspeakable code, and the ``decodeKeyValue(data)`` function is used to decode it.
+そうでなければ、dataは使用可能な値であり、 ``decodeKeyValue(data)`` 関数がそれをデコードするために使用されます。
 
 .. code-block:: python
 
@@ -238,9 +232,9 @@ Otherwise data would be a usable value, but some unspeakable code, and the ``dec
             return "MODE" 
         return "ERROR"
 
-If we press key **1**, the IR receiver outputs a value like ``0x0C``, which needs to be decoded to correspond to the specific key.
+**1** キーを押すと、IRレシーバーは ``0x0C`` のような値を出力する必要があり、それを特定のキーに対応させる必要があります。
 
-Next are some debug functions. They are important, but not related to the effect we need to achieve, so we just put them in the program.
+次に、いくつかのデバッグ関数があります。これらは重要ですが、私たちが達成したい効果には関係ないため、プログラムに含めています。
 
 .. code-block:: python
 
@@ -248,7 +242,7 @@ Next are some debug functions. They are important, but not related to the effect
 
     ir.error_function(print_error) # Show debug information
 
-Finally, we use an empty loop as the main program. And use try-except to make the program exit with the ``ir`` object terminated.
+最後に、主要なプログラムとして空のループを使用します。そして、try-exceptを使用してプログラムが ``ir`` オブジェクトを終了させるようにします。
 
 .. code-block:: python
 
@@ -259,5 +253,5 @@ Finally, we use an empty loop as the main program. And use try-except to make th
         ir.close()
 
 
+* `try文 - Python Docs <https://docs.python.org/ja/3/reference/compound_stmts.html#the-try-statement>`_
 
-* `Try Statement - Python Docs <https://docs.python.org/3/reference/compound_stmts.html?#the-try-statement>`_

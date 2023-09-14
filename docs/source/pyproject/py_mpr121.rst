@@ -1,47 +1,47 @@
 .. _py_mpr121:
 
-4.3 Electrode Keyboard
+4.3 電極キーボード
 ================================
 
-The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
-If you connect the electrodes to a banana, you can turn the banana into a touch switch.
+プロジェクトに多数のタッチスイッチを追加したい場合、MPR121は良い選択です。このモジュールには導体で拡張できる電極があります。
+例えば、電極をバナナに接続すると、そのバナナをタッチスイッチに変えることができます。
 
 * :ref:`cpn_mpr121`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトには、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全てを一つのキットで購入するのも便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+もちろん、以下のリンクから個々の部品を購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - 項番
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -50,34 +50,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpr121`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_mpr121|
 
-
-**Wiring**
+**配線**
 
 |wiring_mpr121|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``4.3_electrode_keyboard.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パス下の ``4.3_electrode_keyboard.py`` ファイルを開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある "MicroPython (Raspberry Pi Pico)" インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
+    * このプロジェクトでは ``mpr121.py`` というライブラリが必要です。Pico Wにアップロードされているか確認してください。詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -88,26 +86,26 @@ You can also buy them separately from the links below.
     i2c = I2C(1, sda=Pin(6), scl=Pin(7))
     mpr = MPR121(i2c)
 
-    # check all keys
+    # すべてのキーを確認
     while True:
         value = mpr.get_all_states()
         if len(value) != 0:
             print(value)
         time.sleep_ms(100)
 
-After the program runs, you can touch the twelve electrodes on the MPR121 with your hand and the touched electrodes will be printed out.
+プログラムが動作すると、MPR121の12個の電極に手を触れると、触れた電極が表示されます。
 
-You can extend the electrodes to connect other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
+電極を他の導体、例えばフルーツやワイヤー、箔などに拡張して接続することで、これらの電極をトリガーするさまざまな方法が増えます。
 
-**How it works?**
+**仕組みは？**
 
-In the mpr121 library, we have integrated the functionality into the ``MPR121`` class.
+mpr121ライブラリには、 ``MPR121`` クラスに機能が統合されています。
 
 .. code-block:: python
 
     from mpr121 import MPR121
 
-MPR121 is an I2C module that requires a set of I2C pins to be defined to initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values. If the electrodes are extended, the example needs to be rerun to reset the initial values.
+MPR121はI2Cモジュールであり、 ``MPR121`` オブジェクトを初期化するためにI2Cピンのセットを定義する必要があります。この時点で、モジュールの電極の状態が初期値として記録されます。電極が拡張されている場合、初期値をリセットするために例を再実行する必要があります。
 
 .. code-block:: python
 
@@ -115,20 +113,19 @@ MPR121 is an I2C module that requires a set of I2C pins to be defined to initial
     i2c = I2C(1, sda=Pin(6), scl=Pin(7))
     mpr = MPR121(i2c)
 
-* `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
+* `Inter-Integrated Circuit - Wikipedia <https://ja.wikipedia.org/wiki/I2C>`_
 
-Then use ``mpr.get_all_states()`` to read if the electrodes are triggered. If electrodes 2 and 3 are triggered, the value ``[2, 3]`` will be generated.
-
+その後、 ``mpr.get_all_states()`` を使用して電極がトリガーされたかどうかを読み取ります。もし電極2と3がトリガーされた場合、値 ``[2, 3]`` が生成されます。
 
 .. code-block::
 
     while True:
         value = mpr.get_all_states()
-        if len(value) ! = 0:
+        if len(value) != 0:
             print(value)
         time.sleep_ms(100)
 
-You can also use ``mpr.is_touched(electrode)`` to detect a specific electrode. When triggered, it returns ``True``, otherwise it returns ``False``.
+特定の電極を検出するために ``mpr.is_touched(electrode)`` も使用できます。トリガーされた場合、 ``True`` を返し、そうでない場合は ``False`` を返します。
 
 .. code-block:: python
 

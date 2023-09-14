@@ -1,52 +1,51 @@
 .. _py_micro:
 
-2.8 Press Gently
+2.8 やさしく押して
 ==========================
 
 |img_micro_switch|
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed) .
+マイクロスイッチもまた3ピンのデバイスで、この3ピンの順序はC（共通ピン）、NO（通常開）およびNC（通常閉）です。
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+マイクロスイッチが押されていない場合、1（C）と3（NC）が接続され、押された場合は、1（C）と2（NO）が接続されます。
 
 * :ref:`cpn_micro_switch`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全ての部品が含まれるキットを購入するのは確かに便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+以下のリンクから部品を個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - 項番
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -70,33 +69,30 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-
-**Schematic**
+**回路図**
 
 |sch_limit_sw|
 
-By default, GP14 is low and when pressed, GP14 is high.
+デフォルトでは、GP14はローで、押されるとGP14はハイになります。
 
-The purpose of the 10K resistor is to keep the GP14 low during pressing.
+10Kの抵抗器の目的は、押している間にGP14を低く保つことです。
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+104セラミックキャパシターは、ジッターを除去するためにここで使用されます。
 
-
-
-**Wiring**
+**配線**
 
 |wiring_limit_sw|
 
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.8_micro_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パス下の ``2.8_micro_switch.py`` ファイルを開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある "MicroPython (Raspberry Pi Pico)" インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -108,5 +104,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
             print("The switch works!")
             utime.sleep(1)
 
-
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the shell.
+プログラムが実行された後、スライドスイッチを右に切り替えると、シェルに「The switch works!」と表示されます。

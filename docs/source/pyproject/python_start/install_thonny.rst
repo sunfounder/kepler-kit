@@ -1,27 +1,22 @@
 .. _thonny_ide:
 
-1.2 Install Thonny IDE
+1.2 Thonny IDEをインストール
 =======================================
 
-Before you can start to program Pico with MicroPython, you need an integrated development environment (IDE), here we recommend Thonny. Thonny comes with Python 3.7 built in, just one simple installer is needed and you're ready to learn programming.
-
+Raspberry Pi PicoでMicroPythonプログラミングを始める前に、統合開発環境（IDE）が必要です。ここでは、Thonnyをお勧めします。ThonnyにはPython 3.7が内蔵されており、簡単なインストーラーを使えばすぐにプログラミングの学習を開始できます。
 
 .. note::
 
-    Since the Raspberry Pi Pico interpreter only works with Thonny version 3.3.3 or later, you can skip this chapter if you have it; otherwise, please update or install it.
+    Raspberry Pi PicoのインタープリタはThonnyバージョン3.3.3以降でしか動作しないため、既にそれを持っている場合はこの章をスキップしても構いません。それ以外の場合は、更新またはインストールをお願いします。
 
-
-#. You can download it by visiting the |link_thonny| website. Once open the page, you will see a light gray box in the upper right corner, click on the link that applies to your operating system.
+#. |link_thonny| のウェブサイトにアクセスしてダウンロードします。ページを開いたら、右上隅に薄灰色のボックスが表示されるので、ご使用のオペレーティングシステムに適用されるリンクをクリックしてください。
 
     .. image:: img/download_thonny.png
 
-
-
-
-#. The installers have been signed with a new certificate which hasn't built up its reputation yet. You may need to click through your browser warning (e.g. choose "Keep" instead of "Discard" in Chrome) and Windows Defender warning (**More info** ⇒ **Run anyway**).
+#. インストーラは、まだ評判を築いていない新しい証明書で署名されています。ブラウザの警告（例：Chromeで「破棄」の代わりに「保持」を選択）やWindows Defenderの警告（ **詳細情報** ⇒ **実行** ）をクリックして進む場合があります。
 
     .. image:: img/install_thonny1.png
 
-#. Next, click **Next** and **Install** to finish installing Thonny.
+#. 次に、 **次へ** と **インストール** をクリックして、Thonnyのインストールを完了します。
 
     .. image:: img/install_thonny6.png

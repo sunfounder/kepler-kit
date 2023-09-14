@@ -1,61 +1,59 @@
 .. _ar_relay:
 
-
-2.16 - Control Another Circuit
+2.16 - 別の回路を制御する
 =================================
 
-In our daily life, we can press the switch to light up or turn off the lamp.
-But what if you want to control the lamp with Pico W so that it can turn off automatically after ten minutes?
+日常生活で、スイッチを押すだけでランプを点灯または消灯できます。
+しかし、Pico Wを使って、10分後に自動的に消灯するようにランプを制御したい場合はどうでしょうか？
 
-A relay can help you accomplish this idea.
+このアイデアを実現するためには、リレーが役立ちます。
 
-A relay is actually a special kind of switch that is controlled by one side of the circuit (usually a low-voltage circuit) and used to control the other side of the circuit (usually a high-voltage circuit).
-This makes it practical to modify our home appliances to be controlled by a program, to become smart devices, or even to access the Internet.
+リレーは、一方の回路（通常は低電圧回路）によって制御され、他方の回路（通常は高電圧回路）を制御する特殊な種類のスイッチです。
+これにより、プログラムで制御できるスマートデバイスになるように、またはインターネットにアクセスできるように、家庭用電器を改造するのが現実的になります。
 
 .. warning::
-    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
+    電気製品の改造は非常に危険ですので、専門家の指導のもとで行ってください。
 
 * :ref:`cpn_relay`
 
-Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
+ここでは、ブレッドボード電源モジュールで駆動される簡単な回路を例に、リレーを使ってどのように制御するかを示します。
 
 * :ref:`cpn_power_module`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入することは非常に便利です。リンクは以下のとおりです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - 番号
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -79,66 +77,58 @@ You can also buy them separately from the links below.
         - 1
         - |link_relay_buy|
 
-**Wiring**
+**配線**
 
-First, build a low-voltage circuit for controlling a relay.
-Driving the relay requires a high current, so a transistor is needed, and here we use the S8050.
+まず、リレーを制御するための低電圧回路を作成します。
+リレーの駆動には高電流が必要なため、ここではトランジスタS8050を使用します。
 
 |sch_relay_1|
 
 |wiring_relay_1|
 
+ここでは、回路を保護するためにダイオード（フリーホイーリングダイオード）が使用されています。カソードは、電源に接続された銀色のリボンの端であり、アノードはトランジスタに接続されています。
 
+電圧入力がHigh（5V）からLow（0V）に変わると、トランジスタは飽和（増幅、飽和、カットオフ）からカットオフに変わり、コイルを通る電流の道が突如なくなります。
 
-A diode (continuity diode) is used here to protect the circuit. The cathode is the end with the silver ribbon connected to the power supply, and the anode is connected to the transistor.
+この時点で、このフリーホイーリングダイオードが存在しない場合、コイルは供給電圧の数倍にもなる自己誘導電位を両端で生成します。この電圧プラストランジスタ電源の電圧は、それを焼き尽くすほどです。
 
-When the voltage input changes from High (5V) to Low (0V), the transistor changes from saturation (amplification, saturation, and cutoff) to cutoff, and there is suddenly no way for current to flow through the coil. 
+ダイオードを追加することで、コイルとダイオードは瞬時にコイルに蓄えられたエネルギーで駆動される新しい回路を形成し、放電します。これにより、回路上のトランジスタなどのデバイスが過度な電圧で損傷するのを防ぎます。
 
-At this point, if this freewheeling diode does not exist, the coil will produce a self-induced electric potential at both ends that is several times higher than the supply voltage, and this voltage plus the voltage from the transistor power supply is enough to burn it.  
-
-After adding the diode, the coil and the diode instantly form a new circuit powered by the energy stored in the coil to discharge, thus avoiding the excessive voltage will damage devices such as transistors on the circuit.
-
-* :ref:`cpn_diode`    
+* :ref:`cpn_diode`
 * `Flyback Diode - Wikipedia <https://en.wikipedia.org/wiki/Flyback_diode>`_
 
-At this point the program is ready to run, and after running you will hear the "tik tok" sound, which is the sound of the contactor coil inside the relay sucking and breaking.
+この時点でプログラムは実行可能です。実行すると「チクタク」という音がしますが、これはリレー内のコンタクタコイルが吸い寄せられて破れる音です。
 
-Then we connect the two ends of the load circuit to pins 3 and 6 of the relay respectively.
+次に、負荷回路の両端をそれぞれリレーのピン3と6に接続します。
 
-..(Take the simple circuit powered by the breadboard power module described in the previous article as an example.)
+..（前述のブレッドボード電源モジュールで駆動される簡単な回路を例に取ります。）
 
 |sch_relay_2|
 
 |wiring_relay_2|
 
-At this point, the relay will be able to control the load circuit on and off.
+この時点で、リレーは負荷回路のオンとオフを制御できるようになります。
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-   * You can open the file ``2.16_relay.ino`` under the path of ``kepler-kit-main/arduino/2.16_relay``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.16_relay.ino`` は、 ``kepler-kit-main/arduino/2.16_relay`` のパスで開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * **Upload** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/3be98f10-8223-49f2-8238-2acc53ebbf80/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-When the code is run, the relay will switch the operating state of the controlled circuit every two seconds.
-You can manually comment out one of the lines to further clarify the correspondence between the relay circuit and the load circuit.
+コードが実行されると、リレーは制御された回路の動作状態を2秒ごとに切り替えます。
+リレー回路と負荷回路の対応関係をさらに明確にするために、1行を手動でコメントアウトできます。
 
+**もっと詳しく**
 
-**Learn More**
+リレーのピン3は通常開いており、コンタクタコイルが動作しているときだけオンになります。ピン4は通常閉じており、コンタクタコイルが通電されたときにオンになります。
+ピン1はピン6に接続されており、負荷回路の共通端子です。
 
-Pin 3 of the relay is normally open and only turns on when the contactor coil is operating; pin 4 is normally closed and turns on when the contactor coil is energized.
-Pin 1 is connected to pin 6 and is the common terminal of the load circuit.
-
-By switching one end of the load circuit from pin 3 to pin 4, you will be able to get exactly the opposite operating state.
+負荷回路の一端をピン3からピン4に切り替えると、正確に反対の動作状態が得られます。

@@ -1,42 +1,36 @@
 .. _cpn_ta6586:
 
-TA6586 - Motor Driver Chip
+TA6586 - モータードライバーチップ
 =================================
 
 |img_ta6586|
 
-TA6586 is a monolithic IC designed for driving bi-directional DC motor. It has
-two pins of logic inputs for controlling the direction, forward and backward.
-The circuit feature good anti-interference performance, small standby current and
-low output saturation pressure drop. It has a built-in clamp diode to reverse the impact
-of the release of inductive load current, making it in the drive relays, DC motors,
-stepper motors or control the use of switching power safe and reliable.
-TA6586 is suitable for toy vehicles, remote-controlled aircraft motor drive, automatic
-valve motor, electromagnetic lock drive, precision instruments and other circuits.
+TA6586は、双方向のDCモーターを駆動するために設計されたモノリシックICです。方向を制御するための論理入力ピンが2つあり、順方向と逆方向の制御が可能です。この回路は優れた抗干渉性能、小さいスタンバイ電流、そして低い出力飽和圧降を特徴としています。内蔵のクランプダイオードが誘導性負荷電流の放出に対する逆衝撃を逆転させるため、リレー、DCモーター、ステッピングモーターの駆動やスイッチング電源の使用が安全かつ信頼性があります。
+TA6586は、玩具車、遠隔操作される航空機モータードライブ、自動バルブモーター、電磁ロック駆動、精密機器などの回路に適しています。
 
-**Features**
+**特長**
 
-* Low stand-by current: ≦2uA
-* Wide supply voltage range
-* Built-in Brake Function
-* Thermal Shutdown protection
-* Over Current Limit and Short Circuit Protect Function
-* DIP8 Pb-Free package.
+* 低スタンバイ電流：≦2uA
+* 広い供給電圧範囲
+* 内蔵ブレーキ機能
+* サーマルシャットダウン保護
+* 過電流制限および短絡保護機能
+* DIP8 Pbフリーパッケージ
 
-**Pin Function**
+**ピン機能**
 
 |img_ta6586_pin|
 
 
-**Input Truth Table**
+**入力真理値表**
 
 |img_ta6586_priciple|
 
 
-**Example**
+**例**
 
-* :ref:`py_motor` (For MicroPython User)
-* :ref:`ar_motor` (For Arduino User)
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
-* :ref:`per_smart_fan` (For Piper Make User)
+* :ref:`py_motor` (MicroPythonユーザー向け)
+* :ref:`ar_motor` (Arduinoユーザー向け)
+* :ref:`py_pump` (MicroPythonユーザー向け)
+* :ref:`ar_pump` (Arduinoユーザー向け)
+* :ref:`per_smart_fan` (Piper Makeユーザー向け)

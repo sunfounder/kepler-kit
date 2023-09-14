@@ -1,55 +1,54 @@
 .. _ar_water:
 
-2.14 - Feel the Water Level
+2.14 - 水位を感じる
 =====================================
 
 |img_water_sensor|
 
-Water sensor is designed for water detection, which can be widely used in sensing rainfall, water level, and even liquid leakage.
+水センサーは、水検出のために設計されており、降雨、水位、さらには液体の漏れを感知する広範な用途に使用できます。
 
-It measures the water level by having a series of exposed parallel wire traces to measure the size of the water drops/volume. The water volume is easily converted to an analog signal, and the output analog value can be read directly by the main control board to achieve the water level alarm effect.
+このセンサーは、水滴/水量のサイズを測定するために一連の露出した平行なワイヤートレースを用いて水位を測定します。水量は簡単にアナログ信号に変換され、出力されるアナログ値はメイン制御ボードで直接読み取ることができ、水位警報の効果を実現します。
 
 .. warning:: 
     
-    The sensor cannot be fully submerged in water, please only leave the part where the ten Traces are located in contact with water. Also, energizing the sensor in a humid environment will accelerate the corrosion of the probe and reduce the life of the sensor, so it is recommended that you only supply power when taking readings.
+    センサーは水中に完全に浸すことはできません。10本のトレースがある部分だけを水と接触させてください。また、湿度の高い環境でセンサーに電力を供給すると、プローブの腐食が加速し、センサーの寿命が短くなる可能性があるため、測定を取る際にのみ電力を供給することをお勧めします。
 
 * :ref:`cpn_water_level`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+便利なのは一式を購入することです、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -58,55 +57,47 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_water_level`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_water|
 
-
-**Wiring**
+**配線**
 
 |wiring_water|
 
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``kepler-kit-main/arduino/2.14_feel_the_water_level``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.14_feel_the_water_level.ino`` は、 ``kepler-kit-main/arduino/2.14_feel_the_water_level`` のパスにあります。
+   * または、このコードを **Arduino IDE** にコピーできます。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と適切なポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/32ee87a1-08eb-482f-bf4c-b12b24ef05c4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program is run, submerge the Water Sensor module slowly into the water, and as the depth increases, the Shell will print a larger value.
+プログラムが動作した後、水センサーモジュールをゆっくりと水に浸し、深さが増すにつれて、シェルにはより大きな値が表示されます。
 
+**詳細を学ぶ**
 
-**Learn More**
+アナログ入力モジュールをデジタルモジュールとして使用する方法があります。
 
-There is a way to use the analog input module as a digital module.
-
-First, take a reading of the Water Sensor in a dry environment first, record it, and use it as a threshold value. Then, complete the programming and re-read the reading of the water sensor. When the reading of the water sensor deviates significantly from the reading in a dry environment, it is exposed to liquid. In other words, by placing this device near a water pipe, it can detect if a water pipe is leaking.
-
+まず、乾燥した環境で水センサーの読み取りを行い、それを記録して閾値として使用します。次に、プログラミングを完了し、水センサーの読み取りを再度行います。水センサーの読み取りが乾燥した環境での読み取りと大きく逸脱すると、それは液体に触れています。つまり、このデバイスを水道管の近くに置くと、水道管が漏れているかどうかを検出できます。
 
 .. note::
 
-   * You can open the file ``2.14_water_level_threshold.ino`` under the path of ``kepler-kit-main/arduino/2.14_water_level_threshold``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.14_water_level_threshold.ino`` は、 ``kepler-kit-main/arduino/2.14_water_level_threshold`` のパスにあります。
+   * または、このコードを **Arduino IDE** にコピーできます。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と適切なポートを選択してください。
 
 .. :raw-code:

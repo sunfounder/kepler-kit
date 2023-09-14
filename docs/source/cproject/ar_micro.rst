@@ -1,52 +1,50 @@
 .. _ar_micro:
 
-2.8 - Press Gently
-==========================
+2.8 - ソフトに押してください
+===================================
 
 |img_micro_switch|
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed) .
+マイクロスイッチは3ピンデバイスでもあり、3つのピンの順番はC（共通ピン）、NO（通常開）およびNC（通常閉）です。
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+マイクロスイッチが押されていないとき、1（C）と3（NC）が接続されています。押されると、1（C）と2（NO）が接続されます。
 
 * :ref:`cpn_micro_switch`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入することは非常に便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -55,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -70,37 +68,31 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_limit_sw|
 
-By default, GP14 is low and when pressed, GP14 is high.
+デフォルトでは、GP14はロー状態ですが、押されるとGP14はハイ状態になります。
 
-The purpose of the 10K resistor is to keep the GP14 low during pressing.
+10KΩの抵抗器の目的は、押下中にGP14をロー状態に保つことです。
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+104セラミックコンデンサは、ジッタを除去するためにここで使用されます。
 
-
-**Wiring**
+**配線**
 
 |wiring_limit_sw|
 
-
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``2.8_press_gently.ino`` under the path of ``kepler-kit-main/arduino/2.8_press_gently``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.8_press_gently.ino`` は、 ``kepler-kit-main/arduino/2.8_press_gently`` のパスの下で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/92a2e356-35da-4e34-92cd-80234e1b59c4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the Serial Monitor.
+プログラムが実行された後、スライドスイッチを右に切り替えると、「The switch works!」とシリアルモニターに表示されます。

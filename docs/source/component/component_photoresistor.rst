@@ -1,30 +1,31 @@
 .. _cpn_photoresistor:
 
-Photoresistor
+フォトレジスタ
 ==============
 
 |img_photoresistor|
 
-A photoresistor or photocell is a light-controlled variable resistor. 
-The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photo conductivity. 
+フォトレジスタまたはフォトセルは、光によって制御される可変抵抗器です。
+光の強度が増えると、フォトレジスタの抵抗は減少します。言い換えれば、光導電性を有しています。
 
-A photoresistor can be applied in light-sensitive detector circuits and light-activated and dark-activated switching circuits acting as a resistance semiconductor. In the dark, a photoresistor can have a resistance as high as several megaohms (MΩ), while in the light, a photoresistor can have a resistance as low as a few hundred ohms.
+フォトレジスタは、光感応検出回路や光活性および暗活性のスイッチング回路で、抵抗性の半導体として使用することができます。暗闇の中では、フォトレジスタの抵抗は数メガオーム（MΩ）に達することがありますが、明るい環境では数百オームまで低下することがあります。
 
-Here is the electronic symbol of photoresistor.
+以下は、フォトレジスタの電子記号です。
 
 |img_photoresistor_symbol|
 
-* `Photoresistor - Wikipedia <https://en.wikipedia.org/wiki/Photoresistor#:~:text=A%20photoresistor%20(also%20known%20as,on%20the%20component's%20sensitive%20surface>`_
+* `フォトレジスタ - Wikipedia <https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A9%E3%83%88%E3%83%AC%E3%82%B8%E3%82%B9%E3%82%BF>`_
 
-.. Example
+.. 例
 .. -------------------
 
 .. :ref:`Light Theremin`
 
 
-**Example**
+**例**
 
-* :ref:`py_photoresistor` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`ar_photoresistor` (For Arduino User)
-* :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_photoresistor` （MicroPythonユーザー向け）
+* :ref:`py_light_theremin` （MicroPythonユーザー向け）
+* :ref:`ar_photoresistor` （Arduinoユーザー向け）
+* :ref:`per_light_display` （Piper Makeユーザー向け）
+

@@ -1,46 +1,44 @@
-7. Setup a Web Server
+7. ウェブサーバーのセットアップ
 ====================================
 
-
-In this article, you will learn how to make Pico W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
+この記事では、Pico Wをブラウザから回路を操作したり、センサーからの読み取りを取得できるウェブサーバーにする方法を学びます。
 
 |setup_web|
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入すると便利です。こちらがリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -49,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -68,52 +66,53 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 10
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         -  
 
-**2. Build the Circuit**
+**2. 回路を組み立てる**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        図に示されている通り、Li-poチャージャーモジュールが接続されていることを確認してください。そうでないと、ショート回路が起きてバッテリーや回路が損傷する可能性があります。
 
 .. image:: img/wiring/7.web_page_bb.png
     :width: 800
 
 
-**3. Run the Code**
 
-#. Open the ``7_web_page.py`` file under the path of ``kepler-kit-main/iot``.
-#. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+**3. コードを実行する**
+
+#. ``kepler-kit-main/iot`` のパスの下にある ``7_web_page.py`` ファイルを開きます。
+#. **Run current script** ボタンをクリックするか、F5キーを押して実行します。接続が成功すると、Pico WのIPが表示されます。
 
     .. image:: img/7_web_server.png
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, if not please refer to :ref:`iot_access` to create them.
+        コードを実行する前に、Pico Wに ``do_connect.py`` と ``secrets.py`` スクリプトがあることを確認してください。もしなければ、 :ref:`iot_access` を参照して作成してください。
 
-#. Enter the IP address of the Pico W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
+#. Pico WのIPアドレスをブラウザに入力して、このプロジェクトのために構築されたウェブページにアクセスします。任意のボタンをクリックして、RGB LEDの色を変更し、温度と湿度を更新します。
 
     .. image:: img/web-1.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. このスクリプトを起動できるようにしたい場合は、Raspberry Pi Pico Wに ``main.py`` として保存できます。
 
-**How it works?**
+**動作原理は？**
 
-The web page you are visiting is actually hosted on some server, and the socket on the server will send the web page to us when we visit it.
-A socket is the way a server can listen for a client that wants to connect to it. 
+アクセスしているウェブページは実際には何らかのサーバーでホストされており、そのサーバーのソケットが訪問時にウェブページを送信します。
+ソケットとは、サーバーが接続を希望するクライアントを待ち受ける方法です。
 
-In this project, Pico W is your server, and your computer is accessing the web page hosted on Pico W through a browser.
+このプロジェクトでは、Pico Wがサーバーであり、ブラウザを介してPico Wでホストされているウェブページにアクセスしています。
 
-First we create a socket, which requires an IP address and a |link_port|.
-The network connection and the way to get the IP are described in :ref:`iot_access`. And for port, we use 80.
-After setting up the socket, return it and use it for the next step.
+最初にソケットを作成します。これにはIPアドレスと |link_port| が必要です。
+ネットワーク接続とIPの取得方法は、 :ref:`iot_access` で説明されています。ポートには80を使用します。
+ソケットの設定が完了したら、それを返して次のステップで使用します。
 
 `socket library - Python Docs <https://docs.python.org/3/library/socket.html>`_ 
 
@@ -122,7 +121,7 @@ After setting up the socket, return it and use it for the next step.
     import socket
 
     def open_socket(ip):
-        # Open a socket
+        # ソケットを開く
         address = (ip, 80)
         connection = socket.socket()
         connection.bind(address)
@@ -130,8 +129,8 @@ After setting up the socket, return it and use it for the next step.
         print(connection)
         return(connection)
 
-Then, set up your web service where the socket you set up earlier will be used.
-The following code will allow your Pico W to receive access requests from your browser.
+次に、以前に設定したソケットを使用してウェブサービスを設定します。
+以下のコードにより、Pico Wはブラウザからのアクセス要求を受け取ることができます。
 
 .. code-block:: python
 
@@ -141,10 +140,10 @@ The following code will allow your Pico W to receive access requests from your b
             request = client.recv(1024)
             client.close()
 
-Next, you need an html page to send to the visitor. This example stores a simple html page in the form of characters in the variable ``html``.
+次に、訪問者に送信するhtmlページが必要です。この例では、変数 ``html`` に文字形式で単純なhtmlページを格納しています。
 
 .. note:: 
-    If you want to be able to write your own html, you can get help at |link_html|.
+    自分でhtmlを書きたい場合は、 |link_html| でヘルプを得ることができます。
 
 .. code-block:: python
 
@@ -165,13 +164,14 @@ Next, you need an html page to send to the visitor. This example stores a simple
                 <form action="./off">
                 <input type="submit" value="off" />
                 </form>
-                <p>Temperature is {value} degrees Celsius</p>
+                <p>温度は{value}度です</p>
                 </body>
                 </html>
                 """
         return html
 
-Send html page to visitor.
+
+訪問者にHTMLページを送信する。
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -180,12 +180,11 @@ Send html page to visitor.
         while True:
             client = connection.accept()[0]
             request = client.recv(1024)
-            html=webpage(0)
+            html = webpage(0)
             client.send(html)
             client.close()
 
-
-The page can be accessed through your browser if you combine the above parts. If you want to see the effect, run the code below with thonny.
+上記の部分を組み合わせると、ブラウザでページにアクセスできます。効果を確認したい場合は、以下のコードをThonnyで実行してください。
 
 .. code-block:: python
 
@@ -201,25 +200,25 @@ The page can be accessed through your browser if you combine the above parts. If
                 <html>
                 <body>
                 <form action="./red">
-                <input type="submit" value="red " />
+                <input type="submit" value="赤" />
                 </form>
                 <form action="./green">
-                <input type="submit" value="green" />
+                <input type="submit" value="緑" />
                 </form>
                 <form action="./blue">
-                <input type="submit" value="blue" />
+                <input type="submit" value="青" />
                 </form>
                 <form action="./off">
-                <input type="submit" value="off" />
+                <input type="submit" value="オフ" />
                 </form>
-                <p>Temperature is {value} degrees Celsius</p>
+                <p>温度は{value}度です</p>
                 </body>
                 </html>
                 """
         return html
 
     def open_socket(ip):
-        # Open a socket
+        # ソケットを開く
         address = (ip, 80)
         connection = socket.socket()
         connection.bind(address)
@@ -231,23 +230,22 @@ The page can be accessed through your browser if you combine the above parts. If
         while True:
             client = connection.accept()[0]
             request = client.recv(1024)
-            html=webpage(0)
+            html = webpage(0)
             client.send(html)
             client.close()
 
     try:
-        ip=do_connect()
+        ip = do_connect()
         if ip is not None:
-            connection=open_socket(ip)
+            connection = open_socket(ip)
             serve(connection)
     except KeyboardInterrupt:
         machine.reset()
 
+上記のコードを実行すると、ウェブページのみが表示され、RGB LEDの制御やセンサーの読み取りは許可されていないことがわかります。
+このウェブサービスはさらに洗練される必要があります。
 
-When you run the code above, you will see that it displays only a web page, does not allow you to control RGB LEDs, nor does it show sensor readings.
-The web service needs to be refined further.
-
-The first thing we need to know is what information the server receives when the browser accesses the web page. Therefore, change ``serve()`` slightly to print ``request``.
+最初に知るべきことは、ブラウザがウェブページにアクセスしたときにサーバーが受け取る情報です。それゆえに、 ``serve()`` をわずかに変更して ``request`` を出力します。
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -257,12 +255,12 @@ The first thing we need to know is what information the server receives when the
             client = connection.accept()[0]
             request = client.recv(1024)
             request = str(request)
-            print(request)  
-            html=webpage(0)
+            print(request)
+            html = webpage(0)
             client.send(html)
             client.close()
 
-Re-run the script and the Shell will print the following message when we press a key on the web page.
+スクリプトを再実行すると、シェルはウェブページでキーを押すときに以下のメッセージを出力します。
 
 .. code-block:: 
 
@@ -271,10 +269,11 @@ Re-run the script and the Shell will print the following message when we press a
     b'GET /blue? HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
     b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
 
-They are too long to read!!! 
+読むには長すぎます！
 
-But all we really need is the small piece of information in front of ``/red?``, ``/blue?``.
-It tells us which button was pressed. So we refined ``serve()`` a bit to extract the keystroke information.
+
+しかし、実際に必要なのは ``/red?`` や ``/blue?`` の前にある小さな情報だけです。
+これはどのボタンが押されたのかを教えてくれます。それで、キーストロークの情報を抽出するために ``serve()`` を少し改良しました。
 
 .. code-block:: python
     :emphasize-lines: 6,7,8,9
@@ -289,11 +288,11 @@ It tells us which button was pressed. So we refined ``serve()`` a bit to extract
             except IndexError:
                 pass
             print(request)  
-            html=webpage(0)
+            html = webpage(0)
             client.send(html)
             client.close()
 
-Re-run the program and the Shell will print the following message when we press a key on the web page.
+プログラムを再実行すると、ウェブページでキーを押すと、シェルは以下のようなメッセージを出力します。
 
 .. code-block:: 
 
@@ -304,7 +303,7 @@ Re-run the program and the Shell will print the following message when we press 
     /off?
     /favicon.ico
 
-Then, we just need to change the color of the RGB LED according to the value of ``request``.
+次に、 ``request`` の値に応じてRGB LEDの色を変更するだけです。
 
 .. code-block:: python
 
@@ -336,14 +335,14 @@ Then, we just need to change the color of the RGB LED according to the value of 
                 red.low()
                 green.low()
                 blue.high()
- 
-            html=webpage(0)
+            
+            html = webpage(0)
             client.send(html)
             client.close()
 
-The last thing is to display the thermistor value on the web page (see :ref:`py_temp` for details on using the thermistor).
-This part is actually done by modifying the text on the html.
-We set the parameters in the ``webpage(value)`` function and simply change the incoming parameters to change the number displayed on the web page.
+最後に、ウェブページにサーミスターの値を表示する必要があります（サーミスターの使用方法の詳細については、 :ref:`py_temp` を参照してください）。
+この部分は実際にはHTMLのテキストを修正することで実現されます。
+``webpage(value)`` 関数でパラメータを設定し、入力パラメータを変更するだけでウェブページに表示される数字を変更します。
 
 .. code-block:: python
     :emphasize-lines: 30,31
@@ -377,13 +376,9 @@ We set the parameters in the ``webpage(value)`` function and simply change the i
                 green.low()
                 blue.high()
 
-            value='%.2f'%temperature()    
-            html=webpage(value)
+            value = '%.2f' % temperature()    
+            html = webpage(value)
             client.send(html)
             client.close()
-
-
-
-
 
 .. https://projects.raspberrypi.org/en/projects/get-started-pico-w/3

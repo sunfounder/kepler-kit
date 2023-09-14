@@ -1,49 +1,47 @@
 .. _py_led_bar:
 
-2.2 Display the Level
+2.2 レベルを表示
 =============================
 
-The first project is simply to make the LED blink. For this project, let's use the LED Bar Graph, which contains 10 LEDs in a plastic enclosure, generally used to display power or volume levels.
+最初のプロジェクトはLEDを点滅させるだけのシンプルなものです。このプロジェクトでは、一般的に電力やボリュームレベルを表示するために使用される、プラスチックケースに10個のLEDを含むLEDバーグラフを使用します。
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入する方が便利です、リンクは以下の通りです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント	
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -63,27 +61,26 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_ledbar|
 
-In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individually. Each LED's anode is connected to GP6*GP15, and its cathode to a 220ohm resistor, and then to GND.
+LEDバーグラフには10個のLEDがあり、それぞれが個別に制御できます。各LEDのアノードはGP6〜GP15に接続され、カソードは220オームの抵抗を介してGNDに接続されています。
 
 
-
-**Wiring**
+**配線**
 
 |wiring_ledbar|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス内の ``2.2_display_the_level.py`` ファイルを開くか、このコードをThonnyにコピーしてから「Run Current Script」をクリック、または単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅にある「MicroPython（Raspberry Pi Pico）」インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -101,54 +98,53 @@ In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individ
             led[i].toggle()
             utime.sleep(0.2)
 
-On the LED Bar Graph, you'll see LEDs lighting up and then turning off in sequence when the program is running.
+プログラムが実行されていると、LEDバーグラフ上のLEDが順番に点灯し、その後消えます。
 
-**How it works?**
+**動作の仕組みは？**
 
-The LED Bar consists of ten LEDs that are controlled by ten pins, which means that we must define these pins.
-The process would be too tedious if we defined them one by one. So, here we use ``Lists``.
+LEDバーは、10本のピンによって制御される10個のLEDで構成されています。つまり、これらのピンを定義する必要があります。
+一つひとつ定義するのは煩雑な作業なので、ここでは ``Lists（リスト）`` を使用しています。
 
 .. note::
-    Python lists are one of the most versatile data types that allow us to work with multiple elements at once, and created by placing elements inside square brackets [], separated by commas.
+    Pythonのリストは、一度に複数の要素を扱うことができる非常に多機能なデータ型であり、カンマで区切られた要素を角括弧[]内に配置することで作成されます。
 
 .. code-block:: python
 
     pin = [6,7,8,9,10,11,12,13,14,15]    
 
-A list ``pin`` is defined by this line of code, which contains the ten elements ``6,7,8,9,10,11,12,13,14,15``.
-We can use the index operator [] to access an item in a list. In Python, indices start at 0. So, a list having 10 elements will have an index from 0 to 9.
-Using this list as an example, ``pin[0]`` is ``6`` and ``pin[4]`` is ``10``.
+このコード行によって ``pin`` というリストが定義され、10個の要素 ``6,7,8,9,10,11,12,13,14,15`` が含まれます。
+インデックス演算子 [] を使用して、リスト内の項目にアクセスすることができます。Pythonでは、インデックスは0から始まります。したがって、10個の要素を持つリストは、0から9までのインデックスを持ちます。
+このリストを例にすると、 ``pin[0]`` は ``6`` であり、 ``pin[4]`` は ``10`` です。
 
-Next, declare an empty list ``led`` that will be used to define ten LED objects.
+次に、10個のLEDオブジェクトを定義するために使用される空のリスト ``led`` を宣言します。
 
 .. code-block:: python
 
     led = []    
 
-Due to the length of the list, which is 0, direct operations on the array, such as printing led[0]**, won't work. There are new items we need to add.
-
+リストの長さが0であるため、配列に対する直接的な操作、たとえばled[0]を出力するなど、は機能しません。新しい項目を追加する必要があります。
 
 .. code-block:: python
 
     led.append(None)
 
-As a result of this ``append()`` method, the list ``led`` has its first item, of length 1, and ``led[0]`` becomes a valid element despite its current value of ``None`` (which stands for null).
+この ``append()`` メソッドの結果として、リスト ``led`` には最初の項目が追加され、長さが1になり、 ``led[0]`` が ``None`` （nullを意味する）という現在の値にもかかわらず有効な要素になります。
 
-Our next step is to define ``led[0]``, the LED connected to pin 6, as the first LED object.
+次のステップは、ピン6に接続されている ``led[0]`` を、最初のLEDオブジェクトとして定義することです。
 
 .. code-block:: python
 
     led[0] = machine.Pin(6, machine.Pin.OUT)
 
-The first LED object has now been defined.
+最初のLEDオブジェクトが定義されました。
 
-As you can see, we have created the ten pin numbers as a list **pin**, which we can substitute into this line to make it easier to do bulk operations.
+以上から、10個のピン番号をリスト **pin** として作成しました。これにより、まとめて操作を行いやすくなります。
 
 .. code-block:: python
 
     led[0] = machine.Pin(pin[0], machine.Pin.OUT)
 
-Use a ``for`` statement to have all 10 pins execute the above statement.
+``for`` 文を使用して、10本のピンすべてが上記の文を実行するようにします。
 
 .. code-block:: python
 
@@ -163,7 +159,7 @@ Use a ``for`` statement to have all 10 pins execute the above statement.
 * :ref:`syntax_list`
 * :ref:`syntax_forloop`
 
-Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one by one.
+もう一つの ``for`` ループを使用して、LEDバーの10個のLEDが順番に状態を切り替えるようにします。
 
 .. code-block:: python
 
@@ -171,7 +167,7 @@ Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one b
         led[i].toggle()
         utime.sleep(0.2)
 
-The code is finished by putting the above piece of code in a while loop.
+このコード片をwhileループ内に配置することで、コードの完成です。
 
 .. code-block:: python
 
@@ -188,5 +184,4 @@ The code is finished by putting the above piece of code in a while loop.
         for i in range(10):
             led[i].toggle()
             utime.sleep(0.2)
-
 

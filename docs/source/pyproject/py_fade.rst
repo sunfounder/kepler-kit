@@ -1,71 +1,68 @@
 .. _py_fade:
 
-2.3 Fading LED
+2.3 LEDのフェード
 ========================
 
+今まで、デジタル出力として高レベルと低レベル（ONとOFF）の二つの出力信号しか使用していませんでした。
+しかし、現実の利用シーンでは、多くのデバイスが単純にON/OFFだけで動作するわけではありません。例えば、モーターの速度を調整したり、デスクランプの明るさを調整したりといった場面があります。
+以前は、これを達成するために抵抗を調整するスライダーが用いられましたが、それは信頼性に欠け、非効率的でした。
+そのため、パルス幅変調（PWM）がこのような複雑な問題に対する実用的な解決策として登場しました。
 
-As of now, we have only used two output signals: high level and low level (also called ON and OFF), which is called digital output.
-However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-To achieve this goal, a slider that adjusts resistance was used in the past, but it is unreliable and inefficient.
-Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
+パルスは高レベルと低レベルを含むデジタル出力です。これらのピンのパルス幅は、ON/OFFの速度を変更することで調整できます。
 
-A pulse is a digital output that contains a high level and a low level. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
+20ms（ほとんどの人が視覚的に保持する期間）という短い時間内で、LEDを点灯させ、消灯させ、再び点灯させると、消灯していたことに気づかず、光の明るさがわずかに弱くなるだけです。
+この期間中にLEDが点いている時間が多いほど、明るくなります。
+言い換えれば、サイクル内でパルスが広いほど、マイクロコントローラーから出力される「電気信号の強度」が大きくなります。
+これがPWMがLEDの明るさ（またはモーターの速度）を制御する仕組みです。
 
-When we are in a short period of time (like 20ms, which is most people's visual retention period), 
-let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is on, the brighter it becomes.
-In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
-This is how PWM controls LED brightness (or motor speed).
+* `パルス幅変調 - Wikipedia <https://ja.wikipedia.org/wiki/パルス幅変調>`_
 
-* `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
-
-There are some points to pay attention to when Pico W uses PWM. Let's take a look at this picture.
+Pico WがPWMを使用する際に注意すべき点がいくつかあります。この図を見てみましょう。
 
 |pin_pwm|
 
-Pico W supports PWM on each GPIO pin, but there are actually 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the right GPIO's PWM output is identical to the left.
+Pico Wは各GPIOピンでPWMをサポートしていますが、実際には独立したPWM出力が16個（30個ではない）あり、これらは左側のGP0からGP15までに分散されています。右側のGPIOのPWM出力は左側と同一です。
 
-It is important to avoid setting the same PWM channel for different purposes during programming. For example, GP0 and GP16 are both PWM_0A.
+プログラミング中に同じPWMチャンネルを異なる目的で設定しないように注意が必要です。例えば、GP0とGP16は両方ともPWM_0Aです。
 
-Let's try to achieve the faded LED effect after understanding this knowledge.
+この知識を理解した上で、LEDのフェード効果を実現してみましょう。
 
 * :ref:`cpn_led`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入する方が確実に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -74,7 +71,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - いくつか
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -85,30 +82,26 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-**Schematic**
+**回路図**
 
 |sch_led|
 
-This project is the same circuit as the first project :ref:`py_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+このプロジェクトは、最初のプロジェクト :ref:`py_led` と同じ回路ですが、信号のタイプが異なります。最初のプロジェクトではGP15から直接デジタルの高レベルと低レベル（0&1）を出力してLEDを点灯または消灯させていましたが、このプロジェクトではGP15からPWM信号を出力してLEDの明るさを制御します。
 
-
-
-**Wiring**
+**配線**
 
 |wiring_led|
 
 
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``2.3_fading_led.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のディレクトリにある ``2.3_fading_led.py`` ファイルを開いたり、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5を押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅にある「MicroPython（Raspberry Pi Pico）」のインタプリタを選択するのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -123,12 +116,11 @@ This project is the same circuit as the first project :ref:`py_led`, but the sig
         utime.sleep_ms(10)
     led.duty_u16(0)
 
+このコードが実行されると、LEDの明るさが徐々に増していきます。
 
-The LED will gradually become brighter as the code runs.
+**どのように動作するのか？**
 
-**How it works?**
-
-Here, we change the brightness of the LED by changing the duty cycle of the GP15's PWM output. Let's take a look at these lines.
+ここでは、GP15のPWM出力のデューティサイクルを変更することで、LEDの明るさを変更しています。以下の行に注目してください。
 
 .. code-block:: python
     :emphasize-lines: 4,5,8
@@ -144,8 +136,8 @@ Here, we change the brightness of the LED by changing the duty cycle of the GP15
         utime.sleep_ms(10)
     led.duty_u16(0)
 
-* ``led = machine.PWM(machine.Pin(15))`` sets the GP15 pin as PWM output.
+* ``led = machine.PWM(machine.Pin(15))`` は、GP15ピンをPWM出力として設定します。
 
-* The line ``led.freq(1000)`` is used to set the PWM frequency, here it is set to 1000Hz, which means 1ms (1/1000) is a cycle.
+* ``led.freq(1000)`` はPWMの周波数を設定するために使用され、ここでは1000Hzに設定されています。つまり、1ms（1/1000）が1サイクルです。
 
-* The ``led.duty_u16()`` line is used to set the duty cycle, which is a 16-bit interger(2^16=65536). A 0 indicates 0% duty cycle, which means each cycle has 0% time to output a high level, i.e., all pulses are turned off. The value 65535 indicates a duty cycle of 100%, which means the whole pulse is turned on, and the result is '1'. When it is 32768, it will turn on half a pulse, so the LED will be half as bright when fully on.
+* ``led.duty_u16()`` はデューティサイクルを設定するために使用され、これは16ビットの整数（2^16=65536）です。0は0%のデューティサイクルを示し、各サイクルで高レベルを出力する時間が0%、すなわち、全てのパルスがオフになります。値65535は、デューティサイクルが100%であることを示し、パルス全体がオンになり、結果は「1」になります。値が32768の場合、パルスを半分オンにするので、LEDは全開時の半分の明るさになります。

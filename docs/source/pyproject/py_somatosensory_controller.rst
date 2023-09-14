@@ -1,54 +1,51 @@
 .. _py_somato_controller:
 
-
-7.11 Somatosensory Controller
+7.11 体感コントローラー
 =============================
 
-If you watch a lot of robot movies, you've probably seen images like this.
-The protagonist turned his wrist and the giant robot followed; the protagonist shakes his fist, and the robot follows, which is very cool.
+ロボット映画をよく観ているなら、このような光景を見たことがあるでしょう。
+主人公が手首をひねると、巨大なロボットがそれに応じて動き、主人公が拳を振ると、ロボットもそれに続く。非常にクールです。
 
-The use of this technology is already common in universities and research institutes, and the arrival of 5G will greatly expand its application areas.
-"Surgical robot da Vinci" remote surgery medical is a typical example.
+この技術の使用は、すでに大学や研究機関で一般的であり、5Gの到来によってその応用範囲は大いに拡大しています。
+「外科ロボットダ・ヴィンチ」の遠隔手術は典型的な例です。
 
-A robotic system of this type is typically composed of two modules: a human motion capture module and a robotic arm actuation module (some application scenarios also include a data communication module).
+この種のロボットシステムは、通常、人間の動きをキャプチャするモジュールとロボットアームを駆動するモジュール（一部の応用シナリオにはデータ通信モジュールも含まれる）の2つのモジュールで構成されています。
 
-The MPU6050 is used here to implement human motion capture (by mounting it on a glove) and the servo is used to represent robotic arm motion.
+ここでは、MPU6050を用いて人間の動きをキャプチャ（グローブに取り付ける）し、サーボを用いてロボットアームの動きを表現しています。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのは便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名称
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント
+        - 個数
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -57,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
@@ -68,31 +65,26 @@ You can also buy them separately from the links below.
         - 1
         - |link_servo_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_somato|
 
-The MPU6050 calculates the attitude angle based on the acceleration values in each direction.
+MPU6050は各方向の加速度値に基づいて姿勢角を計算します。
 
-The program will control the servo to make the corresponding deflection angle as the attitude angle changes.
+プログラムは、姿勢角が変わるにつれて、サーボを対応する偏角で制御します。
 
-**Wiring**
+**配線**
 
-|wiring_somatosensory_controller| 
+|wiring_somatosensory_controller|
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``7.11_somatosensory_controller.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * ``kepler-kit-main/micropython`` のパス下にある ``7.11_somatosensory_controller.py`` ファイルを開くか、このコードをThonnyにコピペして、"Run Current Script"をクリックまたはF5キーを押して実行します。
+    * 右下の「MicroPython（Raspberry Pi Pico）」インタープリターをクリックして選択してください。
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
+    * こちらでは ``imu.py`` と ``vector3d.py`` が必要です。Pico Wにアップロードされているか確認してください。詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -144,4 +136,5 @@ The program will control the servo to make the corresponding deflection angle as
         servo_write(servo,interval_mapping(average_angle,-90,90,0,180))
 
 
-As soon as the program runs, the servo will turn left and right as you tilt the MPU6050 (or turn your wrist if it is mounted on a glove).
+
+プログラムが動作すると、MPU6050を傾ける（またはグローブに取り付けた場合は手首を回す）と、サーボが左右に回転します。

@@ -1,50 +1,48 @@
 .. _py_guess_number:
 
-7.7 Guess Number
+7.7 数字当てゲーム
 ==============================
 
+数字当ては楽しいパーティーゲームで、友達と一緒に0～99の数字を入力します。各プレイヤーが数字を入力する度に、範囲が狭まり、誰かが正解するとそのプレイヤーは敗北し、罰を受けます。
 
-Guessing Numbers is a fun party game where you and your friends input numbers (0-99). With each input of the number, the range will shrink until a player answers the riddle correctly. Then the player is defeated and punished. 
-
-As an example, if the lucky number is 51, which the players cannot see, and the player 1 inputs 50, the prompt changes to 50 - 99; if the player 2 inputs 70, the range changes to 50 - 70; if the player 3 inputs 51, the player is unlucky. In this case, numbers are inputted through the keypad, and outcomes are displayed on a LCD screen.
+例えば、運の良い数字が51で、プレイヤーはそれを見ることができない場合、プレイヤー1が50を入力すると、プロンプトは50 - 99に変わります。プレイヤー2が70を入力すると、範囲は50 - 70に変わります。プレイヤー3が51を入力した場合、そのプレイヤーは不運です。このケースでは、数字はキーパッドを通じて入力され、結果はLCDスクリーンに表示されます。
 
 |guess_number|
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450+ 
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -53,7 +51,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -68,31 +66,28 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-
-**Schematic**
-
+**回路図**
 
 |sch_guess_number|
 
-This circuit is based on :ref:`py_keypad` with the addition of an I2C LCD1602 to display the pressed keys.
+この回路は、 :ref:`py_keypad` を基にしており、押されたキーを表示するためのI2C LCD1602が追加されています。
+
+**配線**
+
+|wiring_game_guess_number|
+
+配線を簡単にするために、上記の図では、マトリックスキーボードの列行と10Kの抵抗器が同時にG10～G13の穴に挿入されています。
 
 
-**Wiring**
-
-|wiring_game_guess_number| 
-
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G10 ~ G13 are located at the same time.
-
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``7.7_game_guess_number.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下にある ``7.7_game_guess_number.py`` ファイルを開くか、このコードをThonnyにコピーしてから「Run Current Script」をクリックするか、単純にF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -197,10 +192,12 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
             lcd_show(result) # show 
         time.sleep(0.1)
 
-* After the code runs, press ``A`` to start the game. A random number ``point`` is produced but not displayed on the LCD, and what you need to do is to guess it. 
-* The number you have typed appears at the end of the first line till the final calculation is finished. (Press ``D`` to start the comparation.)
-* The number range of ``point`` is displayed on the second line. And you must type the number within the range. 
-* When you type a number, the range narrows; if you got the lucky number luckily or unluckily, there will appear ``GAME OVER!``.
 
-.. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+* コードが実行された後、 ``A`` を押してゲームを開始します。ランダムな数字 ``point`` が生成されますが、LCDには表示されません。あなたがするべきことは、その数字を推測することです。
+* 最終計算が終わるまで、最初の行の末尾に入力した数字が表示されます（比較を開始するには ``D`` を押します）。
+* ``point`` の数字の範囲が2行目に表示されます。範囲内の数字を入力する必要があります。
+* 数字を入力すると、範囲が狭まります。もし幸運な数字（または不運な数字）を当てた場合は、 ``GAME OVER!`` が表示されます。
+
+.. note::
+    コードと配線が問題ないが、LCDがまだ内容を表示しない場合は、裏側のポテンショメータを回してコントラストを上げることができます。
+

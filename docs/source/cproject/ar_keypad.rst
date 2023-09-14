@@ -1,52 +1,51 @@
 .. _ar_keypad:
 
-4.2 4x4 Keypad
+4.2 4x4キーパッド
 ========================
 
-The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
+4x4キーボード、またはマトリックスキーボードは、一つのパネル内で排除された16個のキーのマトリックスです。
 
-The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+キーパッドは、主にデジタル入力が必要なデバイス、例えば電卓、テレビのリモートコントロール、押しボタン式の電話、自動販売機、ATM、組み合わせロック、デジタルドアロックなどで見られます。
 
-In this project, we will learn how to determine which key is pressed and get the related key value.
+このプロジェクトでは、押されたキーを特定し、関連するキー値を取得する方法を学びます。
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトには、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - 部品紹介
+        - 個数
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,66 +65,61 @@ You can also buy them separately from the links below.
         - 1
         - |link_keypad_buy|
 
-**Schematic**
+**回路図**
 
 |sch_keypad|
 
-4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+4つのプルダウン抵抗がマトリックスキーボードの各列に接続されています。これにより、キーが押されていないときにG6〜G9が安定したローレベルを取得します。
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+キーボードの行（G2〜G5）は、高い状態にプログラムされています。G6〜G9のうちの1つが高い状態で読み取られた場合、どのキーが押されたかを知ることができます。
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+例えば、G6が高い状態で読み取られた場合、数字キー1が押されています。これは、数字キー1の制御ピンがG2とG6であり、数字キー1が押されたときにG2とG6が接続され、G6も高い状態になるためです。
 
-
-**Wiring**
+**配線**
 
 |wiring_keypad|
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
+配線を簡単にするために、上記の図では、マトリックスキーボードの列と10K抵抗が、同時にG6〜G9の位置にある穴に挿入されています。
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Keypad`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * ファイル ``4.2_4x4_keypad.ino`` は、 ``kepler-kit-main/arduino/4.2_4x4_keypad`` のパスで開くことができます。
+    * またはこのコードを **Arduino IDE** にコピーペーストしてください。
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
+    * ここで使われるライブラリは ``Keypad`` です。それをArduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6c776dfc-cb74-49d7-8906-f1382e0e7b7b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+プログラムが実行された後、シェルはキーパッドで押したキーを出力します。
 
-After the program runs, the Shell will print out the keys you pressed on the Keypad.
+**仕組み**
 
-
-**How it works**
-
-By calling the ``Keypad.h`` library, you can easily use Keypad.
+``Keypad.h`` ライブラリを呼び出すことで、簡単にキーパッドを使用できます。
 
 .. code-block:: arduino
 
-    #include <Keypad.h> 
+    #include <Keypad.h>
 
-Library Functions: 
+ライブラリ関数：
 
 .. code-block:: arduino
 
     Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
 
-Initializes the internal keymap to be equal to ``userKeymap``.
+内部のキーマップを ``userKeymap`` と同じに初期化します。
 
-``userKeymap``: The symbols on the buttons of the keypads.
+``userKeymap`` ：キーパッドのボタン上のシンボル。
 
-``row``, ``col``: Pin configuration.
+``row`` , ``col`` ：ピン設定。
 
-``numRows``, ``numCols``: Keypad sizes.
+``numRows`` , ``numCols`` ：キーパッドのサイズ。
 
 .. code-block:: arduino
 
     char getKey()
 
-Returns the key that is pressed, if any. This function is non-blocking.
+押されているキーを返します（あれば）。この関数は非ブロッキングです。

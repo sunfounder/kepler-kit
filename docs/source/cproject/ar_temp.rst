@@ -1,59 +1,54 @@
 .. _ar_temp:
 
-2.13 - Thermometer
+2.13 - 温度計
 ===========================
 
-A thermometer is a device that measures temperature or a temperature gradient (the degree of hotness or coldness of an object). 
-A thermometer has two important elements: (1) a temperature sensor (e.g. the bulb of a mercury-in-glass thermometer or the pyrometric sensor in an infrared thermometer) in which some change occurs with a change in temperature; 
-and (2) some means of converting this change into a numerical value (e.g. the visible scale that is marked on a mercury-in-glass thermometer or the digital readout on an infrared model). 
-Thermometers are widely used in technology and industry to monitor processes, in meteorology, in medicine, and in scientific research.
+温度計は、温度または温度勾配（物体の温度または冷度の程度）を測定する装置です。
+温度計には、2つの重要な要素があります：（1）温度に変化が生じる何らかの変化が起こる温度センサー（例：水銀温度計の球根や赤外線温度計の焦電センサー）；
+そして（2）この変化を数値で表示する手段（例：水銀温度計にマークされた可視スケールや赤外線モデルのデジタル表示）。
+温度計は、テクノロジーと産業でプロセスを監視するため、気象学、医学、科学研究で広く使用されています。
 
+サーミスターは、温度に強く依存する抵抗を持つ温度センサーの一種で、2つのタイプがあります：
+負の温度係数（NTC）と正の温度係数（PTC）とも呼ばれ、NTCとPTCです。
+PTCサーミスターの抵抗は温度とともに増加し、NTCの状態はそれに反対です。
 
-A thermistor is a type of temperature sensor whose resistance is strongly dependent on temperature, and it has two types: 
-Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), 
-also known as NTC and PTC. The resistance of PTC thermistor increases with temperature, while the condition of NTC is opposite to the former.
-
-In this experiment we use an **NTC thermistor** to make a thermometer.
-
+この実験では、 **NTCサーミスター** を使用して温度計を作成します。
 
 * :ref:`cpn_thermistor`
 
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトには、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -62,7 +57,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -73,96 +68,78 @@ You can also buy them separately from the links below.
         - 1
         - |link_thermistor_buy|
 
-**Schematic**
+
+**回路図**
 
 |sch_temp|
 
-In this circuit, the 10K resistor and the thermistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the thermistor.
+この回路では、10KΩの抵抗とサーミスタは直列に接続され、流れる電流は一定です。10KΩの抵抗は保護役割を果たし、GP28はサーミスタの電圧変換後の値を読み取ります。
 
-When the temperature increases, the resistance value of NTC thermistor decreases, then its voltage decreases, so the value from GP28 will decrease; If the temperature is high enough, the resistance of the thermistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+温度が上昇すると、NTCサーミスタの抵抗値は減少し、その結果、電圧も減少するため、GP28からの値も減少します。温度が十分に高いと、サーミスタの抵抗はほぼ0に近づき、GP28の値も0に近くなります。このとき、10KΩの抵抗は保護役割を果たし、3.3VとGNDが短絡するのを防ぎます。
 
-When the temperature drops, the value of GP28 will increase. When the temperature is low enough, the resistance of the thermistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+温度が低下すると、GP28の値が増加します。温度が十分に低い場合、サーミスタの抵抗は無限大になり、その電圧はほぼ3.3Vに近づきます（10KΩの抵抗は無視できる）。
 
-
-The calculation formula is shown below.
+計算式は以下のとおりです。
 
     (Vp/3.3V) x 65535 = Ap
 
-
-**Wiring**
-
+**配線**
 
 |wiring_temp|
- 
-.. #. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
-.. #. Connect another lead of thermistor to the negative power bus.
 
 .. note::
-    * The thermistor is black and marked 103.
-    * The color ring of the 10K ohm resistor is red, black, black, red and brown.
+    * サーミスタは黒く、103と表示されています。
+    * 10KΩ抵抗の色リングは赤、黒、黒、赤、茶色です。
 
-**Code**
+**コード**
 
 .. note::
-
-   * You can open the file ``2.13_thermometer.ino`` under the path of ``kepler-kit-main/arduino/2.13_thermometer``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * ファイル ``2.13_thermometer.ino`` を ``kepler-kit-main/arduino/2.13_thermometer`` パスから開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
+   
+    * ボード（Raspberry Pi Pico）と正確なポートを選択した後、 **アップロード** ボタンをクリックすることを忘れないでください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1ae1a028-2647-4e4c-b647-0d4759f6fd03/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
 
+プログラムが実行されると、シリアルモニターに摂氏と華氏の温度が表示されます。
 
-After the program runs, the Serial Monitor will print out the Celsius and Fahrenheit temperatures.
+**動作原理**
 
-**How it works?**
+各サーミスタには基準となる抵抗があります。
+この場合、それは10kΩで、25度摂氏で測定されます。
 
-Each thermistor has a normal resistance. 
-Here it is 10k ohm, which is measured under 25 degree Celsius. 
+温度が上がると、サーミスタの抵抗が減少します。
+その後、A/Dアダプターによって電圧データがデジタル量に変換されます。
 
-When the temperature gets higher, the resistance of the thermistor decreases. 
-Then the voltage data is converted to digital quantities by the A/D adapter. 
-
-The temperature in Celsius or Fahrenheit is output via programming. 
-
+プログラミングにより、摂氏または華氏での温度が出力されます。
 
 .. code-block:: arduino
 
     long a = analogRead(analogPin);
 
-This line is used to read the value of the thermistor. 
+この行は、サーミスタの値を読むために使用されます。
 
 .. code-block:: arduino
 
     float tempC = beta / (log((1025.0 * 10 / a - 10) / 10) + beta / 298.0) - 273.0;
     float tempF = 1.8 * tempC + 32.0;
 
-These calculations convert the thermistor values into centigrade degree and Fahrenheit degree. 
-
+これらの計算は、サーミスタの値を摂氏度と華氏度に変換します。
 
 .. note::
-    Here is the relation between the resistance and temperature: 
+    ここでは、抵抗と温度の関係は以下の通りです：
 
-    **RT =RN expB(1/TK – 1/TN)** 
+    **RT = RN expB(1/TK – 1/TN)**
 
-    * RT is the resistance of the NTC thermistor when the temperature is TK. 
-    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
-    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
-    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
-    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+    * RTは、温度がTKのときのNTCサーミスタの抵抗です。
+    * RNは、評価温度TNでのNTCサーミスタの抵抗です。この場合、RNの数値は10kです。
+    * TKはケルビン温度で、単位はKです。この場合、TKの数値は273.15 + 摂氏度です。
+    * TNは評価ケルビン温度で、単位もKです。この場合、TNの数値は273.15+25です。
+    * そしてB（ベータ）は、NTCサーミスタの材料定数であり、熱感度指数とも呼ばれ、数値は3950です。
+    * expは指数関数の略であり、基数eは自然数で、おおよそ2.7と等しいです。
 
-    Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+    この関係式は、経験式です。温度と抵抗が有効範囲内の場合にのみ正確です。
 
-    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
-
-This code refers to plugging Rt into the formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature. 
-
-
+このコードは、ケルビン温度を得るために、式TK=1/(ln(RT/RN)/B+1/TN)にRtを代入します。

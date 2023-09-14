@@ -1,45 +1,43 @@
 .. _per_drum_kit:
 
-2.5 Drum Kit
+2.5 ドラムキット
 =============================
 
-For this project, let's make a drum kit with three buttons and a slide switch. Now, play your own drums.
+このプロジェクトでは、3つのボタンとスライドスイッチを使ってドラムキットを作りましょう。さあ、自分だけのドラムを演奏してみてください。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+こちらのリンクでキット全体を購入すると便利です：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - キット内容
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+    *   - 番号
+        - コンポーネント
+        - 個数
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -48,7 +46,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -67,25 +65,23 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Wiring**
+**配線**
 
 |drum_kit0|
 
-* When the slide switch is toggled to the right, GP12 is high; when toggled to the left, GP12 is low.
-* Each of the three buttons is connected to a pull-down resistor, GP13~GP15 are low by default; when the button is pressed, GP13~GP15 are high.
+* スライドスイッチを右に切り替えると、GP12は高い状態になります。左に切り替えると、GP12は低い状態になります。
+* 3つのボタンはそれぞれプルダウン抵抗器に接続され、GP13〜GP15はデフォルトで低い状態です。ボタンが押されると、GP13〜GP15は高い状態になります。
 
-
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.5_drum_kit.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * 下の画像を参考にして、ドラッグ＆ドロップでコードを作成できます。
+    * ``kepler-kit-main\piper`` のパスから ``2.5_drum_kit.png`` をインポートしてください。詳細なチュートリアルは、 :ref:`import_code_piper` を参照してください。
 
 |drum_kit|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Pressing different buttons or toggling the slide switch will produce different drum sounds, just like a drum kit.
+Pico Wに接続した後、 **スタート** ボタンをクリックするとコードが実行されます。異なるボタンを押したり、スライドスイッチを切り替えたりすると、ドラムキットのようにさまざまなドラムの音が鳴ります。
 
 .. note::
-    If you are using a computer, you will need to plug in headphones or audio to your computer to hear the sound emitted.
+    コンピュータを使用している場合は、発生した音を聞くためにヘッドホンまたはオーディオをコンピュータに接続する必要があります。

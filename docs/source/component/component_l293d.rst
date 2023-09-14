@@ -1,32 +1,33 @@
 .. _cpn_l293d:
 
-IC L293D 
+IC L293D
 =================
 
 |img_l293d0|
 
-L293D is a 4-channel motor driver integrated by chip with high voltage and high current. 
-It's designed to connect to standard DTL, TTL logic level, and drive inductive loads (such as relay coils, DC, Stepper Motors) and power switching transistors etc. 
-DC Motors are devices that turn DC electrical energy into mechanical energy. They are widely used in electrical drive for their superior speed regulation performance.
+L293Dは、高電圧・高電流を備えた4チャンネルのモータードライバー集積回路です。
+このICは、標準的なDTL、TTLロジックレベルに接続し、誘導負荷（リレーのコイル、直流モータ、ステッピングモータなど）やパワー・スイッチング・トランジスタを駆動するために設計されています。
+直流モータは、直流電力を機械エネルギーに変換する装置であり、優れた速度制御性能により、電動駆動に広く使用されています。
 
-See the figure of pins below. L293D has two pins (Vcc1 and Vcc2) for power supply. 
-Vcc2 is used to supply power for the motor, while Vcc1 to supply for the chip. Since a small-sized DC motor is used here, connect both pins to +5V.
+以下に示すピンの図によれば、L293Dには電源供給用の2つのピン（Vcc1およびVcc2）があります。
+Vcc2はモーターへの電源供給用であり、Vcc1はチップへの供給用です。ここでは小型の直流モータを使用するため、両方のピンを+5Vに接続します。
 
-|img_l293d1| 
+|img_l293d1|
 
-The following is the internal structure of L293D. 
-Pin EN is an enable pin and only works with high level; A stands for input and Y for output. 
-You can see the relationship among them at the right bottom. 
-When pin EN is High level, if A is High, Y outputs high level; if A is Low, Y outputs Low level. When pin EN is Low level, the L293D does not work.
+次に、L293Dの内部構造です。
+ENピンは有効化ピンであり、高レベルでのみ動作します；Aは入力を、Yは出力を示します。
+それらの関係性は右下で確認できます。
+ENピンが高レベルの場合、Aが高いとYは高レベルを出力し、Aが低いとYは低レベルを出力します。ENピンが低レベルの場合、L293Dは動作しません。
 
 |img_l293d2|
 
-* `L293D Datasheet <https://cdn-shop.adafruit.com/datasheets/l293d.pdf>`_
+* `L293D データシート <https://cdn-shop.adafruit.com/datasheets/l293d.pdf>`_
 
-**Example**
+**例**
 
-* :ref:`py_motor` (For MicroPython User)
-* :ref:`ar_motor` (For Arduino User)
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
-* :ref:`per_smart_fan` (For Piper Make User)
+* :ref:`py_motor` （MicroPythonユーザー向け）
+* :ref:`ar_motor` （Arduinoユーザー向け）
+* :ref:`py_pump` （MicroPythonユーザー向け）
+* :ref:`ar_pump` （Arduinoユーザー向け）
+* :ref:`per_smart_fan` （Piper Makeユーザー向け）
+

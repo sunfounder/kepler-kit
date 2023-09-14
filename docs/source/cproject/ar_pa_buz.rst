@@ -1,54 +1,51 @@
 .. _ar_pa_buz:
 
-
-3.2 - Custom Tone
+3.2 - カスタムトーン
 ==========================================
 
+前回のプロジェクトではアクティブブザーを使用しましたが、今回はパッシブブザーを使用します。
 
-We have used active buzzer in the previous project, this time we will use passive buzzer.
+アクティブブザーと同様に、パッシブブザーも電磁誘導の現象を利用して動作します。違いは、パッシブブザーには振動源がないため、直流信号を使用しても音を出さない点です。
+しかし、この特性により、パッシブブザー自体の振動周波数を調整し、"ド、レ、ミ、ファ、ソ、ラ、シ"などの異なる音階を出すことができます。
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
-But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
+さあ、パッシブブザーにメロディーを鳴らしてみましょう！
 
-Let the passive buzzer emit a melody!
+* :ref:`cpn_buzzer`
 
-* :ref:`Buzzer`
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのが便利です、そのためのリンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+下記のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -57,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -68,79 +65,68 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
-**Schematic**
+**回路図**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+GP15の出力が高いと、1Kの電流制限抵抗を通過した後で、S8050（NPNトランジスター）が導通し、ブザーが鳴ります。
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+S8050（NPNトランジスター）の役割は、電流を増幅してブザーの音を大きくすることです。実際には、GP15に直接ブザーを接続することもできますが、ブザーの音が小さいことに気付くでしょう。
 
-
-**Wiring**
+**配線**
 
 |img_buzzer|
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back).
+このキットには2つのブザーが含まれていますが、ここではパッシブブザー（背面に露出したPCBがあるもの）を使用します。
 
-The buzzer needs a transistor to work, here we use S8050.
+ブザーは動作するためにトランジスタが必要です、ここではS8050を使用します。
 
 |wiring_buzzer|
 
-**Code**
-
+**コード**
 
 .. note::
 
-   * You can open the file ``3.2_custom_tone.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``3.2_custom_tone.ino`` は、 ``kepler-kit-main/arduino/3.2_custom_tone`` のパスで開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/69c55e56-9eeb-46bb-b3a8-b354c500cc17/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
+**動作の仕組み**
 
-**How it works?**
+パッシブブザーにデジタル信号を与えると、振動板を押し出すだけで音を出すことはありません。
 
-If the passive buzzer given a digital signal, it can only keep pushing the diaphragm without producing sound.
+そのため、 ``tone()`` 関数を使用してPWM信号を生成し、パッシブブザーに音を出させます。
 
-Therefore, we use the ``tone()`` function to generate the PWM signal to make the passive buzzer sound.
+この関数には3つのパラメーターがあります：
 
-This function has three parameters:
-
-  * **pin**, the GPIO pin that controls the buzzer.
-  * **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-  * **Duration**, the duration of the tone.
-
+  * **pin** ：ブザーを制御するGPIOピン。
+  * **frequency** ：ブザーの音程は周波数で決まります。周波数が高いほど音程も高くなります。
+  * **Duration** ：音の持続時間。
 
 * `tone <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>`_
 
-**Learn More**
+**さらに学ぶ**
 
-We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
+ピアノの基本周波数に応じて特定の音を模倣し、完全な曲を演奏することができます。
 
 * `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
 
 .. note::
 
-   * You can open the file ``3.2_custom_tone_2.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone_2``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``3.2_custom_tone_2.ino`` は、 ``kepler-kit-main/arduino/3.2_custom_tone_2`` のパスで開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
 .. raw:: html
     

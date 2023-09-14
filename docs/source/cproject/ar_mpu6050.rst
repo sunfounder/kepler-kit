@@ -1,55 +1,52 @@
 .. _ar_mpu6050:
 
-6.3 - 6-axis Motion Tracking
+6.3 - 6軸モーショントラッキング
 ===================================
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices.
+MPU-6050は、3軸ジャイロスコープと3軸加速度計を組み合わせた6軸モーショントラッキングデバイスです。
 
+加速度計は、適切な加速度を測定するツールです。例えば、地球上で静止している加速度計は、地球の重力による加速度を直上方向に測定します。その値はおおよそ g ≈ 9.81 m/s2 です。
 
-An accelerometer is a tool that measures proper acceleration.For example, an accelerometer at rest on the surface of the Earth will measure an acceleration due to Earth's gravity, straight upwards[3] (by definition) of g ≈ 9.81 m/s2.
+加速度計は産業や科学で多くの用途があります。例としては、航空機やミサイルの慣性航法システム、タブレットやデジタルカメラの画像を垂直に保つためなどがあります。
 
-Accelerometers have many uses in industry and science. For example: inertial navigation systems for aircraft and missiles, for keeping images on tablets and digital cameras vertical, etc.
-
-Gyroscopes are used to measure orientation and angular velocity of a device or maintenance.
-Applications of gyroscopes include anti-rollover and airbag systems for automobiles, motion sensing systems for smart devices, attitude stabilization systems for drones, and more.
+ジャイロスコープは、デバイスの方向や角速度を測定するために使用されます。ジャイロスコープの応用例としては、自動車の反転防止やエアバッグシステム、スマートデバイスのモーションセンシングシステム、ドローンの姿勢安定化システムなどがあります。
 
 * :ref:`cpn_mpu6050`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのが便利です。詳細は以下のリンクを参照してください：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント説明	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -58,44 +55,42 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_mpu6050|
 
-**Wiring**
+**配線**
 
 |wiring_mpu6050|
 
-**Code**
+
+**コード**
 
 .. note::
 
-    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``kepler-kit-main/arduino/6.3_6axis_motion_tracking``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Adafruit_MPU6050`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
-
+    * ``kepler-kit-main/arduino/6.3_6axis_motion_tracking`` のパスにある ``6.3_6axis_motion_tracking.ino`` ファイルを開いてください。
+    * または、このコードを **Arduino IDE** にコピーアンドペーストしてください。
+    * **Upload** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
+    * ここでは ``Adafruit_MPU6050`` ライブラリを使用しています。Arduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/318f62d3-1d7b-4ee6-a1a2-97e783cf2d5e/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
 
-After running the program, you can see the 3-axis accelerometer values and 3-axis gyroscope values cycling through the output.
-At this point you rotate the MPU6050 at random, and these values will appear to change accordingly.
-To make it easier to see the changes, you can comment out one of the print lines and concentrate on another set of data.
+プログラムを実行した後、3軸加速度計の値と3軸ジャイロスコープの値が出力に順次表示されます。
+この時点でMPU6050をランダムに回転させると、これらの値はそれに応じて変化するでしょう。
+変化を容易に確認するために、出力ラインの一つをコメントアウトして、別のデータセットに焦点を当てることができます。
 
+**動作原理**
 
-**How it works?**
-
-Instantiate an ``MPU6050`` object.
+``MPU6050`` オブジェクトをインスタンス化します。
 
 .. code-block:: arduino
 
@@ -105,7 +100,7 @@ Instantiate an ``MPU6050`` object.
     Adafruit_MPU6050 mpu;
 
 
-Initialize the MPU6050 and set its accuracy.
+MPU6050を初期化し、その精度を設定します。
 
 .. code-block:: arduino
 
@@ -134,14 +129,14 @@ Initialize the MPU6050 and set its accuracy.
         delay(100);
     }
 
-Get new sensor events with the readings.
+新しいセンサーイベントとその読み取り値を取得します。
 
 .. code-block:: arduino
 
     sensors_event_t a, g, temp;
     mpu.getEvent(&a, &g, &temp);
 
-Subsequently, you will be able to get real-time acceleration and angular velocity values in the data ``a.acceleration.x``, ``a.acceleration.y``, ``a.acceleration.z``, ``g.gyro.x``, ``g.gyro.y``, ``g.gyro.z``.
+これにより、データ ``a.acceleration.x`` 、 ``a.acceleration.y`` 、 ``a.acceleration.z`` 、 ``g.gyro.x`` 、 ``g.gyro.y`` 、 ``g.gyro.z`` でリアルタイムの加速度と角速度の値を取得できます。
 
 .. code-block:: arduino
 

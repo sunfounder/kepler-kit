@@ -1,44 +1,45 @@
 .. _cpn_pir:
 
-PIR Motion Sensor Module
+PIR モーションセンサーモジュール
 ==================================
 
 |img_pir|
 
-The PIR sensor detects infrared heat radiation that can be used to detect the presence of organisms that emit infrared heat radiation.
+PIRセンサーは、赤外線熱放射を検出するセンサーです。これを用いて赤外線熱放射を発生する生物の存在を感知できます。
 
-The PIR sensor is split into two slots that are connected to a differential amplifier. Whenever a stationary object is in front of the sensor, the two slots receive the same amount of radiation and the output is zero. Whenever a moving object is in front of the sensor, one of the slots receives more radiation than the other , which makes the output fluctuate high or low. This change in output voltage is a result of detection of motion.
+PIRセンサーは二つのスロットに分かれており、それぞれが差動増幅器に接続されています。固定された物体がセンサーの前にある場合、両方のスロットが同じ量の放射線を受け取り、出力はゼロになります。動く物体がセンサーの前にある場合、一方のスロットがもう一方よりも多くの放射線を受け取り、出力が高いまたは低いに変動します。この出力電圧の変化が、動きの検出となります。
 
 |img_PIR_working_principle|
 
-After the sensing module is wired, there is a one-minute initialization. During the initialization, module will output for 0~3 times at intervals. Then the module will be in the standby mode. Please keep the interference of light source and other sources away from the surface of the module so as to avoid the misoperation caused by the interfering signal. Even you'd better use the module without too much wind, because the wind can also interfere with the sensor.
+センシングモジュールが配線された後、1分間の初期化があります。初期化中は、モジュールが0～3回の間隔で出力します。その後、モジュールはスタンバイモードになります。モジュールの表面から光源や他の干渉源を遠ざけて、誤動作を防ぐようにしてください。風もセンサーに干渉する可能性があるため、風の影響を受けない場所で使用することが望ましいです。
 
 |img_pir_back|
 
-**Distance Adjustment**
+**距離調整**
 
-Turning the knob of the distance adjustment potentiometer clockwise, the range of sensing distance increases, and the maximum sensing distance range is about 0-7 meters. If turn it anticlockwise, the range of sensing distance is reduced, and the minimum sensing distance range is about 0-3 meters.
+距離調整用のポテンショメーターのつまみを時計回りに回すと、センシング距離の範囲が広がります。最大センシング距離は約0~7メートルです。反時計回りに回すと、センシング距離の範囲が狭まり、最小センシング距離は約0~3メートルです。
 
-**Delay adjustment**
+**遅延調整**
 
-Rotate the knob of the delay adjustment potentiometer clockwise, you can also see the sensing delay increasing. The maximum of the sensing delay can reach up to 300s. On the contrary, if rotate it anticlockwise, you can shorten the delay with a minimum of 5s. 
+遅延調整用のポテンショメーターのつまみを時計回りに回すと、センシング遅延が長くなります。最大で300秒に達することがあります。反対に、反時計回りに回すと、最小で5秒の遅延に短縮できます。
 
-**Two Trigger Modes**
+**二つのトリガーモード**
 
-Choosing different modes by using the jumper cap.
+ジャンパーキャップを用いて異なるモードを選択できます。
 
-* **H**: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range,the output will keep being the high level.
-* **L**: Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically.
+* **H**: 反復可能なトリガーモード。人体を感知した後、モジュールは高レベルを出力します。その後の遅延期間中に誰かが感知範囲に入ると、出力は高レベルのままです。
+* **L**: 非反復トリガーモード。人体を感知すると高レベルを出力し、遅延後に自動的に低レベルに戻ります。
 
-.. Example 
+.. 例
 .. -------------------
 
-.. :ref:`Intruder Alarm`
+.. :ref:`侵入者警報`
 
 
-**Example**
+**例**
 
-* :ref:`py_pir` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`ar_pir` (For Arduino User)
-* :ref:`per_lucky_cat` (For Piper Make User)
+* :ref:`py_pir` （MicroPythonユーザー向け）
+* :ref:`py_passage_counter` （MicroPythonユーザー向け）
+* :ref:`ar_pir` （Arduinoユーザー向け）
+* :ref:`per_lucky_cat` （Piper Makeユーザー向け）
+

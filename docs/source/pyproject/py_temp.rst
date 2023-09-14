@@ -1,60 +1,53 @@
 .. _py_temp:
 
-
-2.13 Thermometer
+2.13 温度計
 ===========================
 
-A thermometer is a device that measures temperature or a temperature gradient (the degree of hotness or coldness of an object). 
-A thermometer has two important elements: (1) a temperature sensor (e.g. the bulb of a mercury-in-glass thermometer or the pyrometric sensor in an infrared thermometer) in which some change occurs with a change in temperature; 
-and (2) some means of converting this change into a numerical value (e.g. the visible scale that is marked on a mercury-in-glass thermometer or the digital readout on an infrared model). 
-Thermometers are widely used in technology and industry to monitor processes, in meteorology, in medicine, and in scientific research.
+温度計は、温度または温度勾配（物体の熱さや冷たさの度合い）を測定する装置です。
+温度計には2つの重要な要素があります：(1) 温度センサー（例えば、水銀温度計の球根や赤外線温度計の焦電センサー）で、これには温度の変化に伴い何らかの変化が生じます；
+そして（2）この変化を数値に変換する何らかの手段（例えば、水銀温度計にマークされた目盛りまたは赤外線モデルのデジタル表示）。
+温度計は、テクノロジーや産業でプロセスを監視するため、気象学、医学、科学研究で広く使用されています。
 
+サーミスターは、温度に強く依存する抵抗値を持つ温度センサーの一種で、2つのタイプがあります：
+負温度係数（NTC）と正温度係数（PTC）、別名NTCおよびPTCです。PTCサーミスターの抵抗は温度とともに増加し、NTCの状態はそれと逆です。
 
-
-A thermistor is a type of temperature sensor whose resistance is strongly dependent on temperature, and it has two types: 
-Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), 
-also known as NTC and PTC. The resistance of PTC thermistor increases with temperature, while the condition of NTC is opposite to the former.
-
-In this experiment we use an **NTC thermistor** to make a thermometer.
-
+この実験では、 **NTCサーミスター** を用いて温度計を作成します。
 
 * :ref:`cpn_thermistor`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのは便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名称
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント
+        - 個数
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -63,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -74,47 +67,40 @@ You can also buy them separately from the links below.
         - 1
         - |link_thermistor_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_temp|
 
-In this circuit, the 10K resistor and the thermistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the thermistor.
+この回路では、10Kの抵抗とサーミスターが直列に接続されており、両方を通る電流は同じです。10Kの抵抗は保護として機能し、GP28はサーミスターの電圧変換後の値を読み取ります。
 
-When the temperature increases, the resistance value of NTC thermistor decreases, then its voltage decreases, so the value from GP28 will decrease; If the temperature is high enough, the resistance of the thermistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+温度が上昇すると、NTCサーミスターの抵抗値は減少し、その電圧も減少するため、GP28からの値も減少します。温度が十分に高い場合、サーミスターの抵抗はほぼ0に近く、GP28の値もほぼ0に近くなります。このとき、10Kの抵抗は保護として働き、3.3VとGNDが直結し短絡することを防ぎます。
 
-When the temperature drops, the value of GP28 will increase. When the temperature is low enough, the resistance of the thermistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+温度が下がると、GP28の値は増加します。温度が十分に低い場合、サーミスターの抵抗は無限大になり、その電圧はほぼ3.3Vに近くなります（10Kの抵抗は無視できます）、GP28の値は最大値の65535に近くなります。
 
-
-The calculation formula is shown below.
+計算式は以下の通りです。
 
     (Vp/3.3V) x 65535 = Ap
 
 
-**Wiring**
-
+**配線**
 
 |wiring_temp|
- 
-.. #. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
-.. #. Connect another lead of thermistor to the negative power bus.
 
-.. note::
-    * The thermistor is black and marked 103.
-    * The color ring of the 10K ohm resistor is red, black, black, red and brown.
-
-**Code**
 
 
 .. note::
+    * サーミスターは黒く、103とマークされています。
+    * 10Kオームの抵抗器のカラーリングは赤、黒、黒、赤、茶です。
 
-    * Open the ``2.13_thermometer.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+**コード**
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+.. note::
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * ``kepler-kit-main/micropython`` のパスにある ``2.13_thermometer.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするかF5キーを押して実行します。
 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタープリターを忘れずにクリックしてください。
+
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -134,21 +120,21 @@ The calculation formula is shown below.
         print ('Celsius: %.2f C  Fahrenheit: %.2f F' % (Cel, Fah))
         utime.sleep_ms(200)
 
-After the program runs, the Shell will print out the Celsius and Fahrenheit temperatures.
+プログラムが実行された後、シェルは摂氏と華氏の温度を出力します。
 
-**How it works?**
+**仕組みは？**
 
-Each thermistor has a normal resistance. Here it is 10k ohm, which is measured under 25 degree Celsius. 
+各サーミスターには通常の抵抗値があります。ここでは、それは10kオームであり、25度摂氏で測定されます。
 
-When the temperature gets higher, the resistance of the thermistor decreases. Then the voltage data is converted to digital quantities by the A/D adapter. 
+温度が高くなると、サーミスターの抵抗が減少します。その後、A/Dアダプターによって電圧データがデジタル量に変換されます。
 
-The temperature in Celsius or Fahrenheit is output via programming. 
+プログラミングを介して摂氏または華氏での温度が出力されます。
 
 .. code-block:: python
 
     import math 
 
-There is a numerics library which declares a set of functions to compute common mathematical operations and transformations. 
+これは、一般的な数学的演算と変換を計算する一連の関数を宣言する数値ライブラリです。
 
 * `math <https://docs.micropython.org/en/latest/library/math.html>`_
 
@@ -156,7 +142,7 @@ There is a numerics library which declares a set of functions to compute common 
 
     temperature_value = thermistor.read_u16()
 
-This function is used to read the value of the thermistor. 
+この関数は、サーミスターの値を読み取るために使用されます。
 
 .. code-block:: python
 
@@ -168,51 +154,49 @@ This function is used to read the value of the thermistor.
     print ('Celsius: %.2f C  Fahrenheit: %.2f F' % (Cel, Fah))
     utime.sleep_ms(200)
 
-These calculations convert the thermistor values into centigrade degree and Fahrenheit degree. 
+これらの計算は、サーミスターの値を摂氏度と華氏度に変換します。
 
 .. code-block:: python
 
     Vr = 3.3 * float(temperature_value) / 65535
     Rt = 10000 * Vr / (3.3 - Vr)
 
-In the two lines of code above, the voltage is first calculated using the read analoge value, and then get Rt (the resistance of the thermistor).
+上記の2行のコードでは、まず読み取ったアナログ値を使用して電圧を計算し、次にRt（サーミスターの抵抗）を取得します。
 
 .. code-block:: python
 
     temp = 1/(((math.log(Rt / 10000)) / 3950) + (1 / (273.15+25))) 
 
 .. note::
-    Here is the relation between the resistance and temperature: 
+    ここでは、抵抗と温度の関係が以下のようになっています：
 
-    **RT =RN expB(1/TK – 1/TN)** 
+    **RT = RN expB(1/TK – 1/TN)**
 
-    * RT is the resistance of the NTC thermistor when the temperature is TK. 
-    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
-    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
-    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
-    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+    * RTは、温度がTKのときのNTCサーミスターの抵抗です。
+    * RNは、定格温度TN下でのNTCサーミスターの抵抗です。ここでは、RNの数値値は10kです。
+    * TKはケルビン温度で、単位はKです。ここでは、TKの数値値は273.15 + 摂氏度です。
+    * TNも定格ケルビン温度であり、単位もKです。ここでは、TNの数値値は273.15+25です。
+    * B（ベータ）はNTCサーミスターの材料定数であり、熱感度指数とも呼ばれ、数値値は3950です。
+    * expは指数の略であり、基数eは自然数で、約2.7に等しいです。
 
-    Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+    この関係は、実用的な公式です。温度と抵抗が有効範囲内にある場合にのみ正確です。
 
-    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
-
-This code refers to plugging Rt into the formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature. 
+このコードは、ケルビン温度を取得するために、Rtを式TK=1/(ln(RT/RN)/B+1/TN)に代入しています。
 
 .. code-block:: python
 
     temp = temp - 273.15 
 
-Convert Kelvin temperature into centigrade degree. 
+ケルビン温度を摂氏度に変換します。
 
 .. code-block:: python
 
     Fah = Cel * 1.8 + 32 
 
-Convert the centigrade degree into Fahrenheit degree. 
+摂氏度を華氏度に変換します。
 
 .. code-block:: python
 
     print ('Celsius: %.2f °C Fahrenheit: %.2f ℉' % (Cel, Fah)) 
 
-Print centigrade degree, Fahrenheit degree and their units in the shell.
+シェルに摂氏度、華氏度、およびそれらの単位を出力します。

@@ -1,48 +1,47 @@
 .. _py_slide:
 
-2.7 Toggle Left and Right
+2.7 左右切り替え
 ====================================
 
 |img_slide|
 
-The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
+スライドスイッチは3ピンのデバイスで、ピン2（中央）が共通ピンです。スイッチを左に切り替えると、左側の2つのピンが接続され、右に切り替えると、右側の2つのピンが接続されます。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのは非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名称	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -51,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,32 +65,32 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+スライドスイッチを左右に切り替えると、GP14のレベルが変わります。
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+10Kの抵抗器の目的は、切り替え中にGP14を低く保つことです（左端には切り替えず、右端にも切り替えない）。
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+104のセラミックコンデンサは、ジッタを除去するために使用されています。
 
 * :ref:`cpn_slide_switch`
 * :ref:`cpn_capacitor`
 
-**Wiring**
+**配線**
 
 |wiring_slide|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.7_slide_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下にある ``2.7_slide_switch.py`` ファイルを開くか、このコードをThonnyにコピペして、「Run Current Script」をクリックまたはF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリターをクリックして選択してください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -103,5 +102,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
             print("The switch works!")
             utime.sleep(1)
 
-
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the shell.
+プログラムが実行された後、スライドスイッチを右に切り替えると、シェルに「The switch works!」と表示されます。

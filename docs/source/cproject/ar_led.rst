@@ -1,49 +1,46 @@
 .. _ar_led:
 
-
-
-2.1 - Hello, LED! 
+2.1 - こんにちは、LED！
 =======================================
 
-Just as printing “Hello, world!” is the first step in learning to program, using a program to drive an LED is the traditional introduction to learning physical programming.
+「Hello, world!」を出力することがプログラミング学習の第一歩であるように、LEDを制御するプログラムを使用することは、物理的なプログラミングを学ぶ際の伝統的な入門です。
 
 * :ref:`cpn_led`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です、以下がリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -63,34 +60,32 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-**Schematic**
+**回路図**
 
 |sch_led|
 
-The principle of this circuit is simple and the current direction is shown in the figure. When GP15 outputs high level(3.3v), the LED will light up after the 220ohm current limiting resistor. When GP15 outputs low level (0v), the LED will turn off.
+この回路の原理はシンプルであり、図には電流の方向が示されています。GP15が高レベル（3.3V）を出力すると、220Ωの電流制限抵抗を経てLEDが点灯します。GP15が低レベル（0V）を出力すると、LEDは消灯します。
 
-**Wiring**
+**配線**
 
 |wiring_led|
 
-Let us follow the direction of the current to build the circuit!
+電流の方向に沿って回路を組み立てましょう！
 
-1. Here we use the electrical signal from the GP15 pin of the Pico W board to make the LED work, and the circuit starts from here.
-#. The current needs to pass through a 220 ohm resistor (used to protect the LED). Insert one end (either end) of the resistor into the same row as the Pico W GP15 pin (row 20 in my circuit), and insert the other end into the free row of the breadboard (row 24 in my circuit).
-#. Pick up the LED, you will see that one of its leads is longer than the other. Insert the longer lead into the same row as the end of the resistor, and connect the shorter lead across the middle gap of the breadboard to the same row.
-#. Insert the male-to-male (M2M) jumper wire into the same row as the LED short pin, and then connect it to the negative power bus of the breadboard.
-#. Use a jumper to connect the negative power bus to the GND pin of Pico W.
+1. ここでは、Pico WボードのGP15ピンからの電気信号を使用してLEDを動作させ、この回路はここから始まります。
+#. 電流は220Ωの抵抗器（LEDを保護するために使用）を通過する必要があります。抵抗器の一方の端（どちらでもよい）をPico W GP15ピンと同じ行（私の回路では行20）に挿入し、もう一方の端をブレッドボードの空いている行（私の回路では行24）に挿入します。
+#. LEDを取り上げると、一方のリードがもう一方よりも長いことに気づくでしょう。抵抗器の端と同じ行に長いリードを挿入し、短いリードをブレッドボードの中央のギャップを越えて同じ行に接続します。
+#. 男性対男性（M2M）ジャンパーワイヤーをLEDの短いピンと同じ行に挿入し、次にそれをブレッドボードの負の電源バスに接続します。
+#. ジャンパーを使用して、負の電源バスをPico WのGNDピンに接続します。
 
-
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``2.1_hello_led.ino`` under the path of ``kepler-kit-main/arduino/2.1_hello_led``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * ファイル ``2.1_hello_led.ino`` は、パス ``kepler-kit-main/arduino/2.1_hello_led`` の下で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
+   
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
 
 
@@ -99,18 +94,18 @@ Let us follow the direction of the current to build the circuit!
     <iframe src=https://create.arduino.cc/editor/sunfounder01/898b8ba7-9bdf-468d-9181-ca8535e8dca6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After the code runs, you will see the LED blinking.
+コードが実行された後、LEDが点滅するのが見えます。
 
-**How it works?**
+**仕組みは？**
 
-Here, we connect the LED to the digital pin 15, so we need to declare an int variable called ledpin at the beginning of the program and assign a value of 15.
+ここでは、LEDをデジタルピン15に接続していますので、プログラムの最初で「ledPin」という名前のint変数を宣言し、その値として15を割り当てる必要があります。
 
 .. code-block:: C
 
     const int ledPin = 15;
 
 
-Now, initialize the pin in the ``setup()`` function, where you need to initialize the pin to ``OUTPUT`` mode.
+次に、 ``setup()`` 関数内でピンを初期化します。ここでは、ピンを ``OUTPUT`` モードに初期化する必要があります。
 
 .. code-block:: C
 
@@ -118,22 +113,20 @@ Now, initialize the pin in the ``setup()`` function, where you need to initializ
         pinMode(ledPin, OUTPUT);
     }
 
-In ``loop()``, ``digitalWrite()`` is used to provide 3.3V high level signal for ledpin, which will cause voltage difference between LED pins and light LED up.
+``loop()`` 内で、 ``digitalWrite()`` を使用してledPinに3.3Vの高レベル信号を供給します。これにより、LEDのピン間に電圧差が生じ、LEDが点灯します。
 
 .. code-block:: C
 
     digitalWrite(ledPin, HIGH);
 
-If the level signal is changed to LOW, the ledPin's signal will be returned to 0 V to turn LED off.
+レベル信号がLOWに変更されると、ledPinの信号は0Vに戻り、LEDが消灯します。
 
 .. code-block:: C
 
     digitalWrite(ledPin, LOW);
 
-
-An interval between on and off is required to allow people to see the change, 
-so we use a ``delay(1000)`` code to let the controller do nothing for 1000 ms.
+点灯と消灯の間には間隔が必要ですので、 ``delay(1000)`` コードを使用して、コントローラーが1000ms何もしないようにします。
 
 .. code-block:: C
 
-    delay(1000);   
+    delay(1000); 

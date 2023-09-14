@@ -1,49 +1,49 @@
 .. _ar_motor:
 
-3.5 - Small Fan
+3.5 - 小型ファン
 =======================
-Now we use the TA6586 to drive the DC motor to make it rotate clockwise and counterclockwise. 
-Since the DC motor requires a relatively large current, for safety reasons, 
-here we use a power module to supply power to the motor.
+
+今回はTA6586を用いて、DCモーターを時計回りと反時計回りに回転させます。
+DCモーターは比較的大きな電流を必要とするため、安全上の理由で、ここでは電源モジュールを使ってモーターに電力を供給します。
 
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入することは非常に便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +52,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -67,51 +67,45 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_motor|
 
-**Wiring**
+**配線**
 
 .. note::
 
-    * Since DC motors require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * DCモーターは高電流を必要とするため、安全のためにここではLi-poチャージャーモジュールを使用してモーターに電力を供給します。
+    * 図に示されているようにLi-poチャージャーモジュールが接続されていることを確認してください。そうでなければ、短絡が起きる可能性があり、バッテリーと回路が損傷する可能性があります。
 
 |wiring_motor|
 
-
-
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``3.5_small_fan.ino`` under the path of ``kepler-kit-main/arduino/3.5_small_fan``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``3.5_small_fan.ino`` は、 ``kepler-kit-main/arduino/3.5_small_fan`` のパスの下で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/26d75a18-6b91-40f4-80ab-f2cdf58644ac/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once the program is running, the motor will rotate back and forth in a regular pattern.
-
+プログラムが実行されると、モーターは規則的なパターンで前後に回転します。
 
 .. note::
 
-    * If you can not upload the code again, this time you need to connect the **RUN** pin on the Pico W with a wire to GND to reset it, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * もしコードを再度アップロードできない場合は、今回はPico Wの **RUN** ピンをGNDにワイヤで接続してリセットし、その後このワイヤを抜いてコードを再実行してください。
+    * これは、モーターが大量の電流を使用しているため、Pico Wがコンピュータから切断される可能性があるからです。
 
     |wiring_run_reset|

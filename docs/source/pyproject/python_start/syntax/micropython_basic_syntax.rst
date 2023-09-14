@@ -1,6 +1,5 @@
-1.6 (Optional) MicroPython Basic Syntax
+1.6 （オプション）MicroPythonの基本構文
 =======================================
-
 
 .. toctree::
     :maxdepth: 1
@@ -16,4 +15,3 @@
     data_types
     operators
     lists
-    

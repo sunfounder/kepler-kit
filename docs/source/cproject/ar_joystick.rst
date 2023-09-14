@@ -1,54 +1,53 @@
 .. _ar_joystick:
 
-4.1 - Toggle the Joystick
+4.1 - ジョイスティックの切り替え
 ================================
 
-If you play a lot of video games, then you should be very familiar with the Joystick.
-It is usually used to move the character around, rotate the screen, etc.
+ビデオゲームをよくプレイするなら、ジョイスティックに非常に慣れているはずです。
+通常、キャラクターを動かしたり、画面を回転させたりするために使用されます。
 
-The principle behind Joystick's ability to allow the computer to read our actions is very simple.
-It can be thought of as consisting of two potentiometers that are perpendicular to each other.
-These two potentiometers measure the analog value of the joystick vertically and horizontally, resulting in a value (x,y) in a planar right-angle coordinate system.
+ジョイスティックがコンピュータに私たちの行動を読み取らせる仕組みは非常にシンプルです。
+これは、直交する2つのポテンショメーターで構成されていると考えることができます。
+これら2つのポテンショメーターは、ジョイスティックの垂直および水平のアナログ値を測定し、平面直角座標系での値（x,y）を生成します。
 
-
-The joystick of this kit also has a digital input, which is activated when the joystick is pressed.
+このキットのジョイスティックには、ジョイスティックが押されたときに作動するデジタル入力もあります。
 
 * :ref:`cpn_joystick`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+便利なのは、一式をまとめて購入することです。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個々にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - 部品紹介
+        - 個数
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -68,34 +67,29 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_joystick|
 
-The SW pin is connected to a 10K pull-up resistor, the reason is to be able to get a stable high level on the SW pin (Z axis) when the joystick is not pressed; otherwise the SW is in a suspended state and the output value may vary between 0/1.
+SWピンは10Kのプルアップ抵抗に接続されています。これは、ジョイスティックが押されていないときにSWピン（Z軸）で安定した高レベルを得るためです。それ以外の場合、SWは一時停止状態にあり、出力値は0/1の間で変動する可能性があります。
 
-
-**Wiring**
+**配線**
 
 |wiring_joystick|
 
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+   * ファイル ``4.1_toggle_the_joyostick.ino`` は、 ``kepler-kit-main/arduino/4.1_toggle_the_joyostick`` のパスで開くことができます。
+   * またはこのコードを **Arduino IDE** にコピーペーストしてください。
+   * **アップロード** ボタンを押す前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/dfe53878-7cb4-4543-bb97-7f5ef5aad15a/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program runs, the Shell prints out the x,y,z values of joystick.
+プログラムが実行された後、シェルはジョイスティックのx,y,z値を出力します。
 
-* The x-axis and y-axis values are analog values that vary from 0 to 65535.
-* The Z-axis is a digital value with a status of 1 or 0.
+* x軸とy軸の値は0から65535まで変動するアナログ値です。
+* Z軸は、状態が1または0のデジタル値です。

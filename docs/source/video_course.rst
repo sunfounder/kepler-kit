@@ -1,14 +1,14 @@
-Video Courses
+ビデオコース
 ========================
 
-If you're finding the content in the online documentation a bit challenging to grasp, don't worry. 
-A step-by-step video course is here to make your learning journey smoother and more engaging.
+オンラインドキュメントの内容が少し難解に感じる場合、心配無用です。
+ステップバイステップのビデオコースが、よりスムーズで楽しい学習経験を提供します。
 
 .. image:: img/video_course.png
 
-You can access the video course at: |link_paul_course|.
+ビデオコースには、以下のリンクでアクセスできます：|link_paul_course| 。
 
-These videos focus on Raspberry Pi Pico W, guiding you through the learning of MicroPython, the working principles of various components,
-as well as associated circuitry knowledge. Each video is designed to be both entertaining and educational, presenting concepts 
-in an engaging and interactive manner. Dive into this video course and engage in the hands-on activities, 
-transforming your Raspberry Pi Pico W learning journey into an enriching and enjoyable experience.
+このビデオシリーズは、Raspberry Pi Pico Wに特化しており、MicroPythonの基本から各コンポーネントの働き、さらには関連する電子回路の知識までを網羅しています。
+各ビデオは、視聴者が積極的に参加できるように、教育的かつエンターテイニングに設計されています。
+このビデオコースに没頭し、実践的なアクティビティに参加することで、Raspberry Pi Pico Wの学習がより豊かで楽しいものに変わります。
+

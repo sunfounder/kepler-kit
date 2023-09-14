@@ -1,50 +1,50 @@
 .. _ar_servo:
 
-3.7 - Swinging Servo
+3.7 - サーボの揺れ動き
 =======================
 
-In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
+このキットには、LEDやパッシブブザーに加えて、PWM信号で制御されるデバイス、サーボも含まれています。
 
-Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
+サーボは位置（角度）制御用のデバイスで、一定の角度の変更が必要な制御システムに適しています。飛行機、潜水艦の模型、リモコンロボットなどの高級リモコン玩具で広く使用されています。
 
-Now, try to make the servo sway!
+さあ、サーボを揺らしてみましょう！
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入すると非常に便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -53,88 +53,82 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-**Schematic**
+**回路図**
 
 |sch_servo|
 
-**Wiring**
+**配線**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* オレンジ色のワイヤーは信号で、GP15に接続されています。
+* 赤色のワイヤーはVCCで、VBUS(5V)に接続されています。
+* 茶色のワイヤーはGNDで、GNDに接続されています。
 
-**Code**
-
+**コード**
 
 .. note::
 
-   * You can open the file ``3.7_swinging_servo.ino`` under the path of ``kepler-kit-main/arduino/3.7_swinging_servo``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``3.7_swinging_servo.ino`` は、パス ``kepler-kit-main/arduino/3.7_swinging_servo`` で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/d52a67be-be6b-4cbf-b411-810160f56928/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+プログラムが実行されていると、サーボアームが0°から180°まで前後に揺れ動くのが見られます。
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+**どうやって動くのか？**
 
-
-**How it works?**
-
-By calling the library ``Servo.h``, you can drive the servo easily. 
+``Servo.h`` ライブラリを呼び出すことで、簡単にサーボを制御できます。
 
 .. code-block:: arduino
 
     #include <Servo.h> 
 
-**Library Functions**
+**ライブラリ関数**
 
 .. code-block:: arduino
 
     Servo
 
-Create **Servo** object to control a servo.
+サーボを制御するための **Servo** オブジェクトを作成。
 
 .. code-block:: arduino
 
     uint8_t attach(int pin); 
 
-Turn a pin into a servo driver. Calls pinMode. Returns 0 on failure.
+ピンをサーボドライバーに変換。pinModeを呼び出す。失敗時は0を返す。
 
 .. code-block:: arduino
 
     void detach();
 
-Release a pin from servo driving.
+サーボドライブからピンを解放。
 
 .. code-block:: arduino
 
     void write(int value); 
 
-Set the angle of the servo in degrees, 0 to 180.
+サーボの角度を度で設定、0から180。
 
 .. code-block:: arduino
 
     int read();
 
-Return that value set with the last write().
+最後のwrite()で設定した値を返す。
 
 .. code-block:: arduino
 
     bool attached(); 
 
-Return 1 if the servo is currently attached.
+サーボが現在接続されている場合は1を返す。

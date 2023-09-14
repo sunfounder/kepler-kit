@@ -1,59 +1,47 @@
 .. _py_74hc_4dig:
 
-5.3 Time Counter
+5.3 時間カウンター
 ================================
 
+4桁の7セグメントディスプレイは、4つの7セグメントディスプレイが連動して動作するものです。
 
-4-digit 7-segment display consists of four 7-segment displays working
-together.
+この4桁の7セグメントディスプレイは独立して動作します。それは、人間の視覚の残像効果の原理を使って、各7セグメントの文字を高速でループ表示し、連続した文字列を形成します。
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+例えば、「1234」と表示された場合、最初の7セグメントには「1」が表示され、それ以降「234」は表示されません。一定の時間が経過すると、次の7セグメントに「2」が表示され、1つ目、3つ目、4つ目の7セグメントは何も表示されない、といった具体です。このプロセスは非常に短い（一般に5ms程度）であり、視覚の残像効果と残像の原理により、我々は同時に4つの文字を見ることができます。
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+**必要な部品**
 
-**Required Components**
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると確実に便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - キット内容
+        - リンク
+    *   - Keplerキット
+        - 450+ 
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクからも個別に購入することができます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -62,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,33 +65,34 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**回路図**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+ここでの配線の原理は、 :ref:`py_74hc_led` と基本的に同じで、唯一の違いは、Q0～Q7が4桁の7セグメントディスプレイのa〜gピンに接続されている点です。
 
-Then G10 ~ G13 will select which 7-segment display to work.
+そして、G10〜G13がどの7セグメントディスプレイが動作するかを選択します。
 
-**Wiring**
+**配線**
 
 |wiring_4dig|
 
-**Code**
+
+**コード**
 
 .. note::
 
-    * Open the ``5.3_time_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パスの下で ``5.3_time_counter.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするかF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 忘れずに右下の「MicroPython（Raspberry Pi Pico）」インタプリタをクリックしてください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
     import machine
     import time
-
+    
     SEGCODE = [0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f]
 
     sdi = machine.Pin(18,machine.Pin.OUT)
@@ -158,19 +147,19 @@ Then G10 ~ G13 will select which 7-segment display to work.
         hc595_shift(SEGCODE[count%1000//100])
         
         pickDigit(3)
-        hc595_shift(SEGCODE[count%10000//1000])     
+        hc595_shift(SEGCODE[count%10000//1000])  
 
-After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
+プログラムが実行されると、4桁の7セグメントディスプレイがカウンターになり、数字が1秒ごとに1増えます。
 
-**How it works?**
+**どのように動作するのか？**
 
-Writing signals to each 7-segment display is done in the same way as :ref:`py_74hc_7seg`, using the ``hc595_shift()`` function.
-The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
+各7セグメントディスプレイに信号を書き込む処理は、 :ref:`py_74hc_7seg` と同様に、 ``hc595_shift()`` 関数を使用しています。
+4桁の7セグメントディスプレイの要点は、各7セグメントディスプレイを選択的に活性化することです。この関連するコードは以下の通りです。
 
 .. code-block:: python
 
     placePin = []
-    pin = [13,12,11,10]
+    pin = [13, 12, 11, 10]
     for i in range(4):
         placePin.append(None)
         placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)
@@ -181,29 +170,27 @@ The core point of the 4-digit 7-segment display is to selectively activate each 
         placePin[digit].value(0)
 
     while True:
-        
-        hc595_shift(SEGCODE[count%10])
+        hc595_shift(SEGCODE[count % 10])
         pickDigit(0)
-
-        hc595_shift(SEGCODE[count%100//10])
+        
+        hc595_shift(SEGCODE[count % 100 // 10])
         pickDigit(1)
         
-        hc595_shift(SEGCODE[count%1000//100])
-        pickDigit(2)    
+        hc595_shift(SEGCODE[count % 1000 // 100])
+        pickDigit(2)
         
-        hc595_shift(SEGCODE[count%10000//1000])
-        pickDigit(3)   
+        hc595_shift(SEGCODE[count % 10000 // 1000])
+        pickDigit(3)
 
-Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the 4-digit 7-segment display individually.
-When the state of these pins is ``0``, the corresponding 7-segment display is active; when the state is ``1``, the opposite is true.
+ここでは、4つのピン（GP10、GP11、GP12、GP13）が4桁の7セグメントディスプレイの各ビットを個々に制御するために使用されています。
+これらのピンの状態が ``0`` であれば、対応する7セグメントディスプレイは活性化されます。状態が ``1`` であれば、その逆です。
 
-Here the ``pickDigit(digit)`` function is used to unable all four digits and then enable a particular digit individually.
-After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
+``pickDigit(digit)`` 関数は、すべての桁を無効化した後、特定の桁だけを個別に有効にするために使用されます。
+その後、 ``hc595_shift()`` 関数で、7セグメントディスプレイに対応する8ビットのコードが書き込まれます。
 
-The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
-However, we need to add a timing function to this example, and if we add a ``sleep(1)``, we will know that it has four digits.
-we will see through the illusion of 4-digit 7-segment display working at the same time, exposing the fact that only one 7-segment display is illuminated at a time.
-Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excellent way to do this.
+4桁の7セグメントディスプレイは、連続的に交互に活性化する必要があり、それによって4つの数字が同時に表示されるように見えます。
+しかし、この例ではタイミング機能も追加する必要があります。 ``sleep(1)`` を追加すると、それが一目瞭然になります。
+そのため、 ``time.ticks_ms()`` 関数を使用することが、この問題に対する優れた解決策です。
 
 .. code-block:: python
 
@@ -217,10 +204,9 @@ Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excel
     while True:
         count = timer1()
 
+``time.ticks_ms()`` 関数で取得する時間は（非明示的な）もので、最初に取得した時間値を ``timerStart`` として記録します。
+その後、時間が必要な場合には、再度 ``time.ticks_ms()`` 関数を呼び出し、その値から ``timerStart`` を引いて、プログラムがどれくらい動いているか（ミリ秒単位で）を計算します。
 
-The ``time.ticks_ms()`` function gets a (non-explicit) time, and we record the first time value we get as ``timerStart``.
-Subsequently, when the time is needed, the ``time.ticks_ms()`` function is called again, and the value is subtracted from ``timerStart`` to get how long the program has been running (in milliseconds).
-
-Finally, convert and output this time value to the 4-digit 7-segment display and you're done.
+最後に、この時間値を4桁の7セグメントディスプレイに変換して出力し、完成です。
 
 * `Time - MicroPython Docs <https://docs.micropython.org/en/latest/library/time.html>`_

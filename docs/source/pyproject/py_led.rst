@@ -1,47 +1,46 @@
 .. _py_led:
 
-2.1 Hello, LED! 
+2.1 こんにちは、LED！ 
 =======================================
 
-Just as printing "Hello, world!" is the first step in learning to program, using a program to drive an LED is the traditional introduction to learning physical programming.
+"Hello, world!"を出力することがプログラミング学習の第一歩であるように、LEDをプログラムで制御することは、物理的なプログラミングを学ぶ際の伝統的な導入となっています。
 
 * :ref:`cpn_led`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入することは非常に便利です。リンクは以下になります：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - 名前
+        - このキットのアイテム
+        - リンク
     *   - Kepler Kit	
-        - 450+
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -50,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -61,45 +60,44 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_led|
 
-This circuit works on a simple principle, and the current direction is shown in the figure. The LED will light up after the 220ohm current limiting resistor when GP15 outputs high level (3.3v). The LED will turn off when GP15 outputs low level (0v).
+この回路は単純な原理で動作し、図に示されているように電流の方向が示されています。GP15が高レベル（3.3v）を出力すると、220ohmの電流制限抵抗を経てLEDが点灯します。GP15が低レベル（0v）を出力すると、LEDは消灯します。
 
-**Wiring**
+
+**配線**
 
 |wiring_led|
 
-To build the circuit, let's follow the current's direction!
+回路を組む際は、電流の方向に従いましょう！
 
-1. The LED is powered by the GP15 pin of the Pico W board, and the circuit begins here.
-#. To protect the LED, the current must pass through a 220 ohm resistor. One end of the resistor should be inserted into the same row as the Pico W GP15 pin (row 20 in my circuit), and the other end should be inserted into the free row of the breadboard (row 24).
-
-    .. note::
-        The color ring of the 220 ohm resistor is red, red, black, black and brown.
-
-#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
+1. Pico WボードのGP15ピンでLEDが供給され、ここから回路が始まります。
+#. LEDを保護するために、電流は220オームの抵抗器を通過しなければなりません。抵抗器の一方の端子はPico W GP15ピンと同じ行（私の回路では行20）に挿入し、他方の端子はブレッドボードの空いている行（行24）に挿入してください。
 
     .. note::
-        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
+        220オームの抵抗器のカラーリングは赤、赤、黒、黒、茶です。
 
-        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
+#. LEDを取り上げると、一方のリードが他方よりも長いことがわかります。長いリードを抵抗器と同じ行に、短いリードをブレッドボードの中央の隙間を挟んで同じ行に接続してください。
 
-#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico W to the negative power bus using a jumper.
+    .. note::
+        長いリードは陽極であり、回路の正側を表します。短いリードは陰極であり、回路の負側を表します。
+        
+        陽極はGPIOピンに抵抗器を介して接続する必要があり、陰極はGNDピンに接続する必要があります。
 
+#. オス-オス（M2M）ジャンパーワイヤーを使用して、LEDの短いピンをブレッドボードの負電源バスに接続します。
+#. ジャンパーを使用して、Pico WのGNDピンを負の電源バスに接続します。
 
-**Code**
+**コード**
 
 .. note::
+    
+    * ``kepler-kit-main/micropython`` のパスの下で ``2.1_hello_led.py`` ファイルを開くか、このコードをThonnyにコピーしてから、"Run Current Script"をクリックするか、単にF5を押して実行してください。
 
-    * Open the ``2.1_hello_led.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタプリターをクリックすることを忘れないでください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -113,49 +111,49 @@ To build the circuit, let's follow the current's direction!
         led.value(0)
         utime.sleep(2)
 
-After the code runs, you will see the LED blinking.
+コードが実行された後、LEDが点滅するのが見えるでしょう。
 
 
-**How it works?**
 
+**動作の仕組みは？**
 
-The machine library is required to use GPIO.
+GPIOを使用するには、 ``machine`` ライブラリが必要です。
 
 .. code-block:: python
 
     import machine
 
-The library contains all the instructions needed to communicate between MicroPython and Pico W. 
-In the absence of this line of code, we will not be able to control any GPIOs.
+このライブラリには、MicroPythonとPico Wとの間で通信するために必要なすべての命令が含まれています。
+このコード行がない場合、GPIOを制御することはできません。
 
-The next thing to notice is this line:
+次に注目するべき行は以下のとおりです。
 
 .. code-block:: python
 
     led = machine.Pin(15, machine.Pin.OUT)
 
-The object ``led`` is defined here. Technically, it can be any name, such as x, y, banana, Michael_Jackson, or any character. 
-To ensure that the program is easy to read, it is best to use a name that describes the purpose.
+ここでオブジェクト ``led`` が定義されています。技術的には、x、y、banana、Michael_Jackson、または任意の文字など、任意の名前にすることができます。
+プログラムを読みやすくするためには、目的を説明する名前を使用するのが最善です。
 
-In the second part of this line (the part after the equal sign), we call the Pin function found in the ``machine`` library. It is used to tell Pico's GPIO pins what to do.
-A ``Pin`` function has two parameters: the first (15) represents the pin to set; 
-The second parameter (machine.Pin.OUT) specifies that the pin should be output rather than input.
+この行の第二部分（等号の後ろの部分）では、 ``machine`` ライブラリ内のPin関数を呼び出しています。これはPicoのGPIOピンに何をすべきかを指示するために使用されます。
+``Pin`` 関数には2つのパラメーターがあります：最初の1つ（15）は設定するピンを表し、
+第二のパラメーター（machine.Pin.OUT）は、ピンが入力ではなく出力であるべきことを指定します。
 
-The above code has "set" the pin, but it will not light up the LED. To do this, we also need to "use" the pin.
+上記のコードではピンが「設定」されていますが、LEDを点灯させるわけではありません。これを行うためには、ピンを「使用」する必要もあります。
 
 .. code-block:: python
 
     led.value(1)
 
-The GP15 pin has been set up previously and named ``led``. The function of this statement is to set the value of ``led`` to 1 to turn the LED on.
+GP15ピンは以前に設定され、 ``led`` と名付けられました。この文の機能は、 ``led`` の値を1に設定してLEDを点灯させることです。
 
-All in all, to use GPIO, these steps are necessary:
+全体として、GPIOを使用するには、以下のステップが必要です：
 
-* **import machine library**: This is necessary, and it is only executed once.
-* **Set GPIO**: Before using, each pin should be set.
-* **Use**: Change the working state of the pin by assigning a value to it.
+* **machineライブラリをインポートする** : これは必須であり、一度だけ実行されます。
+* **GPIOを設定する** : 使用する前に、各ピンを設定する必要があります。
+* **使用する** : ピンに値を割り当てることで、ピンの動作状態を変更します。
 
-If we follow the above steps to write an example, then you will get code like this:
+上記のステップに従って例を書くと、次のようなコードになります：
 
 .. code-block:: python
 
@@ -163,9 +161,9 @@ If we follow the above steps to write an example, then you will get code like th
     led = machine.Pin(15, machine.Pin.OUT)
     led.value(1)
 
-Run it and you will be able to light up the LED.
+これを実行すると、LEDを点灯させることができます。
 
-Next, we try to add the "extinguished" statement:
+次に、"消灯"文を追加してみましょう：
 
 .. code-block:: python
 
@@ -174,26 +172,26 @@ Next, we try to add the "extinguished" statement:
     led.value(1)
     led.value(0)
 
-Based on the code line, this program will turn on the LED first, then turn it off. 
-But when you use it, you will find that this is not the case. 
-There is no light coming from the LED. This is due to the very rapid execution speed between the two lines, much faster than the human eye can react. 
-When the LED lights up, we don't perceive the light instantly. This can be fixed by slowing down the program.
+このコードに基づいて、このプログラムは最初にLEDを点灯させ、次に消灯させます。
+しかし、実際に使用すると、このようにはなりません。
+LEDから光が出ていないのは、2行の間の実行速度が非常に速いためであり、人間の目が反応するよりもはるかに速いからです。
+LEDが点灯すると、私たちは即座に光を感じません。これはプログラムを遅くすることで修正できます。
 
-The second line of the program should contain the following statement:
+プログラムの第二行には、以下の文が含まれるべきです：
 
 .. code-block:: python
 
     import utime
 
-Similarly to ``machine``, the ``utime`` library is imported here, which handles all things time-related.
-The delays we need to use are included in this. Add a delay statement between ``led.value(1)`` and ``led.value(0)`` and let them be separated by 2 seconds.
+``machine`` と同様に、ここでは ``utime`` ライブラリがインポートされており、時間に関連するすべてのことを処理します。
+必要な遅延はこれに含まれています。 ``led.value(1)`` と ``led.value(0)`` の間に遅延文を追加し、それらを2秒間隔で分けます。
 
 .. code-block:: python
 
     utime.sleep(2)
 
-This is how the code should look now. 
-We will see that the LED turns on first, then turns off when we run it:
+これでコードは次のようになります。
+実行すると、LEDが最初に点灯し、次に消灯するのがわかります：
 
 .. code-block:: python
 
@@ -204,8 +202,8 @@ We will see that the LED turns on first, then turns off when we run it:
     utime.sleep(2)
     led.value(0)
 
-Finally, we should make the LED blink. 
-Create a loop, rewrite the program, and it will be what you saw at the beginning of this chapter.
+最後に、LEDを点滅させるようにしましょう。
+ループを作成し、プログラムを書き直すと、この章の始めに見たものになります。
 
 .. code-block:: python
 
@@ -219,29 +217,28 @@ Create a loop, rewrite the program, and it will be what you saw at the beginning
         led.value(0)
         utime.sleep(2)
 
-* :ref:`While Loops`
+* :ref:`py_syntax_while_loops`
 
-**Learn More**
+**さらに詳しく**
 
+通常、ライブラリにはAPI（Application Programming Interface）ファイルが関連付けられています。
+このファイルには、このライブラリを使用するために必要なすべての情報が含まれています。これには、関数、クラス、戻り値のタイプ、パラメータのタイプなどの詳細な説明もあります。
 
-There will usually be an API (Application Programming Interface) file associated with the library. 
-It contains all the information necessary to use this library, including detailed descriptions of functions, classes, return types, parameter types, etc.
-
-In this article, we used MicroPython's ``machine`` and ``utime`` libraries, we can find more ways to use them here.
+この記事では、MicroPythonの ``machine`` と ``utime`` ライブラリを使用しましたが、それらを使用するさまざまな方法は以下で見つけることができます。
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_
 
 * `utime <https://docs.micropython.org/en/latest/library/utime.html>`_
 
-Please read the API file to understand this example of making the LED blink!
+LEDを点滅させるこの例を理解するためには、APIファイルを読むことをお勧めします！
 
 .. note::
 
-    * Open the ``2.1_hello_led_2.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下にある ``2.1_hello_led_2.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単にF5を押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 

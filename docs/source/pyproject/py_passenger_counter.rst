@@ -1,55 +1,53 @@
 .. _py_passage_counter:
 
-
-7.4 Passenger Counter
+7.4 乗客カウンター
 ==============================
 
-For large shopping malls, shopping centers, chain stores, airports, stations, museums, and public places such as exhibition halls, passenger traffic is an indispensable data.
+大型ショッピングモール、ショッピングセンター、チェーンストア、空港、駅、美術館、展示会場などの公共の場所で、乗客の流れは欠かせないデータです。
 
-In airports and stations, for example, the number of people needs to be strictly controlled to ensure safety and smooth flow.
-It is also possible to know when there are more visitors in shopping centers and chain stores, how many orders each user can generate, etc.
-As a result, we can analyze people's consumption habits and increase turnover.
+例えば、空港や駅では、人々の数を厳密に制御して、安全と円滑な流れを確保する必要があります。
+また、ショッピングセンターやチェーンストアでは、より多くの訪問者がいる時間帯や、各ユーザーが生成できる注文数などを把握することが可能です。
+その結果、人々の消費習慣を分析し、売上を向上させることができます。
 
-Passenger counters can help people understand the operation of these public places and organize their operations efficiently.
+乗客カウンターは、これらの公共の場所の運営を理解し、効率的に運営を整えるのに役立ちます。
 
-A simple passenger counter is created using a PIR sensor and a 4-digit 7-segment display.
+このプロジェクトでは、PIRセンサーと4桁の7セグメントディスプレイを使用して、シンプルな乗客カウンターを作成します。
 
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが確かに便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - キット内容
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -58,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,39 +75,37 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**Schematic**
+**回路図**
 
 |sch_passager_counter| 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
-* The PIR will send a high signal of about 2.8s long when someone passes by.
-* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+* この回路は、 :ref:`py_74hc_4dig` を基にして、PIRモジュールが追加されています。
+* 誰かが通過すると、PIRは約2.8秒間の高い信号を送ります。
+* PIRモジュールには二つの可変抵抗があります：一つは感度を調整し、もう一つは検出距離を調整します。PIRモジュールをより効果的に動作させるためには、これらの両方を反時計回りに最後まで回す必要があります。
 
     |img_PIR_TTE|
 
 
-**Wiring**
-
+**配線**
 
 |wiring_passager_counter| 
 
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``7.4_passenger_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パスの下にある ``7.4_passenger_counter.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある「MicroPython（Raspberry Pi Pico）」インタープリターをクリックすることを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 
 .. code-block:: python
 
     import machine
     import time
-
 
     pir_sensor = machine.Pin(16, machine.Pin.IN)
 
@@ -126,7 +122,6 @@ You can also buy them separately from the links below.
         placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)
 
     count = 0
-
 
     def pickDigit(digit):
         for i in range(4):
@@ -171,6 +166,4 @@ You can also buy them separately from the links below.
         pickDigit(3)
         hc595_shift(SEGCODE[count%10000//1000])
 
-
-When the code is run, the number on the 4-digit 7-segment display will be added by one if someone passes in front of the PIR module.
-
+コードが実行されたとき、PIRモジュールの前を誰かが通過すると、4桁の7セグメントディスプレイ上の数字が1つ増加します。

@@ -4,42 +4,43 @@ RGB LED
 =================
 
 |img_rgb|
-    
-RGB LEDs emit light in various colors. An RGB LED packages three LEDs of red, green, and blue into a transparent or semitransparent plastic shell. It can display various colors by changing the input voltage of the three pins and superimpose them, which, according to statistics, can create 16,777,216 different colors. 
+
+RGB LEDは、さまざまな色の光を放出します。RGB LEDは、赤、緑、青の3つのLEDを透明または半透明のプラスチックケースにパッケージングしています。3つのピンの入力電圧を変更してそれらを重ね合わせることで、様々な色を表示できます。統計によれば、16,777,216種類の異なる色を生成することができます。
 
 |img_rgb_light|
 
-RGB LEDs can be categorized into common anode and common cathode ones. In this kit, the latter is used. The **common cathode**, or CC, means to connect the cathodes of the three LEDs. After you connect it with GND and plug in the three pins, the LED will flash the corresponding color. 
+RGB LEDには、共通アノードと共通カソードという2つのカテゴリーがあります。このキットでは後者が使用されています。 **共通カソード（Common Cathode：CC）** とは、3つのLEDのカソードを接続することを意味します。GNDに接続して3つのピンを差し込むと、LEDは対応する色で点滅します。
 
-Its circuit symbol is shown as figure.
+回路記号は次の図のようになっています。
 
-|img_rgb_symbol| 
+|img_rgb_symbol|
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+RGB LEDには4つのピンがあります：最も長いピンが共通カソードピンで、通常はGNDに接続されます。最も長いピンの隣の左側のピンが赤で、右側の2つのピンは緑と青です。
 
 |img_rgb_pin|
 
 
-**Features**
+**特長**
 
-* Color: Tri-Color (Red/Green/Blue)
-* Common Cathode
-* 5mm Clear Round Lens
-* Forward Voltage: Red: DC 2.0 - 2.2V; Blue&Green: DC 3.0 - 3.2V (IF=20mA)
-* 0.06 Watts DIP RGB LED
-* Luminance Brighter Up To +20%
-* Viewing Angle: 30°
+* 色：トリカラー（赤/緑/青）
+* 共通カソード
+* 5mmクリアラウンドレンズ
+* 順方向電圧：赤：DC 2.0 - 2.2V; 青＆緑：DC 3.0 - 3.2V（IF=20mA）
+* 0.06ワットDIP RGB LED
+* 輝度が最大+20%明るい
+* 視野角：30°
 
 
-.. Example
+.. 例
 .. -------------------
 
-.. :ref:`Colorful Light`
+.. :ref:`カラフルな光`
 
 
-**Example**
+**例**
 
-* :ref:`py_rgb` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`ar_rgb` (For Arduino User)
-* :ref:`per_rainbow_light` (For Piper Make User)
+* :ref:`py_rgb` （MicroPythonユーザー向け）
+* :ref:`py_fruit_piano` （MicroPythonユーザー向け）
+* :ref:`ar_rgb` （Arduinoユーザー向け）
+* :ref:`per_rainbow_light` （Piper Makeユーザー向け）
+

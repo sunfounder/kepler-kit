@@ -1,46 +1,45 @@
 .. _ar_ac_buz:
 
-3.1 - Beep
+3.1 - ビープ音
 ==================
-The active buzzer is a typical digital output device that is as easy to use as lighting up an LED!
+アクティブ・ブザーは、LEDを点灯させるのと同じくらい簡単に使える典型的なデジタル出力デバイスです！
 
 * :ref:`cpn_buzzer`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが確かに便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットのアイテム
+        - 購入リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -49,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -60,45 +59,40 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - アクティブ :ref:`cpn_buzzer`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+GP15の出力が高い場合、1Kの電流制限抵抗を経て（トランジスタを保護するため）、S8050（NPNトランジスタ）は導通し、ブザーが音を出します。
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+S8050（NPNトランジスタ）の役割は、電流を増幅してブザーの音を大きくすることです。実際、GP15に直接ブザーを接続することもできますが、ブザーの音は小さくなるでしょう。
 
-**Wiring**
+**配線**
 
-Two types of buzzers are included in the kit. 
-We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
+キットには2種類のブザーが含まれています。
+アクティブブザーが必要です。裏返して、密封された背面（露出したPCBではない）が必要なものです。
 
 |img_buzzer|
 
-The buzzer needs to use a transistor when working, here we use S8050 (NPN Transistor).
-
+ブザーは動作時にトランジスタを使用する必要があります。ここでは、S8050（NPNトランジスタ）を使用します。
 
 |wiring_beep|
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-   * You can open the file ``3.1_beep.ino`` under the path of ``kepler-kit-main/arduino/3.1_beep``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``3.1_beep.ino`` は、 ``kepler-kit-main/arduino/3.1_beep`` のパスの下で開くことができます。
+   * または、このコードを **Arduino IDE** にコピペしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * ボード（Raspberry Pi Pico）と正確なポートを選択したら、 **アップロード** ボタンをクリックする前に設定を忘れないでください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/62bf2c5d-9890-4f3a-b02a-119c2f6b0bf1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the code runs, you will hear a beep every second.
+コードが実行された後、1秒ごとにビープ音が聞こえます。

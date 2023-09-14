@@ -1,54 +1,52 @@
 .. _py_74hc_7seg:
 
-5.2 Number Display
+5.2 数字表示
 =======================
 
-7 Segment Display can be seen everywhere in life.
-For example, on an air conditioner, it can be used to display temperature; on a traffic indicator, it can be used to display a timer.
+7セグメントディスプレイは日常生活で至るところで見かけます。
+例えば、エアコンでは温度を表示するために使われ、交通信号機ではタイマーを表示するために用いられます。
 
-The 7 Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an "8" shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.
+7セグメントディスプレイは基本的に8つのLEDで構成されています。このうち7つの帯状のLEDが「8」の形を形成し、小さな点状のLEDが小数点として機能します。これらのLEDはa、b、c、d、e、f、g、およびdpとマークされています。各LEDは独自のアノードピンを持ち、カソードは共有されています。ピンの位置は以下の図で示されています。
 
 |img_7seg_cathode|
 
-This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
+これは、7セグメントディスプレイが完全に動作するためには同時に8つのデジタル信号で制御する必要があることを意味します。74HC595がこれを可能にします。
 
 * :ref:`cpn_7_segment`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式で購入すると便利です、そのリンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450+ 
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々の部品も購入することができます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - 部品
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -57,7 +55,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -72,19 +70,18 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_74hc_7seg|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 7 Segment Display.
+こちらの配線原理は基本的に :ref:`py_74hc_led` と同じで、唯一の違いはQ0~Q7が7セグメントディスプレイのa~gピンに接続されている点です。
 
-.. list-table:: Wiring
+.. list-table:: 配線
     :widths: 15 25
     :header-rows: 1
 
     *   - :ref:`cpn_74hc595`
-        - :ref:`cpn_led` Segment Display
+        - :ref:`cpn_led` セグメントディスプレイ
     *   - Q0
         - a
     *   - Q1
@@ -102,32 +99,19 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
     *   - Q7
         - dp
 
-**Wiring**
-
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico W to the SHcp pin (pin 11) of 74HC595.
-.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-.. #. Insert the LED Segment Display into the breadboard, and connect a 220Ω resistor in series with the GND pin to the negative power bus.
-.. #. Follow the table below to connect the 74hc595 and LED Segment Display.
+**配線図**
 
 |wiring_74hc_7seg|
 
-
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``5.2_number_display.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス内にある ``5.2_number_display.py`` ファイルを開くか、このコードをThonnyにコピーしてから「Run Current Script」をクリックするか、F5を押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタプリタをクリックすることを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -160,32 +144,32 @@ Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only 
             hc595_shift(SEGCODE[num])
             time.sleep_ms(500)
 
-When the program is running, you will be able to see the LED Segment Display display 0~9 in sequence.
+プログラムが実行されていると、LEDセグメントディスプレイが0〜9を順番に表示するのが確認できます。
 
-**How it works?**
+**動作原理**
 
-``hc595_shift()`` will make 74HC595 output 8 digital signals.
-It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
+``hc595_shift()`` 関数によって74HC595は8つのデジタル信号を出力します。
+この関数は、2進数の最後のビットをQ0に、最初のビットをQ7に出力します。つまり、2進数「00000001」を書き込むと、Q0は高レベルを、Q1〜Q7は低レベルを出力します。
 
-Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
+7セグメントディスプレイが「1」と表示する場合、bとcに高レベルを書き込み、a、d、e、f、g、およびdgに低レベルを書き込む必要があります。
 
 |img_1_segment|
 
-That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
+すなわち、2進数「00000110」を書き込む必要があります。可読性のため、16進数表記「0x06」を使用します。
 
-* `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_
+* `16進数 <https://ja.wikipedia.org/wiki/16%E9%80%B2%E6%95%B0>`_
 
-* `BinaryHex Converter <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
+* `BinaryHex変換器 <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
 
-Similarly, we can also make the LED Segment Display display other numbers in the same way. The following table shows the codes corresponding to these numbers.
+同様にして、LEDセグメントディスプレイに他の数字を表示させることもできます。以下の表は、それぞれの数字に対応するコードを示しています。
 
-.. list-table:: Glyph Code
+.. list-table:: グリフコード
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - 数字
+        - 2進数コード
+        - 16進数コード  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -217,4 +201,4 @@ Similarly, we can also make the LED Segment Display display other numbers in the
         - 01101111	
         - 0x6f
 
-Write these codes into ``hc595_shift()`` to make the LED Segment Display display the corresponding numbers.
+これらのコードを ``hc595_shift()`` 関数に書き込むことで、LEDセグメントディスプレイが対応する数字を表示するようにできます。

@@ -1,102 +1,100 @@
 If Else
-=============
+============= 
 
-Decision making is required when we want to execute a code only if a certain condition is satisfied.
+特定の条件が満たされた場合にのみコードを実行したいときに、判断（デシジョンメイキング）が必要です。
 
 if
---------------------
+-------------------- 
 .. code-block:: python
 
-    if test expression:
-        statement(s)
+    if テスト式:
+        ステートメント
 
-Here, the program evaluates the ``test expression`` and executes the ``statement`` only when the ``test expression`` is True.
+この場合、プログラムは ``テスト式`` を評価し、 ``テスト式`` がTrueである場合にのみ ``ステートメント`` を実行します。
 
-If ``test expression`` is False, then ``statement(s)`` will not be executed.
+``テスト式`` がFalseの場合、 ``ステートメント`` は実行されません。
 
-In MicroPython, indentation means the body of the ``if`` statement. The body starts with an indentation and ends with the first unindented line.
+MicroPythonでは、インデントは ``if`` ステートメントの本体を意味します。本体はインデントで始まり、最初の非インデントされた行で終わります。
 
-Python interprets non-zero values ​​as "True". None and 0 are interpreted as "False".
+Pythonは非ゼロの値を「True」と解釈します。Noneと0は「False」と解釈されます。
 
-**if Statement Flowchart**
+**if文のフローチャート**
 
 .. image:: img/if_statement.png
 
-**Example**
+**例**
 
 .. code-block:: python
 
     num = 8
     if num > 0:
-        print(num, "is a positive number.")
-    print("End with this line")
+        print(num, "は正の数です。")
+    print("この行で終わり")
 
 >>> %Run -c $EDITOR_CONTENT
-8 is a positive number.
-End with this line
-
+8 は正の数です。
+この行で終わり
 
 
 if...else
------------------------
+----------------------- 
 
 .. code-block:: python
 
-    if test expression:
-        Body of if
+    if テスト式:
+        ifの本体
     else:
-        Body of else
+        elseの本体
 
-The ``if..else`` statement evaluates ``test expression`` and will execute the body of ``if`` only when the test condition is ``True``.
+``if..else`` ステートメントは ``テスト式`` を評価し、テスト条件が ``True`` の場合にのみ ``if`` の本体を実行します。
 
-If the condition is ``False``, the body of ``else`` is executed. Indentation is used to separate the blocks.
+条件が ``False`` の場合、 ``else`` の本体が実行されます。インデントはブロックを区別するために使用されます。
 
-**if...else Statement Flowchart**
+**if...else文のフローチャート**
 
 .. image:: img/if_else.png
 
-**Example**
+**例**
 
 .. code-block:: python
 
     num = -8
     if num > 0:
-        print(num, "is a positive number.")
+        print(num, "は正の数です。")
     else:
-        print(num, "is a negative number.")
+        print(num, "は負の数です。")
 
 >>> %Run -c $EDITOR_CONTENT
--8 is a negative number.
-
+-8 は負の数です。
 
 
 if...elif...else
---------------------
+-------------------- 
 
 .. code-block:: python
 
-    if test expression:
-        Body of if
-    elif test expression:
-        Body of elif
+    if テスト式:
+        ifの本体
+    elif テスト式:
+        elifの本体
     else: 
-        Body of else
+        elseの本体
 
-``Elif`` is short for ``else if``. It allows us to check multiple expressions.
+``Elif`` は ``else if`` の省略形です。複数の式をチェックすることができます。
 
-If the condition of the ``if`` is False, the condition of the next elif block is checked, and so on.
+``if`` の条件がFalseの場合、次のelifブロックの条件がチェックされ、以降続きます。
 
-If all conditions are ``False``, the body of ``else`` is executed.
+すべての条件が ``False`` の場合、 ``else`` の本体が実行されます。
 
-Only one of several ``if...elif...else`` blocks is executed according to the conditions.
+いくつかの ``if...elif...else`` ブロックのうち、条件に従って一つだけが実行されます。
 
-The ``if`` block can only have one ``else`` block. But it can have multiple ``elif`` blocks.
+``if`` ブロックは一つの ``else`` ブロックしか持つことができませんが、複数の ``elif`` ブロックを持つことができます。
 
-**if...elif...else Statement Flowchart**
+**if...elif...else文のフローチャート**
 
 .. image:: img/if_elif_else.png
 
-**Example**
+**例**
 
 .. code-block:: python
 
@@ -104,34 +102,34 @@ The ``if`` block can only have one ``else`` block. But it can have multiple ``el
     y = 9
 
     if x > y:
-        print("x is greater than y")
+        print("xはyより大きい")
     elif x == y:
-        print("x and y are equal")
+        print("xとyは等しい")
     else:
-        print("x is greater than y")
+        print("xはyより大きい")
 
 >>> %Run -c $EDITOR_CONTENT
-x is greater than y
+xはyより大きい
 
 
-Nested if
----------------------
+ネストしたif
+--------------------- 
 
-We can embed an if statement into another if statement, and then call it a nested if statement.
+if文を別のif文に埋め込むことができ、それをネストしたif文と呼びます。
 
-**Example**
+**例**
 
 .. code-block:: python
 
     x = 67
 
     if x > 10:
-        print("Above ten,")
+        print("10より上で、")
         if x > 20:
-            print("and also above 20!")
+            print("さらに20よりも上です！")
         else:
-            print("but not above 20.")
+            print("しかし20より上ではありません。")
 
 >>> %Run -c $EDITOR_CONTENT
-Above ten,
-and also above 20!
+10より上で、
+さらに20よりも上です！

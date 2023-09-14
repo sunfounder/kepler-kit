@@ -1,49 +1,45 @@
 .. _ar_tilt:
 
-2.6 - Tilt It！
+2.6 - 傾けてみよう！
 ==========================
 
 |img_tilt|
 
-The tilt switch is a 2-pin device with a metal ball in the middle. When you put it upright, the 2 pins are connected together; when you tilt the switch, 2 pins will be disconnected.
+この傾斜スイッチは中央に金属ボールが入っている2ピンのデバイスです。このスイッチを垂直に置くと、2つのピンが接続されます。スイッチを傾けると、2つのピンが切断されます。
 
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入する方が間違いなく便利です。こちらがリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - コンポーネントの説明
+        - 数量
+        - 購入リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -52,48 +48,42 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1（10KΩ）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_tilt`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_tilt|
 
-When you put it upright, GP14 will get high; after tilting it, GP14 will get low.
+スイッチを垂直に置くと、GP14はハイ状態になります。傾けた後、GP14はロー状態になります。
 
-The purpose of the 10K resistor is to keep the GP14 in a stable low state when the tilt switch is in a tilted state.
+10KΩの抵抗の目的は、傾斜スイッチが傾いた状態のとき、GP14を安定したロー状態に保つことです。
 
 * :ref:`cpn_tilt`
 
-**Wiring**
+**配線**
 
 |wiring_tilt|
 
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``2.6_tilt_it.ino`` under the path of ``kepler-kit-main/arduino/2.4_colorful_light``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.6_tilt_it.ino`` は、パス ``kepler-kit-main/arduino/2.4_colorful_light`` の下にあります。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0421b002-a697-4f22-a965-0e62e8dc3abf/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    
-
-
-After the program runs, when you tilt the breadboard (tilt switch), "The switch works!" will appear in the shell.
+プログラムが動作すると、ブレッドボード（傾斜スイッチ）を傾けると、シェルに「スイッチが作動します！」と表示されます。

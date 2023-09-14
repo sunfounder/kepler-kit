@@ -3,68 +3,66 @@
 2.3 - Fading LED
 =====================
 
-So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
-However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-In the past, a slider that can adjust the resistance was used to achieve this goal, but this is always unreliable and inefficient.
-Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
+これまで、高レベルと低レベル（または1と0、ONとOFFとも呼ばれる）の2つの出力信号のみを使用しており、これをデジタル出力と呼びます。
+しかし、実際の使用において、多くのデバイスは単純にON/OFFして動作するわけではありません。例えば、モーターの速度調整やデスクランプの明るさ調整などです。
+以前は、抵抗を調整できるスライダーがこの目的を達成するために使用されていましたが、これは常に信頼性が低く非効率的です。
+そのため、パルス幅変調（PWM）がこのような複雑な問題に対する実用的な解決策として登場しました。
 
-A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
+高レベルと低レベルで構成されるデジタル出力をパルスと呼びます。これらのピンのパルス幅は、ON/OFFの速度を変更することで調整することができます。
 
-Simply put, when we are in a short period (such as 20ms, most people's visual retention time),
-Let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is turned on, the higher the brightness of the LED.
-In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
-This is how PWM controls LED brightness (or motor speed).
+簡単に言えば、短い期間（例えば20ms、ほとんどの人々の視覚保持時間）でLEDを点灯、消灯、再点灯させると、消灯したことに気づかないでしょうが、光の明るさはわずかに弱くなります。
+この期間中にLEDが点灯している時間が多いほど、LEDの明るさが高くなります。
+言い換えれば、サイクル内でパルスが広いほど、マイクロコントローラーによって出力される"電気信号強度"が大きくなります。
+これがPWMがLEDの明るさ（またはモーターの速度）を制御する方法です。
 
-* `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
+* `パルス幅変調 - Wikipedia <https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%AB%E3%82%B9%E5%B9%85%E5%A4%89%E8%AA%BF>`_
 
-There are some points to pay attention to when Pico W uses PWM. Let's take a look at this picture.
+Pico WがPWMを使用する際に注意すべきいくつかの点があります。この画像を見てみましょう。
 
 |pin_pwm|
 
-Each GPIO pin of Pico W supports PWM, but it actually has a total of 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the PWM output of the right GPIO is equivalent to the left copy.
+Pico Wの各GPIOピンはPWMをサポートしていますが、実際には合計16個の独立したPWM出力（30個ではない）があり、左側のGP0からGP15までに分散されています。右側のGPIOのPWM出力は左側のコピーと同等です。
 
-What we need to pay attention to is to avoid setting the same PWM channel for different purposes during programming. (For example, GP0 and GP16 are both PWM_0A)
+注意すべき点は、プログラミング中に異なる目的で同じPWMチャネルを設定しないようにすることです。（例えば、GP0とGP16は両方ともPWM_0Aです）
 
-After understanding this knowledge, let us try to achieve the effect of Fading LED.
+この知識を理解した後、Fading LEDの効果を実現してみましょう。
 
 * :ref:`cpn_led`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入する方が確実に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの紹介
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -73,7 +71,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -84,55 +82,50 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-**Schematic**
+
+**回路図**
 
 |sch_led|
 
-This project is the same circuit as the first project :ref:`ar_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+このプロジェクトは最初のプロジェクト :ref:`ar_led` と同じ回路ですが、信号タイプが異なります。最初のプロジェクトでは、GP15から直接デジタルの高レベルと低レベル（0&1）を出力してLEDを点灯または消灯させるのに対し、このプロジェクトではGP15からPWM信号を出力してLEDの明るさを制御します。
 
-
-
-**Wiring**
-
+**配線**
 
 |wiring_led|
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-   * You can open the file ``2.3_fading_led.ino`` under the path of ``kepler-kit-main/arduino/2.3_fading_led``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.3_fading_led.ino`` は、パス ``kepler-kit-main/arduino/2.3_fading_led``  の下で開くことができます。
+   * またはこのコードを **Arduino IDE** にコピーペーストしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択することを忘れないでください。
 
 
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/86807da4-4714-4d3c-b6af-0f1b9a62223b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-The LED will gradually become brighter as the program runs.
+プログラムが実行されるにつれて、LEDは徐々に明るくなります。
 
-**How it works?**
+**動作原理**
 
-Declare pin 15 as ledPin.
+ピン15をledPinとして宣言します。
 
 .. code-block:: C
 
     const int ledPin = 15;
 
-``analogWrite()`` in ``loop()`` assigns ledPin an analog value (PWM wave) between 0 and 255 to change the brightness of LED.
+``loop()`` 内の ``analogWrite()`` は、ledPinに0から255までのアナログ値（PWM波）を割り当ててLEDの明るさを変更します。
 
 .. code-block:: C
 
     analogWrite(ledPin, value);
 
-Using a for loop, the value of ``analogWrite()`` can be changed step by step between the minimum value (0) and the maximum value (255).
+forループを使用して、 ``analogWrite()`` の値を最小値（0）と最大値（255）の間で段階的に変更することができます。
 
 .. code-block:: C
 
@@ -140,7 +133,7 @@ Using a for loop, the value of ``analogWrite()`` can be changed step by step bet
         analogWrite(ledPin, value);
     }
 
-In order to see the experimental phenomenon clearly, a ``delay(30)`` needs to be added to the for cycle to control the brightness change time.
+実験現象を明確に観察するために、forサイクルに ``delay(30)`` を追加して、明るさの変更時間を制御する必要があります。
 
 .. code-block:: C
 

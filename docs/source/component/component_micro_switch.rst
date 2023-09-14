@@ -1,41 +1,40 @@
 .. _cpn_micro_switch:
 
-Micro Switch
+マイクロスイッチ
 ========================
 
 |img_micro_switch|
 
-The construction of a micro switch is really simple. The main parts of the switch are:
+マイクロスイッチの構造は非常にシンプルです。主要な部品は以下の通りです。
 
 |img_micro_switch2|
 
-* 1.Plunger (Actuator)
-* 2.Cover
-* 3.Moving piece
-* 4.Support
-* 5.Case
-* 6.NO terminal: normally open
-* 7.NC terminal: normally closed
-* 8.Contact
-* 9.Moving arm
+* 1. プランジャー（アクチュエータ）
+* 2. カバー
+* 3. 可動部品
+* 4. サポート
+* 5. ケース
+* 6. NO端子：通常開放
+* 7. NC端子：通常閉鎖
+* 8. コンタクト
+* 9. 可動アーム
 
+マイクロスイッチが物体と物理的に接触すると、その接点が位置を変えます。基本的な動作原理は以下の通りです。
 
-After a micro switch makes physical contact with an object, its contacts change position. The basic working principle is as follows.
+プランジャーが解放されているか、または静止している場合。
 
-When the plunger is in the released or rest position.
+* 通常閉鎖回路は電流を流すことができます。
+* 通常開放回路は電気的に絶縁されています。
 
-* The normally closed circuit can carry current.
-* The normally open circuit is electrically insulated.
+プランジャーが押されたり、切り替えられたりすると。
 
-When the plunger is depressed or switched.
-
-* The normally closed circuit is open.
-* The normally open circuit is closed.
+* 通常閉鎖回路は開いています。
+* 通常開放回路は閉じています。
 
 |img_micro_switch1|
 
- **Example**
+**例**
 
-* :ref:`py_micro` (For MicroPython User)
-* :ref:`ar_micro` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
+* :ref:`py_micro` （MicroPythonユーザー向け）
+* :ref:`ar_micro` （Arduinoユーザー向け）
+* :ref:`per_service_bell` （Piper Makeユーザー向け）

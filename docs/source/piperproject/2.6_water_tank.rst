@@ -1,44 +1,43 @@
 .. _per_water_tank:
 
-2.6 Smart Water Tank
+2.6 スマートウォータータンク
 =============================
 
-In this project, we use a water level sensor module and a servo to simulate a smart water tank. The water level sensor is fixed inside the tank to measure the water level, and when the water level is below a threshold, the valve controlled by the servo is allowed to open to let water in.
+このプロジェクトでは、水位センサーモジュールとサーボを使用してスマートウォータータンクをシミュレートします。水位センサーはタンク内に固定され、水位が閾値以下になった場合に、サーボによって制御されるバルブが開き、水が流れ込むようになります。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - キット内容
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+    *   - 番号
+        - コンポーネント
+        - 個数
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -47,7 +46,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -58,52 +57,46 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Wiring**
+**配線**
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
-
+Pico Wには、アナログ入力を使用できるGPIOピンが3つあります。それは、アナログチャネル0、1、および2のGP26、GP27、GP28です。
+また、内蔵温度センサーに接続されている第4のアナログチャネルもありますが、ここでは紹介しません。
 
 |water_tank0|
 
-* S of water level sensor is connected to GP26(A0), + to VBUS, - pin to GND.
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
+* 水位センサーのSはGP26（A0）に、+はVBUSに、-ピンはGNDに接続されています。
+* サーボのオレンジ色のワイヤー（信号）はGP15に、赤色のワイヤー（電源）はVBUSに、茶色のワイヤー（接地）はGNDに接続されています。
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.6_water_tank.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * 下の画像を参照して、ドラッグ&ドロップでコードを書くことができます。
+    * ``kepler-kit-main\piper`` のパスから ``2.6_water_tank.png`` をインポートしてください。詳細なチュートリアルについては、 :ref:`import_code_piper` を参照してください。
 
 |water_tank|
 
+Pico Wに接続した後、 **スタート** ボタンをクリックしてコードが実行されます。水位が水位センサーの1/3より低い場合、サーボは180度回転して入口が開くようにシミュレートされます。水位が水位センサーの1/3より高い場合、サーボは0度に回転して入口が閉じるように模倣されます。
 
-
-After connecting Pico W, click the **Start** button and the code starts to run. When the water level is lower than 1/3 of the water level sensor, the servo rotates to 180 degrees to simulate the inlet opening; when the water level is higher than 1/3 of the water level sensor, the servo rotates to 0 degrees to imitate the inlet closing.
-
-**How it Works?**
+**動作原理**
 
 |water_tank1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+ピン15（サーボ）の回転速度を15%に設定します。
 
-* [servo pin() set speed to ()%]: Used to set the rotation speed of the servo pin, the range is 0%~100%.
+* [servo pin() set speed to ()%]：サーボピンの回転速度を設定するために使用されます。範囲は0%〜100%です。
 
 |water_tank2|
 
-Reads the value of pin A0 and stores it in the variable [water_level].
+ピンA0の値を読み取り、変数[water_level]に格納します。
 
-* [set (water_level) to]: Used to set the value of the variable, you need to create the variable from the **Variables** palette.
-* [read voltage from pin ()]: Used to read the voltage of the analog pins (A0~A2), the range is 0 ~ 3.3V.
+* [set (water_level) to]：変数の値を設定するために使用されます。変数を **Variables** パレットから作成する必要があります。
+* [read voltage from pin ()]：アナログピン（A0〜A2）の電圧を読み取るために使用されます。範囲は0〜3.3Vです。
 
 |water_tank3|
 
-Set the voltage threshold to 1. When the voltage of water level sensor is less than 1, let the servo rotate to 180° position, otherwise rotate to 0° position.
+電圧の閾値を1に設定します。水位センサーの電圧が1より小さい場合、サーボを180°の位置に回転させます。それ以外の場合は、0°の位置に回転させます。
 
-* [servo pin () set angle to ()]: Set the angle of servo pin to, the range is 0 ~ 180°.
-
-
-
+* [servo pin () set angle to ()]：サーボピンの角度を設定します。範囲は0〜180°です。

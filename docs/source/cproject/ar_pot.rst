@@ -1,63 +1,60 @@
 .. _ar_pot:
 
-2.11 - Turn the Knob
+2.11 - ノブを回す
 ===========================
 
-In the previous projects, we have used the digital input on the Pico W.
-For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
+前回のプロジェクトでは、Pico Wのデジタル入力を使用しました。
+たとえば、ボタンはピンを低レベル（オフ）から高レベル（オン）に変更できます。これは2値の動作状態です。
 
-However, Pico W can receive another type of input signal: analog input.
-It can be in any state from fully closed to fully open, and has a range of possible values.
-The analog input allows the microcontroller to sense the light intensity, sound intensity, temperature, humidity, etc. of the physical world.
+しかし、Pico Wは別のタイプの入力信号、つまりアナログ入力も受け取ることができます。
+完全に閉じた状態から完全に開いた状態まで、任意の状態になることができ、可能な値の範囲があります。
+アナログ入力によって、マイクロコントローラは物理世界の光強度、音強度、温度、湿度などを感知できます。
 
-Usually, a microcontroller needs an additional hardware to implement analog input-the analogue-to-digital converter (ADC).
-But Pico W itself has a built-in ADC for us to use directly.
-
+通常、マイクロコントローラにはアナログ入力を実装するための追加ハードウェア、すなわちアナログ-デジタル変換器（ADC）が必要です。
+しかし、Pico W自体には直接使用できる内蔵ADCがあります。
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
+Pico Wには、アナログ入力を使用できるGPIOピンが3つあります、GP26、GP27、GP28。すなわち、アナログチャンネル0、1、2です。
+さらに、内蔵の温度センサーに接続された第4のアナログチャンネルもありますが、ここでは紹介しません。
 
-In this project, we try to read the analog value of potentiometer.
+このプロジェクトでは、ポテンショメータのアナログ値を読み取ろうとしています。
 
 * :ref:`cpn_potentiometer`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトに必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です、そのためのリンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -66,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -81,56 +78,47 @@ You can also buy them separately from the links below.
         - 1
         - |link_potentiometer_buy|
 
-**Schematic**
+**回路図**
 
 |sch_pot|
 
-The potentiometer is an analog device and when you turn it in 2 different directions.
+ポテンショメータはアナログデバイスであり、2つの異なる方向に回すことができます。
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico W contains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+ポテンショメータの中央のピンをアナログピンGP28に接続します。Raspberry Pi Pico Wには、マルチチャンネル、16ビットのアナログ-デジタル変換器が含まれています。これは、入力電圧を0から動作電圧（3.3V）の間で0から65535までの整数値にマッピングすることを意味します。したがって、GP28の値は0から65535までの範囲です。
 
-The calculation formula is shown below.
+以下に計算式を示します。
 
     (Vp/3.3V) x 65535 = Ap
 
-Then program the value of GP28 (potentiometer) as the PWM value of GP15 (LED).
-This way you will find that by rotating the potentiometer, the brightness of the LED will change at the same time.
+次に、GP28（ポテンショメータ）の値をGP15（LED）のPWM値としてプログラムします。
+このようにすると、ポテンショメータを回すことで、LEDの明るさも同時に変わることがわかります。
 
-
-
-**Wiring**
-
+**配線**
 
 |wiring_pot|
 
-**Code**
 
+
+**コード**
 
 .. note::
 
-   * You can open the file ``2.11_turn_the_knob.ino`` under the path of ``kepler-kit-main/arduino/2.11_turn_the_knob``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.11_turn_the_knob.ino`` は、パス ``kepler-kit-main/arduino/2.11_turn_the_knob`` の下で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
+   * **Upload** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-
-When the program is running, we can see the analog value currently read by the GP28 pin in the Serial monitor. 
-Turn the knob, and the value will change from 0 to 1023.
-At the same time, the brightness of the LED will increase as the analog value increases.
-
+プログラムが実行されているとき、シリアルモニターでGP28ピンによって現在読み取られているアナログ値を見ることができます。
+ノブを回すと、値は0から1023まで変わります。
+同時に、アナログ値が増加するにつれて、LEDの明るさも増加します。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b3e3927a-bd1a-4756-83f2-141d47f99b1c/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-     
 
+**どのように動作するか？**
 
-
-**How it works?**
-
-To enable Serial Monitor, you need to start serial communication in ``setup()`` and set the datarate to 9600.
+シリアルモニターを有効にするには、 ``setup()`` でシリアル通信を開始し、データレートを9600に設定する必要があります。
 
 .. code-block:: arduino
     :emphasize-lines: 3
@@ -140,10 +128,9 @@ To enable Serial Monitor, you need to start serial communication in ``setup()`` 
         Serial.begin(9600);
     }
 
-    
 * `Serial <https://www.arduino.cc/reference/en/language/functions/communication/serial/>`_
 
-In the loop function, the value of the potentiometer is read, then the value is mapped from 0-1023 to 0-255 and finally the value after the mapping is used to control the brightness of the LED.
+ループ関数では、ポテンショメータの値を読み取り、その値を0-1023から0-255にマッピングし、最終的にマッピング後の値を使用してLEDの明るさを制御します。
 
 .. code-block:: arduino
 
@@ -154,26 +141,26 @@ In the loop function, the value of the potentiometer is read, then the value is 
         analogWrite(ledPin, brightness);
     }
 
-* `analogRead() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ is used to read the value of the sensorPin (potentiometer) and assigns it to the variable ``sensorValue``.
+* `analogRead() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_  は、sensorPin（ポテンショメータ）の値を読み取り、変数 ``sensorValue`` に割り当てるために使用されます。
 
 .. code-block:: arduino
 
     int sensorValue = analogRead(sensorPin);
 
-* Print the value of SensorValue in Serial Monitor.
+* シリアルモニターでSensorValueの値を表示します。
 
 .. code-block:: arduino
 
     Serial.println(sensorValue);
 
-* Here, the `map(value, fromLow, fromHigh, toLow, toHigh) <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ function is required as the potentiometer value read is in the range 0-1023 and the value of a PWM pin is in the range 0-255. It is used to Re-maps a number from one range to another. That is, a value of fromLow would get mapped to toLow, a value of fromHigh to toHigh, values in-between to values in-between, etc.
+* ここで、 `map(value, fromLow, fromHigh, toLow, toHigh) <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ 関数が必要です。ポテンショメータで読み取られる値は0-1023の範囲であり、PWMピンの値は0-255の範囲です。この関数は、値を別の範囲に再マッピングするために使用されます。
 
 .. code-block:: arduino
 
     int brightness = map(sensorValue, 0, 1023, 0, 255);
 
-* Now we can use this value to control the brightness of the LED.
+* これで、この値を使用してLEDの明るさを制御できます。
 
 .. code-block:: arduino
 
-    analogWrite(ledPin,brightness);
+    analogWrite(ledPin, brightness);

@@ -1,29 +1,29 @@
 .. _iot_access:
 
-1. Access to the Network
+1. ネットワークへのアクセス
 ===========================
 
-Raspberry Pi Pico W is very similar to Raspberry Pi Pico, with the same GPIO, microUSB port, and size. The only difference is the addition of the CYW43439 2.4-GHz Wi-Fi chip from Infineon.
-Now let's see how it connects to our Wi-Fi network.
+Raspberry Pi Pico Wは、Raspberry Pi Picoと非常に似ており、GPIO、microUSBポート、サイズが同じです。唯一の違いは、InfineonからのCYW43439 2.4-GHz Wi-Fiチップが追加されている点です。
+それでは、どのようにして私たちのWi-Fiネットワークに接続するのか見てみましょう。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+こちらが一式を購入する便利なリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 
 .. list-table::
@@ -31,9 +31,9 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
@@ -45,13 +45,13 @@ You can also buy them separately from the links below.
         - 
 
 
-1. Connect to the Internet
+1. インターネットに接続
 ------------------------------------
 
-With just five lines of MicroPython, our Raspberry Pi Pico W is happily connected to the Internet.
+わずか5行のMicroPythonで、Raspberry Pi Pico Wはインターネットに接続されます。
 
-These 5 lines of code can be run directly from the Shell, pressing the ``Enter`` after you typing.
-Or refer to the following method and create a new ``.py`` file to run it.
+これら5行のコードは、Shellから直接実行することができ、入力後に ``Enter`` キーを押します。
+または、以下の方法に従って新しい ``.py`` ファイルを作成して実行します。
 
 .. code-block:: python
 
@@ -61,26 +61,25 @@ Or refer to the following method and create a new ``.py`` file to run it.
     wlan.connect("SSID","PASSWORD")
     print(wlan.isconnected())
 
-#. Create a new script by clicking the **New** button on Thonny, and copy and paste the above code, changing the ``SSID`` and ``PASSWORD`` to your own.
+#. Thonnyの **新規作成** ボタンをクリックして新しいスクリプトを作成し、上記のコードをコピーして貼り付け、 ``SSID`` と ``PASSWORD`` を自分のものに変更します。
 
     .. image:: img/access1.png
 
-#. To run the script, click the **Run current script** button or press F5. If the connection is successful, ``true`` will be printed. 
+#. スクリプトを実行するには、 **現在のスクリプトを実行** ボタンをクリックするか、F5キーを押します。接続が成功すると、 ``true`` が表示されます。
 
     .. note::
 
-        Make sure the Raspberry Pi Pico W is connected to computer via a USB cable, then click on the bottom right corner to select MicroPython (Raspberry Pi Pico).COMXxx as the interpreter.
+        Raspberry Pi Pico WがUSBケーブルでコンピュータに接続されていることを確認し、右下のコーナーをクリックしてMicroPython（Raspberry Pi Pico）.COMXxxをインタープリタとして選択します。
 
     .. image:: img/access2.png
 
 
-2. Timeout Judgment and Show IP
+2. タイムアウト判断とIPの表示
 -----------------------------------------------
 
+ネットワーク状況が良くない場合を考慮して、コードにタイムアウトの判断を追加しましょう。
 
-Considering some poor network conditions, let's add some timeout judgment to the code.
-
-If the connection is successful, the IP of Pico W will be displayed after copying and running the script.
+接続に成功すると、スクリプトをコピーして実行した後に、Pico WのIPが表示されます。
 
 .. code-block:: python
 
@@ -109,47 +108,46 @@ If the connection is successful, the IP of Pico W will be displayed after copyin
 
 .. image:: img/access3.png
 
-* ``wlan.status()`` function: Returns the current status of the wireless connection, the return value is shown in the table below.
-
+* ``wlan.status()`` 関数：無線接続の現在のステータスを返します、戻り値は以下の表に示されています。
 
     .. list-table::
         :widths: 40 10 50
 
-        * - Status
-          - Value
-          - Description
+        * - ステータス
+          - 値
+          - 説明
         * - STAT_IDLE 
           - 0 
-          - no connection and no activity,
+          - 接続も活動もなし
         * - STAT_CONNECTING 
           - 1 
-          - connecting in progress,
+          - 接続中
         * - STAT_WRONG_PASSWORD 
           - -3 
-          - failed due to incorrect password,
+          - パスワードが不正なため失敗
         * - STAT_NO_AP_FOUND 
           - -2 
-          - failed because no access point replied,
+          - アクセスポイントが応答しないため失敗
         * - STAT_CONNECT_FAIL 
           - -1 
-          - failed due to other problems,
+          - その他の問題による失敗
         * - STAT_GOT_IP 
           - 3 
-          - connection successful.
+          - 接続成功
 
-* ``wlan.ifconfig()`` function: Obtains IP addresses, subnet masks, gateways, and DNS servers. This method will return a 4-tuple containing the above information when called directly. In this case, we only print the IP address.
+* ``wlan.ifconfig()`` 関数：IPアドレス、サブネットマスク、ゲートウェイ、DNSサーバーを取得します。このメソッドは、直接呼び出された場合、上記の情報を含む4タプルを返します。この場合、IPアドレスのみを表示します。
 
 *  `class WLAN – MicroPython Docs <https://docs.micropython.org/en/latest/library/network.WLAN.html>`_
 
 .. _create_secrets:
 
-3. Save private information to ``secrets.py``
+3. ``secrets.py`` にプライベート情報を保存
 ----------------------------------------------------------
 
-When you share your Pico W project, you should not want others to see your Wi-Fi password or API key.
-For good security, we can create a ``secrets.py`` file to store your private information.
+Pico Wプロジェクトを共有する際、Wi-FiのパスワードやAPIキーを他人に見られたくないでしょう。
+より高いセキュリティを確保するために、 ``secrets.py`` ファイルを作成してプライベート情報を保存できます。
 
-#. Copy the following code into a new script file on Thonny. Note to change ``SSID`` and ``PASSWORD`` to yours.
+#. 以下のコードをThonnyで新しいスクリプトファイルにコピーします。 ``SSID`` と ``PASSWORD`` は自分のものに変更してください。
 
     .. code-block:: python
 
@@ -158,19 +156,19 @@ For good security, we can create a ``secrets.py`` file to store your private inf
         'password': 'PASSWORD',
         }
 
-#. Choose Raspberry Pi Pico in the pop-up window that appears when you click the Save button or press ``Ctrl+S``.
+#. 「保存」ボタンをクリックするか、 ``Ctrl+S`` を押すと表示されるポップアップウィンドウでRaspberry Pi Picoを選択します。
 
     .. image:: img/access4.png
 
-#. Set the name to ``secrets.py``.
+#. 名前を ``secrets.py`` に設定します。
 
     .. image:: img/access5.png
 
-#. Now you can see this script in your Raspberry Pi Pico W.
+#. これで、このスクリプトはRaspberry Pi Pico Wで見ることができます。
 
     .. image:: img/access6.png
 
-#. In other scripts, you can call it as follows. If you run it, you will see a successful Wi-Fi connection. The ``secrets.py`` file is imported as a library, so we need not worry about leakage of information.
+#. 他のスクリプトで次のように呼び出すことができます。実行すると、Wi-Fi接続が成功することが確認できます。 ``secrets.py`` ファイルはライブラリとしてインポートされるので、情報の漏洩を心配する必要はありません。
 
     .. code-block:: python
         :emphasize-lines: 3,7
@@ -203,12 +201,12 @@ For good security, we can create a ``secrets.py`` file to store your private inf
 
 .. _do_connect:
 
-4. Connect to the Internet via ``do_connect.py``
+4. ``do_connect.py`` でインターネットに接続
 --------------------------------------------------------------
 
-Considering that each of our next projects will require a network connection, why don't we create a new ``do_connect.py`` file and write the relevant functions into it for reuse, which can greatly streamline the code of complex projects.
+次々と行うプロジェクトでネットワーク接続が必要となるため、新しい ``do_connect.py`` ファイルを作成して関連する関数をそこに記述し、再利用するのはいかがでしょうか。これにより、複雑なプロジェクトのコードを大幅にシンプルにすることができます。
 
-#. Copy the following code into a new script file, and save it to Raspberry Pi Pico as ``do_connect.py``.
+#. 以下のコードを新しいスクリプトファイルにコピーし、Raspberry Pi Picoに ``do_connect.py`` として保存します。
 
     .. code-block:: python
 
@@ -241,7 +239,7 @@ Considering that each of our next projects will require a network connection, wh
 
     .. image:: img/access7.png
 
-#. Calling it in other scripts by the following will allow the Raspberry Pi Pico W to connect to the network.
+#. 以下のように他のスクリプトで呼び出すと、Raspberry Pi Pico Wはネットワークに接続されます。
 
     .. code-block:: python
 
@@ -250,5 +248,3 @@ Considering that each of our next projects will require a network connection, wh
 
 
 .. https://www.tomshardware.com/reviews/raspberry-pi-pico-w
-
-

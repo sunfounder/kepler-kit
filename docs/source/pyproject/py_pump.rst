@@ -1,13 +1,12 @@
 .. _py_pump:
 
-3.6 Pumping
+3.6 ポンピング
 =======================
 
+小型の遠心ポンプは、自動植物水やりプロジェクトに適しています。
+また、ちょっとしたスマートな水の仕掛けを作るためにも使用できます。
 
-Small centrifugal pumps are suitable for projects with automatic plant watering.
-It can also be used to make tiny smart water features.
-
-Its power component is an electric motor, driven in exactly the same way as a normal motor.
+その動力源は電動モーターで、通常のモーターと全く同じ方法で駆動されます。
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
@@ -16,46 +15,45 @@ Its power component is an electric motor, driven in exactly the same way as a no
 
 .. note::
 
-    #. Connect the tube to the motor outlet, submerge the pump in water, and then power it on.
-    #. You need to make sure that the water level is always higher than the motor. Idling may damage the motor due to heat generation and will also generate noise.
-    #. If you are watering plants, you need to avoid soil being drawn in, as this can clog the pump.
-    #. If water does not come out of the tube, there may be residual water in the tube blocking the air flow and needs to be drained first.
+    #. チューブをモーターの出口に接続し、ポンプを水に浸し、電源を投入します。
+    #. 水位が常にモーターよりも高いことを確認する必要があります。アイドリングは、発熱と騒音を発生させ、モーターを破損する可能性があります。
+    #. 植物に水をやる場合、土が吸い込まれるのを防ぐ必要があります。これはポンプを詰まらせる原因となる可能性があります。
+    #. チューブから水が出ない場合、チューブ内に残留水があり、エアフローを妨げている可能性があり、まずは排水が必要です。
 
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+すべてを一つのキットで購入するのが便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -64,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -75,11 +73,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         -  
     *   - 9
@@ -88,32 +86,28 @@ You can also buy them separately from the links below.
         -  
 
 
-**Schematic**
+**回路図**
 
 |sch_pump|
 
-
-**Wiring**
+**配線**
 
 .. note::
 
-    * Since pump require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
-
+    * ポンプは高電流を必要とするため、安全性を考慮してここではLi-poチャージャーモジュールを使用してモーターに電力を供給します。
+    * Li-poチャージャーモジュールが図に示されているように接続されていることを確認してください。そうでないと、短絡が発生し、バッテリーや回路が損傷する可能性が高くなります。
 
 |wiring_pump|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``3.6_pumping.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下で ``3.6_pumping.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単にF5を押して実行してください。
+    
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリターをクリックするのを忘れないでください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -127,12 +121,12 @@ You can also buy them separately from the links below.
         motor1A.high()
         motor2A.low()
 
-
-After the code is run, the pump starts working and you will see water flowing out of the tube at the same time.
+コードが実行された後、ポンプが動作を開始し、同時にチューブから水が流れ出るのを確認できます。
 
 .. note::
 
-    * If the motor is still spinning after you click the Stop button, you need to reset the **RUN** pin on the Pico W with a wire to GND at this time, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * 「停止」ボタンをクリックした後もモーターが回転し続けている場合は、この時点でGNDへのワイヤーでPico Wの **RUN** ピンをリセットする必要があります。その後、このワイヤーを抜いてコードを再度実行してください。
+
+    * これは、モーターが過度な電流で動作しているため、Pico Wがコンピュータから切断される可能性があるためです。
 
     |wiring_run_reset|

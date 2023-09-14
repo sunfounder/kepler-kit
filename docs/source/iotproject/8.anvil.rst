@@ -1,45 +1,45 @@
-8. Building Web APP with @Anvil
+8. @Anvilを用いたWebアプリの構築
 ===================================
 
-We will write a project to communicate bi-directionally between the Raspberry Pi Pico W and Anvil's servers.
-The temperature and humidity transmitted from the Pico W will be displayed in real time in Anvil. Additionally, you can input messages in Anvil to be displayed on the Pico W's I2C LCD1602.
+このプロジェクトでは、Raspberry Pi Pico WとAnvilのサーバーとの間で双方向通信を行います。
+Pico Wから送信される温度と湿度はAnvilでリアルタイムに表示されます。さらに、Anvilでメッセージを入力すると、それがPico WのI2C LCD1602に表示されます。
 
 |anvil|
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入する方が確実に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個々に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -48,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
@@ -63,95 +63,86 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         -  
 
-**2. Build the Circuit**
+**2. 回路を組む**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        図に示されているようにLi-poチャージャーモジュールが接続されていることを確認してください。そうでない場合、短絡が発生してバッテリーと回路が損傷する可能性があります。
 
 .. image:: img/wiring/8.anvil_bb.png
     :width: 800
 
 
-**3. Create an Anvil APP**
+**3. Anvilアプリを作成する**
 
-1. Go to the |link_anvil| and click on **Start building**.
+1. |link_anvil| にアクセスして、 **Start building** をクリックします。
 
     .. image:: img/anvil-1.png
 
-
-2. Sign in or Sign up.
+2. サインインまたはサインアップします。
 
     .. image:: img/anvil-2.png
 
-
-3. Create a **New Blank App**.
+3. **新しいブランクアプリ** を作成します。
 
     .. image:: img/anvil-3.png
 
-
-4. Select **Material Design Theme**.
+4. **マテリアルデザインテーマ** を選択します。
 
     .. image:: img/anvil-4.png
 
-
-5. Now, you are on the app editing page.
+5. これでアプリの編集ページに移動します。
 
     .. image:: img/anvil-5.png
 
-
-6. From the Toolbox, drag a **Label** tool and place it on **Drop title here**.
+6. ツールボックスから **Label** ツールをドラッグして **Drop title here** に配置します。
 
     .. image:: img/anvil-6.png
 
-
-7. You can fill in the label text in the **text** field under the **Properties** menu.
+7. **プロパティ** メニューの下の **テキスト** フィールドでラベルのテキストを入力できます。
 
     .. image:: img/anvil-7.png
 
-
-8. In the same way, drag a **TextBox** to the right.
+8. 同様に、右側に **TextBox** をドラッグします。
 
     .. image:: img/anvil-17.png
 
-9. Drag a **button** to the far right and you can modify the **text** field. This button will be used to "send" a message to the Raspberry Pi Pico W.
+9. **ボタン** を右端にドラッグし、 **テキスト** フィールドを変更できます。このボタンはRaspberry Pi Pico Wにメッセージを「送信」するために使用されます。
 
     .. image:: img/anvil-14.png
 
-10. After double clicking the **SHOW** button, the form will switch from the Design page to the Code page and highlight the code for the **button**. You need to fill in the following code, which functions to call a function inside the server (in this case, Pico W). 
+10. **SHOW** ボタンをダブルクリックすると、フォームはデザインページからコードページに切り替わり、その **ボタン** のコードが強調表示されます。次のコードを入力する必要があります。このコードは、サーバー（この場合、Pico W）内の関数を呼び出す機能があります。
 
     .. code-block:: python
     
         anvil.server.call_s("show_message",self.text_box_1.text)
 
-    * ``show_message`` is the function that will be defined when Pico W is programmed.
-    * ``self.text_box_1.text`` is the message you type on the text box, which will be sent as a pass-through to ``show_message()``.
+    * ``show_message`` はPico Wがプログラムされたときに定義される関数です。
+    * ``self.text_box_1.text`` はテキストボックスに入力するメッセージであり、 ``show_message()`` にパススルーとして送信されます。
 
     .. image:: img/anvil-15.png
 
-11. Go back to the Design page, drag another label and place it under the previous elements. This label will show the DHT11 sensor data from the Pico W.
+11. デザインページに戻って、別のラベルをドラッグして以前の要素の下に配置します。このラベルはPico WからのDHT11センサーデータを表示します。
 
     .. image:: img/anvil-9.png
 
-
-12. In the **Toolbox**, click on **More Components** and drag the **Timer** into the form.
+12. **ツールボックス** で **More Components** をクリックし、 **Timer** をフォームにドラッグします。
 
     .. image:: img/anvil-12.png
 
-
-13. Using the **Properties**, set the timer to an interval of 3 seconds. This time is used to update the screen for our sensor data.
+13. **プロパティ** を使用して、タイマーを3秒の間隔に設定します。この時間は、センサーデータの画面を更新するために使用されます。
 
     .. image:: img/anvil-18.png
 
-14. Double-click the **Timer** tool to program it. Use a ``anvil.server.call_s()`` function to call the ``publish_data()`` function from the server to get the message that needs to be displayed on the Anvil APP, assign it to ``self.label_2.text`` and you're done.
+14. **Timer** ツールをダブルクリックしてプログラムします。 ``anvil.server.call_s()`` 関数を使用して、Anvilアプリに表示する必要のあるメッセージをサーバーから取得するための ``publish_data()`` 関数を呼び出し、それを ``self.label_2.text`` に割り当てて完了します。
 
     .. code-block:: python
 
@@ -160,50 +151,44 @@ You can also buy them separately from the links below.
     
     .. image:: img/anvil-16.png
 
-15. At this point, the part that needs to be programmed on Anvil is done. You can see more details on using Anvil from |link_anvil_docs|.
+15. この時点で、Anvilでプログラムする必要のある部分は完了です。Anvilの使用に関する詳細は、 |link_anvil_docs| で確認できます。
 
 
-**4. Setup Pico W**
+**4. Pico Wのセットアップ**
 
-In order to simplify the connection of the Raspberry Pi Pico W to Anvil services, Anvil uses a custom firmware image. Pico W's firmware is written in MicroPython and appears as a USB drive with two files (boot.py and main.py). The Pico W must be flashed with custom firmware and connected to our Wi-Fi before we can begin writing code.
+AnvilサービスへのRaspberry Pi Pico Wの接続を簡単にするため、Anvilはカスタムファームウェアイメージを使用します。Pico WのファームウェアはMicroPythonで書かれており、USBドライブとして（boot.pyとmain.pyの2つのファイルを持つ形で）認識されます。コードを書き始める前に、Pico Wにカスタムファームウェアをフラッシュし、Wi-Fiに接続する必要があります。
 
-1. Download the custom Raspberry Pi Pico W |link_anvil_firmware|, it is recommended to download the complete version.
+1. Raspberry Pi Pico W用のカスタムファームウェア |link_anvil_firmware| をダウンロードします。完全版のダウンロードが推奨されます。
 
     .. image:: img/anvil-p-1.png
 
-
-2. Push and hold the **BOOTSEL** button on the Pico W, then connect to your computer using a micro USB cable. Release BOOTSEL once the drive RPI-RP2 appears on your computer.
+2. Pico Wの **BOOTSEL** ボタンを押しながら、マイクロUSBケーブルでコンピュータに接続します。ドライブRPI-RP2がコンピュータに表示されたら、BOOTSELを離します。
 
     .. image:: img/anvil-p-2.png
         :width: 300
 
+3. ダウンロードしたばかりの ``.uf2`` ファイルをドラッグ&ドロップします。この時点でPico Wはファームウェアをインストールします。完了すると、 ``main.py`` と ``boot.py`` ファイルが表示されます。
 
-3. Drag and drop the ``.uf2`` file you just downloaded into it and Pico W will install the firmware at this point. When it is done, Pico W will reload the disk drive and you will see the ``main.py`` and ``boot.py`` files.
-
-    .. note:: 
-        Before reinstalling the firmware, make a backup of all your important files stored in Pico W.
-
+    .. note::
+        ファームウェアを再インストールする前に、Pico Wに保存された重要なファイルのバックアップを取ってください。
 
     .. image:: img/anvil-p-3.png
 
-4. Select "MicroPython(Raspberry Pi Pico).COMXX" as the interpreter in Thonny IDE. After clicking **View** -> **Files**, you will see the local drive and the hard drive of the Raspberry Pi Pico.
+4. Thonny IDEでインタプリタとして"MicroPython(Raspberry Pi Pico).COMXX"を選択します。 **View** -> **Files** をクリックすると、ローカルドライブとRaspberry Pi Picoのハードドライブが表示されます。
 
     .. image:: img/anvil-20.png
 
-5. Double click the ``boot.py`` script and fill your WiFi's ``SSID`` and ``PASSWORD``.
+5. ``boot.py`` スクリプトをダブルクリックし、WiFiの ``SSID`` と ``PASSWORD`` を入力します。
 
     .. image:: img/anvil-21.png
 
+**5. コードの完成**
 
-**5. Finish the Code**
-
-
-#. Upload ``dht.py`` and ``lcd1602.py`` from the path of ``kepler-kit-main/libs`` to the Raspberry Pi Pico W.
+#. ``kepler-kit-main/libs`` のパスから ``dht.py`` と ``lcd1602.py`` をRaspberry Pi Pico Wにアップロードします。
 
     .. image:: img/anvil-22.png
 
-
-#. Open ``main.py`` and replace the original code with the following code.
+#. ``main.py`` を開き、以下のコードで元のコードを置き換えます。
 
     .. code-block:: python
 
@@ -231,72 +216,58 @@ In order to simplify the connection of the Raspberry Pi Pico W to Anvil services
             sensor.measure()
             return "Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity)
 
-        # Connect the Anvil Uplink. In MicroPython, this call will block forever.
-
         anvil.pico.connect(UPLINK_KEY)
 
-
-        # There's lots more you can do with Anvil on your Pico W.
-        #
-        # See https://anvil.works/pico for more information
-
-
-#. Go back to the Anvil interface and tap the Uplink option in the App Browser settings.
+#. Anvilインターフェースに戻り、App Browserの設定でUplinkオプションをタップします。
 
     .. image:: img/anvil-p-6.png
 
-
-#. Click **Enable the Anvil Server Uplink for this app** to get the uplink key.
+#. **Enable the Anvil Server Uplink for this app** をクリックして、uplinkキーを取得します。
 
     .. image:: img/anvil-p-7.png
 
-
-#. Copy it and replace ``<uplink_key_goes_here>`` in ``main.py``, which makes your Pico W can connect to the Anvil APP you created.
+#. それをコピーし、 ``main.py`` の ``<uplink_key_goes_here>`` を置き換えます。これにより、作成したAnvil APPにPico Wが接続できるようになります。
 
     .. image:: img/anvil-p-8.png
 
 
-**6. Run the Project**
 
-1. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the connection success prompt in the Shell.
+**6. プロジェクトの実行**
+
+1. **Run current script** ボタンをクリックするか、F5を押して実行します。接続が成功すると、Shellに接続成功のプロンプトが表示されます。
 
     .. image:: img/anvil-19.png
 
+2. Anvilを実行します。これで、Anvil APPから温度と湿度が表示されるようになります。テキストボックスにメッセージを入力した後に **SHOW** ボタンをクリックすると、I2C LCD1602に入力したメッセージが表示されます。
 
-2. Run the Anvil, now you will be able to see the display temperature and humidity from the Anvil APP. If you click the **SHOW** button after you enter a message on the text box, the I2C LCD1602 will display the message you entered.
-
-    .. note:: 
-        If the character you entered is not displayed on the I2C LCD1602, you can turn the potentiometer on the back of the module to increase the contrast.
+    .. note::
+        入力した文字がI2C LCD1602に表示されない場合は、モジュールの裏側にあるポテンショメータを回してコントラストを調整できます。
 
     .. image:: img/anvil-r-2.png
 
-**7. Publish APP**
+**7. APPの公開**
 
-If you want to share your made app to others, you can generate a sharing link by the following method.
+作成したアプリを他人と共有したい場合は、以下の方法で共有リンクを生成できます。
 
-1. Go back to the **Anvil** page and click the **publish app** option in the** App Browser settings**.  
+1. **Anvil** ページに戻って、 **App Browser settings** 内の **publish app** オプションをクリックします。
 
     .. image:: img/anvil-s-1.png
 
-
-2. In the **Share via private link** tab you will see a list of links. Anyone can access your app through this link.
+2. **Share via private link** タブにはリンクのリストが表示されます。このリンクを通じて誰でもアプリにアクセスできます。
 
     .. image:: img/anvil-s-2.png
 
-
-3. Access the link and your app is ready to use directly.
+3. リンクにアクセスすると、アプリは直接使用可能になります。
 
     .. image:: img/anvil-s-3.png
 
-
-4. You can also share your app through the public link, fill in your personalized domain name and click **Apply** below to make it effective.
+4. 公開リンクを通じてもアプリを共有できます。独自のドメイン名を入力し、下の **Apply** をクリックして有効にします。
 
     .. image:: img/anvil-s-4.png
 
+**仕組みは？**
 
-**How it works?**
-
-Here is the basic framework of ``main.py``, which forms the basis of the communication between Pico W and Anvil APP.
+以下は、Pico WとAnvil APPの通信の基本となる ``main.py`` の基本フレームワークです。
 
 .. code-block:: python
 
@@ -305,17 +276,9 @@ Here is the basic framework of ``main.py``, which forms the basis of the communi
 
     UPLINK_KEY = "<uplink_key_goes_here>"
 
-
-    # Connect the Anvil Uplink. In MicroPython, this call will block forever.
-
     anvil.pico.connect(UPLINK_KEY)
 
-
-    # There's lots more you can do with Anvil on your Pico W.
-    #
-    # See https://anvil.works/pico for more information
-
-Set up dht11 and lcd1602. Details of the use of these two components can be found in :ref:`py_dht11` and :ref:`py_lcd`.
+dht11とlcd1602のセットアップ。これら2つのコンポーネントの使用方法の詳細は、 :ref:`py_dht11` と :ref:`py_lcd` で確認できます。
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -328,11 +291,10 @@ Set up dht11 and lcd1602. Details of the use of these two components can be foun
     from dht import DHT11
     sensor = DHT11(Pin(16, Pin.OUT, Pin.PULL_DOWN))
 
+Anvilのコードでは、サーバー（Pico W）の2つの内部関数を呼び出しています。
 
-In Anvil's code, we have called two internal functions of the server (Pico W). 
-
-The first is ``show_message()``, whose function is to make the LCD display the message typed by Anvil.
-The decorator ``@anvil.pico.callable(is_async=True)`` makes this function callable by Anvil.
+最初は ``show_message()`` で、この関数はAnvilで入力されたメッセージをLCDに表示させる役割があります。
+デコレータ ``@anvil.pico.callable(is_async=True)`` は、この関数をAnvilから呼び出し可能にします。
 
 .. code-block:: python
 
@@ -343,10 +305,8 @@ The decorator ``@anvil.pico.callable(is_async=True)`` makes this function callab
         lcd.message(text)
         return
 
-
-Next is ``publish_data()``, which functions to get the value of dht11 and return the temperature and humidity to Anvil.
-Again, it uses the decorator ``@anvil.pico.callable(is_async=True)`` to make it callable by Avil.
-
+次は ``publish_data()`` で、これはdht11の値を取得し、温度と湿度をAnvilに返す機能があります。
+これもデコレータ ``@anvil.pico.callable(is_async=True)`` を使用して、Anvilから呼び出し可能にします。
 
 .. code-block:: python
 
@@ -354,5 +314,4 @@ Again, it uses the decorator ``@anvil.pico.callable(is_async=True)`` to make it 
     async def publish_data():
         sensor.measure()
         return "Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity)
-
 

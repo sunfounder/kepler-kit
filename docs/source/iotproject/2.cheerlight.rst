@@ -1,46 +1,46 @@
-2. Follow the @CheerLights
+2. @CheerLightsに参加する
 =======================================
 
-This is a romantic project, join the |link_cheerlights| LED color-changing community, which allows LEDs all over the world to change colors simultaneously.
+これはロマンチックなプロジェクトで、 |link_cheerlights| LEDのカラーチェンジングコミュニティに参加するものです。このコミュニティでは、世界中のLEDが同時に色を変えることができます。
 
-You can place it in a corner of your office to remind yourself that you are not alone.
+オフィスの隅に置いて、「自分は一人ではない」と感じるためのリマインダーとしても使用できます。
 
-You can tweeting @cheerlights and including the color name in the tweet. This will change the LEDs around the world to the color you specify.
+@cheerlightsにツイートを送り、そのツイート内に色の名前を含めると、世界中のLEDが指定した色に変わります。
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのが便利ですが、その場合のリンクはこちらです。
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットの内容
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+下記のリンクから個々に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -49,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
@@ -60,69 +60,65 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         -  
 
-**Steps**
+**手順**
 
-#. Build the circuit.
+1. 回路を組み立てます。
 
-    The Li-po Charger Module used here will power your circuit so you can disconnect the USB cable and take your project somewhere else to play!
+    ここで使用するLi-po Charger Module（リチウムポリマー充電モジュール）は、USBケーブルを切断して、プロジェクトを他の場所で遊ぶために回路に電力を供給します。
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Li-po Charger Moduleが図に示されているように接続されていることを確認してください。それ以外の場合、ショートする可能性があり、バッテリーと回路が損傷する可能性があります。
 
     .. image:: img/wiring/2.cheerlights_bb.png
         :width: 800
 
+2. 以前に `コードパッケージ <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ をダウンロードしたフォルダにパスを切り替え、「kepler-kit-main/iot」のパスの下で ``2_cheer_light.py`` ファイルを開きます。
 
-
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``kepler-kit-main/iot``.
-
-#. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
+3. スクリプトを実行するには、 **Run current script（現在のスクリプトを実行）** ボタンをクリックするか、F5キーを押します。その後、Shellに接続プロンプト、IP、色（0xff0000は赤）が表示されます。
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, if not please refer to :ref:`iot_access` to create them.
+        コードを実行する前に、Pico Wに ``do_connect.py`` と ``secrets.py`` のスクリプトがあることを確認してください。もし無ければ、 :ref:`iot_access` を参照してそれらを作成してください。
 
     .. image:: img/2_cheerlight1.png
 
+4. スクリプトが実行された後、WS2812 RGBストリップは色を表示しますが、時抗その色は変わります。
 
-#. After the script runs, the WS2812 RGB strip will show a color, sometimes the color will change.
+5. 起動時にこのスクリプトを実行する場合、以下の手順に従ってRaspberry Pi Pico Wに ``main.py`` として保存する必要があります。
 
-#. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico W as ``main.py``, as follows.
-
-    * Stop the script from running and click **File** -> **Save as**.
+    * スクリプトの実行を停止し、 **File（ファイル）** -> **Save as（名前を付けて保存）** をクリックします。
 
         .. image:: img/2_cheerlight2.png
 
-    * Select **Raspberry Pi Pico** in the popup window that appears.
+    * ポップアップウィンドウで **Raspberry Pi Pico** を選択します。
 
         .. image:: img/2_cheerlight3.png
 
-    * Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico W.
+    * ファイル名を ``main.py`` に設定します。同じファイルがすでにPico Wに存在する場合は、プロンプトが表示されます。
 
         .. image:: img/2_cheerlight4.png
     
-    * You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico W. Put it in a corner and it will work automatically.
+    * USBケーブルを抜いて、Li-po Charger ModuleでRaspberry Pi Pico Wに電力を供給することができます。角に置いておけば、自動的に動作します。
 
+**仕組み**
 
-**How it works?**
-
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Raspberry Pi Pico Wは、 :ref:`iot_access` で説明されているように、インターネットに接続する必要があります。このプロジェクトでは、そのまま使用します。
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details. 
+WS2812 RGBストリップの設定については、 :ref:`py_neopixel` を参照してください。
 
 .. code-block:: python
 
@@ -130,17 +126,16 @@ Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details.
     from ws2812 import WS2812
     ws = WS2812(machine.Pin(18), 8)
 
-Now, we need a way to get the color of @CheerLights. There is a back-end system that takes the color changes from Twitter
-and posts them in JSON format to the URL: http://api.thingspeak.com/channels/1417/field/2/last.json.
+次に、@CheerLightsの色を取得する方法が必要です。Twitterから色の変更を受け取るバックエンドシステムがあり、その情報をJSON形式で URL http://api.thingspeak.com/channels/1417/field/2/last.json に投稿します。
 
-If you open this URL directly in your browser, you will see something like the following. All we need is the ``field2`` data, which is a hexadecimal color-coded string.
+このURLをブラウザで直接開くと、以下のようなものが表示されます。必要なのは ``field2`` データで、16進数でエンコードされた色情報です。
 
 .. code-block:: 
 
     {"created_at":"2022-08-16T06:12:44Z","entry_id":870488,"field2":"#ff00ff"}
 
-We need to use the ``urequests`` module to get this data and the ``json`` module to convert this character into a python dictionary.
-The following code gets the latest @CheerLights color from the url and returns a color value that can be used by WS2812.
+このデータを取得するために ``urequests`` モジュールを使用し、 ``json`` モジュールを使用してこの文字をPythonの辞書に変換します。
+次のコードは、URLから最新の@CheerLightsの色を取得し、WS2812で使用できる色値を返します。
 
 .. code-block:: python
 
@@ -160,7 +155,7 @@ The following code gets the latest @CheerLights color from the url and returns a
             print(e)
             return None
 
-Finally, use a loop to make the ws2812 work once per minute.
+最後に、1分ごとにws2812が動作するようにループを使用します。
 
 .. code-block:: python
 

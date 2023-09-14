@@ -1,34 +1,35 @@
-1.1 Introduction of MicroPython
+1.1 MicroPythonの紹介
 ======================================
 
-MicroPython is a software implementation of a programming language largely compatible with Python 3, written in C, that is optimized to run on a microcontroller.
+MicroPythonは、C言語で書かれた、Python 3とほぼ互換性のあるプログラミング言語のソフトウェア実装です。これは、マイクロコントローラ上で動作するように最適化されています。
 
-MicroPython consists of a Python compiler to bytecode and a runtime interpreter of that bytecode. The user is presented with an interactive prompt (the REPL) to execute supported commands immediately. Included are a selection of core Python libraries; MicroPython includes modules which give the programmer access to low-level hardware.
+MicroPythonは、Pythonのバイトコードへのコンパイラと、そのバイトコードのランタイムインタプリターで構成されています。ユーザーには、対話型のプロンプト（REPL）が提供され、サポートされているコマンドを即座に実行できます。コアPythonライブラリの一部が含まれており、MicroPythonには、プログラマーが低レベルハードウェアにアクセスできるモジュールも含まれています。
 
-* Reference: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
+* 参照： `MicroPython - Wikipedia <https://ja.wikipedia.org/wiki/MicroPython>`_
 
-The Story Starts Here
+物語はここから始まります
 --------------------------------
 
-Things changed in 2013 when Damien George launched a crowdfunding campaign (Kickstarter).
+2013年、ダミアン・ジョージがクラウドファンディング（Kickstarter）を立ち上げたことで、状況が変わりました。
 
-Damien was an undergraduate student at Cambridge University and an avid robotics programmer. He wanted to reduce the world of Python from a gigabyte machine to a kilobyte. His Kickstarter campaign was to support his development while he turned his proof of concept into a finished implementation.
+ダミアンはケンブリッジ大学の学部生で、ロボティクスプログラミングに熱心でした。彼はPythonの世界をギガバイトマシンからキロバイトへと縮小したいと考えていました。Kickstarterキャンペーンは、彼が概念実証を完成した実装に変えるための開発をサポートするものでした。
 
-MicroPython is supported by a diverse Pythonista community that has a keen interest in seeing the project succeed.
+MicroPythonは、プロジェクトの成功に熱心な多様なPythonistaコミュニティによってサポートされています。
 
-Apart from testing and supporting the code base, the developers provided tutorials, code libraries, and hardware porting, so Damien was able to focus on other aspects of the project.
+開発者たちは、コードベースのテストとサポートだけでなく、チュートリアル、コードライブラリ、ハードウェアのポーティングも提供しているため、ダミアンはプロジェクトの他の側面に集中することができました。
 
-* Reference: `realpython <https://realpython.com/micropython/>`_
+* 参照： `realpython <https://realpython.com/micropython/>`_
 
-Why MicroPython？
-------------------
+なぜMicroPythonなのか？
+--------------------------
 
-Although the original Kickstarter campaign released MicroPython as a development board "pyboard" with STM32F4, MicroPython supports many ARM-based product architectures. The mainline supported ports are ARM Cortex-M (many STM32 boards, TI CC3200/WiPy, Teensy boards, Nordic nRF series, SAMD21 and SAMD51), ESP8266, ESP32, 16bit PIC, Unix, Windows, Zephyr and JavaScript.
-Second, MicroPython allows for fast feedback. This is because you can use REPL to enter commands interactively and get responses. You can even tweak code and run it immediately instead of traversing the code-compile-upload-execute cycle.
+オリジナルのKickstarterキャンペーンでは、MicroPythonはSTM32F4を搭載した開発ボード「pyboard」としてリリースされましたが、多くのARMベースの製品アーキテクチャをサポートしています。主にサポートされているポートには、ARM Cortex-M（多くのSTM32ボード、TI CC3200/WiPy、Teensyボード、Nordic nRFシリーズ、SAMD21およびSAMD51）、ESP8266、ESP32、16ビットPIC、Unix、Windows、Zephyr、JavaScriptがあります。
+また、MicroPythonは高速なフィードバックを可能にします。これは、REPLを使用して対話的にコマンドを入力し、レスポンスを得ることができるためです。コードを微調整してすぐに実行することもできます。これにより、コード-コンパイル-アップロード-実行のサイクルを経なくても済みます。
 
-While Python has the same advantages, for some Microcontroller boards like the Raspberry Pi Pico, they are small, simple and have little memory to run the Python language at all. That's why MicroPython has evolved, keeping the main Python features and adding a bunch of new ones to work with these Microcontroller boards.
+Pythonにも同様の利点がありますが、Raspberry Pi Picoのような一部のマイクロコントローラボードは、小さくて単純で、Python言語を全体的に実行するためのメモリが非常に少ないです。それが、MicroPythonが主要なPythonの機能を維持しつつ、これらのマイクロコントローラボードで動作する新しい機能を多数追加して進化した理由です。
 
-Next you will learn to install MicroPython into the Raspberry Pi Pico.
+次に、Raspberry Pi PicoにMicroPythonをインストールする方法を学びます。
 
-* Reference: `MicroPython - Wikipedia <https://en.wikipedia.org/wiki/MicroPython>`_
-* Reference: `realpython <https://realpython.com/micropython/>`_
+* 参照： `MicroPython - Wikipedia <https://ja.wikipedia.org/wiki/MicroPython>`_
+* 参照： `realpython <https://realpython.com/micropython/>`_
+

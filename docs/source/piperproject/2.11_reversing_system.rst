@@ -1,45 +1,44 @@
 .. _per_reversing_system:
 
-2.11 Reversing System
+2.11 逆転警報システム
 ==========================
 
-For this project we used an ultrasonic module and an active buzzer to create a reversing alarm system. The ultrasonic module is used to detect the distance, and the buzzer emits different frequencies of alarm sounds depending on the distance.
+このプロジェクトでは、超音波モジュールとアクティブブザーを使用して逆転警報システムを作成します。超音波モジュールは距離を検出し、ブザーは距離に応じて異なる周波数の警報音を発します。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+キット全体を購入するのが便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -48,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -59,7 +58,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - アクティブ :ref:`cpn_buzzer`
         - 1
         - 
     *   - 8
@@ -68,50 +67,46 @@ You can also buy them separately from the links below.
         - |link_ultrasonic_buy|
 
 
-**Wiring**
+**配線**
 
 |reversing_system0|
 
+* 超音波モジュールのEchoとTrigピンは、同時にGP15に接続されています。これにより、超音波モジュールはGP15から信号を送受信します。
+* トランジスタの中央ピンは、1kΩの抵抗器を介してGP14に接続されています。
 
-* The Echo and Trig pins of the ultrasonic module are connected to GP15 at the same time, so that the ultrasonic module sends and receives signals from GP15.
-* The middle pin of the transistor connected to the buzzer is connected to GP14 through a 1kΩ resistor.
-
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.11_reversing_system.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * 下の画像を参照して、ドラッグ&ドロップでコードを書くことができます。
+    * ``kepler-kit-main\piper`` のパスから ``2.11_reversing_system.png`` をインポートしてください。詳細なチュートリアルは、 :ref:`import_code_piper` を参照してください。
 
 |reversing_system|
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the ultrasonic detection distance is less than 5cm, the buzzer emits a sharp sound (0.1s).
-* When the detection distance is between 5~10cm, the buzzer emits a slightly slow sound (0.5s).
-* When the detection distance is greater than 10cm, there is a sound prompt every 1 second.
+* Pico Wを接続した後、 **スタート** ボタンをクリックしてコードを実行します。
+* 超音波検出距離が5cm未満の場合、ブザーは鋭い音（0.1秒）を発します。
+* 検出距離が5〜10cmの場合、ブザーはやや遅い音（0.5秒）を発します。
+* 検出距離が10cm以上の場合、1秒ごとに音声プロンプトがあります。
 
-
-**How it Works?**
-
+**仕組み**
 
 |reversing_system1|
 
-Read the distance (in cm) of the ultrasonic detection, and store it in the variable [distance].
+超音波検出の距離（cm）を読み取り、変数[distance]に格納します。
 
 |reversing_system2|
 
-When distance is less than or equal to 5, set the variable intervals to 0.1s. The variable [intervals] is the interval between buzzer sounds.
+距離が5以下の場合、変数[intervals]を0.1秒に設定します。変数[intervals]はブザー音の間隔です。
 
 |reversing_system3|
 
-When distance is greater than 5 and less than or equal to 10, set the [intervals] to 0.5s.
+距離が5より大きく、10以下の場合、[intervals]を0.5秒に設定します。
 
 |reversing_system4|
 
-When distance is greater than 10, set the [intervals] time to 1s.
+距離が10より大きい場合、[intervals]の時間を1秒に設定します。
 
 |reversing_system5|
 
-Finally, make the buzzer sound every [intervals] seconds.
+最後に、[intervals]秒ごとにブザーが鳴るようにします。
 

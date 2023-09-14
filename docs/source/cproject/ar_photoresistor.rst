@@ -1,48 +1,45 @@
 .. _ar_photoresistor:
 
-
-2.12 - Feel the Light
+2.12 - 光を感じる
 =================================
-The photoresistor is a typical device for analog inputs and it is used in a very similar way to a potentiometer. Its resistance value depends on the intensity of the light, the stronger the irradiated light, the smaller its resistance value; conversely, it increases.
 
+フォトレジスタは、アナログ入力に典型的に使用されるデバイスであり、ポテンショメータと非常に似た方法で使用されます。その抵抗値は光の強度に依存し、照射される光が強ければ抵抗値は小さくなり、逆に、光が弱ければ抵抗値は増加します。
 
 * :ref:`cpn_photoresistor`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入すると便利です、そのためのリンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -51,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -62,44 +59,35 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Schematic**
+**回路図**
 
 |sch_photoresistor|
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the photoresistor.
+この回路では、10KΩの抵抗器とフォトレジスタが直列に接続され、流れる電流は同じです。10KΩの抵抗器は保護として機能し、GP28はフォトレジスタの電圧変換後の値を読み取ります。
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from GP28 will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+光が強くなると、フォトレジスタの抵抗が減少し、その結果、電圧が低下し、GP28からの値も低下します。光が十分に強いと、フォトレジスタの抵抗はほぼ0に近く、GP28の値もほぼ0に近くなります。このとき、10KΩの抵抗器は、3.3VとGNDが直接接続されて短絡するのを防ぐ保護役となります。
 
-If you place the photoresistor in a dark situation, the value of GP28 will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+フォトレジスタを暗い状況に置くと、GP28の値は上昇します。十分に暗い状況では、フォトレジスタの抵抗は無限大になり、その電圧はほぼ3.3V（10KΩの抵抗は無視できる）に近く、GP28の値は最大値65535に近くなります。
 
-
-The calculation formula is shown below.
+計算式は以下の通りです。
 
     (Vp/3.3V) x 65535 = Ap
 
-
-
-**Wiring**
-
+**配線**
 
 |wiring_photoresistor|
 
-**code**
-
+**コード**
 
 .. note::
 
-   * You can open the file ``2.12_feel_the_light.ino`` under the path of ``kepler-kit-main/arduino/2.12_feel_the_light``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.12_feel_the_light.ino`` は、 ``kepler-kit-main/arduino/2.12_feel_the_light`` のパスで開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/44074b9e-3e4e-475b-af37-689254f87ab2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program runs, the Serial Monitor prints out the photoresistor values. You can shine a flashlight on it or cover it up with your hand to see how the value will change.
-
+プログラムが実行された後、シリアルモニターはフォトレジスタの値を出力します。手で覆うか、フラッシュライトで照らして、値がどのように変わるかを確認できます。

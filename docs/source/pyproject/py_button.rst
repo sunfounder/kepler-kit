@@ -1,30 +1,30 @@
 .. _py_button:
 
-2.5 Reading Button Value
+2.5 ボタンの値を読み取る
 ==============================================
 
-These pins have both input and output functions, as indicated by their name GPIO (General-purpose input/output). Previously, we used the output function; in this chapter, we will use the input function to input the button value.
+これらのピンは、その名前が示すようにGPIO（汎用入出力）として、入力と出力の両方の機能を持っています。以前は出力機能を使用しましたが、この章では入力機能を使用してボタンの値を入力します。
 
 * :ref:`cpn_button`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+まとめてキットを購入する方が便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別にも購入できます。
 
 
 .. list-table::
@@ -32,16 +32,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -50,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - いくつか
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -61,42 +61,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
 
-**Schematic**
+**回路図**
 
 |sch_button|
 
-As long as one side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, then when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+ボタンの片側ピンが3.3vに、もう一方のピンがGP14に接続されていれば、ボタンが押された状態でGP14がハイレベルになります。しかし、ボタンが押されていない場合、GP14は未定義状態となり、ハイかローかが不明です。ボタンが押されていない時に安定したローレベルを得るためには、10Kのプルダウン抵抗を介してGP14をGNDに再接続する必要があります。
 
-
-**Wiring**
+**配線**
 
 |wiring_button|
 
-
-.. Let's follow the direction of the circuit to build the circuit!
-
-.. 1. Connect the 3V3 pin of Pico W to the positive power bus of the breadboard.
-.. #. Insert the button into the breadboard and straddle the central dividing line.
-
 .. note::
-    A four-pin button is shaped like an H. Its left two pins or right two pins are connected, which means that when it crosses the central gap, it connects two half rows with the same row number. (For example, in my circuit, E23 and F23 are already connected, as are E25 and F25).
+    4ピンのボタンはH型になっています。左の2ピンか右の2ピンが接続されており、中央のギャップを越えると、同じ行番号の2つの半行が接続されます。（例えば、私の回路では、E23とF23が接続されていますし、E25とF25も接続されています）。
 
-    Until the button is pressed, the left and right pins are independent of each other and current cannot flow from one side to the other.
+    ボタンが押されるまで、左右のピンは互いに独立しており、一方から他方への電流の流れはありません。
 
-.. #. Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).
-.. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
-.. #. Use a 10K resistor to connect the pin on the upper left corner of the button and the negative bus.
-.. #. Connect the negative power bus of the breadboard to Pico's GND.
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.5_read_button_value.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パス下の ``2.5_read_button_value.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、F5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリタを選択することを忘れずに。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -108,21 +96,19 @@ As long as one side of the button pin is connected to 3.3v, and the other side p
             print("You pressed the button!")
             utime.sleep(1)
 
-As soon as the code runs, the shell prints "You pressed the button!"
+コードが実行されると、シェルに「You pressed the button!」と表示されます。
 
-**Pull-up Working Mode**
+**プルアップ動作モード**
 
-
-The next part is the wiring and code when you use the button in the pull-up mode.
+次は、プルアップモードでボタンを使用する場合の配線とコードです。
 
 |sch_button_pullup|
 
 |wiring_button_pullup|
 
-The only difference you will see with the pull-down mode is that the 10K resistor is connected to 3.3V and the button is connected to GND, so that when the button is pressed, GP14 will get a low level, which is the opposite of the value obtained in pull-down mode.
-So just change this code to ``if button.value() == 0:``.
+プルダウンモードとの唯一の違いは、10Kの抵抗が3.3Vに接続され、ボタンはGNDに接続されているため、ボタンが押されるとGP14がローレベルになることです。これはプルダウンモードで得られる値とは逆です。
+したがって、このコードを ``if button.value() == 0:`` に変更するだけです。
 
-
-Also see the reference here:  
+参考資料もご覧ください：
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_

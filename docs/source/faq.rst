@@ -4,81 +4,83 @@ FAQ
 Arduino
 ---------------------
 
-#. Code upload failed in Arduino IDE?
-    * Check that your Pico is correctly recognised by the Arduino IDE, the port should be COMXX (Raspberry Pi Pico), for instructions please refer to :ref:`setup_pico_arduino`.
-    * Check that the Board(Raspberry Pi Pico) or port(COMXX (Raspberry Pi Pico))is selected correctly.
-    * If your code is OK and you have selected the correct board and port, but the upload is still not successful. At this point you can click on the **Upload** icon again, when the progress below shows "Upload...", unplug the USB cable, then press and hold the **BOOTSEL** button to plug it in and the code will be uploaded successfully.
+#. Arduino IDEでコードのアップロードに失敗した場合は？
 
+   * Arduino IDEが正しくPicoを認識しているか確認してください。ポートはCOMXX（Raspberry Pi Pico）でなければなりません。詳細は :ref:`setup_pico_arduino` を参照してください。
+   * ボード（Raspberry Pi Pico）またはポート（COMXX（Raspberry Pi Pico））が正しく選択されているか確認してください。
+   * コードに問題がなく、正しいボードとポートが選択されている場合でも、アップロードが成功しない場合は、 **アップロード** アイコンを再度クリックしてください。進行状況が「アップロード中...」と表示されたら、USBケーブルを抜いて、 **BOOTSEL** ボタンを押しながら再度挿入します。その後、コードのアップロードが成功します。
 
 MicroPython
 ------------------
 
-#. How to open and run the code?
-    For detailed tutorials, please refer to :ref:`open_run_code_py`.
+#. コードを開いて実行する方法は？
+   詳細なチュートリアルは :ref:`open_run_code_py` を参照してください。
 
-#. How to upload library to Raspberry Pi Pico W？
-    For detailed tutorials, please refer to :ref:`add_libraries_py`.
+#. Raspberry Pi Pico Wにライブラリをアップロードする方法は？
+   詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
-#. NO MicroPython(Raspberry Pi Pico W) Interpreter Option on Thonny IDE?
-    * Check that your Pico W is plugged into your computer via a USB cable.
-    * Check that you have installed MicroPython for Pico W (:ref:`install_micropython_on_pico`).
-    * The Raspberry Pi Pico W interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`thonny_ide`).
-    * If the Li-po Charger module is plugged into the breadboard at this point, unplug it first and then re-plug the Pico W into the computer.
+#. Thonny IDEにMicroPython（Raspberry Pi Pico W）インタープリタオプションがない？
 
-#. Cannot open Pico W code or save code to Pico W via Thonny IDE?
-    * Check that your Pico W is plugged into your computer via a USB cable.
-    * Check that you have selected the Interpreter as **MicroPython (Raspberry Pi Pico)**.
+   * Pico WがUSBケーブルでコンピュータに接続されているか確認してください。
+   * Pico W用のMicroPythonをインストールしたか確認してください（ :ref:`install_micropython_on_pico` ）。
+   * Raspberry Pi Pico Wインタープリタは、Thonnyのバージョン3.3.3以降でのみ利用可能です。古いバージョンを使用している場合は、アップデートしてください（ :ref:`thonny_ide` ）。
+   * この時点でLi-poチャージャーモジュールがブレッドボードに接続されている場合は、それを最初に抜いてから、Pico Wをコンピュータに再接続してください。
 
-#. Can Raspberry Pi Pico W be used on Thonny and Arduino at the same time?
-    NO, you need to do some different operations.
+#. Thonny IDEを経由してPico Wのコードを開いたり保存することができない？
 
-    * If you used it on Arduino first, and now you want to use it on Thonny IDE, you need to :ref:`install_micropython_on_pico` on it.
-    * If you used it on Thonny first,  and now you want to use it on Arduino IDE, you need to :ref:`setup_pico_arduino`.
+   * Pico WがUSBケーブルでコンピュータに接続されているか確認してください。
+   * インタープリタとして **MicroPython（Raspberry Pi Pico）** が選択されているか確認してください。
 
-
-#. If your computer is win7 and Pico W cannot be detected.
-    * Download the USB CDC driver from http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
-    * Unzip the ``amtel_devices_cdc.inf`` file to a folder named ``pico-serial``.
-    * Change the name of ``amtel_devices_cdc.inf`` file to ``pico-serial.inf``.
-    * Open/edit the ``pico-serial.inf`` in a basic editor like notepad
-    * Remove and replace the lines under the following headings:
-
-    .. code-block::
-
-        [DeviceList]
-        %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
-
-        [DeviceList.NTAMD64]
-        %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
-
-        [DeviceList.NTIA64]
-        %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
-
-        [DeviceList.NT]
-        %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
-
-        [Strings]
-        Manufacturer = "ATMEL, Inc."
-        PI_CDC_PICO = "Pi Pico Serial Port"
-        Serial.SvcDesc = "Pi Pico Serial Driver"
-
-    #. Close and save and make sure your retain the name as pico-serial.inf
-    #. Go to your pc device list, find the pico under Ports, named something like CDC Device. A yellow exclamation mark indicates it.
-    #. Right click on the CDC Device and update or install driver choosing the file you created from the location you saved it at.
+#. Raspberry Pi Pico WはThonnyとArduinoで同時に使用できるか？
+    いいえ、いくつかの異なる操作が必要です。
 
 
+   * 最初にArduinoで使用していて、今Thonny IDEで使用したい場合は、その上で :ref:`install_micropython_on_pico` が必要です。
+   * 最初にThonnyで使用していて、今Arduino IDEで使用したい場合は、 :ref:`setup_pico_arduino` が必要です。
 
+#. お使いのコンピュータがWin7でPico Wが認識されない場合は？
+
+   * USB CDCドライバーを次のURLからダウンロードしてください： `this link <http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver>`_
+   * ``amtel_devices_cdc.inf`` ファイルを ``pico-serial`` という名前のフォルダに解凍します。
+   * ``amtel_devices_cdc.inf`` ファイルの名前を ``pico-serial.inf`` に変更します。
+   * ノートパッドのような基本的なエディタで ``pico-serial.inf`` を開き/編集します。
+   * 以下の見出しの下にある行を削除して置き換えます：
+
+   .. code-block::
+
+       [DeviceList]
+       %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
+
+       [DeviceList.NTAMD64]
+       %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
+
+       [DeviceList.NTIA64]
+       %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
+
+       [DeviceList.NT]
+       %PI_CDC_PICO%=DriverInstall, USB\VID_2E8A&PID_0005&MI_00
+
+       [Strings]
+       Manufacturer = "ATMEL, Inc."
+       PI_CDC_PICO = "Pi Pico Serial Port"
+       Serial.SvcDesc = "Pi Pico Serial Driver"
+
+   #. 閉じて保存し、名前が ``pico-serial.inf`` として保持されていることを確認してください。
+   #. PCのデバイスリストに移動し、CDCデバイスとして名前が付けられたpicoをポートで見つけます。黄色い感嘆符がそれを示しています。
+   #. CDCデバイスを右クリックして、保存した場所から作成したファイルを選択してドライバーを更新またはインストールします。
 
 Piper Make
 ------------------
 
-#. How to set up the Pico W on Piper Make?
-    For detailed tutorials, please refer to :ref:`per_setup_pico`.
+#. Piper MakeでPico Wをセットアップする方法は？
 
-#. How to download or import code?
-    For detailed tutorials, please refer to :ref:`per_save_import`.
+   詳細なチュートリアルは :ref:`per_setup_pico` を参照してください。
 
-#. How to connect to Pico W?
-    For detailed tutorials, please refer to :ref:`connect_pico_per`.
+#. コードをダウンロードまたはインポートする方法は？
 
+   詳細なチュートリアルは :ref:`per_save_import` を参照してください。
+
+#. Pico Wに接続する方法は？
+
+   詳細なチュートリアルは :ref:`connect_pico_per` を参照してください。
 

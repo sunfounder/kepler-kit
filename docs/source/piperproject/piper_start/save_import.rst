@@ -1,34 +1,34 @@
 .. _per_save_import:
 
-1.3 How to Save or Import Code?
+1.3 コードの保存やインポート方法は？
 =========================================
 
-Save the Code
+コードを保存
 --------------------
 
-After writing the code, you can change the code name and description, and then click the **Download** button to save the code locally or share it with others.
+コードを書き終わった後、コードの名前と説明を変更できます。その後、 **Download** ボタンをクリックして、コードをローカルに保存するか他の人と共有することができます。
 
 |save_download|
 
-Then enter the file name and click the **Download** button again to save the code as a ``.png`` file.
+次に、ファイル名を入力し、 **Download** ボタンを再度クリックして、コードを ``.png`` ファイルとして保存します。
 
 |download_per|
 
 .. _import_code_piper:
 
-Import the Code
+コードをインポート
 --------------------
 
-In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Project**.
+Piper Makeの `ホームページ <https://make.playpiper.com/>`_ で、 **Import Project** をクリックします。
 
 |per_import|
 
-Select the ``.png`` file in the path ``kepler-kit-main\piper`` and click **Import**. 
-Note that you need to download the `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ package first.
-Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_.
+``kepler-kit-main\piper`` のパス内で ``.png`` ファイルを選択し、 **Import** をクリックします。
+注意：まず、 `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ パッケージをダウンロードする必要があります。
+または、 `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ でコードを確認できます。
 
 |choose_file|
 
-Now you can see the file you imported.
+これで、インポートしたファイルが表示されます。
 
 |import_led|

@@ -1,33 +1,32 @@
 .. _cpn_pump:
 
-DC Water Pump
-================
+DCウォーターポンプ
+====================
 
 |img_pump|
 
-This pump essentially functions as a DC motor, operating at a voltage of 3V and a current of 100mA. Upon powering, the pump draws water in from the bottom of its plastic casing and expels it from the outlet pipe. It must always be kept immersed in water to function properly. Reversing the polarity won't turn it into a water intake device; it will only pump water out!
+このポンプは基本的にはDCモーターとして動作し、動作電圧は3V、電流は100mAです。電源を接続すると、ポンプはプラスチックケーシングの底から水を吸い上げ、出口パイプから水を排出します。このポンプは、正常に動作するためには常に水に浸漬させておく必要があります。極性を逆にしても、それによって吸水装置にはなりません。逆に、水はただ排出されるだけです！
 
-It's highly suitable for beginners to create a fountain or plant watering project using this submersible pump, as it is incredibly user-friendly!
+この潜水ポンプは非常に使い勝手が良いため、初心者にとっては噴水や植物の水やりプロジェクトを作成するのに非常に適しています。
 
+**特長**
 
-**Features**
+* **動作電圧範囲**: DC 3 ~ 4.5V
+* **動作電流**: 120 ~ 180mA
+* **消費電力**: 0.36 ~ 0.91W
+* **最大揚水高**: 0.35 ~ 0.55M
+* **最大流量**: 80 ~ 100 L/H
+* **連続作動寿命**: 100時間
+* **防水等級**: IP68
+* **駆動方式**: DC, 磁気駆動
+* **素材**: エンジニアリングプラスチック
+* **出口外径**: 7.8 mm
+* **出口内径**: 6.5 mm
+* このポンプは潜水ポンプであり、そのように使用すべきです。水中でない状態で動作させると、過熱する危険性が高まります。
+* 25cmのオス型ワイヤーが付属しているため、ブレッドボードに簡単に挿入できます。
 
-* **Voltage Scope**: DC 3 ~ 4.5V
-* **Operating Current**: 120 ~ 180mA
-* **Power**: 0.36 ~ 0.91W
-* **Max Water Head**: 0.35 ~ 0.55M
-* **Max Flow Rate**: 80 ~ 100 L/H
-* **Continuous Working Life**: 100 hours
-* **Water Fing Grade**: IP68
-* **Driving Mode**: DC, Magnetic Driving
-* **Material**: Engineering Plastic
-* **Outlet Outside Diameter**: 7.8 mm
-* **Outlet Inside Diameter**: 6.5 mm
-* It is a submersible pump and should be used that way. It tends to heat too much that there's a risk of overheating if you turn it on unsubmerged.
-* It comes with a 25cm male wire, allowing for easy insertion into a breadboard.
+**例**
 
+* :ref:`py_pump` （MicroPythonユーザー向け）
+* :ref:`ar_pump` （Arduinoユーザー向け）
 
-**Example**
-
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)

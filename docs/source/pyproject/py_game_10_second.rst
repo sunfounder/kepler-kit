@@ -1,47 +1,45 @@
 .. _py_10_second:
 
-7.5 GAME - 10 Second
+7.5 GAME - 10秒ゲーム
 =======================
 
+集中力を試すために、次に私に続いてゲームデバイスを作りましょう。
+傾きスイッチと棒を接続して魔法の杖を作成します。この杖を振ると、4桁のセグメントディスプレイがカウントを始め、再度振るとカウントが停止します。勝つためには、表示されるカウントを **10.00** に保つ必要があります。友達とこのゲームで時間の魔法使いが誰かを見つけることができます。
 
-To challenge your concentration, follow me next to make a game device. 
-Make a magic wand by connecting the tilt switch with a stick. When you shake the wand, the 4-digit segment display will start counting, and when you shake it again, it will stop counting. In order to win, you must keep the displayed count at **10.00**. You can play the game with your friends to see who is the time wizard.
+**必要な部品**
 
-**Required Components**
+このプロジェクトで必要な部品は以下のとおりです。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入する方が確実に便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットのアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -50,11 +48,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 5(4-220Ω, 1-10KΩ)
+        - 5（4-220Ω、1-10KΩ）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -69,30 +67,26 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
-
+**回路図**
 
 |sch_10_second|
 
+* この回路は、 :ref:`py_74hc_4dig` に傾きスイッチを追加したものです。
+* GP16は、傾きスイッチが垂直のときに高く、傾いたときに低くなります。
 
-* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* GP16 is high when the tilt switch is upright; low when tilted.
-
-**Wiring**
+**配線図**
 
 |wiring_game_10_second| 
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``7.5_game_10_second.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下にある ``7.5_game_10_second.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするかF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタープリターをクリックすることを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 
 .. code-block:: python
@@ -134,22 +128,20 @@ You can also buy them separately from the links below.
         time.sleep_us(200)
         rclk.high()
         #time.sleep_us(200)
-        
 
     def display(num):
-        
+
         pickDigit(0)
         hc595_shift(SEGCODE[num%10])
 
         pickDigit(1)
         hc595_shift(SEGCODE[num%100//10])
-        
+
         pickDigit(2)
         hc595_shift(SEGCODE[num%1000//100]+0x80)
-        
+
         pickDigit(3)
         hc595_shift(SEGCODE[num%10000//1000])    
-
 
     tilt_switch = machine.Pin(16,machine.Pin.IN)
 
@@ -163,12 +155,11 @@ You can also buy them separately from the links below.
 
     tilt_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=shake)
 
-
     count = 0
     while True:
         if count_flag == True:
             count = int((time.ticks_ms()-timeStart)/10)
         display(count)
 
-The 4-digit 7-segment display will begin counting when you shake the wand, and will stop counting when you shake it again. 
-You win if you manage to keep the displayed count at 10.00. The game will continue after one more shake.
+魔法の杖を振ると、4桁の7セグメントディスプレイがカウントを開始し、再度振るとカウントが停止します。
+表示されたカウントが10.00になった場合、あなたの勝ちです。もう一度振るとゲームが続きます。

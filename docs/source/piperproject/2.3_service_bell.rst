@@ -1,52 +1,51 @@
 .. _per_service_bell:
 
-2.3 Service Bell
+2.3 サービスベル
 ==========================
 
-For this project we used a microswitch and an active buzzer to create a service bell. Tap the switch and the buzzer makes a sound.
+このプロジェクトでは、マイクロスイッチとアクティブブザーを使用してサービスベルを作成します。スイッチをタップすると、ブザーが音を出します。
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed).
+マイクロスイッチも3ピンのデバイスであり、3ピンの順番はC（共通ピン）、NO（通常開）およびNC（通常閉）です。
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+マイクロスイッチが押されていない場合、1（C）と3（NC）は接続されています。押されると、1（C）と2（NO）が接続されます。
 
 |img_micro_switch|
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が確実に便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品	
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -74,32 +73,28 @@ You can also buy them separately from the links below.
         - 1(S8050)
         - |link_transistor_buy|
     *   - 9
-        - Active :ref:`cpn_buzzer`
+        - アクティブ :ref:`cpn_buzzer`
         - 1
         - 
 
-**Wiring**
+**配線**
 
 |service_bell0|
 
-* By default, pins 1 and 3 of the Micro Switch are connected together and GP14 is low. When the Micro Switch is pressed, GP14 is high.
-* GP15 outputs high to make the buzzer sound.
+* デフォルトでは、マイクロスイッチのピン1と3は接続されており、GP14は低い状態です。マイクロスイッチが押されると、GP14は高い状態になります。
+* GP15は高い状態を出力して、ブザーが音を出します。
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.3_service_bell.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * 下の画像を参考にして、ドラッグ&ドロップでコードを書くことができます。
+    * ``kepler-kit-main\piper`` のパスから ``2.3_service_bell.png`` をインポートしてください。詳細なチュートリアルについては、 :ref:`import_code_piper` を参照してください。
 
 
 |service_bell|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
+Pico Wに接続した後、 **スタート** ボタンをクリックしてコードが実行されます。スイッチをタップすると、ブザーが音を出します。
 
 .. note::
-    This project code is exactly the same as the previous project :ref:`per_button`.
-
-
-
-
+    このプロジェクトのコードは、前のプロジェクト :ref:`per_button` とまったく同じです。

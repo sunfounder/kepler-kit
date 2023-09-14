@@ -1,73 +1,71 @@
 .. _quick_guide_piper:
 
-1.2 Quick Guide on Piper Make
+1.2 Piper Makeのクイックガイド
 =================================
 
-1. Create New Project
------------------------
+1. 新しいプロジェクトを作成
+---------------------------
 
-Now that you have set up Pico W, it is time to learn how to program it. 
-Now let's light up the onboard LED.
+Pico Wのセットアップが完了したら、プログラミングの方法を学ぶ時が来ました。
+それでは、オンボードLEDを点灯させましょう。
 
-
-Switch to ``CREATIVE MODE`` and click on the **New Project** button, 
-and a new project will appear in the **MY PROJECTS** section and 
-will be assigned a random name that can be changed from the programming page.
+``CREATIVE MODE`` に切り替えて、 **新しいプロジェクト** ボタンをクリックします。
+すると、 **MY PROJECTS** セクションに新しいプロジェクトが表示され、プログラミングページから名前を変更できるランダムな名前が割り当てられます。
 
 |media9-s|
 
-Then open the new project just created.
+作成した新しいプロジェクトを開きます。
 
 |media11-s|
 
-Now go to the Piper Make programming page.
+次に、Piper Makeのプログラミングページに移動します。
 
 |piper_intro1|
 
-* **START**: Used to run the code, if it's gray, it's not connected to Pico W at this time.
-* **Block palette**: contains different types of blocks.
-* **CONNECT**: Used to connect to Pico W, it is green when not connected to Pico W, when connected it will become **DISCONNECT(red)**.
-* **Programming Area**: Drag blocks here to finish programming by stacking them.
-* **Tools Area**: You can click **DIGITAL VIEW** to see the pin distribution of Pico W; you can view the print information in **CONSOLE**; you can read data from **DATA**, and you can click **Python** to view the Python source code.
-* **Project name and description**: You can change the project name and description.
-* **DOWNLOAD**: You can click the **DOWNLOAD** button to save it locally, usually in **|** format. Next time you can import it via the **Import Project** button on the home page.
+* **START**: コードを実行するために使用します。灰色の場合、現在Pico Wに接続されていません。
+* **Block palette**: 様々な種類のブロックが含まれています。
+* **CONNECT**: Pico Wに接続するために使用します。Pico Wに接続されていないときは緑色で、接続されると **DISCONNECT（赤）** になります。
+* **Programming Area**: ここにブロックをドラッグしてプログラミングを完成させます。
+* **Tools Area**: **DIGITAL VIEW**をクリックすると、Pico Wのピン配置を見ることができます。 **CONSOLE** でプリント情報を表示でき、 **DATA** からデータを読み取り、 **Python** をクリックしてPythonソースコードを表示できます。
+* **プロジェクト名と説明**: プロジェクト名と説明を変更することができます。
+* **DOWNLOAD**: **DOWNLOAD** ボタンをクリックしてローカルに保存できます。通常は **|** 形式です。次回は、ホームページの **Import Project** ボタンを使用してインポートできます。
 
-Click on the **Chip** palette and drag the [start] block to the **Programming Area**.
+**Chip**パレットをクリックし、[start]ブロックを **Programming Area** にドラッグします。
 
 |media12|
 
-Then drag the [loop] block in **loops** palette to the bottom of the [start] block, and set the loop interval to 1 second.
+次に、 **loops** パレットの[loop]ブロックを[start]ブロックの下にドラッグし、ループ間隔を1秒に設定します。
 
 |media14|
 
-The Raspberry Pi Pico's onboard LED is at pin25, so we use the [turn pin () ON/OFF] block on the **Chip** palette to control it.
+Raspberry Pi PicoのオンボードLEDはpin25にありますので、それを制御するために **Chip** パレットの[turn pin () ON/OFF]ブロックを使用します。
 
 |media15|
 
 .. _connect_pico_per:
 
-2. Connect to Pico W
+2. Pico Wに接続
 -----------------------
 
-Now click on the **CONNECT** button to connect to Pico W, after clicking on it a new popup will appear.
+**CONNECT** ボタンをクリックしてPico Wに接続します。クリックすると新しいポップアップが表示されます。
 
 |media16|
 
-Select the recognized **CircuitPython CDC control (COMXX)** port, then click on **Connect**. 
+認識された **CircuitPython CDC control (COMXX)** ポートを選択し、 **Connect** をクリックします。
 
 |pico_port|
 
-When the connection is successful, the green **CONNECT** in the bottom left corner will change to a red **DISCONNECT**.
+接続に成功すると、左下の緑色の **CONNECT** が赤い **DISCONNECT** に変わります。
 
 |disconnect_per|
 
-3. Run the Code
+3. コードを実行
 ------------------
 
-Now click on the **START** button to run this code and you will see the LED on the Pico W lit up. If yours is gray, it means that the Pico W is not connected, please reconnect it.
+**START** ボタンをクリックしてこのコードを実行します。Pico WのLEDが点灯するはずです。もし灰色なら、Pico Wが接続されていないので、再接続してください。
 
 |media166|
 
-Then turn off pin25 every second in the cycle, and click **START** on the upper left again, so that you can see the onboard LED lights flashing.
+周期でpin25を毎秒オフにし、左上の **START** を再度クリックすると、オンボードLEDが点滅するのが確認できます。
 
 |media17|

@@ -1,56 +1,53 @@
 .. _py_traffic_light:
 
-
-7.6 Traffic Light
+7.6 交通信号機
 =================================
 
+`交通信号機 <https://ja.wikipedia.org/wiki/交通信号機>`_ は、道路交差点や横断歩道、その他の場所で交通の流れを制御するための信号装置です。
 
-`Traffic Light <https://en.wikipedia.org/wiki/Traffic_light>`_ is a signal device located at roadway intersections, crosswalks and other locations to control the flow of traffic.
+交通信号は、 `ウィーン道路標識および信号に関する条約 <https://ja.wikipedia.org/wiki/%E9%81%93%E8%B7%AF%E6%A8%99%E8%AD%98%E5%8F%8A%E3%81%B3%E4%BF%A1%E5%8F%B7%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%82%A6%E3%82%A3%E3%83%BC%E3%83%B3%E6%9D%A1%E7%B4%84>`_  によって標準化されています。
+三つの標準色のLEDを交互に点灯させて、交通の優先権を与えます。
 
-Traffic signals are standardized by the `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_.
-Provides users with the right-of-way by alternating LEDs in three standard colors.
+* **赤信号** : 点滅する赤い光を見たら、停止標識と同等として停止すべきです。
+* **黄信号** : 赤に変わる前の警告信号です。黄信号の解釈は国や地域によって異なります。
+* **緑信号** : 指示された方向への交通を許可します。
 
-* **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
-* **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).
-* **Green light**: Allows traffic to move in the indicated direction.
+このプロジェクトでは、交通信号機の変化を実装するために3色のLEDと、各交通状態の時間を表示するための4桁7セグメントディスプレイを使用します。
 
-In this project, we will use three colors of LEDs to implement traffic light changes and a 4-digit 7-segment display to show the time of each traffic state.
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+便宜上、全体のキットを購入することもできます。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -59,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -79,30 +76,27 @@ You can also buy them separately from the links below.
         - |link_led_buy|
 
 
-**Schematic**
-
+**回路図**
 
 |sch_traffic_light|
 
+* この回路は、 :ref:`py_74hc_4dig` を基に、3つのLEDが追加されています。
+* 3つの赤、黄、緑のLEDはそれぞれGP7~GP9に接続されています。
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of 3 LEDs.
-* The 3 red, yellow and green LEDs are connected to GP7~GP9 respectively.
+**配線図**
 
-**Wiring**
-
-
-|wiring_traffic_light| 
+|wiring_traffic_light|
 
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``7.6_traffic_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下の ``7.6_traffic_light.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単にF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある「MicroPython（Raspberry Pi Pico）」のインタープリタをクリックすることを忘れずに。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -193,4 +187,6 @@ You can also buy them separately from the links below.
         display(counter)
         lightup(color_state)
 
-When the code runs, the green LED stays on for 30 seconds, the yellow LED stays on for 5 seconds, and the green LED stays on for 30 seconds.
+
+
+コードが実行されると、緑のLEDが30秒間点灯し、黄色のLEDが5秒間点灯し、赤のLEDが30秒間点灯します。

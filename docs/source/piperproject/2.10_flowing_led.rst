@@ -1,49 +1,46 @@
 .. _per_flowing_leds:
 
-
-2.10 Flowing LEDs
+2.10 流れるLED
 ====================
 
-The kit is equipped with a WS2812 RGB LED Strip, which can display colorful colors, and each LED can be independently controlled. 
+このキットにはWS2812 RGB LEDストリップが付属しており、各LEDは独立して制御できる多彩な色を表示できます。
 
-Here we try to use the tilt switch to control the flow direction of the LEDs on the WS2812 RGB LED Strip.
+このプロジェクトでは、傾斜スイッチを使用して、WS2812 RGB LEDストリップ上のLEDの流れる方向を制御します。
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入すると便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名称
+        - キット内容
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+個別に購入することも可能です。以下のリンクを参照してください。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -67,60 +64,50 @@ You can also buy them separately from the links below.
         - 1
         - |link_ws2812_buy|
 
-
-**Wiring**
+**配線**
 
 |WS2812_Flow_friz|
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.10_flowing_led.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * 下の画像を参考にして、ドラッグ&ドロップでコードを作成できます。
+    * ``kepler-kit-main\piper`` のパスから ``2.10_flowing_led.png`` をインポートしてください。詳細なチュートリアルは、 :ref:`import_code_piper` をご参照ください。
+
 
 |neopixel|
 
-After connecting Pico W, click the **Start** button and the code starts to run.
+Pico Wを接続した後、 **スタート** ボタンをクリックしてコードを実行します。
 
-When the tilt switch is placed vertically, it makes the LEDs on the WS2812 RGB LED Strip light up one by one in green, and when the tilt switch is placed horizontally, the LEDs light up one by one in the opposite direction in green.
+傾斜スイッチが垂直に置かれていると、WS2812 RGB LEDストリップ上のLEDが順番に緑色で点灯します。水平に置かれている場合、緑色のLEDが逆方向に一つずつ点灯します。
 
+**プログラミング**
 
-
-**Programming**
-
-
-**Step 1**: Use the [setup neopixel pin() pixels()] block in the **Actions** palette to initialize the WS2812 RGB LED Strip. **0** means the connected pin is GP0 and **8** means there are 8 RGB LEDs on the WS2812 RGB LED Strip.
+**ステップ1**: **Actions** パレットの[setup neopixel pin() pixels()]ブロックを使用して、WS2812 RGB LEDストリップを初期化します。 **0** は接続されたピンがGP0で、 **8** はWS2812 RGB LEDストリップに8つのRGB LEDがあることを意味します。
 
 |neo1|
 
-**Step 2**: In the **Variables** palette, click the **Create variable** button to create a variable called **i** to represent the LEDs on the WS2812 RGB LED Strip. 
+**ステップ2**: **Variables** パレットで **Create variable** ボタンをクリックし、WS2812 RGB LEDストリップ上のLEDを表す変数 **i** を作成します。
 
 |neo2|
 
-**Step 3**: Set the initial value of variable **i** to 1 (the LED near the wires), then in [repeat forever] block, use [() mod ()] to set the value of i from 0 to 7. e.g. 1 mod 8 = 1... 8 mod 8 =0, 9 mod 8 =1, etc.
+**ステップ3**: 変数 **i** の初期値を1（ワイヤーに近いLED）に設定し、[repeat forever]ブロック内で[() mod ()]を使用してiの値を0から7に設定します。例：1 mod 8 = 1、8 mod 8 = 0、9 mod 8 = 1 など。
 
-* [() mod ()]: This is the modulo operator block, from the **Loops** palette, drop down [() = ()] to select **mod**.
+* [() mod ()]: これは剰余演算子のブロックであり、 **Loops** パレットから[() = ()]をドロップダウンして **mod** を選択します。
 
 |neo3|
 
-**Step 4**: Set all neopixels to black to make all LEDs go off, then use [updates neopixels] to make this effect update to the WS2812 RGB LED Strip.
+**ステップ4**: 全てのネオピクセルを黒に設定して、全てのLEDを消灯させます。その後、[updates neopixels]を使用してこの効果をWS2812 RGB LEDストリップに適用します。
 
 |neo4|
 
-* [set all neopixels to ()]: Use to set a color for all LEDs, there are 13*9 colors, the top right color is black to make LEDs to go off.
-* [updates neopixels]: Update the effect to the WS2812 RGB LED Strip.
+* [set all neopixels to ()]: 全てのLEDに色を設定するために使用します。13*9色あり、右上の色はLEDを消灯するための黒です。
+* [updates neopixels]: この効果をWS2812 RGB LEDストリップに更新します。
 
-**Step 5**: If pin14 is read high, let the LEDs on the WS2812 RGB LED Strip light up one by one in green, otherwise light up green one by one in the opposite direction.
+**ステップ5**: pin14が高く読み取られた場合、WS2812 RGB LEDストリップ上のLEDを緑色で一つずつ点灯させます。それ以外の場合は、逆方向で緑色で一つずつ点灯させます。
 
 |neo5|
 
-* [change () by ()]: Used to increase (positive) or decrease (negative) the value of a variable by a specific step.
-
-
-
-
-
+* [change () by ()]: 変数の値を特定のステップで増加（正）または減少（負）させるために使用されます。
 

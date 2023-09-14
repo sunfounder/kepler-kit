@@ -1,46 +1,44 @@
 .. _per_reaction_game:
 
-2.13 Reaction Game
+2.13 リアクションゲーム
 ===========================
 
+このプロジェクトでは、複数のボタン、ブザー、およびLEDを使用してリアクションゲームを作成します。審判用のボタンを押すとゲームがスタートし、ブザーもゲームが続いていることを示すために鳴り続けます。2人のプレイヤーボタンをそれぞれ素早く押します。再び審判ボタンが押されると、ゲームは終了し、ブザーが停止します。この時点で、Piper MakeのCONSOLEを見て、誰の手の速さが速いかを確認します。
 
-Here we use several buttons, buzzer and LEDs to make a reaction game.Press the referee button to start the game, the buzzer will also keep ringing to prompt the game to continue; press the 2 player buttons quickly respectively; when the referee button is pressed again, the game is over the buzzer stops working.  At this point, look at the CONSOLE on Piper Make to see whose hand speed is fast.
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトで必要な部品は以下の通りです。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -49,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -72,59 +70,49 @@ You can also buy them separately from the links below.
         - 2
         - |link_led_buy|
 
-
-**Wiring**
+**配線**
 
 |button_race0|
 
+* プレイヤー1（GP14）とプレイヤー2（GP12）として2つのボタンを定義し、それぞれプルアップ抵抗が接続されています。ボタンが押されると、GP14とGP12はそれぞれ低くなります。
+* それらのインジケーターはGP15とGP13に接続されており、高い出力で点灯します。
+* GP10に接続された審判用のボタンを定義します。ボタンが押されると、GP10は低くなります。
+* アクティブブザーはGP11に接続されています。GP11が高い出力の場合、ブザーが鳴ります。
 
-* Define 2 buttons as player1 (GP14) and player2 (GP12), both have a pull-up resistor connected. When the buttons are pressed, GP14 and GP12 are each low.
-* Their indicators are connected to GP15 and GP13,  and output high to light them up.
-* Define a referee button connected to GP10, when the button is pressed, GP10 goes low.
-* Active buzzer is connected to GP11, when GP11 output high, the buzzer will sound.
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.13_reaction_game.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
-
-
+    * 下の画像を参照して、ドラッグ＆ドロップでコードを書くことができます。
+    * ``kepler-kit-main\piper`` のパスから ``2.13_reaction_game.png`` をインポートしてください。詳細なチュートリアルは、 :ref:`import_code_piper` を参照してください。
 
 |button_race|
 
+* Pico Wに接続した後、 **スタート** ボタンをクリックしてコードが実行されます。
+* 審判ボタンを押すと、ブザーが連続して鳴り始め（ゲームの開始を示します）。
+* この時点で、 **プレイヤー** ボタンを別々に素早く押し、対応するLEDが点灯します。
+* **審判** ボタンが再び押されると、ブザーが停止し、ゲームが終了します。
+* この時点でCONSOLEをクリックして、誰がそれをより多く押したかを確認します。
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* Press the referee button and the buzzer starts to sound (continuously), representing the start of the game.
-* At this point, press the **player** buttons separately and quickly, and the corresponding LEDs will light up.
-* When the **referee** button is pressed again, the buzzer stops, which means the game is over.
-* Click CONSOLE at this point to see who presses it more times.
-
-**How it Works?**
+**仕組み**
 
 |button_race1|
 
-
-GP10 is the referee button, when the referee button is not pressed it is high, the game has not started yet.
-When GP10 is low (referee button pressed), the game starts; set GP11 to high (buzzer), create variables and set initial values.
+GP10は審判ボタンで、審判ボタンが押されていない場合は高く、ゲームはまだ始まっていません。
+GP10が低い（審判ボタンが押された場合）、ゲームがスタートします。GP11を高く設定（ブザー）、変数を作成して初期値を設定します。
 
 |button_race2|
 
-When flag equals to 1 for game start, then read the value of GP14 (player1); if player1 button is pressed, store the number of presses in variable [count1], and make the indicator of GP15 light up.
-
+フラグが1（ゲームスタート）の場合、次にGP14（プレイヤー1）の値を読み取ります。プレイヤー1ボタンが押された場合、[count1]という変数に押す回数を保存し、GP15のインジケーターを点灯させます。
 
 |button_race3|
 
-Read the number of presses of GP12(player2) in the same way.
-
+同様にして、GP12（プレイヤー2）の押し回数を読み取ります。
 
 |button_race4|
 
-Print the number of presses for player1 and player2 respectively.
+それぞれのプレイヤー1とプレイヤー2の押し回数を印刷します。
 
 |button_race5|
 
-When the referee button is pressed again, the buzzer stops working and the game ends.
+審判ボタンが再び押されると、ブザーが停止してゲームが終了します。

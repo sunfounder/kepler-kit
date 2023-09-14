@@ -1,44 +1,44 @@
 .. _per_lucky_cat:
 
-2.9 Lucky Cat
+2.9 招き猫プロジェクト
 ==========================
 
-In this project, we use pir and servo to make a lucky cat. The PIR Module is used to detect the visitors and servo is used to imitate the beckoning motion of the lucky cat.
+このプロジェクトでは、PIRモジュールとサーボを使用して招き猫を作成します。PIRモジュールは来訪者を検出するために、サーボは招き猫の手を振る動作を模倣します。
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入すると便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名称
+        - キット内容
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+個別に購入することも可能です、以下のリンクを参照してください。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -47,7 +47,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -58,49 +58,39 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-
-**Wiring**
+**配線**
 
 |lucky_cat0|
 
+* サーボのオレンジ色の線（信号）はGP15に接続し、赤い線（電源）はVBUSに、茶色の線（接地）はGNDに接続します。
+* PIRモジュールの中央のピンはGP3に接続されます。
 
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
-* The middle pin of the PIR module is connected to the GP3.
-
-**Code**
-
-
+**プログラム**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.9_lucky_cat.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * 下の画像を参考にして、ドラッグ&ドロップでプログラムを作成できます。
+    * 詳細なチュートリアルは、 :ref:`import_code_piper` をご参照ください。
 
 |lucky_cat|
 
+* Pico Wを接続した後、 **スタート** ボタンをクリックしてプログラムを実行します。
+* PIRモジュールが客の到来を検出すると、サーボは5回往復して停止します。
 
-
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the PIR module detects a customer arrival, the servo oscillates back and forth five times and then stops.
-
-
-**How it Works?**
-
+**仕組み**
 
 |lucky_cat1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+ピン15（サーボ）の回転速度を15%に設定します。
 
 |lucky_cat2|
 
-If GP14 is low, set the variable [prestate] to 0. When the variable [prestate] is 0 and GP14 is high (human detected), set the variable [prestate] to 1.
+もしGP14が低い場合、変数[prestate]を0に設定します。変数[prestate]が0でGP14が高い（人が検出された）場合、変数[prestate]を1に設定します。
 
-The purpose of this is to make the main code work only when the GP14 changes from low to high, and to respond only once if the PIR module keeps detecting people.
+これは、GP14が低から高に変わった場合にのみメインのコードが動作するようにし、PIRモジュールが連続して人を検出しても一度しか反応しないようにするためです。
 
 |lucky_cat3|
 
-Make the servo cycle 5 times from 0 to 180 degrees rotation.
+サーボを0度から180度まで5回循環させます。
 
-* [repeat () times do]: Loop through the code inside the do block a finite number of times.
-
-
+* [repeat () times do]: doブロック内のコードを指定した回数繰り返します。

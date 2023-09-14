@@ -1,41 +1,26 @@
 .. _cpn_dot_matrix:
 
-LED Dot Matrix
+LEDドットマトリクス
 ==========================
 
 |img_led_matrix|
 
-Generally, LED dot matrix can be categorized into two types: common
-cathode (CC) and common anode (CA). They look much alike, but internally
-the difference lies. You can tell by test. A CA one is used in this kit.
-You can see 788BS labeled at the side.
+一般的に、LEDドットマトリクスは共通カソード（CC）と共通アノード（CA）の2種類に分類されます。外観は非常に似ていますが、内部の構造が異なります。テストで確認できます。このキットではCAタイプが使用されています。側面には788BSとラベルが付いています。
 
-See the figure below. The pins are arranged at the two ends at the back.
-Take the label side for reference: pins on this end are pin 1-8, and oh
-the other are pin 9-16.
+下の図を参照してください。ピンは背面の両端に配置されています。ラベル側を基準にすると、この端のピンは1-8番、他方の端は9-16番です。
 
-The external view:
+外観：
 
 |img_788bs_i|
 
 
-Below the figures show their internal structure. You can see in a CA LED
-dot matrix, ROW represents the anode of the LED, and COL is cathode;
-it's contrary for a CC one. One thing in common: for both types, pin 13,
-3, 4, 10, 6, 11, 15, and 16 are all COL, when pin 9, 14, 8, 12, 1, 7, 2,
-and 5 are all ROW. If you want to turn on the first LED at the top left
-corner, for a CA LED dot matrix, just set pin 9 as High and pin 13 as
-Low, and for a CC one, set pin 13 as High and pin 9 as Low. If you want
-to light up the whole first column, for CA, set pin 13 as Low and ROW 9,
-14, 8, 12, 1, 7, 2, and 5 as High, when for CC, set pin 13 as High and
-ROW 9, 14, 8, 12, 1, 7, 2, and 5 as Low. Consider the following figures
-for better understanding.
+以下の図は、その内部構造を示しています。CAのLEDドットマトリクスでは、ROWはLEDのアノードを、COLはカソードを表します。CCの場合は逆です。共通の点は、どちらのタイプでも、ピン13, 3, 4, 10, 6, 11, 15, 16がすべてCOLで、ピン9, 14, 8, 12, 1, 7, 2, 5がすべてROWであることです。左上の最初のLEDを点灯させたい場合、CAのLEDドットマトリクスでは、ピン9をHighに、ピン13をLowに設定します。CCの場合は、ピン13をHighに、ピン9をLowに設定します。全体の最初の列を点灯させたい場合は、CAでは、ピン13をLowに、ROWの9, 14, 8, 12, 1, 7, 2, 5をHighに設定します。CCでは、ピン13をHighに、ROWの9, 14, 8, 12, 1, 7, 2, 5をLowに設定します。より理解を深めるために、以下の図を参照してください。
 
-The internal view:
+内部ビュー：
 
 |img_788bs_sche|
 
-Pin numbering corresponding to the above rows and columns:
+上記の行と列に対応するピン番号：
 
 =========== ====== ====== ===== ====== ===== ====== ====== ======
 **COL**     **1**  **2**  **3** **4**  **5** **6**  **7**  **8**
@@ -44,12 +29,10 @@ Pin numbering corresponding to the above rows and columns:
 **Pin No.** **9**  **14** **8** **12** **1** **7**  **2**  **5**
 =========== ====== ====== ===== ====== ===== ====== ====== ======
 
-In addition, two 74HC595 chips are used here. One is to control the rows
-of the LED dot matrix while the other, the columns.
+さらに、ここでは2つの74HC595チップが使用されています。1つはLEDドットマトリクスの行を制御し、もう1つは列を制御します。
 
+**例**
 
-**Example**
-
-* :ref:`py_74hc_788bs` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_74hc_788bs` (For Arduino User)
+* :ref:`py_74hc_788bs` (MicroPythonユーザー向け)
+* :ref:`py_bubble_level` (MicroPythonユーザー向け)
+* :ref:`ar_74hc_788bs` (Arduinoユーザー向け)

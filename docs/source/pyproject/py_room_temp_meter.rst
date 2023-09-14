@@ -1,48 +1,46 @@
 .. _py_room_temp:
 
-7.2 Room Temperature Meter
+7.2 室温計
 ======================================
 
-Using a thermistor and an I2C LCD1602, we can create a room temperature meter.
+サーミスターとI2C LCD1602を使って、室温計を作成できます。
 
-This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to display the temperature.
+このプロジェクトは非常にシンプルで、 :ref:`py_temp` に基づきI2C LCD1602で温度を表示します。
 
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトには以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのは非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名称	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -51,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -66,25 +64,23 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**回路図**
 
 |sch_room_temp|
 
-
-**Wiring**
+**配線**
 
 |wiring_room_temp|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``7.2_room_temperature_meter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下にある ``7.2_room_temperature_meter.py`` ファイルを開くか、このコードをThonnyにコピペして、「Run Current Script」をクリックまたはF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下角にある「MicroPython（Raspberry Pi Pico）」インタープリターをクリックして選択してください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -106,12 +102,12 @@ You can also buy them separately from the links below.
         #print ('Celsius: %.2f C  Fahrenheit: %.2f F' % (Cel, Fah))
         #utime.sleep_ms(200)
 
-        string = " Temperature is \n    " + str('{:.2f}'.format(Cel))+ " C"
+        string = " Temperature is \n    " + str('{:.2f}'.format(Cel)) + " C"
         lcd.message(string)
         utime.sleep(1)
         lcd.clear()
 
-The LCD will display the temperature value in the current environment after the program runs.
+プログラムが実行された後、LCDには現在の環境の温度値が表示されます。
 
-.. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+.. note::
+    コードと配線が正しいのにもかかわらず、LCDが何も表示しない場合は、裏面のポテンショメーターを回してコントラストを調整できます。

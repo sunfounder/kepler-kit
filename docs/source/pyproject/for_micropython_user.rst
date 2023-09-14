@@ -1,17 +1,16 @@
 .. _micropython_user:
 
-For MicroPython User
-======================
-In this section, you will learn the history of MicroPython, how to install MicroPython in Pico W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
+MicroPythonユーザーのために
+==============================
 
-We recommend that you read the chapters in order.
+このセクションでは、MicroPythonの歴史、Pico WにMicroPythonをインストールする方法、基本的な文法、そしてMicroPythonを素早く理解するための数々の実用的で面白いプロジェクトについて学びます。
 
+章は順番に読むことをお勧めします。
 
-**1. Get Started**
+**1. はじめに**
 
 .. toctree::
     :maxdepth: 1
-
 
     python_start/introduction_micropython
     python_start/install_thonny
@@ -20,9 +19,7 @@ We recommend that you read the chapters in order.
     python_start/quick_guide_thonny
     python_start/syntax/micropython_basic_syntax
 
-
-
-**2. Output & Input**
+**2. 出力と入力**
 
 .. toctree::
     :maxdepth: 1
@@ -44,7 +41,7 @@ We recommend that you read the chapters in order.
     py_transistor
     py_relay
 
-**3. Sound & Display & Movement**
+**3. 音と表示と動き**
 
 .. toctree::
     :maxdepth: 1
@@ -57,7 +54,7 @@ We recommend that you read the chapters in order.
     py_pump
     py_servo
 
-**4. Controller**
+**4. コントローラ**
 
 .. toctree::
     :maxdepth: 1
@@ -66,7 +63,7 @@ We recommend that you read the chapters in order.
     py_keypad
     py_mpr121
 
-**5. Microchip**
+**5. マイクロチップ**
 
 .. toctree::
     :maxdepth: 1
@@ -76,7 +73,7 @@ We recommend that you read the chapters in order.
     py_74hc595_4dig
     py_74hc595_matrix
 
-**6. Advanced**
+**6. 上級編**
 
 .. toctree::
     :maxdepth: 1
@@ -87,7 +84,7 @@ We recommend that you read the chapters in order.
     py_irremote
     py_rfid
 
-**7. Funny Project**
+**7. 面白いプロジェクト**
 
 .. toctree::
     :maxdepth: 1
@@ -104,5 +101,3 @@ We recommend that you read the chapters in order.
     py_reversing_aid
     py_somatosensory_controller
     py_digital_bubble_level
-
-

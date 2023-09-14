@@ -1,53 +1,51 @@
 .. _ar_rfid:
 
-
-6.5 - Radio Frequency Identification
+6.5 - 無線周波数識別（RFID）
 ================================================
 
-Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required.
+無線周波数識別（RFID）は、オブジェクト（またはタグ）と照会装置（またはリーダー）との間で無線通信を使用して、そのようなオブジェクトを自動的に追跡・識別するテクノロジーを指します。タグの伝送範囲はリーダーから数メートルに限られます。リーダーとタグの間には必ずしも直線的な視界が必要ではありません。
 
-Most tags contain at least one integrated circuit (IC) and an antenna. 
-The microchip stores information and is responsible for managing the radio frequency (RF) communication with the reader. Passive tags do not have an independent energy source and depend on an external electromagnetic signal, provided by the reader, to power their operations. 
-Active tags contain an independent energy source, such as a battery. 
-Thus, they may have increased processing, transmission capabilities and range.
+ほとんどのタグには、少なくとも一つの集積回路（IC）とアンテナが含まれています。
+このマイクロチップは情報を格納し、リーダーとの無線周波数（RF）通信を管理しています。パッシブタグには独立したエネルギー源がなく、リーダーから提供される外部の電磁信号に依存して動作します。
+アクティブタグには独立したエネルギー源、例えばバッテリーが含まれています。
+したがって、これらは処理能力、伝送能力、および範囲が増加する可能性があります。
 
 * :ref:`cpn_mfrc522`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です、リンクは以下の通りです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - 番号
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -56,71 +54,65 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 
-**Schematic**
+**回路図**
 
 |sch_rfid|
 
-
-**Wiring**
+**配線**
 
 |wiring_rfid|
 
-**Code**
+
+**コード**
 
 .. note::
 
-    * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``MFRC522`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * ファイル ``6.5_rfid_write.ino`` は、パス ``kepler-kit-main/arduino/6.5_rfid_write`` で開くことができます。
+    * または、このコードを **Arduino IDE** にコピーしてください。
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
+    * ここではライブラリ「MFRC522」が使用されています。Arduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
 
+メインの関数は二つに分かれています：
 
-The main function is divided into two:
-
-* ``6.5_rfid_write.ino``: Used to write information to the card (or key).
-* ``6.5_rfid_read.ino``: used to read the information in the card (or key)
+* ``6.5_rfid_write.ino`` ：カード（またはキー）に情報を書き込むために使用されます。
+* ``6.5_rfid_read.ino`` ：カード（またはキー）内の情報を読み取るために使用されます。
 
 .. note::
 
-   * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``6.5_rfid_write.ino`` は、パス ``kepler-kit-main/arduino/6.5_rfid_write`` で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
    
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
-
-After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
-
+実行後、シリアルモニターでメッセージを入力して、 ``#`` で終了した後、MFRC522モジュールに近づけることでカード（またはキー）にメッセージを書き込むことができます。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
 .. note::
 
-   * You can open the file ``6.5_rfid_read.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_read``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``6.5_rfid_read.ino`` は、パス ``kepler-kit-main/arduino/6.5_rfid_read`` で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
    
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
-
-After running, you will be able to read the message stored in the card (or key).
+実行後、カード（またはキー）に保存されているメッセージを読み取ることができます。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-**How it works?**
+**どのように動作するのか？**
 
 .. code-block:: arduino
 
@@ -131,20 +123,19 @@ After running, you will be able to read the message stored in the card (or key).
 
     MFRC522 mfrc522(SS_PIN, RST_PIN);
 
-First, instantiate ``MFRC522()`` class.
+まず、 ``MFRC522()`` クラスをインスタンス化します。
 
-For simplicity of use, the ``MFRC522`` library is further encapsulated with the following functions.
+使いやすさのために、 ``MFRC522`` ライブラリは以下の関数でさらにカプセル化されています。
 
-* ``void simple_mfrc522_init()`` : Starts SPI communication and initializes the mfrc522 module.
-* ``void simple_mfrc522_get_card()`` : Suspends the program until the card (or key) is detected, prints the card UID and PICC type.
-* ``void simple_mfrc522_write(String text)`` : Write a string for the card (or key).
-* ``void simple_mfrc522_write(byte* buffer)`` : Writes information for the card (or key), which usually comes from the serial port.
-* ``void simple_mfrc522_write(byte section, String text)`` : Writes a string for a specific sector. ``section`` is set to 0 to write sectors 1-2; ``section`` is set to 1 to write sectors 3-4.
-* ``void simple_mfrc522_write(byte section, byte* buffer)`` : Writes information for a specific sector, usually from the serial port. ``section`` set to 0, writes 1-2 sectors; ``section`` set to 1, writes 3-4 sectors.
-* ``String simple_mfrc522_read()`` : Reads the information in the card (or key), returns a string.
-* ``String simple_mfrc522_read(byte section)`` : Reads the information in a specific sector, returns a string. ``section`` is set to 0, writes 1-2 sectors; ``section`` is set to 1, writes 3-4 sectors.
+* ``void simple_mfrc522_init()`` : SPI通信を開始し、mfrc522モジュールを初期化します。
+* ``void simple_mfrc522_get_card()`` : カード（またはキー）が検出されるまでプログラムを一時停止し、カードのUIDとPICCタイプを表示します。
+* ``void simple_mfrc522_write(String text)`` : カード（またはキー）に文字列を書き込みます。
+* ``void simple_mfrc522_write(byte* buffer)`` : 通常はシリアルポートから来る情報をカード（またはキー）に書き込みます。
+* ``void simple_mfrc522_write(byte section, String text)`` : 特定のセクターに文字列を書き込みます。 ``section`` が0の場合、セクター1-2に書き込みます; ``section`` が1の場合、セクター3-4に書き込みます。
+* ``void simple_mfrc522_write(byte section, byte* buffer)`` : 通常はシリアルポートから来る情報を特定のセクターに書き込みます。 ``section`` が0の場合、セクター1-2に書き込みます; ``section`` が1の場合、セクター3-4に書き込みます。
+* ``String simple_mfrc522_read()`` : カード（またはキー）内の情報を読み取り、文字列を返します。
+* ``String simple_mfrc522_read(byte section)`` : 特定のセクター内の情報を読み取り、文字列を返します。 ``section`` が0の場合、セクター1-2を読み取ります; ``section`` が1の場合、セクター3-4を読み取ります。
 
-
-In the ``6.5_rfid_write.ino`` example, the ``Serial.readBytesUntil()`` function is used, which is a common serial input method.
+``6.5_rfid_write.ino`` の例では、一般的なシリアル入力方法として ``Serial.readBytesUntil()`` 関数が使用されています。
 
 * `Serial.readBytesUntil <https://www.arduino.cc/reference/en/language/functions/communication/serial/readbytesuntil/>`_

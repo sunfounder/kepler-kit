@@ -1,51 +1,50 @@
 .. _py_music_player:
 
-7.8 RFID Music Player
+7.8 RFID音楽プレーヤー
 ==========================
 
-Through our previous project, :ref:`py_rfid`, we learned that the MFRC522 module allows us to write up to 48 letters of information to the card (or key), including both the key and identity information, as well as the music score.
+前回のプロジェクト、     で、MFRC522モジュールを使ってカード（またはキー）に最大48文字の情報を書き込むことができることを学びました。この情報には、キーとID情報の他にも、楽譜が含まれます。
 
-As an example, if you write ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC``, the buzzer will play the music when the card (or key) is read again. It can also be equipped with an WS2812 to display amazing effects.
+例えば、 ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` と書き込んだ場合、カード（またはキー）を再度読み取ったときにブザーが音楽を再生します。WS2812も装備することで、素晴らしいエフェクトを表示することもできます。
 
-You can find more sheet music on the Internet, or even write your own music, put them into the card (or key), and share them with your friends!
+インターネットでさまざまな楽譜を見つけたり、自分自身で音楽を作曲して、それをカード（またはキー）に保存し、友達と共有することもできます！
 
 |rfid_player|
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 複数
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -65,7 +64,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -77,26 +76,24 @@ You can also buy them separately from the links below.
         - 1
         - |link_ws2812_buy|
 
-**Schematic**
+**回路図**
 
 |sch_music_player|
 
-
-**Wiring**
+**配線図**
 
 |wiring_rfid_music_player| 
 
-**Code**
 
-#. Open the ``6.5_rfid_write.py`` file under the path of ``kepler-kit-main/micropython``, then click "Run Current Script" or simply press F5 to run it.
+**コード**
 
-#. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the Shell and then put the card (or key) close to the MFRC522 module, this way an Ode an Joy score is stored in.
+#. ``kepler-kit-main/micropython`` フォルダ内の ``6.5_rfid_write.py`` ファイルを開いて、「Run Current Script」をクリックするか、単にF5キーを押して実行します。
 
-#. Open the ``7.8_rfid_music_player.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+#. 実行後、シェルに ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` と入力し、カード（またはキー）をMFRC522モジュールに近づけます。これで、歓喜の歌の楽譜が保存されます。
 
+#. ``kepler-kit-main/micropython`` フォルダ内の ``7.8_rfid_music_player.py`` ファイルを開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5キーを押して実行します。
 
     .. code-block:: python
-
 
         from mfrc522 import SimpleMFRC522
         import machine
@@ -105,12 +102,12 @@ You can also buy them separately from the links below.
         import urandom
 
         # ws2812
-        ws = WS2812(machine.Pin(16),8)
+        ws = WS2812(machine.Pin(16), 8)
 
         # mfrc522
-        reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
+        reader = SimpleMFRC522(spi_id=0, sck=2, miso=4, mosi=3, cs=5, rst=0)
 
-        # buzzer
+        # ブザー
         NOTE_C4 = 262
         NOTE_D4 = 294
         NOTE_E4 = 330
@@ -121,45 +118,42 @@ You can also buy them separately from the links below.
         NOTE_C5 = 523
 
         buzzer = machine.PWM(machine.Pin(15))
-        note=[NOTE_C4,NOTE_D4,NOTE_E4,NOTE_F4,NOTE_G4,NOTE_A4,NOTE_B4,NOTE_C5]
+        note = [NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5]
 
-        def tone(pin,frequency,duration):
+        def tone(pin, frequency, duration):
             pin.freq(frequency)
             pin.duty_u16(30000)
             time.sleep_ms(duration)
             pin.duty_u16(0)
 
-
-        # lightup
+        # 明るくする
         def lumi(index):
             for i in range(8):
                 ws[i] = 0x0000FF
-            ws[index] = 0xFF0000 # int(urandom.uniform(0, 0xFFFFFF))  
-            ws.write() 
+            ws[index] = 0xFF0000  # int(urandom.uniform(0, 0xFFFFFF))
+            ws.write()
 
-
-        # encode text to index
-        words=["C","D","E","F","G","A","B","N"]
+        # テキストをインデックスにエンコード
+        words = ["C", "D", "E", "F", "G", "A", "B", "N"]
         def take_text(text):
-            string=text.replace(' ','').upper()
-            while len(string)>0:
-                index=words.index(string[0])
-                tone(buzzer,note[index],250)
+            string = text.replace(' ', '').upper()
+            while len(string) > 0:
+                index = words.index(string[0])
+                tone(buzzer, note[index], 250)
                 lumi(index)
-                new_str=""
+                new_str = ""
                 for i in range(0, len(string)):
                     if i != 0:
                         new_str = new_str + string[i]
-                string=new_str
+                string = new_str
 
-        # read card
+        # カードを読む
         def read():
             print("Reading...Please place the card...")
             id, text = reader.read()
             print("ID: %s\nText: %s" % (id,text))
             take_text(text)
-            
+
         read()
 
-
-#. By putting the card (or key) close to the MFRC522 module again, the buzzer will play the music stored on the card (or key), and the RGB strip will light up in a random color.
+#. カード（またはキー）を再度MFRC522モジュールに近づけると、ブザーがカード（またはキー）に保存された音楽を再生し、RGBストリップがランダムな色で点灯します。

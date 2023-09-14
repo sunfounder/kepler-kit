@@ -1,49 +1,46 @@
 .. _py_bubble_level:
 
-7.12 Digital Bubble Level
+7.12 デジタル水平器
 ============================
 
+`水平器 <https://ja.wikipedia.org/wiki/水準器>`_ は、面が水平（レベル）か垂直（垂直）かを示すための計測器具です。大工、石工、レンガ職人、他の建築関連の作業者、測量士、精密機械工、そして一部の写真やビデオ作業にも使用されるさまざまな種類の水平器があります。
 
-A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb). There are different types of spirit levels used by carpenters, stonemasons, bricklayers, other building trades workers, surveyors, millwrights, and other metalworkers, as well as in some photographic and videographic work.
+ここでは、MPU6050と8x8 LEDマトリックスを使用してデジタル水平器を作成します。MPU6050を傾けると、LEDマトリックス上のバブルも傾きます。
 
-Here we make a digital bubble level using MPU6050 and 8x8 LED matrix. When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
+**必要なコンポーネント**
 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-**Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入する方が便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - いくつか
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -67,33 +64,28 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_bubble_level|
 
-The MPU6050 takes the acceleration values in each direction and calculates the attitude angle.
+MPU6050は、各方向の加速度値を取得し、姿勢角を計算します。
+その結果、プログラムは、2つの74HC595チップからのデータに基づいて、ドットマトリックス上に2x2のドットを描画します。
+姿勢角が変わると、プログラムは74HC595チップに異なるデータを送信し、ドットの位置が変わり、バブル効果が生まれます。
 
-As a result, the program draws a 2x2 dot on the dot matrix based on data from the two 74HC595 chips.
+**配線**
 
-As the attitude angle changes, the program sends different data to the 74HC595 chips, and the position of the dot changes, creating a bubble effect.
+|wiring_digital_bubble_level|
 
-**Wiring**
-
-
-|wiring_digital_bubble_level| 
-
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``7.12_digital_bubble_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * ``kepler-kit-main/micropython`` フォルダの ``7.12_digital_bubble_level.py`` ファイルを開いて実行するか、このコードをThonnyにコピーして「Run Current Script」をクリック、またはF5キーを押して実行してください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * 右下の角にある「MicroPython（Raspberry Pi Pico）」のインタープリターを選択することを忘れないでください。
 
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
+    * ここでは ``imu.py`` と ``vector3d.py`` が必要です。Pico Wにアップロードされているかどうか確認してください。詳細なチュートリアルは :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -187,6 +179,6 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
         matrix=drop_bubble(matrix,bubble) # drop the bubble into empty matrix
         display(matrix_2_glyph(matrix)) # show matrix
 
-Once you have run the program, place the breadboard on a level surface.
-A dot will appear in the center of the LED matrix (if it isn't in the center, the MPU6050 may not be level).
-When you deflect the breadboard, the dot will move in the direction you deflected.
+プログラムを実行した後、ブレッドボードを水平な面に置いてください。
+LEDマトリックスの中央にドットが表示されます（中央にない場合は、MPU6050が水平でない可能性があります）。
+ブレッドボードを傾けると、ドットも傾けた方向に動きます。

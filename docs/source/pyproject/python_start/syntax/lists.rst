@@ -1,9 +1,9 @@
 .. _syntax_list:
 
-Lists
+リスト
 ===================
 
-Lists are used to store multiple items in a single variable, and are created using square brackets:
+リストは複数のアイテムを一つの変数で格納するために使用され、角括弧を使って作成されます。
 
 .. code-block:: python
 
@@ -11,16 +11,16 @@ Lists are used to store multiple items in a single variable, and are created usi
     print(B_list)
 
 
-List items are changeable, ordered, and allow duplicate values.
-The list items are indexed, with the first item having index [0], the second item having index [1], and so on.
+リストのアイテムは変更可能で、順序があり、重複する値を許容します。
+リストのアイテムはインデックス付きで、最初のアイテムがインデックス [0]、次のアイテムがインデックス [1]、と続きます。
 
 .. code-block:: python
 
     C_list = ["Red", "Blue", "Green", "Blue"]
-    print(C_list)            # duplicate
+    print(C_list)            # 重複を許容
     print(C_list[0]) 
-    print(C_list[1])         # ordered
-    C_list[2] = "Purple"     # changeable
+    print(C_list[1])         # 順序付き
+    C_list[2] = "Purple"     # 変更可能
     print(C_list)
 
 >>> %Run -c $EDITOR_CONTENT
@@ -30,7 +30,7 @@ Blue
 ['Red', 'Blue', 'Purple', 'Blue']
 
 
-A list can contain different data types:
+リストは異なるデータ型を含むことができます：
 
 .. code-block:: python
 
@@ -41,9 +41,9 @@ A list can contain different data types:
 ['Banana', 255, False, 3.14]
 
 
-List Length
+リストの長さ
 ------------------
-To determine how many items are in the list, use the len() function.
+リストにいくつのアイテムが含まれているかを判定するには、len()関数を使用します。
 
 .. code-block:: python
 
@@ -53,10 +53,10 @@ To determine how many items are in the list, use the len() function.
 >>> %Run -c $EDITOR_CONTENT
 4
 
-Check List items
+リストアイテムの確認
 -----------------------
 
-Print the second item of the list:
+リストの二番目のアイテムを出力します：
 
 .. code-block:: python
 
@@ -66,7 +66,7 @@ Print the second item of the list:
 >>> %Run -c $EDITOR_CONTENT
 [255]
 
-Print the last one item of the list:
+リストの最後のアイテムを出力します：
 
 .. code-block:: python
 
@@ -76,7 +76,7 @@ Print the last one item of the list:
 >>> %Run -c $EDITOR_CONTENT
 [3.14]
 
-Print the second, third item:
+二番目と三番目のアイテムを出力します：
 
 .. code-block:: python
 
@@ -87,9 +87,9 @@ Print the second, third item:
 [255, False]
 
 
-Change List Items
+リストアイテムの変更
 ----------------------
-Change the second, third item:
+二番目と三番目のアイテムを変更します：
 
 .. code-block:: python
 
@@ -100,7 +100,7 @@ Change the second, third item:
 >>> %Run -c $EDITOR_CONTENT
 ['Banana', True, 'Orange', 3.14]
 
-Change the second value by replacing it with two values:
+二番目の値を2つの値で置き換えます：
 
 .. code-block:: python
 
@@ -112,10 +112,10 @@ Change the second value by replacing it with two values:
 ['Banana', True, 'Orange', False, 3.14]
 
 
-Add List Items
--------------------
+リストアイテムの追加
+-----------------------
 
-Using the append() method to add an item:
+append()メソッドを使用してアイテムを追加します：
 
 .. code-block:: python
 
@@ -126,7 +126,7 @@ Using the append() method to add an item:
 >>> %Run -c $EDITOR_CONTENT
 ['Red', 'Blue', 'Green', 'Orange']
 
-Insert an item as the second position:
+二番目の位置にアイテムを挿入します：
 
 .. code-block:: python
 
@@ -139,10 +139,10 @@ Insert an item as the second position:
 
 
 
-Remove List Items
+リストアイテムの削除
 -----------------------
 
-The remove() method removes the specified item.
+remove()メソッドは指定したアイテムを削除します。
 
 .. code-block:: python
 
@@ -153,7 +153,7 @@ The remove() method removes the specified item.
 >>> %Run -c $EDITOR_CONTENT
 ['Red', 'Green']
 
-The pop() method removes the specified index. If you do not specify the index, the pop() method removes the last item.
+pop()メソッドは指定したインデックスのアイテムを削除します。インデックスを指定しない場合、pop()メソッドは最後のアイテムを削除します。
 
 .. code-block:: python
 
@@ -169,7 +169,7 @@ The pop() method removes the specified index. If you do not specify the index, t
 'Orange'
 ['Banana', False, 3.14, True]
 
-The ``del`` keyword also removes the specified index:
+``del`` キーワードも指定したインデックスのアイテムを削除します：
 
 .. code-block:: python
 
@@ -180,7 +180,7 @@ The ``del`` keyword also removes the specified index:
 >>> %Run -c $EDITOR_CONTENT
 ['Red', 'Green']
 
-The clear() method empties the list. The list still remains, but it has no content.
+clear()メソッドはリストを空にします。リスト自体は残りますが、内容はありません。
 
 .. code-block:: python
 

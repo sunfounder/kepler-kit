@@ -1,59 +1,55 @@
 .. _py_lcd:
 
-3.4 Liquid Crystal Display
+3.4 液晶ディスプレイ
 ===============================
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+LCD1602は、キャラクタ型の液晶ディスプレイで、同時に32（16×2）文字を表示することができます。
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, 
-they share a common weakness. When they are connected to a controller, 
-multiple IOs will be occupied of the controller which has no so many outer ports. 
-Also it restricts other functions of the controller. 
-Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+ご存知のように、LCDやその他のディスプレイは人間とマシンの対話を大いに豊かにしていますが、一つの弱点があります。
+それは、コントローラに接続すると、多くのIOポートが占有されてしまうことです。特に、外部ポートの少ないコントローラではこの問題は顕著です。
+そのため、この問題を解決するためにI2Cバスを備えたLCD1602が開発されました。
 
 * :ref:`cpn_i2c_lcd`
-* `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
-
+* `Inter-Integrated Circuit - Wikipedia <https://ja.wikipedia.org/wiki/I2C>`_
 
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+このセクションでは、I2C0インターフェースを使用してLCD1602を制御し、テキストを表示します。
 
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトには、以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -62,32 +58,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**回路図**
 
 |sch_lcd|
 
-**Wiring**
+**配線**
 
 |wiring_lcd|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``3.4_liquid_crystal_display.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` フォルダ内の ``3.4_liquid_crystal_display.py`` ファイルを開くか、このコードをThonnyにコピーしてから「Run Current Script」をクリック、または単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅にある「MicroPython（Raspberry Pi Pico）」インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * 詳細なチュートリアルは :ref:`open_run_code_py` を参照してください。
     
-    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * ここでは ``lcd1602.py`` というライブラリが必要です。Pico Wにアップロードされているか確認してください。詳細なチュートリアルは  :ref:`add_libraries_py` を参照してください。
 
 
 .. code-block:: python
@@ -104,34 +100,33 @@ You can also buy them separately from the links below.
     utime.sleep(2)
     lcd.clear()   
 
-After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+プログラムを実行すると、LCDには順番に2行のテキストが表示され、その後消えます。
 
-.. note:: When the code is running, if the screen is blank, you can turn the potentiometer on the back to increase the contrast.
+.. note:: コードが実行されているときに画面が真っ白な場合、背面のポテンショメータを回してコントラストを調整できます。
 
-**How it works?**
+**動作原理は？**
 
-In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.
+lcd1602ライブラリでは、lcd1602に関連する機能をLCDクラスに統合しています。
 
-Import lcd1602 library
+lcd1602ライブラリをインポート
 
 .. code-block:: python
 
     from lcd1602 import LCD    
 
-Declare an object of the LCD class and name it lcd.
+LCDクラスのオブジェクトを宣言し、それにlcdという名前を付けます。
 
 .. code-block:: python
 
     lcd = LCD()
 
-This statement will display the text on the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement ``str()``.
+このステートメントはLCDにテキストを表示します。引数は文字列型でなければならない点に注意が必要です。整数や浮動小数点数を渡したい場合は、強制的に変換する ``str()`` を使用する必要があります。
 
 .. code-block:: python
 
     lcd.message(string)
 
-
-If you call this statement multiple times, lcd will superimpose the texts. This requires the use of the following statement to clear the display.
+このステートメントを複数回呼び出すと、lcdはテキストを重ねて表示します。そのため、次のステートメントを使用して表示をクリアする必要があります。
 
 .. code-block:: python
 

@@ -1,27 +1,24 @@
 .. _cpn_water_level:
 
-Water Level Sensor Module
+水位センサーモジュール
 =================================
 
 |img_water_sensor|
 
-The water level sensor transmits the sensed water level signal to the controller, and the computer in the controller compares the measured water level signal with the set signal to derive the deviation, and then issues "on" and "off" commands to the feedwater electric valve according to the nature of the deviation to ensure that the vessel reaches the set water level.
+この水位センサーは、感知した水位信号をコントローラーに送信します。コントローラー内のコンピュータは、測定された水位信号と設定された信号を比較して偏差を導き出し、その偏差の性質に応じて給水電動弁に「オン」と「オフ」のコマンドを発行します。これにより、容器が設定された水位に達することが確保されます。
 
+水位センサーには十本の露出した銅のトレースがあり、そのうち五本は電源トレース、残りの五本はセンサートレースです。これらは水位が上がると交差してブリッジされます。
+基板には、基板に電力が供給されたときに点灯する電源LEDがあります。
 
-The water level sensor has ten exposed copper traces, five for the Power traces and five for the Sensor traces, which are crossed and bridged by water when flooded.
-The circuit board has a power LED that lights up when the board is energized.
+これらのトレースの組み合わせは、可変抵抗器のように作用し、水位に応じて抵抗値が変わります。
+具体的には、センサーが浸かる水が多いほど、導電性が良く抵抗が低くなります。逆に、導電性が低いほど抵抗は高くなります。
+次に、このセンサーは出力信号電圧を処理し、それをマイクロコントローラーに送信します。これにより、水位を判定する際の補助となります。
 
-The combination of these traces acts like a variable resistor, changing the resistance value according to the water level.
-To be more precise, the more water the sensor is immersed in, the better the conductivity and the lower the resistance. Conversely, the less conductive it is, the higher the resistance.
-Next, the sensor will process the output signal voltage which will be sent to the microcontroller, thus helping us to determine the water level.
+.. warning::
+    このセンサーは水中に完全に没入させることはできません。十本のトレースがある部分のみを水と接触させてください。また、湿った環境でセンサーに電力を供給すると、プローブの腐食が速まり、センサーの寿命が短くなる可能性があるため、測定を行う際のみ電力を供給することをお勧めします。
 
+**例**
 
-.. warning:: 
-    The sensor cannot be fully submerged in water, please only leave the part where the ten traces are located in contact with water. In addition, energizing the sensor in a humid environment will speed up the corrosion of the probe and cut the life of the sensor, so we recommend that you only supply power when taking readings.
-
-
-**Example**
-
-* :ref:`py_water` (For MicroPython User)
-* :ref:`ar_water` (For Arduino User)
-* :ref:`per_water_tank` (For Piper Make User)
+* :ref:`py_water` （MicroPythonユーザー用）
+* :ref:`ar_water` （Arduinoユーザー用）
+* :ref:`per_water_tank` （Piper Makeユーザー用）

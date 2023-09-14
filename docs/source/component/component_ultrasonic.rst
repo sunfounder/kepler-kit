@@ -1,62 +1,57 @@
 .. _cpn_ultrasonic:
 
-Ultrasonic Module
+超音波モジュール
 ================================
 
 |ultrasonic_pic|
 
-* **TRIG**: Trigger Pulse Input
-* **ECHO**: Echo Pulse Output
-* **GND**: Ground
-* **VCC**: 5V Supply
+* **TRIG**: トリガーパルス入力
+* **ECHO**: エコーパルス出力
+* **GND**: 接地
+* **VCC**: 5V電源
 
-This is the HC-SR04 ultrasonic distance sensor, providing non-contact measurement from 2 cm to 400 cm with a range accuracy of up to 3 mm. Included on the module is an ultrasonic transmitter, a receiver and a control circuit.
+これはHC-SR04超音波距離センサーで、非接触測定が2cmから400cmまで、精度は最大3mmまで可能です。このモジュールには超音波送信機、受信機、および制御回路が搭載されています。
 
-You only need to connect 4 pins: VCC (power), Trig (trigger), Echo (receive) and GND (ground) to make it easy to use for your measurement projects.
+使用するためには4つのピンを接続するだけ：VCC（電源）、Trig（トリガー）、Echo（受信）、GND（接地）です。
 
-**Features**
+**特長**
 
-* Working Voltage: DC5V
-* Working Current: 16mA
-* Working Frequency: 40Hz
-* Max Range: 500cm
-* Min Range: 2cm
-* Trigger Input Signal: 10uS TTL pulse
-* Echo Output Signal: Input TTL lever signal and the range in proportion
-* Connector: XH2.54-4P
-* Dimension: 46x20.5x15 mm
+* 動作電圧: DC5V
+* 動作電流: 16mA
+* 動作周波数: 40Hz
+* 最大測定範囲: 500cm
+* 最小測定範囲: 2cm
+* トリガー入力信号: 10uS TTLパルス
+* エコー出力信号: 入力TTLレベル信号と距離に比例
+* コネクタ: XH2.54-4P
+* 寸法: 46x20.5x15 mm
 
-**Principle**
+**原理**
 
-The basic principles are as follows:
+基本的な原則は以下の通りです：
 
-* Using IO trigger for at least 10us high level signal.
-
-* The module sends an 8 cycle burst of ultrasound at 40 kHz and detects whether a pulse signal is received.
-
-* Echo will output a high level if a signal is returned; the duration of the high level is the time from emission to return.
-
-* Distance = (high level time x velocity of sound (340M/S)) / 2
+* 最低でも10usの高レベル信号でIOトリガーを使用。
+* モジュールは40kHzで8サイクルの超音波バーストを送信し、パルス信号が受信されるかどうかを検出します。
+* 信号が返されると、エコーは高レベルを出力します。この高レベルの持続時間は、放射から返信までの時間です。
+* 距離 = （高レベル時間 x 音速（340M/S））/ 2
 
 |ultrasonic_prin|
 
+公式：
 
-Formula:
-
-* us / 58 = centimeters distance
-* us / 148 = inch distance
-* distance = high level time x velocity (340M/S) / 2
+* us / 58 = センチメートル距離
+* us / 148 = インチ距離
+* distance = 高レベル時間 x 音速（340M/S）/ 2
 
 .. note::
 
-    This module should not be connected under power up, if necessary, let the module's GND be connected first. Otherwise, it will affect the work of the module.
+    このモジュールは電源が入っている状態で接続しないでください。必要な場合は、モジュールのGNDを最初に接続してください。そうしないと、モジュールの動作に影響を与えます。
 
-    The area of the object to be measured should be at least 0.5 square meters and as flat as possible. Otherwise, it will affect results.
+    測定対象のオブジェクトの面積は少なくとも0.5平方メートルで、できるだけ平らである必要があります。そうでないと、結果に影響を与えます。
 
+**例**
 
-**Example**
-
-* :ref:`py_ultrasonic` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ultrasonic` (For Arduino User)
-* :ref:`per_reversing_system` (For Piper Make User)
+* :ref:`py_ultrasonic` （MicroPythonユーザー用）
+* :ref:`py_reversing_aid` （MicroPythonユーザー用）
+* :ref:`ar_ultrasonic` （Arduinoユーザー用）
+* :ref:`per_reversing_system` （Piper Makeユーザー用）

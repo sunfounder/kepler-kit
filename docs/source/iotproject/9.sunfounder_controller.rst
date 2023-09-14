@@ -1,48 +1,48 @@
 .. _play_sc:
 
-9. Play in @SunFounder Controller
+9. @SunFounder コントローラーで遊ぶ
 ====================================
 
-In this project, you will learn how to build a remote project using Sunfounder Controller APP.
-In a LAN environment, you can control your Pico W circuit with your phone/tablet.
-You will find this app very useful if you want to build a simple robot with Pico W.
+このプロジェクトでは、SunFounder Controller APPを使用してリモートプロジェクトを構築する方法を学びます。
+ローカルエリアネットワーク（LAN）環境で、スマートフォンやタブレットを使ってPico W回路を制御できます。
+Pico Wでシンプルなロボットを作成したい場合、このアプリは非常に便利です。
 
-Here, we will use the slider bar on the APP to control the servo angle and the gauge on the APP to show the distance detected by ultrasonic.
+ここでは、APPのスライダーバーでサーボの角度を制御し、APPのゲージで超音波によって検出された距離を表示します。
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入することは確かに便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットのアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクからそれぞれ個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - 番号
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -51,7 +51,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -64,122 +64,118 @@ You can also buy them separately from the links below.
     *   - 7
         - :ref:`cpn_lipo_charger`
         - 1
-        -  
+        - 
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
-        -  
+        - 
     *   - 9
-        - Battery Holder
+        - バッテリーホルダー
         - 1
-        -  
+        - 
 
-**2. Build the Circuit**
+**2. 回路の構築**
 
 .. warning:: 
-        
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+
+    ダイヤグラムに示されているように、Li-poチャージャーモジュールが接続されていることを確認してください。そうでない場合、ショートが起きてバッテリーや回路が損傷する可能性があります。
 
 .. image:: img/wiring/9.sc_bb.png
     :width: 800
 
 
-**3. Setup SunFounder Controller**
+**3. SunFounderコントローラーのセットアップ**
 
-1. Install `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
-
-2. Open the APP and click the **+** button on the home page to create a controller.
+1. `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ を **APP Store(iOS)** または **Google Play(Android)** からインストールします。
 
     .. image:: img/sc-a-2.jpg
         :width: 800
 
-3. Here we choose **Blank** and **Dual Stick**.
+2. APPを開いて、ホームページの **+** ボタンをクリックしてコントローラーを作成します。
 
     .. image:: img/sc-a-3.jpg
         :width: 800
 
-4. Now we get an empty controller.
+3. ここでは **Blank** と **Dual Stick** を選びます。
 
     .. image:: img/sc-a-4.jpg
         :width: 800
 
-5. Click on the **H** area and add a **Slider** widget.
+4. 空のコントローラーが表示されます。
 
     .. image:: img/sc-a-5.jpg
         :width: 800
 
-6. Click the gear on the control to open the settings window.
+5. **H** エリアをクリックして、 **Slider** ウィジェットを追加します。
 
     .. image:: img/sc-a-6.png
         :width: 300
 
-7. Set Maximum to 180 and Minimum to 0, then click to **Confirm**.
+6. コントロールの歯車をクリックして設定ウィンドウを開きます。
 
     .. image:: img/sc-a-7.jpg
         :width: 800
 
-8. Click on the L area and add a Gauge widget.
+7. 最大値を180、最小値を0に設定し、 **Confirm** をクリックします。
 
     .. image:: img/sc-a-8.jpg
         :width: 800
 
-9. Click the gear of the Gauge, open the settings window, set Maximum to 100, Minimum to 0, and unit to cm.
+8. Lエリアをクリックして、ゲージウィジェットを追加します。
 
     .. image:: img/sc-a-9.jpg
         :width: 800
 
-10. After finishing the widget settings, click Save.
+9. ゲージの歯車をクリックして設定ウィンドウを開き、最大値を100、最小値を0、単位をcmに設定します。
 
     .. image:: img/sc-a-10.png
         :width: 300
 
+10. ウィジェットの設定が完了したら、保存をクリックします。
 
-
-**4. Run the Code**
+**4. コードの実行**
 
 .. note:: 
-    If your Pico W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
+    Pico Wが現在Anvilファームウェアを使用している場合、 :ref:`install_micropython_on_pico` が必要です。
 
-
-1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``kepler-kit-main/libs`` to the Raspberry Pi Pico W.
+1. ``kepler-kit-main/libs`` のパスから ``ws.py`` と ``websocket_helper.py`` をRaspberry Pi Pico Wにアップロードします。
 
     .. image:: img/9_sc3.png
 
-2. Double click the ``ws.py`` script and fill your WiFi's ``SSID`` and ``PASSWORD``.
+2. ``ws.py`` スクリプトをダブルクリックして、WiFiの ``SSID`` と ``PASSWORD`` を入力します。
 
     .. image:: img/9_sc1.png
 
-3. Open the ``9_sunfounder_controller.py`` under the path of ``kepler-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+3. ``kepler-kit-main/iot`` のパス下の ``9_sunfounder_controller.py`` を開きます。 **Run current script** ボタンをクリックするか、F5を押して実行します。接続に成功すると、Pico WのIPが表示されます。
 
     .. image:: img/9_sc2.png
 
     .. note::
-        If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+        このスクリプトを起動できるようにするには、それをRaspberry Pi Pico Wに ``main.py`` として保存できます。
 
-4. Back to SunFounder Controller APP, click the **Connect** button.
+4. SunFounder Controller APPに戻り、 **Connect** ボタンをクリックします。
 
     .. image:: img/sc-c-4.jpg
         :width: 300
 
-5. If PicoW is detected, tap it directly to connect.
+5. PicoWが検出された場合、それを直接タップして接続します。
 
     .. image:: img/sc-c-5.jpg
         :width: 300
 
-6. If it doesn't search automatically, you can also manually enter the IP to connect.
+6. 自動的に検索しない場合、IPを手動で入力して接続することもできます。
 
     .. image:: img/sc-c-6.png
         :width: 800
 
-7. When you slide the slider bar in the H area after clicking the Run button, the servo will adjust its angle. The gauge in the L area will show the distance if your hand is within 100cm of the ultrasonic sensor.
+7. Runボタンをクリックした後、Hエリアのスライダーバーをスライドすると、サーボが角度を調整します。Lエリアのゲージは、手が超音波センサーから100cm以内であれば距離を表示します。
 
     .. image:: img/sc-c-8.jpg
         :width: 300
 
-**How it works?**
+**どのように動作するか？**
 
-
-The ``WS_Server`` class in the ``ws.py`` library implements communication with the APP. Below is the framework for implementing its basic functionality.
+``ws.py`` ライブラリの ``WS_Server`` クラスは、APPとの通信を実装しています。以下は、その基本機能を実装するためのフレームワークです。
 
 .. code-block:: python
 
@@ -187,12 +183,12 @@ The ``WS_Server`` class in the ``ws.py`` library implements communication with t
     import json
     import time
 
-    ws = WS_Server(8765) # init websocket 
+    ws = WS_Server(8765)  # WebSocketの初期化
 
     def main():
         ws.start()
         while True:
-            status,result=ws.transfer()
+            status, result = ws.transfer()
             time.sleep_ms(100)
 
     try:
@@ -200,78 +196,73 @@ The ``WS_Server`` class in the ``ws.py`` library implements communication with t
     finally:
         ws.stop()
 
-
-First, we need to create a ``WS_Server`` object.
+まず、 ``WS_Server`` オブジェクトを作成する必要があります。
 
 .. code-block:: python
 
-    ws = WS_Server(8765) 
+    ws = WS_Server(8765)
 
-Star it.
+それを開始します。
 
 .. code-block:: python
 
     ws.start()
 
-
-Next, a ``while True`` loop is used to perform the data transfer between Pico W and the SunFounder Controller APP.
+次に、 ``while True`` ループを使用して、Pico WとSunFounder Controller APP間でのデータ転送を実行します。
 
 .. code-block:: python
 
     while True:
-        #  websocket transfer data
-        status,result = ws.transfer()
+        # WebSocketでデータを転送
+        status, result = ws.transfer()
 
-        # the status of transfer data
+        # 転送データの状態
         print(status)
 
-        # the data you recv
+        # 受信したデータ
         print(result)
 
-        # the data you send
+        # 送信するデータ
         print(ws.send_dict)
-
         
         time.sleep_ms(100)
 
-``status`` is ``False`` if it fails to get data from the SunFounder Controller APP.
+``status`` は、SunFounder Controller APPからデータを取得できなかった場合に ``False`` です。
 
-And ``result`` is the data that Pico W fetched from the SunFounder Controller APP.
-Print it out and you will see something like the following. This is the value of all Widget areas.
+そして、 ``result`` は、Pico WがSunFounder Controller APPからフェッチしたデータです。
+それを出力すると、以下のようなものが表示されます。これは、すべてのウィジェットエリアの値です。
 
 .. code-block:: 
 
     {'C': None, 'B': None, 'M': None,,,,, 'A': None, 'R': None}
 
-As in this case, we print the values of the H area separately and use them to operate the circuit.
+このケースでは、Hエリアの値を別々に出力し、それを使用して回路を操作します。
 
 .. code-block:: python
 
-        status,result=ws.transfer()
+        status, result = ws.transfer()
         #print(result)
         if status == True:
             print(result['H'])
 
+そして、 ``ws.send_dict`` 辞書は、Pico WがSunFounder Controller APPに送信するデータです。これは ``WS_Server`` クラスで作成されています。 ``ws.transfer()`` が実行されたときに送信されます。
 
-And the ``ws.send_dict`` dictionary is the data that Pico W sends to the SunFounder Controller APP. It is created in the ``WS_Server`` class. It will be sent when ``ws.transfer()`` is executed.
-
-Its message is shown below.
+そのメッセージは以下の通りです。
 
 .. code-block:: python
 
     {'Check': 'SunFounder Controller', 'Name': 'PicoW', 'Type': 'Blank'}
 
-This is a blank message, to copy it to the widget on SunFounder Controller APP, we need to assign the value to the corresponding area in the dictionary. For example, assign the value ``50`` to the L area.
+これは空のメッセージであり、SunFounder Controller APPのウィジェットにそれをコピーするには、辞書内の対応するエリアに値を割り当てる必要があります。例えば、Lエリアに値 ``50`` を割り当てます。
 
 .. code-block:: python
 
         ws.send_dict['L'] = 50
 
-The data is shown below:
+表示されるデータは以下の通りです。
 
 .. code-block:: python
 
     {'L': 50, 'Type': 'Blank', 'Name': 'PicoW', 'Check': 'SunFounder Controller'}
 
-
-For more details on using SunFounder Controller, please see `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.
+SunFounder Controllerの詳しい使い方については、 `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ をご参照ください。

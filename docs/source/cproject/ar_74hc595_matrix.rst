@@ -1,56 +1,54 @@
 .. _ar_74hc_788bs:
 
+5.4 - 8x8 ピクセルグラフィックス
+=================================
 
-5.4 - 8x8 Pixel Graphics
-=============================
+EDマトリックスは低解像度のドットマトリックスディスプレイです。これは、パターン表示のためのピクセルとして発光ダイオード（LED）の配列を使用します。
 
-ED matrix is a low-resolution dot-matrix display. it uses an array of light-emitting diodes as pixels for patterned displays.
+これらは屋外の日光でも十分に明るく見え、店舗、広告看板、標識、そして公共交通機関の可変メッセージディスプレイ（例えばバスや電車など）でよく見られます。
 
-They are bright enough to be visible in outdoor sunlight, and you can see them on some stores, billboards, signs, and variable message displays (such as those on public transit vehicles).
+このキットでは、16ピンを持つ8x8ドットマトリックスが使用されています。アノードは行に、カソードは列に接続されており（回路レベルで）、これらの64個のLEDをまとめて制御します。
 
-Used in this kit is an 8x8 dot matrix with 16 pins. Their anodes are connected in rows and their cathodes are connected in columns (at the circuit level), which together control these 64 LEDs.
-
-To light the first LED, you should provide a high level for Row1 and a low level for Col1. To light the second LED, it should provide a high level for Row1, a low level for Col2, and so on.
-By controlling the current through each pair of rows and columns, each LED can be controlled individually to display characters or pictures.
+最初のLEDを点灯させるには、Row1に高レベルを、Col1に低レベルを供給する必要があります。2つ目のLEDを点灯させるには、Row1に高レベル、Col2に低レベルを供給すればよく、以降も同様です。
+行と列の各ペアに流れる電流を制御することで、各LEDは個々に文字や画像を表示するために制御できます。
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入するのが確実に便利です、そのリンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - Kepler Kit
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明
+        - 個数
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -59,7 +57,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -70,42 +68,33 @@ You can also buy them separately from the links below.
         - 2
         - |link_74hc595_buy|
 
-**Schematic**
+**回路図**
 
 |sch_ledmatrix|
 
-The 8x8 dot matrix is controlled by two 74HC595 chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico W board. 
+この8x8ドットマトリックスは、2つの74HC595チップによって制御されています。1つは行を、もう1つは列を制御しています。また、これら2つのチップはG18~G20を共有しており、これによりPico WボードのI/Oポートを大幅に節約できます。
 
-Pico W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
+Pico Wは一度に16ビットの2進数を出力する必要があります。最初の8ビットは行を制御する74HC595に、残りの8ビットは列を制御する74HC595に与えられ、このようにしてドットマトリックスは特定のパターンを表示できます。
 
-Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.
+Q7': シリーズ出力ピンで、複数の74HC595をシリーズ接続するために別の74HC595のDSに接続されます。
 
-**Wiring**
 
-Build the circuit. Since the wiring is complicated, let's
-make it step by step.
+**配線**
 
-**Step 1:**  First, insert the Pico W, the LED dot matrix
-and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico W to holes on the two sides of the board, then hook up pin16 and
-10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
+回路を組み立てましょう。配線が複雑なので、ステップバイステップで進めます。
+
+**ステップ1:** まず、Pico W、LEDドットマトリックス、および2つの74HC595チップをブレッドボードに挿入します。Pico Wの3.3VとGNDをボードの両側の穴に接続し、2つの74HC595チップのpin16とpin10をVCCに、pin13とpin8をGNDに接続します。
 
 .. note::
-   In the Fritzing image above, the side with label is at the bottom.
+   上のFritzing画像では、ラベルがある側は下です。
 
 |wiring_ledmatrix_4|
 
-**Step 2:** Connect pin 11 of the two 74HC595 together, and then to
-GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
-74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
-74HC595.
+**ステップ2:** 2つの74HC595のpin11を接続し、次にGP20に接続します。次に、2つのチップのpin12をGP19に接続します。次に、左側の74HC595のpin14をGP18に、pin9を2つ目の74HC595のpin14に接続します。
 
 |wiring_ledmatrix_3|
 
-**Step 3:** The 74HC595 on the right side is to control columns of the
-LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
-pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
-respectively.
+**ステップ3:** 右側の74HC595は、LEDドットマトリックスの列を制御するためです。以下の表でマッピングを参照してください。したがって、74HC595のQ0-Q7ピンはそれぞれ、pin13、3、4、10、6、11、15、および16とマッピングされます。
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -115,10 +104,7 @@ respectively.
 
 |wiring_ledmatrix_2|
 
-**Step 4:** Now connect the ROWs of the LED dot matrix. The 74HC595 on
-the left controls ROW of the LED dot matrix. See the table below for the
-mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
-pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
+**ステップ4:** 今度はLEDドットマトリックスのROWを接続します。左側の74HC595がLEDドットマトリックスのROWを制御します。以下の表でマッピングを参照してください。Q0-Q7の74HC595はそれぞれ、pin9、14、8、12、1、7、2、5とマッピングされます。
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -128,39 +114,29 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 |wiring_ledmatrix_1|
 
-**Code**
+**コード**
 
 .. note::
+   * ファイル ``5.4_8x8_pixel_graphics.ino`` を ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics`` のパスで開くことができます。
+   * または、このコードを **Arduino IDE** にコピペしてください。
 
-   * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   * ボード（Raspberry Pi Pico）と正確なポートを選択したら、 **Upload** ボタンをクリックする前に忘れずに設定してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b3682592-17d4-4690-a730-1c0a6fcbd353/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+プログラムが実行されると、8x8ドットマトリックスに「X」グラフィックが表示されます。
 
+**動作原理**
 
-Once the program is running, you will see a **x** graphic displayed on the 8x8 dot matrix.
+ここでは2つの74HC595を使用して、ドットマトリックスの行と列に信号を供給します。
+信号の供給方法は前の章の ``shiftOut()`` と同じですが、ここでは一度に16ビットの2進数を書き込む必要があります。
 
+メインループは ``shiftOut()`` を2回呼び出し、2つの8ビットの2進数を書き込んでバスに出力します。これにより、特定のパターンが表示されます。
 
-
-**How it works?**
-
-Here we use two 74HC595s to provide signals for the rows and columns of the dot matrix.
-The method of supplying signals is the same as ``shiftOut()`` in the previous chapters, except that here we need to write the 16-bit binary number at a time.
-
-The main loop calls ``shiftOut()`` twice, writes two 8-bit binary numbers and then outputs them to the bus, so that a pattern can be displayed.
-
-However, since the LEDs in the dot matrix use common poles, controlling multiple rows/multiple columns at the same time will interfere with each other (e.g, if (1,1) and (2,2) are lit at the same time, (1,2) and (2,1) will inevitably be lit together).
-Therefore, it is necessary to activate one column (or one row) at a time, cycle 8 times, and use the residual image principle to let the human eye merge 8 patterns, so as to let get a pair of patterns containing 8x8 amount of information.
-
-
+ただし、ドットマトリックス内のLEDは共通の極を使用しているため、複数の行/列を同時に制御すると互いに干渉します（例えば、(1,1)と(2,2)が同時に点灯すると、(1,2)と(2,1)も必然的に点灯します）。
+したがって、一度に1つの列（または1つの行）を活性化し、8回のサイクルを行い、残像原理を使用して人間の目で8つのパターンをマージさせる必要があります。
 
 .. code-block:: arduino
 
@@ -174,15 +150,14 @@ Therefore, it is necessary to activate one column (or one row) at a time, cycle 
       digitalWrite(STcp,HIGH); //pull the ST_CPST_CP to save the data
    }
 
-In this example, the main function nests a ``for`` loop, and when ``i`` is 1, only the first line is activated (the chip in the control line gets the value ``0x80`` ) and the image of the first line is written. 
-When ``i`` is 2, the second line is activated (the chip of the control line gets the value ``0x40``) and the image of the second line is written. And so on, completing 8 outputs.
+この例では、メイン関数は ``for`` ループをネストしています。 ``i`` が1のとき、最初の行だけが活性化され（制御ラインのチップが ``0x80`` の値を取得し）、最初の行の画像が書き込まれます。
+``i`` が2のとき、2行目が活性化され（制御ラインのチップが ``0x40`` の値を取得し）、2行目の画像が書き込まれます。これを8回繰り返して出力を完了します。
 
-Incidentally, like the 4-digit 7-segment display, it has to maintain the refresh rate to prevent flickering by the human eye, so the extra ``sleep()`` in the main loop should be avoided as much as possible.
+ちなみに、4桁の7セグメントディスプレイと同様に、人間の目によるちらつきを防ぐためにリフレッシュレートを維持する必要があり、メインループ内の余分な ``sleep()`` はできるだけ避けるべきです。
 
+**もっと学ぶ**
 
-**Learn More**
-
-Try replacing ``datArray`` with the following array and see what images appear!
+``datArray`` を以下の配列に置き換えて、どのような画像が表示されるか試してみてください！
 
 .. code-block:: arduino
 
@@ -193,4 +168,4 @@ Try replacing ``datArray`` with the following array and see what images appear!
    int datArray5[] = {0xFF,0xBB,0xD7,0xEF,0xD7,0xBB,0xFF,0xFF};
    int datArray6[] = {0xFF,0xFF,0xF7,0xEB,0xDF,0xBF,0xFF,0xFF};
 
-Or, you can try drawing your own graphics.
+または、独自のグラフィックを描いてみてください。

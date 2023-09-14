@@ -1,41 +1,39 @@
 SunFounder Kepler Kit for Raspberry Pi Pico W
 ===========================================================
 
-Thank you for choosing the SunFounder Kepler Kit
+SunFounder Kepler Kitをお選びいただき、ありがとうございます。
 
-This is an learning kit based on the Raspberry Pi Pico W. 
+このキットはRaspberry Pi Pico Wを基盤にした学習キットです。
 
-Raspberry Pi Pico W adds on-board single-band 2.4GHz wireless interfaces (802.11n) using the Infineon CYW4343 while retaining the Pico form factor, so in addition to the basic GPIO function, it can also connect to the network so we can use it for some IoT projects.
-For example, using IFTTT for a security system, building a cloud player and a cloud service bell system using MQTT and so on.
+Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシングルバンド2.4GHz無線インターフェース（802.11n）を追加し、Picoの形状を維持しながら基本的なGPIO機能に加え、ネットワークにも接続できるため、IoTプロジェクトにも活用できます。
+例えば、セキュリティシステムのためにIFTTTを使ったり、MQTTを使ってクラウドプレーヤーやクラウドサービスのベルシステムを構築することができます。
 
-This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
+このキットには、ディスプレイ、音響、ドライバー、コントローラー、センサーなど、多様なコンポーネントが含まれており、電子機器に対する包括的な理解が得られます。
 
-Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino) and Piper Make are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
+さらに、MicroPython、C/C++（Arduino）、Piper Makeの3つのプログラミング言語を提供しています。各言語には、独自で興味深いプロジェクトが用意されているので、あなたのニーズに合わせて選ぶことができます。
 
-Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+当社がまだ提供していない他のプロジェクトに興味がある場合は、どうぞお気軽にメールでお知らせください。オンラインチュートリアルはできるだけ早く更新されます。
 
-Here is the email: service@sunfounder.com.
+こちらがメールアドレスです：service@sunfounder.com。
 
+**表示言語について**
 
-**About the display language**
-
-This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+このドキュメントは他の言語でもご利用いただけます。表示言語を切り替えるには、ページの左下にある **Read the Docs** アイコンをクリックしてください。
 
 .. image:: img/translation.png
 
-**Source Code**
+**ソースコード**
 
 * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* または、`Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ でコードをチェックしてください。
 
-
-**Content**
+**コンテンツ**
 
 .. toctree::
     :maxdepth: 2
 
-    About This Kit <self>
+    このキットについて <self>
     introduction_to_pico_w
     component/what_is_included_in_this_kit
     bc_basic_circuit
@@ -46,9 +44,7 @@ This document is available in other languages as well. To switch the display lan
     video_course
     faq
 
-
-Copyright Notice
+著作権について
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+このマニュアルに含まれるテキスト、画像、コード等のすべての内容は、SunFounder社が所有しています。個人的な学習、研究、娯楽、またはその他の非営利目的でのみ使用することができ、関連する規制および著作権法に基づき、著者および関連する権利者の法的権利を侵害しないようにしてください。許可なく商業利益を得る目的でこれらを使用する個人または組織に対して、当社は法的措置を取る権利を留保します。

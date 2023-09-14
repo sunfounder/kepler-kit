@@ -1,54 +1,53 @@
 .. _nt_mqtt_publish:
 
-5. Cloud Calling System with @MQTT
+5. @MQTTを使用したクラウド呼び出しシステム
 ============================================
 
-Message Queuing Telemetry Transport (MQTT) is a simple messaging protocol.
-It is also the most common messaging protocol for the Internet of Things (IoT).
+Message Queuing Telemetry Transport（MQTT）はシンプルなメッセージングプロトコルです。
+また、IoT（Internet of Things）の最も一般的なメッセージングプロトコルでもあります。
 
-MQTT protocols define the way IoT devices transfer data.
-They are event-driven and interconnected using the Pub/Sub model.
-The sender (Publisher) and the receiver (Subscriber) communicate via Topics.
-A device publishes a message on a specific topic, and all devices subscribed to that topic receive the message.
+MQTTプロトコルは、IoTデバイスがデータを転送する方法を定義します。
+これらはイベント駆動であり、Pub/Subモデルを使用して相互接続されています。
+送信者（Publisher）と受信者（Subscriber）は、トピックを介して通信します。
+デバイスが特定のトピックでメッセージを公開すると、そのトピックに登録されたすべてのデバイスがメッセージを受け取ります。
 
-In this section, a service bell system will be made using Pico W, HiveMQ (a free public MQTT broker service), and four buttons.
-The four buttons mean four tables in the restaurant, and you will be able to see which table's guests need service on HiveMQ when the customer presses the button.
+このセクションでは、Pico W、HiveMQ（無料の公開MQTTブローカーサービス）、および4つのボタンを使用してサービスベルシステムを作成します。
+4つのボタンはレストランの4つのテーブルを意味し、顧客がボタンを押すとHiveMQでどのテーブルのゲストがサービスが必要かが表示されます。
 
-**1. Required Components**
+**1. 必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが確かに便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - Kepler Kit
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -72,96 +71,94 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         -  
 
-**2. Build the Circuit**
+
+**2. 回路を組み立てる**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        図に示されているようにLi-po充電モジュールが接続されていることを確認してください。それ以外の場合、短絡が原因でバッテリーや回路が壊れる可能性があります。
 
 .. image:: img/wiring/5.mqtt_pub.png
     :width: 800
 
-**3. Visit HiveMQ**
+**3. HiveMQにアクセス**
 
-HiveMQ is an MQTT broker and client-based messaging platform that enables fast, efficient and reliable data transfer to IoT devices.。
+HiveMQは、IoTデバイスへの迅速かつ効率的な信頼性の高いデータ転送を可能にするMQTTブローカーおよびクライアントベースのメッセージングプラットフォームです。
 
-1. Open |link_hivemq| in your browser.
+1. ブラウザで |link_hivemq| を開きます。
 
-2. Connects the client to the default public proxy.
+2. クライアントをデフォルトの公開プロキシに接続します。
 
    .. image:: img/mqtt-1.png
 
-
-3. Click on **Add New Topic Subscription**.
+3. **新しいトピックの購読を追加** をクリックします。
 
    .. image:: img/mqtt-2.png
 
-
-4. Fill in the topics you want to follow and click **Subscribe**. The topics set here should be more personal to avoid getting messages from other users, and pay attention to case sensitive.
+4. フォローしたいトピックを入力し、 **購読** をクリックします。ここで設定するトピックは、他のユーザーからメッセージを受け取らないように、より個別化されるべきです。また、大文字と小文字に注意してください。
 
    .. image:: img/mqtt-3.png
 
 
+**4. MQTTモジュールのインストール**
 
-**4. Install the MQTT Module**
+プロジェクトを開始する前に、Pico W用のMQTTモジュールをインストールする必要があります。
 
-Before we can start the project, we need to install the MQTT module for Pico W.
-
-1. Connect to the network by running ``do_connect()`` in the Shell, which we wrote earlier.
+1. 既に書いた ``do_connect()`` をShellで実行してネットワークに接続します。
 
     .. note::
-        * Type the following commands into the Shell and press ``Enter`` to run them.
-        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+        * 以下のコマンドをShellに入力し、 ``Enter`` を押して実行します。
+        * もしPico Wに ``do_connect.py`` と ``secrets.py`` スクリプトがない場合は、 :ref:`iot_access` を参照して作成してください。
 
     .. code-block:: python
 
         from do_connect import *
         do_connect()
 
-2. After a successful network connection, import the ``mip`` module in the shell and use ``mip`` to install the ``umqtt.simple`` module, which is a simplified MQTT client for MicroPython.
+2. 成功したネットワーク接続の後、シェルで ``mip`` モジュールをインポートし、MicroPython用の簡易化されたMQTTクライアントである ``umqtt.simple`` モジュールを ``mip`` でインストールします。
 
     .. code-block:: python
 
         import mip
         mip.install('umqtt.simple')
 
-3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico W after completion.
+3. インストールが完了したら、 ``umqtt`` モジュールがPico Wの ``/lib/`` パスにインストールされていることがわかります。
 
     .. image:: img/5_calling_system1.png
 
-**5. Run the Script**
 
-#. Open the ``5_mqtt_publish.py`` file under the path of ``kepler-kit-main/iot``.
+**5. スクリプトを実行する**
 
-#. Click the **Run current script** button or press F5 to run it.
+#. ``kepler-kit-main/iot`` のパス下で ``5_mqtt_publish.py`` ファイルを開きます。
+
+#. **現在のスクリプトを実行する** ボタンをクリックするか、F5キーを押して実行します。
 
     .. image:: img/5_calling_system2.png
 
-#. Go back to |link_hivemq| again and when you press one of the buttons on the breadboard, you will be able to see the Messages prompt on HiveMQ.
+#. 再度 |link_hivemq| に戻って、ブレッドボード上のボタンのいずれかを押すと、HiveMQ上でメッセージプロンプトが表示されます。
 
     .. image:: img/mqtt-4.png
-  
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. このスクリプトが起動できるようにしたい場合、それをRaspberry Pi Pico Wに ``main.py`` として保存できます。
 
-**How it works?**
+**動作の仕組みは？**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Raspberry Pi Pico Wは、 :ref:`iot_access` で説明されているように、インターネットに接続する必要があります。このプロジェクトではそのまま使用します。
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Initialize 4 button pins.
+4つのボタンピンを初期化します。
 
 .. code-block:: python
 
@@ -170,15 +167,15 @@ Initialize 4 button pins.
     sensor3 = Pin(18, Pin.IN)
     sensor4 = Pin(19, Pin.IN)
 
-Create two variables to store the ``URL`` and ``client ID`` of the MQTT broker we will use to connect to it.
-Since we are using a public broker, our ``client ID`` will not be used, even if one is required.
+MQTTブローカーに接続するために使用する ``URL`` と ``client ID`` を保存するための2つの変数を作成します。
+公開ブローカーを使用しているので、 ``client ID`` は必須ではありません。
 
 .. code-block:: python
 
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
+MQTTエージェントに接続し、1時間保持します。失敗した場合は、Pico Wをリセットします。
 
 .. code-block:: python
 
@@ -191,14 +188,14 @@ Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
         time.sleep(5)
         machine.reset()
 
-Create a variable ``topic``, which is the topic that the subscriber needs to follow. It should be the same as the topic filled in **step 4** of **2. Visit HiveMQ** above.
-Incidentally, ``b`` here converts string to byte, because MQTT is a binary based protocol were the control elements are binary bytes and not text strings.
+変数 ``topic`` を作成します。これは、購読者がフォローする必要があるトピックです。それは上記の **2. HiveMQに訪れる** の **ステップ4** で記入したトピックと同じでなければなりません。
+ちなみに、ここでの ``b`` は、MQTTがバイナリベースのプロトコルであるため、文字列をバイトに変換します。
 
 .. code-block:: python
 
     topic = b'SunFounder MQTT Test'
 
-Set interrupts for each button. When a button is pressed, a message is posted under ``topic``.
+各ボタンに割り込みを設定します。ボタンが押されたら、 ``topic`` の下にメッセージが投稿されます。
 
 .. code-block:: python
 
@@ -209,8 +206,7 @@ Set interrupts for each button. When a button is pressed, a message is posted un
 
     sensor1.irq(trigger=machine.Pin.IRQ_RISING, handler=press1)
 
-
-* `UMQTT Client API  <https://pypi.org/project/micropython-umqtt.simple/>`_
+* `UMQTTクライアントAPI  <https://pypi.org/project/micropython-umqtt.simple/>`_
 
 
 

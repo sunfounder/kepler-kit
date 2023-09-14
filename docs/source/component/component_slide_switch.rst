@@ -1,28 +1,28 @@
 .. _cpn_slide_switch:
 
-Slide Switch
-==============
+スライドスイッチ
+==================
 
 |img_slide|
 
-A slide switch, just as its name implies, is to slide the switch bar to connect or break the circuit, and further switch circuits. The common-used types are SPDT, SPTT, DPDT, DPTT etc. The slide switch is commonly used in low-voltage circuit. It has the features of flexibility and stability, and  applies in electric instruments and electric toys widely.
-How it works: Set the middle pin as the fixed one. When you pull the slide to the left, the  two pins on the left are connected; when you pull it to the right, the two pins on the right are connected. Thus, it works as a switch connecting or disconnecting circuits. See the figure below:
+スライドスイッチとは、その名の通り、スイッチのバーをスライドさせて回路を接続または遮断し、さらに回路を切り替えるためのものです。一般的に使用されるタイプにはSPDT、SPTT、DPDT、DPTTなどがあります。スライドスイッチは低電圧回路でよく使用されます。柔軟性と安定性があり、電子機器や電子玩具に幅広く応用されています。
+動作原理：中央のピンを固定ピンとして設定します。スライドを左に引くと、左側の2つのピンが接続されます。スライドを右に引くと、右側の2つのピンが接続されます。したがって、回路を接続または遮断するスイッチとして機能します。下図を参照してください：
 
 |img_slide_prin|
 
-The circuit symbol of the slide switch is shown as below. The pin2 in the figure refers to the middle pin.
+スライドスイッチの回路記号は下のようになっています。図中のpin2は、中央のピンを指しています。
 
 |img_slide_symbol|
 
-.. **Example**
+.. **例**
 
-.. * :ref:`Reading Button Value` (For MicroPython User)
-.. * :ref:`Warning Light` (For C/C++(Arduino) User)
+.. * :ref:`ボタン値の読み取り` （MicroPythonユーザー向け）
+.. * :ref:`警告灯` （C/C++（Arduino）ユーザー向け）
 
+**例**
 
-**Example**
+* :ref:`py_slide` （MicroPythonユーザー向け）
+* :ref:`py_alarm_lamp` （MicroPythonユーザー向け）
+* :ref:`ar_slide` （Arduinoユーザー向け）
+* :ref:`per_drum_kit` （Piper Makeユーザー向け）
 
-* :ref:`py_slide` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`ar_slide` (For Arduino User)
-* :ref:`per_drum_kit` (For Piper Make User)

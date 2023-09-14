@@ -1,25 +1,27 @@
-While Loops
+.. _py_syntax_while_loops:
+
+Whileループ
 ====================
 
-The ``while`` statement is used to execute a program in a loop, that is, to execute a program in a loop under certain conditions to handle the same task that needs to be processed repeatedly. 
+``while`` 文は、特定の条件下で同じタスクを繰り返し処理するためにプログラムをループで実行するために使用されます。
 
-Its basic form is:
+基本的な形式は以下の通りです：
 
 .. code-block:: python
 
-    while test expression:
-        Body of while
+    while テスト式:
+        whileの本体
 
 
-In the ``while`` loop, first check the ``test expression``. Only when ``test expression`` evaluates to ``True``, enter the body of the while. After one iteration, check the ``test expression`` again. This process continues until ``test expression`` evaluates to ``False``.
+``while`` ループでは、まず ``テスト式`` をチェックします。 ``テスト式`` が ``True`` と評価された場合のみ、whileの本体に入ります。一回の反復後、再び ``テスト式`` をチェックします。このプロセスは、 ``テスト式`` が ``False`` と評価されるまで続きます。
 
-In MicroPython, the body of the ``while`` loop is determined by indentation.
+MicroPythonでは、 ``while`` ループの本体はインデントによって決定されます。
 
-The body starts with an indentation and ends with the first unindented line.
+本体はインデントで始まり、最初の非インデント行で終わります。
 
-Python interprets any non-zero value as ``True``. None and 0 are interpreted as ``False``.
+Pythonは、非ゼロの値を ``True`` と解釈します。Noneと0は ``False`` と解釈されます。
 
-**while Loop Flowchart**
+**whileループのフローチャート**
 
 .. image:: img/while_loop.png
 
@@ -46,10 +48,10 @@ Python interprets any non-zero value as ``True``. None and 0 are interpreted as 
 1
 
 
-Break Statement
+Break文
 --------------------
 
-With the break statement we can stop the loop even if the while condition is true:
+break文を使って、while条件がtrueであってもループを停止することができます。
 
 
 
@@ -70,11 +72,11 @@ With the break statement we can stop the loop even if the while condition is tru
 7
 6
 
-While Loop with Else
+Elseを持つWhileループ
 ----------------------
-Like the ``if`` loop, the ``while`` loop can also have an optional ``else`` block.
+``if`` ループと同様に、 ``while`` ループにもオプションで ``else`` ブロックを持たせることができます。
 
-If the condition in the ``while`` loop is evaluated as ``False``, the ``else`` part is executed.
+``while`` ループの条件が ``False`` と評価された場合、 ``else`` 部分が実行されます。
 
 
 

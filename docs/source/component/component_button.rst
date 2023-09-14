@@ -1,31 +1,32 @@
 .. _cpn_button:
 
-Button
+ボタン
 ==========
 
 |img_button|
 
-Buttons are a common component used to control electronic devices. They are usually used as switches to connect or break circuits. Although buttons come in a variety of sizes and shapes, the one used here is a 6mm mini-button as shown in the following pictures.
-Pin 1 is connected to pin 2 and pin 3 to pin 4. So you just need to connect either of pin 1 and pin 2 to pin 3 or pin 4.
+ボタンは、電子機器を制御するためによく使用される一般的な部品です。通常は、回路をつなぐまたは切るためのスイッチとして使用されます。ボタンにはさまざまなサイズや形状がありますが、ここで使用されるのは次の写真に示すような6mmミニボタンです。
+ピン1はピン2に、ピン3はピン4に接続されています。したがって、ピン1とピン2のいずれかをピン3またはピン4に接続するだけでよいです。
 
-The following is the internal structure of a button. The symbol on the right below is usually used to represent a button in circuits. 
+以下はボタンの内部構造です。右下の記号は、通常、回路内でボタンを表すために使用されます。
 
 |img_button_symbol|
 
-Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+ピン1がピン2に、ピン3がピン4に接続されているため、ボタンが押されると、4つのピンが接続され、回路が閉じます。
 
 |img_button2|
 
-.. Examples
+.. 例
 .. -------------------
 
 .. :ref:`Reading Button Value`
 
-**Example**
+**例**
 
-* :ref:`py_button` (For MicroPython User)
-* :ref:`ar_button` (For Arduino User)
-* :ref:`per_button` (For Piper Make User)
-* :ref:`per_rainbow_light` (For Piper Make User)
-* :ref:`per_drum_kit` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_button` (MicroPythonユーザー向け)
+* :ref:`ar_button` (Arduinoユーザー向け)
+* :ref:`per_button` (Piper Makeユーザー向け)
+* :ref:`per_rainbow_light` (Piper Makeユーザー向け)
+* :ref:`per_drum_kit` (Piper Makeユーザー向け)
+* :ref:`per_reaction_game` (Piper Makeユーザー向け)
+

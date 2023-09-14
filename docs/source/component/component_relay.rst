@@ -1,59 +1,35 @@
 .. _cpn_relay:
 
-Relay
+リレー
 ==========================================
 
 |img_relay|
 
-As we may know, relay is a device which is used to provide connection
-between two or more points or devices in response to the input signal
-applied. In other words, relays provide isolation between the controller
-and the device as devices may work on AC as well as on DC. However, they
-receive signals from a microcontroller which works on DC hence requiring
-a relay to bridge the gap. Relay is extremely useful when you need to
-control a large amount of current or voltage with small electrical
-signal.
+リレーは入力信号に応じて2つ以上のポイントやデバイス間の接続を提供する装置です。言い換えれば、リレーはデバイスがACおよびDCの両方で動作する可能性があるため、コントローラとデバイスとの間に絶縁を提供します。一方、マイクロコントローラからの信号はDCであるため、このギャップを埋めるためにリレーが必要です。リレーは、小さな電気信号で大量の電流や電圧を制御する必要がある場合に非常に便利です。
 
-There are 5 parts in every relay:
+リレーには5つの部分があります：
 
-**Electromagnet** - It consists of an iron core wounded by coil of
-wires. When electricity is passed through, it becomes magnetic.
-Therefore, it is called electromagnet.
+**電磁石** - 鉄の芯にコイルの線が巻かれています。電気が通ると磁気になります。したがって、これを電磁石と呼びます。
 
-**Armature** - The movable magnetic strip is known as armature. When
-current flows through them, the coil is it energized thus producing a
-magnetic field which is used to make or break the normally open (N/O) or
-normally close (N/C) points. And the armature can be moved with direct
-current (DC) as well as alternating current (AC).
+**アーマチュア** - 可動式の磁気ストリップはアーマチュアとして知られています。電流が流れると、コイルがそれによってエネルギーを持ち、磁場が生成されます。これを用いて通常開（N/O）または通常閉（N/C）の接点を作成または解除します。アーマチュアは、直流（DC）および交流（AC）で動作させることができます。
 
-**Spring** - When no currents flow through the coil on the
-electromagnet, the spring pulls the armature away so the circuit cannot
-be completed.
+**バネ** - 電磁石のコイルに電流が流れていないとき、バネはアーマチュアを引っ張って回路を完成させません。
 
-Set of electrical **contacts** - There are two contact points:
+**接点セット** - 2つの接点ポイントがあります：
 
--  Normally open - connected when the relay is activated, and disconnected when it is inactive.
+-  通常開 - リレーが作動しているときに接続され、非作動時には切断されます。
+  
+-  通常閉 - リレーが作動しているときには接続されず、非作動時には接続されます。
 
--  Normally close - not connected when the relay is activated, and connected when it is inactive.
+**成形フレーム** - リレーは保護のためにプラスチックで覆われています。
 
-**Molded frame** - Relays are covered with plastic for protection.
-
-The working principle of relay is simple. When power is supplied to the
-relay, currents start flowing through the control coil; as a result, the
-electromagnet starts energizing. Then the armature is attracted to the
-coil, pulling down the moving contact together thus connecting with the
-normally open contacts. So the circuit with the load is energized. Then
-breaking the circuit would a similar case, as the moving contact will be
-pulled up to the normally closed contacts under the force of the spring.
-In this way, the switching on and off of the relay can control the state
-of a load circuit.
+リレーの動作原理は単純です。リレーに電源が供給されると、制御コイルを通じて電流が流れ始めます。その結果、電磁石がエネルギーを持ち始めます。次に、アーマチュアはコイルに引きつけられ、通常開の接点と接触するように動く接触部が下がります。その結果、負荷回路がエネルギーを持ちます。回路を切る場合も同様で、動く接触部はバネの力で通常閉の接点に引き上げられます。このようにして、リレーのオンとオフが負荷回路の状態を制御します。
 
 |img_relay_sche|
 
+* `リレー - Wikipedia <https://en.wikipedia.org/wiki/Relay>`_
 
-* `Relay - Wikipedia <https://en.wikipedia.org/wiki/Relay>`_
+**例**
 
-**Example**
-
-* :ref:`py_relay` (For MicroPython User)
-* :ref:`ar_relay` (For Arduino User)
+* :ref:`py_relay` （MicroPythonユーザー向け）
+* :ref:`ar_relay` （Arduinoユーザー向け）

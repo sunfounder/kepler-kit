@@ -1,55 +1,53 @@
 .. _py_74hc_788bs:
 
-5.4 8x8 Pixel Graphics
+5.4 8x8ピクセルグラフィックス
 =============================
 
-LED matrix is a low-resolution dot-matrix display. it uses an array of light-emitting diodes as pixels for patterned displays.
+LEDマトリクスは、低解像度のドットマトリクスディスプレイです。これは、模様表示のためにピクセルとして発光ダイオードの配列を使用しています。
 
-They are bright enough to be visible in outdoor sunlight, and you can see them on some stores, billboards, signs, and variable message displays (such as those on public transit vehicles).
+これらは、屋外の日光でも見えるほど明るく、一部の店舗、広告板、サイン、および可変メッセージディスプレイ（公共交通機関の車両など）で見ることができます。
 
-Used in this kit is an 8x8 dot matrix with 16 pins. Their anodes are connected in rows and their cathodes are connected in columns (at the circuit level), which together control these 64 LEDs.
+このキットで使用されているのは、16ピンを持つ8x8ドットマトリクスです。アノードは行に、カソードは列に接続されています（回路レベルで）、これにより、これら64個のLEDがまとめて制御されます。
 
-To light the first LED, you should provide a high level for Row1 and a low level for Col1. To light the second LED, it should provide a high level for Row1, a low level for Col2, and so on.
-By controlling the current through each pair of rows and columns, each LED can be controlled individually to display characters or pictures.
+最初のLEDを点灯させるには、Row1に高レベルを、Col1に低レベルを供給する必要があります。2番目のLEDを点灯させるには、Row1に高レベル、Col2に低レベルを供給する必要があります。それ以降も同様です。
+各行と列のペアを通る電流を制御することで、各LEDを個々に制御して文字や画像を表示できます。
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクは以下です：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント	
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -58,7 +56,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -69,42 +67,33 @@ You can also buy them separately from the links below.
         - 2
         - |link_74hc595_buy|
 
-**Schematic**
+**回路図**
 
 |sch_ledmatrix|
 
-The 8x8 dot matrix is controlled by two 74HC595 chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico W board. 
+8x8ドットマトリクスは、2つの74HC595チップによって制御されています。一方が行を制御し、もう一方が列を制御しています。これら2つのチップはG18〜G20を共有しており、これによりPico WボードのI/Oポートを大幅に節約できます。
 
-Pico W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
+Pico Wは一度に16ビットのバイナリ数を出力する必要があります。最初の8ビットは行を制御する74HC595に与えられ、残りの8ビットは列を制御する75HC595に与えられます。これにより、ドットマトリクスが特定のパターンを表示できます。
 
-Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.
+Q7': 一連の出力ピンで、複数の74HC595を一列に接続するために、別の74HC595のDSに接続されます。
 
-**Wiring**
 
-Build the circuit. Since the wiring is complicated, let's
-make it step by step.
+**配線**
 
-**Step 1:**  First, insert the Pico W, the LED dot matrix
-and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico W to holes on the two sides of the board, then hook up pin16 and
-10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
+回路を組み立てます。配線が複雑なので、ステップバイステップで進めましょう。
+
+**ステップ1:** まず、ブレッドボードにPico W、LEDドットマトリクス、および2つの74HC595チップを挿入します。Pico Wの3.3VとGNDをボードの両側の穴に接続し、次に、2つの74HC595チップのピン16と10をVCCに、ピン13とピン8をGNDに接続します。
 
 .. note::
-   In the Fritzing image above, the side with label is at the bottom.
+   上記のFritzing画像では、ラベルがある側が下になっています。
 
 |wiring_ledmatrix_4|
 
-**Step 2:** Connect pin 11 of the two 74HC595 together, and then to
-GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
-74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
-74HC595.
+**ステップ2:** 2つの74HC595のピン11を一緒に接続し、次にGP20に接続します。次に、2つのチップのピン12をGP19に、次に、左側の74HC595のピン14をGP18に、ピン9を2番目の74HC595のピン14に接続します。
 
 |wiring_ledmatrix_3|
 
-**Step 3:** The 74HC595 on the right side is to control columns of the
-LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
-pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
-respectively.
+**ステップ3:** 右側の74HC595は、LEDドットマトリクスの列を制御するためのものです。以下の表でマッピングを参照してください。したがって、74HC595のQ0-Q7ピンは、それぞれピン13、3、4、10、6、11、15、および16にマッピングされています。
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -114,10 +103,7 @@ respectively.
 
 |wiring_ledmatrix_2|
 
-**Step 4:** Now connect the ROWs of the LED dot matrix. The 74HC595 on
-the left controls ROW of the LED dot matrix. See the table below for the
-mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
-pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
+**ステップ4:** それでは、LEDドットマトリクスのROWを接続しましょう。左側の74HC595は、LEDドットマトリクスのROWを制御します。以下の表でマッピングを参照してください。見ての通り、左側の74HC595のQ0-Q7は、それぞれピン9、14、8、12、1、7、2、および5にマッピングされています。
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -127,15 +113,15 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 |wiring_ledmatrix_1|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``5.4_8x8_pixel_graphics.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下で ``5.4_8x8_pixel_graphics.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするか、F5キーを押すだけで実行できます。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下の"MicroPython (Raspberry Pi Pico)"インタプリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳しいチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 
 .. code-block:: python
@@ -147,10 +133,9 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
     rclk = machine.Pin(19,machine.Pin.OUT)
     srclk = machine.Pin(20,machine.Pin.OUT)
 
-
     glyph = [0xFF,0xBB,0xD7,0xEF,0xD7,0xBB,0xFF,0xFF]
 
-    # Shift the data to 74HC595
+    # 74HC595にデータをシフト
     def hc595_in(dat):
         for bit in range(7,-1, -1):
             srclk.low()
@@ -170,13 +155,13 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
             hc595_in(0x80>>i)
             hc595_out()
 
-Once the program is running, you will see a **x** graphic displayed on the 8x8 dot matrix.
+プログラムを実行すると、8x8ドットマトリクスに **x** グラフィックが表示されます。
 
-**How it works?**
+**動作原理は？**
 
-Here we use two 74HC595s to provide signals for the rows and columns of the dot matrix.
-The method of providing signals is the same as ``hc595_shift(dat)`` in the previous chapters, but the difference is that here we need to write a 16-bit binary number at a time.
-So we split ``hc595_shift(dat)`` into two functions ``hc595_in(dat)`` and ``hc595_out()``.
+ここでは、ドットマトリクスの行と列の信号を提供するために、2つの74HC595を使用しています。
+信号を供給する方法は、前の章の ``hc595_shift(dat)`` と同じですが、違いはここでは一度に16ビットのバイナリ数を書き込む必要があることです。
+したがって、 ``hc595_shift(dat)`` を二つの関数、 ``hc595_in(dat)`` と ``hc595_out()`` に分割しました。
 
 .. code-block:: python
 
@@ -193,10 +178,10 @@ So we split ``hc595_shift(dat)`` into two functions ``hc595_in(dat)`` and ``hc59
         time.sleep_us(200)
         rclk.low()
 
-Then, call ``hc595_in(dat)`` twice in the main loop, write two 8-bit binary numbers and then call ``hc595_out()`` so that a pattern can be displayed.
+次に、メインループで ``hc595_in(dat)`` を二回呼び出し、二つの8ビットのバイナリ数を書き込み、その後 ``hc595_out()`` を呼び出して、ドットマトリクスに特定のパターンを表示します。
 
-However, since the LEDs in the dot matrix use common poles, controlling multiple rows/multiple columns at the same time will interfere with each other (e.g., if you light up (1,1) and (2,2) at the same time, (1,2) and (2,1) will inevitably be lit up together).
-Therefore, it is necessary to activate one column (or one row) at a time, cycle 8 times, and use the residual image principle to make the human eye merge 8 patterns, so as to get a pair of patterns containing 8x8 amount of information.
+ただし、ドットマトリクスのLEDは共通の極を使用しているため、同時に複数の行/複数の列を制御すると、お互いに干渉します（例えば、(1,1)と(2,2)を同時に点灯すると、(1,2)と(2,1)が必然的に一緒に点灯します）。
+したがって、一度に一つの列（または一つの行）を活性化し、8回サイクルさせ、残像の原理を使用して、人の目で8つのパターンを統合し、8x8の情報量を含む一対のパターンを得る必要があります。
 
 .. code-block:: python
 
@@ -206,14 +191,14 @@ Therefore, it is necessary to activate one column (or one row) at a time, cycle 
             hc595_in(0x80>>i)
             hc595_out()
 
-In this example, the main function nests a ``for`` loop, and when ``i`` is 1, only the first line is activated (the chip in the control line gets the value ``0x80`` ) and the image of the first line is written. 
-When ``i`` is 2, the second line is activated (the chip of the control line gets the value ``0x40``) and the image of the second line is written. And so on, completing 8 outputs.
+この例では、メイン関数は ``for`` ループをネストしており、 ``i`` が1のとき、最初の行だけが活性化される（制御線のチップが値 ``0x80`` を取得する）と、最初の行の画像が書き込まれる。 
+``i`` が2のとき、2行目が活性化され（制御線のチップが値 ``0x40`` を取得する）と、2行目の画像が書き込まれる。そして、8つの出力を完了します。
 
-Incidentally, like the 4-digit 7-segment display, it has to maintain the refresh rate to prevent flickering by the human eye, so the extra ``sleep()`` in the main loop should be avoided as much as possible.
+ちなみに、4桁の7セグメントディスプレイのように、人の目によるちらつきを防ぐために、更新レートを維持する必要があります。そのため、メインループでの余分な ``sleep()`` はできるだけ避けるべきです。
 
-**Learn More**
+**もっと学ぶ**
 
-Try replacing ``glyph`` with the following array and see what comes up!
+``glyph`` を以下の配列に置き換えて、何が表示されるか確認してみてください！
 
 .. code-block:: python
 
@@ -224,4 +209,4 @@ Try replacing ``glyph`` with the following array and see what comes up!
     glyph5 = [0xFF,0xBB,0xD7,0xEF,0xD7,0xBB,0xFF,0xFF]
     glyph6 = [0xFF,0xFF,0xF7,0xEB,0xDF,0xBF,0xFF,0xFF]
 
-Or, you can try drawing your own graphics.
+もしくは、独自のグラフィックを描いてみてください。

@@ -1,46 +1,45 @@
-3. Security System via @IFTTT
+3. @IFTTTを使用したセキュリティシステム
 ============================================
-With this project, we make a security device that uses a PIR Sensor to detect when a burglar or stray animal breaks into your home. You will receive an email alert if this is the case.
 
-Webhook will be used as the most basic service.
-A POST request is sent to IFTTT's service from Raspberry Pi Pico W.
-Using IFTTT, we will create an Applet to intercept the webhook and send an email.
+このプロジェクトでは、侵入者や迷い込んだ動物が自宅に侵入した場合に検出するPIRセンサーを使用したセキュリティデバイスを作成します。そのような場合には、メールで警告が届きます。
 
-**1. Required Components**
+最も基本的なサービスとしてWebhookが使用されます。
+Raspberry Pi Pico WからIFTTTのサービスにPOSTリクエストが送信されます。
+IFTTTを使用して、Webhookを傍受し、メールを送信するAppletを作成します。
 
-In this project, we need the following components. 
+**1. 必要なコンポーネント**
 
-It's definitely convenient to buy a whole kit, here's the link: 
+このプロジェクトで必要なコンポーネントは以下の通りです。
+
+便利なのは、キット全体を購入することです。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - キット内容
+        - リンク
+    *   - ケプラーキット	
+        - 450+	
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - コンポーネント	
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -49,7 +48,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - アクティブ :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -72,11 +71,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 10
-        - 18650 Battery
+        - 18650バッテリー
         - 1
         -  
     *   - 11
-        - Battery Holder
+        - バッテリーホルダー
         - 1
         -  
     *   - 12
@@ -84,105 +83,105 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**2. Build the Circuit**
+**2. 回路を作成する**
 
 .. warning:: 
         
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    Li-po Charger Moduleが図に示されているように接続されていることを確認してください。それ以外の場合は、ショートが発生し、バッテリーと回路が損傷する可能性があります。
 
 .. image:: img/wiring/3.ifttt_mail_bb.png
     :width: 800
 
 
-**3. SET IFTTT**
+**3. IFTTTの設定**
 
-IFTTT is a free service that provides a variety of ways to connect different data services together.
+IFTTTは、さまざまなデータサービスを連携する多様な方法を提供する無料のサービスです。
 
-We'll create an Applet that reacts to a webhook (custom URL) that sends data to IFTTT.
-IFTTT will then send an email for you.
+ここでは、IFTTTにデータを送信するWebhook（カスタムURL）に反応するAppletを作成します。
+その後、IFTTTが代わりにメールを送信します。
 
-Please follow the steps below on IFTTT.
+以下の手順でIFTTTで設定してください。
 
-1. Visit |link_ifttt| to log in or create an account.
+1. |link_ifttt| にアクセスして、ログインまたはアカウントを作成します。
 
     .. image:: img/ifttt-1.png
         :width: 500
 
-2. Click on **Create**.
+2. **Create（作成）** をクリックします。
 
     .. image:: img/ifttt-2.png
         :width: 500
 
-3. Add an **If This** event.
+3. **If This（これが起きたら）** イベントを追加します。
 
     .. image:: img/ifttt-3.png
         :width: 500
 
-4. Search for **Webhooks**.
+4. **Webhooks（ウェブフック）** を検索します。
 
     .. image:: img/ifttt-4.png
         :width: 500
 
-5. Tap **Receive a web request**.
+5. **Receive a web request（ウェブリクエストを受け取る）** をタップします。
 
     .. image:: img/ifttt-5.png
         :width: 500
 
-6. Fill in the event name (e.g. SecurityWarning), and click **Create trigger**.
+6. イベント名（例：SecurityWarning）を入力し、 **Create trigger（トリガーを作成）** をクリックします。
 
     .. image:: img/ifttt-6.png
         :width: 500
 
-7. Add a **Then That** event.
+7. **Then That（それがあれば）** イベントを追加します。
 
     .. image:: img/ifttt-7.png
         :width: 500
 
-8. Search for Email.
+8. Emailを検索します。
 
     .. image:: img/ifttt-8.png
         :width: 500
 
-9. Click **Send me an email**.
+9. **Send me an email（私にメールを送る）** をクリックします。
 
     .. image:: img/ifttt-9.png
         :width: 500
 
-10. Fill in **Subject** and **Body**, then click on **Create action**.
+10. **Subject（件名）** と **Body（本文）** を入力し、 **Create action（アクションを作成）** をクリックします。
 
     .. image:: img/ifttt-10.png
         :width: 500
 
-11. Click **Continue** to complete the configuration.
+11. **Continue（続ける）** をクリックして、設定を完了します。
 
     .. image:: img/ifttt-11.png
         :width: 500
 
-12. Modify the title name and you're finished.
+12. タイトル名を変更して、完了です。
 
     .. image:: img/ifttt-12.png
         :width: 500
 
-13. Now you will be automatically redirected to the Applet details page, where you can see that the Applet is currently connected and you can toggle the switch to start/close it.
+13. 自動的にApplet詳細ページにリダイレクトされ、Appletが現在接続されていること、およびスイッチを切り替えて開始/終了することができることが確認できます。
 
     .. image:: img/ifttt-13.png
         :width: 500
 
 
-**4. Run the Script**
+**4. スクリプトの実行**
 
-#. Now that we have created the IFTTT Applet, but we also need the API Key which can be obtained from the |link_webhooks| to allow Pico W to access IFTTT.
+#. すでにIFTTTのAppletを作成したわけですが、Pico WがIFTTTにアクセスするためにはAPIキーも必要です。これは |link_webhooks| から取得できます。
 
     .. image:: img/ifttt-14.png
         :width: 500
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico W.
+#. それをRaspberry Pi Pico W内の ``secrets.py`` スクリプトにコピーします。
 
     .. image:: img/3_ifttt4.png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+        Pico Wに ``do_connect.py`` と ``secrets.py`` スクリプトがない場合は、 :ref:`iot_access` を参照してそれらを作成してください。
 
     .. code-block:: python
         :emphasize-lines: 4
@@ -190,77 +189,77 @@ Please follow the steps below on IFTTT.
         secrets = {
         'ssid': 'SSID',
         'password': 'PASSWORD',
-        'webhooks_key':'WEBHOOKS_API_KEY'
+        'webhooks_key': 'WEBHOOKS_API_KEY'
         }
 
-#. Open the ``3_ifttt_mail.py`` file under the path of ``kepler-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
+#. ``kepler-kit-main/iot`` ディレクトリ下の ``3_ifttt_mail.py`` ファイルを開き、 **File（ファイル）** -> **Save as（名前を付けて保存）** をクリックするか、 ``Ctrl+Shift+S`` を押します。
 
     .. image:: img/3_ifttt1.png
 
-#. Select **Raspberry Pi Pico** in the popup window that appears.
+#. ポップアップウィンドウで **Raspberry Pi Pico** を選択します。
 
     .. image:: img/3_ifttt2.png
 
-#. Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico W.
+#. ファイル名を ``main.py`` に設定します。同じファイルがすでにPico Wに存在する場合は、プロンプトが表示されます。
 
     .. image:: img/3_ifttt3.png
 
-#. You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico W. You will hear a buzzer tick when the script is running. The buzzer will keep sounding if the PIR module detects a person/creature passing by, and an email alert will be sent to you. The script can be restarted by pressing the button.
+#. USBケーブルを抜いて、Li-poチャージャーモジュールでRaspberry Pi Pico Wに電源を供給できるようにします。スクリプトが実行されているときにブザーの音が聞こえます。PIRモジュールが通り過ぎる人物/生物を検出すると、ブザーが鳴り続け、警告のメールが送信されます。ボタンを押してスクリプトを再起動できます。
 
-**How it works?**
+**仕組みについて**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Raspberry Pi Pico Wはインターネットに接続する必要があります。その詳細は :ref:`iot_access` に記載されています。このプロジェクトでは、それをそのまま使用します。
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Reads data from the PIR module and calls the ``motion_detected()`` function if it detects someone passing by (data from 0 to 1).
+PIRモジュールからのデータを読み取り、何かが通り過ぎると検出された場合には ``motion_detected()`` 関数を呼び出します（データは0から1）。
 
 .. code-block:: python
 
     import machine
 
-    sensor=machine.Pin(17,machine.Pin.IN)
+    sensor = machine.Pin(17, machine.Pin.IN)
 
-    sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
+    sensor.irq(trigger = machine.Pin.IRQ_RISING, handler = motion_detected)
 
-Next the Pico W sends data to IFTTT. As you can see, the ``message`` that you send to IFTTT is a url string.
-IFTTT identifies the sender by ``secrets['webhooks_key']``, the triggered event is identified by ``event``.
-So, make sure they are correct.
+次にPico WがIFTTTにデータを送信します。IFTTTに送信する ``message`` はURLの文字列であることがわかります。
+IFTTTは ``secrets['webhooks_key']`` で送信者を識別し、 ``event`` でトリガーされるイベントを識別します。
+したがって、それらが正確であることを確認してください。
 
 .. code-block:: python
 
     import urequests
     from secrets import *
 
-    event='SecurityWarning'
-    message=f"https://maker.ifttt.com/trigger/{event}/with/key/{secrets['webhooks_key']}"
+    event = 'SecurityWarning'
+    message = f"https://maker.ifttt.com/trigger/{event}/with/key/{secrets['webhooks_key']}"
 
     def motion_detected(pin):
         urequests.post(message)
         print(message)
         global warn_flag
-        warn_flag=True
-        sensor.irq(handler=None)
+        warn_flag = True
+        sensor.irq(handler = None)
 
-When ``motion_detected()`` is called, the variable ``warn_flag`` is set to ``True``, causing the buzzer to keep going.
+``motion_detected()`` が呼び出されると、変数 ``warn_flag`` が ``True`` に設定され、ブザーが鳴り続けます。
 
 .. code-block:: python
 
     while True:
-        if warn_flag==True:
+        if warn_flag == True:
             alarm.toggle()
             time.sleep_ms(50)
 
-The purpose of the button here is to restart the script.
+ここでのボタンの目的は、スクリプトを再起動することです。
 
 .. code-block:: python
 
-    button=machine.Pin(16,machine.Pin.IN)
+    button = machine.Pin(16, machine.Pin.IN)
 
     def reset_device(pin):
         machine.reset()
 
-    button.irq(trigger=machine.Pin.IRQ_RISING, handler=reset_device)
+    button.irq(trigger = machine.Pin.IRQ_RISING, handler = reset_device)

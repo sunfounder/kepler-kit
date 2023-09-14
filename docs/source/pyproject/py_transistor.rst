@@ -1,113 +1,106 @@
 .. _py_transistor:
 
-2.15 Two Kinds of Transistors
+2.15 トランジスタの２種類
 ==========================================
-This kit is equipped with two types of transistors, S8550 and S8050, the former is PNP and the latter is NPN. They look very similar, and we need to check carefully to see their labels.
-When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+このキットには、S8550とS8050という2種類のトランジスタが付属しています。前者はPNPで、後者はNPNです。見た目は非常によく似ているため、ラベルをよく確認する必要があります。
+NPNトランジスタにハイレベルの信号が通ると、それが励起されます。しかし、PNPトランジスタはローレベルの信号で制御されます。どちらのタイプのトランジスタも、この実験のように、非接触スイッチに頻繁に使用されます。
 
 |img_NPN&PNP|
 
-Let's use LED and button to understand how to use transistor!
+トランジスタの使い方を理解するために、LEDとボタンを使ってみましょう！
 
 :ref:`cpn_transistor`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
-        - |link_kepler_kit|
+    *  - 名前
+       - このキットに含まれるアイテム
+       - リンク
+    *  - Keplerキット
+       - 450以上
+       - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *  - S/N
+       - コンポーネント
+       - 数量
+       - リンク
+    *  - 1
+       - :ref:`cpn_pico_w`
+       - 1
+       - |link_picow_buy|
+    *  - 2
+       - マイクロUSBケーブル
+       - 1
+       - 
+    *  - 3
+       - :ref:`cpn_breadboard`
+       - 1
+       - |link_breadboard_buy|
+    *  - 4
+       - :ref:`cpn_wire`
+       - 数本
+       - |link_wires_buy|
+    *  - 5
+       - :ref:`cpn_resistor`
+       - 3(220Ω, 1KΩ, 10KΩ)
+       - |link_resistor_buy|
+    *  - 6
+       - :ref:`cpn_led`
+       - 1
+       - |link_led_buy|
+    *  - 7
+       - :ref:`cpn_button`
+       - 1
+       - |link_button_buy|
+    *  - 8
+       - :ref:`cpn_transistor`
+       - 1(S8050/S8550)
+       - |link_transistor_buy|
 
-    *   - 1
-        - :ref:`cpn_pico_w`
-        - 1
-        - |link_picow_buy|
-    *   - 2
-        - Micro USB Cable
-        - 1
-        - 
-    *   - 3
-        - :ref:`cpn_breadboard`
-        - 1
-        - |link_breadboard_buy|
-    *   - 4
-        - :ref:`cpn_wire`
-        - Several
-        - |link_wires_buy|
-    *   - 5
-        - :ref:`cpn_resistor`
-        - 3(220Ω, 1KΩ, 10KΩ)
-        - |link_resistor_buy|
-    *   - 6
-        - :ref:`cpn_led`
-        - 1
-        - |link_led_buy|
-    *   - 7
-        - :ref:`cpn_button`
-        - 1
-        - |link_button_buy|
-    *   - 8
-        - :ref:`cpn_transistor`
-        - 1(S8050/S8550)
-        - |link_transistor_buy|
-
-
-**Way to connect NPN (S8050) transistor**
+**NPN（S8050）トランジスタの接続方法**
 
 |sch_s8050|
 
-In this circuit, when the button is pressed, GP14 is high.
+この回路では、ボタンが押されると、GP14はハイになります。
 
-By programming GP15 to output high, after a 1k current limiting resistor (to protect the transistor), the S8050 (NPN transistor) is allowed to conduct, thus allowing the LED to light up.
-
+プログラミングによってGP15をハイ出力に設定すると、1kの電流制限抵抗を介して（トランジスタを保護するために）、S8050（NPNトランジスタ）は導通が許可され、それによってLEDが点灯します。
 
 |wiring_s8050|
 
-**Way to connect PNP(S8550) transistor**
+**PNP（S8550）トランジスタの接続方法**
 
 |sch_s8550|
 
-In this circuit, GP14 is low by the default and will change to high when the button is pressed.
+この回路では、GP14はデフォルトで低く、ボタンが押されると高くなります。
 
-By programming GP15 to output **low**, after a 1k current limiting resistor (to protect the transistor), the S8550 (PNP transistor) is allowed to conduct, thus allowing the LED to light up.
+GP15を **低出力** にプログラムすると、1kの電流制限抵抗（トランジスタを保護するため）の後、S8550（PNPトランジスタ）が導通することが許可され、それによってLEDが点灯します。
 
-The only difference you will notice between this circuit and the previous one is that in the previous circuit the cathode of the LED is connected to the **collector** of the **S8050 (NPN transistor)**, while this one is connected to the **emitter** of the **S8550 (PNP transistor)**.
+この回路と前の回路との唯一の違いは、前の回路ではLEDのカソードが **S8050（NPNトランジスタ）** の **コレクタ** に接続されているのに対し、この回路では **S8550（PNPトランジスタ）** の **エミッタ** に接続されている点です。
+
 
 |wiring_s8550|
 
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.15_transistor.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下の ``2.15_transistor.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単にF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある「MicroPython（Raspberry Pi Pico）」のインタープリタをクリックすることを忘れずに。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -123,9 +116,8 @@ The only difference you will notice between this circuit and the previous one is
             signal.value(0)
 
 
+同じコードで2種類のトランジスタを制御できます。ボタンを押すと、Pico Wはトランジスタにハイレベルの信号を送り、それを解放するとローレベルの信号を送ります。
+この2つの回路で真逆の現象が起きていることがわかります。
 
-Two kinds of transistors can be controlled with the same code. When we press the button, Pico W will send a high-level signal to the transistor; when we release it, it will send a low-level signal.
-We can see that diametrically opposite phenomena have occurred in the two circuits.
-
-* The circuit using the S8050 (NPN transistor) will light up when the button is pressed, which means it is receiving a high-level conduction circuit;
-* The circuit that uses the S8550 (PNP transistor) will light up when it is released, which means it is receiving a low-level conduction circuit.
+* S8050（NPNトランジスタ）を使用した回路は、ボタンが押されると点灯します。これはハイレベルの導通回路であるという意味です。
+* S8550（PNPトランジスタ）を使用した回路は、解放されると点灯します。これはローレベルの導通回路であるという意味です。

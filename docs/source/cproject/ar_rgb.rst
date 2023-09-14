@@ -1,58 +1,56 @@
 .. _ar_rgb:
 
-
-2.4 - Colorful Light
+2.4 - カラフルな光
 ==============================================
 
-As we know, light can be superimposed. For example, mix blue light and green light give cyan light, red light and green light give yellow light.
-This is called "The additive method of color mixing".
+私たちは知っているとおり、光は重ね合わせることができます。例えば、青い光と緑の光を混ぜるとシアン色の光ができ、赤い光と緑の光を混ぜると黄色の光ができます。
+このことを「加法的色の混合」と呼びます。
 
-* `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
+* `加法的色 - ウィキペディア <https://en.wikipedia.org/wiki/Additive_color>`_
 
-Based on this method, we can use the three primary colors to mix the visible light of any color according to different specific gravity. For example, orange can be produced by more red and less green.
+この方法に基づいて、異なる比重で三原色を混合することで、任意の色の可視光を作成することができます。例えば、赤を多く、緑を少なくすることでオレンジ色を作ることができます。
 
-In this chapter, we will use RGB LED to explore the mystery of additive color mixing!
+この章では、RGB LEDを使用して加法的色の混合の神秘を探究します！
 
-RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin.
-Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+RGB LEDは、赤、緑、青のLEDを一つのランプキャップの下に封入し、三つのLEDは共通のカソードピンを共有しています。
+各アノードピンに電気信号が供給されるため、対応する色の光が表示されます。各アノードの電気信号の強度を変更することで、さまざまな色を生成することができます。
 
 * :ref:`cpn_rgb`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入すると非常に便利です。リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -61,64 +59,54 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 3(1-330Ω, 2-220Ω)
+        - 3（1-330Ω, 2-220Ω）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_rgb`
         - 1
         - |link_rgb_led_buy|
 
-**Schematic**
+**回路図**
 
 |sch_rgb|
 
-The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+PWMピンGP13、GP14、GP15はそれぞれRGB LEDの赤、緑、青のピンを制御し、共通のカソードピンをGNDに接続します。これにより、異なるPWM値でこれらのピンに光を重ね合わせることで、RGB LEDが特定の色を表示することができます。
 
-
-
-**Wiring**
+**配線**
 
 |img_rgb_pin|
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
-
+RGB LEDには4本のピンがあります：最も長いピンが共通のカソードピンで、通常はGNDに接続され、最も長いピンの隣の左側のピンが赤で、右側の2本のピンが緑と青です。
 
 |wiring_rgb|
 
 
-**Code**
+**コード**
 
-Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
+ここで、お気に入りの色を描画ソフトウェア（例：ペイント）で選択し、RGB LEDで表示させることができます。
 
 .. note::
 
-   * You can open the file ``2.4_colorful_light.ino`` under the path of ``kepler-kit-main/arduino/2.4_colorful_light``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.4_colorful_light.ino`` は、パス ``kepler-kit-main/arduino/2.4_colorful_light`` で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c869191c-026c-4aac-8396-09eaf6ee2204/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-
 |img_take_color|
 
-Write the RGB value into ``color_set()``, you will be able to see the RGB light up the colors you want.
+``color_set()`` にRGB値を入力すると、RGBが希望する色に光るようになります。
 
+**どうやって動くのか？**
 
-**How it works?**
-
-In this example, the function used to assign values to the three pins of RGB is packaged in an independent subfunction ``color()``.
+この例では、RGBの三つのピンに値を割り当てるために使用される関数は、独立したサブ関数 ``color()`` にパッケージされています。
 
 .. code-block:: C
 
@@ -129,7 +117,7 @@ In this example, the function used to assign values to the three pins of RGB is 
         analogWrite(bluePin, blue);
     }
 
-In ``loop()``, RGB value works as an input argument to call the function ``color()`` to realize that the RGB can emit different colors.
+``loop()`` 内では、RGB値が入力引数として ``color()`` 関数を呼び出すことで、RGBが異なる色を発するようになります。
 
 .. code-block:: C
 
@@ -142,5 +130,3 @@ In ``loop()``, RGB value works as an input argument to call the function ``color
         color(0, 0, 255); //  blue  
         delay(1000);
     }
-
-    

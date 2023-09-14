@@ -1,21 +1,20 @@
 .. _cpn_led_bar:
 
-LED Bar Graph
+LEDバーグラフ
 =============
 
 |img_led_bar|
 
-LED Bar Graph is an LED array, which is used to connect with electronic circuit or microcontroller. It's easy to connect LED bar graph with the circuit like as connecting 10 individual LEDs with 10 output pins. Generally we can use the LED bar graph as a Battery level Indicator, Audio equipments, and Industrial Control panels. There are many other applications of LED bar graphs.
+LEDバーグラフは、電子回路やマイクロコントローラに接続するためのLED配列です。基本的に、LEDバーグラフを回路に接続するのは、10個の個々のLEDを10個の出力ピンに接続するのと同じように簡単です。一般的に、LEDバーグラフはバッテリーレベルインジケータ、オーディオ機器、産業用制御パネルなどとして使用できます。他にも多くの用途があります。
 
-The following is the internal schematic diagram of LED Bar Graph. Generally speaking, the side with the label is the anode and the other side is the cathode.
+以下は、LEDバーグラフの内部回路図です。一般的には、ラベルがついている側がアノードで、反対側がカソードです。
 
 |img_led_bar_pin|
 
 |img_led_bar_sche1|
 
+**例**
 
-**Example**
-
-* :ref:`py_led_bar` (For MicroPython User)
-* :ref:`ar_led_bar` (For Arduino User)
-* :ref:`per_light_display` (For Piper Make User)
+* :ref:`py_led_bar` （MicroPythonユーザー向け）
+* :ref:`ar_led_bar` （Arduinoユーザー向け）
+* :ref:`per_light_display` （Piper Makeユーザー向け）

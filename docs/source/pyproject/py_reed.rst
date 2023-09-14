@@ -1,53 +1,50 @@
 .. _py_reed:
 
-2.9 Feel the Magnetism
-================================
+2.9 磁気を感じる
+==============================
 
-The most common type of reed switch contains a pair of magnetizable, flexible, metal reeds whose end portions are separated by a small gap when the switch is open. 
+最も一般的なタイプのリードスイッチは、スイッチが開いているときに小さな隙間で分離された、磁化可能で柔軟な金属製のリードの一対を含んでいます。
 
-A magnetic field from an electromagnet or a permanent magnet will cause the reeds to attract each other, thus completing an electrical circuit.
-The spring force of the reeds causes them to separate, and open the circuit, when the magnetic field ceases.
+電磁石または永久磁石からの磁場が、リード同士を引き寄せることで電気回路を完成させます。
+磁場が消失すると、リードのバネ力によってそれらは分離し、回路が開きます。
 
-A common example of a reed switch application is to detect the opening of a door or windows, for a security alarm.
+リードスイッチの一般的な用途の一例は、セキュリティアラーム用にドアや窓が開いたことを検出することです。
 
 * :ref:`cpn_reed`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式で購入する方が確実に便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+        - 部品	
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -56,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -67,28 +64,27 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_reed|
 
-By default, GP14 is low; and will go high when the magnet is near the reed switch.
+デフォルトでは、GP14は低く、磁石がリードスイッチに近づくと高くなります。
 
-The purpose of the 10K resistor is to keep the GP14 at a steady low level when no magnet is near.
+10KΩの抵抗の目的は、磁石が近くにないときにGP14を安定した低レベルに保つことです。
 
-**Wiring**
+**配線**
 
 |wiring_reed|
 
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``2.9_feel_the_magnetism.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下にある ``2.9_feel_the_magnetism.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単純にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py`  を参照してください。
 
 .. code-block:: python
 
@@ -100,24 +96,23 @@ The purpose of the 10K resistor is to keep the GP14 at a steady low level when n
             print("There are magnets here!!")
             utime.sleep(1)
 
-When the code is run, GP14 goes high when a magnet is near the reed switch, otherwise it goes low. Just like the button in the :ref:`py_button` chapter.
+コードが実行されると、リードスイッチに磁石が近づくとGP14が高くなり、そうでない場合は低くなります。 :ref:`py_button` チャプターのボタンと同様です。
 
-**Learn More**
+**もっと詳しく**
 
-This time, we tried a flexible way of using switches: interrupt requests, or IRQs.: interrupt requests, or IRQs.
+今回は、スイッチの柔軟な使い方を試してみました：割り込み要求、またはIRQ（Interrupt Requests）。
 
-For example, you are reading a book page by page, as if a program is executing a thread. At this time, someone came to you to ask a question and interrupted your reading. Then the person is executing the interrupt request: asking you to stop what you are doing, answer his questions, and then let you return to reading the book after the end.
+例えば、あなたがプログラムがスレッドを実行しているかのように、ページごとに本を読んでいるとします。このとき、誰かが質問をしにきて、あなたの読書を中断しました。その人が割り込み要求を実行しています：あなたがやっていることをやめて、彼の質問に答え、その後で読書に戻らせます。
 
-MicroPython interrupt request also works in the same way, it allows certain operations to interrupt the main program. 
-
+MicroPythonの割り込み要求も同じように動作します。それは、特定の操作がメインプログラムを中断できるようにします。
 
 .. note::
 
-    * Open the ``2.9_feel_the_magnetism_irq.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下にある ``2.9_feel_the_magnetism_irq.py`` ファイルを開くか、このコードをThonnyにコピーしてから、「Run Current Script」をクリックするか、単純にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -131,12 +126,10 @@ MicroPython interrupt request also works in the same way, it allows certain oper
 
     reed_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=detected)
 
+ここではまず、コールバック関数 ``detected(pin)`` が定義されています。これを割り込みハンドラーと呼びます。割り込み要求がトリガーされたときに実行されます。次に、メインプログラムで割り込み要求が設定されています。これには二つの部分が含まれています： ``trigger`` と ``handler`` 。
 
-Here first a callback function ``detected(pin)`` is defined, called the interrupt handler. It will be executed when an interrupt request is triggered. Then, an interrupt request is set up in the main program, which contains two parts: the ``trigger`` and the ``handler``.
+このプログラムで ``trigger`` は ``IRQ_RISING`` です。これは、ピンの値が低から高に変わること（つまり、ボタンの押下）を示します。
 
-In this program, ``trigger`` is ``IRQ_RISING``, which indicates that the value of the pin is raised from low to high (i.e., button press).
-
-``handler`` is ``detected`` , the callback function we defined before.
-
+``handler`` は、前に定義したコールバック関数 ``detected`` です。
 
 * `machine.Pin.irq - Micropython Docs <https://docs.micropython.org/en/latest/library/machine.Pin.html#machine.Pin.irq>`_

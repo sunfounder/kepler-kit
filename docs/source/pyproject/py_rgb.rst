@@ -1,58 +1,57 @@
 .. _py_rgb:
 
+  
+2.4 カラフルな光  
+==============================================  
+  
+我々が知っているように、光は重ね合わせることができます。例えば、青い光と緑の光を混ぜるとシアン色の光が生まれ、赤い光と緑の光を混ぜると黄色の光が生まれます。  
+これを「加法混色」と呼びます。
 
-2.4 Colorful Light
-==============================================
+* `加法混色 - ウィキペディア <https://en.wikipedia.org/wiki/Additive_color>`_
 
-As we know, light can be superimposed. For example, mix blue light and green light give cyan light, red light and green light give yellow light.
-This is called "The additive method of color mixing".
+この方法に基づいて、三原色を用いて、異なる比重に応じて任意の色の可視光を混合することができます。例えば、オレンジ色は赤色を多く、緑色を少なくして作ることができます。
 
-* `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
+この章では、RGB LEDを用いて加法混色の神秘を探求します！
 
-Based on this method, we can use the three primary colors to mix the visible light of any color according to different specific gravity. For example, orange can be produced by more red and less green.
-
-In this chapter, we will use RGB LED to explore the mystery of additive color mixing!
-
-RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin.
-Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+RGB LEDは、赤いLED、緑のLED、青いLEDを一つのランプキャップの下に封入し、三つのLEDは一つのカソードピンを共有しています。  
+各アノードピンに電気信号が供給されるため、対応する色の光が表示されます。各アノードの電気信号強度を変更することで、さまざまな色を生成することができます。
 
 * :ref:`cpn_rgb`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのは非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名称
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することも可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -61,7 +60,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -72,34 +71,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_rgb_led_buy|
 
-**Schematic**
+
+**回路図**
 
 |sch_rgb|
 
-The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+PWMピンのGP13、GP14、およびGP15は、RGB LEDの赤、緑、青のピンをそれぞれ制御します。共通のカソードピンはGNDに接続されます。これにより、RGB LEDは異なるPWM値でこれらのピンに光を加算することで、特定の色を表示できます。
 
-
-**Wiring**
+**配線**
 
 |img_rgb_pin|
 
-The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually connected to GND; the left pin next to the longest pin is Red; and the two pins on the right are Green and Blue.
-
+RGB LEDには4つのピンがあります：一番長いピンは共通のカソードピンで、通常はGNDに接続されます。この長いピンの隣にある左側のピンが赤で、右側にある2つのピンは緑と青です。
 
 |wiring_rgb|
 
-
-**Code**
-
-
+**コード**
 
 .. note::
 
-    * Open the ``2.4_colorful_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` ディレクトリ内の ``2.4_colorful_light.py`` ファイルを開くか、このコードをThonnyにコピペして、「Run Current Script」をクリック、またはF5キーを押して実行します。
+    
+    * 右下角にある「MicroPython（Raspberry Pi Pico）」インタープリターをクリックして選択してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -117,28 +112,27 @@ The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
     def color_to_duty(rgb_value):
-        rgb_value = int(interval_mapping(rgb_value,0,255,0,65535))
+        rgb_value = int(interval_mapping(rgb_value, 0, 255, 0, 65535))
         return rgb_value
 
-    def color_set(red_value,green_value,blue_value):
+    def color_set(red_value, green_value, blue_value):
         red.duty_u16(color_to_duty(red_value))
         green.duty_u16(color_to_duty(green_value))
         blue.duty_u16(color_to_duty(blue_value))
 
-    color_set(255,128,0)
+    color_set(255, 128, 0)
 
-Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
+こちらでは、描画ソフト（例：ペイント）で好みの色を選び、RGB LEDでその色を表示できます。
 
 |img_take_color|
 
-Write the RGB value into ``color_set()``, you will be able to see the RGB light up the colors you want.
+``color_set()`` 関数にRGB値を入力すると、選択した色でRGB LEDが点灯します。
 
+**仕組みについて**
 
-**How it works?**
+三原色を統合して機能するように、 ``color_set()`` 関数を定義しています。
 
-To allow the three primary colors to work together, we defined a ``color_set()`` function.
+現在、コンピュータのハードウェアピクセルは通常24ビットで表現されます。各基本色は8ビットに分けられ、色値は0から255までです。0を含めて各基本色に256の可能な組み合わせがあります。よって、256 x 256 x 256 = 16,777,216色が可能です。
+``color_set()`` 関数も24ビット表記を使用しているため、色の選択が容易です。
 
-At present, pixels in computer hardware usually use 24-bit representations. Each primary color is divided into 8 bits, and the color value range is 0 to 255. There are 256 possible combinations of each of the three primary colors (don't forget to count 0! ), so 256 x 256 x 256 = 16,777,216 colors.
-The ``color_set()`` function also uses 24-bit notation, so we can choose a color more easily.
-
-And since the value range of ``duty_u16()`` is 0~65535 (instead of 0 to 255) when the output signals to RGB LED through PWM, we have defined ``color_to_duty()`` and ``interval_mapping ()`` function to map the color values to the duty values.
+そして、 ``duty_u16()`` の値域が0〜65535であるため、PWMを通じてRGB LEDに信号を出力する際には、 ``color_to_duty()`` と ``interval_mapping()`` 関数を用いて色値をduty値にマッピングしています。

@@ -1,40 +1,40 @@
 .. _cpn_resistor:
 
-Resistor
+抵抗器
 ============
 
 |img_res|
 
-Resistor is an electronic element that can limit the branch current. 
-A fixed resistor is a kind of resistor whose resistance cannot be changed, while that of a potentiometer or a variable resistor can be adjusted. 
+抵抗器は、分岐電流を制限することができる電子要素です。
+固定抵抗器は抵抗値を変更することができない種類の抵抗器であり、一方で可変抵抗器やポテンショメーターの抵抗値は調整することができます。
 
-Two generally used circuit symbols for resistor. Normally, the resistance is marked on it. So if you see these symbols in a circuit, it stands for a resistor. 
+抵抗器の一般的に使われる回路記号は二つあります。通常、その抵抗値は記載されています。ですから、これらの記号が回路に見られた場合、それは抵抗器を表しています。
 
 |img_res_symbol|
 
-**Ω** is the unit of resistance and the larger units include KΩ, MΩ, etc. 
-Their relationship can be shown as follows: 1 MΩ=1000 KΩ, 1 KΩ = 1000 Ω. Normally, the value of resistance is marked on it. 
+**Ω** は抵抗の単位であり、より大きな単位にはKΩ、MΩなどがあります。
+それらの関係は次のように示されます：1 MΩ = 1000 KΩ、1 KΩ = 1000 Ω。通常、抵抗値はその上に記載されています。
 
-When using a resistor, we need to know its resistance first. Here are two methods: you can observe the bands on the resistor, or use a multimeter to measure the resistance. You are recommended to use the first method as it is more convenient and faster. 
+抵抗器を使用する際には、まずその抵抗値を知る必要があります。方法は二つあります：抵抗器のバンドを観察するか、マルチメーターで抵抗を測定します。便利で速いため、最初の方法が推奨されます。
 
 |img_res_card|
 
-As shown in the card, each color stands for a number. 
+このカードに示されているように、各色は数字に対応しています。
 
 .. list-table::
 
-   * - Black
-     - Brown
-     - Red
-     - Orange
-     - Yellow
-     - Green
-     - Blue
-     - Violet
-     - Grey
-     - White
-     - Gold
-     - Silver
+   * - 黒
+     - 茶
+     - 赤
+     - オレンジ
+     - 黄
+     - 緑
+     - 青
+     - 紫
+     - 灰
+     - 白
+     - 金
+     - 銀
    * - 0
      - 1
      - 2
@@ -48,48 +48,46 @@ As shown in the card, each color stands for a number.
      - 0.1
      - 0.01
 
-The 4- and 5-band resistors are frequently used, on which there are 4 and 5 chromatic bands. 
+4バンドおよび5バンドの抵抗器がよく使用されており、それぞれに4つまたは5つの彩色バンドがあります。
 
-Normally, when you get a resistor, you may find it hard to decide which end to start for reading the color. 
-The tip is that the gap between the 4th and 5th band will be comparatively larger.
+通常、抵抗器を手に入れたときには、どの端から色を読み取るべきかを決定するのが難しい場合があります。
+ヒントとして、4番目と5番目のバンドの間の間隔が比較的大きいことです。
 
-Therefore, you can observe the gap between the two chromatic bands at one end of the resistor; 
-if it's larger than any other band gaps, then you can read from the opposite side. 
+したがって、抵抗器の一方の端にある二つの彩色バンドの間隔を観察することができます。
+他のバンドの間隔よりも大きい場合、反対側から読み取ることができます。
 
-Let's see how to read the resistance value of a 5-band resistor as shown below.
+以下に示すように、5バンドの抵抗器の抵抗値をどのように読み取るか見てみましょう。
 
 |img_220ohm|
 
-So for this resistor, the resistance should be read from left to right. 
-The value should be in this format: 1st Band 2nd Band 3rd Band x 10^Multiplier (Ω) and the permissible error is ±Tolerance%. 
-So the resistance value of this resistor is 2(red) 2(red) 0(black) x 10^0(black) Ω = 220 Ω, 
-and the permissible error is ± 1% (brown). 
+この抵抗器の場合、抵抗は左から右に読むべきです。
+値は次の形式であるべきです：1番目のバンド 2番目のバンド 3番目のバンド x 10^乗数（Ω） そして許容誤差は±許容誤差%です。
+したがって、この抵抗器の抵抗値は2（赤）2（赤）0（黒）x 10^0（黒）Ω = 220 Ωであり、許容誤差は±1%（茶）です。
 
-.. list-table:: Common resistor color band
+.. list-table:: 一般的な抵抗器の色帯
     :header-rows: 1
 
     * - :ref:`cpn_resistor` 
-      - Color Band  
+      - 色帯  
     * - 10Ω   
-      - brown black black silver brown
+      - 茶黒黒銀茶
     * - 100Ω   
-      - brown black black black brown
+      - 茶黒黒黒茶
     * - 220Ω 
-      - red red black black brown
+      - 赤赤黒黒茶
     * - 330Ω 
-      - orange orange black black brown
+      - オレンジオレンジ黒黒茶
     * - 1kΩ 
-      - brown black black brown brown
+      - 茶黒黒茶茶
     * - 2kΩ 
-      - red black black brown brown
+      - 赤黒黒茶茶
     * - 5.1kΩ 
-      - green brown black brown brown
+      - 緑茶黒茶茶
     * - 10kΩ 
-      - brown black black red brown 
+      - 茶黒黒赤茶 
     * - 100kΩ 
-      - brown black black orange brown 
+      - 茶黒黒オレンジ茶 
     * - 1MΩ 
-      - brown black black green brown 
+      - 茶黒黒緑茶 
 
-You can learn more about resistor from Wiki: `Resistor - Wikipedia <https://en.wikipedia.org/wiki/Resistor>`_.
-
+抵抗器についての詳細はWikiで学ぶことができます：`抵抗器 - Wikipedia <https://ja.wikipedia.org/wiki/%E6%8A%B5%E6%8A%97%E5%99%A8>`_。

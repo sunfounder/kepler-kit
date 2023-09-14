@@ -1,47 +1,46 @@
 .. _per_blink:
 
-2.1 Blink LED
+2.1 LEDの点滅
 ===============
 
-For this project, we intend to make the extended LED light blink. To use extended electronic components, a solderless breadboard will be the most powerful partner for novice users.
+このプロジェクトでは、拡張LEDライトを点滅させることを目的としています。拡張電子部品を使用するには、はんだなしのブレッドボードが初心者にとって最も強力なパートナーとなるでしょう。
 
-The breadboard is a rectangular plastic plate with a bunch of small holes in it. These holes allow us to easily insert electronic components and build electronic circuits. The breadboard does not permanently fix the electronic components, which makes it easy for us to repair the circuit and start over when we make a mistake.
+ブレッドボードは、多数の小さな穴が開いた長方形のプラスチック板です。これらの穴によって、簡単に電子部品を挿入し、電子回路を組むことができます。ブレッドボードは電子部品を永久に固定しないため、回路を修理したり、失敗した場合にやり直すことが容易です。
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が確実に便利です、リンクはこちらです： 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品	
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -50,44 +49,42 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1（220Ω）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Wiring**
+**配線**
 
 |wiring_led|
 
-* The color ring of the 220 ohm resistor is red, red, black, black and brown.
+* 220オームの抵抗のカラーリングは、赤、赤、黒、黒、茶です。
 
-* The longer lead of the LED is known as the anode (+), the shorter lead is the cathode (-). 
+* LEDの長いリードはアノード（+）、短いリードはカソード（-）として知られています。
 
-
-
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.1_blink_led.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * 下の画像を参考に、ドラッグアンドドロップでコードを書くことができます。
+    * 詳細なチュートリアルについては、 :ref:`import_code_piper` を参照してください。
 
 |blink1|
 
-After connecting Pico W, click the **Start** button and you will see the LED blinking. For more details, you can refer to :ref:`quick_guide_piper`.
+Pico Wに接続した後、 **スタート** ボタンをクリックするとLEDが点滅します。詳細については、 :ref:`quick_guide_piper` を参照してください。
 
-**How it Works?**
+**仕組み**
 
-This is the body of the loop: turn the pin15 on to light up the LED, wait one second, then turn the pin15 off to make the LED go off. Wait 1 second and then re-run the previous cycle, so you can see the LED has been in the state of alternating between light and off.
+これがループの本体です：ピン15をオンにしてLEDを点灯し、1秒待ってから、ピン15をオフにしてLEDを消灯します。1秒待ってから前のサイクルを再実行するので、LEDは点灯と消灯を交互に繰り返している状態になります。
 
-* [start]: This block is the basic framework of the program and represents the beginning of the program.
-* [repeat forever do() wait()seconds]: Means that the blocks in it will be executed repeatedly, and the execution time interval is defined by yourself.
-* [turn pin () ON/OFF]: Indicates that a certain pin is placed in a high level (ON) or a low level (OFF).
-* [wait () seconds]: Set the execution interval between blocks.
+* [start]: このブロックはプログラムの基本的なフレームワークであり、プログラムの開始を表しています。
+* [repeat forever do() wait()seconds]: これに含まれるブロックが繰り返し実行され、実行時間間隔は自分で定義します。
+* [turn pin () ON/OFF]: 特定のピンを高レベル（ON）または低レベル（OFF）にすることを示しています。
+* [wait () seconds]: ブロック間の実行間隔を設定します。
+

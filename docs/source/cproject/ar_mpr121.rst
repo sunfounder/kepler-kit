@@ -1,47 +1,47 @@
 .. _ar_mpr121:
 
-4.3 - Electrode Keyboard
+4.3 - 電極キーボード
 ================================
 
-The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
-If you connect the electrodes to a banana, you can turn the banana into a touch switch.
+多数のタッチスイッチをプロジェクトに追加したい場合、MPR121は優れた選択です。このモジュールは、導体で拡張可能な電極を備えています。
+電極をバナナに接続すると、そのバナナをタッチスイッチに変えることができます。
 
 * :ref:`cpn_mpr121`
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入することは非常に便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネントの説明	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -50,48 +50,46 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpr121`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_mpr121|
 
-
-
-**Wiring**
+**配線**
 
 |wiring_mpr121|
 
-**Code**
 
+
+**コード**
 
 .. note::
 
-    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``kepler-kit-main/arduino/4.3_electrode_keyboard``. 
-    * Or copy this code into **Arduino IDE**.
+    * ファイル ``4.3_electrode_keyboard.ino`` は、パス ``kepler-kit-main/arduino/4.3_electrode_keyboard`` で開くことができます。
+    * または、このコードを **Arduino IDE** にコピーペーストしてください。
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The two libraries ``Adafruit_MPR121`` and ``Adafruit_BusIO`` are used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
+    * ここで使用されている二つのライブラリは ``Adafruit_MPR121`` と ``Adafruit_BusIO`` です。Arduino IDEに追加する方法は、 :ref:`add_libraries_ar` を参照してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f31048b7-0f98-4d49-8c2e-26b3908e98cb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+プログラムが動作すると、MPR121モジュール上の12個の電極に手で触れ、それらの電極のタッチ状態が12ビットのブーリアン型配列に記録され、シリアルモニターに出力されます。
+最初と11番目の電極に触れると、 ``100000000010`` が出力されます。
 
-After the program runs, you can touch the twelve electrodes on the MPR121 module by hand and the touch status of these electrodes will be recorded in a 12-bit Boolean type array that will be printed on the serial monitor.
-If the first and eleventh electrodes are touched, ``100000000010`` is printed.
+電極を果物、ワイヤー、箔などの他の導体に接続して拡張することができます。これにより、これらの電極をトリガーする多くの方法が得られます。
 
-You can extend the electrodes by connecting other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
+**動作原理**
 
-**How it works?**
-
-Initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values.
-If you extend the electrodes, you need to rerun the example to reset the initial values.
+``MPR121`` オブジェクトを初期化します。この時点で、モジュールの電極の状態が初期値として記録されます。
+電極を拡張する場合は、初期値をリセットするために例を再実行する必要があります。
 
 .. code-block:: arduino
 
@@ -109,7 +107,7 @@ If you extend the electrodes, you need to rerun the example to reset the initial
         Serial.println("MPR121 found!");
     }
 
-Gets the value of the current electrode, it will get a 12-bit binary value. If you touch the first and the eleventh electrode, it gets ``100000000010``.
+現在の電極の値を取得します。最初と11番目の電極に触れると、 ``100000000010`` が取得されます。
 
 .. code-block:: arduino
 
@@ -128,7 +126,7 @@ Determine if the electrode state has changed.
         lasttouched = currtouched;
     }
 
-If a change in electrode state is detected, the values of ``currtouched`` are stored in the ``touchStates[12]`` array bit by bit. Finally, the array is printed.
+電極の状態に変更が検出された場合、 ``currtouched`` の値が ``touchStates[12]`` 配列にビットごとに格納されます。最後に、配列が出力されます。
 
 .. code-block:: arduino
 

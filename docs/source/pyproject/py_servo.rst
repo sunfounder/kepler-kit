@@ -1,50 +1,50 @@
 .. _py_servo:
 
-3.7 Swinging Servo
+3.7 サーボの振動
 ===================
 
-In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
+このキットには、LEDやパッシブブザーに加えて、PWM信号で制御されるデバイス、サーボも含まれています。
 
-Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
+サーボは、位置（角度）制御が可能なデバイスであり、一定の角度変更が必要な制御システムに適しています。高級リモコン玩具、例えば飛行機、潜水艦モデル、リモコンロボットなどで広く利用されています。
 
-Now, try to make the servo sway!
+それでは、サーボを振動させてみましょう！
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて購入するのは非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - 名称	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント	
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -53,45 +53,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_servo|
 
-**Wiring**
+**配線**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* オレンジ色のワイヤーは信号で、GP15に接続されています。
+* 赤色のワイヤーはVCCで、VBUS(5V)に接続されています。
+* 茶色のワイヤーはGNDで、GNDに接続されています。
 
-
-.. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-.. #. Connect **VBUS** (not 3V3) and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the red lead of the servo to the positive power bus with a jumper.
-.. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-.. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
-
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``3.7_swinging_servo.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下にある ``3.7_swinging_servo.py`` ファイルを開くか、このコードをThonnyにコピペして、「Run Current Script」をクリックまたはF5キーを押して実行します。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下角にある「MicroPython（Raspberry Pi Pico）」インタープリターをクリックして選択してください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -104,47 +93,46 @@ You can also buy them separately from the links below.
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    def servo_write(pin,angle):
-        pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
-        duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
+    def servo_write(pin, angle):
+        pulse_width = interval_mapping(angle, 0, 180, 0.5, 2.5)
+        duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))
         pin.duty_u16(duty)
 
     while True:
         for angle in range(180):
-            servo_write(servo,angle)
+            servo_write(servo, angle)
             utime.sleep_ms(20)
-        for angle in range(180,-1,-1):
-            servo_write(servo,angle)
+        for angle in range(180, -1, -1):
+            servo_write(servo, angle)
             utime.sleep_ms(20)
 
+プログラムが実行中のとき、サーボアームが0°から180°まで前後に振動するのが見えます。
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+``while True`` ループによってプログラムは絶えず動作していますので、プログラムを終了するにはStopボタンを押す必要があります。
 
-The program will always run because of the ``while True`` loop, we need to press the Stop button to end the program.
+**動作原理は？**
 
-**How it works?**
+サーボを動かすために ``servo_write()`` 関数を定義しました。
 
-We defined the ``servo_write()`` function to make the servo run.
+この関数には二つのパラメーターがあります：
 
-This function has two parameters:
+* ``pin`` 、サーボを制御するGPIOピン。
+* ``Angle`` 、軸の出力角度。
 
-* ``pin``, the GPIO pin that controls the servo.
-* ``Angle``, the angle of the shaft output.
-
-In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 180 to the pulse width range 0.5 ~ 2.5ms.
+この関数内で、 ``interval_mapping()`` が呼び出され、角度範囲0~180をパルス幅範囲0.5~2.5msにマッピングします。
 
 .. code-block:: python
 
-    pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
+    pulse_width = interval_mapping(angle, 0, 180, 0.5, 2.5)
 
-Why is it 0.5~2.5? This is determined by the working mode of the Servo. 
+なぜ0.5~2.5なのか？これはサーボの動作モードによって決定されます。
 
-:ref:`Servo`
+* :ref:`cpn_servo`
 
-Next, convert the pulse width from period to duty. Since ``duty_u16()`` cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
+次に、パルス幅を周期からデューティに変換します。 ``duty_u16()`` は小数点を持つことができない（値は浮動小数点型であってはならない）ので、 ``int()`` を用いてデューティを整数型に強制変換します。
 
 .. code-block:: python
 
-    duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
+    duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))
 
-Finally, write the duty value into ``duty_u16()``.
+最後に、デューティ値を ``duty_u16()`` に書き込みます。

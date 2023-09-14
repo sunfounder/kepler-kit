@@ -1,51 +1,50 @@
 .. _py_light_theremin:
 
-7.1 Light Theremin
+7.1 光センサー・テルミン
 =========================
 
-Theremin is an electronic musical instrument that does not require physical contact. Based on the position of the player's hand, it produces different tones.
+テルミンは物理的な接触を必要としない電子楽器です。プレイヤーの手の位置に応じて、異なる音階を出力します。
 
-Its controlling section is usually made up of two metal antennas that sense the position of the thereminist's hands and control oscillators with one hand and volume with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+通常、制御部分は、テルミニスト（テルミン奏者）の手の位置を感知し、一方の手で発振器を、もう一方の手で音量を制御する二つの金属アンテナで構成されています。テルミンからの電気信号は増幅され、スピーカーに送られます。
 
-We cannot reproduce the same instrument through Pico W, but we can use photoresistor and passive buzzer to achieve similar gameplay.
+Pico Wを使って同じ楽器を再現することはできませんが、フォトレジスタとパッシブブザーを使用して、類似したゲームプレイを実現できます。
 
-* `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
+* `Theremin - Wikipedia <https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%AB%E3%83%9F%E3%83%B3>`_
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下の部品が必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入することは非常に便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々の部品も購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -69,7 +68,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - アクティブ :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -77,32 +76,31 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Schematic**
+**回路図**
 
 |sch_light_theremin|
 
-Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
+プロジェクトを開始する前に、光の強度の範囲を調整するために、フォトレジスタの上で手を上下に振ってください。GP16に接続されたLEDは、デバッグ時間を示すために使用され、LEDが点灯しているとデバッグが開始され、消灯しているとデバッグが終了したことを示します。
 
-When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
+GP15が高レベルを出力すると、S8050（NPNトランジスタ）が導通し、パッシブブザーが鳴り始めます。
 
-When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
+光が強いと、GP28の値は小さくなります。逆に、光が弱いと、値は大きくなります。
+フォトレジスタの値をプログラムしてパッシブブザーの周波数に影響を与えることで、感光デバイスをシミュレートできます。
 
 
-**Wiring**
+**配線**
 
 |wiring_light_theremin|
 
-
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` パス下の ``7.1_light_theremin.py`` ファイルを開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 画面の右下隅にある "MicroPython (Raspberry Pi Pico)" インタープリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -110,43 +108,42 @@ By programming the value of the photoresistor to affect the frequency of the pas
     import utime
 
     led = machine.Pin(16, machine.Pin.OUT)
-    photoresistor = machine.ADC(28) 
+    photoresistor = machine.ADC(28)
     buzzer = machine.PWM(machine.Pin(15))
 
-    light_low=65535
-    light_high=0
+    light_low = 65535
+    light_high = 0
 
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    def tone(pin,frequency,duration):
+    def tone(pin, frequency, duration):
         pin.freq(frequency)
         pin.duty_u16(30000)
         utime.sleep_ms(duration)
         pin.duty_u16(0)
 
-    # calibrate the photoresistor max & min values.
+    # フォトレジスタの最大・最小値をキャリブレーションする。
     timer_init_start = utime.ticks_ms()
-    led.value(1)    
-    while utime.ticks_diff(utime.ticks_ms(), timer_init_start)<5000:
+    led.value(1)
+    while utime.ticks_diff(utime.ticks_ms(), timer_init_start) < 5000:
         light_value = photoresistor.read_u16()
         if light_value > light_high:
             light_high = light_value
         if light_value < light_low:
-            light_low = light_value   
-    led.value(0)    
+            light_low = light_value
+    led.value(0)
 
-    # play
+    # プレイ
     while True:
-        light_value  = photoresistor.read_u16()
-        pitch = int(interval_mapping(light_value,light_low,light_high,50,6000))
-        if pitch > 50 :
-            tone(buzzer,pitch,20)
+        light_value = photoresistor.read_u16()
+        pitch = int(interval_mapping(light_value, light_low, light_high, 50, 6000))
+        if pitch > 50:
+            tone(buzzer, pitch, 20)
         utime.sleep_ms(10)
 
-As soon as the program runs, the LED will light up, and we will have five seconds to calibrate the photoresistor's detection range.
+プログラムが実行されると、LEDが点灯し、フォトレジスタの検出範囲をキャリブレーションするために5秒間の時間が与えられます。
 
-This is due to the different light environments we may have when we use it (e.g., different light intensities at noon and dusk), as well as our hands' height above the photoresistor. You need to set the maximum and minimum height of your hand from the photoresistor, which is also the height at which you play the instrument.
+これは、使用する際に違う光環境（例えば、正午と夕暮れでの光の強度が異なる）や、フォトレジスタ上で手を動かす高さが異なるためです。楽器を演奏する際に手をどれだけ高く持ち上げるか、つまり手の最大・最小の高さを設定する必要があります。
 
-After five seconds, the LED will turn off, at which point we can wave our hands over the photoresistor and play.
-
+5秒後、LEDは消灯し、その時点でフォトレジスタ上で手を振って演奏できます。

@@ -1,59 +1,47 @@
 .. _ar_74hc_4dig:
 
-5.3 - Time Counter
+5.3 - タイムカウンター
 ================================
 
+4桁の7セグメントディスプレイは、4つの7セグメントディスプレイが連動して動作します。
 
-4-Digit 7-segment display consists of four 7- segment displays working
-together.
+この4桁の7セグメントディスプレイは独立して動作します。人間の視覚残留の原理を利用して、各7セグメントの文字をループで素早く表示し、連続した文字列を形成します。
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+例えば、ディスプレイに「1234」と表示された場合、最初の7セグメントには「1」が表示され、「234」は表示されません。一定の時間が経過した後、2番目の7セグメントが「2」を表示し、1番目、3番目、4番目の7セグメントは何も表示しません。このように、4つのディジタル表示が順番に表示されます。このプロセスは非常に短い（通常5ms）ので、光の残光効果と視覚残留の原理により、4つの文字を同時に見ることができます。
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+**必要なコンポーネント**
 
-**Required Components**
+このプロジェクトには以下のコンポーネントが必要です。
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入すると便利です、リンクは以下です：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
-
+        - コンポーネント紹介
+        - 数量
+        - 購入リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -62,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,40 +65,36 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-
-**Schematic**
+**回路図**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`ar_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+配線の原理は基本的に :ref:`ar_74hc_led` と同じで、唯一の違いはQ0〜Q7が4桁の7セグメントディスプレイのa〜gピンに接続されている点です。
 
-Then G10 ~ G13 will select which 7-segment display to work.
+次に、G10〜G13は動作させる7セグメントディスプレイを選択します。
 
-**Wiring**
-
+**配線**
 
 |wiring_4dig|
 
-**Code**
+**コード**
 
 .. note::
 
-    * You can open the file ``5.3_time_counter.ino`` under the path of ``kepler-kit-main/arduino/5.3_time_counter``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * パス ``kepler-kit-main/arduino/5.3_time_counter`` の下の ``5.3_time_counter.ino`` ファイルを開くことができます。
+    * または、このコードを **Arduino IDE** にコピーアンドペーストしてください。
+    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0e97386e-417e-4f53-a026-5f37e36deba4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
+プログラムを実行すると、4桁の7セグメントディスプレイがカウンターとして動作し、数字が1秒ごとに1ずつ増加します。
 
+**動作の仕組みは？**
 
-**How it works?**
-
-Writing signals to each 7-segment display is done in the same way as :ref:`ar_74hc_7seg`, using the ``hc595_shift()`` function.
-The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
+各7セグメントディスプレイへの信号の書き込みは、 :ref:`ar_74hc_7seg` で使われる ``hc595_shift()`` 関数を用いて、同じように行われます。
+4桁の7セグメントディスプレイの要点は、各7セグメントディスプレイを選択的に活性化することです。これに関連するコードは以下のとおりです。
 
 .. code-block:: arduino
 
@@ -145,18 +129,17 @@ The core point of the 4-digit 7-segment display is to selectively activate each 
         digitalWrite(placePin[digit],LOW);
     }
 
-Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the  4-digit 7-segment display individually.
-When the status of these pins is ``LOW``, the corresponding 7-segment display is active; when the status is ``HIGH``, the 7-segment display does not work.
+ここでは、4つのピン（GP10、GP11、GP12、GP13）が4桁の7セグメントディスプレイの各ビットを個々に制御するために使用されています。
+これらのピンの状態が ``LOW`` の場合、対応する7セグメントディスプレイが活性化します。状態が ``HIGH`` の場合、7セグメントディスプレイは動作しません。
 
+ここで ``pickDigit(digit)`` 関数は、すべての7セグメントディスプレイを無効にし、特定の桁を個別に有効にするために使用されます。
+その後、 ``hc595_shift()`` が7セグメントディスプレイの対応する8ビットコードを書き込むために使用されます。
 
-Here the ``pickDigit(digit)`` function is used to unable all 7-segment displays and then enable a particular digit individually.
-After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
+4桁の7セグメントディスプレイは、私たちが4桁を表示していると感じられるように、連続して順番に活性化する必要があります。これは、主プログラムがタイミングに影響を与えるコードを簡単に追加できないことを意味します。
 
-The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
+しかし、この例にタイミング関数を追加する必要があります。 ``delay(1000)`` を追加すると、4つの7セグメントディスプレイが同時に動作しているという錯覚を検出することができます。
 
-However, we need to add a timing function to this example, if we add a ``delay (1000)``, we will be able to detect the illusion of its four 7-segment displays working at the same time, exposing the fact that only one 7-segment display at a time to light.
-
-Then, using the ``millis()`` function is an excellent way to do this.
+その後、 ``millis()`` 関数を使用することが優れた方法です。
 
 .. code-block:: arduino
 
@@ -170,11 +153,10 @@ Then, using the ``millis()`` function is an excellent way to do this.
         unsigned int count = (millis()-timerStart)/1000;
     }
 
-The ``millis()`` function gets the number of milliseconds that have passed since the current program was started. We record the first time value as ``timerStart``; 
+``millis()`` 関数は、現在のプログラムが開始されてからのミリ秒数を取得します。最初の時間値を ``timerStart`` として記録します。
 
-then when we need to get the time again, we call the ``millis()`` function again and subtract ``timerStart`` from the value to get how long the program has been running.
+その後、再度時間を取得する必要がある場合は、 ``millis()`` 関数を再度呼び出し、その値から ``timerStart`` を減算して、プログラムがどれだけ実行されているかを取得します。
 
-Finally, convert this time value and let the 4-digit 7-segment display to display it.
-
+最後に、この時間値を変換し、4桁の7セグメントディスプレイに表示させます。
 
 * `millis() <https://www.arduino.cc/reference/en/language/functions/time/millis/>`_

@@ -1,49 +1,47 @@
 .. _py_pir:
 
-2.10 Detect Human Movement
+2.10 人間の動きを検出
 ========================================
 
-Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
-Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
-More specifically, it tells the main control board that someone has entered your room.
+受動型赤外線センサー（PIRセンサー）は、視野内の物体が放出する赤外線（IR）光を測定できる一般的なセンサーです。
+簡単に言えば、体から放出される赤外線を受け取り、人や他の動物の動きを検出します。
+具体的には、誰かが部屋に入ったとメインコントロールボードに通知します。
 
 :ref:`cpn_pir`
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトで必要なコンポーネントは以下のとおりです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入する方が確実に便利です、リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個々に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
-
+    *   - S/N
+        - コンポーネント
+        - 数量
+        - リンク
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +50,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_pir`
@@ -60,30 +58,30 @@ You can also buy them separately from the links below.
         - |link_pir_buy|
 
 
-**Schematic**
+**回路図**
 
 |sch_pir|
 
-When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+PIRモジュールが通過する人を検出すると、GP14は高くなり、それ以外の場合は低くなります。
 
 .. note::
-    The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+    PIRモジュールには二つの可変抵抗があります：一つは感度を調整し、もう一つは検出距離を調整します。PIRモジュールをより効果的に動作させるには、両方を反時計回りに最後まで回してください。
 
     |img_PIR_TTE|
 
-**Wiring**
+**配線**
 
 |wiring_pir|
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.10_detect_human_movement.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下の ``2.10_detect_human_movement.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするかF5を押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタプリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -97,20 +95,19 @@ When the PIR module detects someone passing by, GP14 will be high, otherwise it 
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-After the program runs, if the PIR module detects someone nearby, the Shell will print out "Somebody here!" 
+プログラムが実行された後、PIRモジュールが近くに誰かを検出すると、シェルに「Somebody here!」と表示されます。
 
-**Learn More**
+**もっと詳しく**
 
-PIR is a very sensitive sensor. In order to adapt it to the environment of use, it needs to be adjusted. Let the side with the 2 potentiometers facing you, turn both potentiometers counterclockwise to the end and insert the jumper cap on the pin with L and the middle pin.
-
+PIRは非常に敏感なセンサーです。使用環境に適応させるために調整が必要です。2つの可変抵抗がある側を向けて、両方の可変抵抗を反時計回りに最後まで回し、Lと中央のピンにジャンパーキャップを挿入してください。
 
 .. note::
 
-    * Open the ``2.10_pir_adjustment.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパス下の ``2.10_pir_adjustment.py`` ファイルを開くか、このコードをThonnyにコピーして、"Run Current Script"をクリックするかF5を押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタプリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルについては、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -139,35 +136,35 @@ PIR is a very sensitive sensor. In order to adapt it to the environment of use, 
 
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=pir_in_high_level) 
 
-Let us analyze its adjustment method along with the experimental results.
+調整方法と実験結果を一緒に解析しましょう。
 
 |img_pir_back|
 
-1. Trigger Mode
+1. トリガーモード
 
-    Let's take a look at the pins with jumper cap at the corner.
-    It allows PIR to enter Repeatable trigger mode or Non-repeatable trigger mode
+   コーナーのジャンパーキャップがあるピンを見てみましょう。
+   それによってPIRは、リピート可能なトリガーモードまたは非リピート可能なトリガーモードに入ります。
 
-    At present, our jumper cap connects the middle Pin and L Pin, which makes the PIR in non-repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism, it will send a high-level signal for about 2.8 seconds to the main control board.
-    We can see in the printed data that the duration of work will always be around 2800ms.
+   現在、ジャンパーキャップは中央のピンとLピンを接続しており、PIRは非リピート可能なトリガーモードになっています。
+   このモードでは、PIRが生体の動きを検出すると、約2.8秒間メインコントロールボードに高レベルの信号を送信します。
+   印刷されたデータで見ると、作業の継続時間は常に約2800ms前後になります。
 
-    Next, we modify the position of the lower jumper cap and connect it to the middle Pin and H Pin to make the PIR in repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism (note that it is movement, not static in front of the sensor), as long as the organism keeps moving within the detection range, the PIR will continue to send a high-level signal to the main control board.
-    We can see in the printed data that the duration of work is an uncertain value.
+   次に、下のジャンパーキャップの位置を変更して、中央のピンとHピンを接続し、PIRをリピート可能なトリガーモードにします。
+   このモードでは、PIRが生体の動きを検出する（センサーの前で静止しているのではなく、動いていることに注意）と、生体が検出範囲内で動き続ける限り、PIRはメインコントロールボードに高レベルの信号を送り続けます。
+   印刷されたデータで見ると、作業の継続時間は不確かな値になります。
 
-#. Delay Adjustment
+#. 遅延調整
 
-    The potentiometer on the left is used to adjust the interval between two jobs.
-    
-    At present, we screw it counterclockwise to the end, which makes the PIR need to enter a sleep time of about 5 seconds after finishing sending the high level work. During this time, the PIR will no longer detect the infrared radiation in the target area.
-    We can see in the printed data that the dormancy duration is always no less than 5000ms.
+   左側の可変抵抗は、二つの作業の間隔を調整するために使用されます。
+   
+   現在、反時計回りに最後まで回してありますので、PIRは高レベルの作業を送信し終えた後、約5秒のスリープ時間が必要です。この期間中、PIRは目標エリアでの赤外線放射を検出しません。
+   印刷されたデータで見ると、休眠期間は常に5000ms以上になっています。
 
-    If we turn the potentiometer clockwise, the sleep time will also increase. When it is turned clockwise to the end, the sleep time will be as high as 300s.
+   可変抵抗を時計回りに回すと、スリープ時間も増加します。それを時計回りに最後まで回すと、スリープ時間は最大で300秒になります。
 
-#. Distance Adjustment
+#. 距離調整
 
-    The centered potentiometer is used to adjust the sensing distance range of the PIR.
+   中央の可変抵抗は、PIRの感知距離範囲を調整するために使用されます。
 
-    Turn the knob of the distance adjustment potentiometer **clockwise** to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
-    If it rotates **counterclockwise**, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.
+   距離調整の可変抵抗のノブを **時計回り** に回すと、感知距離範囲が増加し、最大感知距離範囲は約0-7メートルです。
+   **反時計回り** に回すと、感知距離範囲が減少し、最小感知距離範囲は約0-3メートルです。

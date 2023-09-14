@@ -1,34 +1,18 @@
 .. _cpn_mfrc522:
 
-MFRC522 Module
+MFRC522モジュール
 ====================
 
 |img_mfrc522|
 
-MFRC522 is a kind of integrated read and write card chip. It is commonly
-used in the radio at 13.56MHz. Launched by the NXP Company, it is a
-low-voltage, low-cost, and small-sized non-contact card chip, a best
-choice of intelligent instrument and portable handheld device.
+MFRC522は一種の統合型読み取りおよび書き込みカードチップであり、主に13.56MHzの周波数で無線通信に用いられます。NXP社によって導入されたこのチップは、低電圧、低コスト、小型の非接触カードチップであり、インテリジェント機器や携帯型ハンドヘルドデバイスに最適です。
 
-The MF RC522 uses advanced modulation and demodulation concept which
-fully presented in all types of 13.56MHz passive contactless
-communication methods and protocols. In addition, it supports rapid
-CRYPTO1 encryption algorithm to verify MIFARE products. MFRC522 also
-supports MIFARE series of high-speed non-contact communication, with a
-two-way data transmission rate up to 424kbit/s. As a new member of the
-13.56MHz highly integrated reader card series, MF RC522 is much similar
-to the existing MF RC500 and MF RC530 but there also exists great
-differences. It communicates with the host machine via the serial manner
-which needs less wiring. You can choose between SPI, I2C and serial UART
-mode (similar to RS232), which helps reduce the connection, save PCB
-board space (smaller size), and reduce cost.
+MF RC522は、13.56MHzのすべての種類の受動型非接触通信手法とプロトコルにおいて、先進的な変調および復調概念を完全に採用しています。さらに、MIFARE製品を検証するための高速CRYPTO1暗号化アルゴリズムもサポートしています。MFRC522は、MIFAREシリーズの高速非接触通信もサポートしており、双方向のデータ転送レートは最大424kbit/sに達します。13.56MHzの高度に統合されたリーダーカードシリーズの新メンバーとして、MF RC522は既存のMF RC500やMF RC530と多くの点で類似していますが、大きな違いも存在します。ホストマシンとの通信はシリアル方式で行われ、配線が少なくて済みます。SPI、I2C、シリアルUARTモード（RS232に似ている）のいずれかを選択することができ、これにより接続が削減され、PCBボードのスペースが節約され（小型化）、コストが削減されます。
 
+* `MFRC522 データシート <https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf>`_
 
-* `MFRC522 Data sheet <https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf>`_
+**例**
 
-
-**Example**
-
-* :ref:`py_rfid` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`ar_rfid` (For Arduino User)
+* :ref:`py_rfid` （MicroPythonユーザー向け）
+* :ref:`py_music_player` （MicroPythonユーザー向け）
+* :ref:`ar_rfid` （Arduinoユーザー向け）

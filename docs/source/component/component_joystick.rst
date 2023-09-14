@@ -1,28 +1,25 @@
 .. _cpn_joystick:
 
-Joystick Module
-=======================
+ジョイスティックモジュール
+===========================
 
 |img_joystick_pic|
 
-The basic idea of a joystick is to translate the movement of a stick into electronic information that a computer can process.
+ジョイスティックの基本的なアイデアは、スティックの動きをコンピュータが処理できる電子情報に変換することです。
 
-In order to communicate a full range of motion to the computer, 
-a joystick needs to measure the stick's position on two axes – the X-axis (left to right) and the Y-axis (up and down). 
-Just as in basic geometry, the X-Y coordinates pinpoint the stick's position exactly.
+コンピュータに全範囲の動きを伝えるために、ジョイスティックはスティックの位置を二つの軸で測定する必要があります。それはX軸（左から右へ）とY軸（上から下へ）です。基本的な幾何学と同様に、X-Y座標はスティックの位置を正確に特定します。
 
-To determine the location of the stick, the joystick control system simply monitors the position of each shaft. 
-The conventional analog joystick design does this with two potentiometers, or variable resistors.
+スティックの位置を特定するために、ジョイスティック制御システムは各軸の位置を単純に監視します。
+従来のアナログジョイスティック設計は、これを二つの可変抵抗器、すなわちポテンショメータで行います。
 
-The joystick also has a digital input that is actuated when the joystick is pressed down.
+ジョイスティックには、ジョイスティックが押されたときに作動するデジタル入力もあります。
 
 |img_joystick|
 
-
 *  `Joystick - Wikipedia <https://en.wikipedia.org/wiki/Analog_stick>`_
 
+**例**
 
-**Example**
+* :ref:`py_joystick` （MicroPythonユーザー向け）
+* :ref:`ar_joystick` （Arduinoユーザー向け）
 
-* :ref:`py_joystick` (For MicroPython User)
-* :ref:`ar_joystick` (For Arduino User)

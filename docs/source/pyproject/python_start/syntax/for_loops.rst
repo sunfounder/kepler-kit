@@ -1,23 +1,22 @@
 .. _syntax_forloop:
 
-For Loops
+For ループ
 ============
 
-The ``for`` loop can traverse any sequence of items, such as a list or a string.
+``for`` ループは、リストや文字列など、任意の項目のシーケンスを走査することができます。
 
-The syntax format of for loop is as follows:
+for ループの文法形式は以下の通りです：
 
 .. code-block:: python
 
     for val in sequence:
         Body of for
 
+ここで、 ``val`` は各イテレーションでシーケンス内の項目の値を取得する変数です。
 
-Here, ``val`` is a variable that gets the value of the item in the sequence in each iteration.
+ループは、シーケンス内の最後の項目に到達するまで続きます。 ``for`` ループの本体と残りのコードを区別するためにインデントを使用します。
 
-The loop continues until we reach the last item in the sequence. Use indentation to separate the body of the ``for`` loop from the rest of the code.
-
-**Flowchart of for Loop**
+**for ループのフローチャート**
 
 .. image:: img/for_loop.png
 
@@ -30,17 +29,17 @@ The loop continues until we reach the last item in the sequence. Use indentation
     sum = 0
 
     for val in numbers:
-        sum = sum+val
-        
+        sum = sum + val
+
     print("The sum is", sum)
 
 >>> %Run -c $EDITOR_CONTENT
 The sum is 10
 
-The break Statement
+break 文
 -------------------------
 
-With the break statement we can stop the loop before it has looped through all the items:
+break 文を使用すると、すべての項目をループ処理する前にループを停止することができます。
 
 
 
@@ -50,7 +49,7 @@ With the break statement we can stop the loop before it has looped through all t
     sum = 0
 
     for val in numbers:
-        sum = sum+val
+        sum = sum + val
         if sum == 6:
             break
     print("The sum is", sum)
@@ -58,10 +57,10 @@ With the break statement we can stop the loop before it has looped through all t
 >>> %Run -c $EDITOR_CONTENT
 The sum is 6
 
-The continue Statement
+continue 文
 --------------------------------------------
 
-With the ``continue`` statement we can stop the current iteration of the loop, and continue with the next:
+``continue`` 文を使用すると、ループの現在のイテレーションを停止し、次のイテレーションで続行することができます。
 
 
 
@@ -79,18 +78,19 @@ With the ``continue`` statement we can stop the current iteration of the loop, a
 2
 4
 
-The range() function
+
+range() 関数
 --------------------------------------------
 
-We can use the range() function to generate a sequence of numbers. range(6) will produce numbers between 0 and 5 (6 numbers).
+range() 関数を使用して数値のシーケンスを生成することができます。range(6)は、0から5まで（6つの数値）を生成します。
 
-We can also define start, stop and step size as range(start, stop, step_size). If not provided, step_size defaults to 1.
+また、開始値、終了値、ステップサイズをrange(start, stop, step_size)として定義することもできます。step_sizeが指定されていない場合、デフォルトは1になります。
 
-In a sense of range, the object is "lazy" because when we create the object, it does not generate every number it "contains". However, this is not an iterator because it supports in, len and ``__getitem__`` operations.
+rangeオブジェクトは「遅延評価される」（lazy）と言えます。オブジェクトを生成した時点で、その中に「含まれる」すべての数値は生成されていません。ただし、これはイテレータではありません。なぜなら、in、len、そして ``__getitem__`` 操作がサポートされているからです。
 
-This function will not store all values ​​in memory; it will be inefficient. So it will remember the start, stop, step size and generate the next number during the journey.
+この関数はすべての値をメモリに保持していません。そうすると非効率的になります。したがって、開始値、終了値、ステップサイズを覚えておき、進行中に次の数値を生成します。
 
-To force this function to output all items, we can use the function list().
+この関数がすべての項目を出力するように強制するには、list()関数を使用することができます。
 
 
 
@@ -111,7 +111,7 @@ range(0, 6)
 [2, 4, 6, 8]
 
 
-We can use ``range()`` in a ``for`` loop to iterate over a sequence of numbers. It can be combined with the len() function to use the index to traverse the sequence.
+``for`` ループの中で ``range()`` を使用して数値のシーケンスを反復処理することができます。これはlen()関数と組み合わせて、インデックスを使用してシーケンスを走査することもできます。
 
 
 
@@ -127,14 +127,14 @@ I like pear
 I like apple
 I like grape
 
-Else in For Loop
+For ループにおけるElse
 --------------------------------
 
-The ``for`` loop can also have an optional ``else`` block. If the items in the sequence used for the loop are exhausted, the ``else`` part is executed.
+``for`` ループには、オプションで ``else`` ブロックも追加することができます。ループで使用されるシーケンスの項目がすべて使い切られた場合、 ``else`` 部分が実行されます。
 
-The ``break`` keyword can be used to stop the ``for`` loop. In this case, the ``else`` part will be ignored.
+``break`` キーワードを使用して ``for`` ループを停止することができます。この場合、 ``else`` 部分は無視されます。
 
-Therefore, if no interruption occurs, the ``else`` part of the ``for`` loop will run.
+したがって、何らかの中断が発生しない場合、 ``for`` ループの ``else`` 部分が実行されます。
 
 
 
@@ -153,12 +153,11 @@ Therefore, if no interruption occurs, the ``else`` part of the ``for`` loop will
 4
 Finished
 
-The else block will NOT be executed if the loop is stopped by a break statement.
+break文によってループが停止された場合、elseブロックは実行されません。
 
 
 
 .. code-block:: python
-
 
     for val in range(5):
         if val == 2: break

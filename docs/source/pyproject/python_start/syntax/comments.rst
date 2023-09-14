@@ -1,60 +1,59 @@
-Comments
+コメント
 =============
 
-The comments in the code help us understand the code, make the entire code more readable and comment out part of the code during testing, so that this part of the code does not run.
+コード内のコメントは、コードの理解を助け、全体のコードをより読みやすくするため、また、テスト中にコードの一部をコメントアウトして、その部分のコードが実行されないようにするためにあります。
 
-Single-line Comment
+単一行コメント
 ----------------------------
 
-Single-line comments in MicroPython begin with #, and the following text is considered a comment until the end of the line. Comments can be placed before or after the code.
+MicroPythonにおける単一行のコメントは#で始まり、その後のテキストは行の末までコメントとみなされます。コメントはコードの前または後に配置することができます。
 
 .. code-block:: python
 
-    print("hello world") #This is a annotationhello world
+    print("hello world")  #これは注釈です
+
+>>> %Run -c $EDITOR_CONTENT
+    hello world
+
+コメントは、コードを説明するために使用されるテキストでなくても構いません。コードの一部をコメントアウトして、micropythonがそのコードを実行しないようにすることもできます。
+
+.. code-block:: python
+
+    #print("これは実行されません！")
+    print("hello world") #これは注釈です
 
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-Comments are not necessarily text used to explain the code. You can also comment out part of the code to prevent micropython from running the code.
-
-
-.. code-block:: python
-
-    #print("Can't run it！")
-    print("hello world") #This is a annotationhello world
-
->>> %Run -c $EDITOR_CONTENT
-hello world
-
-Multi-line comment
+複数行コメント
 ------------------------------
 
-If you want to comment on multiple lines, you can use multiple # signs.
+複数行にわたるコメントを書きたい場合は、複数の#記号を使用できます。
 
 .. code-block:: python
 
-    #This is a comment
-    #written in
-    #more than just one line
+    #これはコメントです
+    #複数行に
+    #渡って書かれています
     print("Hello, World!")
 
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-Or, you can use multi-line strings instead of expected.
+または、予想される代わりに複数行の文字列を使用することもできます。
 
-Since MicroPython ignores string literals that are not assigned to variables, you can add multiple lines of strings (triple quotes) to the code and put comments in them:
+MicroPythonは、変数に割り当てられていない文字列リテラルを無視するため、コードに複数行の文字列（トリプルクォート）を追加し、それらにコメントを入れることができます。
 
 .. code-block:: python
 
     """
-    This is a comment
-    written in
-    more than just one line
+    これはコメントです
+    複数行に
+    渡って書かれています
     """
     print("Hello, World!")
 
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-As long as the string is not assigned to a variable, MicroPython will ignore it after reading the code and treat it as if you made a multi-line comment.
+文字列が変数に割り当てられていない限り、MicroPythonはコードを読み取った後にそれを無視し、複数行のコメントを作成したかのように扱います。

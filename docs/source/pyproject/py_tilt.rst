@@ -1,49 +1,46 @@
 .. _py_tilt:
 
-
-2.6 Tilt It！
+2.6 傾けてみよう！
 ==========================
 
 |img_tilt|
 
-The tilt switch is a 2-pin device with a metal ball in the middle. When the switch is upright, the two pins are connected; when it is tilted, the two pins are disconnected.
+この傾きスイッチは、中央に金属の玉がある2ピンのデバイスです。スイッチが垂直の場合、2つのピンが接続されています。それが傾いた場合、2つのピンが切断されます。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトでは、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+便宜上、全体のキットを購入することもできます。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - コンポーネント
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -52,7 +49,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -63,31 +60,31 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_tilt|
 
-When you put it upright, GP14 will get high; after tilting it, GP14 will get low.
+垂直に置いた場合、GP14はハイレベルになります。傾けた後、GP14はローレベルになります。
 
-The purpose of the 10K resistor is to keep the GP14 in a stable low state when the tilt switch is in a tilted state.
+10KΩの抵抗器の目的は、傾きスイッチが傾いた状態のときにGP14を安定したローレベル状態に保つことです。
 
 * :ref:`cpn_tilt`
 
-**Wiring**
+**配線**
 
 |wiring_tilt|
 
 
 
-**Code**
+**コード**
 
 .. note::
 
-    * Open the ``2.6_tilt_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスにある ``2.6_tilt_switch.py`` ファイルを開くか、このコードをThonnyにコピーしてから、"Run Current Script"をクリックするかF5を押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の"MicroPython（Raspberry Pi Pico）"インタープリターをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * 詳細なチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
 .. code-block:: python
 
@@ -99,4 +96,4 @@ The purpose of the 10K resistor is to keep the GP14 in a stable low state when t
             print("The switch works!")
             utime.sleep(1)
 
-After the program runs, when you tilt the breadboard (tilt switch), "The switch works!" will appear in the shell.
+プログラムが実行された後、ブレッドボード（傾きスイッチ）を傾けると、シェルに「The switch works!」と表示されます。

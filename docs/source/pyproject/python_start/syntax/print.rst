@@ -1,39 +1,33 @@
 Print()
 =====================
 
-The ``print()`` function prints the specified message to the screen, or other standard output device.
-The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+``print()`` 関数は指定されたメッセージを画面や他の標準出力デバイスに表示します。
+メッセージは文字列でも、その他のオブジェクトでも構いません。オブジェクトは、画面に書き出される前に文字列に変換されます。
 
-Print multiple objects:
-
-
+複数のオブジェクトを出力する：
 
 .. code-block:: python
 
-    print("Welcome!", "Enjoy yourself!")
+    print("ようこそ！", "楽しんでください！")
 
 >>> %Run -c $EDITOR_CONTENT
-Welcome! Enjoy yourself!
+ようこそ！楽しんでください！
 
-Print tuples:
-
-
+タプルを出力する：
 
 .. code-block:: python
 
-    x = ("pear", "apple", "grape")
+    x = ("梨", "リンゴ", "ぶどう")
     print(x)
 
 >>> %Run -c $EDITOR_CONTENT
-('pear', 'apple', 'grape')
+('梨', 'リンゴ', 'ぶどう')
 
-Print two messages and specify the separator:
-
-
+二つのメッセージを出力し、セパレーターを指定する：
 
 .. code-block:: python
 
-    print("Hello", "how are you?", sep="---")
+    print("こんにちは", "お元気ですか?", sep="---")
 
 >>> %Run -c $EDITOR_CONTENT
-Hello---how are you?
+こんにちは---お元気ですか?

@@ -1,50 +1,48 @@
 .. _py_fruit_piano:
 
-7.9 Fruit Piano
+7.9 フルーツピアノ
 ============================
 
-
-Electrical conductivity is found in many metal objects, as well as in the human body and fruits.
-This property can be used to create a fun little project: a fruit piano.
-In other words, we turn fruits into keyboards that can play music just by touching them.
+電気伝導性は多くの金属物体や人体、さらには果物にも存在します。
+この性質を使って、ちょっとした楽しいプロジェクト、すなわちフルーツピアノを作成することができます。
+言い換えれば、私たちは触れるだけで音楽を演奏できるキーボードに果物を変えます。
 
 |fruit_piano|
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式をまとめて買う方が便利です、こちらがそのリンクです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
     *   - Kepler Kit	
-        - 450+
+        - 450+	
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入できます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - 品番
+        - コンポーネント	
+        - 数量
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Micro USBケーブル
         - 1
         - 
     *   - 3
@@ -53,7 +51,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -64,7 +62,7 @@ You can also buy them separately from the links below.
         - 4(1-1KΩ, 1-330Ω, 2-220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - パッシブ :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -76,36 +74,31 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_fruit_piano| 
 
-To turn the fruit into a piano key, you still need to connect the electrodes on the MPR121 to the fruit (e.g. into the banana handle).
+フルーツをピアノのキーに変えるには、MPR121上の電極をフルーツ（例：バナナのハンドル）に接続する必要があります。
 
-In the beginning, MPR121 will initialize and each electrode will get a value based on the current charge; when a conductor (such as a human body) touches an electrode, the charge will shift and rebalance.
-As a result, the electrode's value is different from its initial value, telling the main control board that it has been touched.
-During this process, ensure that the wiring of each electrode is stable so that its charge is balanced when initializing.
+最初に、MPR121は初期化され、各電極は現在の電荷に基づいて値を取得します。導体（人体など）が電極に触れると、電荷が移動して再調整されます。
+その結果、電極の値は初期値とは異なり、メインコントロールボードに触れられたことを知らせます。
+このプロセス中に、各電極の配線が安定していることを確認し、初期化時にその電荷がバランスするようにしてください。
 
-
-**Wiring**
-
+**配線図**
 
 |wiring_fruit_piano| 
 
-
-**Code**
-
+**コード**
 
 .. note::
 
-    * Open the ``7.9_fruit_piano.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * ``kepler-kit-main/micropython`` のパスの下で ``7.9_fruit_piano.py`` ファイルを開くか、Thonnyにこのコードをコピーして、「Run Current Script」をクリックするか、F5キーを押して実行してください。
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * 右下隅の「MicroPython（Raspberry Pi Pico）」インタプリタをクリックするのを忘れないでください。
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * 詳しいチュートリアルは、 :ref:`open_run_code_py` を参照してください。
 
+    * ここでは、 ``mpr121.py`` というライブラリを使用する必要があります。Pico Wにアップロードされたかどうか確認してください。詳細なチュートリアルは、 :ref:`add_libraries_py` を参照してください。
 
 .. code-block:: python
 
@@ -118,8 +111,7 @@ During this process, ensure that the wiring of each electrode is stable so that 
     i2c = I2C(1, sda=Pin(6), scl=Pin(7))
     mpr = MPR121(i2c)
 
-
-    # buzzer
+    # ブザー
     NOTE_A3 = 220
     NOTE_B3 = 247
     NOTE_C4 = 262
@@ -134,17 +126,16 @@ During this process, ensure that the wiring of each electrode is stable so that 
     NOTE_E5 = 659
 
     buzzer = machine.PWM(machine.Pin(15))
-    note = [NOTE_A3,NOTE_B3,NOTE_C4,NOTE_D4,NOTE_E4,NOTE_F4,NOTE_G4,NOTE_A4,NOTE_B4,NOTE_C5,NOTE_D5,NOTE_E5]
+    note = [NOTE_A3, NOTE_B3, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_D5, NOTE_E5]
 
-    def tone(pin,frequency):
+    def tone(pin, frequency):
         pin.freq(frequency)
         pin.duty_u16(30000)
 
     def noTone(pin):
         pin.duty_u16(0)
 
-
-    # rgb led
+    # RGB LED
     red = machine.PWM(machine.Pin(13))
     green = machine.PWM(machine.Pin(12))
     blue = machine.PWM(machine.Pin(11))
@@ -155,35 +146,33 @@ During this process, ensure that the wiring of each electrode is stable so that 
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-
     def lightup():
         red.duty_u16(int(urandom.uniform(0, 65535)))
         green.duty_u16(int(urandom.uniform(0, 65535)))
         blue.duty_u16(int(urandom.uniform(0, 65535)))
 
-
     def dark():
         red.duty_u16(0)
         green.duty_u16(0)
-        blue.duty_u16(0)    
+        blue.duty_u16(0)
 
-    # main project
-    lastState=mpr.get_all_states()
-    touchMills=time.ticks_ms()
-    beat=500
+    # メインプロジェクト
+    lastState = mpr.get_all_states()
+    touchMills = time.ticks_ms()
+    beat = 500
 
     while True:
-        currentState=mpr.get_all_states()
+        currentState = mpr.get_all_states()
         if currentState != lastState:
             for i in range(12):
                 if i in list(currentState) and not i in list(lastState):
-                    tone(buzzer,note[i])
+                    tone(buzzer, note[i])
                     lightup()
-                    touchMills=time.ticks_ms()
-        if time.ticks_diff(time.ticks_ms(),touchMills)>=beat or len(currentState) == 0:
+                    touchMills = time.ticks_ms()
+        if time.ticks_diff(time.ticks_ms(), touchMills) >= beat or len(currentState) == 0:
             noTone(buzzer)
             dark()
         lastState = currentState
 
-Please do not touch the fruit before the program runs to avoid getting a non-correct reference during initialization.
-After the program runs, touch the fruit gently, the buzzer will sound the corresponding tone and the RGB light will flash once randomly.
+プログラムが動作する前に果物に触れないでください。初期化中に正確でない参照値を取得する可能性があります。
+プログラムが動作した後、果物に優しく触れると、ブザーが対応する音を鳴らし、RGBライトがランダムに一回点滅します。

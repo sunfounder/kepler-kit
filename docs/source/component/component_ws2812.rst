@@ -1,58 +1,54 @@
 .. _cpn_ws2812:
 
-WS2812 RGB 8 LEDs Strip
+WS2812 RGB 8 LEDストリップ
 ============================
 
 |img_ws2812|
 
-The WS2812 RGB 8 LEDs Strip is composed of 8 RGB LEDs. 
-Only one pin is required to control all the LEDs. Each RGB LED has a WS2812 chip, which can be controlled independently. 
-It can realize 256-level brightness display and complete true color display of 16,777,216 colors. 
-At the same time, the pixel contains an intelligent digital interface data latch signal shaping amplifier drive circuit, 
-and a signal shaping circuit is built in to effectively ensure the color height of the pixel point light Consistent.
+WS2812 RGB 8 LEDストリップは、8個のRGB LEDで構成されています。
+全てのLEDを制御するために必要なのは一つのピンだけです。各RGB LEDには独立して制御できるWS2812チップが搭載されています。
+256階調の明るさ表示と、16,777,216色の完全なトゥルーカラー表示が可能です。
+さらに、ピクセルには、インテリジェントなデジタルインターフェースデータラッチ信号成形アンプ駆動回路が組み込まれており、ピクセルポイントの色高さが一貫していることを効果的に確保するための信号成形回路が内蔵されています。
 
-It is flexible, can be docked, bent, and cut at will, and the back is equipped with adhesive tape, which can be fixed on the uneven surface at will, and can be installed in a narrow space.
+柔軟であり、自由にドッキング、曲げ、カットが可能です。裏面には粘着テープが装備されており、凹凸のある面にも自由に固定でき、狭いスペースにも取り付け可能です。
 
-**Features**
+**特長**
 
-* Work Voltage: DC5V
-* IC: One IC drives one RGB LED
-* Consumption: 0.3w each LED
-* Working Temperature: -15-50
-* Color: Full color RGB
-* RGB Type: 5050RGB(Built-in IC WS2812B)
-* Light Strip Thickness: 2mm
-* Each LED can be controlled individually
+* 動作電圧: DC5V
+* IC: 一つのICで一つのRGB LEDを駆動
+* 消費電力: 1つのLEDあたり0.3w
+* 動作温度: -15-50℃
+* 色: フルカラーRGB
+* RGBタイプ: 5050RGB（内蔵IC WS2812B）
+* ストリップの厚み: 2mm
+* 各LEDは個別に制御可能
 
-**WS2812B Introdction**
+**WS2812Bの紹介**
 
-* `WS2812B Datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
+* `WS2812B データシート <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
 
-WS2812B is a intelligent control LED light source that the control circuit and RGB chip are integrated in
-a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping ampli
-fication drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant curr
-e-nt control part, effectively ensuring the pixel point light color height consistent.
+WS2812Bは、制御回路とRGBチップが5050コンポーネントのパッケージ内に統合されたインテリジェント制御LED光源です。
+内部には、インテリジェントなデジタルポートデータラッチと信号再成形増幅駆動回路が含まれています。
+また、高精度な内部オシレータと12V電圧プログラム可能な定電流制御部分も内蔵しており、ピクセルポイントの光の色高さが一貫していることを効果的に確保します。
 
-The data transfer protocol use single NZR communication mode. After the pixel power-on reset, the DIN
-port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch,
-the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade
-pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. pixel adopt auto resha
--ping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend
-on the speed of signal transmission.
+データ転送プロトコルは、単一のNZR通信モードを使用します。
+ピクセルが電源オンリセット後、DINポートはコントローラからデータを受信し、最初のピクセルは初期の24ビットデータを収集して内部データラッチに送信します。
+その他のデータは、内部信号再成形増幅回路によって再成形され、DOポートを通じて次のカスケードピクセルに送信されます。
+各ピクセルの伝送後、信号は24ビット減少します。
+ピクセルは、オートリシェイピング伝送テクノロジーを採用しており、ピクセルのカスケード数は信号転送の速度にのみ依存しています。
 
-LED with low driving voltage, environmental protection and energy saving, high brightness, scattering angl
-e is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
-above becoming more simple circuit, small volume, convenient installation.
+低駆動電圧のLEDは、環境保護とエネルギー節約、高輝度、大きな散乱角、良好な一貫性、低電力、長寿命などの利点があります。
+制御チップがLED上に統合されているため、回路がよりシンプルになり、容積が小さく、取り付けが便利です。
 
 .. Example
 .. -------------------
 
-.. :ref:`RGB LED Strip`
+.. :ref:`RGB LED ストリップ`
 
 
-**Example**
+**例**
 
-* :ref:`py_neopixel` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`ar_neopixel` (For Arduino User)
-* :ref:`per_flowing_leds` (For Piper Make User)
+* :ref:`py_neopixel` （MicroPythonユーザー用）
+* :ref:`py_music_player` （MicroPythonユーザー用）
+* :ref:`ar_neopixel` （Arduinoユーザー用）
+* :ref:`per_flowing_leds` （Piper Makeユーザー用）

@@ -1,34 +1,34 @@
 .. _cpn_dht11:
 
-DHT11 Humiture Sensor
+DHT11 湿温度センサー
 =============================
 
-The digital temperature and humidity sensor DHT11 is a composite sensor that contains a calibrated digital signal output of temperature and humidity. 
-The technology of a dedicated digital modules collection and the temperature and humidity sensing technology are applied to ensure that the product has high reliability and excellent long-term stability.
+DHT11デジタル温湿度センサーは、温度と湿度のキャリブレートされたデジタル信号出力を持つ複合センサーです。
+専用のデジタルモジュールの収集技術と温湿度センシング技術が組み合わされており、製品は高い信頼性と長期的な安定性を保証しています。
 
-The sensor includes a resistive sense of wet component and an NTC temperature measurement device, and is connected with a high-performance 8-bit microcontroller. 
+このセンサーには、抵抗式の湿度感知コンポーネントとNTC温度測定装置が含まれており、高性能の8ビットマイクロコントローラーに接続されています。
 
-.. The schematic diagram of the Humiture Sensor Module is as shown following: |img_Hum-sch| 
+.. 湿温度センサーモジュールの回路図は次のとおりです：|img_Hum-sch| 
 
-Only three pins are available for use: VCC, GND, and DATA. 
-The communication process begins with the DATA line sending start signals to DHT11, and DHT11 receives the signals and returns an answer signal. 
-Then the host receives the answer signal and begins to receive 40-bit humiture data (8-bit humidity integer + 8-bit humidity decimal + 8-bit temperature integer + 8-bit temperature decimal + 8-bit checksum).
+使用できるピンは3つだけです：VCC、GND、およびDATA。
+通信プロセスは、DATAラインがDHT11にスタート信号を送り、DHT11がその信号を受け取って応答信号を返すところから始まります。
+その後、ホストが応答信号を受け取り、40ビットの湿温度データ（8ビット湿度整数 + 8ビット湿度小数 + 8ビット温度整数 + 8ビット温度小数 + 8ビットチェックサム）を受け取り始めます。
 
 |img_Dht11|
 
-**Features**
+**特長**
 
-    #. Humidity measurement range: 20 - 90%RH
-    #. Temperature measurement range: 0 - 60℃
-    #. Output digital signals indicating temperature and humidity
-    #. Working voltage:DC 5V; PCB size: 2.0 x 2.0 cm
-    #. Humidity measurement accuracy: ±5%RH
-    #. Temperature measurement accuracy: ±2℃
+    #. 湿度測定範囲：20 - 90%RH
+    #. 温度測定範囲：0 - 60℃
+    #. 温度と湿度を示すデジタル信号出力
+    #. 動作電圧：DC 5V; PCBサイズ：2.0 x 2.0 cm
+    #. 湿度測定精度：±5%RH
+    #. 温度測定精度：±2℃
 
+* `DHT11 データシート <http://wiki.sunfounder.cc/images/c/c7/DHT11_datasheet.pdf>`_
 
-* `DHT11 Datasheet <http://wiki.sunfounder.cc/images/c/c7/DHT11_datasheet.pdf>`_
+**例**
 
-**Example**
+* :ref:`py_dht11` （MicroPythonユーザー向け）
+* :ref:`ar_dht11` （Arduinoユーザー向け）
 
-* :ref:`py_dht11` (For MicroPython User)
-* :ref:`ar_dht11` (For Arduino User)

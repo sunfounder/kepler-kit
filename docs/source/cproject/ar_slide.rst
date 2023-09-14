@@ -1,48 +1,46 @@
 .. _ar_slide:
 
-2.7 - Toggle Left and Right
+2.7 - 左右トグルスイッチ
 ====================================
 
 |img_slide|
 
-The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
+スライドスイッチは3ピンのデバイスで、ピン2（中央）が共通ピンです。スイッチを左にトグルすると、左側の2ピンが接続され、右にトグルすると、右側の2ピンが接続されます。
 
-**Required Components**
+**必要なコンポーネント**
 
-In this project, we need the following components. 
+このプロジェクトには、以下のコンポーネントが必要です。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+全体のキットを購入するのが便利です。リンクはこちら：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - 購入リンク
+    *   - ケプラーキット	
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+以下のリンクから個別に購入することもできます。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - コンポーネント紹介	
+        - 数量
+        - 購入リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -51,53 +49,49 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1（10KΩ）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1（104）
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_slide_switch`
         - 1
         - 
 
-**Schematic**
+**回路図**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+スライドスイッチを右か左にトグルすると、GP14は異なるレベルになります。
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+10KΩの抵抗器の目的は、トグル中（極端な左または右にトグルしていない状態で）GP14を低く保つことです。
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+ここで使用される104セラミックコンデンサは、ジッタを排除するためです。
 
 * :ref:`cpn_slide_switch`
 * :ref:`cpn_capacitor`
 
-
-**Wiring**
+**配線**
 
 |wiring_slide|
 
-**Code**
+**コード**
 
 .. note::
 
-   * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
-   * Or copy this code into **Arduino IDE**.
+   * ファイル ``2.7_toggle_left_right.ino`` は、パス ``kepler-kit-main/arduino/2.7_toggle_left_right`` で開くことができます。
+   * または、このコードを **Arduino IDE** にコピーしてください。
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a20c0733-f234-4d4b-862d-db87f2c249e9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-When the program is running, the serial monitor will show "ON" or "OFF" when you toggle the switch to the left or right.
+プログラムが動作していると、シリアルモニターにはスイッチを左または右にトグルしたときに「ON」または「OFF」と表示されます。

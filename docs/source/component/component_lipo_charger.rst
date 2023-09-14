@@ -1,34 +1,31 @@
 .. _cpn_lipo_charger:
 
-Li-po Charger Module
+Li-po充電モジュール
 =================================================
-
 
 |lipo_module|
 
-This is a Li-po charger module designed for Raspberry Pi Pico/Pico H/Pico W. Just plug it and the Pico into the breadboard as shown below, and then connect the battery at the other end and you are ready to use.
+これは、Raspberry Pi Pico/Pico H/Pico W用に設計されたLi-po充電モジュールです。以下に示すように、ブレッドボードにこのモジュールとPicoを接続し、他端にバッテリーを接続すれば、使用する準備が整います。
 
-When you plug in the Pico W with a USB cable connected to a computer or socket, the indicator light on the Li-po Charger module lights up, representing the battery will be charged at the same time. When you unplug the USB cable, the Pico W will be powered by the battery, so you can keep your project running.
-
+Pico WにUSBケーブルを接続し、コンピューターまたはソケットに挿入すると、Li-po充電モジュールのインジケータライトが点灯し、バッテリーが同時に充電されます。USBケーブルを抜くと、Pico Wはバッテリーで駆動され、プロジェクトを継続できます。
 
 .. note::
-    For some computers with poor performance, sometimes if you plug in your Pico W to your computer with this charging module attached, it may cause the computer not to recognize your Pico W.
-
-    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico W power supply is insufficient to be recognized by the computer.
+    性能が低いコンピューターで、この充電モジュールを接続した状態でPico Wをコンピューターに接続すると、コンピューターがPico Wを認識しない場合があります。
     
-    In this case, you need to pull out the Li-Po charging module and then plug in the Pico W again.
+    その原因は、接続後にバッテリーを充電する際に、USBポートの電圧が下がり、Pico Wの電源が不足してコンピューターに認識されないためです。
+    
+    このような場合、Li-Po充電モジュールを抜いてから、再度Pico Wを接続する必要があります。
 
 |lipo_wire|
 
-**Features**
+**特長**
 
-* Input voltage: 5V
-* Output voltage: 3.3V
-* Size: 20mmx7mm
-* Interface model: PH2.0
-* There is a matching 1A battery holder as well as an 800mAh 18650 used together.
+* 入力電圧: 5V
+* 出力電圧: 3.3V
+* サイズ: 20mmx7mm
+* インターフェースモデル: PH2.0
+* 1Aバッテリーホルダーおよび800mAh 18650も一緒に使用できるものがあります。
 
-
-**Schematic**
+**回路図**
 
 |sch_lipo_charger|

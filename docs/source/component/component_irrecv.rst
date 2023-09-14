@@ -1,44 +1,44 @@
 .. _cpn_ir_receiver:
 
-Infrared Receiver
+赤外線レシーバー
 =================================
 
-IR Receiver
+IRレシーバー
 ----------------------------
 
 |img_irrecv|
 
-* S: Signal output
+* S: シグナル出力
 * +: VCC
 * -: GND
 
-An infrared-receiver is a component which receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission.
+赤外線レシーバーは、赤外線信号を受信し、TTLレベルと互換性のある信号を独立して出力できるコンポーネントです。サイズは通常のプラスチックパッケージのトランジスタと同じで、あらゆる種類の赤外線リモコンや赤外線伝送に適しています。
 
-Infrared, or IR, communication is a popular, low-cost, easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, so it is imperceptible to the human eye - ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+赤外線（IR）通信は、低コストで使いやすい無線通信技術として広く用いられています。赤外線は可視光線よりもわずかに波長が長いため、人間の目には見えません—無線通信に最適です。赤外線通信で一般的に用いられる変調方式は、38KHz変調です。
 
-* Adopted HX1838 IR Receiver Sensor, high sensitivity
-* Can be used for remote control
-* Power Supply: 3.3~5V
-* Interface: Digital
-* Modulate Frequency: 38Khz
+* HX1838 IRレシーバーセンサー採用、高感度
+* リモコンとして使用可能
+* 電源供給: 3.3~5V
+* インターフェース: デジタル
+* 変調周波数: 38Khz
 
 
-Remote Control
+リモートコントロール
 -------------------------
 
 |img_controller|
 
-This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid's room.
+これは、21の機能ボタンと最大8メートルの送信距離を持つミニ薄型赤外線無線リモコンです。子供部屋で幅広いデバイスを操作するのに適しています。
 
-* Size: 85x39x6mm
-* Remote control range: 8-10m
-* Battery: 3V button type lithium manganese battery
-* Infrared carrier frequency: 38KHz
-* Surface paste material: 0.125mm PET
-* Effective life: more than 20,000 times
+* サイズ: 85x39x6mm
+* リモコン範囲: 8-10m
+* 電池: 3Vボタン型リチウムマンガン電池
+* 赤外線キャリア周波数: 38KHz
+* 表面貼り付け材: 0.125mm PET
+* 有効寿命: 20,000回以上
 
+**例**
 
-**Example**
+* :ref:`py_irremote` （MicroPythonユーザー向け）
+* :ref:`ar_irremote` （Arduinoユーザー向け）
 
-* :ref:`py_irremote` (For MicroPython User)
-* :ref:`ar_irremote` (For Arduino User)

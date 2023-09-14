@@ -1,45 +1,44 @@
 .. _per_button:
 
-2.2 Button
+2.2 ボタン
 =================
 
-In this project, we will learn how to turn on or off the LED by using a button.
+このプロジェクトでは、ボタンを使用してLEDをオンまたはオフにする方法を学びます。
 
-**Required Components**
+**必要な部品**
 
-In this project, we need the following components. 
+このプロジェクトで必要な部品は以下の通りです。
 
-It's definitely convenient to buy a whole kit, here's the link: 
+一式を購入する方が確実に便利です、リンクはこちらです：
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
-        - 450+
+    *   - 名前	
+        - このキットに含まれるアイテム
+        - リンク
+    *   - ケプラーキット	
+        - 450以上
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+以下のリンクから個別にも購入可能です。
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - 部品	
+        - 個数
+        - リンク
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - マイクロUSBケーブル
         - 1
         - 
     *   - 3
@@ -48,11 +47,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - 数本
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 2(220Ω, 10KΩ)
+        - 2（220Ω, 10KΩ）
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -63,33 +62,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
 
-**Wiring**
-
+**配線**
 
 |button0|
 
+* ボタンのピンの一方は3.3Vに、もう一方はGP14に接続されています。ボタンが押されると、GP14は高レベルになります。
+* しかし、ボタンが押されていないとき、GP14はサスペンド状態にあり、高レベルでも低レベルでもありえます。ボタンが押されていないときに安定した低レベルを得るために、GP14は10Kプルダウン抵抗を介してGNDに再接続する必要があります。
 
-* One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. 
-* However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
-
-
-**Code**
+**コード**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.2_button.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * 下の画像を参考に、ドラッグ&ドロップでコードを書くことができます。
+    * ``kepler-kit-main\piper`` のパスから ``2.2_button.png`` をインポートします。詳細なチュートリアルは、 :ref:`import_code_piper` を参照してください。
 
 |2.2_button|
 
-After connecting Pico W, click the **Start** button and the code starts to run. When the button is pressed, the LED will be lit. When the button is released, the LED will go out.
+Pico Wに接続した後、 **スタート** ボタンをクリックするとコードが実行されます。ボタンが押されると、LEDが点灯します。ボタンを離すと、LEDが消灯します。
 
+**仕組み**
 
-**How it Works?**
+ボタンが押されると、ピン14は高レベルになります。したがって、読み取ったピン14が高レベルであれば、ピン15をオンにして（LEDを点灯）、それ以外の場合はピン15をオフにします（LEDを消灯）。
 
-When the button is pressed, pin14 is high. So if the read pin14 is high, turn the pin15 on (LED is lit); else, turn off the pin15 (LED is off).
-
-* [if () do () else ()]: This is a judgment block, depending on the condition after the [if] block to determine whether to run the blocks inside the [do] block, or the blocks inside the [else] block.
-* [is pin () HIGH]: This is used to read the level of a specific pin, if the level read is the same as the set HIGH/LOW, then execute the blocks inside [do] block, otherwise execute the blocks inside [else].
-
+* [if () do () else ()]: これは判断ブロックであり、[if]ブロックの後の条件に応じて、[do]ブロック内または[else]ブロック内のブロックを実行するかどうかを決定します。
+* [is pin () HIGH]: これは特定のピンのレベルを読むために使用されます。読み取ったレベルが設定したHIGH/LOWと同じ場合、[do]ブロック内のブロックを実行し、それ以外の場合は[else]ブロック内のブロックを実行します。

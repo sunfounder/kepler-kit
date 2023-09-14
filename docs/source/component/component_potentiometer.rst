@@ -1,48 +1,47 @@
 .. _cpn_potentiometer:
 
-Potentiometer
-===============
+ポテンショメーター
+===================
 
 |img_pot|
 
-Potentiometer is also a resistance component with 3 terminals and its resistance value can be adjusted according to some regular variation. 
+ポテンショメーターは、3つの端子を持つ可変抵抗器です。抵抗値は一定の規則に従って調整することができます。
 
-Potentiometers come in various shapes, sizes, and values, but they all have the following things in common:
+ポテンショメーターにはさまざまな形状、サイズ、値がありますが、以下の共通点があります。
 
-* They have three terminals (or connection points).
-* They have a knob, screw, or slider that can be moved to vary the resistance between the middle terminal and either one of the outer terminals.
-* The resistance between the middle terminal and either one of the outer terminals varies from 0 Ω to the maximum resistance of the pot as the knob, screw, or slider is moved.
+* 3つの端子（または接続点）があります。
+* 抵抗値を変えるために動かすことができるノブ、ねじ、またはスライダーがあります。
+* 中央の端子と外側のどちらか一方の端子との間の抵抗値は、ノブ、ねじ、またはスライダーが動かされると0 Ωからポテンショメーターの最大抵抗値まで変わります。
 
-Here is the circuit symbol of potentiometer. 
+以下はポテンショメーターの回路記号です。
 
 |img_pot_symbol|
 
+ポテンショメーターが回路内で果たす機能は以下の通りです：
 
-The functions of the potentiometer in the circuit are as follows: 
+#. 電圧分割器として機能
 
-#. Serving as a voltage divider
+    ポテンショメーターは連続的に調整可能な抵抗器です。ポテンショメーターの軸やスライドハンドルを調整すると、可動接点が抵抗素子上を滑ります。この時点で、ポテンショメーターに印加された電圧と、可動アームが回転した角度または移動した距離に応じて電圧が出力されます。
 
-    Potentiometer is a continuously adjustable resistor. When you adjust the shaft or sliding handle of the potentiometer, the movable contact will slide on the resistor.  At this point, a voltage can be output depending on the voltage applied onto the potentiometer and the angle the movable arm has rotated to or the travel it has made. 
+#. リオスタットとして機能
 
-#. Serving as a rheostat
+    ポテンショメーターをリオスタットとして使用する場合、中央のピンと他の2つのピンのうちの1つを回路に接続します。これにより、可動接点の移動範囲内で、抵抗値が滑らかかつ連続的に変化します。
 
-    When the potentiometer is used as a rheostat, connect the middle pin and one of the other 2 pins in the circuit. Thus you can get a smoothly and continuously changed resistance value within the travel of the moving contact. 
+#. 電流コントローラーとして機能
 
-#. Serving as a current controller
+    ポテンショメーターが電流コントローラーとして機能する場合、スライド接触端子は出力端子の1つとして接続されなければなりません。
 
-    When the potentiometer acts as a current controller, the sliding contact terminal must be connected as one of the output terminals.
+ポテンショメーターについてもっと知りたい場合は、参照してください： `ポテンショメーター - Wikipedia <https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%86%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%A1%E3%83%BC%E3%82%BF>`_
 
-If you want to know more about potentiometer, refer to: `Potentiometer - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
-
-.. Example
+.. 例
 .. -------------------
 
-.. * :ref:`Turn the Knob` (For MicroPython User)
-.. * :ref:`Table Lamp` (For C/C++(Arduino) User)
+.. * :ref:`ノブを回す` （MicroPythonユーザー向け）
+.. * :ref:`テーブルランプ` （C/C++（Arduino）ユーザー向け）
 
+**例**
 
-**Example**
+* :ref:`py_pot` （MicroPythonユーザー向け）
+* :ref:`ar_pot` （Arduinoユーザー向け）
+* :ref:`per_swing_servo` （Piper Makeユーザー向け）
 
-* :ref:`py_pot` (For MicroPython User)
-* :ref:`ar_pot` (For Arduino User)
-* :ref:`per_swing_servo` (For Piper Make User)

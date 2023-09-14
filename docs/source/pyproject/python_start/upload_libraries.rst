@@ -1,33 +1,30 @@
-
 .. _add_libraries_py:
 
-1.4 Upload the Libraries to Pico
+1.4 Picoにライブラリをアップロード
 ===================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico W first, and then we can run the code directly later.
+いくつかのプロジェクトでは、追加のライブラリが必要になることがあります。そこで、最初にこれらのライブラリをRaspberry Pi Pico Wにアップロードし、後でコードを直接実行できるように設定します。
 
-#. Download the relevant code from the link below.
-
+#. 下記のリンクから関連するコードをダウンロードします。
 
    * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+#. Thonny IDEを開き、マイクロUSBケーブルでPicoをコンピュータに接続します。そして、右下隅にある「MicroPython（Raspberry Pi Pico）.COMXX」インタプリターをクリックします。
 
     .. image:: img/sec_inter.png
 
-#. In the top navigation bar, click **View** -> **Files**.
+#. 上部ナビゲーションバーで、 **表示** -> **ファイル** を選択します。
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler-kit-main/libs`` folder.
+#. 以前ダウンロードした `コードパッケージ <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ が保存されているフォルダへとパスを切り替え、 ``kepler-kit-main/libs`` フォルダに進みます。
 
     .. image:: img/th_path.png
 
-#. Select all the files or folders in the ``libs/`` folder, right-click and click **Upload to**, it will take a while to upload.
+#. ``libs/`` フォルダ内の全てのファイルまたはフォルダーを選択し、右クリックして **アップロード先** を選択します。アップロードには少し時間がかかります。
 
     .. image:: img/th_upload.png
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
+#. これで、アップロードしたばかりのファイルがドライブ内の「Raspberry Pi Pico」で確認できるようになります。
 
     .. image:: img/th_done.png
