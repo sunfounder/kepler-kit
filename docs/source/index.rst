@@ -3,6 +3,17 @@ SunFounder Kepler Kit for Raspberry Pi Pico W
 
 SunFounder Kepler Kitをお選びいただき、ありがとうございます。
 
+.. note::
+    このドキュメントは以下の言語で利用可能です。
+
+        * |link_german_tutorials|
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+
+    ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。
+
+SunFounder Kepler Kitをお選びいただき、ありがとうございます。
+
 このキットはRaspberry Pi Pico Wを基盤にした学習キットです。
 
 Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシングルバンド2.4GHz無線インターフェース（802.11n）を追加し、Picoの形状を維持しながら基本的なGPIO機能に加え、ネットワークにも接続できるため、IoTプロジェクトにも活用できます。
