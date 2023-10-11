@@ -1,6 +1,17 @@
 SunFounder Kepler Kit für Raspberry Pi Pico W
 ===========================================================
 
+Danke, dass Sie sich für unser Kepler Kit entschieden haben.
+
+.. note::
+    Dieses Dokument ist in den folgenden Sprachen verfügbar.
+
+        * |link_german_tutorials|
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+    
+    Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
+
 Vielen Dank, dass Sie sich für das SunFounder Kepler Kit entschieden haben.
 
 Dies ist ein Lernkit, das auf dem Raspberry Pi Pico W basiert.
