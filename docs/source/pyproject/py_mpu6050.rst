@@ -100,6 +100,8 @@ Die Komponenten können auch einzeln über die folgenden Links bezogen werden:
 Nach dem Ausführen des Programms sehen Sie die Werte des 3-Achsen-Beschleunigungsmessers und des 3-Achsen-Gyroskops in der Ausgabe rotieren. Drehen Sie den MPU6050 beliebig, und Sie werden feststellen, dass sich die Werte entsprechend ändern.
 Um die Änderungen besser erkennen zu können, können Sie eine der Ausgabelinien auskommentieren und sich auf einen Datensatz konzentrieren.
 
+Die Einheit des Beschleunigungswerts ist „m/s²“ und die Einheit des Gyroskopwerts ist „°/s“.
+
 **Wie funktioniert es?**
 
 In der imu-Bibliothek haben wir die relevanten Funktionen in der Klasse ``MPU6050`` integriert.
