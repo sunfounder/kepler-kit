@@ -108,6 +108,8 @@ After running the program, you can see the 3-axis accelerometer values and 3-axi
 At this point you rotate the MPU6050 at random, and these values will appear to change accordingly.
 To make it easier to see the changes, you can comment out one of the print lines and concentrate on another set of data.
 
+The unit of acceleration value is m/s², and the unit of gyroscope value is °/s.
+
 **How it works?**
 
 In the imu library, we have integrated the relevant functions into the ``MPU6050`` class.
