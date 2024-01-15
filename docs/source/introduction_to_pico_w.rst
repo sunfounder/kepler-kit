@@ -76,7 +76,7 @@ Pico's Pins
         - 5-Volt-Stromversorgung
         - Eine 5-Volt-Stromquelle aus dem Micro-USB-Anschluss Ihres Pico, die zur Stromversorgung von Hardware dient, die mehr als 3,3 V benötigt.
 
-Alles, was Sie für den Einstieg mit Ihrem Raspberry Pi Pico W benötigen, finden Sie `hier <https://www.raspberrypi.org/documentation/pico/getting-started/>`_
+Alles, was Sie für den Einstieg mit Ihrem Raspberry Pi Pico W benötigen, finden Sie `hier <https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html>`_
 
 Oder klicken Sie auf die folgenden Links:
 
