@@ -77,7 +77,7 @@ Picoのピン配置
         - 5ボルト電源
         - PicoのマイクロUSBポートから取得した5Vの電源、3.3V以上の電力が必要なハードウェアに使用。
 
-Raspberry Pi Pico Wを始めるために必要なすべては、`こちら <https://www.raspberrypi.org/documentation/pico/getting-started/>`_ で見つかります。
+Raspberry Pi Pico Wを始めるために必要なすべては、`こちら <https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html>`_ で見つかります。
 
 また、以下のリンクも参考にしてください：
 
