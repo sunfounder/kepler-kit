@@ -29,9 +29,7 @@ It is flexible, can be docked, bent, and cut at will, and the back is equipped w
 * `WS2812B Datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
 
 WS2812B is a intelligent control LED light source that the control circuit and RGB chip are integrated in
-a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping ampli
-fication drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant curr
-e-nt control part, effectively ensuring the pixel point light color height consistent.
+a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant current control part, effectively ensuring the pixel point light color height consistent.
 
 The data transfer protocol use single NZR communication mode. After the pixel power-on reset, the DIN
 port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch,
@@ -40,8 +38,7 @@ pixel through the DO port. After transmission for each pixel, the signal to redu
 -ping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend
 on the speed of signal transmission.
 
-LED with low driving voltage, environmental protection and energy saving, high brightness, scattering angl
-e is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
+LED with low driving voltage, environmental protection and energy saving, high brightness, scattering angle is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
 above becoming more simple circuit, small volume, convenient installation.
 
 .. Example
