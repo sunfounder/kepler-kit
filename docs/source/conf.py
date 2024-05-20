@@ -602,6 +602,10 @@ rst_epilog += """
 
 rst_epilog += """
 
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/44O1jYI" target="_blank">ここ</a>
+
 .. |link_german_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/kepler-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
