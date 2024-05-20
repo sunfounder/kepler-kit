@@ -67,6 +67,7 @@ html_css_files = [
 ]
 
 
+    
 # new
 rst_epilog = """
 .. |img_take_color| image:: /img/edit_colors.png
@@ -601,6 +602,10 @@ rst_epilog += """
 # open link in a new window
 
 rst_epilog += """
+
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/44O1jYI" target="_blank">here</a>
 
 .. |link_german_tutorials| raw:: html
 
