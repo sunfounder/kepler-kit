@@ -31,7 +31,7 @@ Therefore, LCD1602 with an I2C bus is developed to solve the problem.
 
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+Here we will use the I2C1 interface to control the LCD1602 and display text.
 
 
 **Required Components**
