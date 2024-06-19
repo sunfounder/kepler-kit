@@ -69,7 +69,7 @@ This document is available in other languages as well. To switch the display lan
     iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
-    video_course
+    video_course/video_course
     faq
 
 
