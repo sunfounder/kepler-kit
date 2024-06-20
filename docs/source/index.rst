@@ -67,7 +67,7 @@ Dieses Dokument ist auch in anderen Sprachen verfügbar. Um die Anzeigesprache z
     iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
-    video_course
+    video_course/video_course
     faq
 
 
