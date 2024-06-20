@@ -66,7 +66,7 @@ Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシン
     iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
-    video_course
+    video_course/video_course
     faq
 
 著作権について
