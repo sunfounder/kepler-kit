@@ -708,11 +708,11 @@ rst_epilog += """
 
 .. |link_Kepler_Ultimate_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Kepler Kit</a>
+    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Kepler Ultimate Kit</a>
 
 .. |link_kepler_kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Kepler Kit</a>
+    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Kepler Ultimate Kit</a>
 
 .. |link_picow_buy| raw:: html
 
