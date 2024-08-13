@@ -12,10 +12,12 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder Kepler Ultimate Kit for Raspberry Pi Pico W
-===========================================================
+SunFounder |link_kepler_kit| for Raspberry Pi Pico W
+======================================================================
 
-Thanks for choosing our Kepler Kit.
+|link_Kepler_Ultimate_Kit|
+
+Thanks for choosing our |link_kepler_kit|.
 
 .. note::
     This document is available in the following languages.
