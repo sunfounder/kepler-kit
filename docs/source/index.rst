@@ -15,9 +15,9 @@
 SunFounder |link_kepler_kit| for Raspberry Pi Pico W
 ===========================================================
 
-* |link_kepler_Mlimate_kit|
+* |link_Kepler_Ultimate_Kit|
 
-SunFounder |link_kepler_kit|をお選びいただき、ありがとうございます。
+SunFounder |link_kepler_kit| をお選びいただき、ありがとうございます。
 
 .. note::
     このドキュメントは以下の言語で利用可能です。
