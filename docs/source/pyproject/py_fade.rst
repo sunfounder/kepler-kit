@@ -1,77 +1,75 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di Appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa ai giveaway e alle promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_fade:
 
-2.3 Fading LED
-========================
+2.3 Dissolvenza del LED
+===========================
 
 
-As of now, we have only used two output signals: high level and low level (also called ON and OFF), which is called digital output.
-However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-To achieve this goal, a slider that adjusts resistance was used in the past, but it is unreliable and inefficient.
-Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
+Finora, abbiamo utilizzato solo due segnali di uscita: livello alto e livello basso (anche chiamati ON e OFF), che sono definiti come uscita digitale.
+Tuttavia, nell'uso pratico, molti dispositivi non funzionano semplicemente con ON/OFF, ad esempio, per regolare la velocità di un motore o la luminosità di una lampada da tavolo.
+In passato, per raggiungere questo obiettivo, veniva utilizzato un potenziometro per regolare la resistenza, ma questo metodo è inaffidabile e inefficiente.
+Per risolvere questi problemi complessi, è stata sviluppata la modulazione a larghezza di impulso (PWM).
 
-A pulse is a digital output that contains a high level and a low level. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
+Un impulso è un'uscita digitale che contiene un livello alto e un livello basso. La larghezza dell'impulso può essere regolata cambiando la velocità di accensione e spegnimento.
 
-When we are in a short period of time (like 20ms, which is most people's visual retention period), 
-let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is on, the brighter it becomes.
-In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
-This is how PWM controls LED brightness (or motor speed).
+Quando, in un breve periodo di tempo (ad esempio 20ms, che è il periodo di persistenza visiva per la maggior parte delle persone), accendiamo e spegniamo un LED ripetutamente, non noteremo che è stato spento, ma la luminosità della luce sarà leggermente inferiore.
+Durante questo periodo, più tempo il LED rimane acceso, più diventa luminoso.
+In altre parole, durante il ciclo, quanto più ampio è l'impulso, tanto maggiore è la "potenza del segnale elettrico" emessa dal microcontrollore.
+Questo è il modo in cui la PWM controlla la luminosità del LED (o la velocità del motore).
 
 * `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
 
-There are some points to pay attention to when Pico W uses PWM. Let's take a look at this picture.
+Ci sono alcuni punti da tenere a mente quando si utilizza la PWM con Pico W. Diamo un'occhiata a questa immagine.
 
 |pin_pwm|
 
-Pico W supports PWM on each GPIO pin, but there are actually 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the right GPIO's PWM output is identical to the left.
+Pico W supporta PWM su ogni pin GPIO, ma in realtà ci sono 16 uscite PWM indipendenti (invece di 30), distribuite tra GP0 e GP15 sulla sinistra, e il PWM delle GPIO a destra è identico a quello di sinistra.
 
-It is important to avoid setting the same PWM channel for different purposes during programming. For example, GP0 and GP16 are both PWM_0A.
+È importante evitare di impostare lo stesso canale PWM per scopi diversi durante la programmazione. Ad esempio, GP0 e GP16 condividono entrambi il PWM_0A.
 
-Let's try to achieve the faded LED effect after understanding this knowledge.
+Proviamo a ottenere l'effetto di dissolvenza del LED dopo aver compreso queste informazioni.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -79,7 +77,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -88,7 +86,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -99,30 +97,25 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-**Schematic**
+**Schema**
 
 |sch_led|
 
-This project is the same circuit as the first project :ref:`py_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+Questo progetto utilizza lo stesso circuito del primo progetto :ref:`py_led`, ma il tipo di segnale è diverso. Nel primo progetto, il GP15 emetteva direttamente livelli digitali alti e bassi (0&1) per accendere o spegnere i LED, mentre in questo progetto il GP15 emette un segnale PWM per controllare la luminosità del LED.
 
-
-
-**Wiring**
+**Cablaggio**
 
 |wiring_led|
 
-
-**Code**
-
+**Codice**
 
 .. note::
 
-    * Open the ``2.3_fading_led.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``2.3_fading_led.py`` nel percorso ``kepler-kit-main/micropython`` oppure copia questo codice in Thonny, quindi clicca su "Run Current Script" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -137,12 +130,11 @@ This project is the same circuit as the first project :ref:`py_led`, but the sig
         utime.sleep_ms(10)
     led.duty_u16(0)
 
+Il LED diventerà progressivamente più luminoso durante l'esecuzione del codice.
 
-The LED will gradually become brighter as the code runs.
+**Come Funziona?**
 
-**How it works?**
-
-Here, we change the brightness of the LED by changing the duty cycle of the GP15's PWM output. Let's take a look at these lines.
+In questo esempio, cambiamo la luminosità del LED modificando il ciclo di lavoro dell'uscita PWM del GP15. Diamo un'occhiata a queste righe.
 
 .. code-block:: python
     :emphasize-lines: 4,5,8
@@ -158,8 +150,9 @@ Here, we change the brightness of the LED by changing the duty cycle of the GP15
         utime.sleep_ms(10)
     led.duty_u16(0)
 
-* ``led = machine.PWM(machine.Pin(15))`` sets the GP15 pin as PWM output.
+* ``led = machine.PWM(machine.Pin(15))`` imposta il pin GP15 come uscita PWM.
 
-* The line ``led.freq(1000)`` is used to set the PWM frequency, here it is set to 1000Hz, which means 1ms (1/1000) is a cycle.
+* La linea ``led.freq(1000)`` serve per impostare la frequenza PWM, qui è impostata a 1000Hz, il che significa che un ciclo dura 1ms (1/1000).
 
-* The ``led.duty_u16()`` line is used to set the duty cycle, which is a 16-bit interger(2^16=65536). A 0 indicates 0% duty cycle, which means each cycle has 0% time to output a high level, i.e., all pulses are turned off. The value 65535 indicates a duty cycle of 100%, which means the whole pulse is turned on, and the result is '1'. When it is 32768, it will turn on half a pulse, so the LED will be half as bright when fully on.
+* La linea ``led.duty_u16()`` è utilizzata per impostare il ciclo di lavoro, che è un intero a 16 bit (2^16=65536). Un valore di 0 indica un ciclo di lavoro del 0%, il che significa che ogni ciclo ha 0% di tempo per emettere un livello alto, cioè tutti gli impulsi sono spenti. Il valore 65535 indica un ciclo di lavoro del 100%, il che significa che l'intero impulso è acceso, e il risultato è '1'. Quando è 32768, accenderà metà impulso, quindi il LED sarà luminoso a metà rispetto al massimo.
+

@@ -1,52 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_74hc_7seg:
 
-5.2 - Number Display
-=======================
+5.2 - Visualizzazione Numeri
+==================================
 
-LED Segment Display can be seen everywhere in life.
-For example, on an air conditioner, it can be used to display temperature; on a traffic indicator, it can be used to display a timer.
+Il display a 7 segmenti LED è molto comune nella vita quotidiana.
+Ad esempio, in un condizionatore d'aria, può essere utilizzato per visualizzare la temperatura; in un indicatore stradale, può essere usato per mostrare un timer.
 
-The LED Segment Display is essentially a device packaged by 8 LEDs, of which 7 strip-shaped LEDs form an "8" shape, and there is a slightly smaller dotted LED as a decimal point. These LEDs are marked as a, b, c, d, e, f, g, and dp. They have their own anode pins and share cathodes. Their pin locations are shown in the figure below.
+Il display a 7 segmenti LED è essenzialmente un dispositivo composto da 8 LED, di cui 7 a forma di striscia formano la figura di un "8", e un LED puntiforme più piccolo funge da punto decimale. Questi LED sono etichettati come a, b, c, d, e, f, g, e dp. Ogni LED ha un proprio pin di anodo e condivide il catodo. La disposizione dei pin è mostrata nella figura sottostante.
 
 |img_7seg_cathode|
 
-This means that it needs to be controlled by 8 digital signals at the same time to fully work and the 74HC595 can do this.
+Questo significa che per funzionare completamente, il display deve essere controllato da 8 segnali digitali contemporaneamente, e il 74HC595 può gestire questa operazione.
 
 * :ref:`cpn_7_segment`
 
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, ci servono i seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un intero kit, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 
 .. list-table::
@@ -54,16 +54,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -72,7 +72,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Alcuni
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -87,16 +87,16 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_74hc_7seg|
 
-**Wiring**
+**Cablaggio**
 
 |wiring_74hc_7seg|
 
 
-.. list-table:: Wiring
+.. list-table:: Cablaggio
     :widths: 15 25
     :header-rows: 1
 
@@ -120,44 +120,42 @@ You can also buy them separately from the links below.
         - dp
 
 
-**Code**
+**Codice**
 
 .. note::
 
-   * You can open the file ``5.2_number_display.ino`` under the path of ``kepler-kit-main/arduino/5.2_number_display``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * Puoi aprire il file ``5.2_number_display.ino`` nel percorso ``kepler-kit-main/arduino/5.2_number_display``.
+   * Oppure copia questo codice nell'**Arduino IDE**.
+   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a237801f-40d7-4920-80fb-a349307b1e05/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
-When the program is running, you will be able to see the LED Segment Display display 0~9 in sequence.
+Quando il programma è in esecuzione, vedrai il display a 7 segmenti LED visualizzare i numeri da 0 a 9 in sequenza.
 
-**How it works?**
+**Come funziona?**
 
-``shiftOut()`` will make 74HC595 output 8 digital signals.
-It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number "00000001" will make Q0 output high level and Q1~Q7 output low level.
+``shiftOut()`` farà in modo che il 74HC595 emetta 8 segnali digitali.
+Il bit più basso del numero binario sarà emesso su Q0, mentre il bit più alto su Q7. In altre parole, scrivendo il numero binario "00000001", Q0 emetterà un livello alto e Q1~Q7 emetteranno un livello basso.
 
-Suppose that the 7-segment Display display the number "1", we need to write a high level for b, c, and write a low level for a, d, e, f, g, and dg.
-That is, the binary number "00000110" needs to be written. For readability, we will use hexadecimal notation as "0x06".
+Supponiamo che il display a 7 segmenti debba mostrare il numero "1", dobbiamo impostare un livello alto su b, c, e un livello basso su a, d, e, f, g e dp.
+Quindi, il numero binario "00000110" deve essere scritto. Per migliorare la leggibilità, utilizzeremo la notazione esadecimale "0x06".
 
 * `Hexadecimal <https://en.wikipedia.org/wiki/Hexadecimal>`_
 
 * `BinaryHex Converter <https://www.binaryhexconverter.com/binary-to-hex-converter>`_
 
-Similarly, we can also make the LED Segment Display display other numbers in the same way. The following table shows the codes corresponding to these numbers.
+Allo stesso modo, possiamo fare in modo che il display a 7 segmenti LED mostri altri numeri nello stesso modo. La tabella seguente mostra i codici corrispondenti a questi numeri.
 
-.. list-table:: Glyph Code
+.. list-table:: Codici Caratteri
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - Numeri	
+        - Codice Binario
+        - Codice Esadecimale
     *   - 0	
         - 00111111	
         - 0x3f
@@ -189,4 +187,4 @@ Similarly, we can also make the LED Segment Display display other numbers in the
         - 01101111	
         - 0x6f
 
-Write these codes into ``shiftOut()`` to make the LED Segment Display display the corresponding numbers.
+Scrivi questi codici in ``shiftOut()`` per far visualizzare i numeri corrispondenti sul display a 7 segmenti.

@@ -1,50 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi a Noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci dei nuovi prodotti e alle anticipazioni.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_lucky_cat:
 
-2.9 Lucky Cat
+2.9 Gatto Fortunato
 ==========================
 
-In this project, we use pir and servo to make a lucky cat. The PIR Module is used to detect the visitors and servo is used to imitate the beckoning motion of the lucky cat.
+In questo progetto, utilizziamo un modulo PIR e un servo per creare un gatto fortunato. Il modulo PIR viene utilizzato per rilevare i visitatori e il servo per imitare il movimento di richiamo del gatto fortunato.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -52,7 +52,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -61,7 +61,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -73,48 +73,39 @@ You can also buy them separately from the links below.
         - |link_pir_buy|
 
 
-**Wiring**
+**Cablaggio**
 
 |lucky_cat0|
 
+* Il filo arancione (segnale) del servo è collegato a GP15, il filo rosso (alimentazione) è collegato a VBUS e il filo marrone (terra) è collegato a GND.
+* Il pin centrale del modulo PIR è collegato a GP3.
 
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
-* The middle pin of the PIR module is connected to the GP3.
-
-**Code**
-
-
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.9_lucky_cat.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando.
+    * Importa ``2.9_lucky_cat.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 |lucky_cat|
 
+* Dopo aver collegato Pico W, fai clic sul pulsante **Start** e il codice inizierà a funzionare.
+* Quando il modulo PIR rileva l'arrivo di un cliente, il servo oscilla avanti e indietro cinque volte e poi si ferma.
 
-
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the PIR module detects a customer arrival, the servo oscillates back and forth five times and then stops.
-
-
-**How it Works?**
-
+**Come Funziona?**
 
 |lucky_cat1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+Imposta la velocità di rotazione del pin15 (servo) al 15%.
 
 |lucky_cat2|
 
-If GP14 is low, set the variable [prestate] to 0. When the variable [prestate] is 0 and GP14 is high (human detected), set the variable [prestate] to 1.
+Se GP14 è basso, imposta la variabile [prestate] a 0. Quando la variabile [prestate] è 0 e GP14 è alto (rilevamento di una persona), imposta la variabile [prestate] a 1.
 
-The purpose of this is to make the main code work only when the GP14 changes from low to high, and to respond only once if the PIR module keeps detecting people.
+Lo scopo di questo è fare in modo che il codice principale funzioni solo quando GP14 passa da basso ad alto, e risponda solo una volta se il modulo PIR continua a rilevare persone.
 
 |lucky_cat3|
 
-Make the servo cycle 5 times from 0 to 180 degrees rotation.
+Fai oscillare il servo 5 volte con una rotazione da 0 a 180 gradi.
 
-* [repeat () times do]: Loop through the code inside the do block a finite number of times.
-
-
+* [repeat () times do]: Cicla il codice all'interno del blocco do un numero finito di volte.

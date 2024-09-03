@@ -1,56 +1,55 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di Appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa ai giveaway e alle promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_fruit_piano:
 
-7.9 Fruit Piano
-============================
+7.9 Pianoforte con la Frutta
+================================
 
 
-Electrical conductivity is found in many metal objects, as well as in the human body and fruits.
-This property can be used to create a fun little project: a fruit piano.
-In other words, we turn fruits into keyboards that can play music just by touching them.
+La conduttività elettrica si trova in molti oggetti metallici, così come nel corpo umano e nella frutta.
+Questa proprietà può essere sfruttata per creare un progetto divertente: un pianoforte fatto con la frutta.
+In altre parole, trasformiamo la frutta in tastiere che possono suonare musica semplicemente toccandole.
 
 |fruit_piano|
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -58,7 +57,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -67,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -90,36 +89,35 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schema**
 
 |sch_fruit_piano| 
 
-To turn the fruit into a piano key, you still need to connect the electrodes on the MPR121 to the fruit (e.g. into the banana handle).
+Per trasformare la frutta in un tasto di pianoforte, è necessario collegare gli elettrodi dell'MPR121 alla frutta (ad esempio, inserendo l'elettrodo nel manico della banana).
 
-In the beginning, MPR121 will initialize and each electrode will get a value based on the current charge; when a conductor (such as a human body) touches an electrode, the charge will shift and rebalance.
-As a result, the electrode's value is different from its initial value, telling the main control board that it has been touched.
-During this process, ensure that the wiring of each electrode is stable so that its charge is balanced when initializing.
+All'inizio, l'MPR121 si inizializza e ogni elettrodo ottiene un valore basato sulla carica corrente; quando un conduttore (come il corpo umano) tocca un elettrodo, la carica si sposta e si riequilibra.
+Di conseguenza, il valore dell'elettrodo cambia rispetto al valore iniziale, segnalando alla scheda di controllo principale che è stato toccato.
+Durante questo processo, assicurati che il cablaggio di ciascun elettrodo sia stabile in modo che la carica sia bilanciata durante l'inizializzazione.
 
 
-**Wiring**
+**Cablaggio**
 
 
 |wiring_fruit_piano| 
 
 
-**Code**
+**Codice**
 
 
 .. note::
 
-    * Open the ``7.9_fruit_piano.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``7.9_fruit_piano.py`` nel percorso ``kepler-kit-main/micropython`` oppure copia questo codice in Thonny, quindi clicca su "Run Current Script" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`. 
     
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Qui devi usare la libreria chiamata ``mpr121.py``, verifica se è stata caricata su Pico W; per un tutorial dettagliato fai riferimento a :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -199,5 +197,5 @@ During this process, ensure that the wiring of each electrode is stable so that 
             dark()
         lastState = currentState
 
-Please do not touch the fruit before the program runs to avoid getting a non-correct reference during initialization.
-After the program runs, touch the fruit gently, the buzzer will sound the corresponding tone and the RGB light will flash once randomly.
+Non toccare la frutta prima che il programma sia in esecuzione per evitare di ottenere un riferimento non corretto durante l'inizializzazione.
+Dopo l'avvio del programma, tocca delicatamente la frutta, il buzzer emetterà il tono corrispondente e la luce RGB lampeggerà una volta in modo casuale.

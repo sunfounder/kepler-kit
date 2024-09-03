@@ -1,26 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 64 :  Object Oriented Programming Example in MicroPython with LEDs
-===================================================================================
+lesson 64 : Esempio di Programmazione Orientata agli Oggetti in MicroPython con LED
+==========================================================================================
 
-This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W, focusing on controlling LEDs:
+Questo tutorial tratta la programmazione orientata agli oggetti (OOP) con il Raspberry Pi Pico W, focalizzandosi sul controllo dei LED:
 
-* **Wiring Setup**:Connect a red LED to GPIO pin 15 and a green LED to GPIO pin 14, with 330-ohm resistors to the ground.
-* **Class and Methods**:1. Define an `LED` class to manage LED objects.2. Initialize the LED with the `__init__` method, setting up the pin.3. Implement a `blink` method to control the blinking of the LED.
-* **Code Implementation**:1. Import necessary libraries (`machine` and `time`).2. Create the `LED` class with the `__init__` and `blink` methods.3. Instantiate objects for the red and green LEDs.4. Use a loop to blink the LEDs according to specified parameters.
-* **Homework Assignment**:Create a class for a Servo motor, allowing easy control of its position. The class should include methods for initializing the Servo and setting its angle. Review lesson 36 for details on working with Servo motors in MicroPython.
+* **Configurazione dei Collegamenti**: Collega un LED rosso al pin GPIO 15 e un LED verde al pin GPIO 14, utilizzando resistenze da 330 ohm verso massa.
+* **Classi e Metodi**:
+   1. Definisci una classe `LED` per gestire gli oggetti LED.
+   2. Inizializza il LED con il metodo `__init__`, configurando il pin.
+   3. Implementa un metodo `blink` per controllare il lampeggio del LED.
+* **Implementazione del Codice**:
+   1. Importa le librerie necessarie (`machine` e `time`).
+   2. Crea la classe `LED` con i metodi `__init__` e `blink`.
+   3. Crea istanze per i LED rosso e verde.
+   4. Utilizza un ciclo per far lampeggiare i LED secondo i parametri specificati.
+* **Compito**: Crea una classe per un Servomotore, che permetta un facile controllo della sua posizione. La classe dovrebbe includere metodi per l'inizializzazione del Servomotore e per impostare il suo angolo. Consulta la lezione 36 per i dettagli sul lavoro con i Servomotori in MicroPython.
 
 
 **Video**
@@ -28,3 +35,4 @@ This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pic
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/3wyCL9QK_uY?si=G0GXEHqdo2jQ_F-5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

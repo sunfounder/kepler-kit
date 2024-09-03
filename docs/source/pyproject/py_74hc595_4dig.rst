@@ -1,65 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di Appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa ai giveaway e alle promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_74hc_4dig:
 
-5.3 Time Counter
+5.3 Contatore di Tempo
 ================================
 
+Il display a 7 segmenti a 4 cifre è composto da quattro display a 7 
+segmenti che lavorano insieme.
 
-4-digit 7-segment display consists of four 7-segment displays working
-together.
+Ogni display a 7 segmenti a 4 cifre funziona indipendentemente. Utilizza 
+il principio della persistenza della visione umana per mostrare rapidamente 
+i caratteri di ciascun segmento in un ciclo, formando stringhe continue.
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+Ad esempio, quando sul display appare "1234", viene visualizzato "1" sul 
+primo segmento, mentre "234" non è visibile. Dopo un certo periodo di tempo, 
+il secondo segmento mostra "2", mentre il 1°, il 3° e il 4° segmento non 
+visualizzano nulla, e così via. I quattro display digitali si alternano 
+rapidamente. Questo processo è molto breve (tipicamente 5 ms) e, grazie 
+all'effetto del post-lume ottico e al principio della persistenza della 
+visione, possiamo vedere i quattro caratteri contemporaneamente.
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+**Componenti Necessari**
 
-**Required Components**
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -67,7 +65,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -76,11 +74,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(220Ω)
+        - 4 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -91,27 +89,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schema**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`py_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+Qui il principio di cablaggio è fondamentalmente lo stesso di :ref:`py_74hc_led`, l'unica differenza è che Q0-Q7 sono collegati ai pin da a ~ g del display a 7 segmenti a 4 cifre.
 
-Then G10 ~ G13 will select which 7-segment display to work.
+Successivamente, G10 ~ G13 selezioneranno quale display a 7 segmenti attivare.
 
-**Wiring**
+**Cablaggio**
 
 |wiring_4dig|
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``5.3_time_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``5.3_time_counter.py`` nel percorso ``kepler-kit-main/micropython`` oppure copia questo codice in Thonny, quindi clicca su "Run Current Script" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -174,12 +172,12 @@ Then G10 ~ G13 will select which 7-segment display to work.
         pickDigit(3)
         hc595_shift(SEGCODE[count%10000//1000])     
 
-After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
+Dopo aver eseguito il programma, vedrai il display a 7 segmenti a 4 cifre trasformarsi in un contatore e il numero aumenterà di 1 ogni secondo.
 
-**How it works?**
+**Come Funziona?**
 
-Writing signals to each 7-segment display is done in the same way as :ref:`py_74hc_7seg`, using the ``hc595_shift()`` function.
-The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
+L'invio di segnali a ciascun display a 7 segmenti viene effettuato nello stesso modo descritto in :ref:`py_74hc_7seg`, utilizzando la funzione ``hc595_shift()``.
+Il punto centrale del display a 7 segmenti a 4 cifre è attivare selettivamente ciascun display a 7 segmenti. Il codice associato è il seguente.
 
 .. code-block:: python
 
@@ -208,16 +206,16 @@ The core point of the 4-digit 7-segment display is to selectively activate each 
         hc595_shift(SEGCODE[count%10000//1000])
         pickDigit(3)   
 
-Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the 4-digit 7-segment display individually.
-When the state of these pins is ``0``, the corresponding 7-segment display is active; when the state is ``1``, the opposite is true.
+Qui, quattro pin (GP10, GP11, GP12, GP13) vengono utilizzati per controllare ciascun segmento del display a 7 segmenti a 4 cifre individualmente.
+Quando lo stato di questi pin è ``0``, il display a 7 segmenti corrispondente è attivo; quando lo stato è ``1``, il contrario.
 
-Here the ``pickDigit(digit)`` function is used to unable all four digits and then enable a particular digit individually.
-After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
+La funzione ``pickDigit(digit)`` viene utilizzata per disabilitare tutti e quattro i segmenti e quindi abilitare un determinato segmento individualmente.
+Dopo di che, ``hc595_shift()`` viene utilizzato per scrivere il codice di 8 bit corrispondente per il display a 7 segmenti.
 
-The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
-However, we need to add a timing function to this example, and if we add a ``sleep(1)``, we will know that it has four digits.
-we will see through the illusion of 4-digit 7-segment display working at the same time, exposing the fact that only one 7-segment display is illuminated at a time.
-Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excellent way to do this.
+Il display a 7 segmenti a 4 cifre deve essere continuamente attivato a turno in modo che possiamo vedere i quattro segmenti visualizzare, il che significa che il programma principale non può facilmente aggiungere codice che influenzi il timing.
+Tuttavia, dobbiamo aggiungere una funzione di temporizzazione a questo esempio e, se aggiungiamo un ``sleep(1)``, ci renderemo conto che ha quattro cifre.
+Vedremo attraverso l'illusione del display a 7 segmenti a 4 cifre che funziona contemporaneamente, rivelando il fatto che solo un segmento del display è illuminato alla volta.
+Utilizzando la funzione ``time.ticks_ms()`` nella libreria ``time`` è un ottimo modo per farlo.
 
 .. code-block:: python
 
@@ -232,9 +230,9 @@ Then, using the ``time.ticks_ms()`` function in the ``time`` library is an excel
         count = timer1()
 
 
-The ``time.ticks_ms()`` function gets a (non-explicit) time, and we record the first time value we get as ``timerStart``.
-Subsequently, when the time is needed, the ``time.ticks_ms()`` function is called again, and the value is subtracted from ``timerStart`` to get how long the program has been running (in milliseconds).
+La funzione ``time.ticks_ms()`` ottiene un tempo (non esplicito), e registriamo il primo valore di tempo ottenuto come ``timerStart``.
+Successivamente, quando è necessario il tempo, la funzione ``time.ticks_ms()`` viene chiamata di nuovo e il valore viene sottratto da ``timerStart`` per ottenere quanto tempo il programma è stato in esecuzione (in millisecondi).
 
-Finally, convert and output this time value to the 4-digit 7-segment display and you're done.
+Infine, converti e visualizza questo valore temporale sul display a 7 segmenti a 4 cifre ed è fatto.
 
 * `Time - MicroPython Docs <https://docs.micropython.org/en/latest/library/time.html>`_

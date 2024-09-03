@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_l293d:
 
@@ -19,25 +19,25 @@ IC L293D
 
 |img_l293d0|
 
-L293D is a 4-channel motor driver integrated by chip with high voltage and high current. 
-It's designed to connect to standard DTL, TTL logic level, and drive inductive loads (such as relay coils, DC, Stepper Motors) and power switching transistors etc. 
-DC Motors are devices that turn DC electrical energy into mechanical energy. They are widely used in electrical drive for their superior speed regulation performance.
+L293D è un driver motore a 4 canali integrato con chip ad alta tensione e alta corrente. 
+È progettato per connettersi ai livelli logici standard DTL, TTL e pilotare carichi induttivi (come bobine di relè, motori DC, Stepper Motor) e transistor di commutazione di potenza, ecc. 
+I motori DC sono dispositivi che trasformano l'energia elettrica continua in energia meccanica. Sono ampiamente utilizzati nella trasmissione elettrica per la loro eccellente prestazione nella regolazione della velocità.
 
-See the figure of pins below. L293D has two pins (Vcc1 and Vcc2) for power supply. 
-Vcc2 is used to supply power for the motor, while Vcc1 to supply for the chip. Since a small-sized DC motor is used here, connect both pins to +5V.
+Guarda la figura dei pin qui sotto. L293D ha due pin (Vcc1 e Vcc2) per l'alimentazione. 
+Vcc2 viene utilizzato per alimentare il motore, mentre Vcc1 per alimentare il chip. Poiché qui viene utilizzato un motore DC di piccole dimensioni, collega entrambi i pin a +5V.
 
 |img_l293d1| 
 
-The following is the internal structure of L293D. 
-Pin EN is an enable pin and only works with high level; A stands for input and Y for output. 
-You can see the relationship among them at the right bottom. 
-When pin EN is High level, if A is High, Y outputs high level; if A is Low, Y outputs Low level. When pin EN is Low level, the L293D does not work.
+Di seguito è riportata la struttura interna di L293D. 
+Il pin EN è un pin di abilitazione e funziona solo con livello alto; A sta per ingresso e Y per uscita. 
+Puoi vedere la relazione tra loro in basso a destra. 
+Quando il pin EN è a livello alto, se A è alto, Y emette un livello alto; se A è basso, Y emette un livello basso. Quando il pin EN è a livello basso, L293D non funziona.
 
 |img_l293d2|
 
 * `L293D Datasheet <https://cdn-shop.adafruit.com/datasheets/l293d.pdf>`_
 
-**Example**
+**Esempio**
 
 * :ref:`py_motor` (For MicroPython User)
 * :ref:`ar_motor` (For Arduino User)

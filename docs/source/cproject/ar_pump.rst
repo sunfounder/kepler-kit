@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e giveaway.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_pump:
 
-3.6 - Pumping
+3.6 - Pompare
 =======================
 
 
-Small centrifugal pumps are suitable for projects with automatic plant watering.
-It can also be used to make tiny smart water features.
+Le piccole pompe centrifughe sono adatte per progetti di irrigazione automatica delle piante.
+Possono anche essere utilizzate per creare piccoli giochi d'acqua intelligenti.
 
-Its power component is an electric motor, driven in exactly the same way as a normal motor.
+Il componente di alimentazione è un motore elettrico, che viene azionato esattamente come un normale motore.
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
@@ -30,45 +30,45 @@ Its power component is an electric motor, driven in exactly the same way as a no
 
 .. note::
 
-    #. Connect the tube to the motor outlet, submerge the pump in water, and then power it on.
-    #. You need to make sure that the water level is always higher than the motor. Idling may damage the motor due to heat generation and will also generate noise.
-    #. If you are watering plants, you need to avoid soil being drawn in, as this can clog the pump.
-    #. If water does not come out of the tube, there may be residual water in the tube blocking the air flow and needs to be drained first.
+    #. Collega il tubo all'uscita del motore, immergi la pompa nell'acqua e poi accendila.
+    #. Assicurati che il livello dell'acqua sia sempre superiore al motore. Il funzionamento a vuoto potrebbe danneggiare il motore a causa del calore generato e potrebbe anche provocare rumore.
+    #. Se stai irrigando le piante, evita che il terreno venga aspirato, poiché potrebbe ostruire la pompa.
+    #. Se l'acqua non esce dal tubo, potrebbe esserci acqua residua nel tubo che blocca il flusso d'aria e deve essere drenata prima.
 
-**Required Components**
+**Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -77,7 +77,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -88,11 +88,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - Supporto batteria
         - 1
         -  
     *   - 9
@@ -100,46 +100,40 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**Schematic**
+**Schema elettrico**
 
 |sch_pump|
 
-
-**Wiring**
+**Cablaggio**
 
 .. note::
 
-    * Since pump require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * Poiché la pompa richiede un'alta corrente, utilizziamo un modulo caricatore Li-po per alimentare il motore qui per motivi di sicurezza.
+    * Assicurati che il tuo modulo caricatore Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
 |wiring_pump|
 
-**Code**
+**Codice**
 
 .. note::
 
-   * You can open the file ``3.6_pumping.ino`` under the path of ``kepler-kit-main/arduino/3.6_pumping``. 
-   * Or copy this code into **Arduino IDE**.
+   * Puoi aprire il file ``3.6_pumping.ino`` nel percorso ``kepler-kit-main/arduino/3.6_pumping``. 
+   * Oppure copia questo codice nell'**Arduino IDE**.
 
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
-
+   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/4194feb8-92d4-4ab4-b51c-286d014af0a6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe> 
 
 
-
-After the code is run, the pump starts working and you will see water flowing out of the tube at the same time.
+Dopo l'esecuzione del codice, la pompa inizia a funzionare e vedrai l'acqua scorrere fuori dal tubo allo stesso tempo.
 
 
 .. note::
 
-    * If you can not upload the code again, this time you need to connect the **RUN** pin on the Pico W with a wire to GND to reset it, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * Se non riesci a caricare di nuovo il codice, questa volta devi collegare il pin **RUN** del Pico W a GND con un filo per resettarlo, e poi scollega il filo per eseguire di nuovo il codice.
+    * Questo perché il motore sta operando con troppa corrente, il che potrebbe causare la disconnessione del Pico W dal computer.
 
     |wiring_run_reset|

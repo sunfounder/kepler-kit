@@ -1,50 +1,49 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-4. Real-time Weather From @OpenWeatherMap 
-===========================================
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 
-This project involves making a smart clock that prints the weather in your city along with the time on the LCD.
+4. Meteo in tempo reale da @OpenWeatherMap 
+===============================================
 
+Questo progetto prevede la creazione di un orologio intelligente che mostra il meteo della tua città insieme all'ora sul display LCD.
 
-**1. Required Components**
+**1. Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -52,7 +51,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -61,7 +60,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diverse
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
@@ -72,59 +71,55 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - Supporto batteria
         - 1
         -  
 
 
-**2. Build the Circuit**
+**2. Costruisci il circuito**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Assicurati che il modulo caricabatterie Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
 .. image:: img/wiring/4.owm_bb.png
 
 
-**3. Get OpenWeather API keys**
+**3. Ottieni le chiavi API di OpenWeather**
 
-|link_openweather| is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location.
+|link_openweather| è un servizio online, di proprietà di OpenWeather Ltd, che fornisce dati meteorologici globali tramite API, inclusi dati meteorologici attuali, previsioni, nowcast e dati meteorologici storici per qualsiasi località geografica.
 
-#. Visit |link_openweather| to log in/create an account.
+#. Visita |link_openweather| per accedere/creare un account.
 
     .. image:: img/OWM-1.png
 
-
-#. Click into the API page from the navigation bar.
+#. Accedi alla pagina delle API dalla barra di navigazione.
 
     .. image:: img/OWM-2.png
 
-
-#. Find **Current Weather Data** and click Subscribe.
+#. Trova **Dati Meteo Attuali** e clicca su Iscriviti.
 
     .. image:: img/OWM-3.png
 
-
-#. Under **Current weather and forecasts collection**, subscribe to the appropriate service. In our project, Free is good enough.
+#. Sotto **Collezione di dati meteo attuali e previsioni**, iscriviti al servizio appropriato. Nel nostro progetto, la versione gratuita è sufficiente.
 
    .. image:: img/OWM-4.png
 
-
-#. Copy the Key from the **API keys** page.
+#. Copia la chiave dalla pagina delle **Chiavi API**.
 
    .. image:: img/OWM-5.png
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico W.
+#. Copiala nello script ``secrets.py`` in Raspberry Pi Pico W.
 
     .. image:: img/4_openweather1.png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+        Se non hai gli script ``do_connect.py`` e ``secrets.py`` nel tuo Pico W, fai riferimento a :ref:`iot_access` per crearli.
 
     .. code-block:: python
         :emphasize-lines: 5
@@ -136,33 +131,31 @@ You can also buy them separately from the links below.
         'openweather_api_key':'OPENWEATHERMAP_API_KEY'
         }
 
-**4. Run the Script**
+**4. Esegui lo script**
 
-#. Open the ``4_weather.py`` file under the path of ``kepler-kit-main/iot``, click the **Run current script** button or press F5 to run it.
+#. Apri il file ``4_weather.py`` nel percorso ``kepler-kit-main/iot``, clicca sul pulsante **Esegui script corrente** o premi F5 per eseguirlo.
 
     .. image:: img/4_openweather2.png
 
-
-#. After the script runs, you will see the time and weather information of your location on the I2C LCD1602.
-
+#. Dopo l'esecuzione dello script, vedrai l'ora e le informazioni meteo della tua località sul display I2C LCD1602.
 
     .. note:: 
 
-        When the code is running, if the screen is blank, you can turn the potentiometer on the back of the module to increase the contrast.
+        Quando il codice è in esecuzione, se lo schermo è vuoto, puoi ruotare il potenziometro sul retro del modulo per aumentare il contrasto.
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Se desideri che questo script si avvii automaticamente, puoi salvarlo nel Raspberry Pi Pico W come ``main.py``.
 
 
-**How it works?**
+**Come funziona?**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Il Raspberry Pi Pico W deve essere connesso a Internet, come descritto in :ref:`iot_access`. Per questo progetto, utilizza questa funzione.
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-After connecting to the Internet, these few lines of code will help synchronize your Pico W to Greenwich Mean Time.
+Dopo la connessione a Internet, queste poche righe di codice aiuteranno a sincronizzare il tuo Pico W con l'orario medio di Greenwich.
 
 .. code-block:: python
 
@@ -176,7 +169,7 @@ After connecting to the Internet, these few lines of code will help synchronize 
          print('Time Setting...')
          continue   
 
-Initialize your LCD, please refer to :ref:`py_lcd` for its usage details.
+Inizializza il tuo LCD, fai riferimento a :ref:`py_lcd` per i dettagli sull'uso.
 
 .. code-block:: python
 
@@ -186,7 +179,7 @@ Initialize your LCD, please refer to :ref:`py_lcd` for its usage details.
    string = 'Loading...'
    lcd.message(string)
 
-We need to select the unit for some weather data (e.g. temperature, wind speed) before we get the weather data. In this case, the unit is ``metric``.
+Dobbiamo selezionare l'unità per alcuni dati meteorologici (ad esempio temperatura, velocità del vento) prima di ottenere i dati meteorologici. In questo caso, l'unità è ``metric``.
 
 .. code-block:: python
 
@@ -205,9 +198,9 @@ We need to select the unit for some weather data (e.g. temperature, wind speed) 
 
    units = "metric"
 
-Next, this function gets the weather data from ``openweathermap.org``.
-We will post a URL message to it with your city, API keys, and a set unit.
-As a result, you will receive a ``JSON`` file with weather data.
+Successivamente, questa funzione ottiene i dati meteorologici da ``openweathermap.org``.
+Invieremo un messaggio URL con la tua città, chiavi API e un'unità impostata.
+Come risultato, riceverai un file ``JSON`` con i dati meteorologici.
 
 .. code-block:: python
 
@@ -224,11 +217,11 @@ As a result, you will receive a ``JSON`` file with weather data.
       res = urequests.post(url)
       return res.json()
 
-If you print out this set of raw data, you will be able to see information similar to that shown below.
+Se stampi questo set di dati grezzi, potrai vedere informazioni simili a quelle mostrate di seguito.
 
 .. code-block:: python
 
-   weather data example:
+   esempio di dati meteo:
    {
        'timezone': 28800,
        'sys': {
@@ -274,19 +267,19 @@ If you print out this set of raw data, you will be able to see information simil
        }
    }
 
-We used the ``print_weather(weather_data)`` function to convert these raw data into easy-to-read data format and print them.
+Abbiamo usato la funzione ``print_weather(weather_data)`` per convertire questi dati grezzi in un formato di dati di facile lettura e stamparli.
 
-But this function is not called, and you can uncomment this line in ``while True`` as needed.
+Ma questa funzione non è chiamata, e puoi decommentare questa riga in ``while True`` secondo necessità.
 
 .. image:: img/4_openweather3.png
 
 .. code-block:: python
    :emphasize-lines: 2
 
-   # shell print
+   # stampa su shell
    print_weather(weather_data)
 
-In the ``while True`` loop, the ``get_weather()`` function is called first to retrieve the ``weather``, ``temperature`` and ``humidity`` information needed for this project.
+Nel ciclo ``while True``, la funzione ``get_weather()`` viene chiamata per recuperare le informazioni su ``meteo``, ``temperatura`` e ``umidità`` necessarie per questo progetto.
 
 .. code-block:: python
 
@@ -295,9 +288,9 @@ In the ``while True`` loop, the ``get_weather()`` function is called first to re
    t=weather_data["main"]["temp"]
    rh=weather_data["main"]["humidity"]
 
-Get the local time. The ``time.localtime()`` function is called here to return a set of tuples (year, month, mday, hour, minute, second, weekday, yearday). We have taken ``hour`` and ``minute`` out of it.
+Ottieni l'ora locale. Qui viene chiamata la funzione ``time.localtime()`` per restituire un set di tuple (anno, mese, giorno, ora, minuto, secondo, giorno della settimana, giorno dell'anno). Abbiamo estratto ``ora`` e ``minuti``.
 
-Note that we have already synchronized Pico W to Greenwich Mean Time, so we need to add the time zone of your location.
+Nota che abbiamo già sincronizzato il Pico W con l'orario medio di Greenwich, quindi dobbiamo aggiungere il fuso orario della tua località.
 
 .. code-block:: python
     
@@ -308,7 +301,7 @@ Note that we have already synchronized Pico W to Greenwich Mean Time, so we need
     hours=time.localtime()[3]+int(weather_data["timezone"] / 3600)
     mins=time.localtime()[4]
 
-Finally, the weather information and time are just displayed in the LCD1602.
+Infine, le informazioni meteo e l'ora vengono visualizzate nel LCD1602.
 
 .. code-block:: python
 
@@ -319,12 +312,9 @@ Finally, the weather information and time are just displayed in the LCD1602.
    string = f'{t}{TEMPERATURE_UNITS[units]} {rh}%rh'
    lcd.message(string)
 
-Your LCD1602 will become a clock that refreshes every 30 seconds when the main loop runs every 30 seconds.
-
-
+Il tuo LCD1602 diventerà un orologio che si aggiorna ogni 30 secondi quando il ciclo principale viene eseguito ogni 30 secondi.
 
 .. OPW的文档页面, 可以查找每种产品的所有技术信息。https://openweathermap.org/api
-
 
 .. 查看获取到的key https://home.openweathermap.org/api_keys
 .. 当前天气的资料页 https://openweathermap.org/current

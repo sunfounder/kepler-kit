@@ -1,51 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 21:  Temperature and Humidity Measurements with Toggle Switch
-=============================================================================
+lezione 21: Misurazioni di Temperatura e Umidità con Interruttore a Pulsante
+================================================================================
 
-This tutorial covers adding a toggle push button to switch between temperature readings in Fahrenheit and Celsius using the DHT11 sensor with the Raspberry Pi Pico W:
+Questo tutorial spiega come aggiungere un pulsante a bilanciere per alternare tra le letture della temperatura in Fahrenheit e Celsius utilizzando il sensore DHT11 con il Raspberry Pi Pico W:
 
-* **Introduction**: introduces the tutorial and acknowledges the sponsor, SunFounder. He explains the goal of adding a toggle push button to the existing temperature and humidity measurement setup.
+* **Introduzione**: Introduce il tutorial e ringrazia lo sponsor, SunFounder. Spiega l'obiettivo di aggiungere un pulsante a bilanciere al sistema esistente di misurazione della temperatura e dell'umidità.
 
-* **Previous Lessons Recap**: Reviews the previous lesson on using the DHT11 sensor and sets the context for the current task.
+* **Riepilogo delle Lezioni Precedenti**: Ripassa la lezione precedente sull'utilizzo del sensore DHT11 e fornisce il contesto per il compito attuale.
 
-**Component Introduction and Circuit Setup**:
-- Reintroduces the DHT11 sensor and explains the addition of a push button to the circuit.
-- Describes the connections:
-  - DHT11 sensor:
-    - Pin 1 to 3.3V
-    - Pin 2 to GPIO pin 16
-    - Pin 4 to ground
-  - Push button:
-    - One leg to ground
-    - The other leg to GPIO pin 15
-* **Code Explanation**:
- - Imports necessary libraries: machine, utime (as time), and DHT.
- - Sets up GPIO pins for the DHT11 sensor and the push button.
- - Creates a toggle mechanism to switch between temperature units (Celsius and Fahrenheit).
- - Reads the button state and toggles the temperature unit when the button is pressed and released.
- - Measures and converts temperature from Celsius to Fahrenheit.
- - Prints temperature and humidity readings in a single line using `\r` for a clean output.
- - Addresses formatting issues to ensure the output displays correctly when toggling between Celsius and Fahrenheit.
-* **Practical Demonstration**:
- - Runs the code to observe temperature and humidity readings.
- - Demonstrates the toggle functionality between Celsius and Fahrenheit when the button is pressed.
- - Fixes formatting issues to ensure the output is clean and consistent.
-* **Homework Assignment**:
- - Adds more toggle functionality to the project.
- - Implements additional toggles to switch between displaying temperature in Celsius, Fahrenheit, and humidity one at a time.
+**Introduzione ai Componenti e Configurazione del Circuito**:
+- Reintroduce il sensore DHT11 e spiega l'aggiunta di un pulsante al circuito.
+- Descrive i collegamenti:
+  - Sensore DHT11:
+    - Pin 1 a 3,3V
+    - Pin 2 al pin GPIO 16
+    - Pin 4 a massa
+  - Pulsante:
+    - Una gamba a massa
+    - L'altra gamba al pin GPIO 15
+* **Spiegazione del Codice**:
+  - Importa le librerie necessarie: machine, utime (come time) e DHT.
+  - Configura i pin GPIO per il sensore DHT11 e il pulsante.
+  - Crea un meccanismo di alternanza per passare tra le unità di temperatura (Celsius e Fahrenheit).
+  - Legge lo stato del pulsante e alterna l'unità di temperatura quando il pulsante viene premuto e rilasciato.
+  - Misura e converte la temperatura da Celsius a Fahrenheit.
+  - Stampa le letture di temperatura e umidità in una singola riga utilizzando `\r` per un output pulito.
+  - Affronta i problemi di formattazione per garantire che l'output venga visualizzato correttamente durante il passaggio tra Celsius e Fahrenheit.
+* **Dimostrazione Pratica**:
+  - Esegue il codice per osservare le letture di temperatura e umidità.
+  - Dimostra la funzionalità di alternanza tra Celsius e Fahrenheit quando il pulsante viene premuto.
+  - Risolve i problemi di formattazione per garantire un output pulito e coerente.
+* **Compito per Casa**:
+  - Aggiunge più funzionalità di alternanza al progetto.
+  - Implementa ulteriori opzioni per alternare tra la visualizzazione della temperatura in Celsius, Fahrenheit e umidità una alla volta.
 
 
 **Video**

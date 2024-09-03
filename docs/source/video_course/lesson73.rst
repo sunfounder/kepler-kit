@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 73 :  Control a RGB LED Using a Dictionary in MicroPython
+lesson 73 :  Controllare un LED RGB Utilizzando un Dizionario in MicroPython
 ===================================================================================
 
-This tutorial covers controlling an RGB LED with the Raspberry Pi Pico W using dictionaries:
+Questo tutorial copre il controllo di un LED RGB con il Raspberry Pi Pico W utilizzando i dizionari:
 
-* **Wiring Setup**:
-- Connect the RGB LED to the Raspberry Pi Pico W:
-  - R leg to GPIO pin 14 through a 330 Ohm resistor.
-  - G leg to GPIO pin 13.
-  - B leg to GPIO pin 12 through a 330 Ohm resistor.
-  - Ground leg to the ground rail.
-* **Code Implementation**:
-- **Create Dictionary**:
-   - Define a dictionary with color names as keys and their respective RGB values as lists.
-- **Import Libraries**:
-   - Import necessary libraries (`machine`, `time`).
-   - Set up PWM for the RGB LED pins.
-- **Main Program Loop**:
-   - Continuously prompt the user to input a desired color.
-   - Convert input to lowercase and check if it's a valid color.
-   - If valid, adjust the LED colors using PWM duty cycles based on the dictionary values.
-   - Implement error handling for invalid inputs.
-- **Function to Set Color**:
-   - Define a function `make_color` that takes the desired color and sets the RGB LED accordingly using PWM.
+* **Configurazione dei Collegamenti**:
+- Collega il LED RGB al Raspberry Pi Pico W:
+  - Gamba R al pin GPIO 14 tramite una resistenza da 330 Ohm.
+  - Gamba G al pin GPIO 13.
+  - Gamba B al pin GPIO 12 tramite una resistenza da 330 Ohm.
+  - Gamba di massa al binario di massa.
+* **Implementazione del Codice**:
+- **Creare un Dizionario**:
+   - Definisci un dizionario con i nomi dei colori come chiavi e i rispettivi valori RGB come liste.
+- **Importare le Librerie**:
+   - Importa le librerie necessarie (`machine`, `time`).
+   - Configura il PWM per i pin del LED RGB.
+- **Ciclo Principale del Programma**:
+   - Richiedi continuamente all'utente di inserire un colore desiderato.
+   - Converti l'input in minuscolo e verifica se è un colore valido.
+   - Se valido, regola i colori del LED utilizzando i cicli di duty del PWM basati sui valori del dizionario.
+   - Implementa la gestione degli errori per input non validi.
+- **Funzione per Impostare il Colore**:
+   - Definisci una funzione `make_color` che prende il colore desiderato e imposta il LED RGB di conseguenza utilizzando il PWM.
    
-* **Homework Assignment**:
-   - Extend the program by moving the `make_color` function into a library and importing it into the main program.
+* **Compito**:
+   - Estendi il programma spostando la funzione `make_color` in una libreria e importandola nel programma principale.
 
 **Video**
 

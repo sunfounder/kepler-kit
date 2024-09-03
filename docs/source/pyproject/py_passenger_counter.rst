@@ -1,61 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_passage_counter:
 
 
-7.4 Passenger Counter
-==============================
+7.4 Contatore di Passeggeri
+=================================
 
-For large shopping malls, shopping centers, chain stores, airports, stations, museums, and public places such as exhibition halls, passenger traffic is an indispensable data.
+Per i grandi centri commerciali, catene di negozi, aeroporti, stazioni, musei e luoghi pubblici come le sale espositive, il flusso di passeggeri è un dato indispensabile.
 
-In airports and stations, for example, the number of people needs to be strictly controlled to ensure safety and smooth flow.
-It is also possible to know when there are more visitors in shopping centers and chain stores, how many orders each user can generate, etc.
-As a result, we can analyze people's consumption habits and increase turnover.
+Ad esempio, negli aeroporti e nelle stazioni, è necessario controllare rigorosamente il numero di persone per garantire la sicurezza e il flusso regolare.
+È inoltre possibile conoscere i momenti di maggiore affluenza nei centri commerciali e nelle catene di negozi, quanti ordini può generare ogni utente, ecc.
+Di conseguenza, possiamo analizzare le abitudini di consumo delle persone e aumentare il fatturato.
 
-Passenger counters can help people understand the operation of these public places and organize their operations efficiently.
+I contatori di passeggeri possono aiutare a comprendere l'operatività di questi luoghi pubblici e a organizzare le attività in modo efficiente.
 
-A simple passenger counter is created using a PIR sensor and a 4-digit 7-segment display.
+Un semplice contatore di passeggeri viene creato utilizzando un sensore PIR e un display a 7 segmenti a 4 cifre.
 
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -63,7 +62,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -72,11 +71,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(220Ω)
+        - 4 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -91,32 +90,32 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_passager_counter| 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
-* The PIR will send a high signal of about 2.8s long when someone passes by.
-* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+* Questo circuito è basato su :ref:`py_74hc_4dig` con l'aggiunta di un modulo PIR.
+* Il PIR invierà un segnale alto di circa 2,8 secondi quando qualcuno passa davanti.
+* Il modulo PIR ha due potenziometri: uno regola la sensibilità, l'altro regola la distanza di rilevamento. Per far funzionare meglio il modulo PIR, è necessario girarli entrambi in senso antiorario fino alla fine.
 
     |img_PIR_TTE|
 
 
-**Wiring**
+**Collegamenti**
 
 
 |wiring_passager_counter| 
 
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``7.4_passenger_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``7.4_passenger_counter.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -186,5 +185,4 @@ You can also buy them separately from the links below.
         hc595_shift(SEGCODE[count%10000//1000])
 
 
-When the code is run, the number on the 4-digit 7-segment display will be added by one if someone passes in front of the PIR module.
-
+Quando il codice viene eseguito, il numero sul display a 7 segmenti a 4 cifre aumenterà di uno ogni volta che qualcuno passa davanti al modulo PIR.

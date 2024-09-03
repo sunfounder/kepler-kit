@@ -1,53 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_ultrasonic:
 
-6.1 Measuring Distance
+6.1 Misurazione della Distanza
 ======================================
 
-The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
+Il modulo sensore ultrasonico funziona sul principio dei sistemi sonar e radar per determinare la distanza da un oggetto.
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
@@ -72,23 +71,23 @@ You can also buy them separately from the links below.
         - |link_ultrasonic_buy|
 
 
-**Schematic**
+**Schema**
 
 |sch_ultrasonic|
 
-**Wiring**
+**Cablaggio**
 
 |wiring_ultrasonic|
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``6.1_measuring_distance.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``6.1_measuring_distance.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -118,12 +117,12 @@ You can also buy them separately from the links below.
         print ('Distance: %.2f' % dis)
         time.sleep_ms(300)
 
-Once the program is running, the Shell will print out the distance of the ultrasonic sensor from the obstacle ahead.
+Una volta avviato il programma, la Shell stamperà la distanza del sensore ultrasonico dall'ostacolo davanti a sé.
 
-**How it works?**
+**Come funziona?**
 
-Ultrasonic sensors produce high frequency sound waves (ultrasonic waves) emitted by the transmitting probe. When this ultrasonic wave hits an object, it is reflected as an echo, which is detected by the receiving probe. By calculating the time from transmission to reception, the distance can be calculated.
-Based on this principle, the function ``distance()`` can be derived.
+I sensori ultrasonici producono onde sonore ad alta frequenza (onde ultrasoniche) emesse dalla sonda trasmittente. Quando quest'onda colpisce un oggetto, viene riflessa come eco e rilevata dalla sonda ricevente. Calcolando il tempo trascorso dalla trasmissione alla ricezione, si può determinare la distanza.
+Basandosi su questo principio, si può derivare la funzione ``distance()``.
 
 .. code-block:: python
 
@@ -142,7 +141,7 @@ Based on this principle, the function ``distance()`` can be derived.
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-* Among them, the first few lines are used to transmit a 10us ultrasonic wave.
+* Le prime righe del codice sono utilizzate per trasmettere un'onda ultrasonica di 10µs.
 
 .. code-block:: python
 
@@ -152,7 +151,7 @@ Based on this principle, the function ``distance()`` can be derived.
     time.sleep_us(10)
     TRIG.low()
 
-* Then, the program is paused and the current time is recorded when the ultrasonic wave has been emitted.
+* Successivamente, il programma si mette in pausa e registra l'ora corrente quando l'onda ultrasonica è stata emessa.
 
 .. code-block:: python
 
@@ -160,7 +159,7 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time1 = time.ticks_us()
 
-* Subsequently, the program is suspended again. After the echo is received, the current time is recorded once again.
+* Successivamente, il programma si sospende di nuovo. Dopo che l'eco è stata ricevuta, l'ora corrente viene registrata una seconda volta.
 
 .. code-block:: python
 
@@ -168,12 +167,11 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time2 = time.ticks_us()
 
-* Finally, based on the time difference between the two recordings, the speed of sound (340m/s) is multiplied by the time to obtain double the distance between the ultrasonic module and the obstacle (i.e., one round trip of the ultrasonic waves from the module to the obstacle). Converting the units to centimeters gives us the return value we need.
+* Infine, basandosi sulla differenza di tempo tra le due registrazioni, la velocità del suono (340m/s) viene moltiplicata per il tempo per ottenere il doppio della distanza tra il modulo ultrasonico e l'ostacolo (cioè, un viaggio di andata e ritorno delle onde ultrasoniche dal modulo all'ostacolo). Convertendo le unità in centimetri, otteniamo il valore restituito di cui abbiamo bisogno.
 
 .. code-block:: python
 
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
-
+Nota che il sensore ultrasonico metterà in pausa il programma quando è in funzione, il che potrebbe causare qualche rallentamento durante la scrittura di progetti complessi.

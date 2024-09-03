@@ -1,53 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_74hc_led:
 
 5.1 Microchip - 74HC595
-===========================
+=============================
 
-Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
+Un circuito integrato (integrated circuit) è un dispositivo elettronico miniaturizzato, rappresentato dalla sigla "IC" nel circuito.
 
-A certain process is used to interconnect the transistors, resistors, capacitors, inductors and other components and wiring required in a circuit, fabricate on a small or several small semiconductor wafers or dielectric substrates, and then package them in a package , it has become a micro-structure with the required circuit functions; all of the components have been structured as a whole, making electronic components a big step towards micro-miniaturization, low power consumption, intelligence and high reliability.
+Attraverso un certo processo, i transistor, i resistori, i condensatori, gli induttori e altri componenti e cablaggi necessari in un circuito vengono interconnessi, fabbricati su una o più piccole piastre semiconduttrici o substrati dielettrici, e successivamente racchiusi in un package, diventando una microstruttura con le funzioni del circuito richieste; tutti i componenti sono stati strutturati come un tutt'uno, portando i componenti elettronici verso la micro-miniaturizzazione, il basso consumo energetico, l'intelligenza e l'alta affidabilità.
 
-The inventors of integrated circuits are Jack Kilby (integrated circuits based on germanium (Ge)) and Robert Norton Noyce (integrated circuits based on silicon (Si)).
+Gli inventori dei circuiti integrati sono Jack Kilby (circuiti integrati basati sul germanio (Ge)) e Robert Norton Noyce (circuiti integrati basati sul silicio (Si)).
 
-This kit is equipped with an IC, 74HC595, which can greatly save the use of GPIO pins.
-Specifically, it can replace 8 pins for digital signal output by writing an 8-bit binary number.
+Questo kit è dotato di un IC, il 74HC595, che consente di risparmiare notevolmente l'uso dei pin GPIO.
+In particolare, può sostituire 8 pin per l'uscita del segnale digitale scrivendo un numero binario a 8 bit.
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
 * :ref:`74HC595`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, ci servono i seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un intero kit, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 
 .. list-table::
@@ -55,16 +55,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -73,7 +73,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -88,32 +88,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_74hc_led|
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* Quando MR (pin10) è a livello alto e OE (pin13) è a livello basso, i dati vengono inseriti nel fronte di salita di SHcp e passano al registro di memoria attraverso il fronte di salita di SHcp. 
+* Se i due clock sono collegati insieme, il registro a scorrimento è sempre un impulso prima rispetto al registro di memoria. 
+* Nel registro di memoria sono presenti un pin di ingresso seriale (Ds), un pin di uscita seriale (Q) e un pulsante di reset asincrono (a livello basso). 
+* Il registro di memoria emette un bus parallelo a 8 bit e in tre stati. 
+* Quando OE è abilitato (livello basso), i dati nel registro di memoria vengono emessi sul bus (Q0 ~ Q7).
 
 
-**Wiring**
+**Cablaggio**
 
 
 |wiring_74hc_led|
 
-**Code**
+**Codice**
 
 
 .. note::
 
-   * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``kepler-kit-main/arduino/5.1_microchip_74hc595``. 
-   * Or copy this code into **Arduino IDE**.
-
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * Puoi aprire il file ``5.1_microchip_74hc595.ino`` nel percorso ``kepler-kit-main/arduino/5.1_microchip_74hc595``.
+   * Oppure copia questo codice nell'**Arduino IDE**.
+   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 
 .. raw:: html
@@ -122,32 +120,33 @@ You can also buy them separately from the links below.
 
 
 
-When the program is running, you can see the LEDs turning on one after another.
+Quando il programma è in esecuzione, potrai vedere i LED accendersi uno dopo l'altro.
 
-**How it works?**
+**Come funziona?**
 
-Declare an array, store several 8 bit binary numbers that are used to change the working state of the eight LEDs controlled by 74HC595. 
+Dichiara un array, memorizza diversi numeri binari a 8 bit utilizzati per modificare lo stato di funzionamento degli otto LED controllati dal 74HC595.
 
 .. code-block:: arduino
 
     int datArray[] = {0b00000000, 0b00000001, 0b00000011, 0b00000111, 0b00001111, 0b00011111, 0b00111111, 0b01111111, 0b11111111};
 
-Set ``STcp`` to low level first and then high level. It will generate a rising edge pulse of ``STcp``.
+Imposta ``STcp`` a livello basso prima e poi a livello alto. Questo genererà un impulso di salita di ``STcp``.
 
 .. code-block:: arduino
 
     digitalWrite(STcp,LOW); 
 
-``shiftOut()`` is used to shift out a byte of data one bit at a time, which means to shift a byte of data in datArray[num] to the shifting register with the DS pin. MSBFIRST means to move from high bits.
+``shiftOut()`` viene utilizzato per spostare un byte di dati un bit alla volta, il che significa trasferire un byte di dati in datArray[num] al registro a scorrimento con il pin DS. MSBFIRST significa spostare a partire dai bit più alti.
 
 .. code-block:: arduino
 
     shiftOut(DS,SHcp,MSBFIRST,datArray[num]);
 
-After ``digitalWrite(STcp,HIGH)`` is run, the STcp will be at the rising edge. At this time, the data in the shift register will be moved to the memory register. 
+Dopo aver eseguito ``digitalWrite(STcp,HIGH)``, il STcp sarà al fronte di salita. A questo punto, i dati nel registro a scorrimento verranno trasferiti al registro di memoria.
 
 .. code-block:: arduino
 
     digitalWrite(STcp,HIGH);
 
-A byte of data will be transferred into the memory register after 8 times. Then the data of memory register are output to the bus (Q0-Q7). For example, shiftout ``B00000001`` will light up the LED controlled by Q0 and turn off the LED controlled by Q1~Q7. 
+Un byte di dati verrà trasferito nel registro di memoria dopo 8 volte. Successivamente, i dati del registro di memoria vengono emessi sul bus (Q0-Q7). Ad esempio, shiftout ``B00000001`` accenderà il LED controllato da Q0 e spegnerà i LED controllati da Q1~Q7.
+

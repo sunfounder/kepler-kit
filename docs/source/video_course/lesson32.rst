@@ -1,42 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 32: Mobile Weather Station Project
+lesson 32: Progetto di Stazione Meteo Portatile
 =============================================================================
 
-This tutorial covers creating a portable weather station using the Raspberry Pi Pico W:
+Questo tutorial spiega come creare una stazione meteo portatile utilizzando il Raspberry Pi Pico W:
 
-* **Connecting to WiFi**:
- - Import necessary libraries.
- - Create a WLAN object and connect to the WiFi network.
-* **Fetching Weather Data**:
- - Use the OpenWeatherMap API to fetch real-time weather data.
- - Obtain an API key from OpenWeatherMap by signing up for a free account.
-* **Parsing JSON Data**:
- - Extract relevant weather information such as temperature, humidity, barometric pressure, sunrise, and sunset times.
-* **Displaying Data on OLED**:
- - Set up an OLED display and connect it to the Raspberry Pi Pico W.
- - Use the `ssd1306` library to display weather data on the OLED screen.
- - Create a loop to periodically update the weather data on the screen.
-* **Powering the Device**:
- - Connect the Raspberry Pi Pico W to a battery for portable use.
-* **Code Explanation**:
- - Step through initializing the OLED display and connecting to WiFi.
- - Fetch and parse weather data, then display it on the OLED screen.
- - Implement a loop to update the weather data every few minutes.
-* **Homework Assignment**:
- - Enhance the project by adding an RGB LED to visually indicate weather conditions such as temperature, humidity, or wind speed.
+* **Connessione al WiFi**:
+  - Importa le librerie necessarie.
+  - Crea un oggetto WLAN e connettiti alla rete WiFi.
+* **Recupero dei Dati Meteo**:
+  - Usa l'API di OpenWeatherMap per ottenere dati meteo in tempo reale.
+  - Ottieni una chiave API da OpenWeatherMap iscrivendoti per un account gratuito.
+* **Analisi dei Dati JSON**:
+  - Estrai informazioni meteorologiche rilevanti come temperatura, umidità, pressione barometrica, orari di alba e tramonto.
+* **Visualizzazione dei Dati su OLED**:
+  - Configura un display OLED e collegalo al Raspberry Pi Pico W.
+  - Utilizza la libreria `ssd1306` per visualizzare i dati meteo sullo schermo OLED.
+  - Crea un loop per aggiornare periodicamente i dati meteo sullo schermo.
+* **Alimentazione del Dispositivo**:
+  - Collega il Raspberry Pi Pico W a una batteria per un uso portatile.
+* **Spiegazione del Codice**:
+  - Passa attraverso l'inizializzazione del display OLED e la connessione al WiFi.
+  - Recupera e analizza i dati meteo, quindi visualizzali sullo schermo OLED.
+  - Implementa un loop per aggiornare i dati meteo ogni pochi minuti.
+* **Compito per Casa**:
+  - Migliora il progetto aggiungendo un LED RGB per indicare visivamente le condizioni meteorologiche come temperatura, umidità o velocità del vento.
 
 
 
@@ -45,3 +45,4 @@ This tutorial covers creating a portable weather station using the Raspberry Pi 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/zovC4CvR1Hw?si=d_lhJvfzTC3pR5cS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato agli annunci di nuovi prodotti e a esclusive anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e concorsi festivi**: Partecipa a concorsi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 10:  Controlling a Dimmable LED with a Potentiometer
+Lezione 10: Controllo di un LED dimmerabile con un potenziometro
 ==========================================================================
 
-This tutorial covers controlling LED brightness using PWM (Pulse Width Modulation) on the Raspberry Pi Pico W:
+Questo tutorial spiega come controllare la luminosità di un LED utilizzando PWM (Modulazione di Larghezza di Impulso) su Raspberry Pi Pico W:
 
-* **LED Brightness Control**: Explains how to control LED brightness using PWM. Discusses digital signals, duty cycles, and how varying duty cycles control LED brightness.
-* **Wiring Diagram and Setup**: Provides a detailed wiring diagram for connecting an LED with a 220 Ohm resistor to the Raspberry Pi Pico W. Demonstrates the physical setup on a breadboard.
-* **Code Explanation**: Describes the code for setting up PWM on a GPIO pin, taking user input for the desired voltage, and converting it to the corresponding PWM duty cycle. Explains the use of libraries, PWM objects, and frequency settings.
-* **Practical Demonstration**: Shows how to measure and visualize the PWM signal using an oscilloscope, illustrating how different duty cycles correspond to different average voltages.
-* **Homework Assignment**: Asks users to create a circuit that reads input from a potentiometer to control the brightness of an LED, reinforcing the concepts of PWM and analog output.
-
+* **Controllo della luminosità del LED**: Spiega come controllare la luminosità del LED utilizzando il PWM. Discute i segnali digitali, i cicli di lavoro e come la variazione dei cicli di lavoro controlla la luminosità del LED.
+* **Schema elettrico e configurazione**: Fornisce un diagramma di cablaggio dettagliato per collegare un LED con una resistenza da 220 Ohm al Raspberry Pi Pico W. Dimostra l'installazione fisica su una breadboard.
+* **Spiegazione del codice**: Descrive il codice per configurare il PWM su un pin GPIO, acquisire l'input dell'utente per la tensione desiderata e convertirlo nel corrispondente ciclo di lavoro PWM. Spiega l'uso delle librerie, degli oggetti PWM e delle impostazioni di frequenza.
+* **Dimostrazione pratica**: Mostra come misurare e visualizzare il segnale PWM utilizzando un oscilloscopio, illustrando come diversi cicli di lavoro corrispondano a diverse tensioni medie.
+* **Compito a casa**: Invita gli utenti a creare un circuito che legga l'input da un potenziometro per controllare la luminosità di un LED, rafforzando i concetti di PWM e di uscita analogica.
 
 **Video**
 

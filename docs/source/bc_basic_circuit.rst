@@ -1,148 +1,142 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Electronic Circuit
-====================
+Circuito Elettronico
+=========================
 
-There are many things you use every day that are powered by electricity, such as the lights in your home and the computer you are reading this on.
+Ci sono molte cose che utilizzi ogni giorno alimentate dall'elettricità, come le luci di casa tua e il computer su cui stai leggendo questo testo.
 
-In order to use electricity, you must create an electrical circuit. An electric circuit consists of metal wires and electrical and electronic components.
+Per utilizzare l'elettricità, devi creare un circuito elettrico. Un circuito elettrico è composto da fili metallici e componenti elettrici ed elettronici.
 
-Circuits require power from somewhere. In your home, most appliances (e.g., TVs, lights) are powered by wall outlets. But many smaller, portable circuits (e.g., electronic toys, cell phones) are powered by batteries. A battery has two terminals, one of which is called the positive terminal and is marked with a plus sign (+). Negative terminals are symbolized by minus signs (-), but are not usually printed on batteries.
+I circuiti necessitano di una fonte di alimentazione. Nella tua casa, la maggior parte degli apparecchi (ad esempio, TV, luci) è alimentata da prese a muro. Ma molti circuiti più piccoli e portatili (ad esempio, giocattoli elettronici, telefoni cellulari) sono alimentati da batterie. Una batteria ha due terminali, uno dei quali è chiamato terminale positivo ed è contrassegnato con un segno più (+). I terminali negativi sono simbolizzati da segni meno (-), ma di solito non sono stampati sulle batterie.
 
-For current to flow, a conductive path must connect the positive terminal of the battery to the negative terminal, which is referred to as a closed circuit(If it is disconnected, it is called an open circuit.). Electric current will flow through appliances such as lamps to make them work (e.g., light up).
+Per far fluire la corrente, un percorso conduttivo deve collegare il terminale positivo della batteria al terminale negativo, il che viene definito circuito chiuso (se è disconnesso, si chiama circuito aperto). La corrente elettrica scorrerà attraverso apparecchi come le lampade per farli funzionare (ad esempio, accendersi).
 
 |bc1|
 
+Un Pico W ha alcuni pin di uscita per l'alimentazione (positivi) e alcuni pin di massa (negativi). 
+Puoi usare questi pin come i lati positivo e negativo dell'alimentazione collegando il Pico W a una fonte di energia.
 
-A Pico W has some power output pins (positive) and some ground pins (negative).
-You can use these pins as the positive and negative sides of the power supply by plugging the Pico W into a power source.
+|bc2|
 
-|bc2| 
+Con l'elettricità, puoi creare opere con luce, suono e movimento.
+Puoi accendere un LED collegando il pin lungo al terminale positivo e il pin corto al terminale negativo.
+Il LED si romperà molto rapidamente se lo fai, quindi devi aggiungere una resistenza da 220Ω all'interno del circuito per proteggerlo.
 
-With electricity, you can create works with light, sound, and motion.
-You can light up an LED by connecting the long pin to the positive terminal and the short pin to the negative terminal.
-The LED will break down very quickly if you do this, so you need to add a 220* resistor inside the circuit to protect it.
+Il circuito che formano è mostrato di seguito.
 
-The circuit they form is shown below.
+|bc2.5|
 
-|bc2.5| 
+A questo punto potresti chiederti: come costruisco questo circuito? Tieni i fili con le mani, o nastro i pin e i fili?
 
-You may have questions this time: how do I build this circuit? Hold the wires by hand, or tape the pins and wires?
-
-In this situation, solderless breadboards will be your strongest allies.
+In questa situazione, le breadboard senza saldatura saranno i tuoi alleati più forti.
 
 .. _bc_bb:
 
-Hello, Breadboard!
+Ciao, Breadboard!
 ------------------------------
 
-
-A breadboard is a rectangular plastic plate with a bunch of small holes. 
-These holes allow us to easily insert electronic components and build electronic circuits. 
-Breadboards do not permanently fix electronic components, so we can easily repair a circuit and start over if something goes wrong.
+Una breadboard è una piastra rettangolare di plastica con un sacco di piccoli fori. 
+Questi fori ci permettono di inserire facilmente componenti elettronici e costruire circuiti elettronici. 
+Le breadboard non fissano permanentemente i componenti elettronici, quindi possiamo facilmente riparare un circuito e ricominciare se qualcosa va storto.
 
 .. note::
-    There is no need for special tools to use breadboards. However, many electronic components are very small, and a pair of tweezers can help us to pick up small parts better.
+    Non c'è bisogno di strumenti speciali per utilizzare le breadboard. Tuttavia, molti componenti elettronici sono molto piccoli, e un paio di pinzette possono aiutarci a prendere meglio le piccole parti.
 
-On the Internet, we can find a lot of information about breadboards.
+Su Internet, possiamo trovare molte informazioni sulle breadboard.
 
 * `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
 * `What is a BREADBOARD? - Makezine <https://cdn.makezine.com/uploads/2012/10/breadboardworkshop.pdf>`_
 
 
-Here are some things you should know about breadboards.
+Ecco alcune cose che dovresti sapere sulle breadboard.
 
-#. Each half-row group (such as column A-E in row 1 or column F-J in row 3) is connected. Therefore, if an electrical signal flows in from A1, it can flow out from B1, C1, D1, E1, but not from F1 or A2.
+#. Ogni gruppo di mezza fila (come la colonna A-E nella fila 1 o la colonna F-J nella fila 3) è collegato. Pertanto, se un segnale elettrico entra da A1, può uscire da B1, C1, D1, E1, ma non da F1 o A2.
 
-#. In most cases, both sides of the breadboard are used as power buses, and the holes in each column (about 50 holes) are connected together. As a general rule, positive power supplies are connected to the holes near the red wire, and negative power supplies are connected to the holes near the blue wire.
+#. Nella maggior parte dei casi, entrambi i lati della breadboard sono utilizzati come bus di alimentazione, e i fori in ogni colonna (circa 50 fori) sono collegati tra loro. Di norma, le alimentazioni positive sono collegate ai fori vicino al filo rosso, e le alimentazioni negative ai fori vicino al filo blu.
 
-#. In a circuit, current flows from the positive pole to the negative pole after passing through the load. In this case, a short circuit may occur.
-
-|bc3| 
-
-
-Let us follow the direction of the current to build the circuit!
-
-1. In this circuit, we use the 3V3 pin of the Pico W board to power the LED. Use a male-to-male (M2M) jumper wire to connect it to the red power bus.
-#. To protect the LED, the current must pass through a 220 ohm resistor. Connect one end (either end) of the resistor to the red power bus, and the other end to the free row of the breadboard (row 24 in my circuit).
-
-    .. note::
-        The color ring of the 220 ohm resistor is red, red, black, black and brown.
-
-#. If you pick up the LED, you will see that one of its leads is longer than the other. Connect the longer lead to the same row as the resistor, and the shorter lead to the same row across the middle gap on the breadboard.
-
-    .. note::
-        The longer lead is the anode, which represents the positive side of the circuit; the shorter lead is the cathode, which represents the negative side. 
-
-        The anode needs to be connected to the GPIO pin through a resistor; the cathode needs to be connected to the GND pin.
-
-#. Using a male-to-male (M2M) jumper wire, connect the LED short pin to the breadboard's negative power bus.
-#. Connect the GND pin of Pico W to the negative power bus using a jumper.
-
-Beware of short circuits
-------------------------------
-Short circuits can occur when two components that shouldn't be connected are "accidentally" connected. 
-This kit includes resistors, transistors, capacitors, LEDs, etc. that have long metal pins that can bump into each other and cause a short. Some circuits are simply prevented from functioning properly when a short occurs. Occasionally, a short circuit can damage components permanently, especially between the power supply and the ground bus, causing the circuit to get very hot, melting the plastic on the breadboard and even burning the components!
-
-Therefore, always make sure that the pins of all the electronics on the breadboard are not touching each other.
-
-Direction of the circuit
--------------------------------
-There is an orientation to circuits, and the orientation plays a significant role in certain electronic components. There are some devices with polarity, which means they must be connected correctly based on their positive and negative poles. Circuits built with the wrong orientation will not function properly.
+#. In un circuito, la corrente fluisce dal polo positivo al polo negativo dopo essere passata attraverso il carico. In questo caso, può verificarsi un cortocircuito.
 
 |bc3| 
 
-If you reverse the LED in this simple circuit that we built earlier, you will find that it no longer works.
+Seguiamo la direzione della corrente per costruire il circuito!
 
-In contrast, some devices have no direction, such as the resistors in this circuit, so you can try inverting them without affecting the LEDs' normal operation.
+1. In questo circuito, utilizziamo il pin 3V3 della scheda Pico W per alimentare il LED. Usa un cavo jumper maschio-maschio (M2M) per collegarlo al bus di alimentazione rosso.
+#. Per proteggere il LED, la corrente deve passare attraverso una resistenza da 220 ohm. Collega un'estremità (qualsiasi estremità) della resistenza al bus di alimentazione rosso, e l'altra estremità a una fila libera della breadboard (fila 24 nel mio circuito).
 
-Most components and modules with labels such as "+", "-", "GND", "VCC" or have pins of different lengths must be connected to the circuit in a specific way.
+    .. note::
+        L'anello colorato della resistenza da 220 ohm è rosso, rosso, nero, nero e marrone.
 
+#. Se sollevi il LED, vedrai che uno dei suoi piedini è più lungo dell'altro. Collega il piedino più lungo alla stessa fila della resistenza, e il piedino più corto alla stessa fila dall'altra parte della fessura centrale sulla breadboard.
 
-Protection of the circuit
+    .. note::
+        Il piedino più lungo è l'anodo, che rappresenta il lato positivo del circuito; il piedino più corto è il catodo, che rappresenta il lato negativo.
+
+        L'anodo deve essere collegato al pin GPIO tramite una resistenza; il catodo deve essere collegato al pin GND.
+
+#. Usando un cavo jumper maschio-maschio (M2M), collega il piedino corto del LED al bus di alimentazione negativo della breadboard.
+#. Collega il pin GND del Pico W al bus di alimentazione negativo utilizzando un cavo jumper.
+
+Attenzione ai cortocircuiti
+--------------------------------
+I cortocircuiti possono verificarsi quando due componenti che non dovrebbero essere collegati sono "accidentalmente" collegati. 
+Questo kit include resistenze, transistor, condensatori, LED, ecc. che hanno lunghi piedini metallici che possono urtarsi tra loro e causare un cortocircuito. Alcuni circuiti sono semplicemente impediti dal funzionare correttamente quando si verifica un cortocircuito. Occasionalmente, un cortocircuito può danneggiare permanentemente i componenti, specialmente tra l'alimentazione e il bus di massa, causando un surriscaldamento del circuito, sciogliendo la plastica sulla breadboard e persino bruciando i componenti!
+
+Pertanto, assicurati sempre che i piedini di tutti i componenti elettronici sulla breadboard non si tocchino tra loro.
+
+Orientamento del circuito
+---------------------------------
+I circuiti hanno un orientamento, e l'orientamento gioca un ruolo significativo in alcuni componenti elettronici. Alcuni dispositivi hanno polarità, il che significa che devono essere collegati correttamente in base ai loro poli positivo e negativo. I circuiti costruiti con l'orientamento sbagliato non funzioneranno correttamente.
+
+|bc3|
+
+Se inverti l'orientamento del LED in questo semplice circuito che abbiamo costruito in precedenza, scoprirai che non funziona più.
+
+Al contrario, alcuni dispositivi non hanno direzione, come le resistenze in questo circuito, quindi puoi provare a invertirle senza influire sul funzionamento normale del LED.
+
+La maggior parte dei componenti e moduli con etichette come "+", "-", "GND", "VCC" o che hanno piedini di lunghezze diverse devono essere collegati al circuito in un modo specifico.
+
+Protezione del circuito
 -------------------------------------
 
-Current is the rate at which electrons flow past a point in a complete electrical circuit. At its most basic, current = flow. An ampere (AM-pir), or amp, is the international unit used for measuring current. It expresses the quantity of electrons (sometimes called "electrical charge") flowing past a point in a circuit over a given time.
+La corrente è la velocità con cui gli elettroni passano attraverso un punto in un circuito elettrico completo. Alla base, la corrente = flusso. Un ampere (AM-pir), o ampere, è l'unità internazionale utilizzata per misurare la corrente. Esprime la quantità di elettroni (a volte chiamata "carica elettrica") che passa attraverso un punto in un circuito in un determinato periodo di tempo.
 
-The driving force (voltage) behind the flow of current is called voltage and is measured in volts (V).
+La forza motrice (voltaggio) dietro il flusso di corrente si chiama tensione ed è misurata in volt (V).
 
-Resistance (R) is the property of the material that restricts the flow of current, and it is measured in ohms (Ω).
+La resistenza (R) è la proprietà del materiale che limita il flusso di corrente, ed è misurata in ohm (Ω).
 
-According to Ohm's law (as long as the temperature remains constant), current, voltage, and resistance are proportional.
-A circuit's current is proportional to its voltage and inversely proportional to its resistance. 
+Secondo la legge di Ohm (purché la temperatura rimanga costante), corrente, tensione e resistenza sono proporzionali.
+La corrente di un circuito è proporzionale alla sua tensione e inversamente proporzionale alla sua resistenza. 
 
-Therefore, current (I) = voltage (V) / resistance (R).
+Pertanto, corrente (I) = tensione (V) / resistenza (R).
 
 * `Ohm's law - Wikipedia <https://en.wikipedia.org/wiki/Ohm%27s_law>`_
 
-About Ohm's law we can do a simple experiment.
+Sulla legge di Ohm possiamo fare un semplice esperimento.
 
-|bc3| 
+|bc3|
 
-By changing the wire connecting 3V3 to 5V (i.e. VBUS, the 40th pin of Pico W), the LED will become brighter.
-If you change the resistor from 220ohm to 1000ohm (color ring: brown, black, black, brown and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.
+Cambiando il filo che collega 3V3 a 5V (cioè VBUS, il 40º pin del Pico W), il LED diventerà più luminoso.
+Se cambi la resistenza da 220ohm a 1000ohm (anello colorato: marrone, nero, nero, marrone e marrone), noterai che il LED diventa più fioco di prima. Più grande è la resistenza, più fioco sarà il LED.
 
 .. note::
-    For an introduction to resistors and how to calculate resistance values, see :ref:`cpn_resistor`.
+    Per un'introduzione alle resistenze e su come calcolare i valori di resistenza, vedi :ref:`cpn_resistor`.
 
-Most packaged modules only require access to the proper voltage (usually 3.3V or 5V), such as ultrasonic module.
+La maggior parte dei moduli confezionati richiede solo l'accesso alla giusta tensione (di solito 3.3V o 5V), come il modulo ultrasonico.
 
-However, in your self-built circuits, you need to be aware of the supply voltage and resistor usage for electrical devices.
+Tuttavia, nei tuoi circuiti costruiti autonomamente, devi essere consapevole della tensione di alimentazione e dell'uso delle resistenze per i dispositivi elettrici.
 
-
-As an example, LEDs usually consume 20mA of current, and their voltage drop is about 1.8V. According to Ohm's law, if we use 5V power supply, we need to connect a minimum of 160ohm ((5-1.8)/20mA) resistor in order not to burn out the LED.
-
+Ad esempio, i LED di solito consumano 20mA di corrente, e la loro caduta di tensione è di circa 1.8V. Secondo la legge di Ohm, se utilizziamo una fonte di alimentazione da 5V, dobbiamo collegare una resistenza minima di 160ohm ((5-1.8)/20mA) per non bruciare il LED.
 

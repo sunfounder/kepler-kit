@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_servo:
 
@@ -19,24 +19,24 @@ Servo
 
 |img_servo|
 
-A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board.  
+Un servo è generalmente composto dalle seguenti parti: case, albero, sistema di ingranaggi, potenziometro, motore DC e scheda integrata.  
 
-It works like this: The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. As a result, the motor drives the gear system and then motivates the shaft after deceleration. The shaft and potentiometer of the servo are connected together. When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there.
+Funziona così: il microcontrollore invia segnali PWM al servo, la scheda integrata all'interno del servo riceve i segnali attraverso il pin di segnale e controlla il motore interno per farlo girare. Di conseguenza, il motore aziona il sistema di ingranaggi che, dopo la decelerazione, motiva l'albero. L'albero e il potenziometro del servo sono collegati insieme. Quando l'albero ruota, aziona il potenziometro, che a sua volta invia un segnale di tensione alla scheda integrata. Quest'ultima determina la direzione e la velocità di rotazione in base alla posizione attuale, in modo che il servo possa fermarsi esattamente nella posizione definita e mantenerla.
 
 |img_servo_i|
 
-The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the motor turns. For example, a 1.5ms pulse will make the motor turn to the 90 degree position (neutral position).
-When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point. When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide.
+L'angolo è determinato dalla durata di un impulso applicato al filo di controllo. Questo è chiamato Pulse Width Modulation (Modulazione della Larghezza di Impulso). Il servo si aspetta di ricevere un impulso ogni 20 ms. La lunghezza dell'impulso determinerà di quanto girerà il motore. Ad esempio, un impulso di 1,5 ms farà girare il motore fino alla posizione di 90 gradi (posizione neutra).
+Quando viene inviato un impulso al servo inferiore a 1,5 ms, il servo ruota in una posizione e mantiene il suo albero d'uscita a un certo numero di gradi in senso antiorario rispetto al punto neutro. Quando l'impulso è più ampio di 1,5 ms avviene il contrario. La larghezza minima e massima dell'impulso che comanda il servo a girare verso una posizione valida dipendono da ciascun servo. Generalmente, l'impulso minimo sarà largo circa 0,5 ms e l'impulso massimo sarà largo 2,5 ms.
 
 |img_servo_duty|
 
 
-.. Example
+.. Esempio
 .. -------------------
 
-.. :ref:`Swinging Servo`
+.. :ref:`Servo Oscillante`
 
-**Example**
+**Esempio**
 
 * :ref:`py_servo` (For MicroPython User)
 * :ref:`py_somato_controller` (For MicroPython User)

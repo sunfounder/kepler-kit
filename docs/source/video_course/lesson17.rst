@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e a contenuti esclusivi.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 17:  Buttons and Pull Up Resistors in Micropython
+lezione 17: Pulsanti e Resistenze Pull-Up in Micropython
 =============================================================================
 
-This tutorial covers using push buttons in MicroPython with the Raspberry Pi Pico W:
+Questo tutorial tratta l'uso dei pulsanti in MicroPython con il Raspberry Pi Pico W:
 
-* **Introduction**: The lesson starts with a brief introduction and an overview of the lesson, focusing on using push buttons to control components like LEDs on the Raspberry Pi Pico W.
-* **Types of Push Buttons**: Describes different types of push buttons available in the SunFounder kit, explaining their functionality and how they connect within a circuit.
-* **Circuit Setup**: Demonstrates the wiring of a push button to GPIO pin 14 on the Raspberry Pi Pico W, including the use of internal pull-up resistors to simplify the circuit. Provides a detailed schematic and visual setup.
-* **How Push Buttons Work**: Explains the concept of open and closed states of push buttons and how they are used to control circuits by making or breaking connections.
-* **Activating Internal Pull-Up Resistors**: Shows how to activate the internal pull-up resistors on the Raspberry Pi Pico W using MicroPython, eliminating the need for external resistors.
-* **Code Explanation**: Describes the MicroPython code for reading the state of a push button. Covers setting up the GPIO pin, reading the button state, and printing the button state to the console.
-* **Practical Demonstration**: Provides a step-by-step demonstration of running the code, pressing the push button, and observing the changes in the button state readings on the console.
-* **Homework Assignment**: Assigns a project to use a push button to control an LED. The task is to write a program where pressing the button turns the LED on, and pressing it again turns the LED off.
-* **Next Steps**: Announces that the next lesson will continue exploring the use of push buttons and LEDs, focusing on integrating these components into more complex projects.
+* **Introduzione**: La lezione inizia con una breve introduzione e una panoramica, concentrandosi sull'uso dei pulsanti per controllare componenti come i LED sul Raspberry Pi Pico W.
+* **Tipi di Pulsanti**: Descrive i diversi tipi di pulsanti disponibili nel kit SunFounder, spiegandone il funzionamento e come si collegano all'interno di un circuito.
+* **Configurazione del Circuito**: Mostra il cablaggio di un pulsante al pin GPIO 14 sul Raspberry Pi Pico W, includendo l'uso di resistenze pull-up interne per semplificare il circuito. Fornisce uno schema dettagliato e una configurazione visiva.
+* **Come Funzionano i Pulsanti**: Spiega il concetto di stati aperti e chiusi dei pulsanti e come vengono utilizzati per controllare i circuiti creando o interrompendo connessioni.
+* **Attivazione delle Resistenze Pull-Up Interne**: Mostra come attivare le resistenze pull-up interne sul Raspberry Pi Pico W utilizzando MicroPython, eliminando la necessità di resistenze esterne.
+* **Spiegazione del Codice**: Descrive il codice MicroPython per leggere lo stato di un pulsante. Copre la configurazione del pin GPIO, la lettura dello stato del pulsante e la stampa dello stato del pulsante sulla console.
+* **Dimostrazione Pratica**: Fornisce una dimostrazione passo dopo passo dell'esecuzione del codice, premendo il pulsante e osservando i cambiamenti nelle letture dello stato del pulsante sulla console.
+* **Compito a Casa**: Assegna un progetto per utilizzare un pulsante per controllare un LED. Il compito consiste nello scrivere un programma in cui premendo il pulsante si accende il LED e premendolo di nuovo si spegne.
+* **Prossimi Passi**: Annuncia che la prossima lezione continuerà ad esplorare l'uso di pulsanti e LED, concentrandosi sull'integrazione di questi componenti in progetti più complessi.
 
 
 **Video**

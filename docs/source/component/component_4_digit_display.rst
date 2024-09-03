@@ -1,52 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_4_dit_7_segment:
 
-4-Digit 7-Segment Display
+Display a 7 segmenti a 4 cifre
 ==================================
 
-4-Digit 7-segment display consists of four 7- segment displays working
-together.
+Il display a 7 segmenti a 4 cifre è costituito da quattro display a 7 segmenti che funzionano insieme.
 
 |img_4-digit-sche|
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+Il display a 7 segmenti a 4 cifre funziona in modo indipendente. 
+Utilizza il principio della persistenza visiva umana per visualizzare 
+rapidamente i caratteri di ciascun segmento a 7 segmenti in un ciclo, 
+formando stringhe continue.
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+Ad esempio, quando sul display appare "1234", "1" viene visualizzato 
+sul primo segmento a 7 segmenti, mentre "234" non viene visualizzato. 
+Dopo un certo periodo di tempo, il secondo segmento a 7 segmenti mostra 
+"2", mentre il 1°, 3° e 4° segmento non mostrano nulla, e così via, i 
+quattro display digitali vengono visualizzati a turno. Questo processo è 
+molto breve (tipicamente 5 ms) e, grazie all'effetto del reticolo ottico 
+e al principio della persistenza visiva, possiamo vedere quattro caratteri 
+contemporaneamente.
 
 |img_4-digit-sche-ca| 
 
-**Display Codes** 
+**Codici di visualizzazione** 
 
-To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
+Per aiutarti a comprendere come i display a 7 segmenti (Catodo Comune) visualizzano i numeri, abbiamo creato la seguente tabella. I numeri sono i numeri da 0 a F visualizzati sul display a 7 segmenti; (DP) GFEDCBA si riferisce al set di LED corrispondente impostato su 0 o 1. Ad esempio, 00111111 significa che DP e G sono impostati su 0, mentre gli altri sono impostati su 1. Pertanto, il numero 0 viene visualizzato sul display a 7 segmenti, mentre il codice HEX corrisponde al numero esadecimale.
 
-.. list-table:: Glyph Code
+.. list-table:: Codice dei glifi
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - Numeri	
+        - Codice Binario
+        - Codice Hex  
     *   - 0	
         - 00111111	
         - 0x3f
@@ -97,7 +98,7 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
         - 0x71
 
 
-**Example**
+**Esempio**
 
 * :ref:`py_74hc_4dig` (For MicroPython User)
 * :ref:`py_passage_counter` (For MicroPython User)

@@ -1,36 +1,35 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 19:  Button Control of RGB LED in Micropython
+lezione 19: Controllo di un LED RGB con Pulsanti in Micropython
 =============================================================================
 
-This tutorial covers using multiple push buttons to control the RGB channels of an LED on the Raspberry Pi Pico W:
+Questo tutorial spiega come utilizzare più pulsanti per controllare i canali RGB di un LED sul Raspberry Pi Pico W:
 
-* **Introduction**: The lesson starts with an overview of the lesson, focusing on using three push buttons to control the red, green, and blue channels of an RGB LED on the Raspberry Pi Pico W.
-* **Homework Solution**: Provides a solution to the previous lesson’s homework, which involved creating three toggle switches for an RGB LED using push buttons.
-* **Circuit Setup**: Demonstrates the wiring of three push buttons and an RGB LED to the Raspberry Pi Pico W. Each button is connected to a GPIO pin, and the RGB LED channels are connected through resistors to separate GPIO pins. The ground rail is established to complete the circuit.
-* **Code Explanation**: 
- - Initializes the GPIO pins for the RGB LED and push buttons.
- - Creates objects for each LED channel and button, setting them as inputs or outputs as needed.
- - Defines variables for button states and LED states.
- - Implements logic to toggle the LED channels based on button presses and releases.
- - Demonstrates how to write and organize the code methodically, ensuring consistent variable naming for readability and ease of debugging.
-* **Practical Demonstration**: 
- - Provides a step-by-step demonstration of running the code, pressing the push buttons, and observing the changes in the RGB LED channels.
- - Shows how to test the button functionality and verify that each button correctly toggles its respective LED channel.
- - Discusses debugging techniques to identify and fix errors in the code or circuit.
-
+* **Introduzione**: La lezione inizia con una panoramica, concentrandosi sull'uso di tre pulsanti per controllare i canali rosso, verde e blu di un LED RGB sul Raspberry Pi Pico W.
+* **Soluzione del Compito**: Fornisce una soluzione al compito della lezione precedente, che prevedeva la creazione di tre interruttori a levetta per un LED RGB utilizzando pulsanti.
+* **Configurazione del Circuito**: Mostra il cablaggio di tre pulsanti e di un LED RGB al Raspberry Pi Pico W. Ogni pulsante è collegato a un pin GPIO, e i canali del LED RGB sono collegati tramite resistori a pin GPIO separati. Viene stabilita una linea di massa per completare il circuito.
+* **Spiegazione del Codice**: 
+ - Inizializza i pin GPIO per il LED RGB e i pulsanti.
+ - Crea oggetti per ogni canale del LED e per i pulsanti, impostandoli come ingressi o uscite a seconda delle necessità.
+ - Definisce variabili per gli stati dei pulsanti e degli LED.
+ - Implementa la logica per alternare i canali del LED in base alla pressione e al rilascio dei pulsanti.
+ - Dimostra come scrivere e organizzare il codice in modo metodico, garantendo una denominazione coerente delle variabili per una maggiore leggibilità e facilità di debug.
+* **Dimostrazione Pratica**: 
+ - Fornisce una dimostrazione passo dopo passo dell'esecuzione del codice, premendo i pulsanti e osservando i cambiamenti nei canali del LED RGB.
+ - Mostra come testare la funzionalità dei pulsanti e verificare che ciascun pulsante alterni correttamente il proprio canale LED.
+ - Discute le tecniche di debug per identificare e correggere errori nel codice o nel circuito.
 
 **Video**
 

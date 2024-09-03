@@ -1,60 +1,59 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_somato_controller:
 
 
-7.11 Somatosensory Controller
-=============================
+7.11 Controller Somatosensoriale
+========================================
 
-If you watch a lot of robot movies, you've probably seen images like this.
-The protagonist turned his wrist and the giant robot followed; the protagonist shakes his fist, and the robot follows, which is very cool.
+Se guardi molti film di robot, probabilmente hai visto immagini come questa.
+Il protagonista ruota il polso e il gigante robot segue; il protagonista stringe il pugno, e il robot segue, il che è molto cool.
 
-The use of this technology is already common in universities and research institutes, and the arrival of 5G will greatly expand its application areas.
-"Surgical robot da Vinci" remote surgery medical is a typical example.
+L'uso di questa tecnologia è già comune nelle università e negli istituti di ricerca, e l'arrivo del 5G ne espanderà notevolmente le aree di applicazione.
+Un esempio tipico è la "chirurgia robotica da Vinci" per la chirurgia remota.
 
-A robotic system of this type is typically composed of two modules: a human motion capture module and a robotic arm actuation module (some application scenarios also include a data communication module).
+Un sistema robotico di questo tipo è tipicamente composto da due moduli: un modulo di cattura del movimento umano e un modulo di azionamento del braccio robotico (alcuni scenari applicativi includono anche un modulo di comunicazione dati).
 
-The MPU6050 is used here to implement human motion capture (by mounting it on a glove) and the servo is used to represent robotic arm motion.
+Qui viene utilizzato l'MPU6050 per implementare la cattura del movimento umano (montandolo su un guanto) e il servo viene utilizzato per rappresentare il movimento del braccio robotico.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -62,7 +61,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -71,7 +70,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
@@ -83,29 +82,29 @@ You can also buy them separately from the links below.
         - |link_servo_buy|
 
 
-**Schematic**
+**Schema**
 
 |sch_somato|
 
-The MPU6050 calculates the attitude angle based on the acceleration values in each direction.
+L'MPU6050 calcola l'angolo di atteggiamento basandosi sui valori di accelerazione in ogni direzione.
 
-The program will control the servo to make the corresponding deflection angle as the attitude angle changes.
+Il programma controllerà il servo per far compiere l'angolo di deflessione corrispondente man mano che cambia l'angolo di atteggiamento.
 
-**Wiring**
+**Collegamenti**
 
 |wiring_somatosensory_controller| 
 
 
-**Code**
+**Codice**
 
 
 .. note::
 
-    * Open the ``7.11_somatosensory_controller.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Apri il file ``7.11_somatosensory_controller.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
+    * Qui è necessario utilizzare ``imu.py`` e ``vector3d.py``, controlla se sono stati caricati su Pico W, per un tutorial dettagliato fai riferimento a :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -158,4 +157,4 @@ The program will control the servo to make the corresponding deflection angle as
         servo_write(servo,interval_mapping(average_angle,-90,90,0,180))
 
 
-As soon as the program runs, the servo will turn left and right as you tilt the MPU6050 (or turn your wrist if it is mounted on a glove).
+Non appena il programma verrà eseguito, il servo ruoterà a sinistra e a destra quando inclini l'MPU6050 (o ruoti il polso se è montato su un guanto).

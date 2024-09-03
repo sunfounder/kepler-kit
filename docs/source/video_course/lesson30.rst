@@ -1,50 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 30: Project to Connect Your Raspberry Pi Pico W to the Internet
+lezione 30: Progetto per Connettere il Tuo Raspberry Pi Pico W a Internet
 =============================================================================
 
-This tutorial covers connecting the Raspberry Pi Pico W to the internet and fetching data from APIs:
+Questo tutorial spiega come connettere il Raspberry Pi Pico W a Internet e recuperare dati dalle API:
 
-**Introduction**:
-- The goal is to connect the Raspberry Pi Pico W to the internet and fetch real-time data from APIs.
-- No additional hardware setup required.
+**Introduzione**:
+- L'obiettivo è connettere il Raspberry Pi Pico W a Internet e ottenere dati in tempo reale dalle API.
+- Nessuna configurazione hardware aggiuntiva necessaria.
 
-**Connecting to WiFi**:
-- Import necessary libraries: `network`, `time`, `urequests`.
-- Create a WLAN object and connect to the WiFi network.
-- Ensure successful connection before proceeding.
+**Connessione al WiFi**:
+- Importa le librerie necessarie: `network`, `time`, `urequests`.
+- Crea un oggetto WLAN e connettiti alla rete WiFi.
+- Assicurati che la connessione sia avvenuta con successo prima di procedere.
 
-**Fetching Data from APIs**:
-- Introduction to JSON files and their structure (arrays, dictionaries, nested elements).
-- Example API used: Fetching real-time data about astronauts in space.
-- Parse and print the data structure to understand its format.
+**Recupero Dati dalle API**:
+- Introduzione ai file JSON e alla loro struttura (array, dizionari, elementi nidificati).
+- API di esempio utilizzata: Recupero di dati in tempo reale sugli astronauti nello spazio.
+- Analizza e stampa la struttura dei dati per comprenderne il formato.
 
-**Code Explanation**:
-- Use `urequests.get()` to fetch JSON data from a specified API endpoint.
-- Parse the JSON data to extract relevant information.
-- Example: List names of astronauts currently in space and their respective spacecraft.
+**Spiegazione del Codice**:
+- Usa `urequests.get()` per ottenere dati JSON da un endpoint API specificato.
+- Analizza i dati JSON per estrarre informazioni rilevanti.
+- Esempio: Elenco dei nomi degli astronauti attualmente nello spazio e delle loro rispettive navicelle spaziali.
 
-**Practical Demonstration**:
-- Code snippet to fetch and display data about astronauts.
-- Demonstrates how to navigate nested JSON structures to extract specific data.
-- Example output: Number of astronauts, their names, and spacecraft.
+**Dimostrazione Pratica**:
+- Esempio di codice per recuperare e visualizzare i dati sugli astronauti.
+- Dimostra come navigare nelle strutture JSON nidificate per estrarre dati specifici.
+- Esempio di output: Numero di astronauti, loro nomi e navicelle spaziali.
 
-**Homework Assignment**:
-- Find an interesting real-time data set (e.g., weather, stock prices, earthquakes).
-- Fetch and parse the data using the Raspberry Pi Pico W.
-- Display or utilize the data in a meaningful way (e.g., sensorless weather station).
+**Compito per Casa**:
+- Trova un set di dati in tempo reale interessante (ad esempio, meteo, prezzi delle azioni, terremoti).
+- Recupera e analizza i dati utilizzando il Raspberry Pi Pico W.
+- Visualizza o utilizza i dati in modo significativo (ad esempio, stazione meteo senza sensori).
 
 
 **Video**

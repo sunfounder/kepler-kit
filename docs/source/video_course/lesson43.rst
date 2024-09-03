@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 43 : Measure Pitch and Roll Using a 3 Axis Accelerometer
+lesson 43: Misurare Pitch e Roll Usando un Accelerometro a 3 Assi
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch and roll angles:
+Questo tutorial copre l'uso del sensore MPU6050 con il Raspberry Pi Pico W per misurare gli angoli di pitch e roll:
 
 * **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic and code.
-* **Trigonometry for Tilt Measurement**:
-   - Use trigonometric functions to calculate pitch and roll from accelerometer data.
-* **Coding**:
-   - Implement and test the calculations in Python to ensure accurate pitch and roll measurements.
-* **Homework**:
-   - Find an orientation where X, Y, and Z accelerations read 0G simultaneously and share the solution.
+   - Collega l'MPU6050 al Raspberry Pi Pico W utilizzando lo schema e il codice forniti.
+* **Trigonometria per la Misurazione dell'Inclinazione**:
+   - Utilizza funzioni trigonometriche per calcolare pitch e roll dai dati dell'accelerometro.
+* **Codifica**:
+   - Implementa e testa i calcoli in Python per garantire misurazioni accurate di pitch e roll.
+* **Compito a Casa**:
+   - Trova un orientamento in cui le accelerazioni X, Y e Z leggano contemporaneamente 0G e condividi la soluzione.
 
 
 

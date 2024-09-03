@@ -1,64 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-SunFounder |link_kepler_kit| for Raspberry Pi Pico W
+SunFounder |link_kepler_kit| per Raspberry Pi Pico W
 ======================================================================
 
 |link_Kepler_Ultimate_Kit|
 
-Thanks for choosing our |link_kepler_kit|.
+Grazie per aver scelto il nostro |link_kepler_kit|.
 
 .. note::
-    This document is available in the following languages.
+    Questo documento è disponibile nelle seguenti lingue.
 
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Clicca sui rispettivi link per accedere al documento nella lingua che preferisci.
 
 
-Thank you for choosing the SunFounder Kepler Kit
+Grazie per aver scelto il SunFounder Kepler Kit
 
-This is an learning kit based on the Raspberry Pi Pico W. 
+Questo è un kit didattico basato sul Raspberry Pi Pico W.
 
-Raspberry Pi Pico W adds on-board single-band 2.4GHz wireless interfaces (802.11n) using the Infineon CYW4343 while retaining the Pico form factor, so in addition to the basic GPIO function, it can also connect to the network so we can use it for some IoT projects.
-For example, using IFTTT for a security system, building a cloud player and a cloud service bell system using MQTT and so on.
+Il Raspberry Pi Pico W aggiunge interfacce wireless single-band 2.4GHz (802.11n) a bordo, utilizzando l'Infineon CYW4343, mantenendo il formato del Pico, quindi oltre alla funzione GPIO di base, può anche connettersi alla rete, permettendoci di utilizzarlo per alcuni progetti IoT.
+Ad esempio, utilizzando IFTTT per un sistema di sicurezza, costruendo un lettore cloud e un sistema di campanello cloud utilizzando MQTT, e così via.
 
-This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
+Questo kit contiene una varietà di componenti, inclusi display, suoni, driver, controller e sensori, che ti permettono di acquisire una comprensione completa dei dispositivi elettronici.
 
-Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino) and Piper Make are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
+Inoltre, offriamo tre linguaggi di programmazione. MicroPython, C/C++ (Arduino) e Piper Make sono tutti disponibili. Per aiutarti a iniziare rapidamente, ogni linguaggio ha progetti mirati e interessanti, così puoi scegliere quello che meglio si adatta alle tue esigenze.
 
-Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+Non esitare a scriverci se sei interessato a imparare altri progetti che non abbiamo. Aggiorneremo i nostri tutorial online il prima possibile.
 
-Here is the email: service@sunfounder.com.
+Ecco l'email: service@sunfounder.com.
 
 
-**About the display language**
+**Informazioni sulla lingua di visualizzazione**
 
-This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+Questo documento è disponibile anche in altre lingue. Per cambiare la lingua di visualizzazione, clicca sull'icona **Read the Docs** situata nell'angolo in basso a sinistra della pagina.
 
 .. image:: img/translation.png
 
-**Source Code**
+**Codice Sorgente**
 
 * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* Oppure consulta il codice su `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
 
 
-**Content**
+**Contenuto**
 
 .. toctree::
     :maxdepth: 2
@@ -75,8 +76,8 @@ This document is available in other languages as well. To switch the display lan
     faq
 
 
-Copyright Notice
+Nota di Copyright
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Tutti i contenuti, inclusi ma non limitati a testi, immagini e codice, presenti in questo manuale sono di proprietà della SunFounder Company. È possibile utilizzarli solo per scopi di studio personale, ricerca, divertimento o altri scopi non commerciali o senza scopo di lucro, nel rispetto delle normative e delle leggi sul diritto d'autore, senza violare i diritti legali dell'autore e dei relativi titolari dei diritti. Per qualsiasi individuo o organizzazione che utilizzi questi contenuti per scopi di profitto commerciale senza autorizzazione, la Società si riserva il diritto di intraprendere azioni legali.
 

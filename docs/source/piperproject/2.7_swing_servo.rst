@@ -1,51 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi a Noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anticipazioni esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_swing_servo:
 
 
-2.7 Swing Servo
-=====================
+2.7 Servo Oscillante
+=========================
 
-In this project, we use a servo and a potentiometer to simulate a steering wheel. Rotating the potentiometer will drive the servo to turn together.
+In questo progetto, utilizziamo un servo e un potenziometro per simulare un volante. Ruotando il potenziometro, il servo si muoverà di conseguenza.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -53,7 +53,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -62,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -73,39 +73,42 @@ You can also buy them separately from the links below.
         - 1
         - |link_potentiometer_buy|
 
-**Wiring**
+
+**Cablaggio**
 
 |controllable_servo0|
 
 
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
-* Potentiometer is a resistive element with 3 terminals, the 2 side pins are connected to 5V and GND, and the middle pin is connected to GP26(A0).
+* Il filo arancione (segnale) del servo è collegato a GP15, il filo rosso (alimentazione) è collegato a VBUS e il filo marrone (terra) è collegato a GND. 
+* Il potenziometro è un elemento resistivo a 3 terminali, i due pin laterali sono collegati a 5V e GND, mentre il pin centrale è collegato a GP26(A0).
 
-**Code**
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.7_swing_servo.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando i blocchi.
+    * Importa ``2.7_swing_servo.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 |controllable_servo|
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* Turn the potentiometer and the servo will follow. To see it clearly, you can insert a rocker arm in the servo shaft.
+* Dopo aver collegato Pico W, fai clic sul pulsante **Start** e il codice inizierà a funzionare.
+* Ruota il potenziometro e il servo lo seguirà. Per una visione più chiara, puoi inserire un braccio oscillante sull'albero del servo.
 
-**How it Works?**
+**Come Funziona?**
 
 |controllable_servo1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+Imposta la velocità di rotazione del pin15 (servo) al 15%.
 
-* [servo pin() set speed to ()%]: Used to set the rotation speed of the servo pin, the range is 0%~100%.
+* [servo pin() set speed to ()%]: Utilizzato per impostare la velocità di rotazione del pin del servo, l'intervallo è 0%~100%.
 
 |controllable_servo2|
 
-Create a variable [angle], then read the voltage of A0. Use the [map value () from () to ()] block, map the voltage of A0 from 0 to 3.3V voltage range to 0 to 180°, and then use the mapped angle as the rotation angle of the servo.
 
-* [map value () from () to ()]: map a value from one range to another.
+Crea una variabile [angle], poi leggi la tensione di A0. Usa il blocco [map value () from () to ()], mappa la tensione di A0 da un intervallo di tensione di 0 a 3.3V a un angolo di 0 a 180°, e poi usa l'angolo mappato come angolo di rotazione del servo.
+
+* [map value () from () to ()]: Mappa un valore da un intervallo a un altro.
+
 
 .. note::
-    The voltage of A0~A2 takes the range of 0~3.3V, even if your power supply is connected to VBUS (5V).
+    La tensione di A0~A2 varia tra 0~3.3V, anche se l'alimentazione è collegata a VBUS (5V).

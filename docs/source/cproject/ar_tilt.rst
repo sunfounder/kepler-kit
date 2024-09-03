@@ -1,63 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e affronta sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_tilt:
 
-2.6 - Tilt It！
+2.6 - Inclinazione!
 ==========================
 
 |img_tilt|
 
-The tilt switch is a 2-pin device with a metal ball in the middle. When you put it upright, the 2 pins are connected together; when you tilt the switch, 2 pins will be disconnected.
+L'interruttore a inclinazione è un dispositivo a 2 pin con una sfera di metallo al centro. Quando lo posizioni in posizione verticale, i 2 pin sono collegati tra loro; quando inclini l'interruttore, i 2 pin si scollegano.
 
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,29 +75,29 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schema**
 
 |sch_tilt|
 
-When you put it upright, GP14 will get high; after tilting it, GP14 will get low.
+Quando lo posizioni in posizione verticale, GP14 sarà alto; dopo averlo inclinato, GP14 sarà basso.
 
-The purpose of the 10K resistor is to keep the GP14 in a stable low state when the tilt switch is in a tilted state.
+Lo scopo del resistore da 10K è mantenere GP14 in uno stato stabile e basso quando l'interruttore a inclinazione è in posizione inclinata.
 
 * :ref:`cpn_tilt`
 
-**Wiring**
+**Cablaggio**
 
 |wiring_tilt|
 
-**Code**
+**Codice**
 
 .. note::
 
-   * You can open the file ``2.6_tilt_it.ino`` under the path of ``kepler-kit-main/arduino/2.4_colorful_light``. 
-   * Or copy this code into **Arduino IDE**.
+   * Puoi aprire il file ``2.6_tilt_it.ino`` nel percorso ``kepler-kit-main/arduino/2.4_colorful_light``. 
+   * Oppure copia questo codice nell'**Arduino IDE**.
 
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 
 
@@ -110,4 +108,4 @@ The purpose of the 10K resistor is to keep the GP14 in a stable low state when t
     
 
 
-After the program runs, when you tilt the breadboard (tilt switch), "The switch works!" will appear in the shell.
+Dopo l'esecuzione del programma, quando inclini la breadboard (interruttore a inclinazione), apparirà nel terminale "The switch works!".

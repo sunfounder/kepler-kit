@@ -1,52 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-7. Setup a Web Server
+7. Configurazione di un Web Server
 ====================================
 
-
-In this article, you will learn how to make Pico W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
+In questo articolo, imparerai come trasformare Pico W in un web server che ti 
+permette di operare il circuito e ottenere letture dai sensori attraverso un browser.
 
 |setup_web|
 
-**1. Required Components**
+**1. Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -63,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diverse
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -82,52 +81,51 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 10
-        - Battery Holder
+        - Supporto Batteria
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Costruisci il Circuito**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Assicurati che il modulo caricabatterie Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
 .. image:: img/wiring/7.web_page_bb.png
     :width: 800
 
 
-**3. Run the Code**
+**3. Esegui il Codice**
 
-#. Open the ``7_web_page.py`` file under the path of ``kepler-kit-main/iot``.
-#. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+#. Apri il file ``7_web_page.py`` nel percorso ``kepler-kit-main/iot``.
+#. Clicca sul pulsante **Esegui script corrente** o premi F5 per eseguirlo. Dopo una connessione riuscita, vedrai l'IP del Pico W.
 
     .. image:: img/7_web_server.png
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, if not please refer to :ref:`iot_access` to create them.
+        Prima di eseguire il codice, assicurati di avere gli script ``do_connect.py`` e ``secrets.py`` nel tuo Pico W, in caso contrario fai riferimento a :ref:`iot_access` per crearli.
 
-#. Enter the IP address of the Pico W into your browser to access the web page built for this project. Click any button to change the color of the RGB LEDs and refresh the temperature and humidity.
+#. Inserisci l'indirizzo IP del Pico W nel tuo browser per accedere alla pagina web creata per questo progetto. Clicca su qualsiasi pulsante per cambiare il colore dei LED RGB e aggiornare la temperatura e l'umidità.
 
     .. image:: img/web-1.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Se desideri che questo script si avvii automaticamente, puoi salvarlo nel Raspberry Pi Pico W come ``main.py``.
 
-**How it works?**
+**Come funziona?**
 
-The web page you are visiting is actually hosted on some server, and the socket on the server will send the web page to us when we visit it.
-A socket is the way a server can listen for a client that wants to connect to it. 
+La pagina web che stai visitando è effettivamente ospitata su un server, e il socket sul server invierà la pagina web quando la visitiamo.
+Un socket è il modo in cui un server può ascoltare un client che vuole connettersi ad esso.
 
-In this project, Pico W is your server, and your computer is accessing the web page hosted on Pico W through a browser.
+In questo progetto, Pico W è il tuo server, e il tuo computer sta accedendo alla pagina web ospitata su Pico W tramite un browser.
 
-First we create a socket, which requires an IP address and a |link_port|.
-The network connection and the way to get the IP are described in :ref:`iot_access`. And for port, we use 80.
-After setting up the socket, return it and use it for the next step.
+Per prima cosa creiamo un socket, che richiede un indirizzo IP e |link_port|. La connessione di rete e il modo per ottenere l'IP sono descritti in :ref:`iot_access`. Per la porta, usiamo la 80.
+Dopo aver configurato il socket, lo restituiamo e lo utilizziamo per il passo successivo.
 
 `socket library - Python Docs <https://docs.python.org/3/library/socket.html>`_ 
 
@@ -144,8 +142,8 @@ After setting up the socket, return it and use it for the next step.
         print(connection)
         return(connection)
 
-Then, set up your web service where the socket you set up earlier will be used.
-The following code will allow your Pico W to receive access requests from your browser.
+Successivamente, configura il tuo servizio web dove il socket che hai configurato in precedenza sarà utilizzato.
+Il seguente codice permetterà al tuo Pico W di ricevere richieste di accesso dal tuo browser.
 
 .. code-block:: python
 
@@ -155,10 +153,10 @@ The following code will allow your Pico W to receive access requests from your b
             request = client.recv(1024)
             client.close()
 
-Next, you need an html page to send to the visitor. This example stores a simple html page in the form of characters in the variable ``html``.
+Successivamente, hai bisogno di una pagina html da inviare al visitatore. Questo esempio memorizza una semplice pagina html sotto forma di caratteri nella variabile ``html``.
 
 .. note:: 
-    If you want to be able to write your own html, you can get help at |link_html|.
+    Se vuoi essere in grado di scrivere il tuo html, puoi ottenere aiuto su |link_html|.
 
 .. code-block:: python
 
@@ -185,7 +183,7 @@ Next, you need an html page to send to the visitor. This example stores a simple
                 """
         return html
 
-Send html page to visitor.
+Invia la pagina html al visitatore.
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -198,8 +196,7 @@ Send html page to visitor.
             client.send(html)
             client.close()
 
-
-The page can be accessed through your browser if you combine the above parts. If you want to see the effect, run the code below with thonny.
+La pagina può essere accessibile tramite il tuo browser se combini le parti sopra. Se vuoi vedere l'effetto, esegui il codice qui sotto con Thonny.
 
 .. code-block:: python
 
@@ -258,10 +255,10 @@ The page can be accessed through your browser if you combine the above parts. If
         machine.reset()
 
 
-When you run the code above, you will see that it displays only a web page, does not allow you to control RGB LEDs, nor does it show sensor readings.
-The web service needs to be refined further.
+Quando esegui il codice sopra, vedrai che visualizza solo una pagina web, non ti permette di controllare i LED RGB, né mostra le letture dei sensori.
+Il servizio web ha bisogno di ulteriori perfezionamenti.
 
-The first thing we need to know is what information the server receives when the browser accesses the web page. Therefore, change ``serve()`` slightly to print ``request``.
+La prima cosa che dobbiamo sapere è quali informazioni il server riceve quando il browser accede alla pagina web. Pertanto, modifica leggermente ``serve()`` per stampare ``request``.
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -276,7 +273,7 @@ The first thing we need to know is what information the server receives when the
             client.send(html)
             client.close()
 
-Re-run the script and the Shell will print the following message when we press a key on the web page.
+Riesegui lo script e la Shell stamperà il seguente messaggio quando premiamo un tasto sulla pagina web.
 
 .. code-block:: 
 
@@ -285,10 +282,10 @@ Re-run the script and the Shell will print the following message when we press a
     b'GET /blue? HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
     b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.18.162\r\nConnection: keep-alive.......q=0.5\r\n\r\n'
 
-They are too long to read!!! 
+Sono troppo lunghi da leggere!!! 
 
-But all we really need is the small piece of information in front of ``/red?``, ``/blue?``.
-It tells us which button was pressed. So we refined ``serve()`` a bit to extract the keystroke information.
+Ma tutto ciò di cui abbiamo davvero bisogno è il piccolo pezzo di informazione davanti a ``/red?``, ``/blue?``.
+Ci dice quale pulsante è stato premuto. Quindi abbiamo perfezionato ``serve()`` un po' per estrarre le informazioni sul tasto premuto.
 
 .. code-block:: python
     :emphasize-lines: 6,7,8,9
@@ -307,7 +304,7 @@ It tells us which button was pressed. So we refined ``serve()`` a bit to extract
             client.send(html)
             client.close()
 
-Re-run the program and the Shell will print the following message when we press a key on the web page.
+Riesegui il programma e la Shell stamperà il seguente messaggio quando premiamo un tasto sulla pagina web.
 
 .. code-block:: 
 
@@ -318,7 +315,7 @@ Re-run the program and the Shell will print the following message when we press 
     /off?
     /favicon.ico
 
-Then, we just need to change the color of the RGB LED according to the value of ``request``.
+Poi, dobbiamo solo cambiare il colore del LED RGB in base al valore di ``request``.
 
 .. code-block:: python
 
@@ -355,9 +352,9 @@ Then, we just need to change the color of the RGB LED according to the value of 
             client.send(html)
             client.close()
 
-The last thing is to display the thermistor value on the web page (see :ref:`py_temp` for details on using the thermistor).
-This part is actually done by modifying the text on the html.
-We set the parameters in the ``webpage(value)`` function and simply change the incoming parameters to change the number displayed on the web page.
+L'ultima cosa è visualizzare il valore del termistore sulla pagina web (vedi :ref:`py_temp` per i dettagli sull'uso del termistore).
+Questa parte è in realtà realizzata modificando il testo sull'html.
+Impostiamo i parametri nella funzione ``webpage(value)`` e cambiamo semplicemente i parametri in ingresso per modificare il numero visualizzato sulla pagina web.
 
 .. code-block:: python
     :emphasize-lines: 30,31

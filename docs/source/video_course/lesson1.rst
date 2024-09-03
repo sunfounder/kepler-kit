@@ -1,33 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 1:  Write Your First Program for Absolute Beginners
-=================================================================
+Lezione 1: Scrivi il Tuo Primo Programma per Principianti Assoluti
+==========================================================================
 
-This tutorial covers setting up and programming the Raspberry Pi Pico W using the SunFounder Kepler Kit:
+Questo tutorial copre la configurazione e la programmazione del Raspberry Pi Pico W utilizzando il SunFounder Kepler Kit:
 
-* **Introduction and Setup**: Overview of the tutorial series and sponsor shoutout to SunFounder. Instructions on unboxing and connecting the Pico W to the PC using a USB cable.
-* **MicroPython Installation**: Step-by-step guide to downloading and installing MicroPython on the Pico W, including necessary steps to make the Pico W recognizable as a USB drive.
-* **Thonny IDE Installation**: Instructions for downloading and installing the Thonny IDE on the PC, including handling potential installation warnings and setting up Thonny to communicate with the Pico W.
-* **First Program**: Writing and running the first program in Thonny to print "Hello, World!" to confirm the setup is working correctly.
-* **GPIO Interaction**: Explanation of GPIO pins and a simple program to control the onboard LED by turning it on and off. Introduction to loops and delays for creating a blinking LED effect.
+* **Introduzione e Configurazione**: Panoramica della serie di tutorial e ringraziamento al sponsor SunFounder. Istruzioni su come disimballare e collegare il Pico W al PC utilizzando un cavo USB.
+* **Installazione di MicroPython**: Guida passo-passo per scaricare e installare MicroPython sul Pico W, inclusi i passaggi necessari per rendere il Pico W riconoscibile come unità USB.
+* **Installazione di Thonny IDE**: Istruzioni per scaricare e installare Thonny IDE sul PC, incluse le indicazioni per gestire eventuali avvisi di installazione e configurare Thonny per comunicare con il Pico W.
+* **Primo Programma**: Scrittura ed esecuzione del primo programma in Thonny per stampare "Hello, World!" e confermare che la configurazione funzioni correttamente.
+* **Interazione con GPIO**: Spiegazione dei pin GPIO e un semplice programma per controllare il LED integrato accendendolo e spegnendolo. Introduzione ai cicli e ai ritardi per creare un effetto LED lampeggiante.
 
 **Video**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/SL4_oU9t8Ss?si=Y3IQH0_JAyygMfUT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-

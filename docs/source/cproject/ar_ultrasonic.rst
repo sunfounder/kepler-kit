@@ -1,61 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_ultrasonic:
 
-6.1 - Measuring Distance
+6.1 - Misurare la Distanza
 ======================================
 
-The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
+Il modulo sensore ultrasonico funziona secondo il principio dei sistemi sonar e radar per determinare la distanza da un oggetto.
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -64,51 +63,46 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
         - 1
         - |link_ultrasonic_buy|
 
-**Schematic**
+**Schema**
 
 |sch_ultrasonic|
 
-**Wiring**
+**Collegamenti**
 
 |wiring_ultrasonic|
 
-**Code**
+**Codice**
 
 .. note::
 
-   * You can open the file ``6.1_ultrasonic.ino`` under the path of ``kepler-kit-main/arduino/6.1_ultrasonic``. 
-   * Or copy this code into **Arduino IDE**.
+   * Puoi aprire il file ``6.1_ultrasonic.ino`` nel percorso ``kepler-kit-main/arduino/6.1_ultrasonic``. 
+   * Oppure copia questo codice nell'**Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/631a1663-ce45-4d46-b8f0-7d10f32097a9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Una volta avviato il programma, il Monitor Seriale mostrerà la distanza del sensore ultrasonico dall'ostacolo di fronte.
 
-Once the program is running, the Serial Monitor will print out the distance of the ultrasonic sensor from the obstacle ahead.
+**Come funziona?**
 
-
-**How it works?**
-
-About the application of ultrasonic sensor, we can directly check the
-subfunction.
+Per quanto riguarda l'applicazione del sensore ultrasonico, possiamo verificare direttamente la sottoprocedura.
 
 .. code-block:: arduino
 
     float readSensorData(){// ...}
 
-``PING`` is triggered by a HIGH pulse of 2 or more microseconds. (Give a
-short ``LOW`` pulse beforehand to ensure a clean ``HIGH`` pulse.)
+``PING`` è attivato da un impulso HIGH di 2 o più microsecondi. (Fornisci un 
+breve impulso ``LOW`` prima per garantire un impulso ``HIGH`` pulito.)
 
 .. code-block:: arduino
 
@@ -118,23 +112,21 @@ short ``LOW`` pulse beforehand to ensure a clean ``HIGH`` pulse.)
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW); 
 
-The echo pin is used to read signal from PING, a ``HIGH`` pulse whose
-duration is the time (in microseconds) from the sending of the ping to
-the reception of echo of the object.
+Il pin echo viene utilizzato per leggere il segnale da PING, un impulso ``HIGH`` 
+la cui durata è il tempo (in microsecondi) dal momento dell'invio del ping alla 
+ricezione dell'eco dell'oggetto.
 
 .. code-block:: arduino
 
     microsecond=pulseIn(echoPin, HIGH);
 
-The speed of sound is 340 m/s or 29 microseconds per centimeter.
+La velocità del suono è di 340 m/s o 29 microsecondi per centimetro.
 
-This gives the distance travelled by the ping, outbound and return, so
-we divide by 2 to get the distance of the obstacle.
+Questo valore fornisce la distanza percorsa dal ping, andata e ritorno, quindi dividiamo per 2 per ottenere la distanza dell'ostacolo.
 
 .. code-block:: arduino
 
     float distance = microsecond / 29.00 / 2;  
 
 
-Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
-
+Nota che il sensore ultrasonico metterà in pausa il programma mentre è in funzione, il che potrebbe causare qualche ritardo quando si scrivono progetti complessi.

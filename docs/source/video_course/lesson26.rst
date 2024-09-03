@@ -1,41 +1,41 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 26:  Drawing a Circle on the OLED 1306 Display
+lezione 26: Disegnare un Cerchio sul Display OLED 1306
 =============================================================================
 
-This tutorial covers drawing shapes on an OLED display using the Raspberry Pi Pico W:
+Questo tutorial tratta il disegno di forme su un display OLED utilizzando il Raspberry Pi Pico W:
 
-* **Introduction**:
- - Highlights the goal: drawing a circle on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**:
- - Reviews the previous lesson on using the OLED 1306 display and setting up the SSD1306 library.
- - Discusses the importance of using mathematical functions to draw shapes on the OLED display.
-* **Drawing a Circle**:
- - Explains the math behind drawing a circle using trigonometric functions: \( x = r \cos(\theta) \) and \( y = r \sin(\theta) \).
- - Converts degrees to radians for use in programming languages.
- - Shows how to center the circle on the OLED display by adjusting the x and y coordinates.
- - Provides a step-by-step code example to draw a circle by iterating through 360 degrees and calculating the x and y positions.
-* **Enhancing the Circle Drawing**:
- - Demonstrates how to draw a filled circle by iterating over a range of radii.
- - Shows how to draw a partial circle or arc by adjusting the angle range.
-* **Practical Demonstration**:
- - Runs the code to show the drawing of a circle and a filled circle on the OLED display.
- - Explains how to optimize the drawing speed by updating the display only after all points are calculated.
-* **Homework Assignment**:
- - Assigns a task: create a program that draws a "floating potato chip" shape on the OLED display.
- - Encourages viewers to figure out the math behind the shape and post their homework on YouTube.
+* **Introduzione**:
+ - Sottolinea l'obiettivo: disegnare un cerchio su un display OLED utilizzando il Raspberry Pi Pico W.
+* **Ricapitolazione e Configurazione**:
+ - Ricapitola la lezione precedente sull'utilizzo del display OLED 1306 e la configurazione della libreria SSD1306.
+ - Discute l'importanza di utilizzare funzioni matematiche per disegnare forme sul display OLED.
+* **Disegnare un Cerchio**:
+ - Spiega la matematica dietro il disegno di un cerchio utilizzando funzioni trigonometriche: \( x = r \cos(\theta) \) e \( y = r \sin(\theta) \).
+ - Converte i gradi in radianti per l'uso nei linguaggi di programmazione.
+ - Mostra come centrare il cerchio sul display OLED regolando le coordinate x e y.
+ - Fornisce un esempio di codice passo-passo per disegnare un cerchio iterando su 360 gradi e calcolando le posizioni x e y.
+* **Migliorare il Disegno del Cerchio**:
+ - Dimostra come disegnare un cerchio pieno iterando su un intervallo di raggi.
+ - Mostra come disegnare un cerchio parziale o un arco regolando l'intervallo di angoli.
+* **Dimostrazione Pratica**:
+ - Esegue il codice per mostrare il disegno di un cerchio e di un cerchio pieno sul display OLED.
+ - Spiega come ottimizzare la velocità di disegno aggiornando il display solo dopo che tutti i punti sono stati calcolati.
+* **Compito a Casa**:
+ - Assegna un compito: creare un programma che disegni una forma di "patatina galleggiante" sul display OLED.
+ - Incoraggia gli spettatori a scoprire la matematica dietro la forma e a postare il loro lavoro su YouTube.
 
 
 

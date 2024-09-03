@@ -1,51 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi a Noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci dei nuovi prodotti e alle anticipazioni.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_light_display:
 
-2.8 Light Intensity Display
-=====================================
+2.8 Indicatore di Intensità della Luce
+===========================================
 
-In this project, we use a photoresistor and the LED Bar Graph to make a light intensity display, where the stronger the light is the more the number of the LED Bar Graph lights up.
+In questo progetto, utilizziamo un fotoresistore e un LED Bar Graph per creare un indicatore di intensità della luce, dove più forte è la luce, maggiore è il numero di LED che si accendono sul LED Bar Graph.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -53,7 +52,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -62,7 +61,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,41 +76,36 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Wiring**
+**Cablaggio**
 
 |light_intensity_display0|
 
+* Il LED Bar Graph è composto da 10 LED, con il lato con l'etichetta come anodo e l'altro lato come catodo.
+* Gli anodi del LED Bar Graph sono collegati a GP6~GP15. I catodi sono collegati a una resistenza da 220 ohm e poi a GND.
+* Collega un'estremità del fotoresistore a 3,3V e l'altra estremità a GP26 (A0). Allo stesso tempo, GP26 deve essere collegato a un'altra resistenza da 10K a GND. In questo modo, quando la luce è più intensa, la resistenza del fotoresistore diminuisce e la tensione di A0 aumenta.
 
-* The LED Bar Graph consists of 10 LEDs, with the side with the label as the anode and the other side as the cathode.
-* The anode of the LED Bar Graph are connected to GP6~GP15. The cathode are connected to a 220 ohm resistor and then to GND.
-* Connect one end of the photoresistor to 3.3V and the other end to GP26 (A0). At the same time, GP26 needs to be connected to another 10K resistor to GND. This way, when the light is stronger, the resistance of the photoresistor decreases and the voltage of A0 increases.
-
-
-**Code**
-
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.8_light_intensity_display.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando.
+    * Importa ``2.8_light_intensity_display.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 |light_intensity_display|
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the light is stronger, more LEDs are lit on the LED Bar Graph. 
-* If running the code does not light up properly, you can try flipping the led bar.
+* Dopo aver collegato Pico W, fai clic sul pulsante **Start** e il codice inizierà a funzionare.
+* Quando la luce è più intensa, si accendono più LED sul LED Bar Graph.
+* Se eseguendo il codice i LED non si accendono correttamente, prova a invertire la barra LED.
 
 
-
-**How it Works?**
+**Come Funziona?**
 
 |light_intensity_display1|
 
-Set the pins of LED Bar Graph connected to GP6 ~ GP15.
-
+Imposta i pin del LED Bar Graph collegati a GP6 ~ GP15.
 
 |light_intensity_display2|
 
-Store the voltage value of A0 (GP26) read into the variable [photo_vol].  Use the [map value () from () to ()] block to map the variable [photo_vol] from 0 to 3.3V to 0 to 10 (the number of LEDs on the LED Bar Graph).
+Memorizza il valore di tensione di A0 (GP26) letto nella variabile [photo_vol]. Usa il blocco [map value () from () to ()] per mappare la variabile [photo_vol] da 0 a 3,3V a 0 a 10 (il numero di LED sul LED Bar Graph).
 
-* [map value () from () to ()]: map a value from one range to another.
+* [map value () from () to ()]: Mappa un valore da un intervallo a un altro.

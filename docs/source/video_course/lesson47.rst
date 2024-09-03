@@ -1,41 +1,41 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 47 : Improving Sensor Data With a Low Pass Filter
+lesson 47: Migliorare i Dati dei Sensori con un Filtro Passa-Basso
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable two-axis tilt meter by implementing a low-pass filter:
+Questo tutorial tratta l'utilizzo del sensore MPU6050 con il Raspberry Pi Pico W per creare un inclinometro a due assi stabile implementando un filtro passa-basso:
 
 * **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
+   - Collega l'MPU6050 al Raspberry Pi Pico W utilizzando lo schema fornito.
 
-* **Concept**:
-   - Measure tilt using the MPU6050's accelerometer data to calculate pitch and roll angles.
-   - Address errors caused by interpreting acceleration as tilt.
+* **Concetto**:
+   - Misura l'inclinazione utilizzando i dati dell'accelerometro dell'MPU6050 per calcolare gli angoli di pitch e roll.
+   - Affronta gli errori causati dall'interpretazione dell'accelerazione come inclinazione.
 
-* **Low-Pass Filter**:
-   - Implement a low-pass filter to smooth out data and reduce noise.
-   - Equation: \(\text{new value} = \text{sensor confidence} \times \text{measurement} + (1 - \text{sensor confidence}) \times \text{old value}\)
-   - Adjust the confidence value for the best balance between responsiveness and noise reduction.
+* **Filtro Passa-Basso**:
+   - Implementa un filtro passa-basso per uniformare i dati e ridurre il rumore.
+   - Equazione: \(\text{nuovo valore} = \text{confidence sensore} \times \text{misura} + (1 - \text{confidence sensore}) \times \text{vecchio valore}\)
+   - Regola il valore di confidence per trovare il miglior equilibrio tra reattività e riduzione del rumore.
 
-* **Code**:
-   - Set up the MPU6050 to measure X, Y, and Z acceleration.
-   - Calculate and filter pitch and roll angles.
-   - Display the filtered values.
+* **Codice**:
+   - Configura l'MPU6050 per misurare le accelerazioni sugli assi X, Y e Z.
+   - Calcola e filtra gli angoli di pitch e roll.
+   - Visualizza i valori filtrati.
 
-* **Homework**:
-   - Implement and test the low-pass filter.
-   - Experiment with different confidence values.
+* **Compiti a Casa**:
+   - Implementa e testa il filtro passa-basso.
+   - Sperimenta con diversi valori di confidence.
 
 **Video**
 

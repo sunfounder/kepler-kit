@@ -1,59 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa ai giveaway e alle promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_irremote:
 
 
-6.4 IR Remote Control
+6.4 Telecomando a Infrarossi
 ================================
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
+Nell'elettronica di consumo, i telecomandi sono utilizzati per controllare 
+dispositivi come televisori e lettori DVD. In alcuni casi, i telecomandi 
+permettono alle persone di controllare dispositivi che sono fuori dalla loro 
+portata, come i condizionatori d'aria centralizzati.
 
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+Il ricevitore IR è un componente con una fotocellula sintonizzata per ricevere 
+luce a infrarossi. È quasi sempre utilizzato per la rilevazione del telecomando: 
+ogni televisore e lettore DVD ne ha uno nella parte anteriore per ricevere il 
+segnale IR dal telecomando. All'interno del telecomando c'è un LED IR abbinato, 
+che emette impulsi IR per comunicare con il televisore, accenderlo, spegnerlo o 
+cambiare canale.
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -61,7 +65,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -70,34 +74,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_irrecv|
 
-**Wiring**
-
+**Collegamenti**
 
 |wiring_irrecv|
 
+**Codice**
 
 **Code**
 
-.. note::
+    * Apri il file ``6.4_ir_remote_control.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Open the ``6.4_ir_remote_control.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`. 
     
-    * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Qui devi usare le librerie nella cartella ``ir_rx``, verifica se sono state caricate su Pico, per un tutorial dettagliato fai riferimento a :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -171,12 +173,12 @@ You can also buy them separately from the links below.
         ir.close()
 
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Shell will print out the key you pressed.
+Il nuovo telecomando ha un pezzo di plastica all'estremità per isolare la batteria all'interno. Devi estrarre questo pezzo di plastica per alimentare il telecomando quando lo utilizzi.
+Una volta che il programma è in esecuzione, quando premi il telecomando, la Shell stamperà il tasto che hai premuto.
 
-**How it works?**
+**Come Funziona?**
 
-This program looks slightly complicated, but it actually does the basic functions of the IR receiver with just a few lines.
+Questo programma sembra leggermente complicato, ma in realtà svolge le funzioni di base del ricevitore IR con poche righe di codice.
 
 .. code-block:: python
 
@@ -195,15 +197,15 @@ This program looks slightly complicated, but it actually does the basic function
 
     ir = NEC_8(pin_ir, callback)  # Instantiate receiver
 
-Here an ``ir`` object is instantiated, which reads the signals acquired by the IR receiver at any time.
+Qui viene istanziato un oggetto ``ir``, che legge i segnali acquisiti dal ricevitore IR in qualsiasi momento.
 
-The result will be recorded in ``data`` of the callback function.
+Il risultato sarà registrato in ``data`` della funzione di callback.
 
 * `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
 
-If the IR receiver receives duplicate values (e.g. pressing a key and not releasing it), then data < 0 and this data needs to be filtered.
+Se il ricevitore IR riceve valori duplicati (ad esempio premendo un tasto senza rilasciarlo), allora data < 0 e questo dato deve essere filtrato.
 
-Otherwise data would be a usable value, but some unspeakable code, and the ``decodeKeyValue(data)`` function is used to decode it.
+Altrimenti, data sarebbe un valore utilizzabile, ma alcuni codici potrebbero non essere comprensibili, quindi viene utilizzata la funzione ``decodeKeyValue(data)`` per decodificarli.
 
 .. code-block:: python
 
@@ -252,17 +254,17 @@ Otherwise data would be a usable value, but some unspeakable code, and the ``dec
             return "MODE" 
         return "ERROR"
 
-If we press key **1**, the IR receiver outputs a value like ``0x0C``, which needs to be decoded to correspond to the specific key.
+Se premi il tasto **1**, il ricevitore IR emette un valore come ``0x0C``, che deve essere decodificato per corrispondere al tasto specifico.
 
-Next are some debug functions. They are important, but not related to the effect we need to achieve, so we just put them in the program.
+Successivamente, ci sono alcune funzioni di debug. Sono importanti, ma non sono direttamente collegate all'effetto che dobbiamo ottenere, quindi le inseriamo semplicemente nel programma.
 
 .. code-block:: python
 
     from ir_rx.print_error import print_error
 
-    ir.error_function(print_error) # Show debug information
+    ir.error_function(print_error) # Mostra informazioni di debug
 
-Finally, we use an empty loop as the main program. And use try-except to make the program exit with the ``ir`` object terminated.
+Infine, utilizziamo un ciclo vuoto come programma principale. E usiamo try-except per far uscire il programma chiudendo l'oggetto ``ir``.
 
 .. code-block:: python
 

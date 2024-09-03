@@ -1,24 +1,24 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di Appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e anticipazioni.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 Print()
-=====================
+======================
 
-The ``print()`` function prints the specified message to the screen, or other standard output device.
-The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+La funzione ``print()`` stampa il messaggio specificato sullo schermo o su un altro dispositivo di output standard.
+Il messaggio può essere una stringa o qualsiasi altro oggetto, che verrà convertito in una stringa prima di essere scritto sullo schermo.
 
-Print multiple objects:
+Stampa più oggetti:
 
 
 
@@ -41,7 +41,7 @@ Print tuples:
 >>> %Run -c $EDITOR_CONTENT
 ('pear', 'apple', 'grape')
 
-Print two messages and specify the separator:
+Stampa due messaggi e specifica il separatore:
 
 
 

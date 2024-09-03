@@ -1,51 +1,50 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_button:
 
-2.2 Button
+2.2 Pulsante
 =================
 
-In this project, we will learn how to turn on or off the LED by using a button.
+In questo progetto, impareremo come accendere o spegnere il LED utilizzando un pulsante.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -53,7 +52,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -62,11 +61,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 2(220Ω, 10KΩ)
+        - 2 (220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -77,33 +76,33 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
 
-**Wiring**
+**Cablaggio**
 
 
 |button0|
 
 
-* One side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, so when the button is pressed, GP14 will be high. 
-* However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+* Un lato del pin del pulsante è collegato a 3.3V, mentre l'altro lato è collegato a GP14. Quindi, quando il pulsante è premuto, GP14 sarà alto.
+* Tuttavia, quando il pulsante non è premuto, GP14 è in uno stato sospeso e potrebbe essere alto o basso. Per ottenere un livello basso stabile quando il pulsante non è premuto, GP14 deve essere ricollegato a GND tramite una resistenza di pull-down da 10K.
 
 
-**Code**
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.2_button.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando i blocchi.
+    * Importa ``2.2_button.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 
 |2.2_button|
 
-After connecting Pico W, click the **Start** button and the code starts to run. When the button is pressed, the LED will be lit. When the button is released, the LED will go out.
+Dopo aver collegato il Pico W, fai clic sul pulsante **Start** e il codice inizierà a funzionare. Quando il pulsante è premuto, il LED si accenderà. Quando il pulsante viene rilasciato, il LED si spegnerà.
 
 
-**How it Works?**
+**Come Funziona?**
 
-When the button is pressed, pin14 is high. So if the read pin14 is high, turn the pin15 on (LED is lit); else, turn off the pin15 (LED is off).
+Quando il pulsante è premuto, il pin14 è alto. Quindi, se il pin14 letto è alto, accendi il pin15 (il LED si accende); altrimenti, spegni il pin15 (il LED si spegne).
 
-* [if () do () else ()]: This is a judgment block, depending on the condition after the [if] block to determine whether to run the blocks inside the [do] block, or the blocks inside the [else] block.
-* [is pin () HIGH]: This is used to read the level of a specific pin, if the level read is the same as the set HIGH/LOW, then execute the blocks inside [do] block, otherwise execute the blocks inside [else].
+* [if () do () else ()]: Questo è un blocco di giudizio, che dipende dalla condizione dopo il blocco [if] per determinare se eseguire i blocchi all'interno del blocco [do] o quelli all'interno del blocco [else].
+* [is pin () HIGH]: Viene utilizzato per leggere il livello di un determinato pin; se il livello letto è uguale al livello impostato HIGH/LOW, allora esegue i blocchi all'interno del blocco [do], altrimenti esegue i blocchi all'interno del blocco [else].
 

@@ -1,62 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e affronta sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_slide:
 
-2.7 - Toggle Left and Right
-====================================
+2.7 - Scorrere a Sinistra e a Destra
+=========================================
 
 |img_slide|
 
-The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
+L'interruttore a slitta è un dispositivo a 3 pin, con il pin 2 (centrale) che funge da pin comune. Quando l'interruttore viene spostato a sinistra, i due pin di sinistra sono collegati tra loro, mentre quando viene spostato a destra, i due pin di destra sono collegati.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -65,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -80,33 +79,33 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schema**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+Il pin GP14 riceverà un livello diverso quando si sposta l'interruttore a slitta a destra o a sinistra.
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+Lo scopo della resistenza da 10KΩ è mantenere GP14 a un livello basso durante lo spostamento (non completamente a sinistra e non completamente a destra).
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+Il condensatore ceramico 104 viene utilizzato qui per eliminare il jitter.
 
 * :ref:`cpn_slide_switch`
 * :ref:`cpn_capacitor`
 
 
-**Wiring**
+**Cablaggio**
 
 |wiring_slide|
 
-**Code**
+**Codice**
 
 .. note::
 
-   * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
-   * Or copy this code into **Arduino IDE**.
+   * Puoi aprire il file ``2.7_toggle_left_right.ino`` nel percorso ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
+   * Oppure copia questo codice nell'**Arduino IDE**.
 
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 
 .. raw:: html
@@ -114,4 +113,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a20c0733-f234-4d4b-862d-db87f2c249e9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-When the program is running, the serial monitor will show "ON" or "OFF" when you toggle the switch to the left or right.
+Quando il programma è in esecuzione, il monitor seriale mostrerà "ON" o "OFF" quando sposti l'interruttore a sinistra o a destra.

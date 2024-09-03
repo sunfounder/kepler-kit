@@ -1,62 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_traffic_light:
 
 
-7.6 Traffic Light
+7.6 Semaforo
 =================================
 
 
-`Traffic Light <https://en.wikipedia.org/wiki/Traffic_light>`_ is a signal device located at roadway intersections, crosswalks and other locations to control the flow of traffic.
+Il `Traffic Light <https://en.wikipedia.org/wiki/Traffic_light>`_ è un dispositivo di segnalazione situato agli incroci stradali, alle strisce pedonali e in altri punti per controllare il flusso del traffico.
 
-Traffic signals are standardized by the `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_.
-Provides users with the right-of-way by alternating LEDs in three standard colors.
+I segnali stradali sono standardizzati dalla `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_.
+Fornisce agli utenti la precedenza alternando i LED in tre colori standard.
 
-* **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
-* **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).
-* **Green light**: Allows traffic to move in the indicated direction.
+* **Luce rossa**: Il traffico deve fermarsi quando vede una luce rossa lampeggiante, equivalente a un segnale di stop.
+* **Luce gialla**: Segnale di avvertimento che sta per diventare rosso. Le luci gialle sono interpretate in modo diverso nei vari paesi (regioni).
+* **Luce verde**: Consente al traffico di muoversi nella direzione indicata.
 
-In this project, we will use three colors of LEDs to implement traffic light changes and a 4-digit 7-segment display to show the time of each traffic state.
+In questo progetto, utilizzeremo tre colori di LED per implementare i cambiamenti del semaforo e un display a 4 cifre a 7 segmenti per mostrare il tempo di ciascun stato del traffico.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -73,7 +72,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -93,30 +92,30 @@ You can also buy them separately from the links below.
         - |link_led_buy|
 
 
-**Schematic**
+**Schema**
 
 
 |sch_traffic_light|
 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of 3 LEDs.
-* The 3 red, yellow and green LEDs are connected to GP7~GP9 respectively.
+* Questo circuito è basato su :ref:`py_74hc_4dig` con l'aggiunta di 3 LED.
+* I 3 LED rosso, giallo e verde sono collegati rispettivamente ai pin GP7~GP9.
 
-**Wiring**
+**Collegamenti**
 
 
 |wiring_traffic_light| 
 
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``7.6_traffic_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``7.6_traffic_light.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -207,4 +206,4 @@ You can also buy them separately from the links below.
         display(counter)
         lightup(color_state)
 
-When the code runs, the green LED stays on for 30 seconds, the yellow LED stays on for 5 seconds, and the green LED stays on for 30 seconds.
+Quando il codice viene eseguito, il LED verde rimane acceso per 30 secondi, il LED giallo rimane acceso per 5 secondi e il LED rosso rimane acceso per 30 secondi.

@@ -1,46 +1,46 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 24:  Power Portable Projects with LiPo Rechargeable Battery
-=============================================================================
+lezione 24: Alimentare Progetti Portatili con una Batteria Ricaricabile LiPo
+================================================================================
 
-This tutorial covers powering a Raspberry Pi Pico W project with a rechargeable LiPo battery, making the project portable:
+Questo tutorial spiega come alimentare un progetto con Raspberry Pi Pico W utilizzando una batteria ricaricabile LiPo, rendendo il progetto portatile:
 
-* **Introduction**: introduces the tutorial, acknowledging the sponsor SunFounder, and reviews the goal of the lesson: making the DHT-11 temperature and humidity sensor project portable.
-* **Component Review and Setup**:
- - Recaps the previous project setup: Raspberry Pi Pico W, DHT-11 sensor, push button, and LCD 1602 display.
- - Discusses the need to remove the USB cable and power the project using a LiPo battery.
-* **Library Installation**:
- - Guides viewers on how to install the LCD 1602 library if they haven't already.
-* **Code Explanation**:
- - Describes the necessity of saving the program as `main.py` so it runs automatically when the Pico W is powered.
- - Demonstrates saving the code and verifying its functionality.
-* **Powering the Project with a Battery**:
- - Introduces the rechargeable LiPo battery and the battery holder from the SunFounder Kepler kit.
- - Details connecting the battery to the Pico W using a power management module included in the kit.
- - Explains adjusting the LCD power connection from 5V (pin 40) to 3.7V (pin 39) due to the battery output.
- - Shows the setup and verifies the project runs correctly on battery power.
-* **Adjustments and Demonstration**:
- - Demonstrates adjusting the LCD contrast for optimal display when powered by the battery.
- - Shows the project working correctly, including toggling between Fahrenheit and Celsius.
-* **Conclusion and Next Steps**:
- - Encourages viewers to ensure their project is working and introduces the idea of using an OLED display for future lessons.
- - Recommends purchasing an OLED display for a more compact and energy-efficient setup.
- - Teases future lessons focused on creating portable, deployable projects with enhanced functionality.
-* **Homework and Final Notes**:
- - Suggests viewers order the OLED display to prepare for upcoming lessons.
- - Concludes with reminders to like, comment, subscribe, and share the video.
+* **Introduzione**: Introduce il tutorial, ringrazia lo sponsor SunFounder e rivede l'obiettivo della lezione: rendere portatile il progetto del sensore di temperatura e umidità DHT-11.
+* **Revisione dei Componenti e Configurazione**:
+ - Ricapitola la configurazione del progetto precedente: Raspberry Pi Pico W, sensore DHT-11, pulsante e display LCD 1602.
+ - Discute la necessità di rimuovere il cavo USB e alimentare il progetto utilizzando una batteria LiPo.
+* **Installazione della Libreria**:
+ - Guida gli spettatori su come installare la libreria per il display LCD 1602 se non l'hanno già fatto.
+* **Spiegazione del Codice**:
+ - Descrive la necessità di salvare il programma come `main.py` in modo che venga eseguito automaticamente quando il Pico W è alimentato.
+ - Mostra come salvare il codice e verificarne il funzionamento.
+* **Alimentazione del Progetto con una Batteria**:
+ - Introduce la batteria ricaricabile LiPo e il portabatteria del kit SunFounder Kepler.
+ - Dettaglia il collegamento della batteria al Pico W utilizzando un modulo di gestione dell'alimentazione incluso nel kit.
+ - Spiega come regolare la connessione di alimentazione del display LCD da 5V (pin 40) a 3,7V (pin 39) a causa dell'uscita della batteria.
+ - Mostra la configurazione e verifica che il progetto funzioni correttamente con l'alimentazione a batteria.
+* **Regolazioni e Dimostrazione**:
+ - Dimostra come regolare il contrasto del display LCD per una visualizzazione ottimale quando alimentato dalla batteria.
+ - Mostra il progetto funzionante correttamente, compresa la commutazione tra Fahrenheit e Celsius.
+* **Conclusione e Prossimi Passi**:
+ - Incoraggia gli spettatori a verificare che il loro progetto funzioni e introduce l'idea di utilizzare un display OLED per le lezioni future.
+ - Raccomanda di acquistare un display OLED per un setup più compatto ed efficiente dal punto di vista energetico.
+ - Anticipa le lezioni future focalizzate sulla creazione di progetti portatili e dispiegabili con funzionalità avanzate.
+* **Compiti a Casa e Note Finali**:
+ - Suggerisce agli spettatori di ordinare il display OLED per prepararsi alle prossime lezioni.
+ - Conclude con i promemoria di mettere mi piace, commentare, iscriversi e condividere il video.
 
 
 **Video**

@@ -1,63 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e giveaway.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_pir:
 
-2.10 - Detect Human Movement
+2.10 - Rileva il movimento umano
 =========================================
 
-Passive infrared sensor (PIR sensor) is a common sensor that can measure infrared (IR) light emitted by objects in its field of view.
-Simply put, it will receive infrared radiation emitted from the body, thereby detecting the movement of people and other animals.
-More specifically, it tells the main control board that someone has entered your room.
+Il sensore passivo a infrarossi (sensore PIR) è un sensore comune che può misurare la luce infrarossa (IR) emessa dagli oggetti nel suo campo visivo.
+In parole semplici, rileva la radiazione infrarossa emessa dal corpo, permettendo così di rilevare il movimento di persone e altri animali.
+Più specificamente, segnala alla scheda di controllo principale che qualcuno è entrato nella tua stanza.
 
 :ref:`cpn_pir`
 
-**Required Components**
+**Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -66,81 +65,72 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_pir`
         - 1
         - |link_pir_buy|
 
-
-**Schematic**
+**Schema elettrico**
 
 |sch_pir|
 
-When the PIR module detects someone passing by, GP14 will be high, otherwise it will be low.
+Quando il modulo PIR rileva il passaggio di una persona, GP14 sarà alto, altrimenti sarà basso.
 
-
-
-**Wiring**
+**Cablaggio**
 
 |wiring_pir|
 
-**Code**
+**Codice**
 
 .. note::
 
-   * You can open the file ``2.10_detect_human_movement.ino`` under the path of ``kepler-kit-main/arduino/2.10_detect_human_movement``. 
-   * Or copy this code into **Arduino IDE**.
+   * Puoi aprire il file ``2.10_detect_human_movement.ino`` nel percorso ``kepler-kit-main/arduino/2.10_detect_human_movement``. 
+   * Oppure copia questo codice nell'**Arduino IDE**.
 
-
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+   
+   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/bb3ff9f1-127d-4279-84b9-cba28b9667e8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
+Dopo l'esecuzione del programma, se il modulo PIR rileva la presenza di qualcuno nelle vicinanze, il Serial Monitor stamperà "Somebody here!" 
 
-After the program runs, if the PIR module detects someone nearby, the Serial Monitor will print out "Somebody here!" 
+**Approfondimenti**
 
-
-**Learn More**
-
-PIR is a very sensitive sensor. In order to adapt it to the environment of use, 
-it needs to be adjusted. Let the side with the 2 potentiometers facing you, 
-turn both potentiometers counterclockwise to the end and insert the jumper cap on the pin with L and the middle pin.
-
-
+Il PIR è un sensore molto sensibile. Per adattarlo all'ambiente di utilizzo, 
+è necessario regolarlo. Con i 2 potenziometri rivolti verso di te, 
+ruota entrambi i potenziometri in senso antiorario fino in fondo e inserisci il cappuccio del ponticello sul pin con L e il pin centrale.
 
 |img_pir_back|
 
-1. Trigger Mode
+1. Modalità di trigger
 
-    Let's take a look at the pins with jumper cap at the corner.
-    It allows PIR to enter Repeatable trigger mode or Non-repeatable trigger mode
+    Osserviamo i pin con il cappuccio del ponticello nell'angolo.
+    Questo permette al PIR di entrare in modalità di trigger ripetibile o non ripetibile.
 
-    At present, our jumper cap connects the middle Pin and L Pin, which makes the PIR in non-repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism, it will send a high-level signal for about 2.8 seconds to the main control board.
-    .. We can see in the printed data that the duration of work will always be around 2800ms.
+    Al momento, il nostro cappuccio del ponticello collega il pin centrale e il pin L, il che mette il PIR in modalità di trigger non ripetibile.
+    In questa modalità, quando il PIR rileva il movimento dell'organismo, invierà un segnale di alto livello per circa 2,8 secondi alla scheda di controllo principale.
+    .. Nei dati stampati possiamo vedere che la durata del lavoro sarà sempre intorno ai 2800 ms.
 
-    Next, we modify the position of the lower jumper cap and connect it to the middle Pin and H Pin to make the PIR in repeatable trigger mode.
-    In this mode, when the PIR detects the movement of the organism (note that it is movement, not static in front of the sensor), as long as the organism keeps moving within the detection range, the PIR will continue to send a high-level signal to the main control board.
-    .. We can see in the printed data that the duration of work is an uncertain value.
+    Successivamente, modifichiamo la posizione del cappuccio del ponticello inferiore collegandolo al pin centrale e al pin H per mettere il PIR in modalità di trigger ripetibile.
+    In questa modalità, quando il PIR rileva il movimento dell'organismo (nota che deve essere movimento, non statico davanti al sensore), finché l'organismo continua a muoversi all'interno dell'area di rilevamento, il PIR continuerà a inviare un segnale di alto livello alla scheda di controllo principale.
+    .. Nei dati stampati possiamo vedere che la durata del lavoro è un valore incerto.
 
-#. Delay Adjustment
+#. Regolazione del ritardo
 
-    The potentiometer on the left is used to adjust the interval between two jobs.
-    
-    At present, we screw it counterclockwise to the end, which makes the PIR need to enter a sleep time of about 5 seconds after finishing sending the high level work. During this time, the PIR will no longer detect the infrared radiation in the target area.
-    .. We can see in the printed data that the dormancy duration is always no less than 5000ms.
+    Il potenziometro a sinistra viene utilizzato per regolare l'intervallo tra due operazioni.
 
-    If we turn the potentiometer clockwise, the sleep time will also increase. When it is turned clockwise to the end, the sleep time will be as high as 300s.
+    Attualmente, lo ruotiamo completamente in senso antiorario, il che fa sì che il PIR debba entrare in una fase di riposo di circa 5 secondi dopo aver completato l'invio del segnale di alto livello. Durante questo tempo, il PIR non rileverà più la radiazione infrarossa nell'area target.
+    .. Nei dati stampati possiamo vedere che la durata del riposo non è mai inferiore a 5000 ms.
 
-#. Distance Adjustment
+    Se ruotiamo il potenziometro in senso orario, anche il tempo di riposo aumenterà. Quando è ruotato completamente in senso orario, il tempo di riposo sarà fino a 300s.
 
-    The centered potentiometer is used to adjust the sensing distance range of the PIR.
+#. Regolazione della distanza
 
-    Turn the knob of the distance adjustment potentiometer **clockwise** to increase the sensing distance range, and the maximum sensing distance range is about 0-7 meters.
-    If it rotates **counterclockwise**, the sensing distance range is reduced, and the minimum sensing distance range is about 0-3 meters.
+    Il potenziometro centrale viene utilizzato per regolare il range di rilevamento del PIR.
+
+    Ruota la manopola del potenziometro di regolazione della distanza **in senso orario** per aumentare il range di rilevamento, con un range massimo di circa 0-7 metri.
+    Se ruota **in senso antiorario**, il range di rilevamento si riduce, con un range minimo di circa 0-3 metri.

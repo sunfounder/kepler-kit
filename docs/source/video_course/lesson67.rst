@@ -1,41 +1,43 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 67 :  Use Both Cores on Your Pi Pico with MicroPython
+lesson 67 : Usa Entrambi i Core del Tuo Pi Pico con MicroPython
 ===================================================================================
 
-This tutorial covers using both cores of the Raspberry Pi Pico W:
+Questo tutorial spiega come utilizzare entrambi i core del Raspberry Pi Pico W:
 
-* **Wiring Setup**:
-- Connect a green LED to GPIO pin 14 with a 330-ohm resistor to ground.
-- Connect a red LED to GPIO pin 15 with a 330-ohm resistor to ground.
-* **Code Implementation**:
-- Import necessary libraries (`machine`, `time`, `_thread`).
-- Set up pins for the LEDs.
-- Define parameters for LED blink times.
-- Create functions to control LED blinking:
-   - `other_core` for the red LED on the second core.
-   - `green_blink` for the green LED on the main core.
-- Use `_thread.start_new_thread` to run `other_core` on the second core.
-* **Homework Assignment**:
-- Connect a servo.
-- Control the servo and LEDs:
-  - Blink red LED when servo moves backward.
-  - Blink green LED when servo moves forward.
+* **Configurazione dei Collegamenti**:
+   - Collega un LED verde al pin GPIO 14 con una resistenza da 330 ohm a massa.
+   - Collega un LED rosso al pin GPIO 15 con una resistenza da 330 ohm a massa.
+* **Implementazione del Codice**:
+   - Importa le librerie necessarie (`machine`, `time`, `_thread`).
+   - Configura i pin per i LED.
+   - Definisci i parametri per i tempi di lampeggio dei LED.
+   - Crea funzioni per controllare il lampeggio dei LED:
+     - `other_core` per il LED rosso sul secondo core.
+     - `green_blink` per il LED verde sul core principale.
+   - Usa `_thread.start_new_thread` per eseguire `other_core` sul secondo core.
+* **Compito**:
+   - Collega un servo.
+   - Controlla il servo e i LED:
+     - Fai lampeggiare il LED rosso quando il servo si muove all'indietro.
+     - Fai lampeggiare il LED verde quando il servo si muove in avanti.
+
 
 **Video**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/mm1EoNqjd4c?si=RHZLX39PpGDbAFuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

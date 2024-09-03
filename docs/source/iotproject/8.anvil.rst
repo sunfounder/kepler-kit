@@ -1,51 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-8. Building Web APP with @Anvil
-===================================
+8. Costruire una Web APP con @Anvil
+========================================
 
-We will write a project to communicate bi-directionally between the Raspberry Pi Pico W and Anvil's servers.
-The temperature and humidity transmitted from the Pico W will be displayed in real time in Anvil. Additionally, you can input messages in Anvil to be displayed on the Pico W's I2C LCD1602.
+In questo progetto, scriveremo un'applicazione per comunicare bidirezionalmente tra il Raspberry Pi Pico W e i server di Anvil.
+La temperatura e l'umidità trasmesse dal Pico W verranno visualizzate in tempo reale su Anvil. Inoltre, potrai inserire messaggi in Anvil da visualizzare sul display LCD1602 I2C del Pico W.
 
 |anvil|
 
-**1. Required Components**
+**1. Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -53,7 +53,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -62,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diverse
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
@@ -77,95 +77,95 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Supporto Batteria
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Costruisci il Circuito**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Assicurati che il modulo caricabatterie Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
 .. image:: img/wiring/8.anvil_bb.png
     :width: 800
 
 
-**3. Create an Anvil APP**
+**3. Crea un'App su Anvil**
 
-1. Go to the |link_anvil| and click on **Start building**.
+1. Vai al |link_anvil| e clicca su **Start building**.
 
     .. image:: img/anvil-1.png
 
 
-2. Sign in or Sign up.
+2. Accedi o registrati.
 
     .. image:: img/anvil-2.png
 
 
-3. Create a **New Blank App**.
+3. Crea una **New Blank App**.
 
     .. image:: img/anvil-3.png
 
 
-4. Select **Material Design Theme**.
+4. Seleziona il **Tema Material Design**.
 
     .. image:: img/anvil-4.png
 
 
-5. Now, you are on the app editing page.
+5. Ora sei nella pagina di modifica dell'app.
 
     .. image:: img/anvil-5.png
 
 
-6. From the Toolbox, drag a **Label** tool and place it on **Drop title here**.
+6. Dalla Toolbox, trascina uno strumento **Label** e posizionalo su **Drop title here**.
 
     .. image:: img/anvil-6.png
 
 
-7. You can fill in the label text in the **text** field under the **Properties** menu.
+7. Puoi inserire il testo dell'etichetta nel campo **text** sotto il menu **Properties**.
 
     .. image:: img/anvil-7.png
 
 
-8. In the same way, drag a **TextBox** to the right.
+8. Allo stesso modo, trascina una **TextBox** sulla destra.
 
     .. image:: img/anvil-17.png
 
-9. Drag a **button** to the far right and you can modify the **text** field. This button will be used to "send" a message to the Raspberry Pi Pico W.
+9. Trascina un **button** all'estrema destra e puoi modificare il campo **text**. Questo pulsante verrà utilizzato per "inviare" un messaggio al Raspberry Pi Pico W.
 
     .. image:: img/anvil-14.png
 
-10. After double clicking the **SHOW** button, the form will switch from the Design page to the Code page and highlight the code for the **button**. You need to fill in the following code, which functions to call a function inside the server (in this case, Pico W). 
+10. Dopo aver fatto doppio clic sul pulsante **SHOW**, il modulo passerà dalla pagina Design alla pagina del Codice e evidenzierà il codice per il **button**. È necessario inserire il seguente codice, che serve per chiamare una funzione all'interno del server (in questo caso, Pico W).
 
     .. code-block:: python
     
         anvil.server.call_s("show_message",self.text_box_1.text)
 
-    * ``show_message`` is the function that will be defined when Pico W is programmed.
-    * ``self.text_box_1.text`` is the message you type on the text box, which will be sent as a pass-through to ``show_message()``.
+    * ``show_message`` è la funzione che verrà definita quando Pico W sarà programmato.
+    * ``self.text_box_1.text`` è il messaggio che inserisci nella casella di testo, che verrà inviato come argomento a ``show_message()``.
 
     .. image:: img/anvil-15.png
 
-11. Go back to the Design page, drag another label and place it under the previous elements. This label will show the DHT11 sensor data from the Pico W.
+11. Torna alla pagina Design, trascina un'altra etichetta e posizionala sotto gli elementi precedenti. Questa etichetta mostrerà i dati del sensore DHT11 dal Pico W.
 
     .. image:: img/anvil-9.png
 
 
-12. In the **Toolbox**, click on **More Components** and drag the **Timer** into the form.
+12. Nella **Toolbox**, clicca su **More Components** e trascina il **Timer** nel modulo.
 
     .. image:: img/anvil-12.png
 
 
-13. Using the **Properties**, set the timer to an interval of 3 seconds. This time is used to update the screen for our sensor data.
+13. Utilizzando le **Properties**, imposta il timer su un intervallo di 3 secondi. Questo tempo è utilizzato per aggiornare la schermata dei dati del sensore.
 
     .. image:: img/anvil-18.png
 
-14. Double-click the **Timer** tool to program it. Use a ``anvil.server.call_s()`` function to call the ``publish_data()`` function from the server to get the message that needs to be displayed on the Anvil APP, assign it to ``self.label_2.text`` and you're done.
+14. Fai doppio clic sullo strumento **Timer** per programmarlo. Utilizza la funzione ``anvil.server.call_s()`` per chiamare la funzione ``publish_data()`` dal server e ottenere il messaggio che deve essere visualizzato nell'app Anvil, assegnalo a ``self.label_2.text`` e il gioco è fatto.
 
     .. code-block:: python
 
@@ -174,50 +174,49 @@ You can also buy them separately from the links below.
     
     .. image:: img/anvil-16.png
 
-15. At this point, the part that needs to be programmed on Anvil is done. You can see more details on using Anvil from |link_anvil_docs|.
+15. A questo punto, la parte che deve essere programmata su Anvil è completata. Puoi vedere maggiori dettagli sull'utilizzo di Anvil su |link_anvil_docs|.
 
 
-**4. Setup Pico W**
+**4. Configura Pico W**
 
-In order to simplify the connection of the Raspberry Pi Pico W to Anvil services, Anvil uses a custom firmware image. Pico W's firmware is written in MicroPython and appears as a USB drive with two files (boot.py and main.py). The Pico W must be flashed with custom firmware and connected to our Wi-Fi before we can begin writing code.
+Per semplificare la connessione del Raspberry Pi Pico W ai servizi Anvil, Anvil utilizza un'immagine firmware personalizzata. Il firmware del Pico W è scritto in MicroPython e appare come un'unità USB con due file (boot.py e main.py). Il Pico W deve essere flashato con il firmware personalizzato e connesso al nostro Wi-Fi prima di iniziare a scrivere il codice.
 
-1. Download the custom Raspberry Pi Pico W |link_anvil_firmware|, it is recommended to download the complete version.
+1. Scarica il firmware personalizzato per Raspberry Pi Pico W |link_anvil_firmware|, si consiglia di scaricare la versione completa.
 
     .. image:: img/anvil-p-1.png
 
 
-2. Push and hold the **BOOTSEL** button on the Pico W, then connect to your computer using a micro USB cable. Release BOOTSEL once the drive RPI-RP2 appears on your computer.
+2. Tieni premuto il pulsante **BOOTSEL** sul Pico W, quindi collegalo al computer utilizzando un cavo micro USB. Rilascia BOOTSEL una volta che l'unità RPI-RP2 appare sul tuo computer.
 
     .. image:: img/anvil-p-2.png
         :width: 300
 
 
-3. Drag and drop the ``.uf2`` file you just downloaded into it and Pico W will install the firmware at this point. When it is done, Pico W will reload the disk drive and you will see the ``main.py`` and ``boot.py`` files.
+3. Trascina e rilascia il file ``.uf2`` che hai appena scaricato al suo interno e Pico W installerà il firmware a questo punto. Una volta completato, Pico W ricaricherà l'unità disco e vedrai i file ``main.py`` e ``boot.py``.
 
     .. note:: 
-        Before reinstalling the firmware, make a backup of all your important files stored in Pico W.
-
+        Prima di reinstallare il firmware, fai un backup di tutti i tuoi file importanti memorizzati su Pico W.
 
     .. image:: img/anvil-p-3.png
 
-4. Select "MicroPython(Raspberry Pi Pico).COMXX" as the interpreter in Thonny IDE. After clicking **View** -> **Files**, you will see the local drive and the hard drive of the Raspberry Pi Pico.
+4. Seleziona "MicroPython(Raspberry Pi Pico).COMXX" come interprete nell'IDE Thonny. Dopo aver cliccato su **View** -> **Files**, vedrai l'unità locale e l'unità disco del Raspberry Pi Pico.
 
     .. image:: img/anvil-20.png
 
-5. Double click the ``boot.py`` script and fill your WiFi's ``SSID`` and ``PASSWORD``.
+5. Fai doppio clic sullo script ``boot.py`` e inserisci il ``SSID`` e la ``PASSWORD`` del tuo WiFi.
 
     .. image:: img/anvil-21.png
 
 
-**5. Finish the Code**
+**5. Completa il Codice**
 
 
-#. Upload ``dht.py`` and ``lcd1602.py`` from the path of ``kepler-kit-main/libs`` to the Raspberry Pi Pico W.
+#. Carica ``dht.py`` e ``lcd1602.py`` dal percorso ``kepler-kit-main/libs`` nel Raspberry Pi Pico W.
 
     .. image:: img/anvil-22.png
 
 
-#. Open ``main.py`` and replace the original code with the following code.
+#. Apri ``main.py`` e sostituisci il codice originale con il seguente codice.
 
     .. code-block:: python
 
@@ -255,62 +254,62 @@ In order to simplify the connection of the Raspberry Pi Pico W to Anvil services
         # See https://anvil.works/pico for more information
 
 
-#. Go back to the Anvil interface and tap the Uplink option in the App Browser settings.
+#. Torna all'interfaccia Anvil e tocca l'opzione Uplink nelle impostazioni dell'App Browser.
 
     .. image:: img/anvil-p-6.png
 
 
-#. Click **Enable the Anvil Server Uplink for this app** to get the uplink key.
+#. Clicca su **Enable the Anvil Server Uplink for this app** per ottenere la chiave uplink.
 
     .. image:: img/anvil-p-7.png
 
 
-#. Copy it and replace ``<uplink_key_goes_here>`` in ``main.py``, which makes your Pico W can connect to the Anvil APP you created.
+#. Copiala e sostituisci ``<uplink_key_goes_here>`` in ``main.py``, il che fa sì che il tuo Pico W possa connettersi all'app Anvil che hai creato.
 
     .. image:: img/anvil-p-8.png
 
 
-**6. Run the Project**
+**6. Esegui il Progetto**
 
-1. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the connection success prompt in the Shell.
+1. Clicca sul pulsante **Run current script** o premi F5 per eseguirlo. Dopo la connessione riuscita, vedrai il prompt di successo della connessione nella Shell.
 
     .. image:: img/anvil-19.png
 
 
-2. Run the Anvil, now you will be able to see the display temperature and humidity from the Anvil APP. If you click the **SHOW** button after you enter a message on the text box, the I2C LCD1602 will display the message you entered.
+2. Esegui Anvil, ora potrai vedere la temperatura e l'umidità visualizzate dall'app Anvil. Se clicchi sul pulsante **SHOW** dopo aver inserito un messaggio nella casella di testo, l'LCD1602 I2C visualizzerà il messaggio che hai inserito.
 
     .. note:: 
-        If the character you entered is not displayed on the I2C LCD1602, you can turn the potentiometer on the back of the module to increase the contrast.
+        Se il carattere che hai inserito non viene visualizzato su LCD1602 I2C, puoi girare il potenziometro sul retro del modulo per aumentare il contrasto.
 
     .. image:: img/anvil-r-2.png
 
-**7. Publish APP**
+**7. Pubblica l'APP**
 
-If you want to share your made app to others, you can generate a sharing link by the following method.
+Se vuoi condividere la tua app con altri, puoi generare un link di condivisione seguendo il metodo seguente.
 
-1. Go back to the **Anvil** page and click the **publish app** option in the** App Browser settings**.  
+1. Torna alla pagina **Anvil** e clicca sull'opzione **publish app** nelle **impostazioni dell'App Browser**.  
 
     .. image:: img/anvil-s-1.png
 
 
-2. In the **Share via private link** tab you will see a list of links. Anyone can access your app through this link.
+2. Nella scheda **Share via private link** vedrai un elenco di link. Chiunque può accedere alla tua app tramite questo link.
 
     .. image:: img/anvil-s-2.png
 
 
-3. Access the link and your app is ready to use directly.
+3. Accedi al link e la tua app è pronta per essere utilizzata direttamente.
 
     .. image:: img/anvil-s-3.png
 
 
-4. You can also share your app through the public link, fill in your personalized domain name and click **Apply** below to make it effective.
+4. Puoi anche condividere la tua app tramite il link pubblico, inserisci il tuo nome di dominio personalizzato e clicca su **Apply** in basso per renderlo effettivo.
 
     .. image:: img/anvil-s-4.png
 
 
-**How it works?**
+**Come funziona?**
 
-Here is the basic framework of ``main.py``, which forms the basis of the communication between Pico W and Anvil APP.
+Ecco il framework di base di ``main.py``, che costituisce la base della comunicazione tra Pico W e l'APP Anvil.
 
 .. code-block:: python
 
@@ -329,7 +328,7 @@ Here is the basic framework of ``main.py``, which forms the basis of the communi
     #
     # See https://anvil.works/pico for more information
 
-Set up dht11 and lcd1602. Details of the use of these two components can be found in :ref:`py_dht11` and :ref:`py_lcd`.
+Configura dht11 e lcd1602. I dettagli sull'uso di questi due componenti possono essere trovati in :ref:`py_dht11` e :ref:`py_lcd`.
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -343,10 +342,10 @@ Set up dht11 and lcd1602. Details of the use of these two components can be foun
     sensor = DHT11(Pin(16, Pin.OUT, Pin.PULL_DOWN))
 
 
-In Anvil's code, we have called two internal functions of the server (Pico W). 
+Nel codice di Anvil, abbiamo chiamato due funzioni interne del server (Pico W). 
 
-The first is ``show_message()``, whose function is to make the LCD display the message typed by Anvil.
-The decorator ``@anvil.pico.callable(is_async=True)`` makes this function callable by Anvil.
+La prima è ``show_message()``, la cui funzione è far visualizzare all'LCD il messaggio digitato su Anvil.
+Il decoratore ``@anvil.pico.callable(is_async=True)`` rende questa funzione chiamabile da Anvil.
 
 .. code-block:: python
 
@@ -358,8 +357,8 @@ The decorator ``@anvil.pico.callable(is_async=True)`` makes this function callab
         return
 
 
-Next is ``publish_data()``, which functions to get the value of dht11 and return the temperature and humidity to Anvil.
-Again, it uses the decorator ``@anvil.pico.callable(is_async=True)`` to make it callable by Avil.
+Successivamente c'è ``publish_data()``, che ha la funzione di ottenere il valore di dht11 e restituire la temperatura e l'umidità ad Anvil.
+Anche in questo caso, utilizza il decoratore ``@anvil.pico.callable(is_async=True)`` per renderlo chiamabile da Avil.
 
 
 .. code-block:: python

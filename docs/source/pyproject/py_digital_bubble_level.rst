@@ -1,55 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di Appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa ai giveaway e alle promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_bubble_level:
 
-7.12 Digital Bubble Level
-============================
+7.12 Livella Digitale a Bolla
+==================================
 
+Una `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, è uno strumento progettato per indicare se una superficie è orizzontale (in piano) o verticale (a piombo). Esistono diversi tipi di livelle utilizzate da carpentieri, muratori, posatori di mattoni, altri operai edili, topografi, montatori e altri lavoratori del metallo, così come in alcuni lavori fotografici e videografici.
 
-A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb). There are different types of spirit levels used by carpenters, stonemasons, bricklayers, other building trades workers, surveyors, millwrights, and other metalworkers, as well as in some photographic and videographic work.
+Qui realizzeremo una livella digitale a bolla utilizzando l'MPU6050 e una matrice LED 8x8. Quando inclini l'MPU6050, anche la bolla sulla matrice LED si inclinerà.
 
-Here we make a digital bubble level using MPU6050 and 8x8 LED matrix. When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
+**Componenti Necessari**
 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-**Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -57,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -81,33 +78,29 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schema**
 
 |sch_bubble_level|
 
-The MPU6050 takes the acceleration values in each direction and calculates the attitude angle.
+L'MPU6050 rileva i valori di accelerazione in ogni direzione e calcola l'angolo di assetto.
 
-As a result, the program draws a 2x2 dot on the dot matrix based on data from the two 74HC595 chips.
+Di conseguenza, il programma disegna un punto 2x2 sulla matrice LED basandosi sui dati dei due chip 74HC595.
 
-As the attitude angle changes, the program sends different data to the 74HC595 chips, and the position of the dot changes, creating a bubble effect.
+Con il cambiamento dell'angolo di assetto, il programma invia dati diversi ai chip 74HC595, e la posizione del punto cambia, creando l'effetto di una bolla.
 
-**Wiring**
-
+**Cablaggio**
 
 |wiring_digital_bubble_level| 
 
-
-**Code**
-
+**Codice**
 
 .. note::
 
-    * Open the ``7.12_digital_bubble_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Apri il file ``7.12_digital_bubble_level.py`` nel percorso ``kepler-kit-main/micropython`` oppure copia questo codice in Thonny, quindi clicca su "Run Current Script" o semplicemente premi F5 per eseguirlo.
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
+    * Qui è necessario utilizzare le librerie ``imu.py`` e ``vector3d.py``, verifica se sono state caricate su Pico W; per un tutorial dettagliato, fai riferimento a :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -201,6 +194,6 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
         matrix=drop_bubble(matrix,bubble) # drop the bubble into empty matrix
         display(matrix_2_glyph(matrix)) # show matrix
 
-Once you have run the program, place the breadboard on a level surface.
-A dot will appear in the center of the LED matrix (if it isn't in the center, the MPU6050 may not be level).
-When you deflect the breadboard, the dot will move in the direction you deflected.
+Una volta eseguito il programma, posiziona la breadboard su una superficie livellata.
+Un punto apparirà al centro della matrice LED (se non è al centro, l'MPU6050 potrebbe non essere in piano).
+Quando inclini la breadboard, il punto si sposterà nella direzione in cui l'hai inclinata.

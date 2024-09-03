@@ -1,53 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci l'uso di Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti Speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_blink:
 
-2.1 Blink LED
-===============
+2.1 Lampeggio LED
+====================
 
-For this project, we intend to make the extended LED light blink. To use extended electronic components, a solderless breadboard will be the most powerful partner for novice users.
+In questo progetto, intendiamo far lampeggiare il LED esterno. Per utilizzare componenti elettronici estesi, una breadboard senza saldature sarà il partner più potente per gli utenti principianti.
 
-The breadboard is a rectangular plastic plate with a bunch of small holes in it. These holes allow us to easily insert electronic components and build electronic circuits. The breadboard does not permanently fix the electronic components, which makes it easy for us to repair the circuit and start over when we make a mistake.
+La breadboard è una piastra rettangolare di plastica con un sacco di piccoli fori. Questi fori ci permettono di inserire facilmente componenti elettronici e costruire circuiti elettronici. La breadboard non fissa permanentemente i componenti elettronici, il che ci facilita la riparazione del circuito e il ripristino quando commettiamo un errore.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -64,44 +63,44 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Wiring**
+**Cablaggio**
 
 |wiring_led|
 
-* The color ring of the 220 ohm resistor is red, red, black, black and brown.
+* L'anello colorato della resistenza da 220 ohm è rosso, rosso, nero, nero e marrone.
 
-* The longer lead of the LED is known as the anode (+), the shorter lead is the cathode (-). 
+* Il terminale più lungo del LED è noto come anodo (+), mentre il terminale più corto è il catodo (-).
 
-
-
-**Code**
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.1_blink_led.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando i blocchi.
+    * Importa ``2.1_blink_led.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 |blink1|
 
-After connecting Pico W, click the **Start** button and you will see the LED blinking. For more details, you can refer to :ref:`quick_guide_piper`.
+Dopo aver collegato il Pico W, fai clic sul pulsante **Start** e vedrai il LED lampeggiare. Per ulteriori dettagli, puoi fare riferimento a :ref:`quick_guide_piper`.
 
-**How it Works?**
 
-This is the body of the loop: turn the pin15 on to light up the LED, wait one second, then turn the pin15 off to make the LED go off. Wait 1 second and then re-run the previous cycle, so you can see the LED has been in the state of alternating between light and off.
+**Come Funziona?**
 
-* [start]: This block is the basic framework of the program and represents the beginning of the program.
-* [repeat forever do() wait()seconds]: Means that the blocks in it will be executed repeatedly, and the execution time interval is defined by yourself.
-* [turn pin () ON/OFF]: Indicates that a certain pin is placed in a high level (ON) or a low level (OFF).
-* [wait () seconds]: Set the execution interval between blocks.
+
+Questo è il corpo del ciclo: accendi il pin15 per accendere il LED, attendi un secondo, quindi spegni il pin15 per spegnere il LED. Attendi un secondo e poi ripeti il ciclo precedente, in modo che il LED alterni tra acceso e spento.
+
+* [start]: Questo blocco è la struttura di base del programma e rappresenta l'inizio del programma.
+* [repeat forever do() wait()seconds]: Significa che i blocchi all'interno verranno eseguiti ripetutamente, e l'intervallo di esecuzione è definito da te.
+* [turn pin () ON/OFF]: Indica che un determinato pin è posto in stato alto (ON) o basso (OFF).
+* [wait () seconds]: Imposta l'intervallo di esecuzione tra i blocchi.
+

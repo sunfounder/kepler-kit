@@ -1,57 +1,56 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_light_theremin:
 
-7.1 Light Theremin
+7.1 Theremin a Luce
 =========================
 
-Theremin is an electronic musical instrument that does not require physical contact. Based on the position of the player's hand, it produces different tones.
+Il theremin è uno strumento musicale elettronico che non richiede contatto fisico. In base alla posizione della mano del musicista, produce diverse tonalità.
 
-Its controlling section is usually made up of two metal antennas that sense the position of the thereminist's hands and control oscillators with one hand and volume with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+La sua sezione di controllo è solitamente composta da due antenne metalliche che rilevano la posizione delle mani del thereminista, una controllando gli oscillatori e l'altra il volume. I segnali elettrici del theremin vengono amplificati e inviati a un altoparlante.
 
-We cannot reproduce the same instrument through Pico W, but we can use photoresistor and passive buzzer to achieve similar gameplay.
+Non possiamo riprodurre lo stesso strumento tramite Pico W, ma possiamo usare un fotoresistore e un cicalino passivo per ottenere un effetto simile.
 
 * `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -59,7 +58,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -68,7 +67,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -83,7 +82,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - Cicalino :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -91,32 +90,31 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_light_theremin|
 
-Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
+Prima di iniziare il progetto, muovi la mano su e giù sopra il fotoresistore per calibrare l'intervallo di intensità luminosa. Il LED collegato al GP16 viene utilizzato per indicare il tempo di debug: si accende per indicare l'inizio del debug e si spegne per indicarne la fine.
 
-When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
+Quando GP15 emette un livello alto, il transistor S8050 (NPN) conduce e il cicalino passivo inizia a suonare.
 
-When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
+Quando la luce è più intensa, il valore di GP28 è più piccolo; viceversa, è più grande quando la luce è più debole.
+Programmando il valore del fotoresistore per influenzare la frequenza del cicalino passivo, è possibile simulare un dispositivo fotosensibile.
 
-
-**Wiring**
+**Collegamenti**
 
 |wiring_light_theremin|
 
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``7.1_light_theremin.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -158,9 +156,8 @@ By programming the value of the photoresistor to affect the frequency of the pas
             tone(buzzer,pitch,20)
         utime.sleep_ms(10)
 
-As soon as the program runs, the LED will light up, and we will have five seconds to calibrate the photoresistor's detection range.
+Non appena il programma viene eseguito, il LED si accenderà e avrai cinque secondi per calibrare l'intervallo di rilevamento del fotoresistore.
 
-This is due to the different light environments we may have when we use it (e.g., different light intensities at noon and dusk), as well as our hands' height above the photoresistor. You need to set the maximum and minimum height of your hand from the photoresistor, which is also the height at which you play the instrument.
+Questo è dovuto ai diversi ambienti luminosi in cui potremmo trovarci quando lo utilizziamo (ad esempio, diverse intensità luminose a mezzogiorno e al crepuscolo), nonché all'altezza della nostra mano sopra il fotoresistore. È necessario impostare l'altezza massima e minima della tua mano dal fotoresistore, che è anche l'altezza alla quale suonerai lo strumento.
 
-After five seconds, the LED will turn off, at which point we can wave our hands over the photoresistor and play.
-
+Dopo cinque secondi, il LED si spegnerà e potrai muovere le mani sopra il fotoresistore e suonare.

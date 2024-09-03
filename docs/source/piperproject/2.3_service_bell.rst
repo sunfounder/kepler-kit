@@ -1,58 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_service_bell:
 
-2.3 Service Bell
-==========================
+2.3 Campanello di Servizio
+===============================
 
-For this project we used a microswitch and an active buzzer to create a service bell. Tap the switch and the buzzer makes a sound.
+In questo progetto abbiamo utilizzato un microinterruttore e un buzzer attivo per creare un campanello di servizio. Tocca l'interruttore e il buzzer emetterà un suono.
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed).
+Il Microinterruttore è anche un dispositivo a 3 pin: la sequenza dei pin è C (pin comune), NO (normalmente aperto) e NC (normalmente chiuso).
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+Quando il microinterruttore non è premuto, i pin 1 (C) e 3 (NC) sono collegati insieme; quando è premuto, i pin 1 (C) e 2 (NO) si collegano insieme.
 
 |img_micro_switch|
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -60,7 +59,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -69,15 +68,15 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 2(1KΩ, 10KΩ)
+        - 2 (1KΩ, 10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_micro_switch`
@@ -85,35 +84,31 @@ You can also buy them separately from the links below.
         - 
     *   - 8
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 9
-        - Active :ref:`cpn_buzzer`
+        - Buzzer Attivo :ref:`cpn_buzzer`
         - 1
         - 
 
-**Wiring**
+**Cablaggio**
 
 |service_bell0|
 
-* By default, pins 1 and 3 of the Micro Switch are connected together and GP14 is low. When the Micro Switch is pressed, GP14 is high.
-* GP15 outputs high to make the buzzer sound.
+* Per impostazione predefinita, i pin 1 e 3 del Microinterruttore sono collegati insieme e GP14 è basso. Quando il Microinterruttore è premuto, GP14 diventa alto.
+* GP15 emette un livello alto per far suonare il buzzer.
 
-**Code**
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.3_service_bell.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando i blocchi.
+    * Importa ``2.3_service_bell.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 |service_bell|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
+Dopo aver collegato il Pico W, fai clic sul pulsante **Start** e il codice inizierà a funzionare. Tocca l'interruttore e il buzzer emetterà un suono.
 
 .. note::
-    This project code is exactly the same as the previous project :ref:`per_button`.
-
-
-
+    Il codice di questo progetto è esattamente lo stesso del progetto precedente :ref:`per_button`.
 

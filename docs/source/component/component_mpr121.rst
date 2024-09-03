@@ -1,65 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_mpr121:
 
-MPR121 Module
+Modulo MPR121
 ===========================
 
 |img_mpr121|
 
+* **3.3V**: Alimentazione
+* **IRQ**: Pin di uscita interrupt open collector, attivo basso
+* **SCL**: Clock I2C
+* **SDA**: Dati I2C
+* **ADD**: Pin di selezione indirizzo I2C. Collega il pin ADDR alla linea VSS, VDD, SDA o SCL, gli indirizzi I2C risultanti sono rispettivamente 0x5A, 0x5B, 0x5C e 0x5D.
+* **GND**: Terra
+* **0~11**: Elettrodo 0~11, l'elettrodo è un sensore touch. Tipicamente, gli elettrodi possono essere semplicemente un pezzo di metallo o un filo. Tuttavia, a seconda della lunghezza del filo o del materiale su cui si trova l'elettrodo, potrebbe risultare difficile attivare il sensore. Per questo motivo, il MPR121 consente di configurare i parametri necessari per attivare e disattivare un elettrodo.
 
-* **3.3V**: Power supply
-* **IRQ**: Open Collector Interrupt Output Pin, active low
-* **SCL**: I2C Clock
-* **SDA**: I2C Data
-* **ADD**: I2C Address Select Input Pin. Connect the ADDR pin to the VSS, VDD, SDA or SCL line, the resulting I2C addresses are 0x5A, 0x5B, 0x5C and 0x5D respectively
-* **GND**: Ground
-* **0~11**: Electrode 0~11, electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode.
+**PANORAMICA DEL MPR121**
 
-**MPR121 OVERVIEW**
-
-The MPR121 is the second generation capacitive touch sensor controller after
-the initial release of the MPR03x series devices. The MPR121 features
-increased internal intelligence, some of the major additions include an
-increased electrode count, a hardware configurable I2C address, an
-expanded filtering system with debounce, and completely independent
-electrodes with auto-configuration built in. The device also features a 13th
-simulated sensing channel dedicated for near proximity detection using the
-multiplexed sensing inputs.
+Il MPR121 è la seconda generazione di controller per sensori tattili 
+capacitivi dopo il rilascio iniziale dei dispositivi della serie MPR03x. 
+Il MPR121 offre un'intelligenza interna aumentata, con alcune delle 
+principali aggiunte che includono un aumento del numero di elettrodi, un 
+indirizzo I2C configurabile tramite hardware, un sistema di filtraggio 
+ampliato con debounce e elettrodi completamente indipendenti con 
+auto-configurazione integrata. Il dispositivo presenta anche un tredicesimo 
+canale di rilevamento simulato dedicato al rilevamento di prossimità 
+utilizzando gli ingressi di rilevamento multiplexer.
 
 * `MPR121 Datasheet <https://cdn-shop.adafruit.com/datasheets/MPR121.pdf>`_
 
-**Features**
+**Caratteristiche**
 
-* Low power operation
-    • 1.71 V to 3.6 V supply operation
-    • 29 μA supply current at 16 ms sampling interval period
-    • 3 μA Stop mode current
-* 12 capacitance sensing inputs
-    • 8 inputs are multifunctional for LED driver and GPIO
-* Complete touch detection
-    • Auto-configuration for each sensing input
-    • Auto-calibration for each sensing input
-    • Touch/release threshold and debounce for touch detection
-* I2C interface, with Interrupt output
-* 3 mm x 3 mm x 0.65 mm 20 lead QFN package
-* -40°C to +85°C operating temperature range
+* Operatività a basso consumo
+    • Alimentazione da 1,71 V a 3,6 V
+    • Corrente di alimentazione di 29 μA a un intervallo di campionamento di 16 ms
+    • Corrente in modalità Stop di 3 μA
+* 12 ingressi di rilevamento della capacità
+    • 8 ingressi multifunzione per driver LED e GPIO
+* Rilevamento completo del tocco
+    • Configurazione automatica per ciascun ingresso di rilevamento
+    • Auto-calibrazione per ciascun ingresso di rilevamento
+    • Soglia di tocco/rilascio e debounce per il rilevamento del tocco
+* Interfaccia I2C, con uscita Interrupt
+* Confezione QFN a 20 pin 3 mm x 3 mm x 0,65 mm
+* Intervallo di temperatura operativa da -40°C a +85°C
 
-
-
-**Example**
+**Esempio**
 
 * :ref:`py_mpr121` (For MicroPython User)
 * :ref:`py_fruit_piano` (For MicroPython User)

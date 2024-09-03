@@ -1,29 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_lcd:
 
-3.4 Liquid Crystal Display
-===============================
+3.4 Display a Cristalli Liquidi
+===================================
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+LCD1602 è un display a cristalli liquidi di tipo carattere, che può 
+visualizzare contemporaneamente 32 (16*2) caratteri.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, 
-they share a common weakness. When they are connected to a controller, 
-multiple IOs will be occupied of the controller which has no so many outer ports. 
-Also it restricts other functions of the controller. 
-Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+Come sappiamo, sebbene gli LCD e altri display arricchiscano notevolmente 
+l'interazione uomo-macchina, condividono una debolezza comune. Quando sono 
+collegati a un controller, molte porte di input/output (IO) del controller 
+vengono occupate, limitando altre funzioni del controller stesso. Per 
+risolvere questo problema, è stato sviluppato l'LCD1602 con un bus I2C.
 
 * :ref:`cpn_i2c_lcd`
 * `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
@@ -31,35 +32,35 @@ Therefore, LCD1602 with an I2C bus is developed to solve the problem.
 
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+Qui useremo l'interfaccia I2C0 per controllare l'LCD1602 e visualizzare il testo.
 
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -67,7 +68,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -76,32 +77,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_lcd|
 
-**Wiring**
+**Collegamenti**
 
 |wiring_lcd|
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``3.4_liquid_crystal_display.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``3.4_liquid_crystal_display.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`. 
     
-    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Qui devi usare la libreria chiamata ``lcd1602.py``, verifica se è stata caricata su Pico W, per un tutorial dettagliato fai riferimento a :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -118,36 +119,35 @@ You can also buy them separately from the links below.
     utime.sleep(2)
     lcd.clear()   
 
-After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+Dopo l'esecuzione del programma, potrai vedere due righe di testo apparire sul display LCD a turno, e poi scomparire.
 
-.. note:: When the code is running, if the screen is blank, you can turn the potentiometer on the back to increase the contrast.
+.. note:: Quando il codice è in esecuzione, se lo schermo è vuoto, puoi regolare il potenziometro sul retro per aumentare il contrasto.
 
-**How it works?**
+**Come funziona?**
 
-In the lcd1602 library, we integrate the relevant functions of lcd1602 into the LCD class.
+Nella libreria lcd1602, integriamo le funzioni rilevanti dell'lcd1602 nella classe LCD.
 
-Import lcd1602 library
+Importa la libreria lcd1602
 
 .. code-block:: python
 
     from lcd1602 import LCD    
 
-Declare an object of the LCD class and name it lcd.
+Dichiara un oggetto della classe LCD e chiamalo lcd.
 
 .. code-block:: python
 
     lcd = LCD()
 
-This statement will display the text on the LCD. It should be noted that the argument must be a string type. If we want to pass an integer or float, we must use the forced conversion statement ``str()``.
+Questa istruzione visualizzerà il testo sul display LCD. Va notato che l'argomento deve essere di tipo stringa. Se vogliamo passare un intero o un float, dobbiamo usare l'istruzione di conversione forzata ``str()``.
 
 .. code-block:: python
 
     lcd.message(string)
 
 
-If you call this statement multiple times, lcd will superimpose the texts. This requires the use of the following statement to clear the display.
+Se chiami questa istruzione più volte, l'lcd sovrapporrà i testi. Questo richiede l'uso della seguente istruzione per cancellare il display.
 
 .. code-block:: python
 
     lcd.clear()
-

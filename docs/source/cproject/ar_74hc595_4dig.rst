@@ -1,56 +1,55 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_74hc_4dig:
 
-5.3 - Time Counter
+5.3 - Contatore di Tempo
 ================================
 
+Il display a 4 cifre e 7 segmenti è costituito da quattro display a 7 segmenti 
+che funzionano insieme.
 
-4-Digit 7-segment display consists of four 7- segment displays working
-together.
+Il display a 4 cifre e 7 segmenti funziona indipendentemente. Utilizza il 
+principio della persistenza visiva umana per visualizzare rapidamente i 
+caratteri di ciascun segmento in un ciclo, formando stringhe continue.
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+Ad esempio, quando sul display appare "1234", viene visualizzato "1" sul 
+primo segmento, mentre "234" non è visibile. Dopo un breve intervallo, il 
+secondo segmento mostra "2", mentre il 1°, 3° e 4° segmento non mostrano 
+nulla, e così via, il display a quattro cifre mostra le cifre in sequenza. 
+Questo processo è molto rapido (tipicamente 5ms), e grazie all'effetto di 
+persistenza ottica e al principio della persistenza visiva, possiamo vedere 
+tutte e quattro le cifre contemporaneamente.
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+**Componenti Necessari**
 
-**Required Components**
+In questo progetto, ci servono i seguenti componenti.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un intero kit, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 
 .. list-table::
@@ -58,16 +57,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -76,7 +75,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Alcuni
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -92,39 +91,39 @@ You can also buy them separately from the links below.
         - |link_74hc595_buy|
 
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_4dig|
 
-Here the wiring principle is basically the same as :ref:`ar_74hc_led`, the only difference is that Q0-Q7 are connected to the a ~ g pins of the 4-digit 7-segment display.
+Qui il principio di cablaggio è sostanzialmente lo stesso di :ref:`ar_74hc_led`, l'unica differenza è che Q0-Q7 sono collegati ai pin da a a g del display a 4 cifre e 7 segmenti.
 
-Then G10 ~ G13 will select which 7-segment display to work.
+Poi G10 ~ G13 selezioneranno quale display a 7 segmenti attivare.
 
-**Wiring**
+**Cablaggio**
 
 
 |wiring_4dig|
 
-**Code**
+**Codice**
 
 .. note::
 
-    * You can open the file ``5.3_time_counter.ino`` under the path of ``kepler-kit-main/arduino/5.3_time_counter``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Puoi aprire il file ``5.3_time_counter.ino`` nel percorso ``kepler-kit-main/arduino/5.3_time_counter``.
+    * Oppure copia questo codice nell'**Arduino IDE**.
+    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0e97386e-417e-4f53-a026-5f37e36deba4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program is run, you will see the 4-digit 7-segment display become a counter and the number increases by 1 per second.
+Dopo l'esecuzione del programma, vedrai il display a 4 cifre e 7 segmenti diventare un contatore e il numero aumenterà di 1 ogni secondo.
 
 
-**How it works?**
+**Come funziona?**
 
-Writing signals to each 7-segment display is done in the same way as :ref:`ar_74hc_7seg`, using the ``hc595_shift()`` function.
-The core point of the 4-digit 7-segment display is to selectively activate each 7-segment display. The code associated with this is as follows.
+L'invio di segnali a ciascun display a 7 segmenti avviene nello stesso modo di :ref:`ar_74hc_7seg`, utilizzando la funzione ``hc595_shift()``.
+Il punto cruciale del display a 4 cifre e 7 segmenti è attivare selettivamente ciascun display a 7 segmenti. Il codice associato è il seguente.
 
 .. code-block:: arduino
 
@@ -159,18 +158,18 @@ The core point of the 4-digit 7-segment display is to selectively activate each 
         digitalWrite(placePin[digit],LOW);
     }
 
-Here, four pins (GP10, GP11, GP12, GP13) are used to control each bit of the  4-digit 7-segment display individually.
-When the status of these pins is ``LOW``, the corresponding 7-segment display is active; when the status is ``HIGH``, the 7-segment display does not work.
+Qui, quattro pin (GP10, GP11, GP12, GP13) vengono utilizzati per controllare ciascun segmento del display a 4 cifre e 7 segmenti individualmente.
+Quando lo stato di questi pin è ``LOW``, il display a 7 segmenti corrispondente è attivo; quando lo stato è ``HIGH``, il display a 7 segmenti non funziona.
 
 
-Here the ``pickDigit(digit)`` function is used to unable all 7-segment displays and then enable a particular digit individually.
-After that, ``hc595_shift()`` is used to write the corresponding 8 bits code for the 7-segment display.
+Qui la funzione ``pickDigit(digit)`` viene utilizzata per disattivare tutti i display a 7 segmenti e poi attivare un determinato segmento singolarmente.
+Successivamente, ``hc595_shift()`` viene utilizzato per scrivere il codice di 8 bit corrispondente per il display a 7 segmenti.
 
-The 4-digit 7-segment display needs to be continuously activated in turn so that we can see it display four digits, which means that the main program cannot easily add code that would affect the timing.
+Il display a 4 cifre e 7 segmenti deve essere attivato continuamente a turno in modo che possiamo vedere visualizzate tutte e quattro le cifre, il che significa che il programma principale non può facilmente aggiungere codice che influenzi la temporizzazione.
 
-However, we need to add a timing function to this example, if we add a ``delay (1000)``, we will be able to detect the illusion of its four 7-segment displays working at the same time, exposing the fact that only one 7-segment display at a time to light.
+Tuttavia, è necessario aggiungere una funzione di temporizzazione a questo esempio, se aggiungiamo un ``delay (1000)``, potremo rilevare l'illusione dei quattro display a 7 segmenti che funzionano contemporaneamente, esponendo il fatto che solo un display a 7 segmenti alla volta si illumina.
 
-Then, using the ``millis()`` function is an excellent way to do this.
+Pertanto, utilizzare la funzione ``millis()`` è un ottimo modo per farlo.
 
 .. code-block:: arduino
 
@@ -184,11 +183,11 @@ Then, using the ``millis()`` function is an excellent way to do this.
         unsigned int count = (millis()-timerStart)/1000;
     }
 
-The ``millis()`` function gets the number of milliseconds that have passed since the current program was started. We record the first time value as ``timerStart``; 
+La funzione ``millis()`` ottiene il numero di millisecondi trascorsi dall'inizio del programma corrente. Registriamo il primo valore temporale come ``timerStart``; 
 
-then when we need to get the time again, we call the ``millis()`` function again and subtract ``timerStart`` from the value to get how long the program has been running.
+poi, quando dobbiamo ottenere nuovamente il tempo, richiamiamo la funzione ``millis()`` e sottraiamo ``timerStart`` dal valore per ottenere da quanto tempo il programma è in esecuzione.
 
-Finally, convert this time value and let the 4-digit 7-segment display to display it.
+Infine, converti questo valore temporale e lascia che il display a 4 cifre e 7 segmenti lo mostri.
 
 
 * `millis() <https://www.arduino.cc/reference/en/language/functions/time/millis/>`_

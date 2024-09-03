@@ -1,41 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 36 : Control a Servo With MicroPython
+lesson 36: Controllo di un Servo con MicroPython
 =============================================================================
-This tutorial covers controlling a servo motor using the Raspberry Pi Pico W:
 
-* **Servo Motor Control**: 
- - Introduction to using the SG90 servo motor with the Raspberry Pi Pico W.
- - Explanation of servo motor connections: brown (ground), red (power), orange (control).
- - Emphasis on not using the Raspberry Pi Pico W to power larger servos due to potential damage.
-* **Wiring Diagram and Setup**:
- - Detailed wiring instructions for connecting the SG90 servo to the Raspberry Pi Pico W.
- - Use of GPIO pin 15 for control, and creating a power rail from pin 1 for 5V supply.
-* **PWM Basics**:
- - Explanation of Pulse Width Modulation (PWM) and its role in controlling servo position.
- - Calculation of pulse widths corresponding to different servo angles (0.5ms for 0 degrees, 2.5ms for 180 degrees).
- - Setting PWM frequency to 50Hz to match the servo's requirements.
-* **Code Explanation**:
- - Step-by-step coding tutorial to set up PWM on GPIO pin 15.
- - Creating a function to convert desired angles to PWM duty cycle values.
- - Example code to control the servo by entering desired angles.
-* **Practical Demonstration**:
- - Running the code to move the servo to specific angles.
- - Ensuring safe servo operation by avoiding manual rotation of the servo horn.
-* **Homework Assignment**:
- - Task to integrate a potentiometer with the setup to control the servo position by adjusting the potentiometer.
+Questo tutorial spiega come controllare un motore servo utilizzando il Raspberry Pi Pico W:
+
+* **Controllo del Motore Servo**:
+  - Introduzione all'uso del servo motore SG90 con il Raspberry Pi Pico W.
+  - Spiegazione dei collegamenti del motore servo: marrone (massa), rosso (alimentazione), arancione (controllo).
+  - Importante: non utilizzare il Raspberry Pi Pico W per alimentare servomotori più grandi a causa del rischio di danni.
+* **Diagramma di Collegamento e Configurazione**:
+  - Istruzioni dettagliate per collegare il servo SG90 al Raspberry Pi Pico W.
+  - Utilizzo del pin GPIO 15 per il controllo e creazione di una barra di alimentazione dal pin 1 per la fornitura di 5V.
+* **Nozioni di Base sul PWM**:
+  - Spiegazione della Modulazione a Larghezza di Impulso (PWM) e del suo ruolo nel controllo della posizione del servo.
+  - Calcolo degli impulsi corrispondenti ai diversi angoli del servo (0,5ms per 0 gradi, 2,5ms per 180 gradi).
+  - Impostazione della frequenza PWM a 50Hz per soddisfare i requisiti del servo.
+* **Spiegazione del Codice**:
+  - Tutorial passo-passo per configurare il PWM sul pin GPIO 15.
+  - Creazione di una funzione per convertire gli angoli desiderati in valori di duty cycle PWM.
+  - Codice di esempio per controllare il servo inserendo gli angoli desiderati.
+* **Dimostrazione Pratica**:
+  - Esecuzione del codice per muovere il servo a specifici angoli.
+  - Assicurarsi di operare il servo in sicurezza evitando di ruotare manualmente il braccio del servo.
+* **Compito a Casa**:
+  - Integrazione di un potenziometro con il setup per controllare la posizione del servo regolando il potenziometro.
 
 **Video**
 

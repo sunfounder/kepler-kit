@@ -1,40 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Concorsi Festivi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 46 : Build a 2 Axis Tilt Meter with Display Using the MPU6050
-=============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a two-axis tilt meter:
+lesson 46: Costruisci un Inclinometro a 2 Assi con Display Utilizzando l'MPU6050
+=======================================================================================
+Questo tutorial tratta l'utilizzo del sensore MPU6050 con il Raspberry Pi Pico W per creare un inclinometro a due assi:
 
 * **Setup**:
-   - Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W using the provided schematic. Ensure all connections are secure to avoid electrical noise.
-* **Concept**:
-   - Measure the tilt of the sensor using the MPU6050's accelerometer data to calculate pitch and roll angles. Use these angles to create a visual representation of a bubble level on the OLED display.
-* **Equation**:
-   - Calculate pitch and roll angles using the following formulas:
-     - Pitch: \(\text{Pitch} = \arctan\left(\frac{\text{Y acceleration}}{\text{Z acceleration}}\right)\)
-     - Roll: \(\text{Roll} = \arctan\left(\frac{\text{X acceleration}}{\text{Z acceleration}}\right)\)
-   - Convert these angles from radians to degrees.
-* **Code Implementation**:
-   - Set up the MPU6050 and OLED 1306 libraries.
-   - Measure the X, Y, and Z acceleration values.
-   - Calculate pitch and roll angles in degrees.
-   - Display the calculated pitch and roll angles on the OLED along with a visual representation of a bubble moving within a rectangle to indicate tilt.
-* **Practical Demonstration**:
-   - Test the setup by tilting the sensor and observing the bubble's movement on the OLED display. Adjust the sensitivity of the bubble's movement to make the tilt meter more responsive.
-   - Ensure the readings are accurate and the bubble moves smoothly according to the tilt angles.
-* **Advanced Considerations**:
-   - Address the challenge of the accelerometer interpreting acceleration and deceleration as tilt. Think about strategies to stabilize the readings and prevent incorrect tilt detection due to vibrations or movements.
+   - Collega l'MPU6050 e l'OLED 1306 al Raspberry Pi Pico W utilizzando lo schema fornito. Assicurati che tutte le connessioni siano sicure per evitare interferenze elettriche.
+* **Concetto**:
+   - Misura l'inclinazione del sensore utilizzando i dati dell'accelerometro dell'MPU6050 per calcolare gli angoli di pitch e roll. Usa questi angoli per creare una rappresentazione visiva di una bolla di livello sul display OLED.
+* **Equazione**:
+   - Calcola gli angoli di pitch e roll utilizzando le seguenti formule:
+     - Pitch: \(\text{Pitch} = \arctan\left(\frac{\text{Accelerazione Y}}{\text{Accelerazione Z}}\right)\)
+     - Roll: \(\text{Roll} = \arctan\left(\frac{\text{Accelerazione X}}{\text{Accelerazione Z}}\right)\)
+   - Converti questi angoli da radianti a gradi.
+* **Implementazione del Codice**:
+   - Configura le librerie per l'MPU6050 e l'OLED 1306.
+   - Misura i valori di accelerazione sugli assi X, Y e Z.
+   - Calcola gli angoli di pitch e roll in gradi.
+   - Visualizza gli angoli calcolati di pitch e roll sull'OLED insieme a una rappresentazione visiva di una bolla che si muove all'interno di un rettangolo per indicare l'inclinazione.
+* **Dimostrazione Pratica**:
+   - Testa il sistema inclinando il sensore e osservando il movimento della bolla sul display OLED. Regola la sensibilità del movimento della bolla per rendere l'inclinometro più reattivo.
+   - Assicurati che le letture siano accurate e che la bolla si muova fluidamente in base agli angoli di inclinazione.
+* **Considerazioni Avanzate**:
+   - Affronta la sfida dell'accelerometro che interpreta l'accelerazione e la decelerazione come inclinazione. Pensa a strategie per stabilizzare le letture e prevenire rilevazioni errate dell'inclinazione a causa di vibrazioni o movimenti.
 
 **Video**
 

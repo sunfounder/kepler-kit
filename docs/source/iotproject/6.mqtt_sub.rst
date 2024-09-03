@@ -1,54 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _nt_mqtt_Subscribe:
 
-6. Cloud Player with @MQTT
+6. Lettore cloud con @MQTT
 =========================================
 
-It is recommended that you do the :ref:`nt_mqtt_publish` project first to complete the installation of some modules and to complete the configuration of the HiveMQ platform.
+Si consiglia di eseguire prima il progetto :ref:`nt_mqtt_publish` per completare l'installazione di alcuni moduli e la configurazione della piattaforma HiveMQ.
 
-In this project, Pico W will act as a subscriber and receive the song name under the topic.
-If the song name is already in the code, Pico W will make the buzzer play the song.
+In questo progetto, Pico W agirà come sottoscrittore e riceverà il nome della canzone sotto l'argomento specificato.
+Se il nome della canzone è già presente nel codice, Pico W farà suonare il brano al buzzer.
 
-**1. Required Components**
+**1. Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link: 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -56,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -65,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diverse
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -76,7 +75,7 @@ You can also buy them separately from the links below.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Buzzer passivo :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -84,53 +83,53 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 10
-        - Battery Holder
+        - Supporto batteria
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Costruisci il circuito**
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back). The buzzer needs a transistor to work, here we use S8050.
+Nel kit sono inclusi due buzzers, utilizziamo un buzzer passivo (quello con PCB esposto sul retro). Il buzzer necessita di un transistor per funzionare, qui usiamo S8050.
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Assicurati che il modulo caricabatterie Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
 .. image:: img/wiring/6.mqtt_sub_bb.png
 
 
 
-**3. Run the Code**
+**3. Esegui il codice**
 
-#. Upload the ``play_music.py`` file under the path of ``kepler-kit-main/iot`` to the Raspberry Pi Pico W.
+#. Carica il file ``play_music.py`` nel percorso ``kepler-kit-main/iot`` nel Raspberry Pi Pico W.
 
     .. image:: img/mqtt-A-1.png
 
-#. Open the ``6_mqtt_subscribe_music.py`` file under the path of ``kepler-kit-main/iot`` and click the **Run current script** button or press F5 to run it.
+#. Apri il file ``6_mqtt_subscribe_music.py`` nel percorso ``kepler-kit-main/iot`` e clicca sul pulsante **Esegui script corrente** o premi F5 per eseguirlo.
 
     .. image:: img/6_cloud_player.png
 
     .. note::
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, if not please refer to :ref:`iot_access` to create them.
+        Prima di eseguire il codice, assicurati di avere gli script ``do_connect.py`` e ``secrets.py`` nel tuo Pico W, in caso contrario fai riferimento a :ref:`iot_access` per crearli.
 
-#. Open |link_hivemq| in your browser, fill in the Topic as ``SunFounder MQTT Music``, fill in the song name as **Message**. After clicking **Publish** button, the buzzer connected to the Pico W will play the corresponding song.
+#. Apri |link_hivemq| nel tuo browser, inserisci il Topic come ``SunFounder MQTT Music``, inserisci il nome della canzone come **Messaggio**. Dopo aver cliccato sul pulsante **Publish**, il buzzer collegato al Pico W riprodurrà la canzone corrispondente.
 
     .. note::
-        Included in play_music.py are ``nokia``, ``starwars``, ``nevergonnagiveyouup``, ``gameofthrone``, ``songofstorms``, ``zeldatheme``, ``harrypotter``.
+        Incluse in play_music.py sono le canzoni ``nokia``, ``starwars``, ``nevergonnagiveyouup``, ``gameofthrone``, ``songofstorms``, ``zeldatheme``, ``harrypotter``.
 
     .. image:: img/mqtt-5.png
         :width: 500
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Se desideri che questo script si avvii automaticamente, puoi salvarlo nel Raspberry Pi Pico W come ``main.py``.
 
-**How it works?**
+**Come funziona?**
 
-In order to make it easier to understand, we separated the MQTT code from the rest.
-As a result, you get the following code, which implements the most basic functionality of MQTT subscriptions in three places.
+Per facilitare la comprensione, abbiamo separato il codice MQTT dal resto.
+Di conseguenza, ottieni il seguente codice, che implementa le funzionalità di base delle sottoscrizioni MQTT in tre punti.
 
 .. code-block:: python
     :emphasize-lines: 13,14,15,16,20,28,29,30
@@ -144,7 +143,7 @@ As a result, you get the following code, which implements the most basic functio
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-    # to subscribe the message
+    # sottoscrivi il messaggio
     topic = b'SunFounder MQTT Music'
 
     def callback(topic, message):
@@ -167,7 +166,7 @@ As a result, you get the following code, which implements the most basic functio
         time.sleep(1)
 
 
-When connecting to the MQTT broker, we call the ``client.set_callback(callback)`` function, which serves as a callback for the received subscription messages.
+Quando ci si connette al broker MQTT, chiamiamo la funzione ``client.set_callback(callback)``, che serve come callback per i messaggi di sottoscrizione ricevuti.
 
 .. code-block:: python
     :emphasize-lines: 3
@@ -182,8 +181,8 @@ When connecting to the MQTT broker, we call the ``client.set_callback(callback)`
         time.sleep(5)
         machine.reset()
 
-Next is the callback function, which prints out the message from the topic that was fetched.
-MQTT is a binary based protocol were the control elements are binary bytes and not text strings, so these messages need to be decoded using ``message.decode('utf-8')``.
+Successivamente viene eseguita la funzione callback, che stampa il messaggio ricevuto dall'argomento sottoscritto.
+MQTT è un protocollo basato su byte binari e non su stringhe di testo, quindi questi messaggi devono essere decodificati utilizzando ``message.decode('utf-8')``.
 
 .. code-block:: python
 
@@ -201,9 +200,9 @@ Use a ``While True`` loop to get messages under this topic at regular intervals.
         time.sleep(1)
 
         
-Next, music will be played. This function is placed in the ``play_music.py`` script, which consists of three main parts.
+Successivamente, verrà riprodotta la musica. Questa funzione è inserita nello script ``play_music.py``, che consiste in tre parti principali.
 
-   * ``Tone``: Simulates a specific tone based on the fundamental |link_piano_frequency| , which is used to play it.
+   * ``Tone``: Simula un tono specifico basato sulla |link_piano_frequency| fondamentale, utilizzato per riprodurlo.
 
         .. code-block:: python
 
@@ -213,7 +212,7 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
             NOTE_DS8 = 4978
             REST =      0
 
-   * ``Score``: Edit the music into a format that the program can use. These scores are from `Robson Couto's free sharing <https://github.com/robsoncouto/arduino-songs>`_, you can also add your favorite music in the following format.
+   * ``Score``: Modifica la musica in un formato che il programma possa utilizzare. Questi spartiti provengono dalla `condivisione gratuita di Robson Couto <https://github.com/robsoncouto/arduino-songs>`_, puoi anche aggiungere la tua musica preferita nel seguente formato.
 
     .. code-block:: python
 
@@ -232,17 +231,17 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
             "harrypotter":[,,,],
         }
 
-    * ``Play``: This part is basically the same as :ref:`py_pa_buz`, but slightly optimized to fit the above score.
+    * ``Play``: Questa parte è sostanzialmente la stessa di :ref:`py_pa_buz`, ma leggermente ottimizzata per adattarsi allo spartito sopra.
 
    .. code-block:: python
 
        import time
        import machine
 
-       # change this to make the song slower or faster
+       # cambia questo per rendere la canzone più lenta o più veloce
        tempo = 220
 
-       # this calculates the duration of a whole note in ms
+       # questo calcola la durata di una nota intera in ms
        wholenote = (60000 * 4) / tempo
 
        def tone(pin,frequency,duration):
@@ -259,10 +258,10 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
 
        def play(pin,melody):
 
-           # iterate over the notes of the melody.
-           # Remember, the array is twice the number of notes (notes + durations)
+           # iterare sulle note della melodia.
+           # Ricorda, l'array è il doppio del numero di note (note + durate)
            for thisNote in range(0,len(melody),2):
-               # calculates the duration of each note
+               # calcola la durata di ciascuna nota
                divider = melody[thisNote+1]
                if divider > 0:
                    noteDuration = wholenote/divider
@@ -270,19 +269,19 @@ Next, music will be played. This function is placed in the ``play_music.py`` scr
                    noteDuration = wholenote/-(divider)
                    noteDuration *= 1.5
 
-               # we only play the note for 90% of the duration, leaving 10% as a pause
+               # suoniamo la nota solo per il 90% della durata, lasciando il 10% come pausa
                tone(pin,melody[thisNote],int(noteDuration*0.9))
 
-               # Wait for the specief duration before playing the next note.
+               # Attendi la durata specificata prima di suonare la nota successiva.
                time.sleep_ms(int(noteDuration))
 
-               # stop the waveform generation before the next note.
+               # ferma la generazione d'onda prima della nota successiva.
                noTone(pin)
 
 
-Go back to the main function and let MQTT trigger music playback.
-In the callback function, determine if the message sent is the name of a song that has been included.
-If it is, assign the song name to the variable ``melody`` and set ``play_flag`` to ``True``.
+Torna alla funzione principale e lascia che MQTT attivi la riproduzione della musica.
+Nella funzione callback, determina se il messaggio inviato è il nome di una canzone inclusa.
+Se lo è, assegna il nome della canzone alla variabile ``melody`` e imposta ``play_flag`` su ``True``.
 
 .. code-block:: python
     :emphasize-lines: 5,6,7,8
@@ -296,7 +295,7 @@ If it is, assign the song name to the variable ``melody`` and set ``play_flag`` 
             melody = song[message]
             play_flag = True
 
-In the main loop, if ``play_flag`` is ``True``, play ``melody``.
+Nel ciclo principale, se ``play_flag`` è ``True``, suona ``melody``.
 
 .. code-block:: python
     :emphasize-lines: 4,5,6

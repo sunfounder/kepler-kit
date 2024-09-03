@@ -1,69 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_pot:
 
-2.11 Turn the Knob
+2.11 Ruota la Manopola
 ===========================
 
-In the previous projects, we have used the digital input on the Pico W.
-For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
+Nei progetti precedenti, abbiamo utilizzato l'ingresso digitale su Pico W.
+Ad esempio, un pulsante può cambiare il pin da livello basso (spento) a livello alto (acceso). Questo è uno stato di funzionamento binario.
 
-However, Pico W can receive another type of input signal: analog input.
-It can be in any state from fully closed to fully open, and has a range of possible values.
-The analog input allows the microcontroller to sense the light intensity, sound intensity, temperature, humidity, etc. of the physical world.
+Tuttavia, Pico W può ricevere un altro tipo di segnale di ingresso: l'ingresso analogico.
+Può essere in qualsiasi stato, da completamente chiuso a completamente aperto, e ha una gamma di valori possibili.
+L'ingresso analogico consente al microcontrollore di percepire l'intensità della luce, l'intensità del suono, la temperatura, l'umidità, ecc. del mondo fisico.
 
-Usually, a microcontroller needs an additional hardware to implement analog input-the analogue-to-digital converter (ADC).
-But Pico W itself has a built-in ADC for us to use directly.
+Di solito, un microcontrollore necessita di un hardware aggiuntivo per implementare l'ingresso analogico: il convertitore analogico-digitale (ADC).
+Ma Pico W ha un ADC integrato che possiamo usare direttamente.
 
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
+Pico W ha tre pin GPIO che possono utilizzare l'ingresso analogico: GP26, GP27, GP28. Questi corrispondono ai canali analogici 0, 1 e 2.
+Inoltre, c'è un quarto canale analogico, che è collegato al sensore di temperatura integrato, che non sarà trattato qui.
 
-In this project, we try to read the analog value of potentiometer.
+In questo progetto, proviamo a leggere il valore analogico del potenziometro.
 
 * :ref:`cpn_potentiometer`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -71,7 +70,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -96,38 +95,38 @@ You can also buy them separately from the links below.
         - |link_potentiometer_buy|
 
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_pot|
 
-The potentiometer is an analog device and when you turn it in 2 different directions.
+Il potenziometro è un dispositivo analogico e funziona ruotandolo in due direzioni diverse.
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico W wcontains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+Collega il pin centrale del potenziometro al pin analogico GP28. Il Raspberry Pi Pico W contiene un convertitore analogico-digitale multicanale a 16 bit. Ciò significa che mappa la tensione di ingresso tra 0 e la tensione di esercizio (3.3V) su un valore intero tra 0 e 65535, quindi il valore di GP28 varia da 0 a 65535.
 
-The calculation formula is shown below.
+La formula di calcolo è mostrata di seguito.
 
     (Vp/3.3V) x 65535 = Ap
 
-Then program the value of GP28 (potentiometer) as the PWM value of GP15 (LED).
-This way you will find that by rotating the potentiometer, the brightness of the LED will change at the same time.
+Successivamente, programma il valore di GP28 (potenziometro) come valore PWM di GP15 (LED).
+In questo modo noterai che ruotando il potenziometro, la luminosità del LED cambierà contemporaneamente.
 
-**Wiring**
+**Collegamenti**
 
 
 
 |wiring_pot|
 
 
-**Code**
+**Codice**
 
 
 .. note::
 
-    * Open the ``2.11_turn_the_knob.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``2.11_turn_the_knob.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -144,23 +143,22 @@ This way you will find that by rotating the potentiometer, the brightness of the
         led.duty_u16(value)
         utime.sleep_ms(200)
 
-When the program is running, we can see the analog value currently read by the GP28 pin in the shell. 
-Turn the knob, and the value will change from 0 to 65535.
-At the same time, the brightness of the LED will increase as the analog value increases.
+Quando il programma è in esecuzione, possiamo vedere nella shell il valore analogico attualmente letto dal pin GP28.
+Ruota la manopola e il valore cambierà da 0 a 65535.
+Allo stesso tempo, la luminosità del LED aumenterà man mano che il valore analogico aumenta.
 
-**How it works?**
+**Come funziona?**
 
 .. code-block:: python
 
     potentiometer = machine.ADC(28)
 
-Access the ADC associated with a source identified by id. In this example it is GP28.
+Accedi all'ADC associato a una sorgente identificata dall'ID. In questo esempio è GP28.
 
 .. code-block:: python
 
     potentiometer.read_u16()
 
-Take an analog reading and return an integer in the range 0-65535. The return value represents the raw reading taken by the ADC, scaled such that the minimum value is 0 and the maximum value is 65535.
-
+Effettua una lettura analogica e restituisce un intero nell'intervallo 0-65535. Il valore restituito rappresenta la lettura grezza presa dall'ADC, scalata in modo che il valore minimo sia 0 e il massimo 65535.
 
 * `machine.ADC - MicroPython Docs <https://docs.micropython.org/en/latest/library/machine.ADC.html>`_

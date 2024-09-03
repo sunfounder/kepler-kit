@@ -1,53 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di Appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci dei nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Giveaway Festivi**: Partecipa ai giveaway e alle promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_10_second:
 
-7.5 GAME - 10 Second
-=======================
+7.5 GIOCO - 10 Secondi
+===========================
 
 
-To challenge your concentration, follow me next to make a game device. 
-Make a magic wand by connecting the tilt switch with a stick. When you shake the wand, the 4-digit segment display will start counting, and when you shake it again, it will stop counting. In order to win, you must keep the displayed count at **10.00**. You can play the game with your friends to see who is the time wizard.
+Per mettere alla prova la tua concentrazione, segui le istruzioni per creare un dispositivo di gioco.
+Realizza una bacchetta magica collegando l'interruttore a inclinazione a un bastoncino. Quando agiti la bacchetta, il display a 4 cifre inizia a contare, e quando la agiti di nuovo, il conteggio si ferma. Per vincere, devi mantenere il conteggio visualizzato su **10.00**. Puoi giocare con i tuoi amici per vedere chi è il mago del tempo.
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -55,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -64,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -83,31 +82,30 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schema**
 
 
 |sch_10_second|
 
 
-* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* GP16 is high when the tilt switch is upright; low when tilted.
+* Questo circuito è basato su :ref:`py_74hc_4dig` con l'aggiunta di un interruttore a inclinazione.
+* GP16 è alto quando l'interruttore è in posizione verticale; basso quando è inclinato.
 
-**Wiring**
+**Cablaggio**
 
 |wiring_game_10_second| 
 
 
-**Code**
+**Codice**
 
 
 .. note::
 
-    * Open the ``7.5_game_10_second.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``7.5_game_10_second.py`` nel percorso ``kepler-kit-main/micropython`` oppure copia questo codice in Thonny, quindi clicca su "Run Current Script" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -184,5 +182,5 @@ You can also buy them separately from the links below.
             count = int((time.ticks_ms()-timeStart)/10)
         display(count)
 
-The 4-digit 7-segment display will begin counting when you shake the wand, and will stop counting when you shake it again. 
-You win if you manage to keep the displayed count at 10.00. The game will continue after one more shake.
+Il display a 4 cifre inizia a contare quando agiti la bacchetta, e si ferma quando la agiti di nuovo.
+Vinci se riesci a mantenere il conteggio visualizzato su 10.00. Il gioco continuerà dopo un'altra scossa.

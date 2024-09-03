@@ -2,54 +2,53 @@
 
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_reversing_aid:
 
-7.10 Reversing Aid
-======================
+7.10 Assistenza al Parcheggio
+========================================
 
-This project uses an LED, a buzzer and an ultrasonic module to create a reversing assist system.
-We can put it on a remote control car to simulate the the actual process of reversing a car into a garage.
+In questo progetto utilizziamo un LED, un cicalino e un modulo a ultrasuoni per creare un sistema di assistenza al parcheggio.
+Possiamo montarlo su un'auto telecomandata per simulare il processo reale di retromarcia in un garage.
 
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -57,7 +56,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -77,7 +76,7 @@ You can also buy them separately from the links below.
         - 2(1KΩ, 220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Cicalino Passivo :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -89,24 +88,24 @@ You can also buy them separately from the links below.
         - 1
         - |link_ultrasonic_buy|
 
-**Schematic**
+**Schema**
 
 |sch_reversing_aid|
 
 
-**Wiring**
+**Collegamenti**
 
 |wiring_reversing_aid| 
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``7.10_reversing_aid.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``7.10_reversing_aid.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 
 
@@ -188,8 +187,7 @@ You can also buy them separately from the links below.
             beep()
             previousMills=currentMills
         
-* As soon as the program runs, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you will be able to see the exact distance value on the shell.
-* The LED and buzzer will change the frequency of blinking and beeping depending on the distance value, thus indicating the approach of the obstacle.
-* The :ref:`py_ultrasonic` article mentioned that when the ultrasonic sensor works, the program will be paused.
-* To avoid interfering with the LED or buzzer timing, we created a separate thread for ranging in this example.
-
+* Non appena il programma viene eseguito, il sensore a ultrasuoni leggerà continuamente la distanza dall'ostacolo di fronte a te, e sarai in grado di vedere il valore esatto della distanza sulla shell.
+* Il LED e il cicalino modificheranno la frequenza di lampeggio e di beep in base al valore della distanza, indicando così l'avvicinamento dell'ostacolo.
+* Nell'articolo :ref:`py_ultrasonic` è stato menzionato che quando il sensore a ultrasuoni funziona, il programma viene sospeso.
+* Per evitare interferenze con il tempo di lampeggio del LED o del cicalino, in questo esempio abbiamo creato un thread separato per il rilevamento della distanza.

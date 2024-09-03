@@ -1,41 +1,39 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_keypad:
 
-4x4 Keypad
+Tastierino 4x4
 ========================
 
+Nei sistemi a microcontrollore, se si utilizzano più tasti come nel caso di una serratura elettronica o di un tastierino telefonico, generalmente sono necessari almeno 12-16 tasti, solitamente disposti in una tastiera a matrice.
 
-Microcontroller system, if the use of more keys such as electronic code lock, telephone keypad, etc. generally have at least 12 to 16 keys, usually using a matrix keyboard.
+Il tastierino a matrice, chiamato anche tastiera a righe, è un tastierino con quattro linee I/O come righe e quattro linee I/O come colonne. Un tasto è posizionato a ogni intersezione tra le righe e le colonne. Quindi, il numero di tasti sulla tastiera è 4x4. Questa struttura di tastiera a righe e colonne può migliorare efficacemente l'utilizzo delle porte I/O in un sistema a microcontrollore.
 
-
-Matrix keypad is also called row keypad, it is a keypad with four I/O lines as row lines and four I/O lines as column lines. One key is set at each intersection of the row and column lines. Thus the number of keys on the keyboard is 4*4. This row and column keyboard structure can effectively improve the utilization of I/O ports in a microcontroller system.
-
-Their contacts are accessed via a header suitable for connection with a ribbon cable or insertion into a printed circuit board. 
-In some keypads, each button connects with a separate contact in the header, while all the buttons share a common ground.
+I loro contatti sono accessibili tramite un connettore adatto per il collegamento con un cavo a nastro o per l'inserimento in una scheda a circuito stampato. 
+In alcuni tastierini, ogni pulsante è collegato a un contatto separato nel connettore, mentre tutti i pulsanti condividono un comune collegamento a terra.
 
 |img_keypad|
 
-More often, the buttons are matrix encoded, meaning that each of them bridges a unique pair of conductors in a matrix. 
-This configuration is suitable for polling by a microcontroller, which can be programmed to send an output pulse to each of the four horizontal wires in turn. 
-During each pulse, it checks the remaining four vertical wires in sequence, to determine which one, if any, is carrying a signal. 
-Pullup or pulldown resistors should be added to the input wires to prevent the inputs of the microcontroller from behaving unpredictably when no signal is present.
+Più frequentemente, i pulsanti sono codificati a matrice, il che significa che ciascuno di essi connette una coppia unica di conduttori in una matrice. 
+Questa configurazione è adatta per il polling da parte di un microcontrollore, che può essere programmato per inviare un impulso di uscita a ciascuno dei quattro fili orizzontali a turno. 
+Durante ogni impulso, verifica i restanti quattro fili verticali in sequenza, per determinare quale, se presente, sta trasmettendo un segnale. 
+Resistenze di pullup o pulldown dovrebbero essere aggiunte ai fili di ingresso per prevenire comportamenti imprevedibili degli ingressi del microcontrollore quando non è presente alcun segnale.
 
 * `Keypad - Wikipedia <https://en.wikipedia.org/wiki/Keypad>`_
 
-**Example**
+**Esempio**
 
 * :ref:`py_keypad` (For MicroPython User)
 * :ref:`py_guess_number` (For MicroPython User)

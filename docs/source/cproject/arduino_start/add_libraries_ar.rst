@@ -1,66 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anticipazioni.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 
-1.4 Install libraries (Important)
-======================================
+1.4 Installare le librerie (Importante)
+===========================================
 
-**Download the Code**
+**Scarica il Codice**
 
-Download the relevant code from the link below.
+Scarica il codice pertinente dal link sottostante.
 
 * :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* Oppure consulta il codice su `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
 
 .. _add_libraries_ar:
 
-Add libraries
-----------------------
-A library, gathering some function definitions and header files, usually
-contains two files: .h (header file, including function statement, Macro
-definition, constructor definition, etc.) and .cpp (execution file, with
-function implementation, variable definition, and so on). When you need
-to use a function in some library, you just need to add a header file
-(e.g. #include <dht.h>), and then call that function. This can make your
-code more concise. If you don't want to use the library, you can also
-write that function definition directly. Though as a result, the code
-will be long and inconvenient to read.
+Aggiungere librerie
+------------------------
+Una libreria, che raccoglie alcune definizioni di funzioni e file header, di solito
+contiene due file: .h (file header, che include la dichiarazione delle funzioni, la 
+definizione delle Macro, la definizione del costruttore, ecc.) e .cpp (file di esecuzione, 
+con implementazione delle funzioni, definizione delle variabili, e così via). Quando hai bisogno
+di usare una funzione di una libreria, devi solo aggiungere un file header
+(ad es. #include <dht.h>), e poi chiamare quella funzione. Questo può rendere il tuo
+codice più conciso. Se non vuoi usare la libreria, puoi anche
+scrivere direttamente la definizione di quella funzione. Tuttavia, il codice
+risulterà lungo e difficile da leggere.
 
-Some libraries are already built in the Arduino IDE, when some others
-may need to be added. So now let's see how to add them.
+Alcune librerie sono già integrate nell'IDE di Arduino, mentre altre
+potrebbero dover essere aggiunte. Vediamo quindi come aggiungerle.
 
 
-#. Open the Arduino IDE and go to **Sketch** -> **Include Library** -> **Add .ZIP Library**.
+#. Apri l'IDE di Arduino e vai su **Sketch** -> **Include Library** -> **Add .ZIP Library**.
 
    .. image:: img/a2dp_add_zip.png
 
-#. Navigate to the directory where the library files are located, such as the ``kepler-kit-main\arduino\libraries`` folder, and select the desired library file, like ``LiquidCrystal_I2C.zip``. Then, click **Open**.
+#. Naviga nella directory in cui si trovano i file della libreria, come la cartella ``kepler-kit-main\arduino\libraries``, e seleziona il file della libreria desiderata, come ``LiquidCrystal_I2C.zip``. Quindi, fai clic su **Open**.
 
    .. image:: img/a2dp_choose.png
 
-#. After a short while, you will receive a notification indicating a successful installation.
+#. Dopo un breve momento, riceverai una notifica che indica l'installazione avvenuta con successo.
 
    .. image:: img/a2dp_success.png
 
-#. Repeat the same process to add the other libraries.
+#. Ripeti lo stesso processo per aggiungere le altre librerie.
 
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Le librerie installate si trovano nella directory predefinita delle librerie dell'IDE di Arduino, che di solito si trova in ``C:\Users\xxx\Documents\Arduino\libraries``.
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   Se la tua directory delle librerie è diversa, puoi controllarla andando su **File** -> **Preferences**.
 
       .. image:: img/install_lib1.png

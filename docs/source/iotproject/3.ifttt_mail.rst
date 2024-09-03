@@ -1,52 +1,51 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-3. Security System via @IFTTT
+3. Sistema di Sicurezza tramite @IFTTT
 ============================================
-With this project, we make a security device that uses a PIR Sensor to detect when a burglar or stray animal breaks into your home. You will receive an email alert if this is the case.
+Con questo progetto, creiamo un dispositivo di sicurezza che utilizza un sensore PIR per rilevare quando un ladro o un animale randagio entra nella tua casa. In tal caso, riceverai un'email di avviso.
 
-Webhook will be used as the most basic service.
-A POST request is sent to IFTTT's service from Raspberry Pi Pico W.
-Using IFTTT, we will create an Applet to intercept the webhook and send an email.
+Il servizio più semplice da utilizzare sarà Webhook.
+Una richiesta POST viene inviata al servizio IFTTT da Raspberry Pi Pico W.
+Usando IFTTT, creeremo un Applet che intercetta il webhook e invia un'email.
 
-**1. Required Components**
+**1. Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -54,7 +53,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -63,7 +62,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diverse
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -78,7 +77,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_button_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - Cicalino attivo :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -86,11 +85,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 10
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 11
-        - Battery Holder
+        - Supporto batteria
         - 1
         -  
     *   - 12
@@ -98,105 +97,105 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**2. Build the Circuit**
+**2. Costruisci il Circuito**
 
 .. warning:: 
         
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+    Assicurati che il modulo caricabatterie Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
 .. image:: img/wiring/3.ifttt_mail_bb.png
     :width: 800
 
 
-**3. SET IFTTT**
+**3. CONFIGURA IFTTT**
 
-IFTTT is a free service that provides a variety of ways to connect different data services together.
+IFTTT è un servizio gratuito che fornisce vari modi per collegare diversi servizi di dati tra loro.
 
-We'll create an Applet that reacts to a webhook (custom URL) that sends data to IFTTT.
-IFTTT will then send an email for you.
+Creeremo un Applet che reagisce a un webhook (URL personalizzato) che invia dati a IFTTT.
+IFTTT ti invierà quindi un'email.
 
-Please follow the steps below on IFTTT.
+Segui i passaggi seguenti su IFTTT.
 
-1. Visit |link_ifttt| to log in or create an account.
+1. Visita |link_ifttt| per accedere o creare un account.
 
     .. image:: img/ifttt-1.png
         :width: 500
 
-2. Click on **Create**.
+2. Clicca su **Crea**.
 
     .. image:: img/ifttt-2.png
         :width: 500
 
-3. Add an **If This** event.
+3. Aggiungi un evento **If This**.
 
     .. image:: img/ifttt-3.png
         :width: 500
 
-4. Search for **Webhooks**.
+4. Cerca **Webhooks**.
 
     .. image:: img/ifttt-4.png
         :width: 500
 
-5. Tap **Receive a web request**.
+5. Tocca **Ricevi una richiesta web**.
 
     .. image:: img/ifttt-5.png
         :width: 500
 
-6. Fill in the event name (e.g. SecurityWarning), and click **Create trigger**.
+6. Inserisci il nome dell'evento (es. SecurityWarning) e clicca su **Crea trigger**.
 
     .. image:: img/ifttt-6.png
         :width: 500
 
-7. Add a **Then That** event.
+7. Aggiungi un evento **Then That**.
 
     .. image:: img/ifttt-7.png
         :width: 500
 
-8. Search for Email.
+8. Cerca Email.
 
     .. image:: img/ifttt-8.png
         :width: 500
 
-9. Click **Send me an email**.
+9. Clicca su **Inviami un'email**.
 
     .. image:: img/ifttt-9.png
         :width: 500
 
-10. Fill in **Subject** and **Body**, then click on **Create action**.
+10. Compila **Oggetto** e **Corpo**, quindi clicca su **Crea azione**.
 
     .. image:: img/ifttt-10.png
         :width: 500
 
-11. Click **Continue** to complete the configuration.
+11. Clicca su **Continua** per completare la configurazione.
 
     .. image:: img/ifttt-11.png
         :width: 500
 
-12. Modify the title name and you're finished.
+12. Modifica il nome del titolo e hai finito.
 
     .. image:: img/ifttt-12.png
         :width: 500
 
-13. Now you will be automatically redirected to the Applet details page, where you can see that the Applet is currently connected and you can toggle the switch to start/close it.
+13. Ora verrai reindirizzato automaticamente alla pagina dei dettagli dell'Applet, dove puoi vedere che l'Applet è attualmente connesso e puoi attivare o disattivare l'interruttore.
 
     .. image:: img/ifttt-13.png
         :width: 500
 
 
-**4. Run the Script**
+**4. Esegui lo Script**
 
-#. Now that we have created the IFTTT Applet, but we also need the API Key which can be obtained from the |link_webhooks| to allow Pico W to access IFTTT.
+#. Ora che abbiamo creato l'Applet IFTTT, ci serve anche la chiave API che può essere ottenuta da |link_webhooks| per consentire a Pico W di accedere a IFTTT.
 
     .. image:: img/ifttt-14.png
         :width: 500
 
-#. Copy it to the ``secrets.py`` script in Raspberry Pi Pico W.
+#. Copiala nello script ``secrets.py`` in Raspberry Pi Pico W.
 
     .. image:: img/3_ifttt4.png
 
     .. note::
 
-        If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+        Se non hai gli script ``do_connect.py`` e ``secrets.py`` nel tuo Pico W, fai riferimento a :ref:`iot_access` per crearli.
 
     .. code-block:: python
         :emphasize-lines: 4
@@ -207,30 +206,30 @@ Please follow the steps below on IFTTT.
         'webhooks_key':'WEBHOOKS_API_KEY'
         }
 
-#. Open the ``3_ifttt_mail.py`` file under the path of ``kepler-kit-main/iot``, then click **File** -> **Save as** or press ``Ctrl+Shift+S``.
+#. Apri il file ``3_ifttt_mail.py`` nel percorso ``kepler-kit-main/iot``, quindi clicca su **File** -> **Salva con nome** o premi ``Ctrl+Shift+S``.
 
     .. image:: img/3_ifttt1.png
 
-#. Select **Raspberry Pi Pico** in the popup window that appears.
+#. Seleziona **Raspberry Pi Pico** nella finestra popup che appare.
 
     .. image:: img/3_ifttt2.png
 
-#. Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico W.
+#. Imposta il nome del file a ``main.py``. Apparirà un avviso se esiste già un file con lo stesso nome sul tuo Pico W.
 
     .. image:: img/3_ifttt3.png
 
-#. You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico W. You will hear a buzzer tick when the script is running. The buzzer will keep sounding if the PIR module detects a person/creature passing by, and an email alert will be sent to you. The script can be restarted by pressing the button.
+#. Ora puoi scollegare il cavo USB e utilizzare il modulo caricabatterie Li-po per alimentare il Raspberry Pi Pico W. Sentirai un beep quando lo script sarà in esecuzione. Il cicalino continuerà a suonare se il modulo PIR rileva una persona/creatura di passaggio, e ti verrà inviata un'email di avviso. Lo script può essere riavviato premendo il pulsante.
 
-**How it works?**
+**Come funziona?**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Il Raspberry Pi Pico W deve essere connesso a Internet, come descritto in :ref:`iot_access`. Per questo progetto, usalo semplicemente.
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Reads data from the PIR module and calls the ``motion_detected()`` function if it detects someone passing by (data from 0 to 1).
+Legge i dati dal modulo PIR e chiama la funzione ``motion_detected()`` se rileva qualcuno che passa (dati da 0 a 1).
 
 .. code-block:: python
 
@@ -240,9 +239,9 @@ Reads data from the PIR module and calls the ``motion_detected()`` function if i
 
     sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-Next the Pico W sends data to IFTTT. As you can see, the ``message`` that you send to IFTTT is a url string.
-IFTTT identifies the sender by ``secrets['webhooks_key']``, the triggered event is identified by ``event``.
-So, make sure they are correct.
+Successivamente il Pico W invia i dati a IFTTT. Come puoi vedere, il ``messaggio`` che invii a IFTTT è una stringa di url.
+IFTTT identifica il mittente tramite ``secrets['webhooks_key']``, l'evento attivato è identificato da ``event``.
+Quindi, assicurati che siano corretti.
 
 .. code-block:: python
 
@@ -259,7 +258,7 @@ So, make sure they are correct.
         warn_flag=True
         sensor.irq(handler=None)
 
-When ``motion_detected()`` is called, the variable ``warn_flag`` is set to ``True``, causing the buzzer to keep going.
+Quando viene chiamato ``motion_detected()``, la variabile ``warn_flag`` viene impostata su ``True``, facendo sì che il cicalino continui a suonare.
 
 .. code-block:: python
 
@@ -268,7 +267,7 @@ When ``motion_detected()`` is called, the variable ``warn_flag`` is set to ``Tru
             alarm.toggle()
             time.sleep_ms(50)
 
-The purpose of the button here is to restart the script.
+Lo scopo del pulsante qui è riavviare lo script.
 
 .. code-block:: python
 

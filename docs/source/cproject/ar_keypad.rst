@@ -1,66 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi, Arduino & ESP32 Enthusiasts su Facebook! Approfondisci l'uso di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni l'accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_keypad:
 
-4.2 4x4 Keypad
-========================
+4.2 Tastiera 4x4
+====================
 
-The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
+La tastiera 4x4, nota anche come tastiera a matrice, è una matrice di 16 tasti disposti in un singolo pannello.
 
-The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+La tastiera si trova su dispositivi che richiedono principalmente input digitali, come calcolatrici, telecomandi, telefoni a pulsante, distributori automatici, bancomat, serrature a combinazione e serrature digitali.
 
-In this project, we will learn how to determine which key is pressed and get the related key value.
+In questo progetto, impareremo come determinare quale tasto viene premuto e ottenere il valore del tasto corrispondente.
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, ci servono i seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un intero kit, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -69,77 +68,75 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(10KΩ)
+        - 4 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_keypad`
         - 1
         - |link_keypad_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_keypad|
 
-4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+4 resistori pull-down sono collegati a ciascuna delle colonne della tastiera a matrice, in modo che G6 ~ G9 ottengano un livello basso stabile quando i tasti non sono premuti.
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+Le righe della tastiera (G2 ~ G5) sono programmate per andare ad un livello alto; se una delle G6 ~ G9 viene letta ad un livello alto, sappiamo quale tasto è stato premuto.
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+Ad esempio, se G6 viene letta ad un livello alto, significa che è stato premuto il tasto numerico 1; questo perché i pin di controllo del tasto numerico 1 sono G2 e G6, e quando il tasto 1 viene premuto, G2 e G6 verranno collegati insieme e G6 sarà anche alta.
 
 
-**Wiring**
+**Cablaggio**
 
 |wiring_keypad|
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
+Per semplificare il cablaggio, nello schema sopra, le colonne della tastiera a matrice e i resistori da 10K sono inseriti nei fori dove si trovano G6 ~ G9.
 
 
-**Code**
-
+**Codice**
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Keypad`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Puoi aprire il file ``4.2_4x4_keypad.ino`` nel percorso ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
+    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
+    * Qui viene utilizzata la libreria ``Keypad``. Si prega di fare riferimento a :ref:`add_libraries_ar` per aggiungerla all'IDE di Arduino.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6c776dfc-cb74-49d7-8906-f1382e0e7b7b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Dopo l'esecuzione del programma, la Shell stamperà i tasti che hai premuto sulla tastiera.
 
-After the program runs, the Shell will print out the keys you pressed on the Keypad.
 
+**Come Funziona**
 
-**How it works**
-
-By calling the ``Keypad.h`` library, you can easily use Keypad.
+Chiamando la libreria ``Keypad.h``, puoi utilizzare facilmente la tastiera.
 
 .. code-block:: arduino
 
     #include <Keypad.h> 
 
-Library Functions: 
+Funzioni della libreria: 
 
 .. code-block:: arduino
 
     Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
 
-Initializes the internal keymap to be equal to ``userKeymap``.
+Inizializza la mappa dei tasti interna per essere uguale a ``userKeymap``.
 
-``userKeymap``: The symbols on the buttons of the keypads.
+``userKeymap``: I simboli sui tasti della tastiera.
 
-``row``, ``col``: Pin configuration.
+``row``, ``col``: Configurazione dei pin.
 
-``numRows``, ``numCols``: Keypad sizes.
+``numRows``, ``numCols``: Dimensioni della tastiera.
 
 .. code-block:: arduino
 
     char getKey()
 
-Returns the key that is pressed, if any. This function is non-blocking.
+Ritorna il tasto che è stato premuto, se presente. Questa funzione non blocca.

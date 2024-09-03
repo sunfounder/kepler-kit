@@ -1,57 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_rgb:
 
-RGB LED
+LED RGB
 =================
 
 |img_rgb|
     
-RGB LEDs emit light in various colors. An RGB LED packages three LEDs of red, green, and blue into a transparent or semitransparent plastic shell. It can display various colors by changing the input voltage of the three pins and superimpose them, which, according to statistics, can create 16,777,216 different colors. 
+I LED RGB emettono luce in vari colori. Un LED RGB racchiude tre LED, rispettivamente rosso, verde e blu, in un guscio di plastica trasparente o semitrasparente. Può visualizzare vari colori modificando la tensione di ingresso dei tre pin e sovrapponendoli, il che, secondo le statistiche, può creare 16.777.216 colori diversi.
 
 |img_rgb_light|
 
-RGB LEDs can be categorized into common anode and common cathode ones. In this kit, the latter is used. The **common cathode**, or CC, means to connect the cathodes of the three LEDs. After you connect it with GND and plug in the three pins, the LED will flash the corresponding color. 
+I LED RGB possono essere suddivisi in anodo comune e catodo comune. In questo kit viene utilizzato il secondo tipo. Il **catodo comune**, o CC, significa che i catodi dei tre LED sono collegati insieme. Dopo averlo collegato a GND e inserito i tre pin, il LED emetterà il colore corrispondente.
 
-Its circuit symbol is shown as figure.
+Il simbolo del circuito è mostrato nella figura.
 
 |img_rgb_symbol| 
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+Un LED RGB ha 4 pin: il pin più lungo è il catodo comune, che di solito è collegato a GND; il pin alla sinistra del pin più lungo è quello rosso, e i 2 pin a destra sono rispettivamente verde e blu.
 
 |img_rgb_pin|
 
 
-**Features**
+**Caratteristiche**
 
-* Color: Tri-Color (Red/Green/Blue)
-* Common Cathode
-* 5mm Clear Round Lens
-* Forward Voltage: Red: DC 2.0 - 2.2V; Blue&Green: DC 3.0 - 3.2V (IF=20mA)
-* 0.06 Watts DIP RGB LED
-* Luminance Brighter Up To +20%
-* Viewing Angle: 30°
+* Colore: Tri-Color (Rosso/Verde/Blu)
+* Catodo Comune
+* Lente Rotonda Chiara da 5mm
+* Tensione Diretta: Rosso: DC 2.0 - 2.2V; Blu e Verde: DC 3.0 - 3.2V (IF=20mA)
+* 0.06 Watt DIP RGB LED
+* Luminanza Fino a +20% Più Brillante
+* Angolo di Visione: 30°
 
 
-.. Example
+.. Esempio
 .. -------------------
 
-.. :ref:`Colorful Light`
+.. :ref:`Luce Colorata`
 
 
-**Example**
+**Esempio**
 
 * :ref:`py_rgb` (For MicroPython User)
 * :ref:`py_fruit_piano` (For MicroPython User)

@@ -1,67 +1,67 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e affronta le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e alle anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_fade:
 
-2.3 - Fading LED
+2.3 - Dissolvenza LED
 =====================
 
-So far, we have used only two output signals: high level and low level (or called 1 & 0, ON & OFF), which is called digital output.
-However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-In the past, a slider that can adjust the resistance was used to achieve this goal, but this is always unreliable and inefficient.
-Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
+Finora, abbiamo utilizzato solo due segnali di uscita: livello alto e livello basso (o chiamati 1 e 0, ON e OFF), che sono detti uscita digitale.
+Tuttavia, nell'uso reale, molti dispositivi non funzionano semplicemente accendendosi o spegnendosi, ad esempio, regolare la velocità di un motore, o la luminosità di una lampada da scrivania.
+In passato, si utilizzava un cursore che poteva regolare la resistenza per ottenere questo scopo, ma questo metodo era spesso inaffidabile e inefficiente.
+Perciò, la modulazione di larghezza di impulso (PWM) è emersa come una soluzione efficace a questi problemi complessi.
 
-A digital output composed of a high level and a low level is called a pulse. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
+Un'uscita digitale composta da un livello alto e un livello basso è detta impulso. La larghezza di impulso di questi pin può essere regolata cambiando la velocità ON/OFF.
 
-Simply put, when we are in a short period (such as 20ms, most people's visual retention time),
-Let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is turned on, the higher the brightness of the LED.
-In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
-This is how PWM controls LED brightness (or motor speed).
+In parole povere, quando in un breve periodo (come 20ms, il tempo di persistenza visiva della maggior parte delle persone),
+si fa accendere, spegnere e riaccendere il LED, non vedremo che è stato spento, ma la luminosità della luce sarà leggermente più debole.
+Durante questo periodo, più tempo il LED rimane acceso, maggiore sarà la sua luminosità.
+In altre parole, nel ciclo, più largo è l'impulso, maggiore sarà la "forza del segnale elettrico" emesso dal microcontrollore.
+Questo è il modo in cui PWM controlla la luminosità del LED (o la velocità del motore).
 
 * `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
 
-There are some points to pay attention to when Pico W uses PWM. Let's take a look at this picture.
+Ci sono alcuni punti a cui prestare attenzione quando Pico W utilizza il PWM. Diamo un'occhiata a questa immagine.
 
 |pin_pwm|
 
-Each GPIO pin of Pico W supports PWM, but it actually has a total of 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the PWM output of the right GPIO is equivalent to the left copy.
+Ogni pin GPIO di Pico W supporta il PWM, ma in realtà ha un totale di 16 uscite PWM indipendenti (invece di 30), distribuite tra GP0 e GP15 a sinistra, e l'uscita PWM dei GPIO a destra è equivalente a una copia di quella a sinistra.
 
-What we need to pay attention to is to avoid setting the same PWM channel for different purposes during programming. (For example, GP0 and GP16 are both PWM_0A)
+Dobbiamo prestare attenzione a evitare di impostare lo stesso canale PWM per scopi diversi durante la programmazione. (Ad esempio, GP0 e GP16 condividono entrambi PWM_0A)
 
-After understanding this knowledge, let us try to achieve the effect of Fading LED.
+Dopo aver compreso queste informazioni, proviamo a ottenere l'effetto della dissolvenza LED.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, ci servono i seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un intero kit, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
+        - LINK PER L'ACQUISTO
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 
 .. list-table::
@@ -69,16 +69,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+        - INTRODUZIONE COMPONENTE	
+        - QUANTITÀ
+        - LINK PER L'ACQUISTO
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -87,7 +87,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -98,30 +98,30 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_led|
 
-This project is the same circuit as the first project :ref:`ar_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+Questo progetto utilizza lo stesso circuito del primo progetto :ref:`ar_led`, ma con un tipo di segnale diverso. Nel primo progetto, si è utilizzata l'uscita digitale di livelli alti e bassi (0 e 1) direttamente da GP15 per accendere o spegnere i LED, mentre in questo progetto si utilizza il segnale PWM da GP15 per controllare la luminosità del LED.
 
 
 
-**Wiring**
+**Cablaggio**
 
 
 |wiring_led|
 
 
-**Code**
+**Codice**
 
 
 .. note::
 
-   * You can open the file ``2.3_fading_led.ino`` under the path of ``kepler-kit-main/arduino/2.3_fading_led``. 
-   * Or copy this code into **Arduino IDE**.
+   * Puoi aprire il file ``2.3_fading_led.ino`` nel percorso ``kepler-kit-main/arduino/2.3_fading_led``. 
+   * Oppure copia questo codice nell'**Arduino IDE**.
 
 
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 
 
@@ -130,23 +130,23 @@ This project is the same circuit as the first project :ref:`ar_led`, but the sig
     <iframe src=https://create.arduino.cc/editor/sunfounder01/86807da4-4714-4d3c-b6af-0f1b9a62223b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-The LED will gradually become brighter as the program runs.
+Il LED diventerà gradualmente più luminoso man mano che il programma viene eseguito.
 
-**How it works?**
+**Come funziona?**
 
-Declare pin 15 as ledPin.
+Dichiara il pin 15 come ledPin.
 
 .. code-block:: C
 
     const int ledPin = 15;
 
-``analogWrite()`` in ``loop()`` assigns ledPin an analog value (PWM wave) between 0 and 255 to change the brightness of LED.
+``analogWrite()`` in ``loop()`` assegna a ledPin un valore analogico (onda PWM) compreso tra 0 e 255 per cambiare la luminosità del LED.
 
 .. code-block:: C
 
     analogWrite(ledPin, value);
 
-Using a for loop, the value of ``analogWrite()`` can be changed step by step between the minimum value (0) and the maximum value (255).
+Utilizzando un ciclo for, il valore di ``analogWrite()`` può essere cambiato gradualmente tra il valore minimo (0) e il valore massimo (255).
 
 .. code-block:: C
 
@@ -154,7 +154,7 @@ Using a for loop, the value of ``analogWrite()`` can be changed step by step bet
         analogWrite(ledPin, value);
     }
 
-In order to see the experimental phenomenon clearly, a ``delay(30)`` needs to be added to the for cycle to control the brightness change time.
+Per vedere chiaramente il fenomeno sperimentale, è necessario aggiungere un ``delay(30)`` al ciclo for per controllare il tempo di variazione della luminosità.
 
 .. code-block:: C
 

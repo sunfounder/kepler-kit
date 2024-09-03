@@ -1,54 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_photoresistor:
 
-2.12 Feel the Light
+2.12 Senti la Luce
 =============================
 
-The photoresistor is a typical device for analog inputs and it is used in a very similar way to a potentiometer. Its resistance value depends on the intensity of the light, the stronger the irradiated light, the smaller its resistance value; conversely, it increases.
+La fotoresistenza è un dispositivo tipico per ingressi analogici e viene utilizzata in modo molto simile a un potenziometro. Il suo valore di resistenza dipende dall'intensità della luce: più intensa è la luce irradiata, minore sarà il suo valore di resistenza; al contrario, aumenterà.
 
 
 * :ref:`cpn_photoresistor`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -56,7 +55,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -65,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,36 +76,35 @@ You can also buy them separately from the links below.
         - |link_photoresistor_buy|
 
 
-**Schematic**
+**Schema Elettrico**
 
 |sch_photoresistor|
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the photoresistor.
+In questo circuito, la resistenza da 10KΩ e la fotoresistenza sono collegate in serie, e la corrente che le attraversa è la stessa. La resistenza da 10KΩ funge da protezione, e il pin GP28 legge il valore dopo la conversione di tensione della fotoresistenza.
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from GP28 will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+Quando la luce aumenta, la resistenza della fotoresistenza diminuisce, quindi anche la sua tensione diminuisce, così il valore letto dal GP28 diminuirà; se la luce è abbastanza forte, la resistenza della fotoresistenza sarà prossima a 0, e il valore del GP28 sarà prossimo a 0. In questo caso, la resistenza da 10KΩ svolge un ruolo di protezione, evitando che 3.3V e GND siano collegati insieme, causando un cortocircuito.
 
-If you place the photoresistor in a dark situation, the value of GP28 will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+Se si posiziona la fotoresistenza in una situazione di oscurità, il valore del GP28 aumenterà. In una situazione abbastanza buia, la resistenza della fotoresistenza sarà infinita, e la sua tensione sarà vicina a 3.3V (la resistenza da 10KΩ è trascurabile), e il valore del GP28 sarà prossimo al valore massimo di 65535.
 
-
-The calculation formula is shown below.
+La formula di calcolo è mostrata di seguito.
 
     (Vp/3.3V) x 65535 = Ap
 
 
 
-**Wiring**
+**Collegamenti**
 
 |wiring_photoresistor|
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``2.12_feel_the_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``2.12_feel_the_light.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -120,5 +118,4 @@ The calculation formula is shown below.
         print(light_value)
         utime.sleep_ms(10)
 
-After the program runs, the Shell prints out the photoresistor values. You can shine a flashlight on it or cover it up with your hand to see how the value will change.
-
+Dopo l'esecuzione del programma, la Shell stamperà i valori della fotoresistenza. Puoi puntare una torcia su di essa o coprirla con la mano per vedere come il valore cambierà.

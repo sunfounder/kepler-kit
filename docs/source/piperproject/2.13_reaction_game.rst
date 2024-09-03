@@ -1,52 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci dei nuovi prodotti e alle anticipazioni.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _per_reaction_game:
 
-2.13 Reaction Game
+2.13 Gioco di Reazione
 ===========================
 
 
-Here we use several buttons, buzzer and LEDs to make a reaction game.Press the referee button to start the game, the buzzer will also keep ringing to prompt the game to continue; press the 2 player buttons quickly respectively; when the referee button is pressed again, the game is over the buzzer stops working.  At this point, look at the CONSOLE on Piper Make to see whose hand speed is fast.
+In questo progetto, utilizziamo diversi pulsanti, un cicalino e LED per creare un gioco di reazione. Premi il pulsante del giudice per iniziare il gioco, il cicalino suonerà continuamente per indicare che il gioco è in corso; premi rapidamente i due pulsanti dei giocatori rispettivamente; quando il pulsante del giudice viene premuto nuovamente, il gioco termina e il cicalino smette di funzionare. A questo punto, guarda la CONSOLE su Piper Make per vedere chi ha la mano più veloce.
 
-**Required Components**
 
-In this project, we need the following components. 
+**Componenti necessari**
 
-It's definitely convenient to buy a whole kit, here's the link: 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
+
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -74,7 +74,7 @@ You can also buy them separately from the links below.
         - 6(2-220Ω, 1-1KΩ, 3-10KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Cicalino attivo :ref:`cpn_buzzer`
         - 1
         - 
     *   - 8
@@ -86,59 +86,49 @@ You can also buy them separately from the links below.
         - 2
         - |link_led_buy|
 
-
-**Wiring**
+**Cablaggio**
 
 |button_race0|
 
+* Definisci 2 pulsanti come giocatore1 (GP14) e giocatore2 (GP12), entrambi collegati a una resistenza di pull-up. Quando i pulsanti vengono premuti, GP14 e GP12 sono entrambi a livello basso.
+* Le loro spie sono collegate a GP15 e GP13, e emettono un segnale alto per accenderle.
+* Definisci un pulsante giudice collegato a GP10, quando il pulsante viene premuto, GP10 va a livello basso.
+* Il cicalino attivo è collegato a GP11, quando GP11 emette un segnale alto, il cicalino suona.
 
-* Define 2 buttons as player1 (GP14) and player2 (GP12), both have a pull-up resistor connected. When the buttons are pressed, GP14 and GP12 are each low.
-* Their indicators are connected to GP15 and GP13,  and output high to light them up.
-* Define a referee button connected to GP10, when the button is pressed, GP10 goes low.
-* Active buzzer is connected to GP11, when GP11 output high, the buzzer will sound.
-
-**Code**
-
+**Codice**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.13_reaction_game.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
-
-
+    * Puoi fare riferimento all'immagine sottostante per scrivere il codice trascinando e rilasciando.
+    * Importa ``2.13_reaction_game.png`` dal percorso ``kepler-kit-main\piper``. Per tutorial dettagliati, fai riferimento a :ref:`import_code_piper`.
 
 |button_race|
 
+* Dopo aver collegato Pico W, fai clic sul pulsante **Start** e il codice inizierà a funzionare.
+* Premi il pulsante del giudice e il cicalino inizia a suonare (continuamente), indicando l'inizio del gioco.
+* A questo punto, premi separatamente e rapidamente i pulsanti dei **giocatori** e i LED corrispondenti si accenderanno.
+* Quando il pulsante del **giudice** viene premuto di nuovo, il cicalino smette di suonare, il che significa che il gioco è terminato.
+* Clicca su CONSOLE a questo punto per vedere chi ha premuto più volte.
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* Press the referee button and the buzzer starts to sound (continuously), representing the start of the game.
-* At this point, press the **player** buttons separately and quickly, and the corresponding LEDs will light up.
-* When the **referee** button is pressed again, the buzzer stops, which means the game is over.
-* Click CONSOLE at this point to see who presses it more times.
-
-**How it Works?**
+**Come funziona?**
 
 |button_race1|
 
-
-GP10 is the referee button, when the referee button is not pressed it is high, the game has not started yet.
-When GP10 is low (referee button pressed), the game starts; set GP11 to high (buzzer), create variables and set initial values.
+GP10 è il pulsante del giudice, quando il pulsante del giudice non è premuto è a livello alto, il gioco non è ancora iniziato.
+Quando GP10 è a livello basso (pulsante del giudice premuto), il gioco inizia; imposta GP11 su livello alto (cicalino), crea variabili e imposta i valori iniziali.
 
 |button_race2|
 
-When flag equals to 1 for game start, then read the value of GP14 (player1); if player1 button is pressed, store the number of presses in variable [count1], and make the indicator of GP15 light up.
-
+Quando il flag è impostato su 1 per l'inizio del gioco, leggi il valore di GP14 (giocatore1); se il pulsante del giocatore1 è premuto, memorizza il numero di pressioni nella variabile [count1] e fai accendere la spia di GP15.
 
 |button_race3|
 
-Read the number of presses of GP12(player2) in the same way.
-
+Leggi il numero di pressioni di GP12 (giocatore2) nello stesso modo.
 
 |button_race4|
 
-Print the number of presses for player1 and player2 respectively.
+Stampa il numero di pressioni per giocatore1 e giocatore2 rispettivamente.
 
 |button_race5|
 
-When the referee button is pressed again, the buzzer stops working and the game ends.
+Quando il pulsante del giudice viene premuto di nuovo, il cicalino smette di funzionare e il gioco termina.

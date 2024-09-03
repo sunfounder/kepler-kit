@@ -1,50 +1,49 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 22:  Using an LCD Display with the Pico W
+lezione 22: Utilizzo di un Display LCD con il Pico W
 =============================================================================
 
-This tutorial covers connecting and using an LCD 1602 display with the Raspberry Pi Pico W:
+Questo tutorial spiega come collegare e utilizzare un display LCD 1602 con il Raspberry Pi Pico W:
 
-* **Introduction**: introduces the tutorial, acknowledges the sponsor SunFounder, and explains the goal of adding an LCD display to the Raspberry Pi Pico W project for mobile use.
+* **Introduzione**: Introduce il tutorial, ringrazia lo sponsor SunFounder e spiega l'obiettivo di aggiungere un display LCD al progetto con il Raspberry Pi Pico W per un uso mobile.
 
-* **Component Introduction and Setup**:
-- Describes the required components: LCD 1602 display and female-to-male wires.
-- Details the connections:
-  - LCD 1602 pins to Raspberry Pi Pico W:
-    - Ground to pin 38
-    - VCC (5V) to the rightmost pin
-    - SDA (data) to GPIO pin 6
-    - SCL (clock) to GPIO pin 7
+* **Introduzione ai Componenti e Configurazione**:
+- Descrive i componenti necessari: display LCD 1602 e cavi femmina-maschio.
+- Dettaglia i collegamenti:
+  - Pin del display LCD 1602 al Raspberry Pi Pico W:
+    - Ground al pin 38
+    - VCC (5V) al pin più a destra
+    - SDA (dati) al pin GPIO 6
+    - SCL (clock) al pin GPIO 7
 
-* **Library Installation**:
- - Guides on how to download and install the necessary library for the LCD 1602 display from toptechboy.com.
- - Provides instructions to save and import the library in Thonny IDE.
+* **Installazione della Libreria**:
+ - Guida su come scaricare e installare la libreria necessaria per il display LCD 1602 da toptechboy.com.
+ - Fornisce istruzioni per salvare e importare la libreria in Thonny IDE.
 
-* **Code Explanation**:
- - Describes the creation of an LCD object and writing text to the LCD.
- - Provides a sample program that prompts for the user’s name and displays a greeting message on the LCD.
- - Addresses potential issues with text overlap by using `LCD.clear()` to clear the screen before writing new text.
+* **Spiegazione del Codice**:
+ - Descrive la creazione di un oggetto LCD e la scrittura di testo sul display.
+ - Fornisce un programma di esempio che chiede il nome dell'utente e visualizza un messaggio di benvenuto sull'LCD.
+ - Affronta i potenziali problemi di sovrapposizione del testo utilizzando `LCD.clear()` per cancellare lo schermo prima di scrivere un nuovo testo.
 
-* **Practical Demonstration**:
- - Shows the program in action, displaying names on the LCD.
- - Explains adjusting the LCD contrast using a potentiometer on the back of the display.
+* **Dimostrazione Pratica**:
+ - Mostra il programma in azione, visualizzando i nomi sul display LCD.
+ - Spiega come regolare il contrasto dell'LCD utilizzando un potenziometro sul retro del display.
 
-* **Homework Assignment**:
- - Assigns a task to integrate the LCD display with the DHT11 temperature and humidity sensor project from lesson 21.
- - Instructs to display temperature in Celsius or Fahrenheit based on a toggle button and display humidity on the LCD.
-
+* **Compito per Casa**:
+ - Assegna il compito di integrare il display LCD con il progetto del sensore di temperatura e umidità DHT11 della lezione 21.
+ - Insegna a visualizzare la temperatura in Celsius o Fahrenheit in base a un pulsante di commutazione e a visualizzare l'umidità sul display LCD.
 
 
 **Video**

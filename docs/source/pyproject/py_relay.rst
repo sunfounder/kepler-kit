@@ -1,66 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché Unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto da Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _py_relay:
 
-2.16 Control Another Circuit
-=================================
+2.16 Controllare un Altra Circuito
+======================================
 
-In our daily life, we can press the switch to light up or turn off the lamp.
-But what if you want to control the lamp with Pico W so that it can turn off automatically after ten minutes?
+Nella nostra vita quotidiana, possiamo premere un interruttore per accendere o spegnere una lampada.
+Ma cosa succede se vuoi controllare la lampada con Pico W in modo che si spenga automaticamente dopo dieci minuti?
 
-A relay can help you accomplish this idea.
+Un relè può aiutarti a realizzare questa idea.
 
-A relay is actually a special kind of switch that is controlled by one side of the circuit (usually a low-voltage circuit) and used to control the other side of the circuit (usually a high-voltage circuit).
-This makes it practical to modify our home appliances to be controlled by a program, to become smart devices, or even to access the Internet.
+Un relè è in realtà un tipo speciale di interruttore controllato da un lato del circuito (di solito un circuito a bassa tensione) e utilizzato per controllare l'altro lato del circuito (di solito un circuito ad alta tensione).
+Questo rende pratico modificare i nostri elettrodomestici per essere controllati da un programma, trasformandoli in dispositivi intelligenti o addirittura collegarli a Internet.
 
 .. warning::
-    Modification of electrical appliances comes with great danger, do not try it lightly, please do it under the guidance of professionals.
+    La modifica degli elettrodomestici comporta un grande pericolo, non provare a farlo alla leggera, fallo solo sotto la guida di professionisti.
 
 * :ref:`cpn_relay`
 
-Here we only use a simple circuit powered by a breadboard power module as an example to show how to control it using relay.
+Qui utilizziamo solo un semplice circuito alimentato da un modulo di alimentazione per breadboard come esempio per mostrare come controllarlo utilizzando un relè.
 
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Componenti Necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Puoi anche acquistarli separatamente dai link sottostanti.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -68,7 +67,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -77,7 +76,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diversi
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -92,51 +91,47 @@ You can also buy them separately from the links below.
         - 1
         - |link_relay_buy|
 
+**Collegamenti**
 
-**Wiring**
-
-First, build a low-voltage circuit for controlling a relay.
-Driving the relay requires a high current, so a transistor is needed, and here we use the S8050.
+Prima di tutto, costruisci un circuito a bassa tensione per controllare un relè.
+Azionare il relè richiede un'alta corrente, quindi è necessario un transistor, e qui usiamo l'S8050.
 
 |sch_relay_1|
 
 |wiring_relay_1|
 
+Qui viene utilizzato un diodo (diodo di continuità) per proteggere il circuito. Il catodo è l'estremità con la fascia argentata collegata all'alimentazione, e l'anodo è collegato al transistor.
 
+Quando l'ingresso di tensione passa da High (5V) a Low (0V), il transistor passa dalla saturazione (amplificazione, saturazione e interruzione) alla disattivazione, e improvvisamente non c'è modo che la corrente possa fluire attraverso la bobina.
 
-A diode (continuity diode) is used here to protect the circuit. The cathode is the end with the silver ribbon connected to the power supply, and the anode is connected to the transistor.
+A questo punto, se questo diodo di freewheeling non esiste, la bobina produrrà un potenziale elettrico autoindotto a entrambe le estremità che è diverse volte superiore alla tensione di alimentazione, e questa tensione sommata a quella di alimentazione del transistor è sufficiente per bruciarlo.
 
-When the voltage input changes from High (5V) to Low (0V), the transistor changes from saturation (amplification, saturation, and cutoff) to cutoff, and there is suddenly no way for current to flow through the coil. 
-
-At this point, if this freewheeling diode does not exist, the coil will produce a self-induced electric potential at both ends that is several times higher than the supply voltage, and this voltage plus the voltage from the transistor power supply is enough to burn it.  
-
-After adding the diode, the coil and the diode instantly form a new circuit powered by the energy stored in the coil to discharge, thus avoiding the excessive voltage will damage devices such as transistors on the circuit.
+Dopo aver aggiunto il diodo, la bobina e il diodo formano istantaneamente un nuovo circuito alimentato dall'energia immagazzinata nella bobina per scaricare, evitando così che la tensione eccessiva danneggi dispositivi come i transistor nel circuito.
 
 * :ref:`cpn_diode`    
 * `Flyback Diode - Wikipedia <https://en.wikipedia.org/wiki/Flyback_diode>`_
 
-At this point the program is ready to run, and after running you will hear the "tik tok" sound, which is the sound of the contactor coil inside the relay sucking and breaking.
+A questo punto il programma è pronto per essere eseguito, e dopo l'esecuzione sentirai il suono "tik tok", che è il suono della bobina del contattore all'interno del relè che si attiva e si disattiva.
 
-Then we connect the two ends of the load circuit to pins 3 and 6 of the relay respectively.
+Quindi colleghiamo i due estremi del circuito di carico rispettivamente ai pin 3 e 6 del relè.
 
-..(Take the simple circuit powered by the breadboard power module described in the previous article as an example.)
+..(Prendi come esempio il semplice circuito alimentato dal modulo di alimentazione del breadboard descritto nell'articolo precedente.)
 
 |sch_relay_2|
 
 |wiring_relay_2|
 
-At this point, the relay will be able to control the load circuit on and off.
+A questo punto, il relè sarà in grado di controllare l'accensione e lo spegnimento del circuito di carico.
 
-**Code**
+**Codice**
 
 .. note::
 
-    * Open the ``2.16_control_another_circuit.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Apri il file ``2.16_control_another_circuit.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Non dimenticare di selezionare l'interprete "MicroPython (Raspberry Pi Pico)" nell'angolo in basso a destra.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Per tutorial dettagliati, fai riferimento a :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -150,13 +145,13 @@ At this point, the relay will be able to control the load circuit on and off.
         relay.value(0)
         utime.sleep(2)
 
-When the code is run, the relay will switch the operating state of the controlled circuit every two seconds.
-You can manually comment out one of the lines to further clarify the correspondence between the relay circuit and the load circuit.
+Quando il codice viene eseguito, il relè cambierà lo stato operativo del circuito controllato ogni due secondi.
+Puoi commentare manualmente una delle righe per chiarire ulteriormente la corrispondenza tra il circuito del relè e il circuito di carico.
 
 
-**Learn More**
+**Per Saperne di Più**
 
-Pin 3 of the relay is normally open and only turns on when the contactor coil is operating; pin 4 is normally closed and turns on when the contactor coil is energized.
-Pin 1 is connected to pin 6 and is the common terminal of the load circuit.
+Il pin 3 del relè è normalmente aperto e si accende solo quando la bobina del contattore è in funzione; il pin 4 è normalmente chiuso e si accende quando la bobina del contattore è energizzata.
+Il pin 1 è collegato al pin 6 ed è il terminale comune del circuito di carico.
 
-By switching one end of the load circuit from pin 3 to pin 4, you will be able to get exactly the opposite operating state.
+Cambiando un'estremità del circuito di carico dal pin 3 al pin 4, sarai in grado di ottenere uno stato operativo esattamente opposto.

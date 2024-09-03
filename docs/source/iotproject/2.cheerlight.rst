@@ -1,52 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a promozioni festive e concorsi a premi.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-2. Follow the @CheerLights
+2. Segui @CheerLights
 =======================================
 
-This is a romantic project, join the |link_cheerlights| LED color-changing community, which allows LEDs all over the world to change colors simultaneously.
+Questo è un progetto romantico: unisciti alla comunità |link_cheerlights| per il cambio colore dei LED, che permette ai LED di tutto il mondo di cambiare colore simultaneamente.
 
-You can place it in a corner of your office to remind yourself that you are not alone.
+Puoi posizionarlo in un angolo del tuo ufficio per ricordarti che non sei solo.
 
-You can tweeting @cheerlights and including the color name in the tweet. This will change the LEDs around the world to the color you specify.
+Puoi twittare a @cheerlights includendo il nome del colore nel tweet. Questo cambierà i LED in tutto il mondo nel colore che hai specificato.
 
-**Required Components**
+**Componenti necessari**
 
-In this project, we need the following components. 
+In questo progetto, abbiamo bisogno dei seguenti componenti.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+È sicuramente conveniente acquistare un kit completo, ecco il link:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
+    *   - Nome	
+        - ELEMENTI IN QUESTO KIT
         - LINK
-    *   - Kepler Kit	
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
+        - COMPONENTE	
+        - QUANTITÀ
         - LINK
 
     *   - 1
@@ -54,7 +54,7 @@ You can also buy them separately from the links below.
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cavo Micro USB
         - 1
         - 
     *   - 3
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Diverse
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
@@ -74,69 +74,69 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - Batteria 18650
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - Supporto batteria
         - 1
         -  
 
-**Steps**
+**Passaggi**
 
-#. Build the circuit.
+#. Costruisci il circuito.
 
-    The Li-po Charger Module used here will power your circuit so you can disconnect the USB cable and take your project somewhere else to play!
+    Il modulo caricabatterie Li-po utilizzato qui alimenterà il tuo circuito, così potrai scollegare il cavo USB e portare il tuo progetto altrove!
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Assicurati che il modulo caricabatterie Li-po sia collegato come mostrato nello schema. Altrimenti, un cortocircuito potrebbe danneggiare la batteria e il circuito.
 
     .. image:: img/wiring/2.cheerlights_bb.png
         :width: 800
 
 
+#. Cambia il percorso nella cartella in cui hai scaricato il `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_  in precedenza e apri il file ``2_cheer_light.py`` nel percorso ``kepler-kit-main/iot``.
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before and open the ``2_cheer_light.py`` file under the path of ``kepler-kit-main/iot``.
+#. Per eseguire lo script, clicca sul pulsante **Esegui script corrente** o premi F5, quindi vedrai il prompt di connessione, l'IP e il colore (0xff0000 è rosso) nella Shell.
 
-#. To run the script, click the **Run current script** button or press F5, then you will see the connected prompt, the IP and the color (0xff0000 is red) in the Shell.
 
     .. note::
 
-        Before running the code, you need to make sure you have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, if not please refer to :ref:`iot_access` to create them.
+        Prima di eseguire il codice, devi assicurarti di avere gli script ``do_connect.py`` e ``secrets.py`` nel tuo Pico W. In caso contrario, fai riferimento a :ref:`iot_access` per crearli.
 
     .. image:: img/2_cheerlight1.png
 
 
-#. After the script runs, the WS2812 RGB strip will show a color, sometimes the color will change.
+#. Dopo l'esecuzione dello script, la striscia RGB WS2812 mostrerà un colore, a volte il colore cambierà.
 
-#. If you want to run this script on boot, you need to save it to the Raspberry Pi Pico W as ``main.py``, as follows.
+#. Se vuoi eseguire questo script all'avvio, devi salvarlo nel Raspberry Pi Pico W come ``main.py``, come segue.
 
-    * Stop the script from running and click **File** -> **Save as**.
+    * Ferma l'esecuzione dello script e clicca su **File** -> **Salva con nome**.
 
         .. image:: img/2_cheerlight2.png
 
-    * Select **Raspberry Pi Pico** in the popup window that appears.
+    * Seleziona **Raspberry Pi Pico** nella finestra popup che appare.
 
         .. image:: img/2_cheerlight3.png
 
-    * Set the file name to ``main.py``. A prompt will appear if the same file already exists on your Pico W.
+    * Imposta il nome del file a ``main.py``. Apparirà un avviso se esiste già un file con lo stesso nome sul tuo Pico W.
 
         .. image:: img/2_cheerlight4.png
     
-    * You can now unplug the USB cable and use the Li-po Charger Module to power the Raspberry Pi Pico W. Put it in a corner and it will work automatically.
+    * Ora puoi scollegare il cavo USB e utilizzare il modulo caricabatterie Li-po per alimentare il Raspberry Pi Pico W. Posizionalo in un angolo e funzionerà automaticamente.
 
 
-**How it works?**
+**Come funziona?**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+Il Raspberry Pi Pico W deve essere connesso a Internet, come descritto in :ref:`iot_access`. Per questo progetto, usalo semplicemente.
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details. 
+Imposta la striscia RGB WS2812, fai riferimento a :ref:`py_neopixel` per i dettagli sul suo utilizzo.
 
 .. code-block:: python
 
@@ -144,17 +144,19 @@ Set WS2812 RGB strip, please refer to :ref:`py_neopixel` for its usage details.
     from ws2812 import WS2812
     ws = WS2812(machine.Pin(18), 8)
 
-Now, we need a way to get the color of @CheerLights. There is a back-end system that takes the color changes from Twitter
-and posts them in JSON format to the URL: http://api.thingspeak.com/channels/1417/field/2/last.json.
+Ora, abbiamo bisogno di un modo per ottenere il colore di @CheerLights. Esiste un 
+sistema backend che raccoglie le modifiche di colore da Twitter e le pubblica in 
+formato JSON all'URL: http://api.thingspeak.com/channels/1417/field/2/last.json.
 
-If you open this URL directly in your browser, you will see something like the following. All we need is the ``field2`` data, which is a hexadecimal color-coded string.
+Se apri questo URL direttamente nel tuo browser, vedrai qualcosa del genere. Tutto 
+ciò di cui abbiamo bisogno è il dato ``field2``, che è una stringa di colori codificata esadecimale.
 
 .. code-block:: 
 
     {"created_at":"2022-08-16T06:12:44Z","entry_id":870488,"field2":"#ff00ff"}
 
-We need to use the ``urequests`` module to get this data and the ``json`` module to convert this character into a python dictionary.
-The following code gets the latest @CheerLights color from the url and returns a color value that can be used by WS2812.
+Dobbiamo utilizzare il modulo ``urequests`` per ottenere questi dati e il modulo ``json`` per convertire questo carattere in un dizionario Python.
+Il seguente codice ottiene l'ultimo colore di @CheerLights dall'URL e restituisce un valore colore che può essere utilizzato dalla WS2812.
 
 .. code-block:: python
 
@@ -174,7 +176,7 @@ The following code gets the latest @CheerLights color from the url and returns a
             print(e)
             return None
 
-Finally, use a loop to make the ws2812 work once per minute.
+Infine, usa un ciclo per far funzionare la ws2812 una volta al minuto.
 
 .. code-block:: python
 

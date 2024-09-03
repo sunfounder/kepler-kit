@@ -1,53 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_ta6586:
 
-TA6586 - Motor Driver Chip
-=================================
+TA6586 - Chip Driver per Motori
+====================================
 
 |img_ta6586|
 
-TA6586 is a monolithic IC designed for driving bi-directional DC motor. It has
-two pins of logic inputs for controlling the direction, forward and backward.
-The circuit feature good anti-interference performance, small standby current and
-low output saturation pressure drop. It has a built-in clamp diode to reverse the impact
-of the release of inductive load current, making it in the drive relays, DC motors,
-stepper motors or control the use of switching power safe and reliable.
-TA6586 is suitable for toy vehicles, remote-controlled aircraft motor drive, automatic
-valve motor, electromagnetic lock drive, precision instruments and other circuits.
+Il TA6586 è un IC monolitico progettato per la guida di motori DC 
+bidirezionali. Ha due pin di ingresso logico per controllare la 
+direzione, avanti e indietro. Il circuito è caratterizzato da 
+un'ottima resistenza alle interferenze, una bassa corrente di standby 
+e una bassa caduta di pressione di saturazione in uscita. Dispone di 
+un diodo di clamp integrato per invertire l'impatto della corrente di 
+rilascio del carico induttivo, rendendolo sicuro e affidabile 
+nell'azionamento di relè, motori DC, motori passo-passo o nel controllo 
+dell'uso di alimentatori switching.
 
-**Features**
+Il TA6586 è adatto per veicoli giocattolo, motori di aeromobili telecomandati, 
+azionamento di valvole automatiche, serrature elettromagnetiche, strumenti di 
+precisione e altri circuiti.
 
-* Low stand-by current: ≦2uA
-* Wide supply voltage range
-* Built-in Brake Function
-* Thermal Shutdown protection
-* Over Current Limit and Short Circuit Protect Function
-* DIP8 Pb-Free package.
+**Caratteristiche**
 
-**Pin Function**
+* Bassa corrente di stand-by: ≦2uA
+* Ampia gamma di tensione di alimentazione
+* Funzione di frenatura integrata
+* Protezione contro il surriscaldamento
+* Funzione di limitazione della corrente e protezione contro i cortocircuiti
+* Confezione DIP8 senza piombo.
+
+**Funzione dei Pin**
 
 |img_ta6586_pin|
 
 
-**Input Truth Table**
+**Tabella della Verità degli Ingressi**
 
 |img_ta6586_priciple|
 
 
-**Example**
+**Esempio**
 
 * :ref:`py_motor` (For MicroPython User)
 * :ref:`ar_motor` (For Arduino User)

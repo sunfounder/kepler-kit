@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri entusiasti.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 18:  Push Button Control of LEDs in Micropython
+lezione 18: Controllo di un LED con un Pulsante in Micropython
 =============================================================================
 
-This tutorial covers using push buttons to toggle an LED on and off with the Raspberry Pi Pico W:
+Questo tutorial spiega come utilizzare i pulsanti per accendere e spegnere un LED con il Raspberry Pi Pico W:
 
-* **Introduction**: The lesson starts with a brief introduction and an overview of the lesson, focusing on using push buttons to control LEDs on the Raspberry Pi Pico W.
-* **Homework Solution**: Provides a solution to the previous lesson’s homework, which involved creating a toggle switch for an LED using a push button.
-* **Circuit Setup**: Demonstrates the wiring of a push button to GPIO pin 14 and an LED to GPIO pin 15 on the Raspberry Pi Pico W. Includes connecting the push button and LED to a common ground.
-* **Toggle Switch Logic**: Explains the logic required to toggle the LED state with each press and release of the push button. Introduces the concepts of `button state now`, `button state old`, and `LED state`.
-* **Code Explanation**: Initializes the GPIO pins for the LED and push button.Uses a while loop to continuously read the button state.Toggles the LED state based on the button press and release actions.Includes print statements for debugging and verifying the states.
-* **Practical Demonstration**: Provides a step-by-step demonstration of running the code, pressing the push button, and observing the changes in the LED state.
-* **Homework Assignment**: Assigns a new project to use multiple push buttons to control the colors of an RGB LED. The task is to write a program where pressing the red, green, or blue button changes the color of the RGB LED accordingly.
-* **Next Steps**: Announces that future lessons will continue exploring the use of push buttons and LEDs, focusing on integrating these components into more complex projects.
+* **Introduzione**: La lezione inizia con una breve introduzione e una panoramica dell'argomento, concentrandosi sull'uso dei pulsanti per controllare i LED sul Raspberry Pi Pico W.
+* **Soluzione del Compito**: Fornisce una soluzione al compito della lezione precedente, che prevedeva la creazione di un interruttore a levetta per un LED utilizzando un pulsante.
+* **Configurazione del Circuito**: Mostra il cablaggio di un pulsante al pin GPIO 14 e di un LED al pin GPIO 15 sul Raspberry Pi Pico W. Include il collegamento del pulsante e del LED a una massa comune.
+* **Logica dell'Interruttore a Levetta**: Spiega la logica necessaria per alternare lo stato del LED ad ogni pressione e rilascio del pulsante. Introduce i concetti di `stato attuale del pulsante`, `stato precedente del pulsante` e `stato del LED`.
+* **Spiegazione del Codice**: Inizializza i pin GPIO per il LED e il pulsante. Utilizza un ciclo while per leggere continuamente lo stato del pulsante. Alterna lo stato del LED in base alle azioni di pressione e rilascio del pulsante. Include istruzioni print per il debug e la verifica degli stati.
+* **Dimostrazione Pratica**: Fornisce una dimostrazione passo dopo passo dell'esecuzione del codice, premendo il pulsante e osservando i cambiamenti nello stato del LED.
+* **Compito a Casa**: Assegna un nuovo progetto per utilizzare più pulsanti per controllare i colori di un LED RGB. Il compito consiste nello scrivere un programma in cui premendo i pulsanti rosso, verde o blu si cambia il colore del LED RGB di conseguenza.
+* **Prossimi Passi**: Annuncia che le lezioni future continueranno a esplorare l'uso dei pulsanti e dei LED, concentrandosi sull'integrazione di questi componenti in progetti più complessi.
 
 **Video**
 

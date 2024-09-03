@@ -1,47 +1,47 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Concorsi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 29: Simple Client Server Project to Control RGB LED
+lezione 29: Progetto Client-Server per il Controllo Remoto di un LED RGB
 =============================================================================
 
-This tutorial covers setting up a remote-controlled RGB LED using a Raspberry Pi Pico W and a PC over Wi-Fi:
+Questo tutorial spiega come configurare un LED RGB controllato da remoto tramite Wi-Fi utilizzando un Raspberry Pi Pico W e un PC:
 
-* **Introduction**:
- - The goal is to control an RGB LED on a Raspberry Pi Pico W remotely from a PC using Wi-Fi.
-* **Wiring Diagram and Setup**:
- - RGB LED's red, green, and blue channels are connected to GPIO pins 16, 17, and 18, respectively.
- - OLED display is connected via I2C to GPIO pins 2 (SDA) and 3 (SCL).
-* **Server Side Setup (Raspberry Pi Pico W)**:
- - Import libraries: `socket`, `time`, `network`, `machine`, `ssd1306`.
- - Initialize GPIO pins for the RGB LED and OLED display.
- - Connect to Wi-Fi and obtain an IP address.
- - Create a UDP server socket and bind it to the IP address and a port.
- - Display the IP address and port on the OLED screen.
- - Listen for incoming commands, decode them, and display the command and sender's address.
-* **Client Side Setup (PC)**:
- - Import the `socket` library.
- - Define the server address and port.
- - Create a UDP client socket.
- - Get user input for the LED color, encode the command, and send it to the server.
- - Wait for and print the server's response.
-* **Practical Demonstration**:
- - Demonstrate sending commands from the client to change the RGB LED color on the server.
- - OLED display shows the received commands and the sender's IP address.
-* **Final Setup and Testing**:
- - Disconnect the Raspberry Pi Pico W from USB and power it with a battery.
- - Save the code as `main.py` to run on startup.
- - Demonstrate fully wireless operation by sending commands from the PC and observing the RGB LED changes and OLED updates.
+* **Introduzione**:
+  - L'obiettivo è controllare un LED RGB su un Raspberry Pi Pico W da remoto tramite Wi-Fi utilizzando un PC.
+* **Diagramma di Cablaggio e Configurazione**:
+  - I canali rosso, verde e blu del LED RGB sono collegati rispettivamente ai pin GPIO 16, 17 e 18.
+  - Il display OLED è collegato tramite I2C ai pin GPIO 2 (SDA) e 3 (SCL).
+* **Configurazione del Server (Raspberry Pi Pico W)**:
+  - Importa le librerie: `socket`, `time`, `network`, `machine`, `ssd1306`.
+  - Inizializza i pin GPIO per il LED RGB e il display OLED.
+  - Connettiti al Wi-Fi e ottieni un indirizzo IP.
+  - Crea un socket server UDP e associa l'indirizzo IP a una porta.
+  - Visualizza l'indirizzo IP e la porta sul display OLED.
+  - Ascolta i comandi in arrivo, decodificali e visualizza il comando e l'indirizzo del mittente.
+* **Configurazione del Client (PC)**:
+  - Importa la libreria `socket`.
+  - Definisci l'indirizzo del server e la porta.
+  - Crea un socket client UDP.
+  - Richiedi l'input dell'utente per il colore del LED, codifica il comando e invialo al server.
+  - Attendi e stampa la risposta del server.
+* **Dimostrazione Pratica**:
+  - Dimostra l'invio di comandi dal client per cambiare il colore del LED RGB sul server.
+  - Il display OLED mostra i comandi ricevuti e l'indirizzo IP del mittente.
+* **Configurazione Finale e Test**:
+  - Scollega il Raspberry Pi Pico W dalla USB e alimentalo con una batteria.
+  - Salva il codice come `main.py` per eseguirlo all'avvio.
+  - Dimostra il funzionamento completamente wireless inviando comandi dal PC e osservando i cambiamenti del LED RGB e gli aggiornamenti sul display OLED.
 
 
 **Video**
@@ -49,3 +49,4 @@ This tutorial covers setting up a remote-controlled RGB LED using a Raspberry Pi
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/eZTETVkX-N8?si=TtZ6B4-Ljm75rhPB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

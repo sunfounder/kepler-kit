@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime esclusive.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e concorsi festivi**: Partecipa a concorsi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lesson 9:  Getting Analog Output Using PWM (Pulse Width Modulation)
-==========================================================================
+Lezione 9: Ottenere un'uscita analogica con PWM (Modulazione di Larghezza di Impulso)
+=========================================================================================
 
-This tutorial covers generating analog output using PWM (Pulse Width Modulation) on the Raspberry Pi Pico W:
+Questo tutorial tratta la generazione di un'uscita analogica utilizzando PWM (Modulazione di Larghezza di Impulso) sul Raspberry Pi Pico W:
 
-* **Analog Output Explanation**: Discusses the concept of PWM and how it simulates analog output by switching between 3.3V and 0V at different duty cycles. Explains the relationship between voltage, time, and PWM duty cycle.
-* **GPIO Pin Configuration**: Explains which GPIO pins can generate analog output and the importance of not using pins with the same PWM label simultaneously.
-* **Circuit Setup and Code**: Provides a detailed wiring diagram and setup for connecting an LED to the Raspberry Pi Pico W. Includes code to set up PWM on a GPIO pin, take user input for desired voltage, and convert it to a corresponding PWM duty cycle.
-* **Practical Demonstration**: Shows how to measure and visualize the PWM signal using an oscilloscope, illustrating how different duty cycles correspond to different average voltages.
-* **Homework Assignment**: Asks users to create a circuit where they can input a desired voltage to control the brightness of an LED, reinforcing the concepts of PWM and analog output.
-
+* **Spiegazione dell'uscita analogica**: Discute il concetto di PWM e come simula un'uscita analogica alternando tra 3,3V e 0V con diversi rapporti di ciclo. Spiega la relazione tra tensione, tempo e rapporto di ciclo PWM.
+* **Configurazione dei pin GPIO**: Spiega quali pin GPIO possono generare un'uscita analogica e l'importanza di non utilizzare contemporaneamente pin con la stessa etichetta PWM.
+* **Montaggio del circuito e codice**: Fornisce uno schema dettagliato e la configurazione per collegare un LED al Raspberry Pi Pico W. Include il codice per configurare il PWM su un pin GPIO, acquisire l'input dell'utente per la tensione desiderata e convertirlo nel corrispondente rapporto di ciclo PWM.
+* **Dimostrazione pratica**: Mostra come misurare e visualizzare il segnale PWM utilizzando un oscilloscopio, illustrando come diversi rapporti di ciclo corrispondono a diverse tensioni medie.
+* **Compito a casa**: Chiede agli utenti di creare un circuito in cui possano inserire una tensione desiderata per controllare la luminosità di un LED, consolidando i concetti di PWM e uscita analogica.
 
 **Video**
 

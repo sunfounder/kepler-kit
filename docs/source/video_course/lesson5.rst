@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato ai nuovi annunci di prodotti e alle anteprime.
+    - **Sconti Speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 5:  Reading Analog Voltages Using a Potentiometer
-=================================================================
+Lezione 5: Leggere Tensioni Analogiche Utilizzando un Potenziometro
+======================================================================
 
-This tutorial covers reading analog voltages using the SunFounder Kepler Kit for Raspberry Pi Pico W:
+Questo tutorial copre la lettura delle tensioni analogiche utilizzando il SunFounder Kepler Kit per Raspberry Pi Pico W:
 
-* **Analog Voltage Reading**: Explains the importance of reading analog voltages for various sensor inputs and user inputs, like potentiometers, to control aspects such as volume or brightness.
+* **Lettura della Tensione Analogica**: Spiega l'importanza di leggere le tensioni analogiche per vari input da sensori e input utente, come i potenziometri, per controllare aspetti come il volume o la luminosità.
 
-* **Wiring Diagram and Setup**: Provides a detailed explanation of the potentiometer's workings and how to connect it to the Pico W. Describes setting up ground and 3.3V rails and connecting the potentiometer's middle pin to GPIO pin 28.
+* **Schema di Collegamento e Configurazione**: Fornisce una spiegazione dettagliata del funzionamento del potenziometro e di come collegarlo al Pico W. Descrive la configurazione delle linee di massa e dei 3,3V e il collegamento del pin centrale del potenziometro al pin GPIO 28.
 
-* **Code Explanation**: Describes writing Python code to read analog voltages. Covers importing necessary libraries, setting up GPIO pins, creating an object for the potentiometer, and using a while loop to continuously read and print voltage values.
+* **Spiegazione del Codice**: Descrive la scrittura del codice Python per leggere le tensioni analogiche. Copre l'importazione delle librerie necessarie, la configurazione dei pin GPIO, la creazione di un oggetto per il potenziometro e l'utilizzo di un ciclo while per leggere e stampare continuamente i valori di tensione.
 
-* **Mathematical Conversion**: Teaches how to convert the raw ADC values (0 to 65535) to actual voltage values (0 to 3.3V) using linear equations. Demonstrates the process of deriving the equation of the line from two known points and applying it in the code.
+* **Conversione Matematica**: Insegna come convertire i valori grezzi dell'ADC (da 0 a 65535) in valori di tensione reali (da 0 a 3,3V) utilizzando equazioni lineari. Dimostra il processo di derivazione dell'equazione della retta da due punti noti e la sua applicazione nel codice.
 
-* **Practical Demonstration**: Shows the code in action, reading and converting the potentiometer values to voltage and displaying them. Discusses the accuracy and expected results when adjusting the potentiometer.
+* **Dimostrazione Pratica**: Mostra il codice in azione, leggendo e convertendo i valori del potenziometro in tensione e visualizzandoli. Discute l'accuratezza e i risultati attesi durante la regolazione del potenziometro.
 
 
 **Video**
