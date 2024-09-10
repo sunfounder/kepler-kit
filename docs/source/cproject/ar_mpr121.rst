@@ -85,7 +85,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``euler-kit/arduino/4.3_electrode_keyboard``. 
+    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``kepler-kit-main/arduino/4.3_electrode_keyboard``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``Adafruit MPR121`` library is used here, you can install it from the **Library Manager**.

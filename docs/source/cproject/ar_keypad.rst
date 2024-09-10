@@ -98,7 +98,7 @@ For example, if G6 is read high, then numeric key 1 is pressed; this is because 
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``euler-kit/arduino/4.2_4x4_keypad``. 
+    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``Adafruit Keypad`` library is used here, you can install it from the **Library Manager**.

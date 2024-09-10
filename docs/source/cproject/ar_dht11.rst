@@ -98,7 +98,7 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``6.2_dht11.ino`` under the path of ``euler-kit/arduino/6.2_dht11``. 
+    * You can open the file ``6.2_dht11.ino`` under the path of ``kepler-kit-main/arduino/6.2_dht11``. 
     * Or copy this code into **Arduino IDE**.
     * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
     * The ``DHT sensor library`` library is used here, you can install it from the **Library Manager**.
