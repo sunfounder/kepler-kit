@@ -17,22 +17,9 @@ lesson 66 :  Create Your Own Libraries in Micropython
 
 This tutorial covers creating and using a Servo library with the Raspberry Pi Pico W:
 
-* **Wiring Setup**:
- - Connect the red wire of the servo to physical pin 40 (3.3V), the brown wire to pin 38 (ground), and the orange control wire to GPIO pin 17.
-* **Class and Methods**:
- - Define a `Servo` class to manage servo objects.
- - Initialize the servo with the `__init__` method, setting up the PWM pin.
- - Implement a `pos` method to control the servo's position.
-* **Library Creation**:
- - Write the `Servo` class code and save it as a library file (`ServoLib.py`).
- - Create a `lib` directory on the Raspberry Pi Pico W and save the library file in this directory.
-* **Code Implementation**:
- - Import necessary libraries (`machine`, `time`, and `ServoLib`).
- - Instantiate a servo object using the `Servo` class from the `ServoLib` library.
- - Control the servo's position by calling the `pos` method with desired angles.
-* **Homework Assignment**:
- - Create a similar library for another component, like an LED, to streamline its usage in future projects.
-
+* **Task Overview**: Control a servo using a custom ``Servo`` class saved as a library.
+* **Key Steps**: Define the ``Servo`` class, initialize the servo with ``__init__``, implement the ``pos`` method, save the class as ``ServoLib.py``, and import it for use in code.
+* **Homework Assignment**: Create a library for another component like an LED for easier future usage.
 
 **Video**
 

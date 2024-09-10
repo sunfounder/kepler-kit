@@ -15,15 +15,15 @@
 lesson 8:  Compound Conditionals and If Statements in MicroPython
 ==========================================================================
 
-This tutorial covers using a potentiometer to control three LEDs (green, yellow, and red) with the Raspberry Pi Pico W and identifies a critical logical error in the previous implementation:
+This tutorial covers using a potentiometer to control three LEDs with the Raspberry Pi Pico W and addresses a critical logical error:
 
-* **Homework Solution Review**: Recaps the previous assignment to find the logical flaw in the code that controlled the LEDs based on potentiometer readings.
-* **Logical Error Explanation**: Explains the logical error in the code where the LED states could overlap, causing unintended behavior. Emphasizes the importance of ensuring that logical conditions are mutually exclusive to avoid such errors.
-* **Real-World Application Example**: Illustrates the potential dangers of logical errors using a hypothetical scenario of UV sterilization rooms, where incorrect LED control could cause harm.
-* **Compound Conditionals Introduction**: Introduces compound conditionals using logical operators (AND, OR) to create precise conditions for controlling LEDs. Demonstrates how to ensure that each condition is correctly implemented to avoid overlap.
-* **Circuit Setup and Code Explanation**: Provides a detailed wiring diagram and setup for connecting the potentiometer and LEDs to the Raspberry Pi Pico W. Discusses the correct way to write conditional statements to control the LEDs based on potentiometer readings.
-* **Practical Demonstration**: Shows the revised code in action, highlighting the correct LED behavior with no overlaps or missed conditions. Emphasizes the importance of careful logical planning in coding projects.
-* **Next Steps**: Previews the next lesson on simulating analog output, which will further expand the toolkit for working with the Raspberry Pi Pico W.
+* **Homework Solution Review**: Recap of identifying a logical flaw in the LED control code.
+* **Logical Error Explanation**: Discusses the error where LED states overlapped, stressing the need for mutually exclusive conditions.
+* **Real-World Example**: Demonstrates the importance of avoiding logical errors through a UV sterilization scenario.
+* **Compound Conditionals**: Introduces using AND/OR operators to create precise, non-overlapping conditions.
+* **Circuit Setup and Code**: Detailed wiring and corrected code for LED control.
+* **Practical Demonstration**: Shows the corrected code in action with proper LED behavior.
+* **Next Steps**: Preview of the next lesson on simulating analog output.
 
 
 **Video**

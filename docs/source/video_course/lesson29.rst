@@ -17,31 +17,12 @@ lesson 29: Simple Client Server Project to Control RGB LED
 
 This tutorial covers setting up a remote-controlled RGB LED using a Raspberry Pi Pico W and a PC over Wi-Fi:
 
-* **Introduction**:
- - The goal is to control an RGB LED on a Raspberry Pi Pico W remotely from a PC using Wi-Fi.
-* **Wiring Diagram and Setup**:
- - RGB LED's red, green, and blue channels are connected to GPIO pins 16, 17, and 18, respectively.
- - OLED display is connected via I2C to GPIO pins 2 (SDA) and 3 (SCL).
-* **Server Side Setup (Raspberry Pi Pico W)**:
- - Import libraries: `socket`, `time`, `network`, `machine`, `ssd1306`.
- - Initialize GPIO pins for the RGB LED and OLED display.
- - Connect to Wi-Fi and obtain an IP address.
- - Create a UDP server socket and bind it to the IP address and a port.
- - Display the IP address and port on the OLED screen.
- - Listen for incoming commands, decode them, and display the command and sender's address.
-* **Client Side Setup (PC)**:
- - Import the `socket` library.
- - Define the server address and port.
- - Create a UDP client socket.
- - Get user input for the LED color, encode the command, and send it to the server.
- - Wait for and print the server's response.
-* **Practical Demonstration**:
- - Demonstrate sending commands from the client to change the RGB LED color on the server.
- - OLED display shows the received commands and the sender's IP address.
-* **Final Setup and Testing**:
- - Disconnect the Raspberry Pi Pico W from USB and power it with a battery.
- - Save the code as `main.py` to run on startup.
- - Demonstrate fully wireless operation by sending commands from the PC and observing the RGB LED changes and OLED updates.
+* **Introduction**: Goal is to control an RGB LED on a Raspberry Pi Pico W remotely using Wi-Fi.
+* **Wiring Diagram and Setup**: Connect RGB LED to GPIO pins 16, 17, 18, and OLED to GPIO pins 2 (SDA) and 3 (SCL).
+* **Server Side Setup**: Import libraries, initialize GPIO pins, connect to Wi-Fi, create a UDP server, and display the IP on the OLED.
+* **Client Side Setup**: Create a UDP client on the PC to send color commands to the server.
+* **Practical Demonstration**: Show changing RGB LED color via commands sent from the PC, with the OLED displaying the commands and IP.
+* **Final Setup and Testing**: Power the Raspberry Pi Pico W with a battery, save the code as ``main.py``, and demonstrate wireless operation.
 
 
 **Video**

@@ -17,21 +17,10 @@ lesson 71 :  Allow Thread to Complete Task Before Termination
 
 This tutorial covers gracefully terminating a multi-threaded program on the Raspberry Pi Pico W:
 
-* **Wiring Setup**:
-  - Connect the servo's control wire to GPIO pin 17, power wire to physical pin 40, and ground wire to physical pin 38.
-  - Connect a button to GPIO pin 16 and ground.
-* **Code Implementation**:
-  - Import necessary libraries (`machine`, `time`, `_thread`, `Servo`).
-  - Set up pins for the button and servo.
-  - Implement a toggle switch for the button to control the servo's movement.
-  - Define a main loop to detect button presses and toggle the servo between 0 and 180 degrees.
-  - Use threading to handle the servo movement on a separate core, allowing for clean program exits.
-* **Handling Clean Termination**:
-  - Use a global `running` variable to control the loop execution.
-  - Implement a baton (lock) to ensure only one part of the program runs at a time during critical sections.
-  - Wait for the servo movement to complete before terminating the program.
-* **Homework Assignment**:
-  - Modify the program to handle additional components or sensors, ensuring clean termination in all scenarios.
+* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
+* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch for servo movement, using threading for clean exits.
+* **Handling Clean Termination**: Use a global ``running`` variable to manage loop execution. Implement a lock to control critical sections. Ensure the servo completes movement before terminating.
+* **Homework Assignment**: Modify the program to handle more components or sensors, ensuring clean termination in all cases.
 
 
 **Video**

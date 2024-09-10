@@ -91,13 +91,10 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``3.7_swinging_servo.ino`` under the path of ``kepler-kit-main/arduino/3.7_swinging_servo``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``kepler-kit-main/arduino/3.7_swinging_servo``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
-    
 
 .. raw:: html
     

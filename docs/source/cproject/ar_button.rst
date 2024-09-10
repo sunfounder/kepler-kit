@@ -97,10 +97,8 @@ One side of the button pin is connected to 3.3v, and the other side pin is conne
 
 .. note::
 
-   * You can open the file ``2.5_reading_button_value.ino`` under the path of ``kepler-kit-main/arduino/2.5_reading_button_value``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``2.5_reading_button_value.ino`` under the path of ``kepler-kit-main/arduino/2.5_reading_button_value``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

@@ -17,18 +17,9 @@ lesson 63 : Object Oriented Programming in MicroPython with Classes and Methods
 
 This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W:
 
-**Task Overview**:
- - Introduce modular programming with functions.
- - Transition to object-oriented programming using classes and methods.
- - Create a `Rectangle` class with methods to calculate area, perimeter, and diagonal.
-* **Key Steps**:
- - Define a `Rectangle` class.
- - Use the `__init__` method to initialize object attributes.
- - Implement methods within the class to perform calculations.
- - Create instances (objects) of the `Rectangle` class.
- - Modify object attributes and recalculate values using class methods.
-* **Homework Assignment**:
- - Write a program using the `Rectangle` class to create multiple rectangle objects, calculate their properties, modify attributes, and recalculate as needed.
+* **Task Overview**: Introduce modular programming and transition to object-oriented programming with classes. Create a ``Rectangle`` class to calculate area, perimeter, and diagonal.
+* **Key Steps**: Define the ``Rectangle`` class, use ``__init__`` to initialize attributes, implement methods, create and modify objects.
+* **Homework Assignment**: Write a program using the ``Rectangle`` class to create, modify, and recalculate multiple rectangle objects.
 
 
 **Video**

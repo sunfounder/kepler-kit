@@ -17,11 +17,10 @@ lesson 4:  Create a Binary Counter Using the Pico W
 
 This tutorial covers creating a 4-bit digital counter using the SunFounder Kepler Kit for Raspberry Pi Pico W:
 
-* **Introduction**: Introduction to the tutorial series and sponsor shoutout to SunFounder. Instructions on unboxing and connecting the Pico W to the PC.
-* **Homework Review**: Review of the previous homework assignment to create a 4-bit digital counter using four LEDs.
-* **Schematic and Circuit Setup**: Detailed schematic explanation and physical setup for connecting four LEDs with 220 Ohm resistors to the Pico W. Instructions on establishing a ground rail and connecting GPIO pins to the LEDs.
-* **Code Explanation**: Writing and explaining Python code to control the LEDs as a 4-bit counter. Describes creating a loop to count from 0 to 15 in binary, turning LEDs on and off accordingly.
-* **Demonstration**: Demonstrating the working 4-bit digital counter and verifying the circuit and code functionality.
+* **Homework Review**: Review of the 4-bit counter using LEDs.
+* **Schematic Setup**: Connect four LEDs with 220 Ohm resistors to the Pico W.
+* **Code**: Write Python code to create a 4-bit counter from 0 to 15 using LEDs.
+* **Demonstration**: Test the counter and verify functionality.
 
 
 **Video**

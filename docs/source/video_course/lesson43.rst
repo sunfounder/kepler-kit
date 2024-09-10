@@ -16,14 +16,10 @@ lesson 43 : Measure Pitch and Roll Using a 3 Axis Accelerometer
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch and roll angles:
 
-* **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic and code.
-* **Trigonometry for Tilt Measurement**:
-   - Use trigonometric functions to calculate pitch and roll from accelerometer data.
-* **Coding**:
-   - Implement and test the calculations in Python to ensure accurate pitch and roll measurements.
-* **Homework**:
-   - Find an orientation where X, Y, and Z accelerations read 0G simultaneously and share the solution.
+* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic and code.
+* **Trigonometry for Tilt Measurement**: Use trigonometric functions to calculate pitch and roll from accelerometer data.
+* **Coding**: Implement and test the calculations in Python to ensure accurate pitch and roll measurements.
+* **Homework**: Find an orientation where X, Y, and Z accelerations read 0G simultaneously and share the solution.
 
 
 

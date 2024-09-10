@@ -17,23 +17,15 @@ lesson 72 :  Understanding Using Dictionaries in MicroPython
 
 This tutorial covers using dictionaries in Python with the Raspberry Pi Pico W:
 
-* **Introduction**:
-  - Learn about dictionaries, a powerful data structure in Python.
-  - Understand how dictionaries fit into object-oriented programming with classes, methods, and functions.
-* **Concepts Covered**:
-  - Review of Lists:
-   - Create and manipulate lists (arrays).Access elements using indices.
-  - Introduction to Dictionaries:
-   - Create dictionaries with key-value pairs.Access dictionary elements using keys.Add, remove, and modify dictionary elements.
-  - Dictionary Operations:
-   - Use `keys()` and `values()` methods to retrieve keys and values.Check if a key exists using `in` and `not in` operators.Iterate through keys and values in a dictionary.
-  - Practical Example:
-   - Create a dictionary to store personal information (name, age, weight, etc.).- Demonstrate adding, modifying, and accessing elements in the dictionary.
-  - Advanced Dictionary Use:
-   - Store lists and other dictionaries as values within a dictionary.Utilize dictionaries for efficient data management and retrieval.
+* **Task Overview**: Learn to use dictionaries in Python for storing and managing data.
+* **Key Steps**: 
 
-* **Homework Assignment**:
-   - Write a program to control an RGB LED using a dictionary to map color names to their respective RGB values.Implement a user interface to input color names and change the LED color accordingly.
+  - Create dictionaries with key-value pairs.
+  - Access, modify, and delete dictionary elements.
+  - Use dictionary methods like ``keys()``, ``values()``, and check keys using ``in``.
+  - Implement a practical example to store personal information.
+
+* **Homework Assignment**: Write a program to control an RGB LED by mapping color names to RGB values using a dictionary and allowing user input to change the LED color.
 
 **Video**
 

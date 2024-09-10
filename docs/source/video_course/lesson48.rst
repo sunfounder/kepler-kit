@@ -17,20 +17,13 @@ lesson 48 : Measuring Rotation Using the Gyros on the MPU6050
 
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable tilt meter by combining accelerometer and gyroscope data:
 
-* **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
-* **Concept**:
-   - Measure tilt using both accelerometer and gyroscope data.
-   - Address errors from acceleration noise and gyroscope drift.
-* **Low-Pass Filter**:
-   - Smooth accelerometer data to reduce noise.
-* **Gyroscope Integration**:
-   - Calculate tilt angles using rotational velocity.
-   - Update pitch, roll, and yaw angles continuously.
-* **Combining Data**:
-   - Fuse accelerometer and gyroscope data to minimize noise and drift.
-* **Homework**:
-   - Implement and fine-tune the described method for stable tilt measurement.
+* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
+* **Concept**: Measure tilt using accelerometer and gyroscope data, addressing noise and drift.
+* **Low-Pass Filter**: Apply to smooth accelerometer data and reduce noise.
+* **Gyroscope Integration**: Use rotational velocity to calculate and update pitch, roll, and yaw.
+* **Combining Data**: Fuse accelerometer and gyroscope data to minimize errors.
+* **Homework**: Implement and fine-tune the method for stable tilt measurement.
+
 
 
 **Video**

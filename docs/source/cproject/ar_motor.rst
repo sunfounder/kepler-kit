@@ -109,10 +109,8 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``3.5_small_fan.ino`` under the path of ``kepler-kit-main/arduino/3.5_small_fan``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``3.5_small_fan.ino`` under the path of ``kepler-kit-main/arduino/3.5_small_fan``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

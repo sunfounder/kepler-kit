@@ -17,23 +17,12 @@ lesson 27:  Creating Lissajous Patterns on an OLED Display
 
 This tutorial covers generating Lissajous patterns on an OLED display using the Raspberry Pi Pico W:
 
-* **Introduction**:
- - Highlights the goal: generating the floating "potato chip" Lissajous pattern on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**:
- - Reviews the previous lesson on drawing a circle on the OLED display.
- - Explains the math behind creating Lissajous patterns using trigonometric functions.
-* **Generating the Pattern**:
- - Provides a step-by-step code example to draw a circle and then modify it to generate the Lissajous pattern.
- - Discusses the importance of converting degrees to radians and using sine and cosine functions for the calculations.
-* **Enhancing the Pattern**:
- - Shows how to adjust the parameters to change the appearance of the pattern.
- - Demonstrates adding phase shift to create a rotating effect for the pattern.
-* **Practical Demonstration**:
- - Runs the code to show the generation of the Lissajous pattern on the OLED display.
- - Explains how to optimize the display update speed and clear the display for smooth animations.
-* **Homework Assignment**:
- - Assigns a task: create a Lissajous pattern on the OLED display and post the solution on YouTube.
- - Encourages viewers to experiment with different parameters and share their results.
+* **Introduction**: Goal is to generate a floating "potato chip" Lissajous pattern on an OLED display using the Raspberry Pi Pico W.
+* **Recap and Setup**: Reviews drawing circles and introduces the math for Lissajous patterns using sine and cosine functions.
+* **Generating the Pattern**: Provides code to draw a circle, then modifies it to create the Lissajous pattern using trigonometric functions.
+* **Enhancing the Pattern**: Adjusts parameters and adds phase shift for a rotating effect.
+* **Practical Demonstration**: Shows the Lissajous pattern on the OLED, optimizing speed for smooth animations.
+* **Homework Assignment**: Task to create a Lissajous pattern and post results on YouTube, experimenting with parameters.
 
 
 

@@ -17,11 +17,11 @@ lesson 13:  User Specified RGB LED Colors Using Micropython
 
 This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:
 
-* **RGB LED Control**: Demonstrates controlling an RGB LED using PWM (Pulse Width Modulation) to achieve different colors. Explains the structure of the RGB LED with its four legs for red, green, blue, and ground.
-* **Wiring Diagram and Setup**: Provides a detailed wiring diagram for connecting the RGB LED to the Raspberry Pi Pico W. Each color channel (red, green, blue) is connected to a GPIO pin (13, 14, 15) with a 220 Ohm resistor for each channel to limit the current.
-* **Code Explanation**: Describes the MicroPython code for setting up PWM on each GPIO pin and controlling the brightness of each color channel. Includes code for turning on specific colors (red, green, blue, cyan, magenta, yellow, orange, white) based on user input.
-* **Practical Demonstration**: Shows how to run the code and change the color of the RGB LED. Demonstrates the process of inputting a color and observing the RGB LED change accordingly.
-* **Homework Assignment**: Asks users to extend the project by connecting three potentiometers to control the RGB LED colors manually. Encourages users to mix and match potentiometer values to achieve any desired color.
+* **RGB LED Control**: Demonstrates controlling an RGB LED with PWM to achieve different colors using red, green, blue, and ground legs.
+* **Wiring Diagram and Setup**: Detailed wiring diagram for connecting RGB LED to GPIO pins 13, 14, and 15, each with a 220 Ohm resistor.
+* **Code Explanation**: MicroPython code for setting up PWM on each color channel, allowing color control based on user input.
+* **Practical Demonstration**: Shows how to input a color and change the RGB LED color accordingly.
+* **Homework Assignment**: Extend the project by using three potentiometers to manually control the RGB LED colors.
 
 
 **Video**

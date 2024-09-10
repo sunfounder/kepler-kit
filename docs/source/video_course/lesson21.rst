@@ -17,36 +17,12 @@ lesson 21:  Temperature and Humidity Measurements with Toggle Switch
 
 This tutorial covers adding a toggle push button to switch between temperature readings in Fahrenheit and Celsius using the DHT11 sensor with the Raspberry Pi Pico W:
 
-* **Introduction**: introduces the tutorial and acknowledges the sponsor, SunFounder. He explains the goal of adding a toggle push button to the existing temperature and humidity measurement setup.
-
-* **Previous Lessons Recap**: Reviews the previous lesson on using the DHT11 sensor and sets the context for the current task.
-
-**Component Introduction and Circuit Setup**:
-- Reintroduces the DHT11 sensor and explains the addition of a push button to the circuit.
-- Describes the connections:
-  - DHT11 sensor:
-    - Pin 1 to 3.3V
-    - Pin 2 to GPIO pin 16
-    - Pin 4 to ground
-  - Push button:
-    - One leg to ground
-    - The other leg to GPIO pin 15
-* **Code Explanation**:
- - Imports necessary libraries: machine, utime (as time), and DHT.
- - Sets up GPIO pins for the DHT11 sensor and the push button.
- - Creates a toggle mechanism to switch between temperature units (Celsius and Fahrenheit).
- - Reads the button state and toggles the temperature unit when the button is pressed and released.
- - Measures and converts temperature from Celsius to Fahrenheit.
- - Prints temperature and humidity readings in a single line using `\r` for a clean output.
- - Addresses formatting issues to ensure the output displays correctly when toggling between Celsius and Fahrenheit.
-* **Practical Demonstration**:
- - Runs the code to observe temperature and humidity readings.
- - Demonstrates the toggle functionality between Celsius and Fahrenheit when the button is pressed.
- - Fixes formatting issues to ensure the output is clean and consistent.
-* **Homework Assignment**:
- - Adds more toggle functionality to the project.
- - Implements additional toggles to switch between displaying temperature in Celsius, Fahrenheit, and humidity one at a time.
-
+* **Introduction**: Introduces the tutorial and explains adding a toggle button to the setup.
+* **Previous Lessons Recap**: Reviews using the DHT11 sensor.
+* **Component Introduction and Circuit Setup**: Describes wiring the DHT11 sensor and push button.
+* **Code Explanation**: Imports libraries, sets up GPIO, creates a toggle for Celsius/Fahrenheit, and formats output.
+* **Practical Demonstration**: Shows code execution and toggling between Celsius and Fahrenheit readings.
+* **Homework Assignment**: Adds more toggles to switch between Celsius, Fahrenheit, and humidity displays.
 
 **Video**
 

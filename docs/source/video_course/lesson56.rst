@@ -17,16 +17,10 @@ lesson 56 : Using a Joystick With MicroPython
 
 This tutorial covers using a joystick with the Raspberry Pi Pico W:
 
-* **Wiring Setup**:
-   - Connect ground, 3.3V, VRX to GPIO pin 27, and VRY to GPIO pin 26.
-* **Code Implementation**:
-   - Import necessary libraries (`machine`, `time`, `math`).
-   - Set up ADC for joystick axes.
-   - Read and print joystick values to understand range and behavior.
-* **Calibration**:
-   - Adjust readings to be more intuitive, converting them to a scale from -100 to +100 for easier interpretation.
-* **Homework Assignment**:
-   - Write a program to calibrate the joystick so that the center position reads (0,0), and edges read ±100.
+* **Wiring Setup**: Connect ground, 3.3V, VRX to GPIO pin 27, and VRY to GPIO pin 26.
+* **Code Implementation**: Import ``machine``, ``time``, ``math``; set up ADC for joystick axes; read and print joystick values.
+* **Calibration**: Convert readings to a -100 to +100 scale for intuitive interpretation.
+* **Homework Assignment**: Write a program to calibrate the joystick so the center reads (0,0) and edges read ±100.
 
 **Video**
 

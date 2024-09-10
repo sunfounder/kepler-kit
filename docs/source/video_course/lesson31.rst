@@ -17,23 +17,13 @@ lesson 31: Sensorless Remote Weather Station Project
 
 This tutorial covers creating a sensorless weather station using the Raspberry Pi Pico W:
 
-* **Connecting to WiFi**:
- - Import necessary libraries.
- - Create a WLAN object and connect to the WiFi network.
-* **Fetching Weather Data**:
- - Use the OpenWeatherMap API to fetch real-time weather data.
- - Obtain an API key from OpenWeatherMap by signing up for a free account.
-* **Parsing JSON Data**:
- - Extract relevant weather information such as temperature, humidity, barometric pressure, sunrise, and sunset times.
-* **Code Explanation**:
- - Use `urequests.get()` to fetch JSON data from the API endpoint.
- - Convert Unix epoch time to local time for sunrise and sunset.
- - Convert barometric pressure from HPA to atmospheres.
-* **Displaying Weather Data**:
- - Print weather information like temperature, humidity, barometric pressure, conditions, and wind speed.
-* **Homework Assignment**:
- - Enhance the project by adding a display to show the weather information.
- - Create a portable, battery-powered weather station.
+* **Connecting to WiFi**: Import libraries and connect to WiFi using a WLAN object.
+* **Fetching Weather Data**: Use OpenWeatherMap API to get real-time weather data, requiring an API key.
+* **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
+* **Code Explanation**: Use ``urequests.get()`` to fetch data, convert Unix time, and adjust pressure units.
+* **Displaying Weather Data**: Print temperature, humidity, pressure, conditions, and wind speed.
+* **Homework Assignment**: Add a display and create a portable, battery-powered weather station.
+
 
 
 **Video**

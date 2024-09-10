@@ -146,10 +146,8 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 .. note::
 
-   * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``5.4_8x8_pixel_graphics.ino`` under the path of ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

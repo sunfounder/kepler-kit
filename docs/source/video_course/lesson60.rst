@@ -17,9 +17,18 @@ lesson 60 : Control NeoPixel Colors with a Joystick in MicroPython
 
 This tutorial covers controlling an LED strip with a joystick using the Raspberry Pi Pico W:
 
-* **Wiring Setup**:- Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, VRY to GPIO pin 26.Connect Neopixel ground to pin 38, 5V to pin 40, and data to GPIO pin 0.
-* **Code Implementation**:Import necessary libraries (`machine`, `time`, `math`, `neopixel`).Set up ADC for joystick and Neopixel.Read joystick values and calculate angles.Convert angles to RGB values for the Neopixel.
-* **Homework Assignment**:Write a program to control the Neopixel color and brightness based on the joystick's angle and distance from the center.
+* **Wiring Setup**:
+
+    - Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, VRY to GPIO pin 26. 
+    - Connect Neopixel ground to pin 38, 5V to pin 40, data to GPIO pin 0.
+    
+* **Code Implementation**: 
+
+    - Import libraries (``machine``, ``time``, ``math``, ``neopixel``). 
+    - Set up ADC for joystick and Neopixel. Read joystick values, calculate angles. 
+    - Convert angles to RGB for Neopixel.
+
+* **Homework Assignment**: Write a program to control Neopixel color and brightness based on joystick angle and distance from center.
 
 
 **Video**

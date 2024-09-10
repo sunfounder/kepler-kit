@@ -17,33 +17,11 @@ lesson 22:  Using an LCD Display with the Pico W
 
 This tutorial covers connecting and using an LCD 1602 display with the Raspberry Pi Pico W:
 
-* **Introduction**: introduces the tutorial, acknowledges the sponsor SunFounder, and explains the goal of adding an LCD display to the Raspberry Pi Pico W project for mobile use.
-
-* **Component Introduction and Setup**:
-- Describes the required components: LCD 1602 display and female-to-male wires.
-- Details the connections:
-  - LCD 1602 pins to Raspberry Pi Pico W:
-    - Ground to pin 38
-    - VCC (5V) to the rightmost pin
-    - SDA (data) to GPIO pin 6
-    - SCL (clock) to GPIO pin 7
-
-* **Library Installation**:
- - Guides on how to download and install the necessary library for the LCD 1602 display from toptechboy.com.
- - Provides instructions to save and import the library in Thonny IDE.
-
-* **Code Explanation**:
- - Describes the creation of an LCD object and writing text to the LCD.
- - Provides a sample program that prompts for the user’s name and displays a greeting message on the LCD.
- - Addresses potential issues with text overlap by using `LCD.clear()` to clear the screen before writing new text.
-
-* **Practical Demonstration**:
- - Shows the program in action, displaying names on the LCD.
- - Explains adjusting the LCD contrast using a potentiometer on the back of the display.
-
-* **Homework Assignment**:
- - Assigns a task to integrate the LCD display with the DHT11 temperature and humidity sensor project from lesson 21.
- - Instructs to display temperature in Celsius or Fahrenheit based on a toggle button and display humidity on the LCD.
+* **Component Introduction and Setup**: Describes connecting the LCD 1602 display to the Raspberry Pi Pico W.
+* **Library Installation**: Guides on downloading and installing the LCD library from toptechboy.com.
+* **Code Explanation**: Explains creating an LCD object, writing text, and using ``LCD.clear()`` to avoid text overlap.
+* **Practical Demonstration**: Shows the program displaying names on the LCD and adjusting contrast with a potentiometer.
+* **Homework Assignment**: Integrate the LCD with the DHT11 project to display temperature and humidity based on a toggle button.
 
 
 

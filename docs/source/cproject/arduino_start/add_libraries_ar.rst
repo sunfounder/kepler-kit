@@ -16,45 +16,21 @@
 1.4 Install libraries (Important)
 ======================================
 
-**Download the Code**
+Many libraries are available directly through the Arduino **Library Manager**. You can access the **Library Manager** by following these steps:
 
-Download the relevant code from the link below.
+In the **Library Manager**, you can search for the desired library by name or browse through different categories.
 
-* :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+.. note::
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+   In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as “The DHT sensor library library is used here, you can install it from the **Library Manager**.” Simply install the recommended libraries as prompted.
 
-.. _add_libraries_ar:
+.. image:: img/install_lib3.png
 
-Add libraries
-----------------------
-A library, gathering some function definitions and header files, usually
-contains two files: .h (header file, including function statement, Macro
-definition, constructor definition, etc.) and .cpp (execution file, with
-function implementation, variable definition, and so on). When you need
-to use a function in some library, you just need to add a header file
-(e.g. #include <dht.h>), and then call that function. This can make your
-code more concise. If you don't want to use the library, you can also
-write that function definition directly. Though as a result, the code
-will be long and inconvenient to read.
+Once you find the library you want to install, click on it and then click the **INSTALL** button.
 
-Some libraries are already built in the Arduino IDE, when some others
-may need to be added. So now let's see how to add them.
+.. image:: img/install_lib2.png
 
-
-#. Open the Arduino IDE and go to **Sketch** -> **Include Library** -> **Add .ZIP Library**.
-
-   .. image:: img/a2dp_add_zip.png
-
-#. Navigate to the directory where the library files are located, such as the ``kepler-kit-main\arduino\libraries`` folder, and select the desired library file, like ``LiquidCrystal_I2C.zip``. Then, click **Open**.
-
-   .. image:: img/a2dp_choose.png
-
-#. After a short while, you will receive a notification indicating a successful installation.
-
-   .. image:: img/a2dp_success.png
-
-#. Repeat the same process to add the other libraries.
+The Arduino IDE will automatically download and install the library for you.
 
 
 .. note::

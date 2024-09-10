@@ -122,10 +122,8 @@ This way you will find that by rotating the potentiometer, the brightness of the
 
 .. note::
 
-   * You can open the file ``2.11_turn_the_knob.ino`` under the path of ``kepler-kit-main/arduino/2.11_turn_the_knob``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``2.11_turn_the_knob.ino`` under the path of ``kepler-kit-main/arduino/2.11_turn_the_knob``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

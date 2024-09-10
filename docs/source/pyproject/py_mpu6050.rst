@@ -114,9 +114,9 @@ You can also buy them separately from the links below.
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
 
 After running the program, you can see the 3-axis accelerometer values and 3-axis gyroscope values cycling through the output.
 At this point you rotate the MPU6050 at random, and these values will appear to change accordingly.
@@ -143,6 +143,6 @@ Subsequently, you will be able to get real-time acceleration and angular velocit
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)

@@ -84,27 +84,29 @@ You can also buy them separately from the links below.
 
 **Schematic**
 
-|sch_lcd|
+|sch_lcd_ar|
 
 **Wiring**
 
-|wiring_lcd|
+|wiring_lcd_ar|
 
 **Code**
 
 .. note::
 
-    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display``. 
+    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``euler-kit/arduino/3.4_liquid_crystal_display``. 
     * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``LiquidCrystal_I2C`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+
+      .. image:: img/lib_i2c_lcd.png
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f464967-5937-473a-8a0d-8e4577c85e7d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+After the code is uploaded successfully, you will see “SunFounder”, “Hello World” on the I2C LCD1602.
 
 .. note:: 
     If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
@@ -194,11 +196,8 @@ Upload the codes to the Pico W, the content that you input in the serial monitor
 
    * You can open the file ``3.4_liquid_crystal_display_2.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display_2``. 
    * Or copy this code into **Arduino IDE**.
-
-   
    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
-    
 
 .. raw:: html
     

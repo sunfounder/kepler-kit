@@ -17,28 +17,10 @@ lesson 73 :  Control a RGB LED Using a Dictionary in MicroPython
 
 This tutorial covers controlling an RGB LED with the Raspberry Pi Pico W using dictionaries:
 
-* **Wiring Setup**:
-- Connect the RGB LED to the Raspberry Pi Pico W:
-  - R leg to GPIO pin 14 through a 330 Ohm resistor.
-  - G leg to GPIO pin 13.
-  - B leg to GPIO pin 12 through a 330 Ohm resistor.
-  - Ground leg to the ground rail.
-* **Code Implementation**:
-- **Create Dictionary**:
-   - Define a dictionary with color names as keys and their respective RGB values as lists.
-- **Import Libraries**:
-   - Import necessary libraries (`machine`, `time`).
-   - Set up PWM for the RGB LED pins.
-- **Main Program Loop**:
-   - Continuously prompt the user to input a desired color.
-   - Convert input to lowercase and check if it's a valid color.
-   - If valid, adjust the LED colors using PWM duty cycles based on the dictionary values.
-   - Implement error handling for invalid inputs.
-- **Function to Set Color**:
-   - Define a function `make_color` that takes the desired color and sets the RGB LED accordingly using PWM.
-   
-* **Homework Assignment**:
-   - Extend the program by moving the `make_color` function into a library and importing it into the main program.
+* **Concept Overview**: Control an RGB LED with user input using dictionaries for color values.
+* **Example Implementation**: Connect RGB LED to GPIO pins, create a dictionary for color names and RGB values, and use PWM to adjust LED brightness based on user input.
+* **Homework Assignment**: Move the `make_color` function into a library and import it into the main program.
+* **Key Takeaways**: Learn to use dictionaries for color mapping and PWM for RGB LED control in MicroPython.
 
 **Video**
 

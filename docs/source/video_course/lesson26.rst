@@ -17,25 +17,12 @@ lesson 26:  Drawing a Circle on the OLED 1306 Display
 
 This tutorial covers drawing shapes on an OLED display using the Raspberry Pi Pico W:
 
-* **Introduction**:
- - Highlights the goal: drawing a circle on an OLED display using the Raspberry Pi Pico W.
-* **Recap and Setup**:
- - Reviews the previous lesson on using the OLED 1306 display and setting up the SSD1306 library.
- - Discusses the importance of using mathematical functions to draw shapes on the OLED display.
-* **Drawing a Circle**:
- - Explains the math behind drawing a circle using trigonometric functions: \( x = r \cos(\theta) \) and \( y = r \sin(\theta) \).
- - Converts degrees to radians for use in programming languages.
- - Shows how to center the circle on the OLED display by adjusting the x and y coordinates.
- - Provides a step-by-step code example to draw a circle by iterating through 360 degrees and calculating the x and y positions.
-* **Enhancing the Circle Drawing**:
- - Demonstrates how to draw a filled circle by iterating over a range of radii.
- - Shows how to draw a partial circle or arc by adjusting the angle range.
-* **Practical Demonstration**:
- - Runs the code to show the drawing of a circle and a filled circle on the OLED display.
- - Explains how to optimize the drawing speed by updating the display only after all points are calculated.
-* **Homework Assignment**:
- - Assigns a task: create a program that draws a "floating potato chip" shape on the OLED display.
- - Encourages viewers to figure out the math behind the shape and post their homework on YouTube.
+* **Introduction**: Focuses on drawing a circle on an OLED display using the Raspberry Pi Pico W.
+* **Recap and Setup**: Reviews using the OLED display and setting up the SSD1306 library.
+* **Drawing a Circle**: Explains using trigonometric functions to calculate x and y positions, and provides a code example to draw a circle.
+* **Enhancing the Circle Drawing**: Demonstrates drawing a filled circle and an arc by adjusting radii and angles.
+* **Practical Demonstration**: Shows the circle and filled circle on the OLED, optimizing drawing speed.
+* **Homework Assignment**: Task to create a "floating potato chip" shape on the OLED display.
 
 
 

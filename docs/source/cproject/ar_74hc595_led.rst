@@ -14,7 +14,7 @@
 
 .. _ar_74hc_led:
 
-5.1 Microchip - 74HC595
+5.1 - Microchip - 74HC595
 ===========================
 
 Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
@@ -109,10 +109,8 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``kepler-kit-main/arduino/5.1_microchip_74hc595``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``kepler-kit-main/arduino/5.1_microchip_74hc595``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

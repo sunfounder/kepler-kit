@@ -15,13 +15,13 @@
 lesson 1:  Write Your First Program for Absolute Beginners
 =================================================================
 
-This tutorial covers setting up and programming the Raspberry Pi Pico W using the SunFounder Kepler Kit:
+This tutorial covers setting up and programming the Raspberry Pi Pico W with the SunFounder Kepler Kit:
 
-* **Introduction and Setup**: Overview of the tutorial series and sponsor shoutout to SunFounder. Instructions on unboxing and connecting the Pico W to the PC using a USB cable.
-* **MicroPython Installation**: Step-by-step guide to downloading and installing MicroPython on the Pico W, including necessary steps to make the Pico W recognizable as a USB drive.
-* **Thonny IDE Installation**: Instructions for downloading and installing the Thonny IDE on the PC, including handling potential installation warnings and setting up Thonny to communicate with the Pico W.
-* **First Program**: Writing and running the first program in Thonny to print "Hello, World!" to confirm the setup is working correctly.
-* **GPIO Interaction**: Explanation of GPIO pins and a simple program to control the onboard LED by turning it on and off. Introduction to loops and delays for creating a blinking LED effect.
+* **Setup**: Unbox and connect the Pico W to the PC via USB.
+* **MicroPython**: Install MicroPython on the Pico W.
+* **Thonny IDE**: Install and set up Thonny IDE.
+* **First Program**: Run a "Hello, World!" program in Thonny.
+* **GPIO**: Control the onboard LED with a simple blink program.
 
 **Video**
 

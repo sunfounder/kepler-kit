@@ -17,14 +17,13 @@ lesson 16:  Sequence of Colors in RGB LED With Micropython
 
 This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W to control an RGB LED:
 
-* **Introduction**: The lesson starts with a brief introduction and an overview of the lesson, focusing on using for loops and PWM (Pulse Width Modulation) to control the brightness and color of an RGB LED.
-* **Circuit Setup**: Demonstrates the wiring of the RGB LED to the Raspberry Pi Pico W, using GPIO pins 13, 14, and 15 for the red, green, and blue channels, respectively. Emphasizes the importance of using 330 Ohm current limiting resistors.
-* **PWM Setup**: Explains setting up PWM channels for each LED color, establishing a frequency of 1000 Hz to ensure smooth transitions without visible flickering.
-* **Color Sequence Input**: Shows how to prompt the user for a sequence of colors and capture the input. Uses a for loop to store the user-defined colors in an array, ensuring that the input is converted to lowercase for consistency.
-* **Color Control Logic**: Details the logic for setting the brightness of each LED color based on the user's input. Implements if statements to assign PWM values to create different colors, including red, green, blue, cyan, magenta, yellow, orange, and off.
-* **Continuous Loop for Displaying Colors**: Uses a while true loop to continuously cycle through the user-defined color sequence. Adds sleep statements to control the duration each color is displayed.
-* **Practical Demonstration**: Provides a step-by-step demonstration of running the code, entering a sequence of colors, and observing the RGB LED displaying the colors in the specified order.
-* **Next Steps**: Announces that the next lesson will cover using push buttons with the Raspberry Pi Pico W to read digital inputs, completing the learning of input and output methods before moving on to more advanced components.
+* **Introduction**: Overview of using for loops and PWM to control RGB LED brightness and color.
+* **Circuit Setup**: Wiring the RGB LED to GPIO pins 13, 14, and 15, using 330 Ohm resistors.
+* **PWM Setup**: Setting up PWM on each LED channel with a frequency of 1000 Hz for smooth transitions.
+* **Color Sequence Input**: Prompting the user for a color sequence, storing inputs in an array.
+* **Color Control Logic**: Using if statements to assign PWM values for colors like red, green, blue, cyan, magenta, yellow, orange, and off.
+* **Continuous Loop**: Cycling through the color sequence using a while true loop with sleep statements.
+
 
 
 **Video**

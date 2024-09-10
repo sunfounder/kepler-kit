@@ -16,14 +16,11 @@ lesson 44 : Measure Simultaneous 0 G on All Three Axis of MPU6050
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch, roll, and vertical displacement:
 
-* **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
+* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
 
-* **Measuring Zero G**:
-   - Determine conditions where all accelerometer axes read zero G simultaneously by dropping the sensor.
+* **Measuring Zero G**: Determine conditions where all accelerometer axes read zero G simultaneously by dropping the sensor.
 
-* **Homework**:
-   - Create a method to determine the height from which the sensor was dropped by calculating the time it was in freefall and using the acceleration of gravity.
+* **Homework**: Create a method to determine the height from which the sensor was dropped by calculating the time it was in freefall and using the acceleration of gravity.
 
 
 **Video**

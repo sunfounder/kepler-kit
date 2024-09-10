@@ -17,18 +17,11 @@ lesson 65 :  Create a Servo Class and Method in MicroPython
 
 This tutorial covers creating a Servo class using object-oriented programming (OOP) with the Raspberry Pi Pico W:
 
-* **Wiring Setup**:
-Connect the red wire of the servo to physical pin 40 (3.3V), the brown wire to pin 38 (ground), and the orange control wire to GPIO pin 17.
-* **Class and Methods**:
- - Define a `Servo` class to manage servo objects.
- - Initialize the servo with the `__init__` method, setting up the PWM pin.
- - Implement a `pos` method to control the servo's position.
-* **Code Implementation**:
- - Import necessary libraries (`machine` and `time`).
- - Create the `Servo` class with the `__init__` and `pos` methods.
- - Instantiate a servo object and control its position using the `pos` method.
-* **Homework Assignment**:
- - Review lesson 36 for details on working with servos. Create a Servo class that allows easy control of the servo's position by setting angles. Implement a method to move the servo based on user input.
+* **Concept Overview**: Control a servo using a custom ``Servo`` class.
+* **Example Implementation**: Connect the servo to the Raspberry Pi Pico W, define the ``Servo`` class with ``__init__`` and ``pos`` methods to control position, and instantiate a servo object to move it.
+* **Homework Assignment**: Create a ``Servo`` class to set angles and control movement based on user input. Review lesson 36 for servo details.
+* **Key Takeaways**: Learn to implement classes for hardware control, use methods to manage servo position.
+
 
 
 **Video**

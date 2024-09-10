@@ -17,17 +17,9 @@ lesson 68 :  MicroPython Multicore Threading Example with LEDs and Servo
 
 This tutorial covers controlling a servo and LEDs with the Raspberry Pi Pico W using both cores:
 
-* **Wiring Setup**:
- - Connect a red LED to GPIO pin 15 with a 330-ohm resistor to ground.
- - Connect a green LED to GPIO pin 14 with a 330-ohm resistor to ground.
- - Connect the servo control wire to GPIO pin 17, power wire to physical pin 40, and ground wire to physical pin 38.
-* **Code Implementation**:
- - Import necessary libraries (`machine`, `time`, `_thread`, `Servo`).
- - Set up pins for the LEDs and servo.
- - Define a function `other_core` to blink the LEDs based on the servo direction using a global variable.
- - Create a loop to move the servo and set the LED direction.
-* **Homework Assignment**:
- - Extend the code to blink the red LED when the servo moves clockwise and the green LED when it moves counterclockwise.
+* **Wiring Setup**: Connect red LED to GPIO 15, green LED to GPIO 14, servo to GPIO 17, power to pin 40, and ground to pin 38.
+* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, and ``Servo``. Set up pins for LEDs and servo. Define ``other_core`` function to blink LEDs based on servo direction.
+* **Homework Assignment**: Modify code to blink red LED for clockwise and green LED for counterclockwise servo movement.
 
 
 **Video**

@@ -16,26 +16,12 @@ lesson 51 : Ultimate Pitch and Roll Gadget Using the MPU6050
 =============================================================================
 This tutorial covers creating a precise tilt meter using the MPU6050 sensor and Raspberry Pi Pico W:
 
-* **Setup**:
-   - Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W using the provided schematic.
-* **Challenges**:
-   - Raw accelerometer data is noisy.
-   - Gyroscope data drifts over time.
-* **Solution**:
-   - Combine accelerometer and gyroscope data using a complementary filter to achieve accurate, fast, and low-noise tilt measurements.
-   - Implement error correction to handle steady state errors.
-* **Implementation**:
-   - Initialize the MPU6050 and OLED 1306.
-   - Collect data from both accelerometer and gyroscope.
-   - Apply a complementary filter to combine short-term gyroscope data with long-term accelerometer data.
-   - Add error correction to compensate for any drift in the measurements.
-   - Display the results on the OLED screen, showing both qualitative (bubble level) and quantitative (degree readout) tilt information.
-* **Demonstration**:
-   - The tilt meter is tested to show stable and accurate pitch and roll readings even with vibrations.
-   - The device is made portable using a battery pack, enabling it to operate untethered.
-* **Additional Improvements**:
-   - Suggestions include making the device wireless for remote monitoring or designing a 3D printed case for portability.
-
+* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W.
+* **Challenges**: Accelerometer data is noisy, and gyroscope data drifts over time.
+* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with error correction for steady state errors.
+* **Implementation**: Initialize sensors and OLED. Collect and filter data, displaying tilt as both a bubble level and degree readout on the OLED.
+* **Demonstration**: Test for stable pitch and roll readings, with portable battery-powered operation.
+* **Additional Improvements**: Consider wireless monitoring or creating a 3D-printed case for portability.
 
 
 **Video**

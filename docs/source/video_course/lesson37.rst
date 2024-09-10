@@ -16,23 +16,12 @@ lesson 37 : Control a Servo With a Potentiometer in MicroPython
 =============================================================================
 This tutorial covers controlling a servo motor using a potentiometer with the Raspberry Pi Pico W:
 
-* **Servo Motor Control**:
- - Connect the SG90 servo motor to the Raspberry Pi Pico W.
- - Brown wire to ground, red wire to power (5V), orange wire to GPIO pin 15 for control.
-* **Wiring Setup**:
- - Connect the potentiometer: power to 3.3V, ground to ground rail, and signal to GPIO pin 26.
-* **PWM Basics**:
- - Use Pulse Width Modulation (PWM) to control servo position.
- - Set PWM frequency to 50Hz for the servo.
-* **Code Explanation**:
- - Set up PWM on GPIO pin 15.
- - Convert potentiometer readings to servo angles.
- - Example code provided to move the servo based on potentiometer input.
-* **Practical Demonstration**:
- - Run the code to control the servo with the potentiometer.
- - Avoid manually rotating the servo horn to prevent damage.
-* **Application Ideas**:
- - Control larger servos with an external power supply for more advanced projects.
+* **Servo Motor Control**: Connect the SG90 servo to the Raspberry Pi Pico W, with ground, power (5V), and control on GPIO pin 15.
+* **Wiring Setup**: Connect the potentiometer to 3.3V, ground, and signal to GPIO pin 26.
+* **PWM Basics**: Use PWM at 50Hz to control the servo's position.
+* **Code Explanation**: Set up PWM on GPIO 15 and convert potentiometer input to servo angles.
+* **Practical Demonstration**: Run the code to control the servo with the potentiometer, avoiding manual servo horn rotation.
+* **Application Ideas**: Use external power to control larger servos for advanced projects.
 
 
 **Video**

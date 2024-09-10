@@ -16,21 +16,11 @@ lesson 38 : Learn Trigonometry Fundamentals in One Session (EASY)
 =============================================================================
 This tutorial covers the basics of trigonometry and its applications using the Raspberry Pi Pico W:
 
-* **Introduction to Trigonometry**:
- - Explanation of common issues and misconceptions in learning trigonometry.
- - Focus on simplifying concepts using circles instead of triangles.
-* **Understanding Circles**:
- - Explanation of unit circles and how rotating a vector traces a circle.
- - Introduction to radians and degrees, including conversion between the two.
-* **Basic Trigonometric Functions**:
- - Explanation of sine, cosine, and tangent functions using circles.
- - Demonstration of calculating sine and cosine for given angles.
-* - Introduction to inverse functions (arcsine, arccosine) to find angles from sine and cosine values.
-* **Programming Examples**:
- - Using MicroPython to calculate sine and cosine values.
- - Example code for converting degrees to radians and calculating trigonometric functions.
-* **Homework Assignment**:
- - Find sine and cosine values for 0°, 90°, 180°, 270°, and 360° without using a calculator, focusing on understanding the concepts visually.
+* **Introduction to Trigonometry**: Addresses common issues in learning trigonometry and focuses on using circles to simplify concepts.
+* **Understanding Circles**: Explains unit circles and how rotating a vector traces a circle, introducing radians and degrees.
+* **Basic Trigonometric Functions**: Demonstrates sine, cosine, and tangent using circles, and introduces inverse functions to find angles.
+* **Programming Examples**: Shows how to calculate sine and cosine in MicroPython, with example code for degrees to radians conversion.
+* **Homework Assignment**: Find sine and cosine for key angles (0°, 90°, 180°, 270°, 360°) without a calculator, emphasizing visual understanding.
 
 
 **Video**

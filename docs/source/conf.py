@@ -33,7 +33,10 @@ release = '1.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel']
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx_copybutton'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -247,7 +250,7 @@ rst_epilog += """
 .. |wiring_beep| image:: /img/wiring/wiring_beep.png
     :width: 800    
 .. |wiring_button| image:: /img/wiring/wiring_read_button_value.png
-    :width: 800
+    :width: 600
 .. |wiring_button_pullup| image:: /img/wiring/wiring_read_button_value_2.png
 .. |wiring_tilt| image:: /img/wiring/wiring_read_button_value_4.png
 .. |wiring_slide| image:: /img/wiring/wiring_read_button_value_3.png   
@@ -255,6 +258,8 @@ rst_epilog += """
 .. |wiring_led| image:: /img/wiring/wiring_led.png   
     :width: 800
 .. |wiring_lcd| image:: /img/wiring/wiring_lcd.png
+    :width: 800
+.. |wiring_lcd_ar| image:: /img/wiring/wiring_lcd_ar.png
     :width: 800
 .. |wiring_ws2812| image:: /img/wiring/wiring_rgb_strip.png
     :width: 800
@@ -266,6 +271,8 @@ rst_epilog += """
 .. |wiring_4dig| image:: /img/wiring/wiring_4dig.png
     :width: 800
 .. |wiring_keypad| image:: /img/wiring/wiring_keypad.png
+.. |wiring_keypad_ar| image:: /img/wiring/wiring_keypad_ar.png
+
 .. |wiring_joystick| image:: /img/wiring/wiring_joystick.png
 .. |wiring_motor| image:: /img/wiring/wiring_motor.png
     :width: 800
@@ -273,15 +280,24 @@ rst_epilog += """
 .. |wiring_photoresistor| image:: /img/wiring/wiring_photoresistor.png
 .. |wiring_pir| image:: /img/wiring/wiring_pir.png
 .. |wiring_ledbar| image:: /img/wiring/wiring_ledbar.png
+    :width: 800
 .. |wiring_reed| image:: /img/wiring/wiring_reed.png
 .. |wiring_mpr121| image:: /img/wiring/wiring_mpr121.png
+.. |wiring_mpr121_ar| image:: /img/wiring/wiring_mpr121_ar.png
+
 .. |wiring_mpu6050| image:: /img/wiring/wiring_mpu6050.png
+.. |wiring_mpu6050_ar| image:: /img/wiring/wiring_mpu6050_ar.png
+
 .. |wiring_rfid| image:: /img/wiring/wiring_rfid.png
 .. |wiring_dht11| image:: /img/wiring/wiring_dht11.png
 .. |wiring_ledmatrix_1| image:: /img/wiring/wiring_matrix_1.png
+    :width: 800
 .. |wiring_ledmatrix_2| image:: /img/wiring/wiring_matrix_2.png
+    :width: 800
 .. |wiring_ledmatrix_3| image:: /img/wiring/wiring_matrix_3.png
+    :width: 800
 .. |wiring_ledmatrix_4| image:: /img/wiring/wiring_matrix_4.png
+    :width: 800
 .. |wiring_irrecv| image:: /img/wiring/wiring_irrecv.png
 .. |wiring_pump| image:: /img/wiring/wiring_pump.png
 .. |wiring_s8050| image:: /img/wiring/wiring_transistor_s8050.png
@@ -293,14 +309,20 @@ rst_epilog += """
 .. |wiring_room_temp|  image:: /img/wiring/wiring_room_temp.png
 .. |wiring_alarm_siren_lamp| image:: /img/wiring/wiring_alarm_siren_lamp.png
 .. |wiring_digital_bubble_level|  image:: /img/wiring/wiring_digital_bubble_level.png
+    :width: 800
 .. |wiring_fruit_piano|  image:: /img/wiring/wiring_fruit_piano.png
+    :width: 800
 .. |wiring_game_10_second|  image:: /img/wiring/wiring_game_10_second.png
+    :width: 800
 .. |wiring_game_guess_number|  image:: /img/wiring/wiring_game_guess_number.png
+    :width: 800
 .. |wiring_somatosensory_controller|  image:: /img/wiring/wiring_motion_control.png
 .. |wiring_passager_counter|  image:: /img/wiring/wiring_passager_counter.png
 .. |wiring_reversing_aid|  image:: /img/wiring/wiring_reversing_aid.png
 .. |wiring_rfid_music_player|  image:: /img/wiring/wiring_rfid_music_player.png
+    :width: 800
 .. |wiring_traffic_light|  image:: /img/wiring/wiring_traffic_light.png
+    :width: 800
 .. |wiring_run_reset|  image:: /img/wiring/wiring_run_reset.png
 
 
@@ -320,7 +342,8 @@ rst_epilog += """
 .. |sch_slide| image:: /img/schematic/sch_reading_button_value4.png   
 .. |sch_limit_sw| image:: /img/schematic/sch_reading_button_value5.png 
 .. |sch_led| image:: /img/schematic/sch_hello_led.png   
-.. |sch_lcd| image:: /img/schematic/sch_liquid_crystal_display.png
+.. |sch_lcd| image:: /img/schematic/sch_lcd.png
+.. |sch_lcd_ar| image:: /img/schematic/sch_lcd_ar.png
 .. |sch_ws2812| image:: /img/schematic/sch_rgb_led_strip.png
 .. |sch_pot| image:: /img/schematic/sch_turn_the_knob.png
 .. |sch_rgb| image:: /img/schematic/sch_colorful_light.png
@@ -328,7 +351,9 @@ rst_epilog += """
 .. |sch_temp| image:: /img/schematic/sch_thermometer.png
 .. |sch_ultrasonic| image:: /img/schematic/sch_measuring_distance.png
 .. |sch_4dig| image:: /img/schematic/sch_time_counter.png
-.. |sch_keypad| image:: /img/schematic/sch_4x4_keypad.png
+    :width: 800
+.. |sch_keypad| image:: /img/schematic/sch_keypad.png
+.. |sch_keypad_ar| image:: /img/schematic/sch_keypad_ar.png
 .. |sch_joystick| image:: /img/schematic/sch_toggle_the_joystick.png
 .. |sch_motor| image:: /img/schematic/sch_small_fan.png
 .. |sch_water| image:: /img/schematic/sch_feel_the_water_level.png
@@ -336,8 +361,10 @@ rst_epilog += """
 .. |sch_pir| image:: /img/schematic/sch_detect_human_movement.png
 .. |sch_ledbar| image:: /img/schematic/sch_display_the_level.png
 .. |sch_reed| image:: /img/schematic/sch_feel_the_magnetism.png
-.. |sch_mpr121| image:: /img/schematic/sch_electrode_keyboard.png
-.. |sch_mpu6050| image:: /img/schematic/sch_6-axis_motion_tracking.png
+.. |sch_mpr121| image:: /img/schematic/sch_mpr121.png
+.. |sch_mpr121_ar| image:: /img/schematic/sch_mpr121_ar.png
+.. |sch_mpu6050| image:: /img/schematic/sch_mpu6050.png
+.. |sch_mpu6050_ar| image:: /img/schematic/sch_mpu6050_ar.png
 .. |sch_rfid| image:: /img/schematic/sch_rfid.png
 .. |sch_irremote| image:: /img/schematic/sch_ir_remote_control.png
 .. |sch_dht11| image:: /img/schematic/sch_dht11.png
@@ -359,9 +386,12 @@ rst_epilog += """
 .. |sch_guess_number| image:: /img/schematic/sch_guess_number.png
 .. |sch_music_player| image:: /img/schematic/sch_music_player.png
 .. |sch_fruit_piano| image:: /img/schematic/sch_fruit_piano.png
+    :width: 800
 .. |sch_reversing_aid| image:: /img/schematic/sch_reversing_aid.png
 .. |sch_somato| image:: /img/schematic/sch_somato.png
 .. |sch_bubble_level| image:: /img/schematic/sch_bubble_level.png
+    :width: 800
+
 """
 
 # phonomenon pic
@@ -602,6 +632,10 @@ rst_epilog += """
 # open link in a new window
 
 rst_epilog += """
+
+.. |link_heat_index| raw:: html
+
+    <a href="https://en.wikipedia.org/wiki/Heat_index" target="_blank">heat index</a>
 
 .. |link_sf_facebook| raw:: html
 

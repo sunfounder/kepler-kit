@@ -14,16 +14,15 @@
 
 lesson 15:  For Loops in Micropython
 ==========================================================================
-
 This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W:
 
-* **Introduction to For Loops**: Explains the difference between for loops and while loops, and when to use each type of loop. Highlights the usefulness of for loops in cases where a specified number of iterations is needed.
-* **Basic For Loop Syntax**: Demonstrates the basic syntax of a for loop in MicroPython, showing how to loop through a range of numbers. Explains the importance of specifying the start, stop, and step values in the range function.
-* **Looping Through Arrays**: Shows how to use for loops to iterate through arrays, including arrays with numbers, floating point numbers, and strings. Illustrates the flexibility of for loops in handling different data types.
-* **Nested Loops**: Introduces nested loops, where one loop runs inside another. Provides examples of how nested loops can be used to iterate through multi-dimensional arrays or perform complex operations.
-* **Practical Example with Hardware**: Connects the Raspberry Pi Pico W to an LED and demonstrates how to use a for loop to control the blinking of the LED. Shows how to get user input for the number of blinks and use a for loop to execute the blinking sequence.
-* **Combining Loops and User Input**: Combines user input with for loops to create more dynamic programs. Illustrates how to convert user input from strings to integers to avoid common errors.
-* **Homework Assignment**: Assigns a project where the user needs to replace the LED with an RGB LED and write a program that asks for the number of colors to display. The program should then ask for each color and display them in sequence on the RGB LED. The colors should include red, green, blue, cyan, magenta, yellow, orange, white, and off.
+* **Introduction to For Loops**: Explains the difference between for and while loops, highlighting when to use each.
+* **Basic For Loop Syntax**: Demonstrates looping through a range of numbers and explains the start, stop, and step values.
+* **Looping Through Arrays**: Shows how to iterate through arrays with different data types like numbers and strings.
+* **Nested Loops**: Introduces nested loops and their use in multi-dimensional arrays or complex operations.
+* **Practical Example with Hardware**: Uses a for loop to control LED blinking based on user input.
+* **Combining Loops and User Input**: Combines user input with loops for dynamic programs, converting strings to integers.
+* **Homework Assignment**: Replace the LED with an RGB LED, ask for a sequence of colors, and display them using a for loop.
 
 **Video**
 

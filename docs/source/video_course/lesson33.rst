@@ -17,22 +17,12 @@ lesson 33 : Display the HSV Color Wheel on an RGB LED
 
 This tutorial covers displaying the HSV (Hue, Saturation, Value) color wheel on an RGB LED using the Raspberry Pi Pico W:
 
-* **Introduction to HSV Color Wheel**:
- - Introduction to the concept of HSV color representation and its importance in visualizing temperature data.
- - Explanation of the HSV color wheel and how different angles represent different colors.
-* **Project Setup and Goal**:
- - Recap of the previous lesson where a remote sensorless weather station was built using the Raspberry Pi Pico W and an OLED display.
- - Introduction to the new objective of displaying a visual representation of temperature using an RGB LED.
-* **Understanding HSV to RGB Conversion**:
- - Detailed explanation of the HSV color wheel, focusing on angles and corresponding colors.
- - Explanation of the mathematical conversion from HSV to RGB values.
-* **Algorithm Development**:
- - Step-by-step breakdown of how to convert HSV angles to RGB values.
- - Explanation of how to map temperature values to specific angles on the HSV color wheel.
- - Practical application of this algorithm to the RGB LED to display temperature data.
-* **Homework Assignment**:
- - Task to write a function that converts an angle from the HSV color wheel to RGB values.
- - Encouragement to use the RGB LED to visually represent weather conditions, such as temperature and wind speed.
+* **Introduction to HSV Color Wheel**: Overview of HSV color representation and its relevance for visualizing temperature data.
+* **Project Setup and Goal**: Recap of the remote weather station project and the new goal of displaying temperature using an RGB LED.
+* **Understanding HSV to RGB Conversion**: Explanation of HSV color wheel angles and the process of converting HSV to RGB.
+* **Algorithm Development**: Step-by-step guide for mapping temperature to HSV angles and converting them to RGB for the LED.
+* **Homework Assignment**: Write a function to convert HSV angles to RGB and use the RGB LED to represent weather conditions like temperature.
+
 
 
 

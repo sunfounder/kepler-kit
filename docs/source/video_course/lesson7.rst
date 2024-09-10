@@ -17,11 +17,11 @@ lesson 7:  Controlling 3 LED with a Potentiometer in Micropython
 
 This tutorial covers using a potentiometer to control three LEDs (green, yellow, and red) with the Raspberry Pi Pico W:
 
-* **Homework Solution Review**: Recaps the previous assignment to connect a potentiometer and three LEDs, and map the potentiometer readings from 0 to 100 to control the LEDs based on the input values.
-* **Circuit Setup**: Provides a detailed wiring diagram and setup for connecting the potentiometer and LEDs to the Raspberry Pi Pico W. Includes creating ground and 3.3V rails, and connecting the components to the appropriate GPIO pins.
-* **Reading and Mapping Potentiometer Values**: Demonstrates how to read analog values from the potentiometer and map them from their original range (432 to 65,535) to a 0 to 100 scale using mathematical equations.
-* **Conditional Logic for LED Control**: Implements if statements to control the LEDs based on the potentiometer readings:Green LED for values between 0 and 79.Yellow LED for values between 80 and 94.Red LED for values between 95 and 100.
-* **Practical Demonstration**: Shows the working circuit and code in action, with the LEDs lighting up based on the potentiometer's position.
+* **Homework Solution Review**: Recap of connecting a potentiometer and three LEDs, mapping readings from 0 to 100.
+* **Circuit Setup**: Wiring diagram for connecting the potentiometer and LEDs to the Raspberry Pi Pico W.
+* **Reading and Mapping Values**: Reading analog values and mapping them from 432-65,535 to a 0-100 scale.
+* **LED Control**: Using if statements to control LEDs based on the potentiometer's position (green for 0-79, yellow for 80-94, red for 95-100).
+* **Practical Demonstration**: Showcasing the circuit and code in action.
 
 **Video**
 

@@ -90,10 +90,8 @@ When the PIR module detects someone passing by, GP14 will be high, otherwise it 
 
 .. note::
 
-   * You can open the file ``2.10_detect_human_movement.ino`` under the path of ``kepler-kit-main/arduino/2.10_detect_human_movement``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``2.10_detect_human_movement.ino`` under the path of ``kepler-kit-main/arduino/2.10_detect_human_movement``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

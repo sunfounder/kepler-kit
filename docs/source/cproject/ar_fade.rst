@@ -117,10 +117,8 @@ This project is the same circuit as the first project :ref:`ar_led`, but the sig
 
 .. note::
 
-   * You can open the file ``2.3_fading_led.ino`` under the path of ``kepler-kit-main/arduino/2.3_fading_led``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``2.3_fading_led.ino`` under the path of ``kepler-kit-main/arduino/2.3_fading_led``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

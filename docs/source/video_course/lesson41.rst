@@ -16,20 +16,12 @@ lesson 41 : Inferring Tilt From a 3 Axis Accelerometer
 =============================================================================
 This tutorial covers measuring acceleration in three axes using the MPU6050 sensor with the Raspberry Pi Pico W:
 
-* **Introduction**:
- - Measuring acceleration in X, Y, and Z axes.
- - Understanding the Z-axis acceleration due to gravity.
-* **Review of Previous Lesson**:
- - Recap of measuring X and Y axes acceleration.
- - Homework assignment: measure and predict Z-axis behavior.
-* **Z-Axis Acceleration**:
- - Explanation of 1G acceleration in the Z-axis when stationary due to gravity.
- - Demonstration of tilting the sensor affecting X, Y, and Z readings.
-* **Practical Application**:
- - Using the sensor to measure tilt (pitch and roll) for applications in carpentry, off-roading, and aviation.
-* **Homework Assignment**:
- - Calculate tilt angles (pitch and roll) using sensor data.
- - Apply mathematical concepts from previous lessons.
+* **Introduction**: Measuring acceleration in X, Y, and Z axes, focusing on Z-axis due to gravity.
+* **Review of Previous Lesson**: Recap of X and Y axes acceleration and homework on Z-axis prediction.
+* **Z-Axis Acceleration**: Explains 1G acceleration in Z-axis when stationary and how tilting affects sensor readings.
+* **Practical Application**: Using the sensor for tilt measurement (pitch and roll) in carpentry, off-roading, and aviation.
+* **Homework Assignment**: Calculate tilt angles (pitch and roll) using sensor data and apply previous math concepts.
+
 
 
 **Video**

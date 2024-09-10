@@ -17,26 +17,13 @@ lesson 32: Mobile Weather Station Project
 
 This tutorial covers creating a portable weather station using the Raspberry Pi Pico W:
 
-* **Connecting to WiFi**:
- - Import necessary libraries.
- - Create a WLAN object and connect to the WiFi network.
-* **Fetching Weather Data**:
- - Use the OpenWeatherMap API to fetch real-time weather data.
- - Obtain an API key from OpenWeatherMap by signing up for a free account.
-* **Parsing JSON Data**:
- - Extract relevant weather information such as temperature, humidity, barometric pressure, sunrise, and sunset times.
-* **Displaying Data on OLED**:
- - Set up an OLED display and connect it to the Raspberry Pi Pico W.
- - Use the `ssd1306` library to display weather data on the OLED screen.
- - Create a loop to periodically update the weather data on the screen.
-* **Powering the Device**:
- - Connect the Raspberry Pi Pico W to a battery for portable use.
-* **Code Explanation**:
- - Step through initializing the OLED display and connecting to WiFi.
- - Fetch and parse weather data, then display it on the OLED screen.
- - Implement a loop to update the weather data every few minutes.
-* **Homework Assignment**:
- - Enhance the project by adding an RGB LED to visually indicate weather conditions such as temperature, humidity, or wind speed.
+* **Connecting to WiFi**: Import libraries, create a WLAN object, and connect to WiFi.
+* **Fetching Weather Data**: Use OpenWeatherMap API to retrieve real-time weather data, requiring an API key.
+* **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
+* **Displaying Data on OLED**: Set up and connect an OLED display, use the ``ssd1306`` library, and update weather data on the screen in a loop.
+* **Powering the Device**: Power the Raspberry Pi Pico W with a battery for portability.
+* **Code Explanation**: Initialize the OLED, connect to WiFi, fetch and display weather data, and set a loop for periodic updates.
+* **Homework Assignment**: Add an RGB LED to indicate weather conditions based on temperature, humidity, or wind speed.
 
 
 

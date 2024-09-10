@@ -81,21 +81,22 @@ You can also buy them separately from the links below.
 
 **Schematic**
 
-|sch_mpu6050|
+|sch_mpu6050_ar|
 
 **Wiring**
 
-|wiring_mpu6050|
+|wiring_mpu6050_ar|
 
 **Code**
 
 .. note::
 
-    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``kepler-kit-main/arduino/6.3_6axis_motion_tracking``. 
+    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``euler-kit/arduino/6.3_6axis_motion_tracking``. 
     * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Adafruit_MPU6050`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    * The ``Adafruit MPU6050`` library is used here, you can install it from the **Library Manager**.
 
+      .. image:: img/lib_mpu6050.png
 
 .. raw:: html
     

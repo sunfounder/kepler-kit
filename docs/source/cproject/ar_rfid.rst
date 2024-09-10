@@ -90,48 +90,27 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``MFRC522`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+   * The ``MFRC522`` library is used here, you can install it from the **Library Manager**.
 
+      .. image:: img/lib_mfrc522.png
 
 The main function is divided into two:
 
-* ``6.5_rfid_write.ino``: Used to write information to the card (or key).
-* ``6.5_rfid_read.ino``: used to read the information in the card (or key)
+* ``6.5_rfid_write`` to write information to the card (or key).
 
-.. note::
-
-   * You can open the file ``6.5_rfid_write.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_write``. 
-   * Or copy this code into **Arduino IDE**.
-
-   
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
-
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+  After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
 
-.. note::
+* ``6.5_rfid_read`` to read the information from the card (or key).
 
-   * You can open the file ``6.5_rfid_read.ino`` under the path of ``kepler-kit-main/arduino/6.5_rfid_read``. 
-   * Or copy this code into **Arduino IDE**.
-
-   
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
-After running, you will be able to read the message stored in the card (or key).
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+  After running, you will be able to read the message stored in the card (or key).
 
 
 **How it works?**
@@ -140,8 +119,8 @@ After running, you will be able to read the message stored in the card (or key).
 
     #include <MFRC522.h>
 
-    #define RST_PIN         0
-    #define SS_PIN          5
+    #define RST_PIN         9
+    #define SS_PIN          17
 
     MFRC522 mfrc522(SS_PIN, RST_PIN);
 

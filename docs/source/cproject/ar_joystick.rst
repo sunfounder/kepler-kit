@@ -97,10 +97,8 @@ The SW pin is connected to a 10K pull-up resistor, the reason is to be able to g
 
 .. note::
 
-   * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
     

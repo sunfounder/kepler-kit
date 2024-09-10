@@ -16,26 +16,12 @@ lesson 39 : Practical Trigonometry for Easy Problem Solving
 =============================================================================
 This tutorial covers practical trigonometry necessary for real-life applications using the Raspberry Pi Pico W:
 
-* **Introduction to Practical Trigonometry**:
- - Recap of previous lesson on trigonometry, focusing on understanding circles and angles.
- - Explanation of using trigonometry to solve problems involving the MPU 6050 sensor for tilt measurement.
-* **Key Concepts**:
- - Understanding trigonometric functions (sine, cosine) in relation to circles.
- - Converting between degrees and radians for calculations.
- - Using trigonometric functions to find coordinates (x, y) on a circle based on an angle.
- - Calculating angles from given coordinates using arc functions (arcsine, arccosine).
-* **Applying Trigonometry to Real-World Problems**:
- - Explanation of hypotenuse, adjacent, and opposite sides in right triangles.
- - Rewriting trigonometric equations using hypotenuse, adjacent, and opposite sides.
- - Solving vector problems and inclined plane problems using trigonometry.
- - Example problems demonstrating practical applications.
-* **Summary and Homework**:
- - Recap of key trigonometric equations and concepts.
- - Homework assignment to practice finding sine and cosine values for specific angles without using a calculator.
- - Emphasis on understanding the concepts to apply them in future projects involving the MPU 6050 sensor.
-* **Next Steps**:
- - Preview of upcoming lessons on using the MPU 6050 sensor for tilt measurement projects.
- - Encouragement to review and understand the trigonometry concepts for successful project implementation.
+* **Introduction**: Recap of trigonometry basics, focusing on applying it to the MPU 6050 sensor for tilt measurement.
+* **Key Concepts**: Explains sine, cosine, and converting between degrees and radians, plus calculating angles using arc functions.
+* **Applying Trigonometry**: Uses trigonometry to solve vector and inclined plane problems.
+* **Summary and Homework**: Practice finding sine and cosine values for angles without a calculator.
+* **Next Steps**: Preview of lessons on using the MPU 6050 for tilt measurements.
+
 
 
 

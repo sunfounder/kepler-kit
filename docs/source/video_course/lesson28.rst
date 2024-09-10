@@ -17,24 +17,13 @@ lesson 28: Connecting the Raspberry Pi Pico W to WiFi
 
 This tutorial covers setting up a client-server relationship between a Raspberry Pi Pico W and a PC over Wi-Fi:
 
-* **Introduction**:
- - Highlights the goal: connecting the Raspberry Pi Pico W to Wi-Fi and creating a client-server relationship with a PC.
-* **Understanding Client-Server Relationship**:
- - Explains the concept using the analogy of a server and client at McDonald's.
- - Clarifies that the PC will be the client, and the Raspberry Pi Pico W will be the server.
-* **Setting Up the Raspberry Pi Pico W as a Server**:
- - Details the necessary libraries and steps to create a Wi-Fi network.
- - Explains how to connect to Wi-Fi and retrieve an IP address.
- - Describes setting up a UDP server on the Raspberry Pi Pico W and binding it to the IP address and port.
-* **Creating a Client on the PC**:
- - Provides code for the PC client to connect to the Raspberry Pi Pico W server.
- - Explains sending commands from the client to the server.
-* **Sending and Receiving Data**:
- - Shows how the server receives commands from the client and decodes them.
- - Demonstrates sending a response back from the server to the client.
-* **Practical Demonstration**:
- - Runs the server and client programs, showing the interaction and data exchange.
- - Displays a battery-powered Raspberry Pi Pico W with an OLED display showing its IP address.
+* **Introduction**: Goal is to connect the Raspberry Pi Pico W to Wi-Fi and establish a client-server relationship with a PC.
+* **Understanding Client-Server Relationship**: Uses a McDonald's analogy to explain the concept, with the PC as the client and the Pico W as the server.
+* **Setting Up the Raspberry Pi Pico W as a Server**: Explains how to connect to Wi-Fi, retrieve an IP address, and set up a UDP server.
+* **Creating a Client on the PC**: Provides code for the PC client to send commands to the Raspberry Pi Pico W server.
+* **Sending and Receiving Data**: Shows how the server decodes client commands and sends responses.
+* **Practical Demonstration**: Runs the server and client, showing data exchange with the Pico W displaying its IP on an OLED.
+
 
 
 **Video**

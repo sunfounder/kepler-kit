@@ -133,13 +133,9 @@ At this point, the relay will be able to control the load circuit on and off.
 
 .. note::
 
-   * You can open the file ``2.16_relay.ino`` under the path of ``kepler-kit-main/arduino/2.16_relay``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``2.16_relay.ino`` under the path of ``kepler-kit-main/arduino/2.16_relay``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
 
 .. raw:: html
     

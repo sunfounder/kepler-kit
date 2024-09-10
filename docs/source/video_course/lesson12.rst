@@ -14,13 +14,12 @@
 
 lesson 12:  Create a Dimmable LED in Micropython
 ==========================================================================
+This tutorial covers controlling LED brightness using a potentiometer and PWM on the Raspberry Pi Pico W:
 
-This tutorial covers controlling LED brightness using a potentiometer and PWM (Pulse Width Modulation) on the Raspberry Pi Pico W:
-
-* **LED Brightness Control**: Explains controlling LED brightness using PWM. Discusses digital signals, duty cycles, and how varying duty cycles control LED brightness. Introduces the concept of exponential scaling to make the LED brightness perception more linear to the human eye.
-* **Wiring Diagram and Setup**: Provides a detailed wiring diagram for connecting a potentiometer and an LED with a 220 Ohm resistor to the Raspberry Pi Pico W. Demonstrates the physical setup on a breadboard.
-* **Code Explanation**: Describes the code for setting up PWM on a GPIO pin, reading the analog value from a potentiometer, and converting it to the corresponding PWM duty cycle. Explains the use of libraries, PWM objects, and frequency settings.
-* **Practical Demonstration**: Shows how to measure and visualize the PWM signal using an oscilloscope, illustrating how different duty cycles correspond to different average voltages. Demonstrates the effect of using exponential scaling for smoother brightness transitions.
+* **LED Brightness Control**: Explains controlling brightness with PWM and introduces exponential scaling for smoother brightness perception.
+* **Wiring Diagram and Setup**: Detailed diagram for connecting a potentiometer and LED with a 220 Ohm resistor to the Pico W.
+* **Code Explanation**: Code setup for PWM, reading analog values from the potentiometer, and converting them to PWM duty cycles.
+* **Practical Demonstration**: Shows how to visualize PWM signals with an oscilloscope and demonstrates the effect of exponential scaling on brightness transitions.
 
 
 **Video**

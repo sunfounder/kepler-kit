@@ -14,7 +14,7 @@
 
 .. _ar_keypad:
 
-4.2 4x4 Keypad
+4.2 - 4x4 Keypad
 ========================
 
 The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
@@ -82,9 +82,7 @@ You can also buy them separately from the links below.
 
 **Schematic**
 
-|sch_keypad|
-
-4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+|sch_keypad_ar|
 
 The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
 
@@ -93,20 +91,19 @@ For example, if G6 is read high, then numeric key 1 is pressed; this is because 
 
 **Wiring**
 
-|wiring_keypad|
-
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
-
+|wiring_keypad_ar|
 
 **Code**
 
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
+    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``euler-kit/arduino/4.2_4x4_keypad``. 
     * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Keypad`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    * The ``Adafruit Keypad`` library is used here, you can install it from the **Library Manager**.
+
+      .. image:: img/lib_ad_keypad.png
 
 .. raw:: html
     
@@ -118,28 +115,71 @@ After the program runs, the Shell will print out the keys you pressed on the Key
 
 **How it works**
 
-By calling the ``Keypad.h`` library, you can easily use Keypad.
+1. Including the Library
 
-.. code-block:: arduino
+   We start by including the ``Adafruit_Keypad`` library, which allows us to easily interface with the keypad.
 
-    #include <Keypad.h> 
+   .. code-block:: arduino
 
-Library Functions: 
+     #include "Adafruit_Keypad.h"
 
-.. code-block:: arduino
+2. Keypad Configuration
 
-    Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
+   .. code-block:: arduino
 
-Initializes the internal keymap to be equal to ``userKeymap``.
+     const byte ROWS = 4;
+     const byte COLS = 4;
+     char keys[ROWS][COLS] = {
+       { '1', '2', '3', 'A' },
+       { '4', '5', '6', 'B' },
+       { '7', '8', '9', 'C' },
+       { '*', '0', '#', 'D' }
+     };
+     byte rowPins[ROWS] = { 2, 3, 4, 5 };
+     byte colPins[COLS] = { 8, 9, 10, 11 };
 
-``userKeymap``: The symbols on the buttons of the keypads.
+   - The ``ROWS`` and ``COLS`` constants define the dimensions of the keypad. 
+   - ``keys`` is a 2D array storing the label for each button on the keypad.
+   - ``rowPins`` and ``colPins`` are arrays that store the Arduino pins connected to the keypad rows and columns.
 
-``row``, ``col``: Pin configuration.
+   .. raw:: html
 
-``numRows``, ``numCols``: Keypad sizes.
+      <br/>
 
-.. code-block:: arduino
 
-    char getKey()
+3. Initialize Keypad
 
-Returns the key that is pressed, if any. This function is non-blocking.
+   Create an instance of ``Adafruit_Keypad`` called ``myKeypad`` and initialize it.
+
+   .. code-block:: arduino
+
+     Adafruit_Keypad myKeypad = Adafruit_Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+4. setup() Function
+
+   Initialize Serial communication and the custom keypad.
+
+   .. code-block:: arduino
+
+     void setup() {
+       Serial.begin(9600);
+       myKeypad.begin();
+     }
+
+5. Main Loop
+
+   Check for key events and display them in the Serial Monitor.
+
+   .. code-block:: arduino
+
+     void loop() {
+       myKeypad.tick();
+       while (myKeypad.available()) {
+         keypadEvent e = myKeypad.read();
+         Serial.print((char)e.bit.KEY);
+         if (e.bit.EVENT == KEY_JUST_PRESSED) Serial.println(" pressed");
+         else if (e.bit.EVENT == KEY_JUST_RELEASED) Serial.println(" released");
+       }
+       delay(10);
+     }
+

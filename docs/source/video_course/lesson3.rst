@@ -15,13 +15,12 @@
 lesson 3:  Understanding and Using Binary Numbers
 =================================================================
 
-This tutorial covers the basics of binary numbers and how they are used in computing, specifically focusing on creating a binary counter using LEDs with the Raspberry Pi Pico W.
+This tutorial covers the basics of binary numbers and how they are used in computing, focusing on creating a binary counter with LEDs using the Raspberry Pi Pico W.
 
-* **Introduction**: Overview of the tutorial series and sponsor shoutout to SunFounder.
-* **Importance of Binary Numbers**: Explanation of why binary numbers are fundamental in computing, highlighting the on-off nature of digital switches.
-* **Counting in Binary**: Detailed explanation of how to count in binary using only two symbols: 0 and 1. Demonstrates the concept of place values and how binary numbers represent decimal numbers.
-* **Binary Arithmetic**: Shows how to perform addition, subtraction, multiplication, and division using binary numbers. Validates the correctness of binary arithmetic by converting results back to decimal.
-* **Binary Representation of Data**: Discusses how binary numbers are used to represent colors, pictures, and videos in computers. Introduces the concept of grayscale and RGB color models.
+* **Binary Basics**: Explanation of binary numbers and their role in computing.
+* **Counting in Binary**: Demonstrates binary counting using 0 and 1.
+* **Binary Arithmetic**: Shows binary addition, subtraction, multiplication, and division.
+* **Data Representation**: Discusses how binary represents colors, pictures, and videos in computers.
 
 
 **Video**

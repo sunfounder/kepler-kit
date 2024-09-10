@@ -17,10 +17,11 @@ lesson 59 : Controlling a Servo with a Joystick
 
 This tutorial covers controlling a servo with a joystick using the Raspberry Pi Pico W:
 
-* **Wiring Setup**:Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, VRY to GPIO pin 26.Connect servo 5V to pin 40, ground to pin 38, and control to GPIO pin 15.
-* **Code Implementation**:Import necessary libraries (`machine`, `time`, `math`).Set up ADC for joystick axes and PWM for the servo.Read and print joystick values for calibration and angle calculation.
-* **Calibration and Control**: Convert raw ADC values to a scale from -100 to +100.Calculate the joystick's angle using trigonometry.Map the angle to the appropriate PWM value for the servo.
-* **Homework Assignment**:Write a program to control a servo motor based on the joystick's angle, ensuring accurate tracking between 0 and 180 degrees.
+
+* **Wiring Setup**: Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO 27, VRY to GPIO 26. Connect servo 5V to pin 40, ground to pin 38, control to GPIO 15.
+* **Code Implementation**: Import ``machine``, ``time``, ``math``. Set up ADC for joystick and PWM for servo. Read and print joystick values.
+* **Calibration and Control**: Scale ADC values to -100 to +100. Calculate joystick angle. Map angle to PWM for servo.
+* **Homework Assignment**: Write code to control servo from joystick angle (0-180 degrees).
 
 
 **Video**

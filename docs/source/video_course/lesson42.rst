@@ -16,24 +16,13 @@ lesson 42 : Measuring Tilt With an MPU6050 Accelerometer
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure and calculate tilt angles:
 
-* **Introduction**:
-   - Measuring acceleration in X, Y, and Z axes with the MPU6050.
-   - Setting up the hardware and software.
-* **Previous Lesson Recap**:
-   - Measuring X, Y, Z axes acceleration.
-   - Homework to calculate tilt based on accelerometer data.
-* **Z-Axis Acceleration**:
-   - 1G acceleration in the Z-axis due to gravity when stationary.
-   - Tilt affects X, Y, and Z readings.
-* **Calculating Tilt Angles**:
-   - Using trigonometry to derive equations for tilt angles (pitch and roll).
-   - Implementing equations in Python to measure tilt.
-* **Practical Application**:
-   - Testing code for accurate tilt measurement.
-   - Homework to modify code for positive and negative pitch and roll.
-* **Conclusion**:
-   - Encouragement to understand principles rather than relying on libraries.
-   - Support through Patreon and sharing the video.
+* **Introduction**: Measuring acceleration in X, Y, and Z axes with MPU6050, and setting up hardware and software.
+* **Previous Lesson Recap**: Recap of measuring accelerations and homework on tilt calculation.
+* **Z-Axis Acceleration**: Explains 1G acceleration in the Z-axis due to gravity and tilt effects on readings.
+* **Calculating Tilt Angles**: Uses trigonometry to derive tilt equations (pitch and roll) and implements in Python.
+* **Practical Application**: Tests code for tilt accuracy and homework to refine pitch and roll measurements.
+* **Conclusion**: Emphasizes understanding concepts over using libraries, and encourages support via Patreon.
+
 
 
 

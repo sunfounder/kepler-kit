@@ -17,23 +17,11 @@ lesson 23:  Temperature and Humidity Sensor with LCD Display
 
 This tutorial covers creating a temperature and humidity project using the Raspberry Pi Pico W and DHT-11 sensor with an LCD display:
 
-* **Introduction**: introduces the tutorial, acknowledges the sponsor SunFounder, and reviews the goal of the lesson, which is to create a temperature and humidity sensor project with an LCD display.
-* **Component Introduction and Setup**:
- - Describes the required components: Raspberry Pi Pico W, DHT-11 sensor, push button, and LCD 1602 display.
- - Provides a schematic and instructions for connecting these components, referring to previous lessons for detailed wiring instructions.
-* **Library Installation**:
- - Guides on how to download and install the necessary library for the LCD 1602 display from toptechboy.com.
- - Provides instructions to save and import the library in Thonny IDE.
-* **Code Explanation**:
- - Describes setting up the DHT-11 sensor and push button using GPIO pins.
- - Introduces a flag variable for toggling between Celsius and Fahrenheit.
- - Explains the code for reading temperature and humidity from the DHT-11 sensor.
- - Details the implementation of a toggle function to switch between Celsius and Fahrenheit.
- - Explains how to display the readings on both the console and the LCD.
-* **Practical Demonstration**:
- - Shows the program in action, displaying temperature and humidity readings on the LCD.
- - Demonstrates the toggle functionality to switch between Celsius and Fahrenheit.
- - Addresses potential issues with text overlap on the LCD by adding spaces and using `LCD.clear()` to clear the screen before writing new text.
+* **Introduction**: Introduces the project to create a temperature and humidity sensor with an LCD display.
+* **Component Setup**: Connects the Raspberry Pi Pico W, DHT-11 sensor, push button, and LCD.
+* **Library Installation**: Installs the LCD 1602 library from toptechboy.com.
+* **Code Explanation**: Sets up DHT-11, toggle for Celsius/Fahrenheit, and displays readings on the LCD.
+* **Practical Demonstration**: Shows readings on the LCD and toggle functionality, addressing text overlap issues.
 
 
 **Video**

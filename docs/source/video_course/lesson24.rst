@@ -17,30 +17,14 @@ lesson 24:  Power Portable Projects with LiPo Rechargeable Battery
 
 This tutorial covers powering a Raspberry Pi Pico W project with a rechargeable LiPo battery, making the project portable:
 
-* **Introduction**: introduces the tutorial, acknowledging the sponsor SunFounder, and reviews the goal of the lesson: making the DHT-11 temperature and humidity sensor project portable.
-* **Component Review and Setup**:
- - Recaps the previous project setup: Raspberry Pi Pico W, DHT-11 sensor, push button, and LCD 1602 display.
- - Discusses the need to remove the USB cable and power the project using a LiPo battery.
-* **Library Installation**:
- - Guides viewers on how to install the LCD 1602 library if they haven't already.
-* **Code Explanation**:
- - Describes the necessity of saving the program as `main.py` so it runs automatically when the Pico W is powered.
- - Demonstrates saving the code and verifying its functionality.
-* **Powering the Project with a Battery**:
- - Introduces the rechargeable LiPo battery and the battery holder from the SunFounder Kepler kit.
- - Details connecting the battery to the Pico W using a power management module included in the kit.
- - Explains adjusting the LCD power connection from 5V (pin 40) to 3.7V (pin 39) due to the battery output.
- - Shows the setup and verifies the project runs correctly on battery power.
-* **Adjustments and Demonstration**:
- - Demonstrates adjusting the LCD contrast for optimal display when powered by the battery.
- - Shows the project working correctly, including toggling between Fahrenheit and Celsius.
-* **Conclusion and Next Steps**:
- - Encourages viewers to ensure their project is working and introduces the idea of using an OLED display for future lessons.
- - Recommends purchasing an OLED display for a more compact and energy-efficient setup.
- - Teases future lessons focused on creating portable, deployable projects with enhanced functionality.
-* **Homework and Final Notes**:
- - Suggests viewers order the OLED display to prepare for upcoming lessons.
- - Concludes with reminders to like, comment, subscribe, and share the video.
+* **Introduction**: Introduces the tutorial and goal of making the DHT-11 sensor project portable.
+* **Library Installation**: Guides on installing the LCD 1602 library.
+* **Code Explanation**: Saves the program as ``main.py`` for automatic startup.
+* **Powering the Project with a Battery**: Connects the LiPo battery and adjusts LCD power to 3.7V.
+* **Adjustments and Demonstration**: Adjusts LCD contrast and verifies the project on battery power.
+* **Conclusion and Next Steps**: Prepares for future lessons with OLED display.
+* **Homework and Final Notes**: Encourages ordering the OLED display and sharing the video.
+
 
 
 **Video**

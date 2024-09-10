@@ -17,18 +17,11 @@ lesson 74 :  Create a MicroPython Class for Controlling RGB LED
 
 This tutorial covers creating a MicroPython library for controlling an RGB LED with the Raspberry Pi Pico W:
 
-* **Wiring Setup**: 
-  - Connect the RGB LED to the Raspberry Pi Pico W:
-  - R leg to GPIO pin 14 through a 330 Ohm resistor.
-  - G leg to GPIO pin 13.
-  - B leg to GPIO pin 12 through a 330 Ohm resistor.
-  - Ground leg to the ground rail.
+* **Concept Overview**: Control RGB LED with a custom RGB_LED class using PWM.
+* **Example Implementation**: Connect RGB LED to GPIO pins, define a class to manage color changes via PWM, and prompt user input to adjust LED color.
+* **Homework Assignment**: Extend the RGB_LED class to add color patterns or more features. Ensure the main program remains simple and leverages the library.
+* **Key Takeaways**: Learn to structure code using custom classes for hardware control and handle user inputs efficiently in MicroPython.
 
-* **Code Implementation**: 
-* **Create Library**:Define a class `RGB_LED` in a MicroPython library to handle the RGB LED.Include a dictionary for color values within the class.Create methods for initializing the LED pins and setting the colors using PWM.
-* **Import Libraries**:Import necessary libraries (`machine`, `time`).Set up PWM for the RGB LED pins within the class methods.
-* **Main Program**:Import the custom library and create an object for the RGB LED.Use a while loop to continuously prompt the user to input a desired color.Validate the input and set the LED color accordingly.Implement error handling for invalid inputs and clean exit functionality using a keyboard interrupt.
-* **Homework Assignment**:Extend the program by adding more features to the MicroPython library, such as additional color settings or patterns, and ensure that the main program remains simple and easy to read by utilizing the library effectively.
 
 **Video**
 

@@ -17,11 +17,20 @@ lesson 64 :  Object Oriented Programming Example in MicroPython with LEDs
 
 This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W, focusing on controlling LEDs:
 
-* **Wiring Setup**:Connect a red LED to GPIO pin 15 and a green LED to GPIO pin 14, with 330-ohm resistors to the ground.
-* **Class and Methods**:1. Define an `LED` class to manage LED objects.2. Initialize the LED with the `__init__` method, setting up the pin.3. Implement a `blink` method to control the blinking of the LED.
-* **Code Implementation**:1. Import necessary libraries (`machine` and `time`).2. Create the `LED` class with the `__init__` and `blink` methods.3. Instantiate objects for the red and green LEDs.4. Use a loop to blink the LEDs according to specified parameters.
-* **Homework Assignment**:Create a class for a Servo motor, allowing easy control of its position. The class should include methods for initializing the Servo and setting its angle. Review lesson 36 for details on working with Servo motors in MicroPython.
 
+* **Wiring Setup**: Connect red LED to GPIO 15 and green LED to GPIO 14, with 330-ohm resistors to ground.
+* **Class and Methods**: 
+
+   1. Define an ``LED`` class.
+   2. Use ``__init__`` to set up the pin.
+   3. Implement ``blink`` method to control the LED.
+
+* **Code Implementation**: 
+
+   1. Import ``machine`` and ``time``.
+   2. Create ``LED`` class with ``__init__`` and ``blink``.
+   3. Instantiate red and green LEDs.
+  
 
 **Video**
 

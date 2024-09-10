@@ -16,19 +16,11 @@ lesson 45 : Calculating Height from a Dropped Object in Freefall
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure vertical distances:
 
-* **Setup**:
-   - Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W using the provided schematic. Ensure all connections are secure to avoid electrical noise.
-* **Concept**:
-   - Measure vertical distances by dropping the sensor and calculating the time it takes to fall (T_drop). Use the time in freefall to calculate the height dropped.
-* **Equation**:
-   - The height (H) is calculated using the formula: \( H = 16 \times (T_{drop})^2 \). Convert the drop time from milliseconds to seconds before applying the formula.
-* **Code Implementation**:
-   - Set up the MPU6050 and OLED 1306 libraries.
-   - Measure the Z-axis acceleration to detect when the sensor is in freefall (measuring 0G).
-   - Start a timer when the sensor is dropped and stop it when it hits the ground.
-   - Display the calculated height and drop time on the OLED.
-* **Practical Demonstration**:
-   - Test the setup by dropping the sensor from known heights and verifying the accuracy of the measurements. Adjust as needed to improve precision.
+* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W, ensuring secure connections to reduce noise.
+* **Concept**: Measure vertical distance by calculating the time (T_drop) in freefall and use it to determine the height dropped.
+* **Equation**: Calculate height (H) with \( H = 16 \times (T_{drop})^2 \), converting time from milliseconds to seconds.
+* **Code Implementation**: Set up libraries, measure Z-axis acceleration to detect 0G, start a timer during freefall, and display height and drop time on the OLED.
+* **Practical Demonstration**: Test by dropping the sensor from known heights and adjust for accuracy as needed.
 
 **Video**
 

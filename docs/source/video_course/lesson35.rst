@@ -16,23 +16,13 @@ lesson 35 : Remote Weather Station with RGB LED Temperature Indicator
 =============================================================================
 This tutorial covers integrating an RGB LED to display temperature data on a weather station using the Raspberry Pi Pico W:
 
-* **Project Overview**:
- - Build a remote weather station using Raspberry Pi Pico W, an OLED display, and an RGB LED to show temperature visually.
-* **HSV to RGB Conversion**:
- - Convert temperature values to colors using the HSV color wheel.
- - Map temperatures from -20°F (deep violet) to 120°F (red) to corresponding angles on the color wheel.
-* **Circuit Setup**:
- - Connect the OLED display and RGB LED to the Raspberry Pi Pico W.
- - Configure GPIO pins and PWM for the RGB LED.
-* **Coding**:
- - Fetch temperature data, calculate the hue angle, convert it to RGB values, and apply these to the RGB LED.
- - Integrate the HSV to RGB conversion library into the weather station code.
-* **Demonstration**:
- - Display temperature data on the OLED and RGB LED.
- - Save and run the code, making the setup portable with battery power.
-* **Conclusion**:
- - Customize the project by adjusting color mappings and temperature ranges.
- - Encouragement to subscribe, comment, and share the tutorial.
+* **Project Overview**: Build a remote weather station with Raspberry Pi Pico W, OLED display, and RGB LED to visually represent temperature.
+* **HSV to RGB Conversion**: Map temperatures from -20°F (violet) to 120°F (red) to angles on the HSV color wheel.
+* **Circuit Setup**: Connect the OLED display and RGB LED to the Raspberry Pi Pico W, configuring GPIO and PWM.
+* **Coding**: Fetch temperature data, calculate hue, convert to RGB, and control the RGB LED using the HSV to RGB conversion library.
+* **Demonstration**: Display temperature on the OLED and RGB LED, running the setup on battery power.
+* **Conclusion**: Customize the project with different color mappings and temperature ranges, and encourage interaction with the tutorial.
+
 
 
 **Video**

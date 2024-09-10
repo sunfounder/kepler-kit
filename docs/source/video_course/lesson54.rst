@@ -16,18 +16,11 @@ lesson 54 : Animated Dynamic Rainbow on NeoPixel in MicroPython
 =============================================================================
 This tutorial covers controlling a NeoPixel array with the Raspberry Pi Pico W using MicroPython:
 
-* **Introduction**:
-   - Overview of NeoPixel array with 8 LEDs.
-   - Simple wiring: 5V, GND, and Data pin connected to GPIO pin 0.
-* **Programming Basics**:
-   - Import necessary libraries: `neopixel` and `machine`.
-   - Setup NeoPixel object, define colors, and demonstrate controlling individual pixels.
-* **Animating the NeoPixel Array**:
-   - Code to create a running pixel animation on a colored background.
-   - Explanation of forward and backward looping for smooth animation.
-* **Advanced Animation**:
-   - Homework assignment: Create a smooth rainbow color transition using the HSV color wheel.
-   - Encourage experimenting with various animations and patterns.
+* **Introduction**: Overview of an 8-LED NeoPixel array, connected to 5V, GND, and GPIO pin 0.
+* **Programming Basics**: Import ``neopixel`` and ``machine`` libraries, set up the NeoPixel object, and control individual LEDs with color.
+* **Animating the NeoPixel Array**: Code for running pixel animation with forward and backward looping for smooth effects.
+* **Advanced Animation**: Homework to create a rainbow transition using the HSV color wheel, encouraging experimentation with animations.
+
 
 
 **Video**

@@ -17,11 +17,10 @@ lesson 61 : How to Write Modular Code With Micropython Functions
 
 This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:
 
-* **Concept Overview**:Introduction to modular programming using functions.
-* **Example Implementation**:Calculate the perimeter, area, and diagonal of a rectangle with functions.Define and call functions in MicroPython.Use return values to pass results from functions to the main program.
-* **Steps**:1. Define the main function to call sub-functions.2. Create functions to calculate the area, perimeter, and diagonal.3. Call these functions from the main program and display results.
-* **Homework Assignment**:Write a program to input grades, find the highest and lowest grades, calculate the average, and sort the grades.Use functions to handle each specific task.
-* **Key Takeaways**:Understand modular programming and its benefits.Gain experience in defining and using functions in MicroPython.
+* **Concept Overview**: Intro to modular programming with functions.
+* **Example Implementation**: Calculate rectangle's perimeter, area, and diagonal using functions. Define and call functions in MicroPython. Use return values to pass results.
+* **Homework Assignment**: Write a program to input grades, find the highest, lowest, calculate average, and sort them using functions.
+* **Key Takeaways**: Learn modular programming, define and use functions in MicroPython.
 
 
 **Video** 

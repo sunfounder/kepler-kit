@@ -16,21 +16,12 @@ lesson 50 : Removing Long Term Steady State Error from Sensor Data
 =============================================================================
 This tutorial covers improving tilt measurement accuracy using the MPU6050 sensor and Raspberry Pi Pico W:
 
-* **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
-* **Challenges**:
-   - Accelerometers alone are noisy.
-   - Gyroscopes alone drift over time.
-* **Solution**:
-   - Combine accelerometer and gyroscope data using a complementary filter.
-   - Use a low-pass filter for accelerometer data to reduce noise.
-   - Use gyroscope data for short-term accuracy.
-   - Add error correction to handle steady state errors.
-* **Results**:
-   - Achieve accurate, fast, and low-noise tilt measurements.
-* **Homework**:
-   - Implement the filter and error correction.
-   - Create a visual display of tilt using an OLED screen.
+* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
+* **Challenges**: Accelerometers are noisy, and gyroscopes drift over time.
+* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with a low-pass filter and error correction.
+* **Results**: Achieve accurate, fast, and low-noise tilt measurements.
+* **Homework**: Implement the filter and error correction, and display tilt data on an OLED screen.
+
 
 
 

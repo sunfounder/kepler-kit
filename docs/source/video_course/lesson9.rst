@@ -15,13 +15,13 @@
 lesson 9:  Getting Analog Output Using PWM (Pulse Width Modulation)
 ==========================================================================
 
-This tutorial covers generating analog output using PWM (Pulse Width Modulation) on the Raspberry Pi Pico W:
+This tutorial covers generating analog output using PWM on the Raspberry Pi Pico W:
 
-* **Analog Output Explanation**: Discusses the concept of PWM and how it simulates analog output by switching between 3.3V and 0V at different duty cycles. Explains the relationship between voltage, time, and PWM duty cycle.
-* **GPIO Pin Configuration**: Explains which GPIO pins can generate analog output and the importance of not using pins with the same PWM label simultaneously.
-* **Circuit Setup and Code**: Provides a detailed wiring diagram and setup for connecting an LED to the Raspberry Pi Pico W. Includes code to set up PWM on a GPIO pin, take user input for desired voltage, and convert it to a corresponding PWM duty cycle.
-* **Practical Demonstration**: Shows how to measure and visualize the PWM signal using an oscilloscope, illustrating how different duty cycles correspond to different average voltages.
-* **Homework Assignment**: Asks users to create a circuit where they can input a desired voltage to control the brightness of an LED, reinforcing the concepts of PWM and analog output.
+* **Analog Output Explanation**: Explains PWM and how it simulates analog output by adjusting duty cycles.
+* **GPIO Pin Configuration**: Describes which GPIO pins can generate PWM and the importance of not using overlapping PWM labels.
+* **Circuit Setup and Code**: Provides a wiring diagram and code to set up PWM, take voltage input, and convert it to a PWM duty cycle.
+* **Practical Demonstration**: Shows how to measure PWM signals with an oscilloscope to visualize different duty cycles.
+* **Homework Assignment**: Create a circuit to control LED brightness using user-input voltage and PWM.
 
 
 **Video**

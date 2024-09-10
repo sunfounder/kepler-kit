@@ -19,10 +19,9 @@ This tutorial covers using a breadboard and controlling an external LED with the
 
 * **Introduction**: Overview of the tutorial series and sponsor shoutout to SunFounder.
 * **Review of Previous Lesson**: Recap of installing MicroPython, setting up Thonny, and writing basic programs to control GPIO pins.
-* **Breadboard Basics**: Detailed explanation of how a breadboard works, including understanding rows, columns, and connections.
-* **Building an LED Circuit**: Step-by-step guide to build an external LED circuit using the breadboard, GPIO pins, and a 220 Ohm resistor.
-* **Programming the LED**: Writing a Python program in Thonny to control the external LED, including turning it on, off, and making it blink.
-
+* **Breadboard Basics**: Explanation of how a breadboard works, including understanding rows, columns, and connections.
+* **Building an LED Circuit**: Guide to build an external LED circuit using the breadboard, GPIO pins, and a 220 Ohm resistor.
+* **Programming the LED**: Writing a Python program in Thonny to control the external LED by turning it on, off, and making it blink.
 
 
 **Video**

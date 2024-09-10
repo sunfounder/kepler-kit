@@ -17,22 +17,11 @@ lesson 67 :  Use Both Cores on Your Pi Pico with MicroPython
 
 This tutorial covers using both cores of the Raspberry Pi Pico W:
 
-* **Wiring Setup**:
-- Connect a green LED to GPIO pin 14 with a 330-ohm resistor to ground.
-- Connect a red LED to GPIO pin 15 with a 330-ohm resistor to ground.
-* **Code Implementation**:
-- Import necessary libraries (`machine`, `time`, `_thread`).
-- Set up pins for the LEDs.
-- Define parameters for LED blink times.
-- Create functions to control LED blinking:
-   - `other_core` for the red LED on the second core.
-   - `green_blink` for the green LED on the main core.
-- Use `_thread.start_new_thread` to run `other_core` on the second core.
-* **Homework Assignment**:
-- Connect a servo.
-- Control the servo and LEDs:
-  - Blink red LED when servo moves backward.
-  - Blink green LED when servo moves forward.
+* **Concept Overview**: Control LEDs and a servo using threading and functions.
+* **Example Implementation**: Connect red and green LEDs to GPIO pins, set up threading to blink LEDs on separate cores, and control a servo based on direction.
+* **Homework Assignment**: Add servo control, blink the red LED when the servo moves backward, and blink the green LED when it moves forward.
+* **Key Takeaways**: Learn to use threading to control LEDs and servos simultaneously on separate cores.
+
 
 **Video**
 

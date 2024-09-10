@@ -14,8 +14,8 @@
 
 .. _ar_neopixel:
 
-3.3 WS2812 RGB Strip
-======================
+3.3 - WS2812 RGB Strip
+=========================
 
 WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
 It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. 
@@ -99,11 +99,12 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip``. 
+    * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``euler-kit/arduino/3.3_rgb_led_strip``. 
     * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-    * The library ``Adafruit_NeoPixel`` is used here. Please refer to :ref:`add_libraries_ar` for adding it to the Arduino IDE.
+    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
+    * The ``Adafruit_NeoPixel`` library is used here, you can install it from the **Library Manager**.
 
+      .. image:: img/lib_neopixel.png
 
 .. raw:: html
     
@@ -147,10 +148,8 @@ We can randomly generate colors and make a colorful flowing light.
 
 .. note::
 
-   * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing``. 
-   * Or copy this code into **Arduino IDE**.
-
-   
+    * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
     
@@ -166,8 +165,6 @@ Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535)
 
    * You can open the file ``3.3_rgb_led_strip_rainbow.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_rainbow``. 
    * Or copy this code into **Arduino IDE**.
-
-   
    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
     

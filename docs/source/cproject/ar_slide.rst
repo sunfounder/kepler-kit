@@ -102,10 +102,8 @@ The 104 ceramic capacitor is used here to eliminate jitter.
 
 .. note::
 
-   * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
-   * Or copy this code into **Arduino IDE**.
-
-
+    * You can open the file ``2.7_toggle_left_right.ino`` under the path of ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
+    * Or copy this code into **Arduino IDE**.
     * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
 
 

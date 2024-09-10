@@ -17,31 +17,13 @@ lesson 20:  Using the DHT11 Temperature and Humidity Sensor in MicroPython
 
 This tutorial covers measuring temperature and humidity using the DHT11 sensor with the Raspberry Pi Pico W:
 
-* **Introduction**: introduce the lesson, focuse on using the DHT11 sensor to measure temperature and humidity.
-* **Previous Lessons Recap**: Recaps the foundational skills learned in previous lessons, such as digital writes, analog writes using PWM, digital reads, and analog reads.
-* **Component Introduction**: Introduces the DHT11 sensor from the SunFounder Kepler kit and demonstrates how to find it within the kit.
-* **Circuit Setup**:
- - Establishes ground and power rails on the breadboard.
- - Connects the DHT11 sensor to the Raspberry Pi Pico W:
-   - Pin 1 of the sensor to 3.3V.
-   - Pin 2 of the sensor to GPIO pin 16 (physical pin 21).
-   - Pin 4 of the sensor to ground.
-* **Code Explanation**:
- - Imports necessary libraries: machine, utime (as time), and DHT.
- - Sets up the GPIO pin for data input with a pull-down resistor.
- - Initializes the DHT11 sensor.
- - Enters an infinite loop to continuously measure and print temperature and humidity.
- - Explains how to format the printed output to display temperature and humidity in a single line using `\r`.
-* **Practical Demonstration**:
- - Runs the code and observes temperature and humidity readings in real-time.
- - Discusses the importance of not using methods that might cause condensation on the sensor to test changes in readings.
-* **Formatting Output**:
- - Demonstrates how to format the output to show the temperature in degrees Celsius and humidity in percentage.
- - Explains how to print the degree symbol using ASCII character codes.
-* **Homework Assignment**:
- - Adds a push button to the circuit.
- - Modifies the code to toggle between displaying temperature in Celsius and Fahrenheit when the button is pressed.
-
+* **Introduction**: Focus on using the DHT11 sensor for temperature and humidity measurement.
+* **Previous Lessons Recap**: Review of digital writes, analog writes, and sensor reads.
+* **Component Introduction**: Introduce the DHT11 sensor from the SunFounder Kepler kit.
+* **Code Explanation**: Import libraries, set up GPIO, initialize the sensor, and read data in a loop.
+* **Practical Demonstration**: Run code and observe real-time temperature and humidity readings.
+* **Formatting Output**: Format output for Celsius and humidity, and print the degree symbol.
+* **Homework Assignment**: Add a button to toggle between Celsius and Fahrenheit.
 
 
 **Video**

@@ -16,24 +16,12 @@ lesson 34 : Convert HSV to RGB in Micropython
 =============================================================================
 This tutorial covers converting HSV (Hue, Saturation, Value) color values to RGB (Red, Green, Blue) values and displaying them on an RGB LED using the Raspberry Pi Pico W:
 
-* **Introduction to the HSV Color Wheel**:
- - Explanation of the HSV color wheel and its significance in representing smooth color transitions.
- - Overview of how the HSV color wheel can be used to visually represent temperature data.
-* **Project Setup and Goal**:
- - Recap of the weather station project that fetches weather data and displays it on an OLED screen.
- - Introduction to the goal of adding a visual representation of temperature using an RGB LED.
-* **Understanding HSV to RGB Conversion**:
- - Breakdown of the HSV color wheel into a mathematical representation for conversion.
- - Explanation of the six zones in the color wheel and the respective RGB values and slopes.
-* **Algorithm Development**:
- - Step-by-step creation of a function to convert HSV angles to RGB values.
- - Explanation of setting up the RGB LED circuit with PWM control on the Raspberry Pi Pico W.
-* **Code Implementation**:
- - Detailed walkthrough of the Python code to set up PWM for the RGB LED and perform the HSV to RGB conversion.
- - Creation of a library function for the conversion to simplify the main program.
-* **Practical Demonstration**:
- - Demonstration of the code in action, showing the RGB LED changing colors according to the HSV color wheel.
- - Assignment to integrate the RGB LED with the weather station project to display temperature data visually.
+* **Introduction to the HSV Color Wheel**: Explains the HSV color wheel and its use for smooth color transitions, especially for visualizing temperature data.
+* **Project Setup and Goal**: Recap of the weather station project and the goal of adding RGB LED color representation for temperature.
+* **Understanding HSV to RGB Conversion**: Describes the HSV color wheel's mathematical representation, zones, and RGB conversion.
+* **Algorithm Development**: Creates a function to convert HSV to RGB values and sets up the RGB LED with PWM on the Raspberry Pi Pico W.
+* **Code Implementation**: Walkthrough of Python code for PWM control and HSV to RGB conversion, including a library function.
+* **Practical Demonstration**: Shows RGB LED color changes based on HSV, and assigns the task of integrating the LED into the weather station project.
 
 
 

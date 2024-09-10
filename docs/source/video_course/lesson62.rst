@@ -12,25 +12,14 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 62 : Create Functions to Average and Sort Grades in Micropythons
+lesson 62: Create Functions to Average and Sort Grades in Micropythons
 =============================================================================
 
 This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:
 
-**Task Overview**:
- - Input grades from the user.
- - Print grades.
- - Calculate the average grade.
- - Find the highest and lowest grades.
- - Sort grades from highest to lowest.
-
-**Key Steps**:
- - Define and call functions.
- - Pass variables and arrays to functions.
- - Implement a sorting algorithm.
-
-* **Homework Assignment**:
-- Write a program to input grades, calculate the average, find the highest and lowest grades, and sort them from highest to lowest using functions without pre-built libraries.
+* **Task Overview**: Input grades, print them, calculate average, find highest/lowest, and sort them.
+* **Key Steps**: Define functions, pass variables, and implement sorting algorithm.
+* **Homework Assignment**: Write a program to handle grades using functions without libraries.
 
 
 

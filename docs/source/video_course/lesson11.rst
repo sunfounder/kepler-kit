@@ -17,11 +17,11 @@ lesson 11:  Understanding and Controlling an RGB LED in MicroPython
 
 This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:
 
-* **RGB LED Control**: Explains controlling RGB LED colors using PWM (Pulse Width Modulation). Discusses the structure of the RGB LED, which has three LEDs (red, green, and blue) with a common ground. Emphasizes the importance of using separate current-limiting resistors for each color channel to prevent crosstalk.
-* **Wiring Diagram and Setup**: Provides a detailed wiring diagram for connecting the RGB LED and the required resistors to the Raspberry Pi Pico W. Demonstrates the physical setup on a breadboard, including connections for red, green, and blue channels to GPIO pins 13, 14, and 15, respectively.
-* **Code Explanation**: Describes the code for setting up PWM on each GPIO pin and controlling the brightness of each color channel. Covers the setup of PWM frequency, duty cycle, and the initialization of GPIO pins for red, green, and blue channels.
-* **Practical Demonstration**: Shows how to run the code to change the color of the RGB LED. Demonstrates turning individual color channels on and off, and adjusting brightness levels.
-* **Homework Assignment**: Asks users to create a program that prompts the user for a color (red, green, blue, cyan, magenta, yellow, orange, or white) and adjusts the RGB LED to display the specified color. Encourages users to mix and match PWM values to achieve accurate color representation.
+* **RGB LED Control**: Explains controlling RGB LED colors with PWM, emphasizing the use of separate resistors for each color channel.
+* **Wiring Diagram and Setup**: Detailed diagram for connecting the RGB LED and resistors to GPIO pins 13, 14, and 15 on the Pico W.
+* **Code Explanation**: Code setup for PWM control of red, green, and blue channels, adjusting brightness and colors.
+* **Practical Demonstration**: Shows how to change RGB LED colors by controlling each color channel.
+* **Homework Assignment**: Create a program that prompts for a color and adjusts the RGB LED to display it using PWM.
 
 
 **Video**

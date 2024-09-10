@@ -16,26 +16,11 @@ lesson 47 : Improving Sensor Data With a Low Pass Filter
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable two-axis tilt meter by implementing a low-pass filter:
 
-* **Setup**:
-   - Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
-
-* **Concept**:
-   - Measure tilt using the MPU6050's accelerometer data to calculate pitch and roll angles.
-   - Address errors caused by interpreting acceleration as tilt.
-
-* **Low-Pass Filter**:
-   - Implement a low-pass filter to smooth out data and reduce noise.
-   - Equation: \(\text{new value} = \text{sensor confidence} \times \text{measurement} + (1 - \text{sensor confidence}) \times \text{old value}\)
-   - Adjust the confidence value for the best balance between responsiveness and noise reduction.
-
-* **Code**:
-   - Set up the MPU6050 to measure X, Y, and Z acceleration.
-   - Calculate and filter pitch and roll angles.
-   - Display the filtered values.
-
-* **Homework**:
-   - Implement and test the low-pass filter.
-   - Experiment with different confidence values.
+* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
+* **Concept**: Measure tilt using accelerometer data, addressing errors from acceleration.
+* **Low-Pass Filter**: Implement to smooth data using the equation: ``\(\text{new value} = \text{confidence} \times \text{measurement} + (1 - \text{confidence}) \times \text{old value}\)``.
+* **Code**: Measure X, Y, Z, filter pitch and roll angles, and display results.
+* **Homework**: Test the low-pass filter and experiment with confidence values.
 
 **Video**
 

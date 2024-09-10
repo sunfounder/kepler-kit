@@ -16,26 +16,13 @@ lesson 36 : Control a Servo With MicroPython
 =============================================================================
 This tutorial covers controlling a servo motor using the Raspberry Pi Pico W:
 
-* **Servo Motor Control**: 
- - Introduction to using the SG90 servo motor with the Raspberry Pi Pico W.
- - Explanation of servo motor connections: brown (ground), red (power), orange (control).
- - Emphasis on not using the Raspberry Pi Pico W to power larger servos due to potential damage.
-* **Wiring Diagram and Setup**:
- - Detailed wiring instructions for connecting the SG90 servo to the Raspberry Pi Pico W.
- - Use of GPIO pin 15 for control, and creating a power rail from pin 1 for 5V supply.
-* **PWM Basics**:
- - Explanation of Pulse Width Modulation (PWM) and its role in controlling servo position.
- - Calculation of pulse widths corresponding to different servo angles (0.5ms for 0 degrees, 2.5ms for 180 degrees).
- - Setting PWM frequency to 50Hz to match the servo's requirements.
-* **Code Explanation**:
- - Step-by-step coding tutorial to set up PWM on GPIO pin 15.
- - Creating a function to convert desired angles to PWM duty cycle values.
- - Example code to control the servo by entering desired angles.
-* **Practical Demonstration**:
- - Running the code to move the servo to specific angles.
- - Ensuring safe servo operation by avoiding manual rotation of the servo horn.
-* **Homework Assignment**:
- - Task to integrate a potentiometer with the setup to control the servo position by adjusting the potentiometer.
+* **Servo Motor Control**: Introduction to using the SG90 servo with the Raspberry Pi Pico W, including servo connections and caution on power limits.
+* **Wiring Diagram and Setup**: Detailed instructions for connecting the SG90 to GPIO pin 15 and using pin 1 for a 5V supply.
+* **PWM Basics**: Explanation of PWM, calculating pulse widths for servo angles, and setting the frequency to 50Hz.
+* **Code Explanation**: Step-by-step code to set up PWM, convert angles to duty cycles, and control the servo.
+* **Practical Demonstration**: Running the code to move the servo to specific angles and ensuring safe operation.
+* **Homework Assignment**: Integrate a potentiometer to control the servo position based on its adjustments.
+
 
 **Video**
 

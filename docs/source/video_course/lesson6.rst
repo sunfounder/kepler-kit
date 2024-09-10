@@ -17,15 +17,11 @@ lesson 6:  Understanding If Statements in MicroPython
 
 This tutorial covers using if statements and conditionals in MicroPython with the Raspberry Pi Pico W:
 
-* **User Input Handling**: Demonstrates how to get input from the user using the input() function and convert it into different data types, such as integers and floating-point numbers.
-* **Basic If Statements**: Explains how to use if statements to execute code based on certain conditions, including checking for equality (==), inequality (!=), greater than (>), less than (<), greater than or equal to (>=), and less than or equal to (<=).
-* **Conditional Logic**: Illustrates how to implement logic based on user input to control the state of an LED (on, off, toggle) using if, elif, and else statements.
-* **Practical Demonstration**: Provides a detailed walkthrough of setting up an LED circuit on a breadboard and controlling the LED based on user input through conditional statements in MicroPython.
-* **Homework Assignment**: Assigns a project to build a circuit with a potentiometer and three LEDs (red, yellow, green). The task involves converting potentiometer readings to a 0-100 scale and lighting up the LEDs based on the input range:
-Green LED for 0-79
-Yellow LED for 80-94
-Red LED for 95-100
-Encourages posting the project on YouTube and engaging with others to develop a sense of community.
+* **User Input Handling**: How to get and convert user input into different data types.
+* **Basic If Statements**: Use if statements to check conditions like equality, inequality, and comparisons.
+* **Conditional Logic**: Control an LED's state (on, off, toggle) using if, elif, and else statements.
+* **Practical Demonstration**: Set up an LED circuit and control it based on user input.
+* **Homework Assignment**: Build a circuit with a potentiometer and three LEDs, lighting them up based on input ranges.
 
 **Video**
 
