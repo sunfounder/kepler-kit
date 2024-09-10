@@ -79,11 +79,11 @@ Sie können die Teile auch separat über die folgenden Links erwerben.
 
 **Schaltplan**
 
-|sch_lcd|
+|sch_lcd_ar|
 
 **Verkabelung**
 
-|wiring_lcd|
+|wiring_lcd_ar|
 
 **Code**
 
@@ -92,13 +92,16 @@ Sie können die Teile auch separat über die folgenden Links erwerben.
     * Sie können die Datei ``3.4_liquid_crystal_display.ino`` im Pfad ``kepler-kit-main/arduino/3.4_liquid_crystal_display`` öffnen.
     * Oder kopieren Sie diesen Code in die **Arduino IDE**.
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die **Upload**-Taste klicken.
-    * Die Bibliothek ``LiquidCrystal_I2C`` wird hier verwendet. Bitte lesen Sie :ref:`add_libraries_ar`, um sie der Arduino IDE hinzuzufügen.
+    * Die Bibliothek ``LiquidCrystal I2C`` wird hier verwendet. Sie können sie über den **Bibliotheksmanager** installieren.
+
+      .. image:: img/lib_i2c_lcd.png
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f464967-5937-473a-8a0d-8e4577c85e7d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Nach dem Start des Programms werden zwei Textzeilen nacheinander auf dem LCD angezeigt und dann wieder verschwinden.
+
+Nach dem Start des Programms werden zwei Textzeilen nacheinander auf dem LCD angezeigt und dann wieder ausgeblendet. Nach dem erfolgreichen Hochladen des Codes wirst du "SunFounder" und "Hello World" auf dem I2C LCD1602 sehen.
 
 .. note:: 
     Wenn der Code und die Verkabelung korrekt sind, aber das LCD trotzdem keinen Inhalt anzeigt, können Sie das Potentiometer auf der Rückseite drehen, um den Kontrast zu erhöhen.

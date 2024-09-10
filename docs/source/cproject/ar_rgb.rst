@@ -108,8 +108,8 @@ Hier können wir unsere Lieblingsfarbe in einer Zeichensoftware (wie Paint) ausw
 
 .. note::
 
-   * Sie können die Datei ``2.4_colorful_light.ino`` im Verzeichnis ``kepler-kit-main/arduino/2.4_colorful_light`` öffnen.
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Sie können die Datei ``2.4_colorful_light.ino`` im Verzeichnis ``kepler-kit-main/arduino/2.4_colorful_light`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
 
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die **Upload**-Schaltfläche klicken.

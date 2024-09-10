@@ -17,28 +17,10 @@ lesson 74 : Erstellen einer MicroPython-Klasse zur Steuerung einer RGB-LED
 
 Dieses Tutorial behandelt die Erstellung einer MicroPython-Bibliothek zur Steuerung einer RGB-LED mit dem Raspberry Pi Pico W:
 
-* **Verdrahtung**: 
-  - Verbinden Sie die RGB-LED mit dem Raspberry Pi Pico W:
-    - R-Anschluss über einen 330 Ohm Widerstand mit GPIO-Pin 14.
-    - G-Anschluss mit GPIO-Pin 13.
-    - B-Anschluss über einen 330 Ohm Widerstand mit GPIO-Pin 12.
-    - Masse-Anschluss mit der Masse-Schiene.
-
-* **Code-Implementierung**: 
-  - **Bibliothek erstellen**: 
-    - Definieren Sie eine Klasse `RGB_LED` in einer MicroPython-Bibliothek zur Steuerung der RGB-LED.
-    - Fügen Sie ein Dictionary für Farbwerte innerhalb der Klasse hinzu.
-    - Erstellen Sie Methoden zur Initialisierung der LED-Pins und zum Einstellen der Farben mittels PWM.
-  - **Bibliotheken importieren**: 
-    - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`).
-    - Richten Sie PWM für die RGB-LED-Pins innerhalb der Klassenmethoden ein.
-  - **Hauptprogramm**: 
-    - Importieren Sie die benutzerdefinierte Bibliothek und erstellen Sie ein Objekt für die RGB-LED.
-    - Verwenden Sie eine while-Schleife, um den Benutzer kontinuierlich aufzufordern, eine gewünschte Farbe einzugeben.
-    - Validieren Sie die Eingabe und stellen Sie die LED-Farbe entsprechend ein.
-    - Implementieren Sie eine Fehlerbehandlung für ungültige Eingaben und eine saubere Beenden-Funktionalität mittels Keyboard-Interrupt.
-  - **Hausaufgabe**: 
-    - Erweitern Sie das Programm, indem Sie der MicroPython-Bibliothek weitere Funktionen wie zusätzliche Farbeinstellungen oder Muster hinzufügen, und stellen Sie sicher, dass das Hauptprogramm einfach und übersichtlich bleibt, indem die Bibliothek effektiv genutzt wird.
+* **Konzepteübersicht**: Steuerung einer RGB-LED mit einer benutzerdefinierten RGB_LED-Klasse unter Verwendung von PWM.
+* **Beispielimplementierung**: RGB-LED an GPIO-Pins anschließen, eine Klasse definieren, um Farbänderungen über PWM zu verwalten, und Benutzereingaben abfragen, um die LED-Farbe anzupassen.
+* **Hausaufgabe**: Die RGB_LED-Klasse erweitern, um Farbpattern oder weitere Funktionen hinzuzufügen. Das Hauptprogramm soll dabei einfach bleiben und die Bibliothek nutzen.
+* **Wichtige Erkenntnisse**: Lernen, wie man Code mit benutzerdefinierten Klassen für die Hardwaresteuerung strukturiert und Benutzereingaben in MicroPython effizient verarbeitet.
 
 **Video**
 

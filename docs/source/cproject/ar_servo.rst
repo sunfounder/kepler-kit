@@ -92,7 +92,6 @@ Sie können diese auch separat über die untenstehenden Links kaufen.
 
    * Sie können die Datei ``3.7_swinging_servo.ino`` im Pfad ``kepler-kit-main/arduino/3.7_swinging_servo`` öffnen. 
    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
-
    * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 .. raw:: html

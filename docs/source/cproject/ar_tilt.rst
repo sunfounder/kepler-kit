@@ -91,9 +91,8 @@ Der 10K-Widerstand dient dazu, GP14 im gekippten Zustand stabil auf Low zu halte
 
 .. note::
 
-   * Die Datei ``2.6_tilt_it.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.4_colorful_light``.
-   * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
-
+    * Die Datei ``2.6_tilt_it.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.4_colorful_light``.
+    * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 
 .. raw:: html

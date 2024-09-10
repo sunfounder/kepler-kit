@@ -95,8 +95,8 @@ Der 10K-Widerstand dient dazu, den GP14 auf einem konstant niedrigen Niveau zu h
 
 .. note::
 
-   * Sie können die Datei ``2.9_feel_the_magnetism.ino`` im Pfad ``kepler-kit-main/arduino/2.9_feel_the_magnetism`` öffnen.
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Sie können die Datei ``2.9_feel_the_magnetism.ino`` im Pfad ``kepler-kit-main/arduino/2.9_feel_the_magnetism`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Anschluss auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 

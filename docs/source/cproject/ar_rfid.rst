@@ -89,41 +89,27 @@ Sie können die einzelnen Komponenten auch separat über die folgenden Links kau
 
 .. note::
 
-    * Die Datei ``6.5_rfid_write.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.5_rfid_write``.
-    * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
-    * Vergessen Sie nicht, vor dem Klicken auf den **Hochladen**-Button das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
-    * Die Bibliothek ``MFRC522`` wird hier verwendet. Weitere Informationen zum Hinzufügen in die Arduino IDE finden Sie unter :ref:`add_libraries_ar`.
+   * Die Bibliothek ``MFRC522`` wird hier verwendet. Sie können sie über den **Bibliotheksmanager** installieren.
 
-Die Hauptfunktion ist in zwei Teile gegliedert:
+      .. image:: img/lib_mfrc522.png
 
-* ``6.5_rfid_write.ino``: Dient zum Schreiben von Informationen auf die Karte (oder den Schlüssel).
-* ``6.5_rfid_read.ino``: Dient zum Lesen der Informationen auf der Karte (oder dem Schlüssel).
+Die Hauptfunktion ist in zwei Teile unterteilt:
 
-.. note::
+* ``6.5_rfid_write``, um Informationen auf die Karte (oder den Schlüssel) zu schreiben.
 
-   * Die Datei ``6.5_rfid_write.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.5_rfid_write``.
-   * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
-   * Vergessen Sie nicht, vor dem Klicken auf den **Hochladen**-Button das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
-
-Nach dem Ausführen können Sie eine Nachricht im seriellen Monitor eingeben, die mit ``#`` endet. Anschließend schreiben Sie die Nachricht auf die Karte, indem Sie die Karte (oder den Schlüssel) nahe am MFRC522-Modul platzieren.
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+  Nach dem Ausführen kannst du im seriellen Monitor eine Nachricht eingeben, die mit ``#`` endet, und die Nachricht dann auf die Karte schreiben, indem du die Karte (oder den Schlüssel) in die Nähe des MFRC522-Moduls hältst.
 
-.. note::
+* ``6.5_rfid_read``, um die Informationen von der Karte (oder dem Schlüssel) zu lesen.
 
-   * Die Datei ``6.5_rfid_read.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.5_rfid_read``.
-   * Alternativ können Sie diesen Code in die **Arduino IDE** kopieren.
-   * Vergessen Sie nicht, vor dem Klicken auf den **Hochladen**-Button das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen.
-
-Nach dem Ausführen können Sie die auf der Karte (oder dem Schlüssel) gespeicherte Nachricht lesen.
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+  Nach dem Ausführen kannst du die auf der Karte (oder dem Schlüssel) gespeicherte Nachricht lesen.
 
 **Funktionsweise?**
 

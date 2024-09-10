@@ -107,8 +107,8 @@ Alternativ können Sie die einzelnen Komponenten auch über die unten aufgeführ
 
 .. note::
 
-   * Die Datei ``3.5_small_fan.ino`` finden Sie im Verzeichnis ``kepler-kit-main/arduino/3.5_small_fan``.
-   * Alternativ können Sie den Code auch in die **Arduino-IDE** kopieren.
+    * Die Datei ``3.5_small_fan.ino`` finden Sie im Verzeichnis ``kepler-kit-main/arduino/3.5_small_fan``.
+    * Alternativ können Sie den Code auch in die **Arduino-IDE** kopieren.
 
     * Vergewissern Sie sich, dass Sie das richtige Board (Raspberry Pi Pico) und den korrekten Port ausgewählt haben, bevor Sie auf **Hochladen** klicken.
 

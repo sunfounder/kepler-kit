@@ -17,30 +17,13 @@ Lektion 20: Verwendung des DHT11 Temperatur- und Feuchtigkeitssensors in MicroPy
 
 Dieses Tutorial behandelt die Messung von Temperatur und Feuchtigkeit mit dem DHT11-Sensor und dem Raspberry Pi Pico W:
 
-* **Einführung**: Einführung in die Lektion mit Fokus auf die Verwendung des DHT11-Sensors zur Messung von Temperatur und Feuchtigkeit.
-* **Rückblick auf vorherige Lektionen**: Rückblick auf die in den vorherigen Lektionen erlernten Grundlagen, wie digitale Schreibvorgänge, analoge Schreibvorgänge mit PWM, digitale Lesevorgänge und analoge Lesevorgänge.
-* **Einführung der Komponente**: Vorstellung des DHT11-Sensors aus dem SunFounder Kepler Kit und Demonstration, wie man ihn im Kit findet.
-* **Schaltungsaufbau**:
-  - Einrichtung von Masse- und Stromschienen auf dem Breadboard.
-  - Verbindung des DHT11-Sensors mit dem Raspberry Pi Pico W:
-    - Pin 1 des Sensors mit 3,3V.
-    - Pin 2 des Sensors mit GPIO-Pin 16 (physischer Pin 21).
-    - Pin 4 des Sensors mit Masse.
-* **Code-Erklärung**:
-  - Importiert notwendige Bibliotheken: machine, utime (als time) und DHT.
-  - Richtet den GPIO-Pin für die Dateneingabe mit einem Pull-Down-Widerstand ein.
-  - Initialisiert den DHT11-Sensor.
-  - Tritt in eine Endlosschleife ein, um kontinuierlich Temperatur und Feuchtigkeit zu messen und anzuzeigen.
-  - Erklärt, wie die Ausgabe formatiert wird, um Temperatur und Feuchtigkeit in einer einzigen Zeile mit `\r` anzuzeigen.
-* **Praktische Demonstration**:
-  - Führt den Code aus und beobachtet die Echtzeitmessungen von Temperatur und Feuchtigkeit.
-  - Diskutiert die Wichtigkeit, Methoden zu vermeiden, die Kondensation am Sensor verursachen könnten, um Änderungen der Messwerte zu testen.
-* **Ausgabeformatierung**:
-  - Demonstriert, wie die Ausgabe formatiert wird, um die Temperatur in Grad Celsius und die Feuchtigkeit in Prozent anzuzeigen.
-  - Erklärt, wie das Grad-Symbol mit ASCII-Zeichencodes gedruckt wird.
-* **Hausaufgabe**:
-  - Fügt der Schaltung einen Taster hinzu.
-  - Ändert den Code so, dass beim Drücken des Tasters zwischen der Anzeige der Temperatur in Celsius und Fahrenheit umgeschaltet wird.
+* **Einführung**: Fokus auf die Verwendung des DHT11-Sensors zur Messung von Temperatur und Luftfeuchtigkeit.
+* **Rückblick auf frühere Lektionen**: Rückblick auf digitale Schreibvorgänge, analoge Schreibvorgänge und Sensorablesungen.
+* **Komponenteneinführung**: Vorstellung des DHT11-Sensors aus dem SunFounder Kepler Kit.
+* **Code-Erklärung**: Bibliotheken importieren, GPIO einrichten, den Sensor initialisieren und Daten in einer Schleife auslesen.
+* **Praktische Demonstration**: Code ausführen und Echtzeit-Temperatur- und Luftfeuchtigkeitsmessungen beobachten.
+* **Ausgabe formatieren**: Ausgabe für Celsius und Luftfeuchtigkeit formatieren und das Grad-Symbol drucken.
+* **Hausaufgabe**: Fügen Sie einen Knopf hinzu, um zwischen Celsius und Fahrenheit umzuschalten.
 
 **Video**
 

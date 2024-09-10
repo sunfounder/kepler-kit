@@ -81,7 +81,7 @@ Die Teile können aber auch einzeln über die untenstehenden Links gekauft werde
 
 **Schaltplan**
 
-|sch_keypad|
+|sch_keypad_ar|
 
 Vier Pull-down-Widerstände sind mit den jeweiligen Spalten des Matrix-Tastenfelds verbunden, damit G6 ~ G9 einen stabilen niedrigen Pegel erhalten, wenn keine Taste gedrückt ist.
 
@@ -91,7 +91,7 @@ Zum Beispiel wird bei einem hohen Signal auf G6 die Taste mit der Nummer 1 gedr�
 
 **Verdrahtung**
 
-|wiring_keypad|
+|wiring_keypad_ar|
 
 Um die Verdrahtung zu vereinfachen, sind im obigen Schema die Spalte und die Reihe des Matrix-Tastenfelds sowie die 10K-Widerstände gleichzeitig in die Löcher eingesteckt, in denen sich G6 ~ G9 befinden.
 
@@ -102,7 +102,9 @@ Um die Verdrahtung zu vereinfachen, sind im obigen Schema die Spalte und die Rei
     * Die Datei ``4.2_4x4_keypad.ino`` finden Sie im Verzeichnis ``kepler-kit-main/arduino/4.2_4x4_keypad``.
     * Oder kopieren Sie diesen Code in die **Arduino IDE**.
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
-    * Die Bibliothek ``Keypad`` wird hier verwendet. Bitte beachten Sie :ref:`add_libraries_ar` für weitere Informationen zur Integration in die Arduino IDE.
+    * Die Bibliothek ``Adafruit Keypad`` wird hier verwendet. Sie können sie über den **Bibliotheksmanager** installieren.
+
+      .. image:: img/lib_ad_keypad.png
 
 .. raw:: html
     
@@ -112,28 +114,69 @@ Nach dem Ausführen des Programms wird die Shell die Tasten ausgeben, die Sie au
 
 **Funktionsweise**
 
-Mithilfe der Bibliothek ``Keypad.h`` können Sie das Tastenfeld einfach nutzen.
+1. Einbinden der Bibliothek
 
-.. code-block:: arduino
+   Wir beginnen mit der Einbindung der Bibliothek ``Adafruit_Keypad``, die uns eine einfache Schnittstelle zum Tastenfeld ermöglicht.
 
-    #include <Keypad.h>
+   .. code-block:: arduino
 
-Bibliotheksfunktionen:
+     #include "Adafruit_Keypad.h"
 
-.. code-block:: arduino
+2. Tastenfeldkonfiguration
 
-    Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
+   .. code-block:: arduino
 
-Initialisiert die interne Tastenbelegung entsprechend ``userKeymap``.
+     const byte ROWS = 4;
+     const byte COLS = 4;
+     char keys[ROWS][COLS] = {
+       { '1', '2', '3', 'A' },
+       { '4', '5', '6', 'B' },
+       { '7', '8', '9', 'C' },
+       { '*', '0', '#', 'D' }
+     };
+     byte rowPins[ROWS] = { 2, 3, 4, 5 };
+     byte colPins[COLS] = { 8, 9, 10, 11 };
 
-``userKeymap``: Die Symbole auf den Tasten des Tastenfelds.
+   - Die Konstanten ``ROWS`` und ``COLS`` definieren die Abmessungen des Tastenfelds.
+   - ``keys`` ist ein 2D-Array, das die Bezeichnung für jede Taste auf dem Tastenfeld speichert.
+   - ``rowPins`` und ``colPins`` sind Arrays, die die Arduino-Pins speichern, die mit den Reihen und Spalten des Tastenfelds verbunden sind.
 
-``row``, ``col``: Pin-Konfiguration.
+   .. raw:: html
 
-``numRows``, ``numCols``: Größe des Tastenfelds.
+      <br/>
 
-.. code-block:: arduino
+3. Initialisierung des Tastenfelds
 
-    char getKey()
+   Erstelle eine Instanz von ``Adafruit_Keypad`` mit dem Namen ``myKeypad`` und initialisiere sie.
 
-Gibt die gedrückte Taste zurück, falls vorhanden. Diese Funktion ist nicht blockierend.
+   .. code-block:: arduino
+
+     Adafruit_Keypad myKeypad = Adafruit_Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+4. setup() Funktion
+
+   Initialisiere die serielle Kommunikation und das benutzerdefinierte Tastenfeld.
+
+   .. code-block:: arduino
+
+     void setup() {
+       Serial.begin(9600);
+       myKeypad.begin();
+     }
+
+5. Hauptschleife
+
+   Überprüfe Tastenereignisse und zeige sie im seriellen Monitor an.
+
+   .. code-block:: arduino
+
+     void loop() {
+       myKeypad.tick();
+       while (myKeypad.available()) {
+         keypadEvent e = myKeypad.read();
+         Serial.print((char)e.bit.KEY);
+         if (e.bit.EVENT == KEY_JUST_PRESSED) Serial.println(" pressed");
+         else if (e.bit.EVENT == KEY_JUST_RELEASED) Serial.println(" released");
+       }
+       delay(10);
+     }

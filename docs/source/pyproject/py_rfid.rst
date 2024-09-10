@@ -99,8 +99,8 @@ Nach dem Ausführen können Sie eine Nachricht im Shell-Fenster eingeben und die
 
     from mfrc522 import SimpleMFRC522
 
-    reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
-
+    reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
+    
     def write():
         to_write = input("Please enter the message: ")
         print("Writing...Please place the card...")
@@ -117,8 +117,8 @@ Nach dem Ausführen können Sie die auf der Karte (oder dem Schlüssel) gespeich
 
     from mfrc522 import SimpleMFRC522
 
-    reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
-
+    reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
+    
     def read():
         print("Reading...Please place the card...")
         id, text = reader.read()
@@ -132,7 +132,7 @@ Nach dem Ausführen können Sie die auf der Karte (oder dem Schlüssel) gespeich
 
     from mfrc522 import SimpleMFRC522
 
-    reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
+    reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
 
 Instanzierung der Klasse ``SimpleMFRC522()``.
 

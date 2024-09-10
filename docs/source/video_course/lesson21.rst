@@ -17,30 +17,12 @@ Lektion 21: Temperatur- und Feuchtigkeitsmessungen mit Umschalter
 
 Dieses Tutorial behandelt das Hinzufügen eines Umschalttasters zum Wechseln zwischen Temperaturanzeigen in Fahrenheit und Celsius mithilfe des DHT11-Sensors und des Raspberry Pi Pico W:
 
-* **Einführung**: Vorstellung des Tutorials und Anerkennung des Sponsors SunFounder. Erklärung des Ziels, einen Umschalttaster zur bestehenden Temperatur- und Feuchtigkeitsmessung hinzuzufügen.
-
-* **Rückblick auf vorherige Lektionen**: Rückblick auf die vorherige Lektion zur Verwendung des DHT11-Sensors und Kontextualisierung der aktuellen Aufgabe.
-
-* **Einführung der Komponenten und Schaltungsaufbau**:
- - Wiederholung der Vorstellung des DHT11-Sensors und Erklärung der Hinzufügung eines Tasters zur Schaltung.
- - Beschreibung der Verbindungen:
- - DHT11-Sensor:Pin 1 zu 3.3V,Pin 2 zu GPIO-Pin 16,Pin 4 zu Masse
- - Taster:Ein Bein zu Masse,Das andere Bein zu GPIO-Pin 15
-* **Code-Erklärung**:
-  - Importiert notwendige Bibliotheken: machine, utime (als time) und DHT.
-  - Einrichtung der GPIO-Pins für den DHT11-Sensor und den Taster.
-  - Erstellung eines Umschaltmechanismus zum Wechseln zwischen Temperatureinheiten (Celsius und Fahrenheit).
-  - Liest den Tasterzustand und wechselt die Temperatureinheit, wenn der Taster gedrückt und losgelassen wird.
-  - Misst und konvertiert die Temperatur von Celsius in Fahrenheit.
-  - Gibt Temperatur- und Feuchtigkeitswerte in einer einzigen Zeile aus, wobei `\r` für eine saubere Ausgabe verwendet wird.
-  - Behandelt Formatierungsprobleme, um sicherzustellen, dass die Ausgabe beim Umschalten zwischen Celsius und Fahrenheit korrekt angezeigt wird.
-* **Praktische Demonstration**:
-  - Führt den Code aus, um Temperatur- und Feuchtigkeitsmessungen zu beobachten.
-  - Demonstriert die Umschaltfunktionalität zwischen Celsius und Fahrenheit, wenn der Taster gedrückt wird.
-  - Behebt Formatierungsprobleme, um sicherzustellen, dass die Ausgabe sauber und konsistent ist.
-* **Hausaufgabe**:
-  - Fügt dem Projekt weitere Umschaltfunktionen hinzu.
-  - Implementiert zusätzliche Umschalter, um zwischen der Anzeige von Temperatur in Celsius, Fahrenheit und Feuchtigkeit nacheinander umzuschalten.
+* **Einführung**: Einführung in das Tutorial und Erklärung, wie ein Umschaltknopf zur Schaltung hinzugefügt wird.
+* **Rückblick auf frühere Lektionen**: Rückblick auf die Verwendung des DHT11-Sensors.
+* **Komponenteneinführung und Schaltungsaufbau**: Beschreibung der Verkabelung des DHT11-Sensors und des Druckknopfes.
+* **Code-Erklärung**: Bibliotheken importieren, GPIO einrichten, einen Umschalter für Celsius/Fahrenheit erstellen und die Ausgabe formatieren.
+* **Praktische Demonstration**: Vorführung der Codeausführung und Umschaltung zwischen Celsius- und Fahrenheit-Anzeigen.
+* **Hausaufgabe**: Weitere Umschalter hinzufügen, um zwischen Celsius-, Fahrenheit- und Luftfeuchtigkeitsanzeigen umzuschalten.
 
 **Video**
 

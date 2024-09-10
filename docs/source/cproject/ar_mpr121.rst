@@ -73,11 +73,11 @@ Alternativ können Sie die Teile auch einzeln über die folgenden Links beziehen
 
 **Schaltplan**
 
-|sch_mpr121|
+|sch_mpr121_ar|
 
 **Verdrahtung**
 
-|wiring_mpr121|
+|wiring_mpr121_ar|
 
 **Code**
 
@@ -85,9 +85,11 @@ Alternativ können Sie die Teile auch einzeln über die folgenden Links beziehen
 
     * Die Datei ``4.3_electrode_keyboard.ino`` finden Sie im Verzeichnis ``kepler-kit-main/arduino/4.3_electrode_keyboard``.
     * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
-
     * Vergessen Sie nicht, das richtige Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf **Hochladen** klicken.
-    * Die Bibliotheken ``Adafruit_MPR121`` und ``Adafruit_BusIO`` werden hier verwendet. Bitte lesen Sie :ref:`add_libraries_ar`, um zu erfahren, wie sie zur Arduino IDE hinzugefügt werden können.
+    * Die Bibliothek ``Adafruit MPR121`` wird hier verwendet. Sie können sie über den **Bibliotheksmanager** installieren.
+
+        .. image:: img/lib_mpr121.png
+
 
 .. raw:: html
     

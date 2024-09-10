@@ -100,8 +100,8 @@ Der 104-Keramikkondensator wird hier verwendet, um Rauschen zu eliminieren.
 
 .. note::
 
-   * Sie können die Datei ``2.8_press_gently.ino`` im Pfad ``kepler-kit-main/arduino/2.8_press_gently`` öffnen.
-   * Oder kopieren Sie diesen Code in die **Arduino-IDE**.
+    * Sie können die Datei ``2.8_press_gently.ino`` im Pfad ``kepler-kit-main/arduino/2.8_press_gently`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino-IDE**.
 
    
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.

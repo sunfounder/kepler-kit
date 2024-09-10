@@ -17,28 +17,10 @@ lesson 73 : Steuerung einer RGB-LED mit einem Dictionary in MicroPython
 
 Dieses Tutorial behandelt die Steuerung einer RGB-LED mit dem Raspberry Pi Pico W unter Verwendung von Dictionaries:
 
-* **Verdrahtung**:
-  - Verbinden Sie die RGB-LED mit dem Raspberry Pi Pico W:
-    - R-Anschluss über einen 330 Ohm Widerstand mit GPIO-Pin 14.
-    - G-Anschluss mit GPIO-Pin 13.
-    - B-Anschluss über einen 330 Ohm Widerstand mit GPIO-Pin 12.
-    - Masse-Anschluss mit der Masse-Schiene.
-* **Code-Implementierung**:
-  - **Erstellen eines Dictionaries**:
-    - Definieren Sie ein Dictionary mit Farbnamen als Schlüssel und den entsprechenden RGB-Werten als Listen.
-  - **Bibliotheken importieren**:
-    - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`).
-    - Richten Sie PWM für die RGB-LED-Pins ein.
-  - **Hauptprogrammschleife**:
-    - Fordern Sie den Benutzer kontinuierlich auf, eine gewünschte Farbe einzugeben.
-    - Konvertieren Sie die Eingabe in Kleinbuchstaben und prüfen Sie, ob es sich um eine gültige Farbe handelt.
-    - Wenn gültig, passen Sie die LED-Farben mithilfe von PWM-Duty-Cycles basierend auf den Dictionary-Werten an.
-    - Implementieren Sie eine Fehlerbehandlung für ungültige Eingaben.
-  - **Funktion zum Einstellen der Farbe**:
-    - Definieren Sie eine Funktion `make_color`, die die gewünschte Farbe annimmt und die RGB-LED entsprechend mit PWM einstellt.
-   
-* **Hausaufgabe**:
-   - Erweitern Sie das Programm, indem Sie die Funktion `make_color` in eine Bibliothek auslagern und sie in das Hauptprogramm importieren.
+* **Konzepteübersicht**: Steuerung einer RGB-LED mit Benutzereingaben unter Verwendung von Wörterbüchern für Farbwerte.
+* **Beispielimplementierung**: RGB-LED an GPIO-Pins anschließen, ein Wörterbuch für Farbnamen und RGB-Werte erstellen und PWM verwenden, um die Helligkeit der LED basierend auf Benutzereingaben anzupassen.
+* **Hausaufgabe**: Die Funktion ``make_color`` in eine Bibliothek auslagern und in das Hauptprogramm importieren.
+* **Wichtige Erkenntnisse**: Lernen, wie man Wörterbücher für die Farbzuordnung und PWM zur Steuerung einer RGB-LED in MicroPython verwendet.
 
 **Video**
 

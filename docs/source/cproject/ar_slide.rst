@@ -100,10 +100,8 @@ Der 104-Keramikkondensator dient hier zur Eliminierung von Störungen.
 
 .. note::
 
-   * Die Datei ``2.7_toggle_left_right.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.7_toggle_left_right``.
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
-
-
+    * Die Datei ``2.7_toggle_left_right.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/2.7_toggle_left_right``.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 

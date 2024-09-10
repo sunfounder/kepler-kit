@@ -17,22 +17,10 @@ Lektion 67 : Beide Kerne Ihres Pi Pico mit MicroPython verwenden
 
 Dieses Tutorial behandelt die Verwendung beider Kerne des Raspberry Pi Pico W:
 
-* **Verdrahtungsaufbau**:
-  - Schließen Sie eine grüne LED an GPIO-Pin 14 mit einem 330-Ohm-Widerstand an Masse an.
-  - Schließen Sie eine rote LED an GPIO-Pin 15 mit einem 330-Ohm-Widerstand an Masse an.
-* **Code-Implementierung**:
-  - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `_thread`).
-  - Richten Sie die Pins für die LEDs ein.
-  - Definieren Sie Parameter für die LED-Blinkzeiten.
-  - Erstellen Sie Funktionen zur Steuerung des LED-Blinkens:
-    - `other_core` für die rote LED auf dem zweiten Kern.
-    - `green_blink` für die grüne LED auf dem Hauptkern.
-  - Verwenden Sie `_thread.start_new_thread`, um `other_core` auf dem zweiten Kern auszuführen.
-* **Hausaufgabe**:
-  - Schließen Sie ein Servo an.
-  - Steuern Sie das Servo und die LEDs:
-    - Die rote LED blinkt, wenn sich das Servo rückwärts bewegt.
-    - Die grüne LED blinkt, wenn sich das Servo vorwärts bewegt.
+* **Konzepteübersicht**: LEDs und ein Servo mithilfe von Threading und Funktionen steuern.
+* **Beispielimplementierung**: Rote und grüne LEDs an GPIO-Pins anschließen, Threading einrichten, um LEDs auf separaten Kernen blinken zu lassen, und ein Servo basierend auf der Richtung steuern.
+* **Hausaufgabe**: Fügen Sie eine Servosteuerung hinzu, lassen Sie die rote LED blinken, wenn das Servo rückwärts läuft, und die grüne LED blinken, wenn es vorwärts läuft.
+* **Wichtige Erkenntnisse**: Lernen, wie man Threading verwendet, um LEDs und Servos gleichzeitig auf separaten Kernen zu steuern.
 
 **Video**
 

@@ -96,8 +96,8 @@ Lassen Sie uns den Stromfluss folgen und die Schaltung aufbauen!
 
 .. note::
 
-   * Sie können die Datei ``2.1_hello_led.ino`` im Pfad ``kepler-kit-main/arduino/2.1_hello_led`` öffnen.
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Sie können die Datei ``2.1_hello_led.ino`` im Pfad ``kepler-kit-main/arduino/2.1_hello_led`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
     * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den richtigen Anschluss auszuwählen, bevor Sie auf **Hochladen** klicken.
 

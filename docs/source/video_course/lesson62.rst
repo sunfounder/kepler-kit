@@ -17,21 +17,9 @@ Lektion 62 : Funktionen zum Durchschnitts- und Sortieren von Noten in Micropytho
 
 Dieses Tutorial behandelt die Verwendung von Funktionen in MicroPython auf dem Raspberry Pi Pico W:
 
-**Aufgabenübersicht**:
- - Noten vom Benutzer eingeben.
- - Noten ausdrucken.
- - Den Durchschnitt der Noten berechnen.
- - Die höchste und niedrigste Note finden.
- - Noten von der höchsten bis zur niedrigsten sortieren.
-
-**Wichtige Schritte**:
- - Definition und Aufruf von Funktionen.
- - Variablen und Arrays an Funktionen übergeben.
- - Ein Sortieralgorithmus implementieren.
-
-* **Hausaufgabe**:
-- Schreiben Sie ein Programm, um Noten einzugeben, den Durchschnitt zu berechnen, die höchste und niedrigste Note zu finden und sie von der höchsten zur niedrigsten zu sortieren, indem Sie Funktionen ohne vorgefertigte Bibliotheken verwenden.
-
+* **Aufgabenübersicht**: Noten eingeben, ausdrucken, den Durchschnitt berechnen, die höchste/tiefste Note finden und die Noten sortieren.
+* **Wichtige Schritte**: Funktionen definieren, Variablen übergeben und einen Sortieralgorithmus implementieren.
+* **Hausaufgabe**: Schreiben Sie ein Programm, das Noten mithilfe von Funktionen ohne Bibliotheken verwaltet.
 
 
 **Video**

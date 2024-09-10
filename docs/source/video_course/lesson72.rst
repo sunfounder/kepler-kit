@@ -17,31 +17,16 @@ Lektion 72 : Verständnis von Dictionaries in MicroPython
 
 Dieses Tutorial behandelt die Verwendung von Dictionaries in Python mit dem Raspberry Pi Pico W:
 
-* **Einführung**:
-  - Erfahren Sie mehr über Dictionaries, eine leistungsstarke Datenstruktur in Python.
-  - Verstehen Sie, wie Dictionaries in die objektorientierte Programmierung mit Klassen, Methoden und Funktionen passen.
-* **Behandelte Konzepte**:
-  - Rückblick auf Listen:
-   - Erstellen und Verwalten von Listen (Arrays).
-   - Zugriff auf Elemente mittels Indizes.
-  - Einführung in Dictionaries:
-   - Erstellen von Dictionaries mit Schlüssel-Wert-Paaren.
-   - Zugriff auf Dictionary-Elemente mittels Schlüsseln.
-   - Hinzufügen, Entfernen und Ändern von Dictionary-Elementen.
-  - Dictionary-Operationen:
-   - Verwenden der Methoden `keys()` und `values()`, um Schlüssel und Werte abzurufen.
-   - Überprüfen, ob ein Schlüssel existiert, mittels `in` und `not in` Operatoren.
-   - Iteration durch Schlüssel und Werte in einem Dictionary.
-  - Praktisches Beispiel:
-   - Erstellen eines Dictionaries zur Speicherung persönlicher Informationen (Name, Alter, Gewicht, etc.).
-   - Demonstration des Hinzufügens, Änderns und Zugriffs auf Elemente im Dictionary.
-  - Erweiterte Verwendung von Dictionaries:
-   - Speichern von Listen und anderen Dictionaries als Werte innerhalb eines Dictionaries.
-   - Nutzung von Dictionaries für effizientes Datenmanagement und -abruf.
+* **Aufgabenübersicht**: Lernen, wie man in Python Wörterbücher verwendet, um Daten zu speichern und zu verwalten.
+* **Wichtige Schritte**:
 
-* **Hausaufgabe**:
-   - Schreiben Sie ein Programm zur Steuerung einer RGB-LED, das ein Dictionary verwendet, um Farbnamen ihren jeweiligen RGB-Werten zuzuordnen.
-   - Implementieren Sie eine Benutzeroberfläche, um Farbnamen einzugeben und die LED-Farbe entsprechend zu ändern.
+  - Wörterbücher mit Schlüssel-Wert-Paaren erstellen.
+  - Elemente in Wörterbüchern abrufen, ändern und löschen.
+  - Wörterbuchmethoden wie ``keys()``, ``values()`` verwenden und Schlüssel mit ``in`` überprüfen.
+  - Ein praktisches Beispiel implementieren, um persönliche Informationen zu speichern.
+
+* **Hausaufgabe**: Schreiben Sie ein Programm zur Steuerung einer RGB-LED, indem Sie Farbnamen mithilfe eines Wörterbuchs RGB-Werten zuordnen und Benutzereingaben erlauben, um die LED-Farbe zu ändern.
+
 
 **Video**
 

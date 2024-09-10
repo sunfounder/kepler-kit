@@ -81,8 +81,8 @@ Die Komponenten können auch einzeln über die untenstehenden Links erworben wer
 
 .. note::
 
-   * Die Datei ``6.1_ultrasonic.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/6.1_ultrasonic``.
-   * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
+    * Die Datei ``6.1_ultrasonic.ino`` finden Sie unter dem Pfad ``kepler-kit-main/arduino/6.1_ultrasonic``.
+    * Alternativ können Sie den Code in die **Arduino IDE** kopieren.
   
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf **Hochladen** klicken.
 

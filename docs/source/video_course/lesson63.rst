@@ -17,18 +17,9 @@ Lektion 63 : Objektorientierte Programmierung in MicroPython mit Klassen und Met
 
 Dieses Tutorial behandelt die objektorientierte Programmierung (OOP) mit dem Raspberry Pi Pico W:
 
-* **Aufgabenübersicht**:
- - Einführung in die modulare Programmierung mit Funktionen.
- - Übergang zur objektorientierten Programmierung mit Klassen und Methoden.
- - Erstellung einer `Rectangle`-Klasse mit Methoden zur Berechnung von Fläche, Umfang und Diagonale.
-* **Wichtige Schritte**:
- - Definition einer `Rectangle`-Klasse.
- - Verwendung der `__init__`-Methode zur Initialisierung von Objekteigenschaften.
- - Implementierung von Methoden innerhalb der Klasse zur Durchführung von Berechnungen.
- - Erstellung von Instanzen (Objekten) der `Rectangle`-Klasse.
- - Änderung der Objekteigenschaften und erneute Berechnung der Werte mithilfe von Klassenmethoden.
-* **Hausaufgabe**:
- - Schreiben Sie ein Programm, das die `Rectangle`-Klasse verwendet, um mehrere Rechteck-Objekte zu erstellen, deren Eigenschaften zu berechnen, Attribute zu ändern und bei Bedarf neu zu berechnen.
+* **Aufgabenübersicht**: Einführung in die modulare Programmierung und Übergang zur objektorientierten Programmierung mit Klassen. Erstellen einer ``Rectangle``-Klasse zur Berechnung von Fläche, Umfang und Diagonale.
+* **Wichtige Schritte**: Die Klasse ``Rectangle`` definieren, ``__init__`` verwenden, um Attribute zu initialisieren, Methoden implementieren, Objekte erstellen und verändern.
+* **Hausaufgabe**: Schreiben Sie ein Programm, das die ``Rectangle``-Klasse verwendet, um mehrere Rechteck-Objekte zu erstellen, zu verändern und neu zu berechnen.
 
 
 **Video**

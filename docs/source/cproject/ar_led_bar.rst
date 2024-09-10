@@ -90,8 +90,8 @@ Das LED-Balkendiagramm besteht aus 10 einzeln ansteuerbaren LEDs. Dabei ist die 
 
 .. note::
 
-   * Sie können die Datei ``2.2_display_the_level.ino`` im Verzeichnis ``kepler-kit-main/arduino/2.2_display_the_level`` öffnen.
-   * Oder Sie kopieren den Code in die **Arduino IDE**.
+    * Sie können die Datei ``2.2_display_the_level.ino`` im Verzeichnis ``kepler-kit-main/arduino/2.2_display_the_level`` öffnen.
+    * Oder Sie kopieren den Code in die **Arduino IDE**.
 
     * Vergessen Sie nicht, vor dem Hochladen das richtige Board (Raspberry Pi Pico) und den passenden Port auszuwählen.
 

@@ -120,8 +120,8 @@ Sie können sie auch einzeln über die untenstehenden Links kaufen.
 
 .. note::
 
-   * Sie können die Datei ``5.2_number_display.ino`` im Pfad ``kepler-kit-main/arduino/5.2_number_display`` öffnen. 
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    * Sie können die Datei ``5.2_number_display.ino`` im Pfad ``kepler-kit-main/arduino/5.2_number_display`` öffnen. 
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
 
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Upload** klicken.
 

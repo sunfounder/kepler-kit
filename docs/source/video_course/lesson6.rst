@@ -17,15 +17,11 @@ Lektion 6: Verständnis von If-Anweisungen in MicroPython
 
 Dieses Tutorial behandelt die Verwendung von If-Anweisungen und Bedingungen in MicroPython mit dem Raspberry Pi Pico W:
 
-* **Umgang mit Benutzereingaben**: Zeigt, wie man Benutzereingaben mit der input() Funktion erhält und diese in verschiedene Datentypen wie Ganzzahlen und Gleitkommazahlen umwandelt.
-* **Grundlegende If-Anweisungen**: Erklärt die Verwendung von If-Anweisungen zur Ausführung von Code basierend auf bestimmten Bedingungen, einschließlich der Überprüfung auf Gleichheit (==), Ungleichheit (!=), größer als (>), kleiner als (<), größer oder gleich (>=) und kleiner oder gleich (<=).
-* **Bedingte Logik**: Veranschaulicht, wie man basierend auf Benutzereingaben Logik implementiert, um den Zustand einer LED (ein, aus, umschalten) mit If-, Elif- und Else-Anweisungen zu steuern.
-* **Praktische Demonstration**: Bietet eine detaillierte Anleitung zum Einrichten eines LED-Schaltkreises auf einem Breadboard und zur Steuerung der LED basierend auf Benutzereingaben durch bedingte Anweisungen in MicroPython.
-* **Hausaufgabe**: Beauftragt ein Projekt zum Bau eines Schaltkreises mit einem Potentiometer und drei LEDs (rot, gelb, grün). Die Aufgabe besteht darin, die Potentiometerwerte auf eine Skala von 0-100 umzuwandeln und die LEDs basierend auf dem Eingangsbereich zum Leuchten zu bringen:
- - Grüne LED für 0-79
- - Gelbe LED für 80-94
- - Rote LED für 95-100
-Ermutigt dazu, das Projekt auf YouTube zu posten und sich mit anderen auszutauschen, um ein Gemeinschaftsgefühl zu entwickeln.
+* **Benutzereingaben verarbeiten**: Wie man Benutzereingaben erfasst und in verschiedene Datentypen umwandelt.
+* **Grundlegende If-Anweisungen**: Verwendung von If-Anweisungen zur Überprüfung von Bedingungen wie Gleichheit, Ungleichheit und Vergleichen.
+* **Bedingte Logik**: Steuerung des LED-Zustands (ein, aus, umschalten) mit If-, Elif- und Else-Anweisungen.
+* **Praktische Demonstration**: Aufbau einer LED-Schaltung und Steuerung dieser basierend auf Benutzereingaben.
+* **Hausaufgabe**: Bauen Sie eine Schaltung mit einem Potentiometer und drei LEDs, die basierend auf Eingabebereichen leuchten.
 
 **Video**
 

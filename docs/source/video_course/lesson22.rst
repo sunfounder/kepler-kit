@@ -17,33 +17,11 @@ Lektion 22: Verwendung eines LCD-Displays mit dem Pico W
 
 Dieses Tutorial behandelt das Anschließen und Verwenden eines LCD-1602-Displays mit dem Raspberry Pi Pico W:
 
-* **Einführung**: Vorstellung des Tutorials, Anerkennung des Sponsors SunFounder und Erklärung des Ziels, ein LCD-Display zum mobilen Einsatz im Raspberry Pi Pico W-Projekt hinzuzufügen.
-
-* **Einführung der Komponenten und Aufbau**:
-- Beschreibung der erforderlichen Komponenten: LCD-1602-Display und Female-to-Male-Kabel.
-- Detaillierte Verbindungen:
-  - LCD-1602-Pins zum Raspberry Pi Pico W:
-    - Masse zu Pin 38
-    - VCC (5V) zu dem rechten Pin
-    - SDA (Daten) zu GPIO-Pin 6
-    - SCL (Takt) zu GPIO-Pin 7
-
-* **Bibliotheksinstallation**:
-  - Anleitung zum Herunterladen und Installieren der notwendigen Bibliothek für das LCD-1602-Display von toptechboy.com.
-  - Anweisungen zum Speichern und Importieren der Bibliothek in der Thonny IDE.
-
-* **Code-Erklärung**:
-  - Beschreibung der Erstellung eines LCD-Objekts und des Schreibens von Text auf das LCD.
-  - Bereitstellung eines Beispielprogramms, das nach dem Namen des Benutzers fragt und eine Begrüßungsnachricht auf dem LCD anzeigt.
-  - Behebung potenzieller Probleme mit Textüberlappung durch die Verwendung von `LCD.clear()`, um den Bildschirm vor dem Schreiben neuer Texte zu löschen.
-
-* **Praktische Demonstration**:
-  - Zeigt das Programm in Aktion, indem Namen auf dem LCD angezeigt werden.
-  - Erklärung zur Anpassung des LCD-Kontrasts mit einem Potentiometer auf der Rückseite des Displays.
-
-* **Hausaufgabe**:
-  - Aufgabe zur Integration des LCD-Displays in das Projekt mit dem DHT11-Temperatur- und Feuchtigkeitssensor aus Lektion 21.
-  - Anweisung, die Temperatur in Celsius oder Fahrenheit basierend auf einem Umschalttaster anzuzeigen und die Feuchtigkeit auf dem LCD darzustellen.
+* **Komponenteneinführung und Einrichtung**: Beschreibung des Anschlusses des LCD 1602-Displays an den Raspberry Pi Pico W.
+* **Bibliotheksinstallation**: Anleitung zum Herunterladen und Installieren der LCD-Bibliothek von toptechboy.com.
+* **Code-Erklärung**: Erklärung zur Erstellung eines LCD-Objekts, Schreiben von Text und Verwendung von ``LCD.clear()``, um Textüberschneidungen zu vermeiden.
+* **Praktische Demonstration**: Vorführung des Programms, das Namen auf dem LCD anzeigt, sowie der Kontrastanpassung mit einem Potentiometer.
+* **Hausaufgabe**: Integrieren Sie das LCD in das DHT11-Projekt, um Temperatur und Luftfeuchtigkeit basierend auf einem Umschaltknopf anzuzeigen.
 
 **Video**
 

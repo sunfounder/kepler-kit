@@ -111,9 +111,8 @@ Die Berechnungsformel ist unten dargestellt.
 
 .. note::
 
-   * Sie können die Datei ``2.13_thermometer.ino`` unter dem Pfad ``kepler-kit-main/arduino/2.13_thermometer`` öffnen.
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
-
+    * Sie können die Datei ``2.13_thermometer.ino`` unter dem Pfad ``kepler-kit-main/arduino/2.13_thermometer`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den korrekten Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 .. raw:: html

@@ -101,8 +101,9 @@ Sie können die Komponenten auch einzeln über die folgenden Links kaufen.
     * Sie können die Datei ``3.3_rgb_led_strip.ino`` im Verzeichnis ``kepler-kit-main/arduino/3.3_rgb_led_strip`` öffnen.
     * Oder kopieren Sie diesen Code in die **Arduino IDE**.
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
-    * Die Bibliothek ``Adafruit_NeoPixel`` wird hier verwendet. Bitte beziehen Sie sich auf :ref:`add_libraries_ar` für das Hinzufügen in die Arduino IDE.
+    * Die Bibliothek ``Adafruit_NeoPixel`` wird hier verwendet. Sie können sie über den **Bibliotheksmanager** installieren.
 
+      .. image:: img/lib_neopixel.png
 
 .. raw:: html
 

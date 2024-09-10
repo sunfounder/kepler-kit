@@ -100,7 +100,9 @@ Sie können die einzelnen Komponenten auch über die untenstehenden Links erwerb
     * Die Datei ``6.2_dht11.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/6.2_dht11``.
     * Oder kopieren Sie diesen Code in die **Arduino IDE**.
     * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Hochladen**-Button klicken.
-    * Hier wird die Bibliothek ``SimpleDHT`` verwendet. Wie Sie diese zur Arduino IDE hinzufügen, erfahren Sie unter :ref:`add_libraries_ar`.
+    * Die Bibliothek ``DHT sensor library`` wird hier verwendet. Sie können sie über den **Bibliotheksmanager** installieren.
+
+      .. image:: img/lib_dht.png
 
 .. raw:: html
     
@@ -110,45 +112,61 @@ Nach dem Ausführen des Codes werden Sie sehen, dass der Serielle Monitor kontin
 
 **Wie funktioniert es?**
 
-Initialisierung des DHT11-Objekts. Für dieses Gerät ist lediglich ein digitaler Eingang erforderlich.
+#. Einbindung notwendiger Bibliotheken und Definition von Konstanten.
+   Dieser Teil des Codes bindet die DHT-Sensorbibliothek ein und definiert die Pinnummer sowie den Sensortyp, der in diesem Projekt verwendet wird.
 
-.. code-block:: arduino
+   .. code-block:: arduino
+    
+      #include <DHT.h>
+      #define DHTPIN 16       // Definiere den Pin für den Anschluss des Sensors
+      #define DHTTYPE DHT11  // Definiere den Sensortyp
 
-    int pinDHT11 = 16;
-    SimpleDHT11 dht11(pinDHT11);
+#. Erstellung eines DHT-Objekts.
+   Hier erstellen wir ein DHT-Objekt unter Verwendung der definierten Pinnummer und des Sensortyps.
 
-Auslesen der aktuellen Temperatur und Feuchtigkeit, die in den Variablen ``temperature`` und ``humidity`` gespeichert werden. ``err`` dient zur Überprüfung der Gültigkeit der Daten.
+   .. code-block:: arduino
 
-.. code-block:: arduino
+      DHT dht(DHTPIN, DHTTYPE);  // Erstelle ein DHT-Objekt
 
-    byte temperature = 0;
-    byte humidity = 0;
-    int err = dht11.read(&temperature, &humidity, NULL);
+#. Diese Funktion wird einmal ausgeführt, wenn der Arduino startet. Wir initialisieren die serielle Kommunikation und den DHT-Sensor in dieser Funktion.
 
-Filtern ungültiger Daten.
+   .. code-block:: arduino
 
-.. code-block:: arduino
+      void setup() {
+        Serial.begin(9600);
+        Serial.println(F("DHT11 Test!"));
+        dht.begin();  // Initialisiere den DHT-Sensor
+      }
 
-    if (err != SimpleDHTErrSuccess) {
-        Serial.print("Read DHT11 failed, err="); 
-        Serial.print(SimpleDHTErrCode(err));
-        Serial.print(","); 
-        Serial.println(SimpleDHTErrDuration(err)); 
-        delay(1000);
-        return;
-    }     
+#. Hauptschleife.
+   Die Funktion ``loop()`` läuft kontinuierlich nach der Setup-Funktion. Hier lesen wir die Luftfeuchtigkeit und Temperatur aus, berechnen den Hitzeindex und geben diese Werte im seriellen Monitor aus. Wenn das Auslesen des Sensors fehlschlägt (NaN zurückgibt), wird eine Fehlermeldung ausgegeben.
 
-Ausgabe der Temperatur und Feuchtigkeit.
+   .. Hinweis::
+    
+      Der |link_heat_index| ist eine Methode, um zu messen, wie heiß es sich draußen anfühlt, indem die Lufttemperatur und die Luftfeuchtigkeit kombiniert werden. Er wird auch als "gefühlte Temperatur" oder "scheinbare Temperatur" bezeichnet.
 
-.. code-block:: arduino
+   .. code-block:: arduino
 
-    Serial.print((int)temperature); 
-    Serial.print(" °C, "); 
-    Serial.print((int)humidity); 
-    Serial.println(" %RH");
-
-Abschließend ist die Abtastrate des DHT11 1 HZ, daher ist eine ``delay(1500)`` in der Schleife erforderlich.
-
-.. code-block:: arduino
-
-    delay(1500);
+      void loop() {
+        delay(2000);
+        float h = dht.readHumidity();
+        float t = dht.readTemperature();
+        float f = dht.readTemperature(true);
+        if (isnan(h) || isnan(t) || isnan(f)) {
+          Serial.println(F("Failed to read from DHT sensor!"));
+          return;
+        }
+        float hif = dht.computeHeatIndex(f, h);
+        float hic = dht.computeHeatIndex(t, h, false);
+        Serial.print(F("Humidity: "));
+        Serial.print(h);
+        Serial.print(F("%  Temperature: "));
+        Serial.print(t);
+        Serial.print(F("°C "));
+        Serial.print(f);
+        Serial.print(F("°F  Heat index: "));
+        Serial.print(hic);
+        Serial.print(F("°C "));
+        Serial.print(hif);
+        Serial.println(F("°F"));
+      }

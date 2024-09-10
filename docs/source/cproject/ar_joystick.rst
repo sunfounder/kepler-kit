@@ -95,8 +95,8 @@ Der SW-Pin ist über einen 10K Pull-up-Widerstand angeschlossen. Der Grund dafü
 
 .. note::
 
-   * Die Datei ``4.1_toggle_the_joyostick.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``.
-   * Oder kopieren Sie den Code in die **Arduino IDE**.
+    * Die Datei ``4.1_toggle_the_joyostick.ino`` finden Sie im Pfad ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``.
+    * Oder kopieren Sie den Code in die **Arduino IDE**.
 
     * Vergessen Sie nicht, das Board (Raspberry Pi Pico) und den richtigen Port auszuwählen, bevor Sie auf den **Hochladen**-Button klicken.
 

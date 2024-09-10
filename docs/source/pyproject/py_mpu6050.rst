@@ -107,9 +107,9 @@ Die Komponenten können auch einzeln über die folgenden Links bezogen werden:
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
 
 Nach dem Ausführen des Programms sehen Sie die Werte des 3-Achsen-Beschleunigungsmessers und des 3-Achsen-Gyroskops in der Ausgabe rotieren. Drehen Sie den MPU6050 beliebig, und Sie werden feststellen, dass sich die Werte entsprechend ändern.
 Um die Änderungen besser erkennen zu können, können Sie eine der Ausgabelinien auskommentieren und sich auf einen Datensatz konzentrieren.
@@ -135,6 +135,6 @@ In der Folge können Sie Echtzeit-Beschleunigungs- und Winkelgeschwindigkeitswer
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)

@@ -117,10 +117,9 @@ Auf diese Weise werden Sie feststellen, dass sich die Helligkeit der LED beim Dr
 
 .. note::
 
-   * Sie können die Datei ``2.11_turn_the_knob.ino`` im Pfad ``kepler-kit-main/arduino/2.11_turn_the_knob`` öffnen.
-   * Oder kopieren Sie diesen Code in die **Arduino IDE**.
-
-
+    * Sie können die Datei ``2.11_turn_the_knob.ino`` im Pfad ``kepler-kit-main/arduino/2.11_turn_the_knob`` öffnen.
+    * Oder kopieren Sie diesen Code in die **Arduino IDE**.
+    
     * Vergessen Sie nicht, die Platine (Raspberry Pi Pico) und den korrekten Anschluss auszuwählen, bevor Sie auf die Schaltfläche **Hochladen** klicken.
 
 Wenn das Programm läuft, können wir den aktuell von Pin GP28 gelesenen Analogwert im seriellen Monitor sehen.
