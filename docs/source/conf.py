@@ -20,7 +20,7 @@ import time
 # -- Project information -----------------------------------------------------
 
 project = 'SunFounder Kepler Kit for Raspberry Pi Pico W'
-copyright = '2023, SunFounder'
+copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
 
