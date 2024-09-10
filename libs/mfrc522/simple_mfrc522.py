@@ -5,8 +5,8 @@ from .mfrc522 import MFRC522
 def uidToString(uid):
     mystring = ""
     for i in uid:
-        mystring = "%02X" % i + mystring
-    return mystring
+        mystring += "%02X " % i  
+    return mystring.strip()
 
 class SimpleMFRC522:
 
