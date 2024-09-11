@@ -37,7 +37,7 @@ Jetzt geht es darum, MicroPython auf dem Raspberry Pi Pico zu installieren. Die 
 
     .. image:: img/set_pico2.png
 
-#. Im Feld **Ziellaufwerk** erscheint automatisch das Laufwerk des gerade angeschlossenen Pico, und im Feld **MicroPython-Variante** wählen Sie **Raspberry Pi Pico/Pico H**.
+#. Im Feld **Ziellaufwerk** erscheint automatisch das Laufwerk des gerade angeschlossenen Pico, und im Feld **MicroPython-Variante** wählen Sie **Raspberry Pi.Pico W/Pico WH**.
 
     .. image:: img/set_pico3.png
 
