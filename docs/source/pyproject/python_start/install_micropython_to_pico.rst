@@ -37,7 +37,7 @@ Thonny IDEを使って、Raspberry Pi PicoにMicroPythonを簡単に一回でイ
 
     .. image:: img/set_pico2.png
 
-#. **対象のボリューム** で、先ほど挿入したPicoのボリュームが自動的に表示されます。 **MicroPythonのバリアント** で、 **Raspberry Pi.Pico/Pico H** を選択します。
+#. **対象のボリューム** で、先ほど挿入したPicoのボリュームが自動的に表示されます。 **MicroPythonのバリアント** で、 **Raspberry Pi.Pico W/Pico WH** を選択します。
 
     .. image:: img/set_pico3.png
 

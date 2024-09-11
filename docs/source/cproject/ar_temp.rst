@@ -108,8 +108,9 @@ PTCサーミスターの抵抗は温度とともに増加し、NTCの状態は�
 **コード**
 
 .. note::
-   * ファイル ``2.13_thermometer.ino`` を ``kepler-kit-main/arduino/2.13_thermometer`` パスから開くことができます。
-   * または、このコードを **Arduino IDE** にコピーしてください。
+
+    * ファイル ``2.13_thermometer.ino`` を ``kepler-kit-main/arduino/2.13_thermometer`` パスから開くことができます。
+    * または、このコードを **Arduino IDE** にコピーしてください。
    
     * ボード（Raspberry Pi Pico）と正確なポートを選択した後、 **アップロード** ボタンをクリックすることを忘れないでください。
 

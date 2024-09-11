@@ -88,43 +88,27 @@
 
 .. note::
 
-    * ファイル ``6.5_rfid_write.ino`` は、パス ``kepler-kit-main/arduino/6.5_rfid_write`` で開くことができます。
-    * または、このコードを **Arduino IDE** にコピーしてください。
-    * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
-    * ここではライブラリ「MFRC522」が使用されています。Arduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
+   * ここでは ``MFRC522`` ライブラリが使用されています。このライブラリは **Library Manager** からインストールできます。
 
-メインの関数は二つに分かれています：
+      .. image:: img/lib_mfrc522.png
 
-* ``6.5_rfid_write.ino`` ：カード（またはキー）に情報を書き込むために使用されます。
-* ``6.5_rfid_read.ino`` ：カード（またはキー）内の情報を読み取るために使用されます。
+メイン機能は2つに分かれています：
 
-.. note::
+* ``6.5_rfid_write`` でカード（またはキー）に情報を書き込む機能。
 
-   * ファイル ``6.5_rfid_write.ino`` は、パス ``kepler-kit-main/arduino/6.5_rfid_write`` で開くことができます。
-   * または、このコードを **Arduino IDE** にコピーしてください。
-
-   
-   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
-
-実行後、シリアルモニターでメッセージを入力して、 ``#`` で終了した後、MFRC522モジュールに近づけることでカード（またはキー）にメッセージを書き込むことができます。
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-.. note::
+  実行後、シリアルモニタにメッセージを入力し、 ``#`` で終了します。次に、カード（またはキー）をMFRC522モジュールに近づけることで、メッセージがカードに書き込まれます。
 
-   * ファイル ``6.5_rfid_read.ino`` は、パス ``kepler-kit-main/arduino/6.5_rfid_read`` で開くことができます。
-   * または、このコードを **Arduino IDE** にコピーしてください。
+* ``6.5_rfid_read`` でカード（またはキー）から情報を読み取る機能。
 
-   
-   * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正しいポートを選択してください。
-
-実行後、カード（またはキー）に保存されているメッセージを読み取ることができます。
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+  実行後、カード（またはキー）に保存されたメッセージを読み取ることができます。
 
 **どのように動作するのか？**
 
@@ -132,8 +116,8 @@
 
     #include <MFRC522.h>
 
-    #define RST_PIN         0
-    #define SS_PIN          5
+    #define RST_PIN         9
+    #define SS_PIN          17
 
     MFRC522 mfrc522(SS_PIN, RST_PIN);
 

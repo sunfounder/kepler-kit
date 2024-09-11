@@ -99,7 +99,9 @@
     * ファイル ``6.2_dht11.ino`` は、パス ``kepler-kit-main/arduino/6.2_dht11`` の下で開くことができます。
     * または、このコードを **Arduino IDE** にコピーしてください。
     * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
-    * ここでは ``SimpleDHT`` ライブラリが使用されています。Arduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
+    * ``DHT sensor library`` ライブラリがここで使用されます。このライブラリは **Library Manager** からインストールできます。
+
+      .. image:: img/lib_dht.png
 
 .. raw:: html
     
@@ -109,45 +111,61 @@
 
 **動作原理は？**
 
-DHT11オブジェクトを初期化します。このデバイスは、デジタル入力だけで使用できます。
+#. 必要なライブラリのインクルードと定数の定義。
+   この部分では、DHTセンサライブラリをインクルードし、このプロジェクトで使用するピン番号とセンサの種類を定義します。
 
-.. code-block:: arduino
+   .. code-block:: arduino
+    
+      #include <DHT.h>
+      #define DHTPIN 16       // センサが接続されているピンを定義
+      #define DHTTYPE DHT11  // 使用するセンサの種類を定義
 
-    int pinDHT11 = 16;
-    SimpleDHT11 dht11(pinDHT11);
+#. DHTオブジェクトの作成。
+   ここでは、定義されたピン番号とセンサの種類を使用してDHTオブジェクトを作成します。
 
-現在の温度と湿度を読み取り、それらは変数 ``temperature`` と ``humidity`` に保存されます。 ``err`` はデータの妥当性を判断するために使用されます。
+   .. code-block:: arduino
 
-.. code-block:: arduino
+      DHT dht(DHTPIN, DHTTYPE);  // DHTオブジェクトを作成
 
-    byte temperature = 0;
-    byte humidity = 0;
-    int err = dht11.read(&temperature, &humidity, NULL);
+#. この関数はArduinoが起動したときに一度だけ実行されます。シリアル通信とDHTセンサをこの関数で初期化します。
 
-無効なデータをフィルタリングします。
+   .. code-block:: arduino
 
-.. code-block:: arduino
+      void setup() {
+        Serial.begin(9600);
+        Serial.println(F("DHT11テスト!"));
+        dht.begin();  // DHTセンサを初期化
+      }
 
-    if (err != SimpleDHTErrSuccess) {
-        Serial.print("Read DHT11 failed, err="); 
-        Serial.print(SimpleDHTErrCode(err));
-        Serial.print(","); 
-        Serial.println(SimpleDHTErrDuration(err)); 
-        delay(1000);
-        return;
-    }    
+#. メインループ。
+   ``loop()`` 関数は、setup関数の後に連続して実行されます。ここでは、湿度と温度の値を読み取り、ヒートインデックスを計算し、これらの値をシリアルモニターに表示します。センサの読み取りに失敗した場合（NaNが返された場合）、エラーメッセージを表示します。
 
-温度と湿度を出力します。
+   .. note::
+    
+      |link_heat_index| は、気温と湿度を組み合わせて、外がどれだけ暑く感じるかを測定する方法です。これは「体感気温」または「見かけの気温」とも呼ばれます。
 
-.. code-block:: arduino
+   .. code-block:: arduino
 
-    Serial.print((int)temperature); 
-    Serial.print(" *C, "); 
-    Serial.print((int)humidity); 
-    Serial.println(" H");
-
-最後に、DHT11のサンプリングレートは1HZであり、ループ内で ``delay(1500)`` が必要です。
-
-.. code-block:: arduino
-
-    delay(1500);
+      void loop() {
+        delay(2000);
+        float h = dht.readHumidity();
+        float t = dht.readTemperature();
+        float f = dht.readTemperature(true);
+        if (isnan(h) || isnan(t) || isnan(f)) {
+          Serial.println(F("Failed to read from DHT sensor!"));
+          return;
+        }
+        float hif = dht.computeHeatIndex(f, h);
+        float hic = dht.computeHeatIndex(t, h, false);
+        Serial.print(F("Humidity: "));
+        Serial.print(h);
+        Serial.print(F("%  Temperature: "));
+        Serial.print(t);
+        Serial.print(F("°C "));
+        Serial.print(f);
+        Serial.print(F("°F  Heat index: "));
+        Serial.print(hic);
+        Serial.print(F("°C "));
+        Serial.print(hif);
+        Serial.println(F("°F"));
+      }

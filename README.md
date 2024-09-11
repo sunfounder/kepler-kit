@@ -20,6 +20,10 @@ Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino)
 
 <a id="update"></a>
 ## Update:
+2024-09-11:
+- Update Arduino and Micropython project images and code related to DHT11, Keypad, IR receiver, MFRC522.
+- Modify other minor details
+
 2023-09-01:
     - Add introduction links for all components used in all projects.
 

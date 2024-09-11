@@ -103,7 +103,7 @@
 
     from mfrc522 import SimpleMFRC522
 
-    reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
+    reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
 
     def write():
         to_write = input("Please enter the message: ")
@@ -121,7 +121,7 @@
 
     from mfrc522 import SimpleMFRC522
 
-    reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
+    reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
 
     def read():
         print("Reading...Please place the card...")
@@ -136,7 +136,7 @@
 
     from mfrc522 import SimpleMFRC522
 
-    reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
+    reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
 
 ``SimpleMFRC522()`` クラスをインスタンス化します。
 

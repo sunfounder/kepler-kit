@@ -90,8 +90,8 @@ LEDバーグラフには10個のLEDがあり、それぞれが個別に制御可
 
 .. note::
 
-   * ファイル ``2.2_display_the_level.ino`` は ``kepler-kit-main/arduino/2.2_display_the_level`` のパスで開くことができます。
-   * または、このコードを **Arduino IDE** にコピーペーストしてください。
+    * ファイル ``2.2_display_the_level.ino`` は ``kepler-kit-main/arduino/2.2_display_the_level`` のパスで開くことができます。
+    * または、このコードを **Arduino IDE** にコピーペーストしてください。
 
     * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
 

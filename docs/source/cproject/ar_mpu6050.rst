@@ -78,11 +78,11 @@ MPU-6050は、3軸ジャイロスコープと3軸加速度計を組み合わせ�
 
 **回路図**
 
-|sch_mpu6050|
+|sch_mpu6050_ar|
 
 **配線**
 
-|wiring_mpu6050|
+|wiring_mpu6050_ar|
 
 
 **コード**
@@ -92,7 +92,9 @@ MPU-6050は、3軸ジャイロスコープと3軸加速度計を組み合わせ�
     * ``kepler-kit-main/arduino/6.3_6axis_motion_tracking`` のパスにある ``6.3_6axis_motion_tracking.ino`` ファイルを開いてください。
     * または、このコードを **Arduino IDE** にコピーアンドペーストしてください。
     * **Upload** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
-    * ここでは ``Adafruit_MPU6050`` ライブラリを使用しています。Arduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
+    * ``Adafruit MPU6050`` ライブラリがここで使用されます。このライブラリは **Library Manager** からインストールできます。
+
+      .. image:: img/lib_mpu6050.png
 
 .. raw:: html
     

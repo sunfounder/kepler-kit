@@ -81,11 +81,11 @@ LCD1602は、文字型の液晶ディスプレイで、同時に32（16×2）文
 
 **回路図**
 
-|sch_lcd|
+|sch_lcd_ar|
 
 **配線**
 
-|wiring_lcd|
+|wiring_lcd_ar|
 
 **コード**
 
@@ -94,14 +94,15 @@ LCD1602は、文字型の液晶ディスプレイで、同時に32（16×2）文
     * ファイル ``3.4_liquid_crystal_display.ino`` は、 ``kepler-kit-main/arduino/3.4_liquid_crystal_display`` のパスで開くことができます。
     * または、このコードを **Arduino IDE** にコピーペーストしてください。
     * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
-    * ここで使用されているライブラリは ``LiquidCrystal_I2C`` です。それをArduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
+    * ``LiquidCrystal I2C`` ライブラリがここで使用されます。このライブラリは **Library Manager** からインストールできます。
+
+      .. image:: img/lib_i2c_lcd.png
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f464967-5937-473a-8a0d-8e4577c85e7d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-プログラムが実行された後、LCDに順番に2行のテキストが表示され、その後消えます。
+コードが正常にアップロードされると、I2C LCD1602に「SunFounder」と「Hello World」が表示されます。
 
 .. note::
     コードと配線が正しくても、LCDが内容を表示しない場合は、背面のポテンショメータを回してコントラストを上げてみてください。

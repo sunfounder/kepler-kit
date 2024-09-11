@@ -12,20 +12,23 @@
 
     👉 私たちと一緒に探索し、創造する準備はできましたか？ [|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-lesson 1: 初心者のための最初のプログラムを書く
+Lesson 1: 初心者向けに最初のプログラムを書こう
 =================================================================
 
-このチュートリアルでは、SunFounder Keplerキットを使用してRaspberry Pi Pico Wのセットアップとプログラミングを行います。
+このチュートリアルでは、SunFounder Kepler Kitを使用してRaspberry Pi Pico Wをセットアップし、プログラミングする方法を説明します：
 
-* **イントロダクションとセットアップ**: チュートリアルシリーズの概要とSunFounderへのスポンサー紹介。Pico WをUSBケーブルでPCに接続するための開梱と接続手順。
-* **MicroPythonのインストール**: Pico WにMicroPythonをダウンロードしてインストールするためのステップバイステップガイド。Pico WをUSBドライブとして認識させるための必要な手順。
-* **Thonny IDEのインストール**: PCにThonny IDEをダウンロードしてインストールする手順。インストール警告の処理とThonnyをPico Wと通信できるように設定する方法。
-* **最初のプログラム**: Thonnyで最初のプログラムを書いて実行し、「Hello, World!」を表示させてセットアップが正しく行われたことを確認します。
-* **GPIOの操作**: GPIOピンの説明と、オンボードLEDをオンとオフにする簡単なプログラム。LEDの点滅効果を作成するためのループとディレイの導入。
+* **セットアップ**: Pico Wを開封し、USB経由でPCに接続します。
+* **MicroPython**: Pico WにMicroPythonをインストールします。
+* **Thonny IDE**: Thonny IDEをインストールしてセットアップします。
+* **最初のプログラム**: Thonnyで「Hello, World!」プログラムを実行します。
+* **GPIO**: シンプルな点滅プログラムでオンボードLEDを制御します。
+
 
 **ビデオ**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/SL4_oU9t8Ss?si=Y3IQH0_JAyygMfUT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 

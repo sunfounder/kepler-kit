@@ -90,8 +90,8 @@
 
 .. note::
 
-   * ファイル ``2.14_feel_the_water_level.ino`` は、 ``kepler-kit-main/arduino/2.14_feel_the_water_level`` のパスにあります。
-   * または、このコードを **Arduino IDE** にコピーできます。
+    * ファイル ``2.14_feel_the_water_level.ino`` は、 ``kepler-kit-main/arduino/2.14_feel_the_water_level`` のパスにあります。
+    * または、このコードを **Arduino IDE** にコピーできます。
 
     * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と適切なポートを選択してください。
 

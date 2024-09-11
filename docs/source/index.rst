@@ -43,11 +43,6 @@ Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシン
 
 こちらがメールアドレスです：service@sunfounder.com。
 
-**表示言語について**
-
-このドキュメントは他の言語でもご利用いただけます。表示言語を切り替えるには、ページの左下にある **Read the Docs** アイコンをクリックしてください。
-
-.. image:: img/translation.png
 
 **ソースコード**
 
@@ -62,12 +57,13 @@ Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシン
 
     このキットについて <self>
     introduction_to_pico_w
-    component/what_is_included_in_this_kit
+    download_the_code
     bc_basic_circuit
     pyproject/for_micropython_user
     iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
+    component/what_is_included_in_this_kit
     video_course/video_course
     faq
 

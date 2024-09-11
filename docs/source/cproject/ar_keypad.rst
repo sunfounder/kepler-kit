@@ -14,7 +14,7 @@
 
 .. _ar_keypad:
 
-4.2 4x4キーパッド
+4.2 - 4x4キーパッド
 ========================
 
 4x4キーボード、またはマトリックスキーボードは、一つのパネル内で排除された16個のキーのマトリックスです。
@@ -81,7 +81,7 @@
 
 **回路図**
 
-|sch_keypad|
+|sch_keypad_ar|
 
 4つのプルダウン抵抗がマトリックスキーボードの各列に接続されています。これにより、キーが押されていないときにG6〜G9が安定したローレベルを取得します。
 
@@ -91,7 +91,7 @@
 
 **配線**
 
-|wiring_keypad|
+|wiring_keypad_ar|
 
 配線を簡単にするために、上記の図では、マトリックスキーボードの列と10K抵抗が、同時にG6〜G9の位置にある穴に挿入されています。
 
@@ -102,7 +102,9 @@
     * ファイル ``4.2_4x4_keypad.ino`` は、 ``kepler-kit-main/arduino/4.2_4x4_keypad`` のパスで開くことができます。
     * またはこのコードを **Arduino IDE** にコピーペーストしてください。
     * **アップロード** ボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択してください。
-    * ここで使われるライブラリは ``Keypad`` です。それをArduino IDEに追加する方法については、 :ref:`add_libraries_ar` を参照してください。
+    * ``Adafruit Keypad`` ライブラリがここで使用されます。このライブラリは **Library Manager** からインストールできます。
+
+      .. image:: img/lib_ad_keypad.png
 
 .. raw:: html
     
@@ -112,28 +114,69 @@
 
 **仕組み**
 
-``Keypad.h`` ライブラリを呼び出すことで、簡単にキーパッドを使用できます。
+1. ライブラリのインクルード
 
-.. code-block:: arduino
+   最初に、キーパッドとのインターフェースを簡単にするための ``Adafruit_Keypad`` ライブラリをインクルードします。
 
-    #include <Keypad.h>
+   .. code-block:: arduino
 
-ライブラリ関数：
+     #include "Adafruit_Keypad.h"
 
-.. code-block:: arduino
+2. キーパッドの設定
 
-    Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
+   .. code-block:: arduino
 
-内部のキーマップを ``userKeymap`` と同じに初期化します。
+     const byte ROWS = 4;
+     const byte COLS = 4;
+     char keys[ROWS][COLS] = {
+       { '1', '2', '3', 'A' },
+       { '4', '5', '6', 'B' },
+       { '7', '8', '9', 'C' },
+       { '*', '0', '#', 'D' }
+     };
+     byte rowPins[ROWS] = { 2, 3, 4, 5 };
+     byte colPins[COLS] = { 8, 9, 10, 11 };
 
-``userKeymap`` ：キーパッドのボタン上のシンボル。
+   - ``ROWS`` と ``COLS`` 定数は、キーパッドの行と列の数を定義します。 
+   - ``keys`` はキーパッドの各ボタンのラベルを保持する2次元配列です。
+   - ``rowPins`` と ``colPins`` は、キーパッドの行と列に接続されたArduinoのピンを保持する配列です。
 
-``row`` , ``col`` ：ピン設定。
+   .. raw:: html
 
-``numRows`` , ``numCols`` ：キーパッドのサイズ。
+      <br/>
 
-.. code-block:: arduino
+3. キーパッドの初期化
 
-    char getKey()
+   ``Adafruit_Keypad`` のインスタンス ``myKeypad`` を作成し、それを初期化します。
 
-押されているキーを返します（あれば）。この関数は非ブロッキングです。
+   .. code-block:: arduino
+
+     Adafruit_Keypad myKeypad = Adafruit_Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+4. setup() 関数
+
+   シリアル通信とカスタムキーパッドを初期化します。
+
+   .. code-block:: arduino
+
+     void setup() {
+       Serial.begin(9600);
+       myKeypad.begin();
+     }
+
+5. メインループ
+
+   キーイベントをチェックし、それをシリアルモニターに表示します。
+
+   .. code-block:: arduino
+
+     void loop() {
+       myKeypad.tick();
+       while (myKeypad.available()) {
+         keypadEvent e = myKeypad.read();
+         Serial.print((char)e.bit.KEY);
+         if (e.bit.EVENT == KEY_JUST_PRESSED) Serial.println(" pressed");
+         else if (e.bit.EVENT == KEY_JUST_RELEASED) Serial.println(" released");
+       }
+       delay(10);
+     }

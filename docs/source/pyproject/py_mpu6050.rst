@@ -108,9 +108,9 @@ MPU-6050は6軸（3軸ジャイロスコープ、3軸加速度計）のモーシ
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
 
 プログラムを実行すると、3軸加速度計の値と3軸ジャイロスコープの値が出力で循環します。
 この時点でMPU6050を自由に回転させると、これらの値もそれに応じて変わるでしょう。
@@ -137,6 +137,6 @@ MPU6050はI2Cモジュールであり、初期化のためにI2Cピンのセッ�
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)

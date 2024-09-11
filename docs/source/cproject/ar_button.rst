@@ -95,8 +95,8 @@ GPIO（General-purpose input/output、汎用入出力）という名前からわ
 
 .. note::
 
-   * ファイル ``2.5_reading_button_value.ino`` は、 ``kepler-kit-main/arduino/2.5_reading_button_value`` のパスにあります。
-   * または、このコードを **Arduino IDE** にコピーしてください。
+    * ファイル ``2.5_reading_button_value.ino`` は、 ``kepler-kit-main/arduino/2.5_reading_button_value`` のパスにあります。
+    * または、このコードを **Arduino IDE** にコピーしてください。
 
     * アップロードボタンをクリックする前に、ボード（Raspberry Pi Pico）と正確なポートを選択することを忘れないでください。
 
