@@ -155,16 +155,15 @@ You can also buy them separately from the links below.
         # encode text to index
         words=["C","D","E","F","G","A","B","N"]
         def take_text(text):
-            string=text.replace(' ','').upper()
-            while len(string)>0:
-                index=words.index(string[0])
-                tone(buzzer,note[index],250)
-                lumi(index)
-                new_str=""
-                for i in range(0, len(string)):
-                    if i != 0:
-                        new_str = new_str + string[i]
-                string=new_str
+            string = text.replace(' ', '').upper()  # Remove spaces and convert to uppercase
+            while len(string) > 0:
+                if string[0] in words:  # Check if the character is in the words list
+                    index = words.index(string[0])
+                    tone(buzzer, note[index], 250)
+                    lumi(index)
+                else:
+                    print(f"Skipping unknown character: {string[0]}")  # Print unknown character
+                string = string[1:]  # Remove the first character and continue looping
 
         # read card
         def read():
