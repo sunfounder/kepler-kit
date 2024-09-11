@@ -26,7 +26,7 @@ Dieses Tutorial behandelt die Erstellung einer wetterstationslosen Wetterstation
 * **Parsen von JSON-Daten**:
   - Extrahieren Sie relevante Wetterinformationen wie Temperatur, Luftfeuchtigkeit, Luftdruck, Sonnenauf- und -untergangszeiten.
 * **Code-Erklärung**:
-  - Verwenden Sie `urequests.get()`, um JSON-Daten vom API-Endpunkt abzurufen.
+  - Verwenden Sie ``urequests.get()``, um JSON-Daten vom API-Endpunkt abzurufen.
   - Konvertieren Sie die Unix-Epoch-Zeit in die lokale Zeit für Sonnenauf- und -untergang.
   - Konvertieren Sie den Luftdruck von HPA in Atmosphären.
 * **Anzeige der Wetterdaten**:

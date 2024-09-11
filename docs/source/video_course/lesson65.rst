@@ -20,13 +20,13 @@ Dieses Tutorial behandelt die Erstellung einer Servoklasse mithilfe der objektor
 * **Verdrahtungsaufbau**:
   - Verbinden Sie das rote Kabel des Servos mit dem physischen Pin 40 (3.3V), das braune Kabel mit Pin 38 (Masse) und das orangefarbene Steuerkabel mit GPIO-Pin 17.
 * **Klasse und Methoden**:
-  - Definieren Sie eine `Servo`-Klasse zur Verwaltung von Servo-Objekten.
-  - Initialisieren Sie den Servo mit der `__init__`-Methode und richten Sie den PWM-Pin ein.
-  - Implementieren Sie eine `pos`-Methode zur Steuerung der Servoposition.
+  - Definieren Sie eine ``Servo``-Klasse zur Verwaltung von Servo-Objekten.
+  - Initialisieren Sie den Servo mit der ``__init__``-Methode und richten Sie den PWM-Pin ein.
+  - Implementieren Sie eine ``pos``-Methode zur Steuerung der Servoposition.
 * **Code-Implementierung**:
-  - Importieren Sie die notwendigen Bibliotheken (`machine` und `time`).
-  - Erstellen Sie die `Servo`-Klasse mit den Methoden `__init__` und `pos`.
-  - Instanziieren Sie ein Servo-Objekt und steuern Sie dessen Position mit der `pos`-Methode.
+  - Importieren Sie die notwendigen Bibliotheken (``machine`` und ``time``).
+  - Erstellen Sie die ``Servo``-Klasse mit den Methoden ``__init__`` und ``pos``.
+  - Instanziieren Sie ein Servo-Objekt und steuern Sie dessen Position mit der ``pos``-Methode.
 * **Hausaufgabe**:
   - Überprüfen Sie Lektion 36 für Details zur Arbeit mit Servos. Erstellen Sie eine Servoklasse, die eine einfache Steuerung der Servoposition durch das Einstellen von Winkeln ermöglicht. Implementieren Sie eine Methode, um den Servo basierend auf Benutzereingaben zu bewegen.
 

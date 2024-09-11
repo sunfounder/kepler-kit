@@ -17,29 +17,9 @@ Lektion 30: Projekt zur Verbindung Ihres Raspberry Pi Pico W mit dem Internet
 
 Dieses Tutorial behandelt die Verbindung des Raspberry Pi Pico W mit dem Internet und das Abrufen von Daten von APIs:
 
-**Einführung**:
-- Das Ziel ist es, den Raspberry Pi Pico W mit dem Internet zu verbinden und Echtzeitdaten von APIs abzurufen.
-- Keine zusätzliche Hardware erforderlich.
-**Verbindung mit dem WLAN**:
-- Import der notwendigen Bibliotheken: `network`, `time`, `urequests`.
-- Erstellen eines WLAN-Objekts und Verbindung mit dem WLAN-Netzwerk.
-- Sicherstellen der erfolgreichen Verbindung, bevor fortgefahren wird.
-**Abrufen von Daten von APIs**:
-- Einführung in JSON-Dateien und deren Struktur (Arrays, Dictionaries, verschachtelte Elemente).
-- Beispiel-API: Abrufen von Echtzeitdaten über Astronauten im Weltraum.
-- Parsen und Anzeigen der Datenstruktur, um ihr Format zu verstehen.
-**Code-Erklärung**:
-- Verwendung von `urequests.get()`, um JSON-Daten von einem angegebenen API-Endpunkt abzurufen.
-- Parsen der JSON-Daten, um relevante Informationen zu extrahieren.
-- Beispiel: Auflistung der Namen der derzeit im Weltraum befindlichen Astronauten und ihrer jeweiligen Raumfahrzeuge.
-**Praktische Demonstration**:
-- Codebeispiel zum Abrufen und Anzeigen von Daten über Astronauten.
-- Demonstration, wie verschachtelte JSON-Strukturen navigiert werden, um spezifische Daten zu extrahieren.
-- Beispielausgabe: Anzahl der Astronauten, ihre Namen und Raumfahrzeuge.
-**Hausaufgabe**:
-- Finden Sie einen interessanten Echtzeitdatensatz (z.B. Wetter, Aktienkurse, Erdbeben).
-- Abrufen und Parsen der Daten mit dem Raspberry Pi Pico W.
-- Anzeigen oder Verwenden der Daten auf sinnvolle Weise (z.B. sensorlose Wetterstation).
+* **Abrufen von Daten von APIs**: Verwende ``urequests.get()``, um JSON-Daten abzurufen und sie zu parsen, um relevante Informationen zu extrahieren.
+* **Codebeispiel**: Rufe Daten über Astronauten im Weltraum ab und liste ihre Namen und Raumfahrzeuge auf.
+* **Hausaufgabe**: Finde einen Echtzeit-Datensatz (z.B. Wetter), rufe die Daten ab und zeige sie mit dem Raspberry Pi Pico W an.
 
 **Video**
 

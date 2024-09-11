@@ -33,7 +33,7 @@ Dieses Tutorial behandelt die Erstellung eines Temperatur- und Feuchtigkeitsproj
 * **Praktische Demonstration**:
   - Zeigt das Programm in Aktion, indem Temperatur- und Feuchtigkeitsmesswerte auf dem LCD angezeigt werden.
   - Demonstriert die Umschaltfunktion zum Wechseln zwischen Celsius und Fahrenheit.
-  - Behandelt potenzielle Probleme mit Textüberlappungen auf dem LCD durch Hinzufügen von Leerzeichen und Verwendung von `LCD.clear()`, um den Bildschirm vor dem Schreiben neuer Texte zu löschen.
+  - Behandelt potenzielle Probleme mit Textüberlappungen auf dem LCD durch Hinzufügen von Leerzeichen und Verwendung von ``LCD.clear()``, um den Bildschirm vor dem Schreiben neuer Texte zu löschen.
 
 **Video**
 

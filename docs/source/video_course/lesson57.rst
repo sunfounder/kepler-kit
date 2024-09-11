@@ -20,7 +20,7 @@ Dieses Tutorial behandelt die Kalibrierung eines Joysticks mit dem Raspberry Pi 
 * **Verkabelungssetup**:
    - Verbinden Sie GND mit physischem Pin 38, 3.3V mit Pin 36, VRX mit GPIO-Pin 27 und VRY mit GPIO-Pin 26.
 * **Code Implementierung**:
-   - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `math`).
+   - Importieren Sie die notwendigen Bibliotheken (``machine``, ``time``, ``math``).
    - Richten Sie ADC für die Joystick-Achsen ein.
    - Lesen und drucken Sie die Joystick-Werte zur ersten Kalibrierung.
 * **Kalibrierung**:

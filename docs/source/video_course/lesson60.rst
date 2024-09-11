@@ -21,7 +21,7 @@ Dieses Tutorial behandelt die Steuerung eines LED-Streifens mit einem Joystick u
    - Verbinden Sie den Joystick-GND mit Pin 38, 3,3V mit Pin 36, VRX mit GPIO-Pin 27 und VRY mit GPIO-Pin 26. 
    - Verbinden Sie den Neopixel-GND mit Pin 38, 5V mit Pin 40 und Daten mit GPIO-Pin 0.
 * **Code-Implementierung**: 
-   - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `math`, `neopixel`). 
+   - Importieren Sie die notwendigen Bibliotheken (``machine``, ``time``, ``math``, ``neopixel``). 
    - Richten Sie den ADC für den Joystick und Neopixel ein. 
    - Lesen Sie die Joystick-Werte aus und berechnen Sie die Winkel. 
    - Konvertieren Sie die Winkel in RGB-Werte für den Neopixel.

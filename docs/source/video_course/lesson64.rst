@@ -21,13 +21,13 @@ Dieses Tutorial behandelt die objektorientierte Programmierung (OOP) mit dem Ras
   - Verbinden Sie eine rote LED mit GPIO-Pin 15 und eine grüne LED mit GPIO-Pin 14, jeweils mit 330-Ohm-Widerständen zur Masse.
 
 * **Klasse und Methoden**:
-  1. Definieren Sie eine `LED`-Klasse zur Verwaltung von LED-Objekten.
-  2. Initialisieren Sie die LED mit der `__init__`-Methode und richten Sie den Pin ein.
-  3. Implementieren Sie eine `blink`-Methode zur Steuerung des Blinkens der LED.
+  1. Definieren Sie eine ``LED``-Klasse zur Verwaltung von LED-Objekten.
+  2. Initialisieren Sie die LED mit der ``__init__``-Methode und richten Sie den Pin ein.
+  3. Implementieren Sie eine ``blink``-Methode zur Steuerung des Blinkens der LED.
 
 * **Code-Implementierung**:
-  1. Importieren Sie die notwendigen Bibliotheken (`machine` und `time`).
-  2. Erstellen Sie die `LED`-Klasse mit den Methoden `__init__` und `blink`.
+  1. Importieren Sie die notwendigen Bibliotheken (``machine`` und ``time``).
+  2. Erstellen Sie die ``LED``-Klasse mit den Methoden ``__init__`` und ``blink``.
   3. Instanziieren Sie Objekte für die rote und grüne LED.
   4. Verwenden Sie eine Schleife, um die LEDs gemäß den angegebenen Parametern blinken zu lassen.
 

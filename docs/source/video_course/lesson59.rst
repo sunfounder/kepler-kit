@@ -18,7 +18,7 @@ Lektion 59 : Steuerung eines Servos mit einem Joystick
 Dieses Tutorial behandelt die Steuerung eines Servos mit einem Joystick unter Verwendung des Raspberry Pi Pico W:
 
 * **Verkabelungssetup**: Verbinden Sie den Joystick-GND mit Pin 38, 3,3V mit Pin 36, VRX mit GPIO-Pin 27 und VRY mit GPIO-Pin 26. Verbinden Sie 5V des Servos mit Pin 40, GND mit Pin 38 und die Steuerung mit GPIO-Pin 15.
-* **Code-Implementierung**: Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `math`). Richten Sie den ADC für die Joystick-Achsen und PWM für den Servo ein. Lesen und drucken Sie die Joystick-Werte zur Kalibrierung und Winkelberechnung.
+* **Code-Implementierung**: Importieren Sie die notwendigen Bibliotheken (``machine``, ``time``, ``math``). Richten Sie den ADC für die Joystick-Achsen und PWM für den Servo ein. Lesen und drucken Sie die Joystick-Werte zur Kalibrierung und Winkelberechnung.
 * **Kalibrierung und Steuerung**: Konvertieren Sie die rohen ADC-Werte auf eine Skala von -100 bis +100. Berechnen Sie den Winkel des Joysticks mit Trigonometrie. Ordnen Sie den Winkel dem entsprechenden PWM-Wert für den Servo zu.
 * **Hausaufgabe**: Schreiben Sie ein Programm zur Steuerung eines Servomotors basierend auf dem Winkel des Joysticks, um eine genaue Verfolgung zwischen 0 und 180 Grad zu gewährleisten.
 

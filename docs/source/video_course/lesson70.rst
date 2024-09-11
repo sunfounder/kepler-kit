@@ -24,7 +24,7 @@ Dieses Tutorial behandelt die Verwendung von Threads zur Steuerung eines Servos 
 
 * **Code-Implementierung**:
 
-  - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `_thread`, `Servo`).
+  - Importieren Sie die notwendigen Bibliotheken (``machine``, ``time``, ``_thread``, ``Servo``).
   - Richten Sie die Pins für den Taster und den Servo ein.
   - Implementieren Sie einen Umschalter für den Taster, um die Bewegung des Servos zu steuern.
   - Definieren Sie eine Hauptschleife, um Tastendrücke zu erkennen und den Servo zwischen 0 und 180 Grad zu toggeln.

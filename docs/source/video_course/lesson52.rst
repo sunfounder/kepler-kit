@@ -21,7 +21,7 @@ Dieses Tutorial behandelt die Steuerung von NeoPixel-LED-Streifen mit dem Raspbe
 * **Konzept**:
    - Erklärung des Strom- und Datenflusses durch den NeoPixel-Streifen.
 * **Programmierung**:
-   - Bibliotheken importieren: `neopixel` und `machine`.
+   - Bibliotheken importieren: ``neopixel`` und ``machine``.
    - NeoPixel-Objekt einrichten, Farben definieren und die Steuerung einzelner Pixel demonstrieren.
    - Einführung in die Helligkeitsskalierung.
 * **Demonstration**:

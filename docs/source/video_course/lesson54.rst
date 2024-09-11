@@ -20,7 +20,7 @@ Dieses Tutorial behandelt die Steuerung eines NeoPixel-Arrays mit dem Raspberry 
    - Überblick über das NeoPixel-Array mit 8 LEDs.
    - Einfache Verkabelung: 5V, GND und Datenleitung verbunden mit GPIO-Pin 0.
 * **Grundlagen der Programmierung**:
-   - Notwendige Bibliotheken importieren: `neopixel` und `machine`.
+   - Notwendige Bibliotheken importieren: ``neopixel`` und ``machine``.
    - NeoPixel-Objekt einrichten, Farben definieren und die Steuerung einzelner Pixel demonstrieren.
 * **Animation des NeoPixel-Arrays**:
    - Code zur Erstellung einer laufenden Pixel-Animation auf einem farbigen Hintergrund.

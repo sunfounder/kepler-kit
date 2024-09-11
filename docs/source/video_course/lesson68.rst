@@ -22,9 +22,9 @@ Dieses Tutorial behandelt die Steuerung eines Servos und LEDs mit dem Raspberry 
   - Schließen Sie eine grüne LED an GPIO-Pin 14 mit einem 330-Ohm-Widerstand an Masse an.
   - Schließen Sie das Steuerkabel des Servos an GPIO-Pin 17, das Stromkabel an physikalischen Pin 40 und das Erdungskabel an physikalischen Pin 38 an.
 * **Code-Implementierung**:
-  - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `_thread`, `Servo`).
+  - Importieren Sie die notwendigen Bibliotheken (``machine``, ``time``, ``_thread``, ``Servo``).
   - Richten Sie die Pins für die LEDs und den Servo ein.
-  - Definieren Sie eine Funktion `other_core`, um die LEDs basierend auf der Richtung des Servos mit einer globalen Variable blinken zu lassen.
+  - Definieren Sie eine Funktion ``other_core``, um die LEDs basierend auf der Richtung des Servos mit einer globalen Variable blinken zu lassen.
   - Erstellen Sie eine Schleife, um den Servo zu bewegen und die LED-Richtung festzulegen.
 * **Hausaufgabe**:
   - Erweitern Sie den Code, um die rote LED blinken zu lassen, wenn sich der Servo im Uhrzeigersinn bewegt, und die grüne LED, wenn er sich gegen den Uhrzeigersinn bewegt.

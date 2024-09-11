@@ -20,7 +20,7 @@ Dieses Tutorial behandelt die Verwendung eines Joysticks mit dem Raspberry Pi Pi
 * **Verkabelungssetup**:
    - Verbinden Sie GND, 3.3V, VRX mit GPIO-Pin 27 und VRY mit GPIO-Pin 26.
 * **Code Implementierung**:
-   - Importieren Sie die notwendigen Bibliotheken (`machine`, `time`, `math`).
+   - Importieren Sie die notwendigen Bibliotheken (``machine``, ``time``, ``math``).
    - Richten Sie ADC für die Joystick-Achsen ein.
    - Lesen und drucken Sie die Joystick-Werte, um den Bereich und das Verhalten zu verstehen.
 * **Kalibrierung**:

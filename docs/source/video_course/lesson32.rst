@@ -27,7 +27,7 @@ Dieses Tutorial behandelt die Erstellung einer tragbaren Wetterstation mit dem R
   - Extrahieren Sie relevante Wetterinformationen wie Temperatur, Luftfeuchtigkeit, Luftdruck, Sonnenauf- und -untergangszeiten.
 * **Anzeige der Daten auf OLED**:
   - Richten Sie ein OLED-Display ein und verbinden Sie es mit dem Raspberry Pi Pico W.
-  - Verwenden Sie die `ssd1306`-Bibliothek, um Wetterdaten auf dem OLED-Bildschirm anzuzeigen.
+  - Verwenden Sie die ``ssd1306``-Bibliothek, um Wetterdaten auf dem OLED-Bildschirm anzuzeigen.
   - Erstellen Sie eine Schleife, um die Wetterdaten regelmäßig auf dem Bildschirm zu aktualisieren.
 * **Stromversorgung des Geräts**:
   - Verbinden Sie den Raspberry Pi Pico W für den tragbaren Einsatz mit einer Batterie.
