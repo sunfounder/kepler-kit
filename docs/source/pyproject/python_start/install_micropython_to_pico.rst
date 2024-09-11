@@ -39,7 +39,7 @@ Ora passiamo all'installazione di MicroPython sul Raspberry Pi Pico. Thonny IDE 
 
     .. image:: img/set_pico2.png
 
-#. Nel campo **Target volume**, apparirà automaticamente il volume del Pico appena collegato, e nella sezione **Micropython variant**, seleziona **Raspberry Pi.Pico/Pico H**.
+#. Nel campo **Target volume**, apparirà automaticamente il volume del Pico appena collegato, e nella sezione **Micropython variant**, seleziona **Raspberry Pi.Pico W/Pico WH**.
 
     .. image:: img/set_pico3.png
 
