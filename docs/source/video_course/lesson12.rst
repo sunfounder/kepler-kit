@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 12:  Create a Dimmable LED in Micropython
+Lesson 12:  Create a Dimmable LED in Micropython
 ==========================================================================
 This tutorial covers controlling LED brightness using a potentiometer and PWM on the Raspberry Pi Pico W:
 

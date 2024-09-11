@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 36 : Control a Servo With MicroPython
+Lesson 36: Control a Servo With MicroPython
 =============================================================================
 This tutorial covers controlling a servo motor using the Raspberry Pi Pico W:
 

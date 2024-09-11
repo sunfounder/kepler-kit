@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 29: Simple Client Server Project to Control RGB LED
+Lesson 29: Simple Client Server Project to Control RGB LED
 =============================================================================
 
 This tutorial covers setting up a remote-controlled RGB LED using a Raspberry Pi Pico W and a PC over Wi-Fi:

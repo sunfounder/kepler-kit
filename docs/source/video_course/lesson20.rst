@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 20:  Using the DHT11 Temperature and Humidity Sensor in MicroPython
+Lesson 20:  Using the DHT11 Temperature and Humidity Sensor in MicroPython
 =============================================================================
 
 This tutorial covers measuring temperature and humidity using the DHT11 sensor with the Raspberry Pi Pico W:

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 41 : Inferring Tilt From a 3 Axis Accelerometer
+Lesson 41: Inferring Tilt From a 3 Axis Accelerometer
 =============================================================================
 This tutorial covers measuring acceleration in three axes using the MPU6050 sensor with the Raspberry Pi Pico W:
 

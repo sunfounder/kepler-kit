@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 35 : Remote Weather Station with RGB LED Temperature Indicator
+Lesson 35: Remote Weather Station with RGB LED Temperature Indicator
 =============================================================================
 This tutorial covers integrating an RGB LED to display temperature data on a weather station using the Raspberry Pi Pico W:
 

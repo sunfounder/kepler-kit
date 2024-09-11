@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 33 : Display the HSV Color Wheel on an RGB LED
+Lesson 33: Display the HSV Color Wheel on an RGB LED
 =============================================================================
 
 This tutorial covers displaying the HSV (Hue, Saturation, Value) color wheel on an RGB LED using the Raspberry Pi Pico W:

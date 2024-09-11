@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 5:  Reading Analog Voltages Using a Potentiometer
+Lesson 5:  Reading Analog Voltages Using a Potentiometer
 =================================================================
 
 This tutorial covers reading analog voltages using the SunFounder Kepler Kit for Raspberry Pi Pico W:

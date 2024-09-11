@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 71 :  Allow Thread to Complete Task Before Termination
+Lesson 71:  Allow Thread to Complete Task Before Termination
 ===================================================================================
 
 This tutorial covers gracefully terminating a multi-threaded program on the Raspberry Pi Pico W:

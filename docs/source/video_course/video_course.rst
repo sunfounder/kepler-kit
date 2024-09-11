@@ -21,7 +21,7 @@ A step-by-step video course is here to make your learning journey smoother and m
 **project**
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 1
 
     lesson1
     lesson2

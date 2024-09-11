@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 1:  Write Your First Program for Absolute Beginners
+Lesson 1:  Write Your First Program for Absolute Beginners
 =================================================================
 
 This tutorial covers setting up and programming the Raspberry Pi Pico W with the SunFounder Kepler Kit:

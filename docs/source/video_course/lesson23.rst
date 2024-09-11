@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 23:  Temperature and Humidity Sensor with LCD Display
+Lesson 23:  Temperature and Humidity Sensor with LCD Display
 =============================================================================
 
 This tutorial covers creating a temperature and humidity project using the Raspberry Pi Pico W and DHT-11 sensor with an LCD display:

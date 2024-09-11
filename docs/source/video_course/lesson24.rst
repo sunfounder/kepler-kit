@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 24:  Power Portable Projects with LiPo Rechargeable Battery
+Lesson 24:  Power Portable Projects with LiPo Rechargeable Battery
 =============================================================================
 
 This tutorial covers powering a Raspberry Pi Pico W project with a rechargeable LiPo battery, making the project portable:
@@ -22,7 +22,7 @@ This tutorial covers powering a Raspberry Pi Pico W project with a rechargeable 
 * **Code Explanation**: Saves the program as ``main.py`` for automatic startup.
 * **Powering the Project with a Battery**: Connects the LiPo battery and adjusts LCD power to 3.7V.
 * **Adjustments and Demonstration**: Adjusts LCD contrast and verifies the project on battery power.
-* **Conclusion and Next Steps**: Prepares for future lessons with OLED display.
+* **Conclusion and Next Steps**: Prepares for future Lessons with OLED display.
 * **Homework and Final Notes**: Encourages ordering the OLED display and sharing the video.
 
 

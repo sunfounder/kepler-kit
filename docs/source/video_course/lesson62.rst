@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 62: Create Functions to Average and Sort Grades in Micropythons
+Lesson 62: Create Functions to Average and Sort Grades in Micropythons
 =============================================================================
 
 This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:

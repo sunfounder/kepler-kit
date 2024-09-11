@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 14:  Understanding Variable Types and Arrays in Micropython
+Lesson 14:  Understanding Variable Types and Arrays in Micropython
 ==========================================================================
 
 This tutorial covers how MicroPython handles variables and arrays using the Raspberry Pi Pico W:

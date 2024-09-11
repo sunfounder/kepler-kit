@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 19:  Button Control of RGB LED in Micropython
+Lesson 19:  Button Control of RGB LED in Micropython
 =============================================================================
 
 This tutorial covers using multiple push buttons to control the RGB channels of an LED on the Raspberry Pi Pico W:

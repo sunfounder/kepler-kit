@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 63 : Object Oriented Programming in MicroPython with Classes and Methods
+Lesson 63: Object Oriented Programming in MicroPython with Classes and Methods
 ===================================================================================
 
 This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W:

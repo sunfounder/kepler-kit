@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 28: Connecting the Raspberry Pi Pico W to WiFi
+Lesson 28: Connecting the Raspberry Pi Pico W to WiFi
 =============================================================================
 
 This tutorial covers setting up a client-server relationship between a Raspberry Pi Pico W and a PC over Wi-Fi:

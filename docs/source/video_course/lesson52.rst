@@ -12,13 +12,13 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 52 : Controlling Neopixels in MicroPython
+Lesson 52: Controlling Neopixels in MicroPython
 =============================================================================
 This tutorial covers controlling NeoPixel LED strips using the Raspberry Pi Pico W:
 
 * **Introduction**: Overview of NeoPixel strip with 8 LEDs and simple wiring (5V, GND, Data).
 * **Concept**: Explanation of power and data flow through the NeoPixel strip.
-* **Programming**: Import libraries: `neopixel` and `machine`.
+* **Programming**: Import libraries: ``neopixel`` and ``machine``.
 * **Demonstration**: Show different colors on the NeoPixel strip. Display a pattern with a running green light over a red background.
 * **Conclusion**: Encourage experimenting with patterns. Preview upcoming advanced NeoPixel projects.
 

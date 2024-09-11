@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 51 : Ultimate Pitch and Roll Gadget Using the MPU6050
+Lesson 51: Ultimate Pitch and Roll Gadget Using the MPU6050
 =============================================================================
 This tutorial covers creating a precise tilt meter using the MPU6050 sensor and Raspberry Pi Pico W:
 

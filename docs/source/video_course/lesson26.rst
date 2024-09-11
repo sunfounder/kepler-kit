@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 26:  Drawing a Circle on the OLED 1306 Display
+Lesson 26:  Drawing a Circle on the OLED 1306 Display
 =============================================================================
 
 This tutorial covers drawing shapes on an OLED display using the Raspberry Pi Pico W:

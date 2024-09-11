@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 59 : Controlling a Servo with a Joystick
+Lesson 59: Controlling a Servo with a Joystick
 =============================================================================
 
 This tutorial covers controlling a servo with a joystick using the Raspberry Pi Pico W:

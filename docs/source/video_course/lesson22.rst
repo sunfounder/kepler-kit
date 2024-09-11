@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 22:  Using an LCD Display with the Pico W
+Lesson 22:  Using an LCD Display with the Pico W
 =============================================================================
 
 This tutorial covers connecting and using an LCD 1602 display with the Raspberry Pi Pico W:

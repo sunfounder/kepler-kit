@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 15:  For Loops in Micropython
+Lesson 15:  For Loops in Micropython
 ==========================================================================
 This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W:
 

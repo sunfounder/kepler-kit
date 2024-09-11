@@ -12,45 +12,14 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 30: Project to Connect Your Raspberry Pi Pico W to the Internet
+Lesson 30: Project to Connect Your Raspberry Pi Pico W to the Internet
 =============================================================================
 
 This tutorial covers connecting the Raspberry Pi Pico W to the internet and fetching data from APIs:
 
-**Introduction**:
-
-- The goal is to connect the Raspberry Pi Pico W to the internet and fetch real-time data from APIs.
-- No additional hardware setup required.
-
-**Connecting to WiFi**:
-
-- Import necessary libraries: `network`, `time`, `urequests`.
-- Create a WLAN object and connect to the WiFi network.
-- Ensure successful connection before proceeding.
-
-**Fetching Data from APIs**:
-
-- Introduction to JSON files and their structure (arrays, dictionaries, nested elements).
-- Example API used: Fetching real-time data about astronauts in space.
-- Parse and print the data structure to understand its format.
-
-**Code Explanation**:
-
-- Use `urequests.get()` to fetch JSON data from a specified API endpoint.
-- Parse the JSON data to extract relevant information.
-- Example: List names of astronauts currently in space and their respective spacecraft.
-
-**Practical Demonstration**:
-
-- Code snippet to fetch and display data about astronauts.
-- Demonstrates how to navigate nested JSON structures to extract specific data.
-- Example output: Number of astronauts, their names, and spacecraft.
-
-**Homework Assignment**:
-
-- Find an interesting real-time data set (e.g., weather, stock prices, earthquakes).
-- Fetch and parse the data using the Raspberry Pi Pico W.
-- Display or utilize the data in a meaningful way (e.g., sensorless weather station).
+* **Fetching Data from APIs**: Use ``urequests.get()`` to fetch JSON data and parse it to extract relevant information.
+* **Code Example**: Fetch data about astronauts in space, list their names and spacecraft.
+* **Homework**: Find a real-time data set (e.g., weather), fetch and display it using the Raspberry Pi Pico W.
 
 
 **Video**

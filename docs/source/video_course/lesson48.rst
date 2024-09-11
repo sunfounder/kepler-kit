@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 48 : Measuring Rotation Using the Gyros on the MPU6050
+Lesson 48: Measuring Rotation Using the Gyros on the MPU6050
 =============================================================================
 
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable tilt meter by combining accelerometer and gyroscope data:

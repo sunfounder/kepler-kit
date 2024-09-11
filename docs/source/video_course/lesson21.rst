@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 21:  Temperature and Humidity Measurements with Toggle Switch
+Lesson 21:  Temperature and Humidity Measurements with Toggle Switch
 =============================================================================
 
 This tutorial covers adding a toggle push button to switch between temperature readings in Fahrenheit and Celsius using the DHT11 sensor with the Raspberry Pi Pico W:

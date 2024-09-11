@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 70 :  Example of Cleanly Exiting Dual Core Program in MicroPython
+Lesson 70:  Example of Cleanly Exiting Dual Core Program in MicroPython
 ===================================================================================
 
 This tutorial covers using threading to control a servo and a button with the Raspberry Pi Pico W:

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 32: Mobile Weather Station Project
+Lesson 32: Mobile Weather Station Project
 =============================================================================
 
 This tutorial covers creating a portable weather station using the Raspberry Pi Pico W:

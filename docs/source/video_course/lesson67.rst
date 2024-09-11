@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 67 :  Use Both Cores on Your Pi Pico with MicroPython
+Lesson 67:  Use Both Cores on Your Pi Pico with MicroPython
 ===================================================================================
 
 This tutorial covers using both cores of the Raspberry Pi Pico W:

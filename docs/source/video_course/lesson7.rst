@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 7:  Controlling 3 LED with a Potentiometer in Micropython
+Lesson 7:  Controlling 3 LED with a Potentiometer in Micropython
 ====================================================================
 
 This tutorial covers using a potentiometer to control three LEDs (green, yellow, and red) with the Raspberry Pi Pico W:

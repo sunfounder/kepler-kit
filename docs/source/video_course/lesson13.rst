@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 13:  User Specified RGB LED Colors Using Micropython
+Lesson 13:  User Specified RGB LED Colors Using Micropython
 ==========================================================================
 
 This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:

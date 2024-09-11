@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 34 : Convert HSV to RGB in Micropython
+Lesson 34: Convert HSV to RGB in Micropython
 =============================================================================
 This tutorial covers converting HSV (Hue, Saturation, Value) color values to RGB (Red, Green, Blue) values and displaying them on an RGB LED using the Raspberry Pi Pico W:
 

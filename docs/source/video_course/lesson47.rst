@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 47 : Improving Sensor Data With a Low Pass Filter
+Lesson 47: Improving Sensor Data With a Low Pass Filter
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a stable two-axis tilt meter by implementing a low-pass filter:
 

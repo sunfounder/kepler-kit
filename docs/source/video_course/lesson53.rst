@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 53 : Animating NeoPixel Strips Using MicroPython
+Lesson 53: Animating NeoPixel Strips Using MicroPython
 =============================================================================
 This tutorial covers controlling a NeoPixel array with the Raspberry Pi Pico W using MicroPython:
 

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 61 : How to Write Modular Code With Micropython Functions
+Lesson 61: How to Write Modular Code With Micropython Functions
 =============================================================================
 
 This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:

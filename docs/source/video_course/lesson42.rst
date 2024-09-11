@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 42 : Measuring Tilt With an MPU6050 Accelerometer
+Lesson 42: Measuring Tilt With an MPU6050 Accelerometer
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure and calculate tilt angles:
 

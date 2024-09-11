@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 18:  Push Button Control of LEDs in Micropython
+Lesson 18:  Push Button Control of LEDs in Micropython
 =============================================================================
 
 This tutorial covers using push buttons to toggle an LED on and off with the Raspberry Pi Pico W:

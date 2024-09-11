@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 64 :  Object Oriented Programming Example in MicroPython with LEDs
+Lesson 64:  Object Oriented Programming Example in MicroPython with LEDs
 ===================================================================================
 
 This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W, focusing on controlling LEDs:

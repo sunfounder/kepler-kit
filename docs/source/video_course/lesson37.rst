@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 37 : Control a Servo With a Potentiometer in MicroPython
+Lesson 37: Control a Servo With a Potentiometer in MicroPython
 =============================================================================
 This tutorial covers controlling a servo motor using a potentiometer with the Raspberry Pi Pico W:
 

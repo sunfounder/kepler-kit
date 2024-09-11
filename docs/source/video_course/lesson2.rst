@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 2:  Understanding and Using Breadboards
+Lesson 2:  Understanding and Using Breadboards
 =================================================================
 
 This tutorial covers using a breadboard and controlling an external LED with the Raspberry Pi Pico W from the SunFounder kit:

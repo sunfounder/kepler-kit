@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 4:  Create a Binary Counter Using the Pico W
+Lesson 4:  Create a Binary Counter Using the Pico W
 =================================================================
 
 This tutorial covers creating a 4-bit digital counter using the SunFounder Kepler Kit for Raspberry Pi Pico W:

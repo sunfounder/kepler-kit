@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 43 : Measure Pitch and Roll Using a 3 Axis Accelerometer
+Lesson 43: Measure Pitch and Roll Using a 3 Axis Accelerometer
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch and roll angles:
 

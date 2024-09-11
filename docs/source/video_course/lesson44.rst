@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 44 : Measure Simultaneous 0 G on All Three Axis of MPU6050
+Lesson 44: Measure Simultaneous 0 G on All Three Axis of MPU6050
 =============================================================================
 This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch, roll, and vertical displacement:
 

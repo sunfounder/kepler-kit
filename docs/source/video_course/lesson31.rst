@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 31: Sensorless Remote Weather Station Project
+Lesson 31: Sensorless Remote Weather Station Project
 =============================================================================
 
 This tutorial covers creating a sensorless weather station using the Raspberry Pi Pico W:

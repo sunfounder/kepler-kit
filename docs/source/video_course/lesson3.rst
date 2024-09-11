@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 3:  Understanding and Using Binary Numbers
+Lesson 3:  Understanding and Using Binary Numbers
 =================================================================
 
 This tutorial covers the basics of binary numbers and how they are used in computing, focusing on creating a binary counter with LEDs using the Raspberry Pi Pico W.

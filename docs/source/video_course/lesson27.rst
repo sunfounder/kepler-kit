@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 27:  Creating Lissajous Patterns on an OLED Display
+Lesson 27:  Creating Lissajous Patterns on an OLED Display
 =============================================================================
 
 This tutorial covers generating Lissajous patterns on an OLED display using the Raspberry Pi Pico W:

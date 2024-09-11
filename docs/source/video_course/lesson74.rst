@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 74 :  Create a MicroPython Class for Controlling RGB LED
+Lesson 74:  Create a MicroPython Class for Controlling RGB LED
 ===================================================================================
 
 This tutorial covers creating a MicroPython library for controlling an RGB LED with the Raspberry Pi Pico W:

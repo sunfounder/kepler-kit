@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 25:  Getting Started with OLED 1306 in Micropython
+Lesson 25:  Getting Started with OLED 1306 in Micropython
 =============================================================================
 
 This tutorial covers using the Raspberry Pi Pico W and an OLED display for portable projects:

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 10:  Controlling a Dimmable LED with a Potentiometer
+Lesson 10:  Controlling a Dimmable LED with a Potentiometer
 ==========================================================================
 
 This tutorial covers controlling LED brightness using PWM on the Raspberry Pi Pico W:

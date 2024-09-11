@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 72 :  Understanding Using Dictionaries in MicroPython
+Lesson 72:  Understanding Using Dictionaries in MicroPython
 ===================================================================================
 
 This tutorial covers using dictionaries in Python with the Raspberry Pi Pico W:

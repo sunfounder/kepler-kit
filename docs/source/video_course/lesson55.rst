@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 55 : Create a Dynamic Rainbow With Neopixels in MicroPython
+Lesson 55: Create a Dynamic Rainbow With Neopixels in MicroPython
 =============================================================================
 This tutorial covers creating a running rainbow pattern on a NeoPixel array using the Raspberry Pi Pico W and MicroPython:
 

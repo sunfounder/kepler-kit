@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 49 : Improving IMU Performance with a Complimentary Filter
+Lesson 49: Improving IMU Performance with a Complimentary Filter
 =============================================================================
 This tutorial covers improving tilt measurement accuracy using the MPU6050 sensor and Raspberry Pi Pico W:
 

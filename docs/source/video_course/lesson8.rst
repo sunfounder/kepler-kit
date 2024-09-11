@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 8:  Compound Conditionals and If Statements in MicroPython
+Lesson 8:  Compound Conditionals and If Statements in MicroPython
 ==========================================================================
 
 This tutorial covers using a potentiometer to control three LEDs with the Raspberry Pi Pico W and addresses a critical logical error:
@@ -23,7 +23,7 @@ This tutorial covers using a potentiometer to control three LEDs with the Raspbe
 * **Compound Conditionals**: Introduces using AND/OR operators to create precise, non-overlapping conditions.
 * **Circuit Setup and Code**: Detailed wiring and corrected code for LED control.
 * **Practical Demonstration**: Shows the corrected code in action with proper LED behavior.
-* **Next Steps**: Preview of the next lesson on simulating analog output.
+* **Next Steps**: Preview of the next Lesson on simulating analog output.
 
 
 **Video**

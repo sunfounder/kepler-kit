@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 38 : Learn Trigonometry Fundamentals in One Session (EASY)
+Lesson 38: Learn Trigonometry Fundamentals in One Session (EASY)
 =============================================================================
 This tutorial covers the basics of trigonometry and its applications using the Raspberry Pi Pico W:
 

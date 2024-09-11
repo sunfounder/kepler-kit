@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 39 : Practical Trigonometry for Easy Problem Solving
+Lesson 39: Practical Trigonometry for Easy Problem Solving
 =============================================================================
 This tutorial covers practical trigonometry necessary for real-life applications using the Raspberry Pi Pico W:
 
@@ -20,7 +20,7 @@ This tutorial covers practical trigonometry necessary for real-life applications
 * **Key Concepts**: Explains sine, cosine, and converting between degrees and radians, plus calculating angles using arc functions.
 * **Applying Trigonometry**: Uses trigonometry to solve vector and inclined plane problems.
 * **Summary and Homework**: Practice finding sine and cosine values for angles without a calculator.
-* **Next Steps**: Preview of lessons on using the MPU 6050 for tilt measurements.
+* **Next Steps**: Preview of Lessons on using the MPU 6050 for tilt measurements.
 
 
 

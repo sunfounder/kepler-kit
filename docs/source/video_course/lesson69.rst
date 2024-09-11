@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 69 :  Cleanly Exit MicroPython Threads When Program Terminates
+Lesson 69:  Cleanly Exit MicroPython Threads When Program Terminates
 ===================================================================================
 
 This tutorial covers controlling a servo and LEDs with the Raspberry Pi Pico W using both cores:

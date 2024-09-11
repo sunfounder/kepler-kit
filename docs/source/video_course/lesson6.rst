@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 6:  Understanding If Statements in MicroPython
+Lesson 6:  Understanding If Statements in MicroPython
 =================================================================
 
 This tutorial covers using if statements and conditionals in MicroPython with the Raspberry Pi Pico W:

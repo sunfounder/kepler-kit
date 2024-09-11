@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 56 : Using a Joystick With MicroPython
+Lesson 56: Using a Joystick With MicroPython
 =============================================================================
 
 This tutorial covers using a joystick with the Raspberry Pi Pico W:

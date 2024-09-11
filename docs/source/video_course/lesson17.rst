@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 17:  Buttons and Pull Up Resistors in Micropython
+Lesson 17:  Buttons and Pull Up Resistors in Micropython
 =============================================================================
 
 This tutorial covers using push buttons in MicroPython with the Raspberry Pi Pico W:

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 50 : Removing Long Term Steady State Error from Sensor Data
+Lesson 50: Removing Long Term Steady State Error from Sensor Data
 =============================================================================
 This tutorial covers improving tilt measurement accuracy using the MPU6050 sensor and Raspberry Pi Pico W:
 

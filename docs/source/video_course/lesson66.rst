@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 66 :  Create Your Own Libraries in Micropython
+Lesson 66:  Create Your Own Libraries in Micropython
 ===================================================================================
 
 This tutorial covers creating and using a Servo library with the Raspberry Pi Pico W:

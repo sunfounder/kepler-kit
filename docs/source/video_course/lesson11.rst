@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 11:  Understanding and Controlling an RGB LED in MicroPython
+Lesson 11:  Understanding and Controlling an RGB LED in MicroPython
 ==========================================================================
 
 This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:

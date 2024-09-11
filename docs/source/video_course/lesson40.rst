@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 40 : Measuring Acceleration with the MPU6050 Six Axis IMU
+Lesson 40: Measuring Acceleration with the MPU6050 Six Axis IMU
 =============================================================================
 This tutorial covers using the MPU6050 accelerometer and gyroscope with the Raspberry Pi Pico W:
 
@@ -22,7 +22,7 @@ This tutorial covers using the MPU6050 accelerometer and gyroscope with the Rasp
 * **Installing Required Libraries**: Guide to downloading and setting up libraries from the SunFounder GitHub repository.
 * **Coding and Testing**: Step-by-step MicroPython code to read and print acceleration values, with real-time visualization using Thonny plotter.
 * **Homework Assignment**: Measure Z-axis acceleration and compare predictions with actual values.
-* **Conclusion**: Recap and preview of future lessons on practical MPU6050 applications.
+* **Conclusion**: Recap and preview of future Lessons on practical MPU6050 applications.
 
 
 

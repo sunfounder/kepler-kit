@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 9:  Getting Analog Output Using PWM (Pulse Width Modulation)
+Lesson 9:  Getting Analog Output Using PWM (Pulse Width Modulation)
 ==========================================================================
 
 This tutorial covers generating analog output using PWM on the Raspberry Pi Pico W:

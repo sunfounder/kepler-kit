@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 58 : Determine Angular Position of a Joystick in MicroPython
+Lesson 58: Determine Angular Position of a Joystick in MicroPython
 =============================================================================
 
 This tutorial covers calibrating a joystick with the Raspberry Pi Pico W:

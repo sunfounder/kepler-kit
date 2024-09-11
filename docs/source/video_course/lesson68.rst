@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 68 :  MicroPython Multicore Threading Example with LEDs and Servo
+Lesson 68:  MicroPython Multicore Threading Example with LEDs and Servo
 ===================================================================================
 
 This tutorial covers controlling a servo and LEDs with the Raspberry Pi Pico W using both cores:

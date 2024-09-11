@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-lesson 16:  Sequence of Colors in RGB LED With Micropython
+Lesson 16:  Sequence of Colors in RGB LED With Micropython
 =============================================================================
 
 This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W to control an RGB LED:
