@@ -118,10 +118,10 @@ Puoi anche acquistarli separatamente dai link sottostanti.
         import urandom
 
         # ws2812
-        ws = WS2812(machine.Pin(16),8)
+        ws = WS2812(machine.Pin(0),8)
 
         # mfrc522
-        reader = SimpleMFRC522(spi_id=0,sck=2,miso=4,mosi=3,cs=5,rst=0)
+        reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
 
         # buzzer
         NOTE_C4 = 262

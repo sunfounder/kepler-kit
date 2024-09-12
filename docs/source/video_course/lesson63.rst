@@ -12,23 +12,14 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 63 : Programmazione Orientata agli Oggetti in MicroPython con Classi e Metodi
+lesson 63: Programmazione Orientata agli Oggetti in MicroPython con Classi e Metodi
 ========================================================================================
 
-Questo tutorial copre la programmazione orientata agli oggetti (OOP) con Raspberry Pi Pico W:
+Questo tutorial tratta la programmazione orientata agli oggetti (OOP) con il Raspberry Pi Pico W:
 
-**Panoramica del Compito**:
- - Introduzione alla programmazione modulare con funzioni.
- - Transizione alla programmazione orientata agli oggetti utilizzando classi e metodi.
- - Creazione di una classe `Rectangle` con metodi per calcolare area, perimetro e diagonale.
-* **Passaggi Chiave**:
- - Definire una classe `Rectangle`.
- - Utilizzare il metodo `__init__` per inizializzare gli attributi dell'oggetto.
- - Implementare metodi all'interno della classe per eseguire i calcoli.
- - Creare istanze (oggetti) della classe `Rectangle`.
- - Modificare gli attributi dell'oggetto e ricalcolare i valori utilizzando i metodi della classe.
-* **Compito**:
- - Scrivi un programma utilizzando la classe `Rectangle` per creare più oggetti rettangolo, calcolare le loro proprietà, modificare gli attributi e ricalcolare secondo necessità.
+* **Panoramica del compito**: Introduce la programmazione modulare e la transizione verso la programmazione orientata agli oggetti con le classi. Crea una classe ``Rectangle`` per calcolare l'area, il perimetro e la diagonale.
+* **Passaggi chiave**: Definisci la classe ``Rectangle``, utilizza ``__init__`` per inizializzare gli attributi, implementa i metodi, crea e modifica oggetti.
+* **Compito a casa**: Scrivi un programma utilizzando la classe ``Rectangle`` per creare, modificare e ricalcolare più oggetti rettangolo.
 
 
 **Video**

@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 61 : Come Scrivere Codice Modulare con le Funzioni in MicroPython
+lesson 61: Come Scrivere Codice Modulare con le Funzioni in MicroPython
 =============================================================================
 
 Questo tutorial copre l'uso delle funzioni in MicroPython su Raspberry Pi Pico W:

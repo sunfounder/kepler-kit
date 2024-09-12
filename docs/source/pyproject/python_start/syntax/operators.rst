@@ -17,19 +17,21 @@ Operatori
 
 Gli operatori vengono utilizzati per eseguire operazioni su variabili e valori.
 
-* :ref:`Arithmetic operators`
+* :ref:`op_arithmetic`
 
-* :ref:`Assignment operators`
+* :ref:`op_assignment`
 
-* :ref:`Comparison operators`
+* :ref:`op_comparison`
 
-* :ref:`Logical operators`
+* :ref:`op_logical`
 
-* :ref:`Identity operators`
+* :ref:`op_identity`
 
-* :ref:`Membership operators`
+* :ref:`op_membership`
 
-* :ref:`Bitwise operators`
+* :ref:`op_bitwise`
+
+.. _op_arithmetic:
 
 Operatori aritmetici
 ------------------------
@@ -92,6 +94,8 @@ Puoi utilizzare gli operatori aritmetici per eseguire alcune operazioni matemati
 2
 15
 >>> 
+
+.. _op_assignment:
 
 Operatori di assegnazione
 ----------------------------
@@ -158,6 +162,8 @@ Gli operatori di assegnazione vengono utilizzati per assegnare valori alle varia
 36
 >>> 
 
+.. _op_comparison:
+
 Operatori di confronto
 --------------------------
 
@@ -198,6 +204,8 @@ False
 
 Restituisce **False**, perché **a** è minore di **b**.
 
+.. _op_logical:
+
 Operatori logici
 --------------------
 
@@ -224,6 +232,9 @@ Gli operatori logici vengono utilizzati per combinare dichiarazioni condizionali
 >>> %Run -c $EDITOR_CONTENT
 True
 >>> 
+
+
+.. _op_identity:
 
 Operatori di identità
 -------------------------
@@ -262,6 +273,8 @@ False
 True
 >>> 
 
+.. _op_membership:
+
 Operatori di appartenenza
 ------------------------------
 
@@ -287,6 +300,8 @@ Gli operatori di appartenenza vengono utilizzati per verificare se una sequenza 
 >>> %Run -c $EDITOR_CONTENT
 True
 >>> 
+
+.. _op_bitwise:
 
 Operatori bit a bit
 ------------------------

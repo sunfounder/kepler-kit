@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 28: Connessione del Raspberry Pi Pico W al Wi-Fi
+Lezione 28: Connessione del Raspberry Pi Pico W al Wi-Fi
 =============================================================================
 
 Questo tutorial tratta la configurazione di una relazione client-server tra un Raspberry Pi Pico W e un PC tramite Wi-Fi:

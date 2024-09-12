@@ -21,7 +21,7 @@ Questo tutorial spiega come visualizzare la ruota dei colori HSV (Tonalità, Sat
   - Introduzione al concetto di rappresentazione dei colori in HSV e alla sua importanza nella visualizzazione dei dati di temperatura.
   - Spiegazione della ruota dei colori HSV e di come i diversi angoli rappresentino colori differenti.
 * **Configurazione del Progetto e Obiettivo**:
-  - Riepilogo della lezione precedente, in cui è stata costruita una stazione meteo senza sensori utilizzando il Raspberry Pi Pico W e un display OLED.
+  - Riepilogo della Lezione precedente, in cui è stata costruita una stazione meteo senza sensori utilizzando il Raspberry Pi Pico W e un display OLED.
   - Introduzione al nuovo obiettivo di visualizzare una rappresentazione visiva della temperatura utilizzando un LED RGB.
 * **Comprensione della Conversione da HSV a RGB**:
   - Spiegazione dettagliata della ruota dei colori HSV, concentrandosi sugli angoli e i colori corrispondenti.

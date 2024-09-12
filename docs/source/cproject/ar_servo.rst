@@ -91,8 +91,8 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. note::
 
-   * Puoi aprire il file ``3.7_swinging_servo.ino`` nel percorso ``kepler-kit-main/arduino/3.7_swinging_servo``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
+    * Puoi aprire il file ``3.7_swinging_servo.ino`` nel percorso ``kepler-kit-main/arduino/3.7_swinging_servo``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
 
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 

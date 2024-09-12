@@ -25,7 +25,7 @@ Ma ciò consente al cicalino passivo di regolare la propria frequenza di oscilla
 
 Facciamo emettere una melodia al cicalino passivo!
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
 **Componenti necessari**
 
@@ -108,10 +108,7 @@ Il cicalino necessita di un transistor per funzionare, qui utilizziamo l'S8050.
 
    * Puoi aprire il file ``3.2_custom_tone.ino`` nel percorso ``kepler-kit-main/arduino/3.2_custom_tone``. 
    * Oppure copia questo codice nell'**Arduino IDE**.
-
-
-   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta 
-     corretta prima di cliccare sul pulsante **Upload** .
+   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload** .
 
 .. raw:: html
     

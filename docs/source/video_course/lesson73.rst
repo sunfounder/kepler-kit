@@ -12,33 +12,15 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 73 :  Controllare un LED RGB Utilizzando un Dizionario in MicroPython
+lesson 73:  Controllare un LED RGB Utilizzando un Dizionario in MicroPython
 ===================================================================================
 
-Questo tutorial copre il controllo di un LED RGB con il Raspberry Pi Pico W utilizzando i dizionari:
+Questo tutorial tratta il controllo di un LED RGB con il Raspberry Pi Pico W utilizzando i dizionari:
 
-* **Configurazione dei Collegamenti**:
-- Collega il LED RGB al Raspberry Pi Pico W:
-  - Gamba R al pin GPIO 14 tramite una resistenza da 330 Ohm.
-  - Gamba G al pin GPIO 13.
-  - Gamba B al pin GPIO 12 tramite una resistenza da 330 Ohm.
-  - Gamba di massa al binario di massa.
-* **Implementazione del Codice**:
-- **Creare un Dizionario**:
-   - Definisci un dizionario con i nomi dei colori come chiavi e i rispettivi valori RGB come liste.
-- **Importare le Librerie**:
-   - Importa le librerie necessarie (`machine`, `time`).
-   - Configura il PWM per i pin del LED RGB.
-- **Ciclo Principale del Programma**:
-   - Richiedi continuamente all'utente di inserire un colore desiderato.
-   - Converti l'input in minuscolo e verifica se è un colore valido.
-   - Se valido, regola i colori del LED utilizzando i cicli di duty del PWM basati sui valori del dizionario.
-   - Implementa la gestione degli errori per input non validi.
-- **Funzione per Impostare il Colore**:
-   - Definisci una funzione `make_color` che prende il colore desiderato e imposta il LED RGB di conseguenza utilizzando il PWM.
-   
-* **Compito**:
-   - Estendi il programma spostando la funzione `make_color` in una libreria e importandola nel programma principale.
+* **Panoramica del concetto**: Controlla un LED RGB con l'input dell'utente utilizzando i dizionari per i valori dei colori.
+* **Esempio di implementazione**: Collega il LED RGB ai pin GPIO, crea un dizionario per i nomi dei colori e i valori RGB, e utilizza il PWM per regolare la luminosità del LED in base all'input dell'utente.
+* **Compito a casa**: Sposta la funzione ``make_color`` in una libreria e importala nel programma principale.
+* **Punti chiave**: Impara a usare i dizionari per la mappatura dei colori e il PWM per il controllo del LED RGB in MicroPython.
 
 **Video**
 

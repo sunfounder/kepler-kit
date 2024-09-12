@@ -12,35 +12,18 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 20: Utilizzo del Sensore di Temperatura e Umidità DHT11 in MicroPython
+Lezione 20: Utilizzo del Sensore di Temperatura e Umidità DHT11 in MicroPython
 ======================================================================================
 
-Questo tutorial copre la misurazione di temperatura e umidità utilizzando il sensore DHT11 con il Raspberry Pi Pico W:
+Questo tutorial tratta la misurazione della temperatura e dell'umidità utilizzando il sensore DHT11 con il Raspberry Pi Pico W:
 
-* **Introduzione**: Introduce la lezione, focalizzandosi sull'uso del sensore DHT11 per misurare temperatura e umidità.
-* **Riepilogo delle Lezioni Precedenti**: Ripassa le competenze fondamentali apprese nelle lezioni precedenti, come scrittura digitale, scrittura analogica con PWM, lettura digitale e lettura analogica.
-* **Introduzione ai Componenti**: Introduce il sensore DHT11 dal kit SunFounder Kepler e mostra come trovarlo all'interno del kit.
-* **Configurazione del Circuito**:
-  - Stabilisce le linee di massa e alimentazione sulla breadboard.
-  - Collega il sensore DHT11 al Raspberry Pi Pico W:
-    - Il pin 1 del sensore al 3.3V.
-    - Il pin 2 del sensore al pin GPIO 16 (pin fisico 21).
-    - Il pin 4 del sensore a massa.
-* **Spiegazione del Codice**:
-  - Importa le librerie necessarie: machine, utime (come time) e DHT.
-  - Configura il pin GPIO per l'input dati con una resistenza di pull-down.
-  - Inizializza il sensore DHT11.
-  - Entra in un ciclo infinito per misurare e stampare continuamente temperatura e umidità.
-  - Spiega come formattare l'output stampato per visualizzare temperatura e umidità in una singola linea usando `\r`.
-* **Dimostrazione Pratica**:
-  - Esegue il codice e osserva le letture di temperatura e umidità in tempo reale.
-  - Discute l'importanza di non utilizzare metodi che potrebbero causare condensa sul sensore per testare le variazioni nelle letture.
-* **Formattazione dell'Output**:
-  - Dimostra come formattare l'output per mostrare la temperatura in gradi Celsius e l'umidità in percentuale.
-  - Spiega come stampare il simbolo dei gradi utilizzando i codici dei caratteri ASCII.
-* **Compito per Casa**:
-  - Aggiungi un pulsante al circuito.
-  - Modifica il codice per alternare tra la visualizzazione della temperatura in Celsius e Fahrenheit quando il pulsante viene premuto.
+* **Introduzione**: Focus sull'uso del sensore DHT11 per la misurazione di temperatura e umidità.
+* **Ricapitolazione delle lezioni precedenti**: Revisione delle scritture digitali, scritture analogiche e letture dei sensori.
+* **Introduzione ai componenti**: Introduzione al sensore DHT11 del kit SunFounder Kepler.
+* **Spiegazione del codice**: Importazione delle librerie, configurazione dei GPIO, inizializzazione del sensore e lettura dei dati in un ciclo.
+* **Dimostrazione pratica**: Esecuzione del codice e osservazione delle letture in tempo reale di temperatura e umidità.
+* **Formattazione dell'output**: Formattazione dell'output per gradi Celsius e umidità, e stampa del simbolo del grado.
+* **Compito a casa**: Aggiungere un pulsante per alternare tra Celsius e Fahrenheit.
 
 
 **Video**

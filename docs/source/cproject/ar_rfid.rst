@@ -87,42 +87,27 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. note::
 
-    * Puoi aprire il file ``6.5_rfid_write.ino`` nel percorso ``kepler-kit-main/arduino/6.5_rfid_write``. 
-    * Oppure copia questo codice nell'**Arduino IDE**.
-    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
-    * Qui viene utilizzata la libreria ``MFRC522``. Si prega di fare riferimento a :ref:`add_libraries_ar` per aggiungerla all'IDE di Arduino.
+   * Qui viene utilizzata la libreria ``MFRC522``, che puoi installare dal **Library Manager**.
+
+      .. image:: img/lib_mfrc522.png
 
 La funzione principale è divisa in due:
 
-* ``6.5_rfid_write.ino``: Utilizzata per scrivere informazioni sulla scheda (o chiave).
-* ``6.5_rfid_read.ino``: utilizzata per leggere le informazioni nella scheda (o chiave).
+* ``6.5_rfid_write`` per scrivere informazioni sulla scheda (o chiave).
 
-.. note::
-
-   * Puoi aprire il file ``6.5_rfid_write.ino`` nel percorso ``kepler-kit-main/arduino/6.5_rfid_write``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
-   
-   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
-
-Dopo l'esecuzione, sarai in grado di inserire un messaggio nel monitor seriale, terminandolo con ``#``, e poi scrivere il messaggio sulla scheda avvicinandola al modulo MFRC522.
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+  Dopo l'esecuzione, sarai in grado di inserire un messaggio nel monitor seriale, terminandolo con ``#``, e poi scrivere il messaggio sulla scheda avvicinando la scheda (o chiave) al modulo MFRC522.
 
-.. note::
+* ``6.5_rfid_read`` per leggere le informazioni dalla scheda (o chiave).
 
-   * Puoi aprire il file ``6.5_rfid_read.ino`` nel percorso ``kepler-kit-main/arduino/6.5_rfid_read``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
-   
-   * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
-
-Dopo l'esecuzione, sarai in grado di leggere il messaggio memorizzato nella scheda (o chiave).
-
-.. raw:: html
+  .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+  Dopo l'esecuzione, sarai in grado di leggere il messaggio memorizzato sulla scheda (o chiave).
 
 **Come funziona?**
 

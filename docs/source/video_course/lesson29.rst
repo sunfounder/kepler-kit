@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 29: Progetto Client-Server per il Controllo Remoto di un LED RGB
+Lezione 29: Progetto Client-Server per il Controllo Remoto di un LED RGB
 =============================================================================
 
 Questo tutorial spiega come configurare un LED RGB controllato da remoto tramite Wi-Fi utilizzando un Raspberry Pi Pico W e un PC:

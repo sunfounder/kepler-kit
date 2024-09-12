@@ -17,7 +17,7 @@ lesson 39: Trigonometria Pratica per Risolvere Problemi Reali
 Questo tutorial tratta la trigonometria pratica necessaria per applicazioni nella vita reale utilizzando il Raspberry Pi Pico W:
 
 * **Introduzione alla Trigonometria Pratica**:
-  - Riepilogo della lezione precedente sulla trigonometria, con focus sulla comprensione di cerchi e angoli.
+  - Riepilogo della Lezione precedente sulla trigonometria, con focus sulla comprensione di cerchi e angoli.
   - Spiegazione di come utilizzare la trigonometria per risolvere problemi che coinvolgono il sensore MPU 6050 per la misurazione dell'inclinazione.
 * **Concetti Chiave**:
   - Comprendere le funzioni trigonometriche (seno, coseno) in relazione ai cerchi.

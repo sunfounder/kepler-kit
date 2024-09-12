@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 64 : Esempio di Programmazione Orientata agli Oggetti in MicroPython con LED
+lesson 64: Esempio di Programmazione Orientata agli Oggetti in MicroPython con LED
 ==========================================================================================
 
 Questo tutorial tratta la programmazione orientata agli oggetti (OOP) con il Raspberry Pi Pico W, focalizzandosi sul controllo dei LED:
@@ -27,7 +27,7 @@ Questo tutorial tratta la programmazione orientata agli oggetti (OOP) con il Ras
    2. Crea la classe `LED` con i metodi `__init__` e `blink`.
    3. Crea istanze per i LED rosso e verde.
    4. Utilizza un ciclo per far lampeggiare i LED secondo i parametri specificati.
-* **Compito**: Crea una classe per un Servomotore, che permetta un facile controllo della sua posizione. La classe dovrebbe includere metodi per l'inizializzazione del Servomotore e per impostare il suo angolo. Consulta la lezione 36 per i dettagli sul lavoro con i Servomotori in MicroPython.
+* **Compito**: Crea una classe per un Servomotore, che permetta un facile controllo della sua posizione. La classe dovrebbe includere metodi per l'inizializzazione del Servomotore e per impostare il suo angolo. Consulta la Lezione 36 per i dettagli sul lavoro con i Servomotori in MicroPython.
 
 
 **Video**

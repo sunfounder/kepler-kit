@@ -92,8 +92,9 @@ Puoi anche acquistarli separatamente dai link qui sotto.
     * Puoi aprire il file ``6.4_ir_remote_control.ino`` nel percorso ``kepler-kit-main/arduino/6.4_ir_remote_control``. 
     * Oppure copia questo codice nell'**Arduino IDE**.
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
-    * Qui viene utilizzata la libreria ``IRsmallDecoder``. Fai riferimento a :ref:`add_libraries_ar` per aggiungerla all'Arduino IDE.
+    * La libreria ``IRremote`` è utilizzata qui, puoi installarla dal **Library Manager**.
 
+      .. image:: img/lib_ir.png
 
 .. raw:: html
     
@@ -103,7 +104,110 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 Il nuovo telecomando ha un pezzo di plastica all'estremità per isolare la batteria interna. È necessario rimuovere questo pezzo di plastica per alimentare il telecomando quando lo utilizzi.
 Una volta che il programma è in esecuzione, quando premi il telecomando, il Serial Monitor stamperà il tasto che hai premuto.
 
+**Come funziona?**
 
-.. **How it works?**
+Questo codice è progettato per funzionare con un telecomando a infrarossi (IR) utilizzando la libreria ``IRremote``. Ecco la spiegazione:
+
+#. Inclusione della libreria e definizione delle costanti. Per prima cosa, la libreria IRremote viene inclusa e il numero del pin per il ricevitore IR viene definito come 2.
+
+   .. code-block:: cpp
+ 
+     #include <IRremote.h>
+     const int IR_RECEIVE_PIN = 17;
+
+#. Inizializza la comunicazione seriale a una velocità di 9600 baud. Inizializza il ricevitore IR sul pin specificato (``IR_RECEIVE_PIN``) e abilita il feedback LED (se applicabile).
+
+   .. code-block:: arduino
+
+       void setup() {
+           Serial.begin(9600);                                     // Avvia la comunicazione seriale a 9600 baud
+           IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Avvia il ricevitore IR
+       }
+
+#. Il ciclo principale viene eseguito continuamente per elaborare i segnali IR in arrivo.
+
+   .. code-block:: arduino
+
+      void loop() {
+         if (IrReceiver.decode()) {  // Controlla se il ricevitore IR ha ricevuto un segnale
+            bool result = 0;
+            String key = decodeKeyValue(IrReceiver.decodedIRData.command);
+            if (key != "ERROR") {
+              Serial.println(key);  // Stampa il comando leggibile
+              delay(100);
+            }
+         IrReceiver.resume();  // Prepara il ricevitore IR per ricevere il prossimo segnale
+        }
+      }
+
+   * Controlla se è stato ricevuto un segnale IR e se è stato decodificato correttamente.
+   * Decodifica il comando IR e lo memorizza in ``decodedValue`` utilizzando una funzione personalizzata ``decodeKeyValue()``.
+   * Stampa il valore IR decodificato sul monitor seriale.
+   * Riprende la ricezione dei segnali IR per il segnale successivo.
+
+   .. raw:: html
+
+        <br/>
+
+#. Funzione di supporto per mappare i segnali IR ricevuti ai tasti corrispondenti.
+
+   .. image:: img/ir_key.png
+      :align: center
+      :width: 80%
+
+   .. code-block:: arduino
+
+      // Function to map received IR signals to corresponding keys
+      String decodeKeyValue(long result) {
+        // Each case corresponds to a specific IR command
+        switch (result) {
+          case 0x16:
+            return "0";
+          case 0xC:
+            return "1";
+          case 0x18:
+            return "2";
+          case 0x5E:
+            return "3";
+          case 0x8:
+            return "4";
+          case 0x1C:
+            return "5";
+          case 0x5A:
+            return "6";
+          case 0x42:
+            return "7";
+          case 0x52:
+            return "8";
+          case 0x4A:
+            return "9";
+          case 0x9:
+            return "+";
+          case 0x15:
+            return "-";
+          case 0x7:
+            return "EQ";
+          case 0xD:
+            return "U/SD";
+          case 0x19:
+            return "CYCLE";
+          case 0x44:
+            return "PLAY/PAUSE";
+          case 0x43:
+            return "FORWARD";
+          case 0x40:
+            return "BACKWARD";
+          case 0x45:
+            return "POWER";
+          case 0x47:
+            return "MUTE";
+          case 0x46:
+            return "MODE";
+          case 0x0:
+            return "ERROR";
+          default:
+            return "ERROR";
+        }
+      }
 
 

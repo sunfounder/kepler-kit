@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 30: Progetto per Connettere il Tuo Raspberry Pi Pico W a Internet
+Lezione 30: Progetto per Connettere il Tuo Raspberry Pi Pico W a Internet
 =============================================================================
 
 Questo tutorial spiega come connettere il Raspberry Pi Pico W a Internet e recuperare dati dalle API:

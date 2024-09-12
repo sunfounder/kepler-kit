@@ -81,7 +81,7 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 **Schema Elettrico**
 
-|sch_keypad|
+|sch_keypad_ar|
 
 4 resistori pull-down sono collegati a ciascuna delle colonne della tastiera a matrice, in modo che G6 ~ G9 ottengano un livello basso stabile quando i tasti non sono premuti.
 
@@ -92,7 +92,7 @@ Ad esempio, se G6 viene letta ad un livello alto, significa che è stato premuto
 
 **Cablaggio**
 
-|wiring_keypad|
+|wiring_keypad_ar|
 
 Per semplificare il cablaggio, nello schema sopra, le colonne della tastiera a matrice e i resistori da 10K sono inseriti nei fori dove si trovano G6 ~ G9.
 
@@ -104,7 +104,9 @@ Per semplificare il cablaggio, nello schema sopra, le colonne della tastiera a m
     * Puoi aprire il file ``4.2_4x4_keypad.ino`` nel percorso ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
     * Oppure copia questo codice nell'**Arduino IDE**.
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
-    * Qui viene utilizzata la libreria ``Keypad``. Si prega di fare riferimento a :ref:`add_libraries_ar` per aggiungerla all'IDE di Arduino.
+    * La libreria ``Adafruit Keypad`` è utilizzata qui, puoi installarla dal **Library Manager**.
+
+      .. image:: img/lib_ad_keypad.png
 
 .. raw:: html
     
@@ -115,28 +117,69 @@ Dopo l'esecuzione del programma, la Shell stamperà i tasti che hai premuto sull
 
 **Come Funziona**
 
-Chiamando la libreria ``Keypad.h``, puoi utilizzare facilmente la tastiera.
+1. Inclusione della Libreria
 
-.. code-block:: arduino
+   Iniziamo includendo la libreria ``Adafruit_Keypad``, che ci consente di interfacciarci facilmente con il tastierino.
 
-    #include <Keypad.h> 
+   .. code-block:: arduino
 
-Funzioni della libreria: 
+     #include "Adafruit_Keypad.h"
 
-.. code-block:: arduino
+2. Configurazione del Tastierino
 
-    Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
+   .. code-block:: arduino
 
-Inizializza la mappa dei tasti interna per essere uguale a ``userKeymap``.
+     const byte ROWS = 4;
+     const byte COLS = 4;
+     char keys[ROWS][COLS] = {
+       { '1', '2', '3', 'A' },
+       { '4', '5', '6', 'B' },
+       { '7', '8', '9', 'C' },
+       { '*', '0', '#', 'D' }
+     };
+     byte rowPins[ROWS] = { 2, 3, 4, 5 };
+     byte colPins[COLS] = { 8, 9, 10, 11 };
 
-``userKeymap``: I simboli sui tasti della tastiera.
+   - Le costanti ``ROWS`` e ``COLS`` definiscono le dimensioni del tastierino.
+   - ``keys`` è un array 2D che memorizza l'etichetta per ogni pulsante del tastierino.
+   - ``rowPins`` e ``colPins`` sono array che memorizzano i pin dell'Arduino collegati alle righe e alle colonne del tastierino.
 
-``row``, ``col``: Configurazione dei pin.
+   .. raw:: html
 
-``numRows``, ``numCols``: Dimensioni della tastiera.
+      <br/>
 
-.. code-block:: arduino
+3. Inizializzazione del Tastierino
 
-    char getKey()
+   Creiamo un'istanza di ``Adafruit_Keypad`` chiamata ``myKeypad`` e la inizializziamo.
 
-Ritorna il tasto che è stato premuto, se presente. Questa funzione non blocca.
+   .. code-block:: arduino
+
+     Adafruit_Keypad myKeypad = Adafruit_Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+4. Funzione setup()
+
+   Inizializziamo la comunicazione Serial e il tastierino personalizzato.
+
+   .. code-block:: arduino
+
+     void setup() {
+       Serial.begin(9600);
+       myKeypad.begin();
+     }
+
+5. Ciclo Principale
+
+   Verifichiamo gli eventi di pressione dei tasti e li visualizziamo sul Monitor Seriale.
+
+   .. code-block:: arduino
+
+     void loop() {
+       myKeypad.tick();
+       while (myKeypad.available()) {
+         keypadEvent e = myKeypad.read();
+         Serial.print((char)e.bit.KEY);
+         if (e.bit.EVENT == KEY_JUST_PRESSED) Serial.println(" pressed");
+         else if (e.bit.EVENT == KEY_JUST_RELEASED) Serial.println(" released");
+       }
+       delay(10);
+     }

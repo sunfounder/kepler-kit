@@ -38,7 +38,7 @@ Questo tutorial tratta l'utilizzo dell'accelerometro e giroscopio MPU6050 con il
   - Compito di misurare l'accelerazione sull'asse Z e prevedere il suo valore quando il sensore è stazionario.
   - Istruzioni per confrontare il valore previsto con la misurazione effettiva e analizzare eventuali discrepanze.
 * **Conclusione**:
-  - Riepilogo della lezione e anteprima delle future lezioni che si concentrano sulle applicazioni pratiche del sensore MPU6050.
+  - Riepilogo della Lezione e anteprima delle future lezioni che si concentrano sulle applicazioni pratiche del sensore MPU6050.
   - Incoraggiamento a condividere i risultati e a interagire con la comunità per un ulteriore apprendimento.
 
 

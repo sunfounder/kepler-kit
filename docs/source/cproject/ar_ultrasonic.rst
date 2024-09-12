@@ -82,8 +82,8 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 .. note::
 
-   * Puoi aprire il file ``6.1_ultrasonic.ino`` nel percorso ``kepler-kit-main/arduino/6.1_ultrasonic``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
+    * Puoi aprire il file ``6.1_ultrasonic.ino`` nel percorso ``kepler-kit-main/arduino/6.1_ultrasonic``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
 
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 

@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 67 : Usa Entrambi i Core del Tuo Pi Pico con MicroPython
+lesson 67: Usa Entrambi i Core del Tuo Pi Pico con MicroPython
 ===================================================================================
 
 Questo tutorial spiega come utilizzare entrambi i core del Raspberry Pi Pico W:

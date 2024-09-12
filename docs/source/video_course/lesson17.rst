@@ -12,12 +12,12 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 17: Pulsanti e Resistenze Pull-Up in Micropython
+Lezione 17: Pulsanti e Resistenze Pull-Up in Micropython
 =============================================================================
 
 Questo tutorial tratta l'uso dei pulsanti in MicroPython con il Raspberry Pi Pico W:
 
-* **Introduzione**: La lezione inizia con una breve introduzione e una panoramica, concentrandosi sull'uso dei pulsanti per controllare componenti come i LED sul Raspberry Pi Pico W.
+* **Introduzione**: La Lezione inizia con una breve introduzione e una panoramica, concentrandosi sull'uso dei pulsanti per controllare componenti come i LED sul Raspberry Pi Pico W.
 * **Tipi di Pulsanti**: Descrive i diversi tipi di pulsanti disponibili nel kit SunFounder, spiegandone il funzionamento e come si collegano all'interno di un circuito.
 * **Configurazione del Circuito**: Mostra il cablaggio di un pulsante al pin GPIO 14 sul Raspberry Pi Pico W, includendo l'uso di resistenze pull-up interne per semplificare il circuito. Fornisce uno schema dettagliato e una configurazione visiva.
 * **Come Funzionano i Pulsanti**: Spiega il concetto di stati aperti e chiusi dei pulsanti e come vengono utilizzati per controllare i circuiti creando o interrompendo connessioni.
@@ -25,7 +25,7 @@ Questo tutorial tratta l'uso dei pulsanti in MicroPython con il Raspberry Pi Pic
 * **Spiegazione del Codice**: Descrive il codice MicroPython per leggere lo stato di un pulsante. Copre la configurazione del pin GPIO, la lettura dello stato del pulsante e la stampa dello stato del pulsante sulla console.
 * **Dimostrazione Pratica**: Fornisce una dimostrazione passo dopo passo dell'esecuzione del codice, premendo il pulsante e osservando i cambiamenti nelle letture dello stato del pulsante sulla console.
 * **Compito a Casa**: Assegna un progetto per utilizzare un pulsante per controllare un LED. Il compito consiste nello scrivere un programma in cui premendo il pulsante si accende il LED e premendolo di nuovo si spegne.
-* **Prossimi Passi**: Annuncia che la prossima lezione continuerà ad esplorare l'uso di pulsanti e LED, concentrandosi sull'integrazione di questi componenti in progetti più complessi.
+* **Prossimi Passi**: Annuncia che la prossima Lezione continuerà ad esplorare l'uso di pulsanti e LED, concentrandosi sull'integrazione di questi componenti in progetti più complessi.
 
 
 **Video**

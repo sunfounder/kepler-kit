@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 57 : Calibrazione di un Joystick in MicroPython
+lesson 57: Calibrazione di un Joystick in MicroPython
 =============================================================================
 
 Questo tutorial tratta la calibrazione di un joystick con il Raspberry Pi Pico W:

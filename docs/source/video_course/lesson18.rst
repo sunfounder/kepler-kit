@@ -12,15 +12,15 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 18: Controllo di un LED con un Pulsante in Micropython
+Lezione 18: Controllo di un LED con un Pulsante in Micropython
 =============================================================================
 
 Questo tutorial spiega come utilizzare i pulsanti per accendere e spegnere un LED con il Raspberry Pi Pico W:
 
-* **Introduzione**: La lezione inizia con una breve introduzione e una panoramica dell'argomento, concentrandosi sull'uso dei pulsanti per controllare i LED sul Raspberry Pi Pico W.
-* **Soluzione del Compito**: Fornisce una soluzione al compito della lezione precedente, che prevedeva la creazione di un interruttore a levetta per un LED utilizzando un pulsante.
+* **Introduzione**: La Lezione inizia con una breve introduzione e una panoramica dell'argomento, concentrandosi sull'uso dei pulsanti per controllare i LED sul Raspberry Pi Pico W.
+* **Soluzione del Compito**: Fornisce una soluzione al compito della Lezione precedente, che prevedeva la creazione di un interruttore a levetta per un LED utilizzando un pulsante.
 * **Configurazione del Circuito**: Mostra il cablaggio di un pulsante al pin GPIO 14 e di un LED al pin GPIO 15 sul Raspberry Pi Pico W. Include il collegamento del pulsante e del LED a una massa comune.
-* **Logica dell'Interruttore a Levetta**: Spiega la logica necessaria per alternare lo stato del LED ad ogni pressione e rilascio del pulsante. Introduce i concetti di `stato attuale del pulsante`, `stato precedente del pulsante` e `stato del LED`.
+* **Logica dell'Interruttore a Levetta**: Spiega la logica necessaria per alternare lo stato del LED ad ogni pressione e rilascio del pulsante. Introduce i concetti di ``stato attuale del pulsante``, ``stato precedente del pulsante`` e ``stato del LED``.
 * **Spiegazione del Codice**: Inizializza i pin GPIO per il LED e il pulsante. Utilizza un ciclo while per leggere continuamente lo stato del pulsante. Alterna lo stato del LED in base alle azioni di pressione e rilascio del pulsante. Include istruzioni print per il debug e la verifica degli stati.
 * **Dimostrazione Pratica**: Fornisce una dimostrazione passo dopo passo dell'esecuzione del codice, premendo il pulsante e osservando i cambiamenti nello stato del LED.
 * **Compito a Casa**: Assegna un nuovo progetto per utilizzare più pulsanti per controllare i colori di un LED RGB. Il compito consiste nello scrivere un programma in cui premendo i pulsanti rosso, verde o blu si cambia il colore del LED RGB di conseguenza.

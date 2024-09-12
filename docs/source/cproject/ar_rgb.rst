@@ -104,8 +104,8 @@ Qui, possiamo scegliere il nostro colore preferito in un software di disegno (co
 
 .. note::
 
-   * Puoi aprire il file ``2.4_colorful_light.ino`` nel percorso ``kepler-kit-main/arduino/2.4_colorful_light``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
+    * Puoi aprire il file ``2.4_colorful_light.ino`` nel percorso ``kepler-kit-main/arduino/2.4_colorful_light``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
 
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 

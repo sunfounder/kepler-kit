@@ -12,22 +12,14 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 69 :  Uscita Pulita dai Thread in MicroPython alla Terminazione del Programma
+lesson 69:  Uscita Pulita dai Thread in MicroPython alla Terminazione del Programma
 =========================================================================================
 
-Questo tutorial spiega come controllare un servo e dei LED con il Raspberry Pi Pico W utilizzando entrambi i core:
+Questo tutorial tratta il controllo di un servo e di LED con il Raspberry Pi Pico W utilizzando entrambi i core:
 
-* **Configurazione dei Collegamenti**:
- - Collega un LED rosso al pin GPIO 15 con una resistenza da 330 ohm a massa.
- - Collega un LED verde al pin GPIO 14 con una resistenza da 330 ohm a massa.
- - Collega il filo di controllo del servo al pin GPIO 17, il filo di alimentazione al pin fisico 40, e il filo di massa al pin fisico 38.
-* **Implementazione del Codice**:
- - Importa le librerie necessarie (`machine`, `time`, `_thread`, `Servo`).
- - Configura i pin per i LED e il servo.
- - Definisci una funzione `other_core` per far lampeggiare i LED in base alla direzione del servo utilizzando una variabile globale.
- - Crea un ciclo per muovere il servo e impostare la direzione del LED.
-* **Compito**:
- - Estendi il codice per far lampeggiare il LED rosso quando il servo si muove in senso orario e il LED verde quando si muove in senso antiorario.
+* **Configurazione dei collegamenti**: Collega il LED rosso al GPIO 15, il LED verde al GPIO 14 e il servo al GPIO 17, con l'alimentazione al pin 40 e la massa al pin 38.
+* **Implementazione del codice**: Importa ``machine``, ``time``, ``_thread`` e ``Servo``. Configura i pin per i LED e il servo. Definisci ``other_core`` per far lampeggiare i LED in base al movimento del servo. Crea un ciclo per controllare il servo e i LED.
+* **Compito a casa**: Modifica il codice per far lampeggiare il LED rosso per il movimento in senso orario e il LED verde per il movimento in senso antiorario del servo.
 
 
 **Video**

@@ -93,8 +93,8 @@ Lo scopo del resistore da 10K è mantenere GP14 in uno stato stabile e basso qua
 
 .. note::
 
-   * Puoi aprire il file ``2.6_tilt_it.ino`` nel percorso ``kepler-kit-main/arduino/2.4_colorful_light``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
+    * Puoi aprire il file ``2.6_tilt_it.ino`` nel percorso ``kepler-kit-main/arduino/2.4_colorful_light``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
 
 
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.

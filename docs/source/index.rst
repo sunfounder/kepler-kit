@@ -45,13 +45,6 @@ Non esitare a scriverci se sei interessato a imparare altri progetti che non abb
 
 Ecco l'email: service@sunfounder.com.
 
-
-**Informazioni sulla lingua di visualizzazione**
-
-Questo documento è disponibile anche in altre lingue. Per cambiare la lingua di visualizzazione, clicca sull'icona **Read the Docs** situata nell'angolo in basso a sinistra della pagina.
-
-.. image:: img/translation.png
-
 **Codice Sorgente**
 
 * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
@@ -66,12 +59,13 @@ Questo documento è disponibile anche in altre lingue. Per cambiare la lingua di
 
     About This Kit <self>
     introduction_to_pico_w
-    component/what_is_included_in_this_kit
+    download_the_code
     bc_basic_circuit
     pyproject/for_micropython_user
     iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
+    component/what_is_included_in_this_kit
     video_course/video_course
     faq
 

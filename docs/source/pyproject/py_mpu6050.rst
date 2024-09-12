@@ -110,9 +110,9 @@ Puoi anche acquistarli separatamente dai link sottostanti.
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
 
 Dopo l'esecuzione del programma, potrai vedere i valori dell'accelerometro a 3 assi e del giroscopio a 3 assi alternarsi nell'output.
 A questo punto, ruotando l'MPU6050, vedrai che questi valori cambieranno di conseguenza.
@@ -139,6 +139,6 @@ Successivamente, sarai in grado di ottenere i valori in tempo reale di acceleraz
 
     while True:
         print("x: %s, y: %s, z: %s"%(mpu.accel.x, mpu.accel.y, mpu.accel.z))
-        time.sleep(0.1)
+        time.sleep(0.5)
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
-        time.sleep(0.1)
+        time.sleep(0.5)

@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 15: Cicli For in MicroPython
+Lezione 15: Cicli For in MicroPython
 ==========================================================================
 
 Questo tutorial tratta l'uso dei cicli for in MicroPython con il Raspberry Pi Pico W:

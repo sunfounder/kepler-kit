@@ -101,8 +101,8 @@ Il condensatore ceramico 104 viene utilizzato qui per eliminare il jitter.
 
 .. note::
 
-   * Puoi aprire il file ``2.7_toggle_left_right.ino`` nel percorso ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
+    * Puoi aprire il file ``2.7_toggle_left_right.ino`` nel percorso ``kepler-kit-main/arduino/2.7_toggle_left_right``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
 
 
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.

@@ -16,51 +16,26 @@
 1.4 Installare le librerie (Importante)
 ===========================================
 
-**Scarica il Codice**
+Molte librerie sono disponibili direttamente tramite il **Library Manager** di Arduino. Puoi accedere al **Library Manager** seguendo questi passaggi:
 
-Scarica il codice pertinente dal link sottostante.
-
-* :download:`SunFounder Kepler Kit Example <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
-
-* Oppure consulta il codice su `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
-
-.. _add_libraries_ar:
-
-Aggiungere librerie
-------------------------
-Una libreria, che raccoglie alcune definizioni di funzioni e file header, di solito
-contiene due file: .h (file header, che include la dichiarazione delle funzioni, la 
-definizione delle Macro, la definizione del costruttore, ecc.) e .cpp (file di esecuzione, 
-con implementazione delle funzioni, definizione delle variabili, e così via). Quando hai bisogno
-di usare una funzione di una libreria, devi solo aggiungere un file header
-(ad es. #include <dht.h>), e poi chiamare quella funzione. Questo può rendere il tuo
-codice più conciso. Se non vuoi usare la libreria, puoi anche
-scrivere direttamente la definizione di quella funzione. Tuttavia, il codice
-risulterà lungo e difficile da leggere.
-
-Alcune librerie sono già integrate nell'IDE di Arduino, mentre altre
-potrebbero dover essere aggiunte. Vediamo quindi come aggiungerle.
-
-
-#. Apri l'IDE di Arduino e vai su **Sketch** -> **Include Library** -> **Add .ZIP Library**.
-
-   .. image:: img/a2dp_add_zip.png
-
-#. Naviga nella directory in cui si trovano i file della libreria, come la cartella ``kepler-kit-main\arduino\libraries``, e seleziona il file della libreria desiderata, come ``LiquidCrystal_I2C.zip``. Quindi, fai clic su **Open**.
-
-   .. image:: img/a2dp_choose.png
-
-#. Dopo un breve momento, riceverai una notifica che indica l'installazione avvenuta con successo.
-
-   .. image:: img/a2dp_success.png
-
-#. Ripeti lo stesso processo per aggiungere le altre librerie.
-
+Nel **Library Manager**, puoi cercare la libreria desiderata per nome o sfogliare le diverse categorie.
 
 .. note::
 
-   Le librerie installate si trovano nella directory predefinita delle librerie dell'IDE di Arduino, che di solito si trova in ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Nei progetti in cui è richiesta l'installazione di librerie, verranno mostrati dei prompt che indicano quali librerie installare. Segui le istruzioni fornite, come ad esempio: "Qui viene utilizzata la libreria DHT sensor, puoi installarla dal **Library Manager**." Installa semplicemente le librerie consigliate come indicato.
 
-   Se la tua directory delle librerie è diversa, puoi controllarla andando su **File** -> **Preferences**.
+.. image:: img/install_lib3.png
+
+Una volta trovata la libreria che desideri installare, cliccaci sopra e poi clicca sul pulsante **INSTALL**.
+
+.. image:: img/install_lib2.png
+
+L'IDE di Arduino scaricherà e installerà automaticamente la libreria per te.
+
+.. note::
+
+   Le librerie installate possono essere trovate nella directory predefinita delle librerie dell'IDE Arduino, che di solito si trova in ``C:\Users\xxx\Documents\Arduino\libraries``.
+
+   Se la tua directory delle librerie è diversa, puoi verificarla andando su **File** -> **Preferenze**.
 
       .. image:: img/install_lib1.png

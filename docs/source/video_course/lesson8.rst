@@ -23,7 +23,7 @@ Questo tutorial tratta l'uso di un potenziometro per controllare tre LED (verde,
 * **Introduzione ai Condizionali Composti**: Introduce i condizionali composti utilizzando operatori logici (AND, OR) per creare condizioni precise per il controllo dei LED. Dimostra come assicurarsi che ogni condizione sia correttamente implementata per evitare sovrapposizioni.
 * **Configurazione del Circuito e Spiegazione del Codice**: Fornisce uno schema di cablaggio dettagliato e la configurazione per collegare il potenziometro e i LED al Raspberry Pi Pico W. Discute il modo corretto di scrivere istruzioni condizionali per controllare i LED in base alle letture del potenziometro.
 * **Dimostrazione Pratica**: Mostra il codice rivisto in azione, evidenziando il corretto comportamento dei LED senza sovrapposizioni o condizioni mancate. Sottolinea l'importanza di una pianificazione logica accurata nei progetti di coding.
-* **Prossimi Passi**: Anticipa la prossima lezione sulla simulazione dell'uscita analogica, che amplierà ulteriormente gli strumenti per lavorare con il Raspberry Pi Pico W.
+* **Prossimi Passi**: Anticipa la prossima Lezione sulla simulazione dell'uscita analogica, che amplierà ulteriormente gli strumenti per lavorare con il Raspberry Pi Pico W.
 
 **Video**
 

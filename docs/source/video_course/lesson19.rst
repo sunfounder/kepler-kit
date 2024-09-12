@@ -12,24 +12,16 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 19: Controllo di un LED RGB con Pulsanti in Micropython
+Lezione 19: Controllo di un LED RGB con Pulsanti in Micropython
 =============================================================================
 
-Questo tutorial spiega come utilizzare più pulsanti per controllare i canali RGB di un LED sul Raspberry Pi Pico W:
+Questo tutorial copre l'uso di più pulsanti per controllare i canali RGB di un LED sul Raspberry Pi Pico W:
 
-* **Introduzione**: La lezione inizia con una panoramica, concentrandosi sull'uso di tre pulsanti per controllare i canali rosso, verde e blu di un LED RGB sul Raspberry Pi Pico W.
-* **Soluzione del Compito**: Fornisce una soluzione al compito della lezione precedente, che prevedeva la creazione di tre interruttori a levetta per un LED RGB utilizzando pulsanti.
-* **Configurazione del Circuito**: Mostra il cablaggio di tre pulsanti e di un LED RGB al Raspberry Pi Pico W. Ogni pulsante è collegato a un pin GPIO, e i canali del LED RGB sono collegati tramite resistori a pin GPIO separati. Viene stabilita una linea di massa per completare il circuito.
-* **Spiegazione del Codice**: 
- - Inizializza i pin GPIO per il LED RGB e i pulsanti.
- - Crea oggetti per ogni canale del LED e per i pulsanti, impostandoli come ingressi o uscite a seconda delle necessità.
- - Definisce variabili per gli stati dei pulsanti e degli LED.
- - Implementa la logica per alternare i canali del LED in base alla pressione e al rilascio dei pulsanti.
- - Dimostra come scrivere e organizzare il codice in modo metodico, garantendo una denominazione coerente delle variabili per una maggiore leggibilità e facilità di debug.
-* **Dimostrazione Pratica**: 
- - Fornisce una dimostrazione passo dopo passo dell'esecuzione del codice, premendo i pulsanti e osservando i cambiamenti nei canali del LED RGB.
- - Mostra come testare la funzionalità dei pulsanti e verificare che ciascun pulsante alterni correttamente il proprio canale LED.
- - Discute le tecniche di debug per identificare e correggere errori nel codice o nel circuito.
+* **Introduzione**: Panoramica sull'uso di tre pulsanti per controllare i canali LED RGB.
+* **Soluzione per i compiti**: Soluzione per creare interruttori a levetta per il LED RGB utilizzando pulsanti.
+* **Configurazione del circuito**: Collegamento di tre pulsanti e LED RGB al Pico W, connessi tramite i pin GPIO e resistori.
+* **Spiegazione del codice**: Inizializza i GPIO, crea oggetti per i canali LED e pulsanti, e implementa la logica di commutazione per ciascun canale.
+* **Dimostrazione pratica**: Dimostra l'esecuzione del codice, il test della funzionalità dei pulsanti e tecniche di debugging.
 
 **Video**
 

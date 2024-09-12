@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 60 : Controllare i Colori di NeoPixel con un Joystick in MicroPython
+lesson 60: Controllare i Colori di NeoPixel con un Joystick in MicroPython
 ================================================================================
 
 Questo tutorial tratta il controllo di una striscia LED tramite un joystick utilizzando il Raspberry Pi Pico W:

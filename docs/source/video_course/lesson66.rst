@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 66 : Crea le Tue Librerie in Micropython
+lesson 66: Crea le Tue Librerie in Micropython
 ===================================================================================
 
 Questo tutorial tratta la creazione e l'uso di una libreria Servo con il Raspberry Pi Pico W:

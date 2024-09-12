@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 71 :  Permettere al Thread di Completare il Compito Prima della Terminazione
+lesson 71:  Permettere al Thread di Completare il Compito Prima della Terminazione
 ========================================================================================
 
 Questo tutorial spiega come terminare in modo ordinato un programma multithread sul Raspberry Pi Pico W:

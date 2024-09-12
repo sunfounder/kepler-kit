@@ -12,35 +12,18 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 24: Alimentare Progetti Portatili con una Batteria Ricaricabile LiPo
+Lezione 24: Alimentare Progetti Portatili con una Batteria Ricaricabile LiPo
 ================================================================================
 
-Questo tutorial spiega come alimentare un progetto con Raspberry Pi Pico W utilizzando una batteria ricaricabile LiPo, rendendo il progetto portatile:
+Questo tutorial tratta l'alimentazione di un progetto Raspberry Pi Pico W con una batteria ricaricabile LiPo, rendendo il progetto portatile:
 
-* **Introduzione**: Introduce il tutorial, ringrazia lo sponsor SunFounder e rivede l'obiettivo della lezione: rendere portatile il progetto del sensore di temperatura e umidità DHT-11.
-* **Revisione dei Componenti e Configurazione**:
- - Ricapitola la configurazione del progetto precedente: Raspberry Pi Pico W, sensore DHT-11, pulsante e display LCD 1602.
- - Discute la necessità di rimuovere il cavo USB e alimentare il progetto utilizzando una batteria LiPo.
-* **Installazione della Libreria**:
- - Guida gli spettatori su come installare la libreria per il display LCD 1602 se non l'hanno già fatto.
-* **Spiegazione del Codice**:
- - Descrive la necessità di salvare il programma come `main.py` in modo che venga eseguito automaticamente quando il Pico W è alimentato.
- - Mostra come salvare il codice e verificarne il funzionamento.
-* **Alimentazione del Progetto con una Batteria**:
- - Introduce la batteria ricaricabile LiPo e il portabatteria del kit SunFounder Kepler.
- - Dettaglia il collegamento della batteria al Pico W utilizzando un modulo di gestione dell'alimentazione incluso nel kit.
- - Spiega come regolare la connessione di alimentazione del display LCD da 5V (pin 40) a 3,7V (pin 39) a causa dell'uscita della batteria.
- - Mostra la configurazione e verifica che il progetto funzioni correttamente con l'alimentazione a batteria.
-* **Regolazioni e Dimostrazione**:
- - Dimostra come regolare il contrasto del display LCD per una visualizzazione ottimale quando alimentato dalla batteria.
- - Mostra il progetto funzionante correttamente, compresa la commutazione tra Fahrenheit e Celsius.
-* **Conclusione e Prossimi Passi**:
- - Incoraggia gli spettatori a verificare che il loro progetto funzioni e introduce l'idea di utilizzare un display OLED per le lezioni future.
- - Raccomanda di acquistare un display OLED per un setup più compatto ed efficiente dal punto di vista energetico.
- - Anticipa le lezioni future focalizzate sulla creazione di progetti portatili e dispiegabili con funzionalità avanzate.
-* **Compiti a Casa e Note Finali**:
- - Suggerisce agli spettatori di ordinare il display OLED per prepararsi alle prossime lezioni.
- - Conclude con i promemoria di mettere mi piace, commentare, iscriversi e condividere il video.
+* **Introduzione**: Introduce il tutorial e l'obiettivo di rendere portatile il progetto con il sensore DHT-11.
+* **Installazione della libreria**: Guida all'installazione della libreria LCD 1602.
+* **Spiegazione del codice**: Salva il programma come ``main.py`` per l'avvio automatico.
+* **Alimentare il progetto con una batteria**: Collega la batteria LiPo e regola l'alimentazione del display LCD a 3,7V.
+* **Regolazioni e dimostrazione**: Regola il contrasto del display LCD e verifica il funzionamento del progetto con l'alimentazione a batteria.
+* **Conclusione e prossimi passi**: Si prepara per le lezioni future con il display OLED.
+* **Compito a casa e note finali**: Incoraggia l'acquisto del display OLED e la condivisione del video.
 
 
 **Video**

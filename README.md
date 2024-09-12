@@ -20,13 +20,11 @@ Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino)
 
 <a id="update"></a>
 ## Update:
-2023-09-01:
-    - Add introduction links for all components used in all projects.
 
-2023-08-31:
-    - Optimized the installation of Arduino IDE, configuration of Pico W, and tutorial for adding libraries.
-    - Removed all references in Arduino projects that directed to the quick guide.
-    - Revised the introduction of the ultrasonic sensor module.
+2024-09-10:
+- Update Arduino and Micropython project images and code related to DHT11, Keypad, IR receiver, MFRC522.
+- Modify other minor details
+
 
 <a id="trouble"></a>
 ## Trouble Shootings:

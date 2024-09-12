@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 27: Creare Pattern di Lissajous su un Display OLED
+Lezione 27: Creare Pattern di Lissajous su un Display OLED
 =============================================================================
 
 Questo tutorial tratta la generazione di pattern di Lissajous su un display OLED utilizzando il Raspberry Pi Pico W:
@@ -20,7 +20,7 @@ Questo tutorial tratta la generazione di pattern di Lissajous su un display OLED
 * **Introduzione**:
   - Sottolinea l'obiettivo: generare il pattern di Lissajous a forma di "patatina galleggiante" su un display OLED utilizzando il Raspberry Pi Pico W.
 * **Ricapitolazione e Configurazione**:
-  - Ricapitola la lezione precedente sul disegno di un cerchio sul display OLED.
+  - Ricapitola la Lezione precedente sul disegno di un cerchio sul display OLED.
   - Spiega la matematica dietro la creazione dei pattern di Lissajous utilizzando funzioni trigonometriche.
 * **Generare il Pattern**:
   - Fornisce un esempio di codice passo-passo per disegnare un cerchio e poi modificarlo per generare il pattern di Lissajous.

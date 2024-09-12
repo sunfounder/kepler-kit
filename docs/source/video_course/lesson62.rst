@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 62 : Creare Funzioni per la Media e l'Ordine dei Voti in Micropython
+lesson 62: Creare Funzioni per la Media e l'Ordine dei Voti in Micropython
 =================================================================================
 
 Questo tutorial copre l'uso delle funzioni in MicroPython su Raspberry Pi Pico W:

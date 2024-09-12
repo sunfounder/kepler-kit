@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 59 : Controllare un Servo con un Joystick
+lesson 59: Controllare un Servo con un Joystick
 =============================================================================
 
 Questo tutorial tratta il controllo di un servo tramite un joystick utilizzando il Raspberry Pi Pico W:

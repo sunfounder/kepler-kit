@@ -12,7 +12,7 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-lesson 70 :  Esempio di Uscita Pulita da un Programma a Doppio Core in MicroPython
+lesson 70:  Esempio di Uscita Pulita da un Programma a Doppio Core in MicroPython
 =======================================================================================
 
 Questo tutorial spiega come utilizzare i thread per controllare un servo e un pulsante con il Raspberry Pi Pico W:

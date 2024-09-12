@@ -14,8 +14,8 @@
 
 .. _ar_neopixel:
 
-3.3 Striscia RGB WS2812
-===========================
+3.3 - Striscia RGB WS2812
+=============================
 
 Il WS2812 è una sorgente luminosa LED a controllo intelligente in cui il circuito di controllo e il chip RGB sono integrati in un package di componenti 5050. 
 Include internamente un circuito di aggancio dati della porta digitale intelligente e un circuito di amplificazione e rimodellazione del segnale. 
@@ -100,7 +100,9 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
     * Puoi aprire il file ``3.3_rgb_led_strip.ino`` nel percorso ``kepler-kit-main/arduino/3.3_rgb_led_strip``. 
     * Oppure copia questo codice nell'**Arduino IDE**.
-    * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
+    * La libreria ``Adafruit_NeoPixel`` è utilizzata qui, puoi installarla dal **Library Manager**.
+
+      .. image:: img/lib_neopixel.png
 
 .. raw:: html
     

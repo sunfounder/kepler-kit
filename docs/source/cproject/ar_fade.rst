@@ -117,10 +117,8 @@ Questo progetto utilizza lo stesso circuito del primo progetto :ref:`ar_led`, ma
 
 .. note::
 
-   * Puoi aprire il file ``2.3_fading_led.ino`` nel percorso ``kepler-kit-main/arduino/2.3_fading_led``. 
-   * Oppure copia questo codice nell'**Arduino IDE**.
-
-
+    * Puoi aprire il file ``2.3_fading_led.ino`` nel percorso ``kepler-kit-main/arduino/2.3_fading_led``. 
+    * Oppure copia questo codice nell'**Arduino IDE**.
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.
 
 

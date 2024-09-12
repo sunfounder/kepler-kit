@@ -145,8 +145,8 @@ sono mappati rispettivamente ai pin 9, 14, 8, 12, 1, 7, 2 e 5.
 
 .. note::
 
-   * Puoi aprire il file ``5.4_8x8_pixel_graphics.ino`` nel percorso ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``.
-   * Oppure copia questo codice nell'**Arduino IDE**.
+    * Puoi aprire il file ``5.4_8x8_pixel_graphics.ino`` nel percorso ``kepler-kit-main/arduino/5.4_8x8_pixel_graphics``.
+    * Oppure copia questo codice nell'**Arduino IDE**.
 
 
     * Non dimenticare di selezionare la scheda (Raspberry Pi Pico) e la porta corretta prima di cliccare sul pulsante **Upload**.

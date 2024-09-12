@@ -12,38 +12,16 @@
 
     👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti a noi oggi stesso!
 
-lezione 22: Utilizzo di un Display LCD con il Pico W
+Lezione 22: Utilizzo di un Display LCD con il Pico W
 =============================================================================
 
-Questo tutorial spiega come collegare e utilizzare un display LCD 1602 con il Raspberry Pi Pico W:
+Questo tutorial tratta il collegamento e l'utilizzo di un display LCD 1602 con il Raspberry Pi Pico W:
 
-* **Introduzione**: Introduce il tutorial, ringrazia lo sponsor SunFounder e spiega l'obiettivo di aggiungere un display LCD al progetto con il Raspberry Pi Pico W per un uso mobile.
-
-* **Introduzione ai Componenti e Configurazione**:
-- Descrive i componenti necessari: display LCD 1602 e cavi femmina-maschio.
-- Dettaglia i collegamenti:
-  - Pin del display LCD 1602 al Raspberry Pi Pico W:
-    - Ground al pin 38
-    - VCC (5V) al pin più a destra
-    - SDA (dati) al pin GPIO 6
-    - SCL (clock) al pin GPIO 7
-
-* **Installazione della Libreria**:
- - Guida su come scaricare e installare la libreria necessaria per il display LCD 1602 da toptechboy.com.
- - Fornisce istruzioni per salvare e importare la libreria in Thonny IDE.
-
-* **Spiegazione del Codice**:
- - Descrive la creazione di un oggetto LCD e la scrittura di testo sul display.
- - Fornisce un programma di esempio che chiede il nome dell'utente e visualizza un messaggio di benvenuto sull'LCD.
- - Affronta i potenziali problemi di sovrapposizione del testo utilizzando `LCD.clear()` per cancellare lo schermo prima di scrivere un nuovo testo.
-
-* **Dimostrazione Pratica**:
- - Mostra il programma in azione, visualizzando i nomi sul display LCD.
- - Spiega come regolare il contrasto dell'LCD utilizzando un potenziometro sul retro del display.
-
-* **Compito per Casa**:
- - Assegna il compito di integrare il display LCD con il progetto del sensore di temperatura e umidità DHT11 della lezione 21.
- - Insegna a visualizzare la temperatura in Celsius o Fahrenheit in base a un pulsante di commutazione e a visualizzare l'umidità sul display LCD.
+* **Introduzione ai componenti e configurazione**: Descrive il collegamento del display LCD 1602 al Raspberry Pi Pico W.
+* **Installazione della libreria**: Guida al download e all'installazione della libreria LCD da toptechboy.com.
+* **Spiegazione del codice**: Spiega come creare un oggetto LCD, scrivere del testo e utilizzare ``LCD.clear()`` per evitare sovrapposizioni di testo.
+* **Dimostrazione pratica**: Mostra il programma che visualizza nomi sul display LCD e regola il contrasto con un potenziometro.
+* **Compito a casa**: Integrare il display LCD con il progetto DHT11 per visualizzare temperatura e umidità in base a un pulsante a levetta.
 
 
 **Video**
