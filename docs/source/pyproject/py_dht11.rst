@@ -110,11 +110,11 @@ You can also buy them separately from the links below.
 
 .. code-block:: python
 
-    from machine import Pin, I2C
+    from machine import Pin
     import utime as time
     from dht import DHT11, InvalidPulseCount
 
-    pin = Pin(16, Pin.IN, Pin.PULL_UP)
+    pin = Pin(16, Pin.IN, Pin)
     sensor = DHT11(pin)
     time.sleep(5)  # initial delay
 
@@ -145,7 +145,7 @@ Initialize the ``DHT11`` object. This device only needs a digital input to be us
 
 .. code-block:: python
 
-    pin = Pin(16, Pin.IN, Pin.PULL_UP)
+    pin = Pin(16, Pin.IN, Pin)
     sensor = DHT11(pin)
 
 Use ``sensor.measure()`` to read the current temperature and humidity, which will be stored in ``sensor.temperature``, ``sensor.humidity``.
