@@ -103,7 +103,11 @@
 
 #. ``kepler-kit-main/micropython`` フォルダ内の ``6.5_rfid_write.py`` ファイルを開いて、「Run Current Script」をクリックするか、単にF5キーを押して実行します。
 
-#. 実行後、シェルに ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` と入力し、カード（またはキー）をMFRC522モジュールに近づけます。これで、歓喜の歌の楽譜が保存されます。
+   .. note:: 
+
+      ここでは ``mfrc522`` フォルダ内のライブラリを使用する必要があります。Pico にアップロードされているか確認してください。詳細なチュートリアルについては :ref:`add_libraries_py` を参照してください。
+
+#. 実行後、シェルに ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` と入力し、カード（またはキー）を MFRC522 モジュールの近くに持っていくと、「歓喜の歌」の楽譜が保存されます。
 
 #. ``kepler-kit-main/micropython`` フォルダ内の ``7.8_rfid_music_player.py`` ファイルを開くか、このコードをThonnyにコピーして、「Run Current Script」をクリックするか、単にF5キーを押して実行します。
 
