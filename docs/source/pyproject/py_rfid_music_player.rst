@@ -104,7 +104,11 @@ You can also buy them separately from the links below.
 
 #. Open the ``6.5_rfid_write.py`` file under the path of ``kepler-kit-main/micropython``, then click "Run Current Script" or simply press F5 to run it.
 
-#. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the Shell and then put the card (or key) close to the MFRC522 module, this way an Ode an Joy score is stored in.
+   .. note::
+
+    Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+
+#. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the shell, then bring the card (or key) close to the MFRC522 module to store a score of "Ode to Joy".
 
 #. Open the ``7.8_rfid_music_player.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
 
