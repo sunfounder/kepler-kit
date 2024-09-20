@@ -110,7 +110,7 @@ Puoi anche acquistarli separatamente dai link sottostanti.
     import utime as time
     from dht import DHT11, InvalidPulseCount
 
-    pin = Pin(16, Pin.IN, Pin)
+    pin = Pin(16, Pin.IN)
     sensor = DHT11(pin)
     time.sleep(5)  # ritardo iniziale
 
