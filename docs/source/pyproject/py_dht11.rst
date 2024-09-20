@@ -114,7 +114,7 @@ You can also buy them separately from the links below.
     import utime as time
     from dht import DHT11, InvalidPulseCount
 
-    pin = Pin(16, Pin.IN, Pin)
+    pin = Pin(16, Pin.IN)
     sensor = DHT11(pin)
     time.sleep(5)  # initial delay
 
@@ -145,7 +145,7 @@ Initialize the ``DHT11`` object. This device only needs a digital input to be us
 
 .. code-block:: python
 
-    pin = Pin(16, Pin.IN, Pin)
+    pin = Pin(16, Pin.IN)
     sensor = DHT11(pin)
 
 Use ``sensor.measure()`` to read the current temperature and humidity, which will be stored in ``sensor.temperature``, ``sensor.humidity``.
