@@ -1,17 +1,20 @@
-from machine import Pin, I2C
+from machine import Pin
 import utime as time
-from dht import DHT11, InvalidPulseCount
+from dht import DHT11
 
-pin = Pin(16, Pin.IN, Pin.PULL_UP)
+# Initialize the pin for the DHT11 sensor as an input
+pin = Pin(16, Pin.IN)
+
+# Create a DHT11 sensor object
 sensor = DHT11(pin)
-time.sleep(5)  # initial delay
 
 while True:
-    try:
-        sensor.measure()
-        string = "Temperature:{}\nHumidity: {}".format(sensor.temperature, sensor.humidity)
-        print(string)
-        time.sleep(4)
+    # Measure temperature and humidity
+    sensor.measure()
+    
+    # Print the measured temperature and humidity values
+    print("Temperature: {}, Humidity: {}".format(sensor.temperature, sensor.humidity))
+    
+    # Wait for 1 second before the next measurement
+    time.sleep(1)
 
-    except InvalidPulseCount as e:
-        print('Bad pulse count - retrying ...')
