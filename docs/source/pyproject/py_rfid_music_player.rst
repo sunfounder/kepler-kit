@@ -105,7 +105,11 @@ Sie können die Bauteile auch einzeln über die unten stehenden Links erwerben.
 
 #. Öffnen Sie die Datei ``6.5_rfid_write.py`` im Verzeichnis ``kepler-kit-main/micropython`` und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
-#. Nach dem Ausführen geben Sie ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` im Shell ein und halten Sie dann die Karte (oder den Schlüssel) nahe am MFRC522-Modul. Auf diese Weise wird die Partitur der Ode an die Freude gespeichert.
+   .. note::
+
+      Hier müssen Sie die Bibliotheken im ``mfrc522``-Ordner verwenden. Bitte überprüfen Sie, ob sie auf dem Pico hochgeladen wurden. Für ein detailliertes Tutorial siehe :ref:`add_libraries_py`.
+
+#. Nach dem Ausführen geben Sie ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` im Shell ein und halten Sie die Karte (oder den Schlüssel) nah an das MFRC522-Modul, um eine Partitur von "Ode an die Freude" zu speichern.
 
 #. Öffnen Sie die Datei ``7.8_rfid_music_player.py`` im Verzeichnis ``kepler-kit-main/micropython`` oder kopieren Sie diesen Code in Thonny, und klicken Sie dann auf "Aktuelles Skript ausführen" oder drücken Sie einfach F5.
 
