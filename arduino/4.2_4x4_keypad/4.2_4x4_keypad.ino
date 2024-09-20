@@ -1,13 +1,3 @@
-/*
-  The code use an Adafruit Keypad and display keypress events via the Serial Monitor. 
-  It initializes the keypad with a 4x4 layout, where each key is represented by a 
-  specific character. It continuously checks for keypad events (key press or release) 
-  and prints the corresponding key and event status to the Serial Monitor.
-  Board: Arduino Uno R4 
-  Component:  Keypad
-  Library: https://github.com/adafruit/Adafruit_Keypad (Adafruit Keypad by Adafruit)
-*/
-
 // Include the Adafruit_Keypad library
 #include "Adafruit_Keypad.h"
 
