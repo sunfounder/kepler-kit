@@ -2,7 +2,7 @@ from machine import Pin
 import utime as time
 from dht import DHT11, InvalidPulseCount
 
-pin = Pin(16, Pin.IN, Pin.PULL_UP)
+pin = Pin(16, Pin.IN)
 sensor = DHT11(pin)
 time.sleep(5)  # initial delay
 
