@@ -74,7 +74,7 @@ Puoi anche acquistarli separatamente dai link qui sotto.
         - 1(1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Buzzer Attivo :ref:`cpn_buzzer`
+        - Cicalino Attivo :ref:`cpn_buzzer`
         - 1
         - 
 

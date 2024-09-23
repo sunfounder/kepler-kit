@@ -80,7 +80,7 @@ Puoi anche acquistarli separatamente dai link qui sotto.
         - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Cicalino Passivo :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
