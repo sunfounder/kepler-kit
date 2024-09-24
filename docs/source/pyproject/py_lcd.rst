@@ -103,17 +103,32 @@ Sie können diese auch separat über die untenstehenden Links kaufen.
 
 .. code-block:: python
 
+    from machine import I2C, Pin
     from lcd1602 import LCD
-    import utime
+    import time
 
-    lcd = LCD()
-    string = " Hallo!\n"
+    # Initialize I2C communication;
+    i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
+
+    # Create an LCD object for interfacing with the LCD1602 display
+    lcd = LCD(i2c)
+
+    # Display the first message on the LCD
+    # Use '\n' to create a new line.
+    string = "SunFounder\n    LCD Tutorial"
     lcd.message(string)
-    utime.sleep(2)
-    string = "    Sunfounder!"   
+    # Wait for 2 seconds
+    time.sleep(2)
+    # Clear the display
+    lcd.clear()
+
+    # Display the second message on the LCD
+    string = "Hello\n  World!"
     lcd.message(string)
-    utime.sleep(2)
-    lcd.clear()   
+    # Wait for 5 seconds
+    time.sleep(5)
+    # Clear the display before exiting
+    lcd.clear()
 
 Nachdem das Programm ausgeführt wurde, erscheinen nacheinander zwei Textzeilen auf dem LCD und verschwinden dann wieder.
 
@@ -121,29 +136,52 @@ Nachdem das Programm ausgeführt wurde, erscheinen nacheinander zwei Textzeilen 
 
 **Wie funktioniert das?**
 
-In der lcd1602-Bibliothek integrieren wir die relevanten Funktionen von lcd1602 in die LCD-Klasse.
+#. Einrichten der I2C-Kommunikation
 
-Importieren der lcd1602-Bibliothek
+   Das Modul ``machine`` wird verwendet, um die I2C-Kommunikation einzurichten. SDA (Serial Data) und SCL (Serial Clock) Pins sind definiert (jeweils Pin 20 und 21), zusammen mit der I2C-Frequenz (400kHz).
 
-.. code-block:: python
+   .. code-block:: python
+      
+      from machine import I2C, Pin
+      i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 
-    from lcd1602 import LCD    
+#. Initialisierung des LCD-Displays
 
-Deklarieren eines Objekts der LCD-Klasse und nennen es lcd.
+   Die Klasse ``LCD`` aus dem Modul ``lcd1602`` wird instanziiert. Diese Klasse steuert die Kommunikation mit dem LCD-Display über I2C. Ein ``LCD``-Objekt wird unter Verwendung des ``i2c``-Objekts erstellt.
 
-.. code-block:: python
+   Weitere Informationen zur Verwendung der ``lcd1602``-Bibliothek finden Sie in ``lcd1602.py``.
 
-    lcd = LCD()
+   .. code-block:: python
+      
+      from lcd1602 import LCD
+      lcd = LCD(i2c)
 
-Mit dieser Anweisung wird der Text auf dem LCD angezeigt. Es sollte beachtet werden, dass das Argument ein String sein muss. Wenn wir eine Ganzzahl oder Fließkommazahl übergeben wollen, müssen wir die Umwandlungsanweisung ``str()`` verwenden.
+#. Anzeigen von Nachrichten auf dem LCD
 
-.. code-block:: python
+   Die Methode ``message`` des ``LCD``-Objekts wird verwendet, um Text auf dem Bildschirm anzuzeigen. Das Zeichen ``\n`` erstellt eine neue Zeile auf dem LCD. Die Funktion ``time.sleep()`` pausiert die Ausführung für eine bestimmte Anzahl von Sekunden.
 
-    lcd.message(string)
+   .. code-block:: python
+      
+      string = "SunFounder\n    LCD Tutorial"
+      lcd.message(string)
+      time.sleep(2)
+      lcd.clear()
 
-Wenn Sie diese Anweisung mehrmals aufrufen, überlagert lcd die Texte. Dafür muss die folgende Anweisung verwendet werden, um die Anzeige zu löschen.
+#. Löschen des Displays
 
-.. code-block:: python
+   Die Methode ``clear`` des ``LCD``-Objekts wird aufgerufen, um den Text vom Display zu löschen.
 
-    lcd.clear()
+   .. code-block:: python
+      
+      lcd.clear()
 
+#. Anzeigen einer zweiten Nachricht
+
+   Eine neue Nachricht wird angezeigt, gefolgt von einer Verzögerung und anschließendem Löschen des Bildschirms.
+
+   .. code-block:: python
+      
+      string = "Hello\n  World!"
+      lcd.message(string)
+      time.sleep(5)
+      lcd.clear()
