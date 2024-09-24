@@ -103,7 +103,11 @@ Puoi anche acquistarli separatamente dai link sottostanti.
 
 #. Apri il file ``6.5_rfid_write.py`` nel percorso ``kepler-kit-main/micropython``, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
-#. Dopo l'esecuzione, digita ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` nella Shell e poi avvicina la scheda (o chiave) al modulo MFRC522, in questo modo verrà memorizzato uno spartito di "Ode alla Gioia".
+   .. note:: 
+
+      Qui è necessario utilizzare le librerie nella cartella ``mfrc522``. Controlla se sono state caricate su Pico; per un tutorial dettagliato, fai riferimento a :ref:`add_libraries_py`.
+
+#. Dopo aver eseguito, digita ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` nel shell, quindi avvicina la scheda (o la chiave) al modulo MFRC522 per memorizzare una partitura di "Ode to Joy".
 
 #. Apri il file ``7.8_rfid_music_player.py`` nel percorso ``kepler-kit-main/micropython`` o copia questo codice in Thonny, poi clicca su "Esegui Script Corrente" o semplicemente premi F5 per eseguirlo.
 
