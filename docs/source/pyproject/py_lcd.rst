@@ -105,14 +105,32 @@ LCD1602は、キャラクタ型の液晶ディスプレイで、同時に32（16
     from lcd1602 import LCD
     import utime
 
-    lcd = LCD()
-    string = " Hello!\n"
+    from machine import I2C, Pin
+    from lcd1602 import LCD
+    import time
+
+    # Initialize I2C communication;
+    i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
+
+    # Create an LCD object for interfacing with the LCD1602 display
+    lcd = LCD(i2c)
+
+    # Display the first message on the LCD
+    # Use '\n' to create a new line.
+    string = "SunFounder\n    LCD Tutorial"
     lcd.message(string)
-    utime.sleep(2)
-    string = "    Sunfounder!"   
+    # Wait for 2 seconds
+    time.sleep(2)
+    # Clear the display
+    lcd.clear()
+
+    # Display the second message on the LCD
+    string = "Hello\n  World!"
     lcd.message(string)
-    utime.sleep(2)
-    lcd.clear()   
+    # Wait for 5 seconds
+    time.sleep(5)
+    # Clear the display before exiting
+    lcd.clear()  
 
 プログラムを実行すると、LCDには順番に2行のテキストが表示され、その後消えます。
 
@@ -120,29 +138,52 @@ LCD1602は、キャラクタ型の液晶ディスプレイで、同時に32（16
 
 **動作原理は？**
 
-lcd1602ライブラリでは、lcd1602に関連する機能をLCDクラスに統合しています。
+#. I2C通信の設定
 
-lcd1602ライブラリをインポート
+   ``machine``モジュールはI2C通信を設定するために使用されます。 SDA（シリアルデータ）とSCL（シリアルクロック）ピン（それぞれピン20と21）が定義され、I2Cの周波数（400kHz）も設定されます。
 
-.. code-block:: python
+   .. code-block:: python
+      
+      from machine import I2C, Pin
+      i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 
-    from lcd1602 import LCD    
+#. LCDディスプレイの初期化
 
-LCDクラスのオブジェクトを宣言し、それにlcdという名前を付けます。
+   ``lcd1602``モジュールの``LCD``クラスがインスタンス化されます。このクラスは、I2Cを介してLCDディスプレイとの通信を処理します。 ``i2c``オブジェクトを使用して``LCD``オブジェクトが作成されます。
 
-.. code-block:: python
+   ``lcd1602``ライブラリの詳細な使用方法については、``lcd1602.py``を参照してください。
 
-    lcd = LCD()
+   .. code-block:: python
+      
+      from lcd1602 import LCD
+      lcd = LCD(i2c)
 
-このステートメントはLCDにテキストを表示します。引数は文字列型でなければならない点に注意が必要です。整数や浮動小数点数を渡したい場合は、強制的に変換する ``str()`` を使用する必要があります。
+#. LCDにメッセージを表示
 
-.. code-block:: python
+   ``LCD``オブジェクトの``message``メソッドは、画面にテキストを表示するために使用されます。 ``\n``文字はLCD上に新しい行を作成します。 ``time.sleep()``関数は、指定された秒数だけ実行を一時停止します。
 
-    lcd.message(string)
+   .. code-block:: python
+      
+      string = "SunFounder\n    LCD Tutorial"
+      lcd.message(string)
+      time.sleep(2)
+      lcd.clear()
 
-このステートメントを複数回呼び出すと、lcdはテキストを重ねて表示します。そのため、次のステートメントを使用して表示をクリアする必要があります。
+#. ディスプレイのクリア
 
-.. code-block:: python
+   ``LCD``オブジェクトの``clear``メソッドが呼び出され、ディスプレイからテキストが消去されます。
 
-    lcd.clear()
+   .. code-block:: python
+      
+      lcd.clear()
 
+#. 2つ目のメッセージの表示
+
+   新しいメッセージが表示され、その後遅延が発生し、画面が再びクリアされます。
+
+   .. code-block:: python
+      
+      string = "Hello\n  World!"
+      lcd.message(string)
+      time.sleep(5)
+      lcd.clear()
