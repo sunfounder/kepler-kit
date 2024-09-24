@@ -77,9 +77,9 @@ You can also buy them separately from the links below.
         - 2(1KΩ, 220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Active :ref:`cpn_buzzer`
         - 1
-        - |link_passive_buzzer_buy|
+        -
     *   - 8
         - :ref:`cpn_led`
         - 1
@@ -112,82 +112,88 @@ You can also buy them separately from the links below.
 
 .. code-block:: python
 
-
     import machine
     import time
-    import _thread
 
+    # Initialize pins for the buzzer and LED
+    buzzer = machine.Pin(15, machine.Pin.OUT)  # Buzzer on pin 15
+    led = machine.Pin(14, machine.Pin.OUT)  # LED on pin 14
 
-    buzzer = machine.Pin(15, machine.Pin.OUT)
-    led = machine.Pin(14, machine.Pin.OUT)
+    # Initialize pins for the ultrasonic sensor (HC-SR04)
+    TRIG = machine.Pin(17, machine.Pin.OUT)  # Trigger pin for the ultrasonic sensor
+    ECHO = machine.Pin(16, machine.Pin.IN)  # Echo pin for the ultrasonic sensor
 
-    TRIG = machine.Pin(17,machine.Pin.OUT)
-    ECHO = machine.Pin(16,machine.Pin.IN)
+    dis = 100  # Global variable to store the distance
 
-    dis = 100
-
+    # Function to measure distance using the ultrasonic sensor
     def distance():
-        timeout=10000*5/340 
         TRIG.low()
         time.sleep_us(2)
         TRIG.high()
         time.sleep_us(10)
         TRIG.low()
-        timeout_start = time.ticks_ms() # For timeout, re-read distance
+
+        timeout_start = time.ticks_us()  # Use microseconds for more precision
+        
+        # Wait for ECHO pin to go high (start of echo pulse)
         while not ECHO.value():
-            waiting_time = time.ticks_ms()
-            if waiting_time - timeout_start > timeout:
-                return -1
-        time1 = time.ticks_us()
+            if time.ticks_diff(time.ticks_us(), timeout_start) > 30000:  # 30ms timeout
+                return -1  # Timeout, return -1 if no pulse is detected
+        
+        time1 = time.ticks_us()  # Start time for pulse width calculation
+        
+        # Wait for ECHO pin to go low (end of echo pulse)
         while ECHO.value():
-            waiting_time = time.ticks_ms()
-            if waiting_time - timeout_start > timeout:
-                return -1
-        time2 = time.ticks_us()
-        during = time.ticks_diff(time2 ,time1)
-        return during * 340 / 2 / 10000
+            if time.ticks_diff(time.ticks_us(), time1) > 30000:  # 30ms timeout
+                return -1  # Timeout, return -1 if pulse is too long
+        
+        time2 = time.ticks_us()  # End time for pulse width calculation
+        
+        # Calculate the distance based on the duration of the echo pulse
+        during = time.ticks_diff(time2, time1)
+        distance_cm = during * 340 / 2 / 10000  # Convert time to distance in cm
+        return distance_cm
 
-    def ultrasonic_thread():
-        global dis
-        while True:
-            dis = distance()
-
-    _thread.start_new_thread(ultrasonic_thread, ())
-
+    # Function to beep the buzzer and light up the LED
     def beep():
-        buzzer.value(1)
-        led.value(1)
-        time.sleep(0.1)
-        buzzer.value(0)
-        led.value(0)
-        time.sleep(0.1)
+        buzzer.value(1)  # Turn on the buzzer
+        led.value(1)  # Turn on the LED
+        time.sleep(0.1)  # Beep duration
+        buzzer.value(0)  # Turn off the buzzer
+        led.value(0)  # Turn off the LED
+        time.sleep(0.1)  # Short pause between beeps
 
-    intervals = 10000000
-    previousMills=time.ticks_ms()
-    time.sleep(1) 
+    # Initialize variables for controlling beep intervals
+    intervals = 2000  # Default long initial interval
+    previousMillis = time.ticks_ms()  # Store the previous time to track beep intervals
 
+    # Main loop to handle distance-based beeping intervals
     while True:
-        if dis<0:
-            pass
-        elif dis <= 10:
-            intervals = 300
-        elif dis <= 20:
-            intervals =500
-        elif dis <=50:
-            intervals =1000
-        else:
-            intervals = 2000
-        if dis!=-1:
-            print ('Distance: %.2f' % dis)
-            time.sleep_ms(100)
+        dis = distance()  # Measure the distance directly in the main loop
 
-        
-        currentMills=time.ticks_ms()
-        
-        if time.ticks_diff(currentMills,previousMills)>=intervals:
-            beep()
-            previousMills=currentMills
-        
+        # Adjust beep intervals based on the distance
+        if dis > 0:  # Ensure valid distance is measured
+            if dis <= 10:
+                intervals = 300  # Close distance, faster beeps
+            elif dis <= 20:
+                intervals = 500  # Medium-close distance, moderate beeps
+            elif dis <= 50:
+                intervals = 1000  # Medium distance, slower beeps
+            else:
+                intervals = 2000  # Far distance, much slower beeps
+
+            # Print the measured distance
+            print(f'Distance: {dis:.2f} cm')
+            
+            # Check if it's time to beep again based on the interval
+            currentMillis = time.ticks_ms()  # Get the current time
+            if time.ticks_diff(currentMillis, previousMillis) >= intervals:
+                beep()  # Beep the buzzer and blink the LED
+                previousMillis = currentMillis  # Update the time of the last beep
+            
+        time.sleep_ms(100)  # Small delay to avoid too frequent readings
+
+
 * As soon as the program runs, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you will be able to see the exact distance value on the shell.
 * The LED and buzzer will change the frequency of blinking and beeping depending on the distance value, thus indicating the approach of the obstacle.
 * The :ref:`py_ultrasonic` article mentioned that when the ultrasonic sensor works, the program will be paused.
