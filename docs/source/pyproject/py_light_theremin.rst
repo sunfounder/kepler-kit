@@ -83,7 +83,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Active :ref:`cpn_buzzer`
+        - Passive :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
