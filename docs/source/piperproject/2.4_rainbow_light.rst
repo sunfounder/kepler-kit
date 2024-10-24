@@ -1,62 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _per_rainbow_light:
 
-2.4 Rainbow Light
-==================
+2.4 Lumière Arc-en-ciel
+============================
 
-In this project, we will make the RGB LEDs display a rainbow of colors. 
+Dans ce projet, nous allons faire en sorte que les LED RVB affichent un arc-en-ciel de couleurs.
 
-RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin. Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+Une LED RVB équivaut à encapsuler une LED rouge, une LED verte et une LED bleue sous un même capuchon, et les trois LED partagent une broche cathode commune. Comme le signal électrique est fourni à chaque broche anode, la lumière de la couleur correspondante peut être affichée. En modifiant l'intensité du signal électrique de chaque anode, il est possible de produire diverses couleurs.
 
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est très pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - COMPOSANTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N°
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -65,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -80,33 +79,32 @@ You can also buy them separately from the links below.
         - 1
         - |link_rgb_led_buy|
 
-**Wiring**
+**Câblage**
 
 |img_rgb_pin|
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+Une LED RVB possède 4 broches : la plus longue est la broche cathode commune, qui est généralement connectée à la masse (GND), la broche de gauche, à côté de la plus longue, est pour le rouge, et les deux broches de droite sont pour le vert et le bleu.
 
 |rgb0|
 
-
-* When using the same power supply intensity, the Red LED will be brighter than the other two, and a slightly larger resistor(330Ω) needs to be used to reduce its brightness.
-* The 3 buttons are used to control the lighting of the Red, Green and Blue LEDs respectively. 
+* Lors de l'utilisation de la même intensité d'alimentation, la LED rouge sera plus lumineuse que les deux autres, et une résistance légèrement plus grande (330Ω) doit être utilisée pour réduire sa luminosité.
+* Les 3 boutons servent à contrôler l'allumage des LED rouge, verte et bleue respectivement.
 
 **Code**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.4_rainbow_light.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Vous pouvez vous référer à l'image ci-dessous pour écrire le code en glissant-déposant.
+    * Importez ``2.4_rainbow_light.png`` depuis le chemin ``kepler-kit-main\piper``. Pour des tutoriels détaillés, veuillez consulter :ref:`import_code_piper`.
 
 |rgb_led|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Pressing these buttons individually will emit a single color of light, but if two of the buttons are pressed at the same time, or all 3 buttons are pressed at the same time, the RGB LEDs will emit a variety of different colors, up to a maximum of 7.
+Après avoir connecté le Pico W, cliquez sur le bouton **Start** et le code commencera à s'exécuter. En appuyant sur ces boutons individuellement, une couleur unique sera émise, mais si deux boutons sont pressés en même temps, ou les 3 boutons en même temps, les LED RVB afficheront une variété de couleurs différentes, jusqu'à un maximum de 7.
 
 .. note::
-    In fact, RGB LED can emit up to 16 million colors, but since Piper Make does not have a block to output PWM signal, here we just use the [turn pin() (ON/OFF)] block to make RGB LEDs show 7 colors.
+    En réalité, les LED RVB peuvent émettre jusqu'à 16 millions de couleurs, mais comme Piper Make ne dispose pas d'un bloc pour émettre un signal PWM, nous utilisons ici le bloc [turn pin() (ON/OFF)] pour faire afficher 7 couleurs aux LED RVB.
 
-**How it Works?**
+**Comment ça marche ?**
 
-You can think of this project as using three buttons to control the RGB LED, and setting three if judgment conditions to determine whether the three buttons are pressed or not.
-When the buttons are pressed, the levels of the corresponding pins are pulled high, causing the RGB LED to display different colors.
+Vous pouvez considérer ce projet comme l'utilisation de trois boutons pour contrôler la LED RVB, et l'ajout de trois conditions de jugement (if) pour déterminer si les trois boutons sont pressés ou non.
+Lorsque les boutons sont enfoncés, les niveaux des broches correspondantes sont élevés, ce qui permet à la LED RVB d'afficher différentes couleurs.

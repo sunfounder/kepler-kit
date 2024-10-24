@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 8:  Compound Conditionals and If Statements in MicroPython
+Leçon 8 : Conditionnels composés et instructions If en MicroPython
 ==========================================================================
 
-This tutorial covers using a potentiometer to control three LEDs with the Raspberry Pi Pico W and addresses a critical logical error:
+Ce tutoriel explique comment utiliser un potentiomètre pour contrôler trois LEDs avec le Raspberry Pi Pico W et aborde un problème logique critique :
 
-* **Homework Solution Review**: Recap of identifying a logical flaw in the LED control code.
-* **Logical Error Explanation**: Discusses the error where LED states overlapped, stressing the need for mutually exclusive conditions.
-* **Real-World Example**: Demonstrates the importance of avoiding logical errors through a UV sterilization scenario.
-* **Compound Conditionals**: Introduces using AND/OR operators to create precise, non-overlapping conditions.
-* **Circuit Setup and Code**: Detailed wiring and corrected code for LED control.
-* **Practical Demonstration**: Shows the corrected code in action with proper LED behavior.
-* **Next Steps**: Preview of the next Lesson on simulating analog output.
+* **Revue de la solution des devoirs** : Récapitulatif sur l'identification d'une erreur logique dans le code de contrôle des LEDs.
+* **Explication de l'erreur logique** : Discussion sur le problème où les états des LEDs se chevauchaient, insistant sur la nécessité d'avoir des conditions mutuellement exclusives.
+* **Exemple réel** : Illustration de l'importance d'éviter les erreurs logiques avec un scénario de stérilisation par UV.
+* **Conditionnels composés** : Introduction à l'utilisation des opérateurs AND/OR pour créer des conditions précises et non chevauchantes.
+* **Configuration du circuit et code** : Schéma de câblage détaillé et code corrigé pour le contrôle des LEDs.
+* **Démonstration pratique** : Présentation du code corrigé en action avec un comportement correct des LEDs.
+* **Étapes suivantes** : Aperçu de la prochaine leçon sur la simulation de la sortie analogique.
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

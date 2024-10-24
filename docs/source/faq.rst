@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans le Raspberry Pi, l'Arduino et l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support expert** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 FAQ
 =========
@@ -18,44 +18,44 @@ FAQ
 Arduino
 ---------------------
 
-#. Code upload failed in Arduino IDE?
-    * Check that your Pico is correctly recognised by the Arduino IDE, the port should be COMXX (Raspberry Pi Pico), for instructions please refer to :ref:`setup_pico_arduino`.
-    * Check that the Board(Raspberry Pi Pico) or port(COMXX (Raspberry Pi Pico))is selected correctly.
-    * If your code is OK and you have selected the correct board and port, but the upload is still not successful. At this point you can click on the **Upload** icon again, when the progress below shows "Upload...", unplug the USB cable, then press and hold the **BOOTSEL** button to plug it in and the code will be uploaded successfully.
+#. L'upload du code a échoué dans l'IDE Arduino ?
+    * Vérifiez que votre Pico est bien reconnu par l'IDE Arduino, le port devrait être COMXX (Raspberry Pi Pico). Pour les instructions, veuillez consulter :ref:`setup_pico_arduino`.
+    * Assurez-vous que la carte (Raspberry Pi Pico) ou le port (COMXX (Raspberry Pi Pico)) est correctement sélectionné.
+    * Si votre code est correct et que vous avez sélectionné la bonne carte et le bon port, mais que l'upload échoue encore, cliquez à nouveau sur l'icône **Upload**. Lorsque la progression affiche "Upload...", débranchez le câble USB, puis maintenez le bouton **BOOTSEL** enfoncé tout en rebranchant le câble, et le code sera chargé avec succès.
 
 
 MicroPython
 ------------------
 
-#. How to open and run the code?
-    For detailed tutorials, please refer to :ref:`open_run_code_py`.
+#. Comment ouvrir et exécuter le code ?
+    Pour des tutoriels détaillés, veuillez consulter :ref:`open_run_code_py`.
 
-#. How to upload library to Raspberry Pi Pico W？
-    For detailed tutorials, please refer to :ref:`add_libraries_py`.
+#. Comment télécharger une bibliothèque sur le Raspberry Pi Pico W ?
+    Pour des tutoriels détaillés, veuillez consulter :ref:`add_libraries_py`.
 
-#. NO MicroPython(Raspberry Pi Pico W) Interpreter Option on Thonny IDE?
-    * Check that your Pico W is plugged into your computer via a USB cable.
-    * Check that you have installed MicroPython for Pico W (:ref:`install_micropython_on_pico`).
-    * The Raspberry Pi Pico W interpreter is only available in version 3.3.3 or higher version of Thonny. If you are running an older version, please update (:ref:`thonny_ide`).
-    * If the Li-po Charger module is plugged into the breadboard at this point, unplug it first and then re-plug the Pico W into the computer.
+#. Pas d'option MicroPython (Raspberry Pi Pico W) dans l'IDE Thonny ?
+    * Vérifiez que votre Pico W est connecté à votre ordinateur via un câble USB.
+    * Assurez-vous d'avoir installé MicroPython pour le Pico W (:ref:`install_micropython_on_pico`).
+    * L'interpréteur Raspberry Pi Pico W est disponible uniquement dans la version 3.3.3 ou supérieure de Thonny. Si vous avez une version plus ancienne, veuillez la mettre à jour (:ref:`thonny_ide`).
+    * Si le module chargeur Li-po est connecté à la breadboard, débranchez-le d'abord puis reconnectez le Pico W à l'ordinateur.
 
-#. Cannot open Pico W code or save code to Pico W via Thonny IDE?
-    * Check that your Pico W is plugged into your computer via a USB cable.
-    * Check that you have selected the Interpreter as **MicroPython (Raspberry Pi Pico)**.
+#. Impossible d'ouvrir le code Pico W ou de sauvegarder du code sur le Pico W via Thonny IDE ?
+    * Vérifiez que votre Pico W est connecté à votre ordinateur via un câble USB.
+    * Assurez-vous d'avoir sélectionné l'interpréteur **MicroPython (Raspberry Pi Pico)**.
 
-#. Can Raspberry Pi Pico W be used on Thonny and Arduino at the same time?
-    NO, you need to do some different operations.
+#. Le Raspberry Pi Pico W peut-il être utilisé à la fois sur Thonny et Arduino ?
+    NON, des opérations différentes sont nécessaires.
 
-    * If you used it on Arduino first, and now you want to use it on Thonny IDE, you need to :ref:`install_micropython_on_pico` on it.
-    * If you used it on Thonny first,  and now you want to use it on Arduino IDE, you need to :ref:`setup_pico_arduino`.
+    * Si vous l'avez utilisé sur Arduino et souhaitez maintenant l'utiliser sur Thonny, vous devez :ref:`install_micropython_on_pico`.
+    * Si vous l'avez utilisé sur Thonny et souhaitez maintenant l'utiliser sur Arduino IDE, vous devez :ref:`setup_pico_arduino`.
 
 
-#. If your computer is win7 and Pico W cannot be detected.
-    * Download the USB CDC driver from http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
-    * Unzip the ``amtel_devices_cdc.inf`` file to a folder named ``pico-serial``.
-    * Change the name of ``amtel_devices_cdc.inf`` file to ``pico-serial.inf``.
-    * Open/edit the ``pico-serial.inf`` in a basic editor like notepad
-    * Remove and replace the lines under the following headings:
+#. Si votre ordinateur est sous Windows 7 et que le Pico W n'est pas détecté.
+    * Téléchargez le pilote USB CDC à partir de http://aem-origin.microchip.com/en-us/mindi-sw-library?swsearch=Atmel%2520USB%2520CDC%2520Virtual%2520COM%2520Driver
+    * Décompressez le fichier ``amtel_devices_cdc.inf`` dans un dossier nommé ``pico-serial``.
+    * Renommez le fichier ``amtel_devices_cdc.inf`` en ``pico-serial.inf``.
+    * Ouvrez/modifiez le fichier ``pico-serial.inf`` dans un éditeur basique comme Notepad.
+    * Supprimez et remplacez les lignes sous les en-têtes suivants :
 
     .. code-block::
 
@@ -76,23 +76,21 @@ MicroPython
         PI_CDC_PICO = "Pi Pico Serial Port"
         Serial.SvcDesc = "Pi Pico Serial Driver"
 
-    #. Close and save and make sure your retain the name as pico-serial.inf
-    #. Go to your pc device list, find the pico under Ports, named something like CDC Device. A yellow exclamation mark indicates it.
-    #. Right click on the CDC Device and update or install driver choosing the file you created from the location you saved it at.
-
+    #. Fermez et sauvegardez en vous assurant de conserver le nom ``pico-serial.inf``.
+    #. Accédez à la liste des périphériques de votre PC, trouvez le Pico sous Ports, nommé comme "CDC Device". Un point d'exclamation jaune l'indiquera.
+    #. Faites un clic droit sur le "CDC Device" et mettez à jour ou installez le pilote en choisissant le fichier que vous avez créé à partir de l'emplacement où vous l'avez enregistré.
 
 
 
 Piper Make
 ------------------
 
-#. How to set up the Pico W on Piper Make?
-    For detailed tutorials, please refer to :ref:`per_setup_pico`.
+#. Comment configurer le Pico W sur Piper Make ?
+    Pour des tutoriels détaillés, veuillez consulter :ref:`per_setup_pico`.
 
-#. How to download or import code?
-    For detailed tutorials, please refer to :ref:`per_save_import`.
+#. Comment télécharger ou importer du code ?
+    Pour des tutoriels détaillés, veuillez consulter :ref:`per_save_import`.
 
-#. How to connect to Pico W?
-    For detailed tutorials, please refer to :ref:`connect_pico_per`.
-
+#. Comment se connecter au Pico W ?
+    Pour des tutoriels détaillés, veuillez consulter :ref:`connect_pico_per`.
 

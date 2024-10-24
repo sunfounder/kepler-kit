@@ -1,33 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 24:  Power Portable Projects with LiPo Rechargeable Battery
-=============================================================================
+Leçon 24 : Alimenter des projets portables avec une batterie LiPo rechargeable
+==================================================================================
 
-This tutorial covers powering a Raspberry Pi Pico W project with a rechargeable LiPo battery, making the project portable:
+Ce tutoriel explique comment alimenter un projet Raspberry Pi Pico W avec une batterie LiPo rechargeable, rendant le projet portable :
 
-* **Introduction**: Introduces the tutorial and goal of making the DHT-11 sensor project portable.
-* **Library Installation**: Guides on installing the LCD 1602 library.
-* **Code Explanation**: Saves the program as ``main.py`` for automatic startup.
-* **Powering the Project with a Battery**: Connects the LiPo battery and adjusts LCD power to 3.7V.
-* **Adjustments and Demonstration**: Adjusts LCD contrast and verifies the project on battery power.
-* **Conclusion and Next Steps**: Prepares for future Lessons with OLED display.
-* **Homework and Final Notes**: Encourages ordering the OLED display and sharing the video.
+* **Introduction** : Présentation du tutoriel et objectif de rendre le projet avec le capteur DHT-11 portable.
+* **Installation de la bibliothèque** : Guide pour installer la bibliothèque LCD 1602.
+* **Explication du code** : Enregistrement du programme sous ``main.py`` pour un démarrage automatique.
+* **Alimentation du projet avec une batterie** : Connexion de la batterie LiPo et ajustement de l'alimentation de l'écran LCD à 3,7V.
+* **Ajustements et démonstration** : Réglage du contraste de l'écran LCD et vérification du projet alimenté par batterie.
+* **Conclusion et prochaines étapes** : Préparation pour les futures leçons avec un écran OLED.
+* **Devoirs et notes finales** : Encouragement à commander un écran OLED et à partager la vidéo.
 
-
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

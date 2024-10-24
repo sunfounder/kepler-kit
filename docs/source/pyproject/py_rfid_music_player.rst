@@ -1,65 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Explorez en profondeur le Raspberry Pi, l'Arduino et l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_music_player:
 
-7.8 RFID Music Player
-==========================
+7.8 Lecteur de Musique RFID
+==============================
 
-Through our previous project, :ref:`py_rfid`, we learned that the MFRC522 module allows us to write up to 48 letters of information to the card (or key), including both the key and identity information, as well as the music score.
+À travers notre projet précédent, :ref:`py_rfid`, nous avons appris que le module MFRC522 permet d'écrire jusqu'à 48 caractères d'information sur la carte (ou la clé), y compris la clé d'accès et les informations d'identité, ainsi que la partition musicale.
 
-As an example, if you write ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC``, the buzzer will play the music when the card (or key) is read again. It can also be equipped with an WS2812 to display amazing effects.
+Par exemple, si vous écrivez ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC``, le buzzer jouera la musique lorsque la carte (ou la clé) sera lue à nouveau. Il peut également être équipé d'un WS2812 pour afficher des effets lumineux spectaculaires.
 
-You can find more sheet music on the Internet, or even write your own music, put them into the card (or key), and share them with your friends!
+Vous pouvez trouver plus de partitions musicales sur Internet, ou même composer votre propre musique, les enregistrer sur la carte (ou la clé) et les partager avec vos amis !
 
 |rfid_player|
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -68,18 +67,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Buzzer Passif :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -91,36 +90,35 @@ You can also buy them separately from the links below.
         - 1
         - |link_ws2812_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_music_player|
 
-
-**Wiring**
+**Câblage**
 
 |wiring_rfid_music_player| 
 
 **Code**
 
-#. Open the ``6.5_rfid_write.py`` file under the path of ``kepler-kit-main/micropython``, then click "Run Current Script" or simply press F5 to run it.
+#. Ouvrez le fichier ``6.5_rfid_write.py`` sous le chemin ``kepler-kit-main/micropython``, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
    .. note::
 
-    Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    Ici, vous devez utiliser les bibliothèques dans le dossier ``mfrc522``, veuillez vérifier si elles ont été téléchargées sur Pico, pour un tutoriel détaillé référez-vous à :ref:`add_libraries_py`.
 
-#. After running, type ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` in the shell, then bring the card (or key) close to the MFRC522 module to store a score of "Ode to Joy".
+#. Après l'exécution, tapez ``EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC`` dans le shell, puis rapprochez la carte (ou la clé) du module MFRC522 pour enregistrer la partition de "L'Hymne à la Joie".
 
-#. Open the ``7.8_rfid_music_player.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+#. Ouvrez le fichier ``7.8_rfid_music_player.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
    .. code-block:: python
 
        ###################################
-        # Use 'write.py' to write a score #
-        # for the card, this example will #
-        # play the score                  #
+        # Utilisez 'write.py' pour écrire #
+        # une partition sur la carte, cet #
+        # exemple jouera la partition     #
         ###################################
-        # The music score of Ode an Joy:  #
-        # EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC #
+        # Partition de L'Hymne à la Joie :#
+        # EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC  #
         ###################################
 
         from mfrc522 import SimpleMFRC522
@@ -129,15 +127,15 @@ You can also buy them separately from the links below.
         from ws2812 import WS2812
         import urandom
 
-        # WS2812 LED setup
-        # Initialize an 8-LED WS2812 strip on pin 0
+        # Configuration des LED WS2812
+        # Initialiser une bande WS2812 de 8 LEDs sur la broche 0
         ws = WS2812(machine.Pin(0), 8)
 
-        # MFRC522 RFID reader setup
-        # Initialize the RFID reader using SPI on specific pins
+        # Configuration du lecteur RFID MFRC522
+        # Initialiser le lecteur RFID en utilisant SPI sur des broches spécifiques
         reader = SimpleMFRC522(spi_id=0, sck=18, miso=16, mosi=19, cs=17, rst=9)
 
-        # Buzzer note frequencies (in Hertz)
+        # Fréquences des notes pour le buzzer (en Hertz)
         NOTE_C4 = 262
         NOTE_D4 = 294
         NOTE_E4 = 330
@@ -147,46 +145,44 @@ You can also buy them separately from the links below.
         NOTE_B4 = 494
         NOTE_C5 = 523
 
-        # Initialize PWM for buzzer on pin 15
+        # Initialiser le PWM pour le buzzer sur la broche 15
         buzzer = machine.PWM(machine.Pin(15))
 
-        # List of note frequencies corresponding to musical notes
+        # Liste des fréquences de notes correspondant aux notes musicales
         note = [NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5]
 
-        # Function to play a tone on the buzzer with a specified frequency and duration
+        # Fonction pour jouer un ton sur le buzzer avec une fréquence et une durée spécifiées
         def tone(pin, frequency, duration):
-            pin.freq(frequency)  # Set the buzzer frequency
-            pin.duty_u16(30000)  # Set duty cycle to 50% (approx)
-            time.sleep_ms(duration)  # Play the tone for the specified duration
-            pin.duty_u16(0)  # Stop the tone by setting duty cycle to 0
+            pin.freq(frequency)  # Régler la fréquence du buzzer
+            pin.duty_u16(30000)  # Régler le cycle de service à 50% (approx)
+            time.sleep_ms(duration)  # Jouer le ton pour la durée spécifiée
+            pin.duty_u16(0)  # Arrêter le ton en mettant le cycle de service à 0
 
-        # Function to light up a WS2812 LED at a specific index with a random color
+        # Fonction pour allumer une LED WS2812 à un index spécifique avec une couleur aléatoire
         def lumi(index):
             for i in range(8):
-                ws[i] = 0x000000  # Turn off all LEDs
-            ws[index] = int(urandom.uniform(0, 0xFFFFFF))  # Set a random color for the LED at the given index
-            ws.write()  # Write the color data to the WS2812 LEDs
+                ws[i] = 0x000000  # Éteindre toutes les LEDs
+            ws[index] = int(urandom.uniform(0, 0xFFFFFF))  # Définir une couleur aléatoire pour la LED à l'index donné
+            ws.write()  # Écrire les données de couleur aux LEDs WS2812
 
-        # Encode musical notes text into indices and play the corresponding notes
-        words = ["C", "D", "E", "F", "G", "A", "B", "N"]  # Mapping of musical notes to text characters
+        # Encoder le texte des notes musicales en indices et jouer les notes correspondantes
+        words = ["C", "D", "E", "F", "G", "A", "B", "N"]  # Correspondance des notes musicales aux caractères
         def take_text(text):
-            string = text.replace(' ', '').upper()  # Remove spaces and convert the text to uppercase
+            string = text.replace(' ', '').upper()  # Supprimer les espaces et convertir le texte en majuscules
             while len(string) > 0:
-                index = words.index(string[0])  # Find the index of the first note in the string
-                tone(buzzer, note[index], 250)  # Play the corresponding note on the buzzer for 250 ms
-                lumi(index)  # Light up the LED corresponding to the note
-                string = string[1:]  # Move to the next character in the string
+                index = words.index(string[0])  # Trouver l'index de la première note dans la chaîne
+                tone(buzzer, note[index], 250)  # Jouer la note correspondante sur le buzzer pendant 250 ms
+                lumi(index)  # Allumer la LED correspondant à la note
+                string = string[1:]  # Passer au caractère suivant dans la chaîne
 
-        # Function to read from the RFID card and play the stored score
+        # Fonction pour lire la carte RFID et jouer la partition stockée
         def read():
             print("Reading...Please place the card...")
-            id, text = reader.read()  # Read the RFID card (ID and stored text)
-            print("ID: %s\nText: %s" % (id, text))  # Print the ID and text
-            take_text(text)  # Play the score from the text stored on the card
+            id, text = reader.read()  # Lire la carte RFID (ID et texte stocké)
+            print("ID: %s\nText: %s" % (id, text))  # Afficher l'ID et le texte
+            take_text(text)  # Jouer la partition à partir du texte stocké sur la carte
             
-        # Start reading from the RFID card and play the corresponding score
+        # Commencer la lecture de la carte RFID et jouer la partition correspondante
         read()
 
-
-
-#. By putting the card (or key) close to the MFRC522 module again, the buzzer will play the music stored on the card (or key), and the RGB strip will light up in a random color.
+#. En rapprochant à nouveau la carte (ou la clé) du module MFRC522, le buzzer jouera la musique stockée sur la carte (ou la clé), et la bande RGB s'allumera avec des couleurs aléatoires.

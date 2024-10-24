@@ -1,69 +1,67 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_74hc_788bs:
 
-5.4 8x8 Pixel Graphics
+5.4 Graphismes 8x8 Pixels
 =============================
 
-LED matrix is a low-resolution dot-matrix display. it uses an array of light-emitting diodes as pixels for patterned displays.
+La matrice LED est un affichage matriciel à points basse résolution. Elle utilise un ensemble de diodes électroluminescentes comme pixels pour créer des motifs visuels.
 
-They are bright enough to be visible in outdoor sunlight, and you can see them on some stores, billboards, signs, and variable message displays (such as those on public transit vehicles).
+Elles sont suffisamment lumineuses pour être visibles en plein soleil, et vous pouvez les voir sur certains magasins, panneaux publicitaires, enseignes, et écrans de messages variables (comme ceux des transports publics).
 
-Used in this kit is an 8x8 dot matrix with 16 pins. Their anodes are connected in rows and their cathodes are connected in columns (at the circuit level), which together control these 64 LEDs.
+Dans ce kit, nous utilisons une matrice 8x8 à points avec 16 broches. Les anodes sont connectées en lignes et les cathodes en colonnes (au niveau du circuit), ce qui permet de contrôler ces 64 LEDs.
 
-To light the first LED, you should provide a high level for Row1 and a low level for Col1. To light the second LED, it should provide a high level for Row1, a low level for Col2, and so on.
-By controlling the current through each pair of rows and columns, each LED can be controlled individually to display characters or pictures.
+Pour allumer la première LED, il faut fournir un niveau haut pour la ligne 1 et un niveau bas pour la colonne 1. Pour allumer la deuxième LED, il faut fournir un niveau haut pour la ligne 1, un niveau bas pour la colonne 2, et ainsi de suite. En contrôlant le courant à travers chaque paire de lignes et de colonnes, chaque LED peut être contrôlée individuellement pour afficher des caractères ou des images.
 
 * :ref:`cpn_dot_matrix`
 * :ref:`cpn_74hc595`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants : 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ARTICLES DANS CE KIT
+        - LIEN
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous :
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -72,7 +70,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -83,42 +81,38 @@ You can also buy them separately from the links below.
         - 2
         - |link_74hc595_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_ledmatrix|
 
-The 8x8 dot matrix is controlled by two 74HC595 chips, one controlling the rows and one controlling the columns, while these two chips share G18~G20, which can greatly save the I/O ports of the Pico W board. 
+La matrice de points 8x8 est contrôlée par deux puces 74HC595, l'une contrôlant les lignes et l'autre les colonnes, tandis que ces deux puces partagent G18~G20, ce qui permet de réduire considérablement les ports I/O de la carte Pico W.
 
-Pico W needs to output a 16-bit binary number at a time, the first 8 bits are given to the 74HC595 which controls the rows, and the last 8 bits are given to the 75HC595 which controls the columns, so that the dot matrix can display a specific pattern.
+Le Pico W doit sortir un nombre binaire de 16 bits à la fois, les 8 premiers bits sont envoyés au 74HC595 qui contrôle les lignes, et les 8 derniers bits sont envoyés au 74HC595 qui contrôle les colonnes, permettant ainsi à la matrice de points d'afficher un motif spécifique.
 
-Q7': Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series.
+Q7': Broche de sortie en série, connectée à DS d'un autre 74HC595 pour connecter plusieurs 74HC595 en série.
 
-**Wiring**
+**Câblage**
 
-Build the circuit. Since the wiring is complicated, let's
-make it step by step.
+Construisez le circuit. Comme le câblage est complexe, faisons-le étape par étape.
 
-**Step 1:**  First, insert the Pico W, the LED dot matrix
-and two 74HC595 chips into breadboard. Connect the 3.3V and GND of the
-Pico W to holes on the two sides of the board, then hook up pin16 and
-10 of the two 74HC595 chips to VCC, pin 13 and pin 8 to GND.
+**Étape 1 :** Insérez d'abord le Pico W, la matrice de points LED et les deux puces 74HC595 dans la 
+breadboard. Connectez le 3.3V et le GND du Pico W aux trous sur les deux côtés de la carte, puis 
+connectez les broches 16 et 10 des deux puces 74HC595 à VCC, les broches 13 et 8 à GND.
 
 .. note::
-   In the Fritzing image above, the side with label is at the bottom.
+   Dans l'image Fritzing ci-dessus, le côté avec l'étiquette est en bas.
 
 |wiring_ledmatrix_4|
 
-**Step 2:** Connect pin 11 of the two 74HC595 together, and then to
-GP20; then pin 12 of the two chips, and to GP19; next, pin 14 of the
-74HC595 on the left side to GP18 and pin 9 to pin 14 of the second
-74HC595.
+**Étape 2 :** Connectez la broche 11 des deux 74HC595 ensemble, puis à GP20 ; ensuite, 
+la broche 12 des deux puces à GP19 ; ensuite, la broche 14 du 74HC595 sur le côté gauche 
+à GP18 et la broche 9 à la broche 14 du second 74HC595.
 
 |wiring_ledmatrix_3|
 
-**Step 3:** The 74HC595 on the right side is to control columns of the
-LED dot matrix. See the table below for the mapping. Therefore, Q0-Q7
-pins of the 74HC595 are mapped with pin 13, 3, 4, 10, 6, 11, 15, and 16
-respectively.
+**Étape 3 :** Le 74HC595 sur le côté droit contrôle les colonnes de la matrice LED. 
+Voir le tableau ci-dessous pour le mapping. Par conséquent, les broches Q0-Q7 du 74HC595 
+sont mappées respectivement avec les broches 13, 3, 4, 10, 6, 11, 15 et 16.
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -128,10 +122,10 @@ respectively.
 
 |wiring_ledmatrix_2|
 
-**Step 4:** Now connect the ROWs of the LED dot matrix. The 74HC595 on
-the left controls ROW of the LED dot matrix. See the table below for the
-mapping. We can see, Q0-Q7 of the 74HC595 on the left are mapped with
-pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
+**Étape 4 :** Connectez maintenant les LIGNES de la matrice LED. Le 74HC595 sur 
+le côté gauche contrôle les LIGNES de la matrice LED. Voir le tableau ci-dessous 
+pour le mapping. Nous voyons que les broches Q0-Q7 du 74HC595 sur la gauche sont 
+mappées respectivement avec les broches 9, 14, 8, 12, 1, 7, 2 et 5.
 
 +--------------------+--------+--------+--------+--------+--------+--------+--------+--------+
 | **74HC595**        | **Q0** | **Q1** | **Q2** | **Q3** | **Q4** | **Q5** | **Q6** | **Q7** |
@@ -145,11 +139,11 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
 .. note::
 
-    * Open the ``5.4_8x8_pixel_graphics.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``5.4_8x8_pixel_graphics.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Exécuter le script actuel" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 
 .. code-block:: python
@@ -164,7 +158,7 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
 
     glyph = [0xFF,0xBB,0xD7,0xEF,0xD7,0xBB,0xFF,0xFF]
 
-    # Shift the data to 74HC595
+    # Déplacer les données vers 74HC595
     def hc595_in(dat):
         for bit in range(7,-1, -1):
             srclk.low()
@@ -184,13 +178,13 @@ pin 9, 14, 8, 12, 1, 7, 2, and 5 respectively.
             hc595_in(0x80>>i)
             hc595_out()
 
-Once the program is running, you will see a **x** graphic displayed on the 8x8 dot matrix.
+Une fois le programme en cours d'exécution, vous verrez un graphique **x** affiché sur la matrice de points 8x8.
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-Here we use two 74HC595s to provide signals for the rows and columns of the dot matrix.
-The method of providing signals is the same as ``hc595_shift(dat)`` in the previous chapters, but the difference is that here we need to write a 16-bit binary number at a time.
-So we split ``hc595_shift(dat)`` into two functions ``hc595_in(dat)`` and ``hc595_out()``.
+Ici, nous utilisons deux 74HC595 pour fournir des signaux aux lignes et colonnes de la matrice de points.
+La méthode pour fournir les signaux est la même que ``hc595_shift(dat)`` des chapitres précédents, mais ici nous devons écrire un nombre binaire de 16 bits à la fois.
+Nous avons donc scindé ``hc595_shift(dat)`` en deux fonctions : ``hc595_in(dat)`` et ``hc595_out()``.
 
 .. code-block:: python
 
@@ -207,10 +201,10 @@ So we split ``hc595_shift(dat)`` into two functions ``hc595_in(dat)`` and ``hc59
         time.sleep_us(200)
         rclk.low()
 
-Then, call ``hc595_in(dat)`` twice in the main loop, write two 8-bit binary numbers and then call ``hc595_out()`` so that a pattern can be displayed.
+Ensuite, appelez ``hc595_in(dat)`` deux fois dans la boucle principale, écrivez deux nombres binaires de 8 bits et appelez ``hc595_out()`` pour afficher un motif.
 
-However, since the LEDs in the dot matrix use common poles, controlling multiple rows/multiple columns at the same time will interfere with each other (e.g., if you light up (1,1) and (2,2) at the same time, (1,2) and (2,1) will inevitably be lit up together).
-Therefore, it is necessary to activate one column (or one row) at a time, cycle 8 times, and use the residual image principle to make the human eye merge 8 patterns, so as to get a pair of patterns containing 8x8 amount of information.
+Cependant, puisque les LEDs de la matrice partagent des pôles communs, le contrôle de plusieurs lignes/colonnes simultanément peut causer des interférences (par exemple, si vous allumez (1,1) et (2,2) en même temps, (1,2) et (2,1) seront également allumés involontairement).
+Il est donc nécessaire d'activer une colonne (ou une ligne) à la fois, de parcourir les 8 cycles, et d'utiliser le principe de l'image résiduelle pour que l'œil humain fusionne 8 motifs et obtienne un motif de 8x8 pixels.
 
 .. code-block:: python
 
@@ -220,14 +214,14 @@ Therefore, it is necessary to activate one column (or one row) at a time, cycle 
             hc595_in(0x80>>i)
             hc595_out()
 
-In this example, the main function nests a ``for`` loop, and when ``i`` is 1, only the first line is activated (the chip in the control line gets the value ``0x80`` ) and the image of the first line is written. 
-When ``i`` is 2, the second line is activated (the chip of the control line gets the value ``0x40``) and the image of the second line is written. And so on, completing 8 outputs.
+Dans cet exemple, la fonction principale contient une boucle ``for``, et lorsque ``i`` est égal à 1, seule la première ligne est activée (la puce de contrôle obtient la valeur ``0x80``) et l'image de la première ligne est écrite. 
+Lorsque ``i`` est égal à 2, la deuxième ligne est activée (la puce de contrôle obtient la valeur ``0x40``) et l'image de la deuxième ligne est écrite. Et ainsi de suite, pour compléter les 8 sorties.
 
-Incidentally, like the 4-digit 7-segment display, it has to maintain the refresh rate to prevent flickering by the human eye, so the extra ``sleep()`` in the main loop should be avoided as much as possible.
+Incidemment, comme l'affichage à 4 chiffres et 7 segments, il doit maintenir le taux de rafraîchissement pour éviter que l'œil humain ne perçoive un scintillement. Par conséquent, il est préférable d'éviter les ``sleep()`` supplémentaires dans la boucle principale.
 
-**Learn More**
+**Pour en savoir plus**
 
-Try replacing ``glyph`` with the following array and see what comes up!
+Essayez de remplacer ``glyph`` par les tableaux suivants et voyez ce que cela donne !
 
 .. code-block:: python
 
@@ -238,4 +232,4 @@ Try replacing ``glyph`` with the following array and see what comes up!
     glyph5 = [0xFF,0xBB,0xD7,0xEF,0xD7,0xBB,0xFF,0xFF]
     glyph6 = [0xFF,0xFF,0xF7,0xEB,0xDF,0xBF,0xFF,0xFF]
 
-Or, you can try drawing your own graphics.
+Ou bien, essayez de dessiner vos propres graphiques.

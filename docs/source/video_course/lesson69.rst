@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur le Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 69:  Cleanly Exit MicroPython Threads When Program Terminates
-===================================================================================
+Leçon 69 : Arrêter proprement les threads MicroPython lors de la fin du programme
+======================================================================================
 
-This tutorial covers controlling a servo and LEDs with the Raspberry Pi Pico W using both cores:
+Ce tutoriel explique comment contrôler un servo et des LEDs avec le Raspberry Pi Pico W en utilisant les deux cœurs :
 
-* **Wiring Setup**: Connect red LED to GPIO 15, green LED to GPIO 14, and servo to GPIO 17, with power to pin 40 and ground to pin 38.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, and ``Servo``. Set up pins for LEDs and servo. Define ``other_core`` to blink LEDs based on servo movement. Create loop to control servo and LEDs.
-* **Homework Assignment**: Modify the code to blink red LED for clockwise and green LED for counterclockwise servo movement.
+* **Configuration des connexions** : Connectez la LED rouge au GPIO 15, la LED verte au GPIO 14, et le servo au GPIO 17, avec l'alimentation sur le pin 40 et la masse sur le pin 38.
+* **Implémentation du code** : Importez ``machine``, ``time``, ``_thread`` et ``Servo``. Configurez les broches pour les LEDs et le servo. Définissez ``other_core`` pour faire clignoter les LEDs en fonction du mouvement du servo. Créez une boucle pour contrôler le servo et les LEDs.
+* **Devoir** : Modifiez le code pour faire clignoter la LED rouge pour un mouvement horaire et la LED verte pour un mouvement antihoraire du servo.
 
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/mcXxqx0lZYo?si=tIek_zJ4EMuZ3bC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

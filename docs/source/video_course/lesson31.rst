@@ -1,32 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 31: Sensorless Remote Weather Station Project
+Leçon 31 : Projet de station météo sans capteur à distance
 =============================================================================
 
-This tutorial covers creating a sensorless weather station using the Raspberry Pi Pico W:
+Ce tutoriel explique comment créer une station météo sans capteur en utilisant le Raspberry Pi Pico W :
 
-* **Connecting to WiFi**: Import libraries and connect to WiFi using a WLAN object.
-* **Fetching Weather Data**: Use OpenWeatherMap API to get real-time weather data, requiring an API key.
-* **Parsing JSON Data**: Extract temperature, humidity, pressure, sunrise, and sunset times from the JSON response.
-* **Code Explanation**: Use ``urequests.get()`` to fetch data, convert Unix time, and adjust pressure units.
-* **Displaying Weather Data**: Print temperature, humidity, pressure, conditions, and wind speed.
-* **Homework Assignment**: Add a display and create a portable, battery-powered weather station.
+* **Connexion au Wi-Fi** : Importez les bibliothèques et connectez-vous au Wi-Fi en utilisant un objet WLAN.
+* **Récupération des données météorologiques** : Utilisez l'API OpenWeatherMap pour obtenir des données météorologiques en temps réel, nécessitant une clé API.
+* **Analyse des données JSON** : Extrayez la température, l'humidité, la pression, ainsi que les heures de lever et de coucher du soleil à partir de la réponse JSON.
+* **Explication du code** : Utilisez ``urequests.get()`` pour récupérer les données, convertissez le temps Unix et ajustez les unités de pression.
+* **Affichage des données météorologiques** : Imprimez la température, l'humidité, la pression, les conditions et la vitesse du vent.
+* **Devoir à la maison** : Ajoutez un écran et créez une station météo portable alimentée par batterie.
 
-
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

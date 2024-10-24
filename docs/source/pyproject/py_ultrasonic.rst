@@ -1,61 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_ultrasonic:
 
-6.1 Measuring Distance
+6.1 Mesure de la distance
 ======================================
 
-The ultrasonic sensor module works on the principle of sonar and radar systems for determining the distance to an object.
+Le module de capteur ultrasonique fonctionne selon le principe des systèmes sonar et radar pour déterminer la distance d'un objet.
 
 * :ref:`cpn_ultrasonic`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est bien sûr plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N°
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -64,7 +64,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ultrasonic`
@@ -72,11 +72,11 @@ You can also buy them separately from the links below.
         - |link_ultrasonic_buy|
 
 
-**Schematic**
+**Schéma**
 
 |sch_ultrasonic|
 
-**Wiring**
+**Câblage**
 
 |wiring_ultrasonic|
 
@@ -84,11 +84,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``6.1_measuring_distance.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``6.1_measuring_distance.py`` situé sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -118,12 +118,12 @@ You can also buy them separately from the links below.
         print ('Distance: %.2f' % dis)
         time.sleep_ms(300)
 
-Once the program is running, the Shell will print out the distance of the ultrasonic sensor from the obstacle ahead.
+Une fois le programme lancé, la console affichera la distance détectée par le capteur ultrasonique par rapport à l'obstacle situé en face.
 
-**How it works?**
+**Comment ça marche ?**
 
-Ultrasonic sensors produce high frequency sound waves (ultrasonic waves) emitted by the transmitting probe. When this ultrasonic wave hits an object, it is reflected as an echo, which is detected by the receiving probe. By calculating the time from transmission to reception, the distance can be calculated.
-Based on this principle, the function ``distance()`` can be derived.
+Les capteurs ultrasoniques produisent des ondes sonores de haute fréquence (ultrasons) émises par la sonde émettrice. Lorsque cette onde ultrasonique rencontre un objet, elle est réfléchie sous forme d'écho, détecté par la sonde réceptrice. En calculant le temps écoulé entre l'émission et la réception, on peut déterminer la distance.
+Sur cette base, la fonction ``distance()`` peut être définie.
 
 .. code-block:: python
 
@@ -142,7 +142,7 @@ Based on this principle, the function ``distance()`` can be derived.
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-* Among them, the first few lines are used to transmit a 10us ultrasonic wave.
+* Parmi ces lignes, les premières servent à transmettre une onde ultrasonique de 10 µs.
 
 .. code-block:: python
 
@@ -152,7 +152,7 @@ Based on this principle, the function ``distance()`` can be derived.
     time.sleep_us(10)
     TRIG.low()
 
-* Then, the program is paused and the current time is recorded when the ultrasonic wave has been emitted.
+* Ensuite, le programme se met en pause et enregistre l'heure actuelle après l'émission de l'onde ultrasonique.
 
 .. code-block:: python
 
@@ -160,7 +160,7 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time1 = time.ticks_us()
 
-* Subsequently, the program is suspended again. After the echo is received, the current time is recorded once again.
+* Par la suite, le programme se suspend à nouveau. Après avoir reçu l'écho, l'heure actuelle est enregistrée une seconde fois.
 
 .. code-block:: python
 
@@ -168,12 +168,12 @@ Based on this principle, the function ``distance()`` can be derived.
             pass
         time2 = time.ticks_us()
 
-* Finally, based on the time difference between the two recordings, the speed of sound (340m/s) is multiplied by the time to obtain double the distance between the ultrasonic module and the obstacle (i.e., one round trip of the ultrasonic waves from the module to the obstacle). Converting the units to centimeters gives us the return value we need.
+* Enfin, en fonction de la différence de temps entre les deux enregistrements, la vitesse du son (340 m/s) est multipliée par le temps pour obtenir le double de la distance entre le module ultrasonique et l'obstacle (c'est-à-dire un aller-retour des ondes ultrasoniques entre le module et l'obstacle). En convertissant les unités en centimètres, nous obtenons la valeur de retour souhaitée.
 
 .. code-block:: python
 
         during = time.ticks_diff(time2,time1)
         return during * 340 / 2 / 10000
 
-Note that the ultrasonic sensor will pause the program when it is working, which may cause some lagging when writing complex projects.
+Notez que le capteur ultrasonique met en pause le programme lorsqu'il fonctionne, ce qui peut entraîner des ralentissements lorsqu'on écrit des projets plus complexes.
 

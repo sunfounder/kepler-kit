@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 10:  Controlling a Dimmable LED with a Potentiometer
+Leçon 10 : Contrôler une LED dimmable avec un potentiomètre
 ==========================================================================
 
-This tutorial covers controlling LED brightness using PWM on the Raspberry Pi Pico W:
+Ce tutoriel explique comment contrôler la luminosité d'une LED en utilisant le PWM sur le Raspberry Pi Pico W :
 
-* **LED Brightness Control**: Explains how PWM controls LED brightness by varying duty cycles.
-* **Wiring Diagram and Setup**: Detailed diagram for connecting an LED with a 220 Ohm resistor to the Pico W.
-* **Code Explanation**: Code setup for PWM, converting user input to the corresponding duty cycle.
-* **Practical Demonstration**: Visualizing PWM signals using an oscilloscope to show different duty cycles.
-* **Homework Assignment**: Create a circuit to control LED brightness using a potentiometer and PWM.
+* **Contrôle de la luminosité de la LED** : Explication de la manière dont le PWM contrôle la luminosité en modifiant les cycles de service.
+* **Schéma de câblage et configuration** : Diagramme détaillé pour connecter une LED avec une résistance de 220 Ohms au Pico W.
+* **Explication du code** : Configuration du code pour le PWM, conversion des entrées utilisateur en cycles de service correspondants.
+* **Démonstration pratique** : Visualisation des signaux PWM à l'aide d'un oscilloscope pour montrer les différents cycles de service.
+* **Devoir à la maison** : Créer un circuit pour contrôler la luminosité de la LED à l'aide d'un potentiomètre et du PWM.
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

@@ -1,72 +1,70 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez plus profondément dans le monde du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à notre communauté et notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_rgb:
 
-
-2.4 Colorful Light
+2.4 Lumière Colorée
 ==============================================
 
-As we know, light can be superimposed. For example, mix blue light and green light give cyan light, red light and green light give yellow light.
-This is called "The additive method of color mixing".
+Comme nous le savons, la lumière peut se superposer. Par exemple, le mélange de la lumière bleue et de la lumière verte donne de la lumière cyan, et le rouge et le vert donnent du jaune. 
+C'est ce qu'on appelle la "synthèse additive des couleurs".
 
 * `Additive color - Wikipedia <https://en.wikipedia.org/wiki/Additive_color>`_
 
-Based on this method, we can use the three primary colors to mix the visible light of any color according to different specific gravity. For example, orange can be produced by more red and less green.
+En utilisant cette méthode, nous pouvons mélanger les trois couleurs primaires pour produire n'importe quelle couleur visible selon différentes proportions. Par exemple, l'orange peut être obtenu avec plus de rouge et moins de vert.
 
-In this chapter, we will use RGB LED to explore the mystery of additive color mixing!
+Dans ce chapitre, nous allons utiliser une LED RGB pour explorer le mystère de la synthèse additive des couleurs !
 
-RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin.
-Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+Une LED RGB est équivalente à l'encapsulation d'une LED rouge, d'une LED verte et d'une LED bleue sous un même capot, et les trois LEDs partagent une seule broche cathode. 
+En fournissant un signal électrique à chaque broche d'anode, la lumière de la couleur correspondante peut être affichée. En modifiant l'intensité du signal électrique de chaque anode, on peut obtenir diverses couleurs.
 
 * :ref:`cpn_rgb`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -75,29 +73,29 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 3(1-330Ω, 2-220Ω)
+        - 3 (1-330Ω, 2-220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_rgb`
         - 1
         - |link_rgb_led_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_rgb|
 
-The PWM pins GP13, GP14 and GP15 control the Red, Green and Blue pins of the RGB LED respectively, and connect the common cathode pin to GND. This allows the RGB LED to display a specific color by superimposing light on these pins with different PWM values.
+Les broches PWM GP13, GP14 et GP15 contrôlent respectivement les broches rouge, verte et bleue de la LED RGB, et la broche cathode commune est connectée à la masse (GND). Cela permet à la LED RGB d'afficher une couleur spécifique en superposant la lumière sur ces broches avec différentes valeurs PWM.
 
 
-**Wiring**
+**Câblage**
 
 |img_rgb_pin|
 
-The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually connected to GND; the left pin next to the longest pin is Red; and the two pins on the right are Green and Blue.
+La LED RGB a 4 broches : la longue broche est la cathode commune, qui est généralement connectée à la masse (GND) ; la broche à gauche de la plus longue est la rouge ; et les deux broches à droite sont la verte et la bleue.
 
 
 |wiring_rgb|
@@ -106,14 +104,13 @@ The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually
 **Code**
 
 
-
 .. note::
 
-    * Open the ``2.4_colorful_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``2.4_colorful_light.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez consulter :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -141,18 +138,19 @@ The RGB LED has 4 pins: the long pin is the common cathode pin, which is usually
 
     color_set(255,128,0)
 
-Here, we can choose our favorite color in drawing software (such as paint) and display it with RGB LED.
+Ici, nous pouvons choisir notre couleur préférée dans un logiciel de dessin (comme Paint) et l'afficher avec la LED RGB.
 
 |img_take_color|
 
-Write the RGB value into ``color_set()``, you will be able to see the RGB light up the colors you want.
+Inscrivez la valeur RGB dans ``color_set()``, et vous verrez la LED RGB s'illuminer avec les couleurs souhaitées.
 
 
-**How it works?**
+**Comment ça marche ?**
 
-To allow the three primary colors to work together, we defined a ``color_set()`` function.
+Pour permettre aux trois couleurs primaires de fonctionner ensemble, nous avons défini une fonction ``color_set()``.
 
-At present, pixels in computer hardware usually use 24-bit representations. Each primary color is divided into 8 bits, and the color value range is 0 to 255. There are 256 possible combinations of each of the three primary colors (don't forget to count 0! ), so 256 x 256 x 256 = 16,777,216 colors.
-The ``color_set()`` function also uses 24-bit notation, so we can choose a color more easily.
+À l'heure actuelle, les pixels du matériel informatique utilisent généralement des représentations en 24 bits. Chaque couleur primaire est divisée en 8 bits, et la plage de valeurs des couleurs est de 0 à 255. Il y a 256 combinaisons possibles pour chacune des trois couleurs primaires (n'oubliez pas de compter 0 !), donc 256 x 256 x 256 = 16 777 216 couleurs.
+La fonction ``color_set()`` utilise également la notation en 24 bits, ce qui permet de choisir plus facilement une couleur.
 
-And since the value range of ``duty_u16()`` is 0~65535 (instead of 0 to 255) when the output signals to RGB LED through PWM, we have defined ``color_to_duty()`` and ``interval_mapping ()`` function to map the color values to the duty values.
+
+Et comme la plage de valeurs de ``duty_u16()`` est de 0 à 65535 (au lieu de 0 à 255) lors de la transmission des signaux aux LEDs RGB via PWM, nous avons défini les fonctions ``color_to_duty()`` et ``interval_mapping()`` pour mapper les valeurs de couleur aux valeurs de cycle de service.

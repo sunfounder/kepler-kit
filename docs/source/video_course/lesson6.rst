@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 6:  Understanding If Statements in MicroPython
+Leçon 6 : Comprendre les instructions If en MicroPython
 =================================================================
 
-This tutorial covers using if statements and conditionals in MicroPython with the Raspberry Pi Pico W:
+Ce tutoriel explique comment utiliser les instructions if et les conditionnels en MicroPython avec le Raspberry Pi Pico W :
 
-* **User Input Handling**: How to get and convert user input into different data types.
-* **Basic If Statements**: Use if statements to check conditions like equality, inequality, and comparisons.
-* **Conditional Logic**: Control an LED's state (on, off, toggle) using if, elif, and else statements.
-* **Practical Demonstration**: Set up an LED circuit and control it based on user input.
-* **Homework Assignment**: Build a circuit with a potentiometer and three LEDs, lighting them up based on input ranges.
+* **Gestion des entrées utilisateur** : Comment récupérer et convertir les entrées utilisateur en différents types de données.
+* **Instructions If de base** : Utiliser des instructions if pour vérifier des conditions comme l'égalité, l'inégalité et les comparaisons.
+* **Logique conditionnelle** : Contrôler l'état d'une LED (allumée, éteinte, basculer) en utilisant les instructions if, elif et else.
+* **Démonstration pratique** : Monter un circuit avec une LED et la contrôler en fonction des entrées utilisateur.
+* **Devoir à la maison** : Construire un circuit avec un potentiomètre et trois LED, les allumer en fonction des plages de valeurs d'entrée.
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

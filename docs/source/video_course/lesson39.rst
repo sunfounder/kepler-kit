@@ -1,31 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 39: Practical Trigonometry for Easy Problem Solving
-=============================================================================
-This tutorial covers practical trigonometry necessary for real-life applications using the Raspberry Pi Pico W:
+Leçon 39 : La Trigonométrie Pratique pour Résoudre Facilement des Problèmes
+=================================================================================
 
-* **Introduction**: Recap of trigonometry basics, focusing on applying it to the MPU 6050 sensor for tilt measurement.
-* **Key Concepts**: Explains sine, cosine, and converting between degrees and radians, plus calculating angles using arc functions.
-* **Applying Trigonometry**: Uses trigonometry to solve vector and inclined plane problems.
-* **Summary and Homework**: Practice finding sine and cosine values for angles without a calculator.
-* **Next Steps**: Preview of Lessons on using the MPU 6050 for tilt measurements.
+Ce tutoriel couvre la trigonométrie pratique nécessaire pour des applications réelles à l'aide du Raspberry Pi Pico W :
+
+* **Introduction** : Rappel des bases de la trigonométrie, avec un focus sur son application au capteur MPU 6050 pour la mesure de l'inclinaison.
+* **Concepts Clés** : Explications sur le sinus, le cosinus, la conversion entre degrés et radians, et le calcul des angles avec les fonctions arcs.
+* **Application de la Trigonométrie** : Utilisation de la trigonométrie pour résoudre des problèmes de vecteurs et de plans inclinés.
+* **Résumé et Exercice** : Entraînez-vous à trouver les valeurs de sinus et cosinus pour des angles sans utiliser de calculatrice.
+* **Prochaines Étapes** : Aperçu des leçons sur l'utilisation du MPU 6050 pour mesurer les inclinaisons.
 
 
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

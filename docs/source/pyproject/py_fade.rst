@@ -1,85 +1,86 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_fade:
 
-2.3 Fading LED
-========================
+2.3 Variation progressive de la LED
+===================================
 
+Jusqu'à présent, nous avons seulement utilisé deux signaux de sortie : niveau 
+haut et niveau bas (aussi appelés ON et OFF), ce que l'on appelle une sortie 
+numérique. Cependant, dans de nombreux cas pratiques, les dispositifs ne 
+fonctionnent pas uniquement en mode ON/OFF, par exemple pour ajuster la vitesse 
+d'un moteur ou la luminosité d'une lampe de bureau. Pour atteindre cet objectif, 
+on utilisait autrefois un curseur pour ajuster la résistance, mais cette méthode 
+est peu fiable et inefficace. Ainsi, la modulation par largeur d'impulsion (PWM) 
+est apparue comme une solution viable pour résoudre ces problèmes complexes.
 
-As of now, we have only used two output signals: high level and low level (also called ON and OFF), which is called digital output.
-However, in actual use, many devices do not simply ON/OFF to work, for example, adjusting the speed of the motor, adjusting the brightness of the desk lamp, and so on.
-To achieve this goal, a slider that adjusts resistance was used in the past, but it is unreliable and inefficient.
-Therefore, Pulse width modulation (PWM) has emerged as a feasible solution to such complex problems.
+Une impulsion est une sortie numérique comprenant un niveau haut et un niveau 
+bas. La largeur d'impulsion de ces broches peut être ajustée en modifiant la 
+vitesse de passage entre ON et OFF.
 
-A pulse is a digital output that contains a high level and a low level. The pulse width of these pins can be adjusted by changing the ON/OFF speed.
-
-When we are in a short period of time (like 20ms, which is most people's visual retention period), 
-let the LED turn on, turn off, and turn on again, we won't see it has been turned off, but the brightness of the light will be slightly weaker.
-During this period, the more time the LED is on, the brighter it becomes.
-In other words, in the cycle, the wider the pulse, the greater the "electric signal strength" output by the microcontroller.
-This is how PWM controls LED brightness (or motor speed).
+Lorsque nous faisons clignoter rapidement une LED (par exemple, toutes les 20ms, 
+ce qui correspond à la période de rétention visuelle pour la plupart des gens), en l'allumant, en l'éteignant, puis en la rallumant, nous ne verrons pas qu'elle s'éteint. Cependant, la luminosité de la lumière sera légèrement plus faible. Pendant cette période, plus la LED reste allumée, plus elle paraît lumineuse. Autrement dit, pendant le cycle, plus l'impulsion est large, plus le "signal électrique" émis par le microcontrôleur est fort. C'est ainsi que la PWM contrôle la luminosité des LED (ou la vitesse d'un moteur).
 
 * `Pulse-width modulation - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_
 
-There are some points to pay attention to when Pico W uses PWM. Let's take a look at this picture.
+Il y a quelques points importants à prendre en compte lorsque le Pico W utilise la PWM. Jetons un coup d'œil à cette image.
 
 |pin_pwm|
 
-Pico W supports PWM on each GPIO pin, but there are actually 16 independent PWM outputs (instead of 30), distributed between GP0 to GP15 on the left, and the right GPIO's PWM output is identical to the left.
+Le Pico W prend en charge la PWM sur chaque broche GPIO, mais il existe en réalité 16 sorties PWM indépendantes (et non 30), réparties entre les broches GP0 à GP15 sur la gauche, et la sortie PWM des GPIO de droite est identique à celle de gauche.
 
-It is important to avoid setting the same PWM channel for different purposes during programming. For example, GP0 and GP16 are both PWM_0A.
+Il est essentiel d'éviter d'assigner le même canal PWM à des usages différents dans un programme. Par exemple, GP0 et GP16 sont tous deux PWM_0A.
 
-Let's try to achieve the faded LED effect after understanding this knowledge.
+Essayons maintenant de réaliser l'effet de variation progressive de la luminosité de la LED après avoir compris ces concepts.
 
 * :ref:`cpn_led`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants :
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est très pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ARTICLES DANS CE KIT
+        - LIEN
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous :
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -88,41 +89,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
         - 1
         - |link_led_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_led|
 
-This project is the same circuit as the first project :ref:`py_led`, but the signal type is different. The first project is to output digital high and low levels (0&1) directly from GP15 to make the LEDs light up or turn off, this project is to output PWM signal from GP15 to control the brightness of the LED.
+Ce projet utilise le même circuit que le premier projet :ref:`py_led`, mais le type de signal est différent. Dans le premier projet, on émettait des niveaux haut et bas (0 & 1) numériques directement depuis GP15 pour allumer ou éteindre les LED. Dans ce projet, nous utilisons un signal PWM sur GP15 pour contrôler la luminosité de la LED.
 
-
-
-**Wiring**
+**Câblage**
 
 |wiring_led|
 
-
 **Code**
-
 
 .. note::
 
-    * Open the ``2.3_fading_led.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Ouvrez le fichier ``2.3_fading_led.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Exécuter le script actuel" ou appuyez simplement sur F5 pour l'exécuter.
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -138,11 +132,11 @@ This project is the same circuit as the first project :ref:`py_led`, but the sig
     led.duty_u16(0)
 
 
-The LED will gradually become brighter as the code runs.
+La LED deviendra progressivement plus lumineuse à mesure que le code s'exécute.
 
-**How it works?**
+**Comment ça marche ?**
 
-Here, we change the brightness of the LED by changing the duty cycle of the GP15's PWM output. Let's take a look at these lines.
+Ici, nous changeons la luminosité de la LED en modifiant le cycle de travail de la sortie PWM de GP15. Examinons ces lignes de code.
 
 .. code-block:: python
     :emphasize-lines: 4,5,8
@@ -158,8 +152,6 @@ Here, we change the brightness of the LED by changing the duty cycle of the GP15
         utime.sleep_ms(10)
     led.duty_u16(0)
 
-* ``led = machine.PWM(machine.Pin(15))`` sets the GP15 pin as PWM output.
-
-* The line ``led.freq(1000)`` is used to set the PWM frequency, here it is set to 1000Hz, which means 1ms (1/1000) is a cycle.
-
-* The ``led.duty_u16()`` line is used to set the duty cycle, which is a 16-bit interger(2^16=65536). A 0 indicates 0% duty cycle, which means each cycle has 0% time to output a high level, i.e., all pulses are turned off. The value 65535 indicates a duty cycle of 100%, which means the whole pulse is turned on, and the result is '1'. When it is 32768, it will turn on half a pulse, so the LED will be half as bright when fully on.
+* ``led = machine.PWM(machine.Pin(15))`` configure la broche GP15 pour la sortie PWM.
+* La ligne ``led.freq(1000)`` fixe la fréquence PWM à 1000 Hz, ce qui signifie que chaque cycle dure 1 ms (1/1000).
+* La ligne ``led.duty_u16()`` définit le cycle de travail, qui est un entier 16 bits (2^16=65536). Un 0 indique un cycle de travail de 0 %, ce qui signifie que chaque cycle a 0 % de temps de signal haut, c'est-à-dire que toutes les impulsions sont désactivées. La valeur 65535 indique un cycle de travail de 100 %, ce qui signifie que l'impulsion entière est activée, donnant '1'. Avec une valeur de 32768, la LED s'allume à moitié, ce qui fait qu'elle est moitié moins brillante par rapport à un allumage complet.

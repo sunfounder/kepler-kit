@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 71:  Allow Thread to Complete Task Before Termination
+Leçon 71 : Permettre au Thread de terminer la tâche avant l'arrêt
 ===================================================================================
 
-This tutorial covers gracefully terminating a multi-threaded program on the Raspberry Pi Pico W:
+Ce tutoriel explique comment terminer proprement un programme multi-threadé sur le Raspberry Pi Pico W :
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch for servo movement, using threading for clean exits.
-* **Handling Clean Termination**: Use a global ``running`` variable to manage loop execution. Implement a lock to control critical sections. Ensure the servo completes movement before terminating.
-* **Homework Assignment**: Modify the program to handle more components or sensors, ensuring clean termination in all cases.
+* **Configuration des connexions** : Connectez le contrôle du servo au GPIO 17, l'alimentation au pin 40, et la masse au pin 38. Connectez le bouton au GPIO 16 et à la masse.
+* **Implémentation du code** : Importez ``machine``, ``time``, ``_thread``, ``Servo``. Configurez les broches pour le bouton et le servo. Implémentez un interrupteur pour contrôler le mouvement du servo, en utilisant le multi-threading pour assurer une sortie propre.
+* **Gestion d'une terminaison propre** : Utilisez une variable globale ``running`` pour gérer l'exécution de la boucle. Implémentez un verrou pour contrôler les sections critiques. Assurez-vous que le servo termine son mouvement avant l'arrêt du programme.
+* **Devoir** : Modifiez le programme pour gérer plus de composants ou de capteurs, en garantissant une terminaison propre dans tous les cas.
 
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

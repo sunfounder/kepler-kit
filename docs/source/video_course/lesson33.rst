@@ -1,32 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 33: Display the HSV Color Wheel on an RGB LED
+Leçon 33 : Afficher la roue chromatique HSV sur une LED RGB
 =============================================================================
 
-This tutorial covers displaying the HSV (Hue, Saturation, Value) color wheel on an RGB LED using the Raspberry Pi Pico W:
+Ce tutoriel explique comment afficher la roue chromatique HSV (Teinte, Saturation, Valeur) sur une LED RGB en utilisant le Raspberry Pi Pico W :
 
-* **Introduction to HSV Color Wheel**: Overview of HSV color representation and its relevance for visualizing temperature data.
-* **Project Setup and Goal**: Recap of the remote weather station project and the new goal of displaying temperature using an RGB LED.
-* **Understanding HSV to RGB Conversion**: Explanation of HSV color wheel angles and the process of converting HSV to RGB.
-* **Algorithm Development**: Step-by-step guide for mapping temperature to HSV angles and converting them to RGB for the LED.
-* **Homework Assignment**: Write a function to convert HSV angles to RGB and use the RGB LED to represent weather conditions like temperature.
+* **Introduction à la roue chromatique HSV** : Vue d'ensemble de la représentation des couleurs en HSV et de son importance pour visualiser les données de température.
+* **Configuration du projet et objectif** : Récapitulatif du projet de station météo à distance et nouvel objectif d'afficher la température en utilisant une LED RGB.
+* **Comprendre la conversion HSV vers RGB** : Explication des angles de la roue chromatique HSV et du processus de conversion de HSV à RGB.
+* **Développement de l'algorithme** : Guide étape par étape pour mapper la température aux angles HSV et les convertir en RGB pour la LED.
+* **Devoir à la maison** : Écrire une fonction pour convertir les angles HSV en RGB et utiliser la LED RGB pour représenter des conditions météorologiques telles que la température.
 
-
-
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

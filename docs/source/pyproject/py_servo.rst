@@ -1,64 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez dans le monde du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_servo:
 
-3.7 Swinging Servo
-===================
+3.7 Servomoteur Oscillant
+=================================
 
-In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
+Dans ce kit, en plus de la LED et du buzzer passif, il y a également un dispositif contrôlé par signal PWM, le Servomoteur.
 
-Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
+Le servomoteur est un dispositif de positionnement (angle), adapté aux systèmes de contrôle nécessitant des changements constants d'angle tout en pouvant le maintenir. Il est largement utilisé dans les jouets télécommandés haut de gamme, comme les avions, modèles de sous-marins, et robots télécommandés.
 
-Now, try to make the servo sway!
+Maintenant, essayons de faire osciller le servomoteur !
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -67,45 +67,40 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-
-**Schematic**
+**Schéma**
 
 |sch_servo|
 
-**Wiring**
+**Câblage**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* Le fil orange est le signal et est connecté à GP15.
+* Le fil rouge est le VCC et est connecté à VBUS (5V).
+* Le fil marron est la masse (GND) et est connecté à GND.
 
-
-.. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-.. #. Connect **VBUS** (not 3V3) and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the red lead of the servo to the positive power bus with a jumper.
-.. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-.. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
-
+.. 1. Fixez le bras du servomoteur sur l'axe de sortie. Si nécessaire, fixez-le avec des vis.
+.. #. Connectez **VBUS** (et non 3V3) et GND du Pico W au bus d'alimentation de la breadboard.
+.. #. Connectez le fil rouge du servomoteur au bus d'alimentation positif avec un cavalier.
+.. #. Connectez le fil jaune du servomoteur à la broche GP15 avec un fil de connexion.
+.. #. Connectez le fil marron du servomoteur au bus d'alimentation négatif avec un fil de connexion.
 
 **Code**
 
 .. note::
 
-    * Open the ``3.7_swinging_servo.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``3.7_swinging_servo.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-
+    * Pour des tutoriels détaillés, veuillez consulter :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -132,33 +127,35 @@ You can also buy them separately from the links below.
             utime.sleep_ms(20)
 
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+Lorsque le programme est en cours d'exécution, vous verrez le bras du servomoteur osciller d'avant en arrière de 0° à 180°.
 
-The program will always run because of the ``while True`` loop, we need to press the Stop button to end the program.
+Le programme continuera de fonctionner grâce à la boucle ``while True``, il faudra appuyer sur le bouton Arrêter pour mettre fin au programme.
 
-**How it works?**
+**Comment ça marche ?**
 
-We defined the ``servo_write()`` function to make the servo run.
+Nous avons défini la fonction ``servo_write()`` pour faire fonctionner le servomoteur.
 
-This function has two parameters:
+Cette fonction a deux paramètres :
 
-* ``pin``, the GPIO pin that controls the servo.
-* ``Angle``, the angle of the shaft output.
+* ``pin``, la broche GPIO qui contrôle le servomoteur.
+* ``Angle``, l'angle de sortie de l'axe.
 
-In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 180 to the pulse width range 0.5 ~ 2.5ms.
+Dans cette fonction, ``interval_mapping()`` est appelé pour mapper la plage d'angle de 0 ~ 180 à la plage de largeur d'impulsion de 0.5 ~ 2.5ms.
 
 .. code-block:: python
 
     pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
 
-Why is it 0.5~2.5? This is determined by the working mode of the Servo. 
+Pourquoi 0.5~2.5 ? Cela est déterminé par le mode de fonctionnement du servomoteur.
 
 :ref:`cpn_servo`
 
-Next, convert the pulse width from period to duty. Since ``duty_u16()`` cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
+Ensuite, la largeur d'impulsion est convertie de la période au rapport cyclique. Comme ``duty_u16()`` ne peut pas accepter de décimales (la valeur ne peut pas être de type float), nous avons utilisé ``int()`` pour forcer la conversion en type entier.
 
 .. code-block:: python
 
     duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
 
-Finally, write the duty value into ``duty_u16()``.
+
+
+Enfin, nous écrivons la valeur du rapport cyclique dans ``duty_u16()``.

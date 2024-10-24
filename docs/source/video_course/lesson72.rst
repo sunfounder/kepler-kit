@@ -1,33 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 72:  Understanding Using Dictionaries in MicroPython
+Leçon 72 : Comprendre l'utilisation des dictionnaires en MicroPython
 ===================================================================================
 
-This tutorial covers using dictionaries in Python with the Raspberry Pi Pico W:
+Ce tutoriel explique comment utiliser les dictionnaires en Python avec le Raspberry Pi Pico W :
 
-* **Task Overview**: Learn to use dictionaries in Python for storing and managing data.
-* **Key Steps**: 
+* **Aperçu des tâches** : Apprenez à utiliser les dictionnaires en Python pour stocker et gérer des données.
+* **Étapes clés** :
 
-  - Create dictionaries with key-value pairs.
-  - Access, modify, and delete dictionary elements.
-  - Use dictionary methods like ``keys()``, ``values()``, and check keys using ``in``.
-  - Implement a practical example to store personal information.
+  - Créer des dictionnaires avec des paires clé-valeur.
+  - Accéder, modifier et supprimer des éléments dans un dictionnaire.
+  - Utiliser des méthodes de dictionnaire comme ``keys()``, ``values()`` et vérifier la présence de clés avec ``in``.
+  - Implémenter un exemple pratique pour stocker des informations personnelles.
 
-* **Homework Assignment**: Write a program to control an RGB LED by mapping color names to RGB values using a dictionary and allowing user input to change the LED color.
+* **Devoir** : Écrivez un programme pour contrôler une LED RGB en associant des noms de couleurs à des valeurs RGB à l'aide d'un dictionnaire, et permettre à l'utilisateur de changer la couleur de la LED via des entrées clavier.
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

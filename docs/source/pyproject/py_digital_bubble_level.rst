@@ -1,63 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_bubble_level:
 
-7.12 Digital Bubble Level
-============================
+7.12 Niveau à bulle numérique
+=================================
 
+Un `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_ est un instrument conçu pour indiquer si une surface est horizontale (de niveau) ou verticale (d'aplomb). Différents types de niveaux à bulle sont utilisés par les menuisiers, les maçons, les poseurs de briques, les ouvriers du bâtiment, les géomètres, les mécaniciens, ainsi que dans certains travaux de photographie et de vidéographie.
 
-A `bubble Level <https://en.wikipedia.org/wiki/Spirit_level>`_, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb). There are different types of spirit levels used by carpenters, stonemasons, bricklayers, other building trades workers, surveyors, millwrights, and other metalworkers, as well as in some photographic and videographic work.
+Ici, nous réalisons un niveau à bulle numérique en utilisant un MPU6050 et une matrice LED 8x8. Lorsque vous inclinez le MPU6050, la bulle sur la matrice LED se déplace également.
 
-Here we make a digital bubble level using MPU6050 and 8x8 LED matrix. When you deflect the MPU6050, the bubble on the LED matrix will also be deflected.
+**Composants Requis**
 
+Pour ce projet, nous avons besoin des composants suivants : 
 
-**Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous :
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dot_matrix`
@@ -81,33 +78,29 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_bubble_level|
 
-The MPU6050 takes the acceleration values in each direction and calculates the attitude angle.
+Le MPU6050 mesure les valeurs d'accélération dans chaque direction et calcule l'angle d'inclinaison.
 
-As a result, the program draws a 2x2 dot on the dot matrix based on data from the two 74HC595 chips.
+En conséquence, le programme dessine un point 2x2 sur la matrice en utilisant les données des deux puces 74HC595.
 
-As the attitude angle changes, the program sends different data to the 74HC595 chips, and the position of the dot changes, creating a bubble effect.
+Lorsque l'angle d'inclinaison change, le programme envoie différentes données aux puces 74HC595, et la position du point se déplace, créant un effet de bulle.
 
-**Wiring**
-
+**Câblage**
 
 |wiring_digital_bubble_level| 
 
-
 **Code**
-
 
 .. note::
 
-    * Open the ``7.12_digital_bubble_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Ouvrez le fichier ``7.12_digital_bubble_level.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Exécuter le script actuel" ou appuyez simplement sur F5 pour l'exécuter.
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
+    * Vous devez utiliser les bibliothèques ``imu.py`` et ``vector3d.py`` ; vérifiez si elles ont été téléchargées sur le Pico W. Pour un tutoriel détaillé, référez-vous à :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -117,36 +110,36 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
     import math
     from imu import MPU6050
 
-    # Initialize I2C communication with MPU6050 sensor
+    # Initialiser la communication I2C avec le capteur MPU6050
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-    # Function to calculate the distance between two points
+    # Fonction pour calculer la distance entre deux points
     def dist(a, b):
         return math.sqrt((a * a) + (b * b))
 
-    # Function to calculate rotation along the y-axis
+    # Fonction pour calculer la rotation le long de l'axe Y
     def get_y_rotation(x, y, z):
         radians = math.atan2(x, dist(y, z))
         return -math.degrees(radians)
 
-    # Function to calculate rotation along the x-axis
+    # Fonction pour calculer la rotation le long de l'axe X
     def get_x_rotation(x, y, z):
         radians = math.atan2(y, dist(x, z))
         return math.degrees(radians)
 
-    # Function to get the current angles from the MPU6050 sensor
+    # Fonction pour obtenir les angles actuels du capteur MPU6050
     def get_angle():
         y_angle = get_y_rotation(mpu.accel.x, mpu.accel.y, mpu.accel.z)
         x_angle = get_x_rotation(mpu.accel.x, mpu.accel.y, mpu.accel.z)
         return x_angle, y_angle
 
-    # Initialize shift register pins for controlling the LED matrix
+    # Initialiser les broches du registre à décalage pour contrôler la matrice LED
     sdi = machine.Pin(18, machine.Pin.OUT)
     rclk = machine.Pin(19, machine.Pin.OUT)
     srclk = machine.Pin(20, machine.Pin.OUT)
 
-    # Function to shift data into the shift register
+    # Fonction pour décaler les données dans le registre à décalage
     def hc595_in(dat):
         for bit in range(7, -1, -1):
             srclk.low()
@@ -155,20 +148,20 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
             time.sleep_us(30)
             srclk.high()
 
-    # Function to output the data from the shift register to the LED matrix
+    # Fonction pour sortir les données du registre à décalage vers la matrice LED
     def hc595_out():
         rclk.high()
         time.sleep_us(200)
         rclk.low()
 
-    # Function to display a glyph (8x8 matrix) on the LED matrix
+    # Fonction pour afficher un glyphe (matrice 8x8) sur la matrice LED
     def display(glyph):
         for i in range(0, 8):
             hc595_in(glyph[i])
             hc595_in(0x80 >> i)
             hc595_out()
 
-    # Convert a 2D matrix to a glyph that can be displayed on the LED matrix
+    # Convertir une matrice 2D en glyphe pour l'afficher sur la matrice LED
     def matrix_2_glyph(matrix):
         glyph = [0 for i in range(8)]
         for i in range(8):
@@ -176,27 +169,27 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
                 glyph[i] += matrix[i][j] << j
         return glyph
 
-    # Clamp a value between a specified minimum and maximum
+    # Limiter une valeur entre un minimum et un maximum spécifiés
     def clamp_number(val, min_val, max_val):
         return min_val if val < min_val else max_val if val > max_val else val
 
-    # Map a value from one range to another
+    # Mapper une valeur d'une plage à une autre
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    # Calculate the position of the bubble in the matrix based on the MPU6050 readings
-    sensitivity = 4  # Sensitivity of the bubble movement
-    matrix_range = 7  # The matrix size is 8x8, so the range is 0-7
-    point_range = matrix_range - 1  # Bubble's position should be between 0 and 6
+    # Calculer la position de la bulle dans la matrice en fonction des lectures du MPU6050
+    sensitivity = 4  # Sensibilité du mouvement de la bulle
+    matrix_range = 7  # La taille de la matrice est de 8x8, donc l'intervalle est 0-7
+    point_range = matrix_range - 1  # La position de la bulle doit être entre 0 et 6
 
-    # Function to calculate the position of the bubble based on sensor data
+    # Fonction pour calculer la position de la bulle basée sur les données du capteur
     def bubble_position():
-        y, x = get_angle()  # Get the current rotation angles
+        y, x = get_angle()  # Obtenez les angles de rotation actuels
         x = int(clamp_number(interval_mapping(x, 90, -90, 0 - sensitivity, point_range + sensitivity), 0, point_range))
         y = int(clamp_number(interval_mapping(y, -90, 90, point_range + sensitivity, 0 - sensitivity), 0, point_range))
         return [x, y]
 
-    # Drop the bubble (represented by turning off 2x2 LEDs) into the matrix
+    # Placer la bulle (représentée par l'extinction de 2x2 LEDs) dans la matrice
     def drop_bubble(matrix, bubble):
         matrix[bubble[0]][bubble[1]] = 0
         matrix[bubble[0] + 1][bubble[1]] = 0
@@ -204,14 +197,12 @@ As the attitude angle changes, the program sends different data to the 74HC595 c
         matrix[bubble[0] + 1][bubble[1] + 1] = 0
         return matrix
 
-    # Main loop
+    # Boucle principale
     while True:
-        matrix = [[1 for i in range(8)] for j in range(8)]  # Create an empty matrix (all LEDs on)
-        bubble = bubble_position()  # Get the current bubble position based on sensor data
-        matrix = drop_bubble(matrix, bubble)  # Drop the bubble into the matrix
-        display(matrix_2_glyph(matrix))  # Display the matrix on the LED grid
-        time.sleep(0.1)  # Add a small delay to slow down updates
+        matrix = [[1 for i in range(8)] for j in range(8)]  # Créez une matrice vide (toutes les LEDs allumées)
+        bubble = bubble_position()  # Obtenez la position actuelle de la bulle selon les données du capteur
+        matrix = drop_bubble(matrix, bubble)  # Placez la bulle dans la matrice
+        display(matrix_2_glyph(matrix))  # Affichez la matrice sur la grille LED
+        time.sleep(0.1)  # Ajoutez un court délai pour ralentir les mises à jour
 
-Once you have run the program, place the breadboard on a level surface.
-A dot will appear in the center of the LED matrix (if it isn't in the center, the MPU6050 may not be level).
-When you deflect the breadboard, the dot will move in the direction you deflected.
+Une fois le programme exécuté, placez la breadboard sur une surface plane. Un point apparaîtra au centre de la matrice LED (si ce n'est pas au centre, le MPU6050 pourrait ne pas être à niveau). Lorsque vous inclinez la breadboard, le point se déplacera dans la direction de l'inclinaison.

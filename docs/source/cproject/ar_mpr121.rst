@@ -1,61 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_mpr121:
 
-4.3 - Electrode Keyboard
+4.3 - Clavier à Électrodes
 ================================
 
-The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
-If you connect the electrodes to a banana, you can turn the banana into a touch switch.
+Le MPR121 est un excellent choix si vous souhaitez ajouter un grand nombre de boutons tactiles à votre projet. Il dispose d'électrodes qui peuvent être étendues avec des conducteurs. 
+Si vous connectez les électrodes à une banane, vous pouvez transformer cette banane en interrupteur tactile.
 
 * :ref:`cpn_mpr121`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -64,20 +64,19 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpr121`
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_mpr121_ar|
 
 
-
-**Wiring**
+**Câblage**
 
 |wiring_mpr121_ar|
 
@@ -85,10 +84,10 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``4.3_electrode_keyboard.ino`` under the path of ``kepler-kit-main/arduino/4.3_electrode_keyboard``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit MPR121`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir le fichier ``4.3_electrode_keyboard.ino`` sous le chemin ``kepler-kit-main/arduino/4.3_electrode_keyboard``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * Ensuite, sélectionnez la carte Raspberry Pi Pico et le port correct avant de cliquer sur le bouton Upload.
+    * La bibliothèque ``Adafruit MPR121`` est utilisée ici, vous pouvez l'installer depuis le **Gestionnaire de Bibliothèques**.
 
       .. image:: img/lib_mpr121.png
 
@@ -96,16 +95,15 @@ You can also buy them separately from the links below.
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f31048b7-0f98-4d49-8c2e-26b3908e98cb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Après le lancement du programme, vous pouvez toucher les douze électrodes du module MPR121 avec la main, et l'état de contact de ces électrodes sera enregistré dans un tableau booléen de 12 bits qui sera affiché sur le moniteur série. 
+Si la première et la onzième électrode sont touchées, ``100000000010`` s'affiche.
 
-After the program runs, you can touch the twelve electrodes on the MPR121 module by hand and the touch status of these electrodes will be recorded in a 12-bit Boolean type array that will be printed on the serial monitor.
-If the first and eleventh electrodes are touched, ``100000000010`` is printed.
+Vous pouvez étendre les électrodes en connectant d'autres conducteurs tels que des fruits, des fils, du papier aluminium, etc. Cela vous permettra de trouver davantage de moyens de déclencher ces électrodes.
 
-You can extend the electrodes by connecting other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
+**Comment ça fonctionne ?**
 
-**How it works?**
-
-Initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values.
-If you extend the electrodes, you need to rerun the example to reset the initial values.
+Initialisez l'objet ``MPR121``. À ce stade, l'état des électrodes du module sera enregistré comme valeurs initiales. 
+Si vous étendez les électrodes, vous devrez relancer l'exemple pour réinitialiser les valeurs de départ.
 
 .. code-block:: arduino
 
@@ -123,14 +121,14 @@ If you extend the electrodes, you need to rerun the example to reset the initial
         Serial.println("MPR121 found!");
     }
 
-Gets the value of the current electrode, it will get a 12-bit binary value. If you touch the first and the eleventh electrode, it gets ``100000000010``.
+Récupère la valeur de l'électrode actuelle, obtenant ainsi une valeur binaire de 12 bits. Si vous touchez la première et la onzième électrode, vous obtenez ``100000000010``.
 
 .. code-block:: arduino
 
-    // Get the currently touched pads
+    // Récupérer les pads actuellement touchés
     currtouched = cap.touched();
 
-Determine if the electrode state has changed.
+Détermine si l'état des électrodes a changé.
 
 .. code-block:: arduino
 
@@ -138,11 +136,11 @@ Determine if the electrode state has changed.
         currtouched = cap.touched();
         if (currtouched != lasttouched) {}
 
-        // reset our state
+        // Réinitialiser notre état
         lasttouched = currtouched;
     }
 
-If a change in electrode state is detected, the values of ``currtouched`` are stored in the ``touchStates[12]`` array bit by bit. Finally, the array is printed.
+Si un changement d'état est détecté, les valeurs de ``currtouched`` sont stockées bit par bit dans le tableau ``touchStates[12]``. Enfin, le tableau est affiché.
 
 .. code-block:: arduino
 

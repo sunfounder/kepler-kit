@@ -1,63 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_led_bar:
 
-2.2 Display the Level
+2.2 Afficher le Niveau
 =============================
 
-The first project is simply to make the LED blink. For this project, let's use the LED Bar Graph, which contains 10 LEDs in a plastic enclosure, generally used to display power or volume levels.
+Le premier projet consiste simplement à faire clignoter une LED. Pour ce projet, utilisons la barre de LED, qui contient 10 LED dans un boîtier en plastique, généralement utilisée pour afficher les niveaux de puissance ou de volume.
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,15 +76,13 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_ledbar|
 
-In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individually. Each LED's anode is connected to GP6*GP15, and its cathode to a 220ohm resistor, and then to GND.
+Dans la barre de LED, il y a 10 LED, chacune pouvant être contrôlée individuellement. L'anode de chaque LED est connectée aux broches GP6 à GP15, et la cathode est reliée à une résistance de 220Ω, puis à la terre (GND).
 
-
-
-**Wiring**
+**Câblage**
 
 |wiring_ledbar|
 
@@ -93,11 +90,11 @@ In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individ
 
 .. note::
 
-    * Open the ``2.2_display_the_level.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``2.2_display_the_level.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -115,54 +112,52 @@ In the LED Bar Graph, there are 10 LEDs, each of which can be controlled individ
             led[i].toggle()
             utime.sleep(0.2)
 
-On the LED Bar Graph, you'll see LEDs lighting up and then turning off in sequence when the program is running.
+Sur la barre de LED, vous verrez les LED s'allumer et s'éteindre successivement lorsque le programme est en cours d'exécution.
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-The LED Bar consists of ten LEDs that are controlled by ten pins, which means that we must define these pins.
-The process would be too tedious if we defined them one by one. So, here we use ``Lists``.
+La barre de LED se compose de dix LED contrôlées par dix broches, ce qui signifie que nous devons définir ces broches. Le processus serait trop fastidieux si nous les définissions une par une. Nous utilisons donc des ``listes``.
 
 .. note::
-    Python lists are one of the most versatile data types that allow us to work with multiple elements at once, and created by placing elements inside square brackets [], separated by commas.
+    Les listes Python sont l'un des types de données les plus polyvalents, permettant de travailler avec plusieurs éléments en même temps. Elles sont créées en plaçant les éléments entre crochets [], séparés par des virgules.
 
 .. code-block:: python
 
     pin = [6,7,8,9,10,11,12,13,14,15]    
 
-A list ``pin`` is defined by this line of code, which contains the ten elements ``6,7,8,9,10,11,12,13,14,15``.
-We can use the index operator [] to access an item in a list. In Python, indices start at 0. So, a list having 10 elements will have an index from 0 to 9.
-Using this list as an example, ``pin[0]`` is ``6`` and ``pin[4]`` is ``10``.
+Une liste ``pin`` est définie par cette ligne de code, contenant les dix éléments ``6,7,8,9,10,11,12,13,14,15``.
+Nous pouvons utiliser l'opérateur d'indexation [] pour accéder à un élément dans une liste. En Python, les indices commencent à 0. Ainsi, une liste de 10 éléments aura des indices de 0 à 9.
+Avec cette liste, ``pin[0]`` est ``6`` et ``pin[4]`` est ``10``.
 
-Next, declare an empty list ``led`` that will be used to define ten LED objects.
+Ensuite, déclarez une liste vide ``led`` qui sera utilisée pour définir dix objets LED.
 
 .. code-block:: python
 
     led = []    
 
-Due to the length of the list, which is 0, direct operations on the array, such as printing led[0]**, won't work. There are new items we need to add.
-
+En raison de la longueur initiale de la liste qui est 0, les opérations directes comme imprimer ``led[0]`` ne fonctionneraient pas. Il y a de nouveaux éléments que nous devons ajouter.
 
 .. code-block:: python
 
     led.append(None)
 
-As a result of this ``append()`` method, the list ``led`` has its first item, of length 1, and ``led[0]`` becomes a valid element despite its current value of ``None`` (which stands for null).
+Avec cette méthode ``append()``, la liste ``led`` obtient son premier élément, de longueur 1, et ``led[0]`` devient un élément valide malgré sa valeur actuelle de ``None`` (qui signifie null).
 
-Our next step is to define ``led[0]``, the LED connected to pin 6, as the first LED object.
+Notre prochaine étape est de définir ``led[0]``, la LED connectée à la broche 6, comme le premier objet LED.
 
 .. code-block:: python
 
     led[0] = machine.Pin(6, machine.Pin.OUT)
 
-The first LED object has now been defined.
+Le premier objet LED est maintenant défini.
 
-As you can see, we have created the ten pin numbers as a list **pin**, which we can substitute into this line to make it easier to do bulk operations.
+Comme vous pouvez le voir, nous avons créé les dix numéros de broches sous forme de liste **pin**, que nous pouvons substituer dans cette ligne pour faciliter les opérations en masse.
 
 .. code-block:: python
 
     led[0] = machine.Pin(pin[0], machine.Pin.OUT)
 
-Use a ``for`` statement to have all 10 pins execute the above statement.
+Utilisez une instruction ``for`` pour faire en sorte que toutes les 10 broches exécutent l'instruction ci-dessus.
 
 .. code-block:: python
 
@@ -177,7 +172,7 @@ Use a ``for`` statement to have all 10 pins execute the above statement.
 * :ref:`syntax_list`
 * :ref:`syntax_forloop`
 
-Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one by one.
+Utilisez une autre boucle ``for`` pour faire changer d'état les dix LED de la barre de LED une par une.
 
 .. code-block:: python
 
@@ -185,7 +180,7 @@ Use another ``for`` loop to make the ten LEDs on the LED Bar switch states one b
         led[i].toggle()
         utime.sleep(0.2)
 
-The code is finished by putting the above piece of code in a while loop.
+Le code est terminé en plaçant le morceau de code ci-dessus dans une boucle while.
 
 .. code-block:: python
 

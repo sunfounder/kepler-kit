@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Approfondissez vos connaissances en Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 51: Ultimate Pitch and Roll Gadget Using the MPU6050
-=============================================================================
-This tutorial covers creating a precise tilt meter using the MPU6050 sensor and Raspberry Pi Pico W:
+Leçon 51 : Le gadget ultime pour mesurer le tangage et le roulis avec le MPU6050
+====================================================================================
 
-* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W.
-* **Challenges**: Accelerometer data is noisy, and gyroscope data drifts over time.
-* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with error correction for steady state errors.
-* **Implementation**: Initialize sensors and OLED. Collect and filter data, displaying tilt as both a bubble level and degree readout on the OLED.
-* **Demonstration**: Test for stable pitch and roll readings, with portable battery-powered operation.
-* **Additional Improvements**: Consider wireless monitoring or creating a 3D-printed case for portability.
+Ce tutoriel explique comment créer un inclinomètre précis à l'aide du capteur MPU6050 et du Raspberry Pi Pico W :
 
+* **Configuration** : Connectez le MPU6050 et l'écran OLED 1306 au Raspberry Pi Pico W.
+* **Défis** : Les données de l'accéléromètre sont bruitées et celles du gyroscope dérivent avec le temps.
+* **Solution** : Utiliser un filtre complémentaire pour combiner les données de l'accéléromètre et du gyroscope, avec correction des erreurs de l'état stable.
+* **Mise en œuvre** : Initialisez les capteurs et l'écran OLED. Collectez et filtrez les données, en affichant l'inclinaison à la fois sous forme de niveau à bulle et en degrés sur l'écran OLED.
+* **Démonstration** : Testez pour obtenir des mesures stables de tangage et de roulis, avec une alimentation portable par batterie.
+* **Améliorations supplémentaires** : Envisagez un suivi sans fil ou la création d'un boîtier imprimé en 3D pour plus de portabilité.
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

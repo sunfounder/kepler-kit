@@ -1,29 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Profitez d'un accès anticipé aux nouvelles annonces de produits et aux avant-premières.
+    - **Réductions spéciales** : Bénéficiez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 70:  Example of Cleanly Exiting Dual Core Program in MicroPython
+Leçon 70 : Exemple de sortie propre d'un programme double cœur en MicroPython
 ===================================================================================
 
-This tutorial covers using threading to control a servo and a button with the Raspberry Pi Pico W:
+Ce tutoriel explique comment utiliser le multi-threading pour contrôler un servo et un bouton avec le Raspberry Pi Pico W :
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch to control the servo's position. Use threading for servo movement and clean program exits.
-* **Homework Assignment**: Modify the program to exit cleanly, even if interrupted during servo movement.
+* **Configuration des connexions** : Connectez le contrôle du servo au GPIO 17, l'alimentation au pin 40 et la masse au pin 38. Connectez le bouton au GPIO 16 et à la masse.
+* **Implémentation du code** : Importez ``machine``, ``time``, ``_thread``, ``Servo``. Configurez les broches pour le bouton et le servo. Implémentez un interrupteur pour contrôler la position du servo. Utilisez le multi-threading pour le mouvement du servo et pour assurer une sortie propre du programme.
+* **Devoir** : Modifiez le programme pour qu'il puisse se terminer proprement, même en cas d'interruption pendant le mouvement du servo.
 
-
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

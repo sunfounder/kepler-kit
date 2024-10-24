@@ -1,67 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_rfid:
 
+6.5 - Identification par Radiofréquence (RFID)
+===========================================================
 
-6.5 - Radio Frequency Identification
-================================================
+L'identification par radiofréquence (RFID) désigne les technologies qui utilisent la communication sans fil entre un objet (ou étiquette) et un dispositif d'interrogation (ou lecteur) pour suivre et identifier automatiquement ces objets. La portée de transmission de l'étiquette est limitée à quelques mètres du lecteur. Une ligne de vue directe entre le lecteur et l'étiquette n'est pas forcément requise.
 
-Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required.
-
-Most tags contain at least one integrated circuit (IC) and an antenna. 
-The microchip stores information and is responsible for managing the radio frequency (RF) communication with the reader. Passive tags do not have an independent energy source and depend on an external electromagnetic signal, provided by the reader, to power their operations. 
-Active tags contain an independent energy source, such as a battery. 
-Thus, they may have increased processing, transmission capabilities and range.
+La plupart des étiquettes contiennent au moins un circuit intégré (IC) et une antenne. 
+La puce stocke des informations et gère la communication par radiofréquence (RF) avec le lecteur. Les étiquettes passives ne disposent pas de source d'énergie indépendante et dépendent d'un signal électromagnétique externe, fourni par le lecteur, pour alimenter leurs opérations. 
+Les étiquettes actives, quant à elles, contiennent une source d'énergie indépendante, comme une batterie. Elles peuvent donc avoir une capacité accrue de traitement, de transmission et une portée plus étendue.
 
 * :ref:`cpn_mfrc522`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -70,19 +67,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_rfid|
 
-
-**Wiring**
+**Câblage**
 
 |wiring_rfid|
 
@@ -90,30 +86,29 @@ You can also buy them separately from the links below.
 
 .. note::
 
-   * The ``MFRC522`` library is used here, you can install it from the **Library Manager**.
+   * La bibliothèque ``MFRC522`` est utilisée ici, vous pouvez l'installer depuis le **Library Manager**.
 
       .. image:: img/lib_mfrc522.png
 
-The main function is divided into two:
+La fonction principale est divisée en deux :
 
-* ``6.5_rfid_write`` to write information to the card (or key).
+* ``6.5_rfid_write`` pour écrire des informations sur la carte (ou la clé).
 
   .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4f9156a-711a-442c-8271-329847e808dc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-  After running you will be able to enter message in the serial monitor, ending with ``#``, and then write the message to the card by placing the card (or key) close to the MFRC522 module.
+  Après exécution, vous pourrez entrer un message dans le moniteur série, en terminant par ``#``, puis écrire ce message sur la carte en la plaçant (ou la clé) près du module MFRC522.
 
-* ``6.5_rfid_read`` to read the information from the card (or key).
+* ``6.5_rfid_read`` pour lire les informations de la carte (ou de la clé).
 
   .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/df57b5cb-9162-4b4b-b28a-7f02363885c9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-  After running, you will be able to read the message stored in the card (or key).
+  Après exécution, vous pourrez lire le message stocké sur la carte (ou la clé).
 
-
-**How it works?**
+**Comment ça marche ?**
 
 .. code-block:: arduino
 
@@ -124,20 +119,19 @@ The main function is divided into two:
 
     MFRC522 mfrc522(SS_PIN, RST_PIN);
 
-First, instantiate ``MFRC522()`` class.
+Tout d'abord, instanciez la classe ``MFRC522()``.
 
-For simplicity of use, the ``MFRC522`` library is further encapsulated with the following functions.
+Pour simplifier l'utilisation, la bibliothèque ``MFRC522`` est encapsulée avec les fonctions suivantes.
 
-* ``void simple_mfrc522_init()`` : Starts SPI communication and initializes the mfrc522 module.
-* ``void simple_mfrc522_get_card()`` : Suspends the program until the card (or key) is detected, prints the card UID and PICC type.
-* ``void simple_mfrc522_write(String text)`` : Write a string for the card (or key).
-* ``void simple_mfrc522_write(byte* buffer)`` : Writes information for the card (or key), which usually comes from the serial port.
-* ``void simple_mfrc522_write(byte section, String text)`` : Writes a string for a specific sector. ``section`` is set to 0 to write sectors 1-2; ``section`` is set to 1 to write sectors 3-4.
-* ``void simple_mfrc522_write(byte section, byte* buffer)`` : Writes information for a specific sector, usually from the serial port. ``section`` set to 0, writes 1-2 sectors; ``section`` set to 1, writes 3-4 sectors.
-* ``String simple_mfrc522_read()`` : Reads the information in the card (or key), returns a string.
-* ``String simple_mfrc522_read(byte section)`` : Reads the information in a specific sector, returns a string. ``section`` is set to 0, writes 1-2 sectors; ``section`` is set to 1, writes 3-4 sectors.
+* ``void simple_mfrc522_init()`` : Démarre la communication SPI et initialise le module mfrc522.
+* ``void simple_mfrc522_get_card()`` : Suspend le programme jusqu'à ce que la carte (ou la clé) soit détectée, puis imprime l'UID de la carte et le type de PICC.
+* ``void simple_mfrc522_write(String text)`` : Écrit une chaîne de caractères sur la carte (ou la clé).
+* ``void simple_mfrc522_write(byte* buffer)`` : Écrit des informations sur la carte (ou la clé), généralement depuis le port série.
+* ``void simple_mfrc522_write(byte section, String text)`` : Écrit une chaîne sur un secteur spécifique. ``section`` est réglé à 0 pour écrire sur les secteurs 1-2 ; ``section`` est réglé à 1 pour écrire sur les secteurs 3-4.
+* ``void simple_mfrc522_write(byte section, byte* buffer)`` : Écrit des informations sur un secteur spécifique, généralement depuis le port série. ``section`` réglé à 0, écrit sur les secteurs 1-2 ; ``section`` réglé à 1, écrit sur les secteurs 3-4.
+* ``String simple_mfrc522_read()`` : Lit les informations de la carte (ou clé), retourne une chaîne de caractères.
+* ``String simple_mfrc522_read(byte section)`` : Lit les informations d'un secteur spécifique, retourne une chaîne. ``section`` est réglé à 0, lit les secteurs 1-2 ; ``section`` est réglé à 1, lit les secteurs 3-4.
 
-
-In the ``6.5_rfid_write.ino`` example, the ``Serial.readBytesUntil()`` function is used, which is a common serial input method.
+Dans l'exemple ``6.5_rfid_write.ino``, la fonction ``Serial.readBytesUntil()`` est utilisée, c'est une méthode courante d'entrée série.
 
 * `Serial.readBytesUntil <https://www.arduino.cc/reference/en/language/functions/communication/serial/readbytesuntil/>`_

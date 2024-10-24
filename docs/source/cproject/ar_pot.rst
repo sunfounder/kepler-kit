@@ -1,77 +1,75 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_pot:
 
-2.11 - Turn the Knob
+2.11 - Tournez le bouton
 ===========================
 
-In the previous projects, we have used the digital input on the Pico W.
-For example, a button can change the pin from low level (off) to high level (on). This is a binary working state.
+Dans les projets précédents, nous avons utilisé l'entrée numérique sur le Pico W.
+Par exemple, un bouton peut changer la broche du niveau bas (éteint) au niveau haut (allumé). C'est un état de fonctionnement binaire.
 
-However, Pico W can receive another type of input signal: analog input.
-It can be in any state from fully closed to fully open, and has a range of possible values.
-The analog input allows the microcontroller to sense the light intensity, sound intensity, temperature, humidity, etc. of the physical world.
+Cependant, le Pico W peut également recevoir un autre type de signal d'entrée : l'entrée analogique.
+Elle peut se situer dans n'importe quel état, de complètement fermé à complètement ouvert, avec une plage de valeurs possibles.
+L'entrée analogique permet au microcontrôleur de percevoir l'intensité de la lumière, du son, la température, l'humidité, etc., du monde physique.
 
-Usually, a microcontroller needs an additional hardware to implement analog input-the analogue-to-digital converter (ADC).
-But Pico W itself has a built-in ADC for us to use directly.
-
+Habituellement, un microcontrôleur nécessite un matériel supplémentaire pour implémenter l'entrée analogique : le convertisseur analogique-numérique (ADC).
+Mais le Pico W dispose lui-même d'un ADC intégré que nous pouvons utiliser directement.
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
+Le Pico W possède trois broches GPIO capables de gérer des entrées analogiques : GP26, GP27, GP28. C'est-à-dire, les canaux analogiques 0, 1 et 2.
+De plus, il existe un quatrième canal analogique, connecté au capteur de température intégré, qui ne sera pas présenté ici.
 
-In this project, we try to read the analog value of potentiometer.
+Dans ce projet, nous essayons de lire la valeur analogique du potentiomètre.
 
 * :ref:`cpn_potentiometer`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -80,11 +78,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(220Ω)
+        - 1 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -95,54 +93,47 @@ You can also buy them separately from the links below.
         - 1
         - |link_potentiometer_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_pot|
 
-The potentiometer is an analog device and when you turn it in 2 different directions.
+Le potentiomètre est un dispositif analogique, et lorsque vous le tournez dans deux directions différentes.
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico W contains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+Connectez la broche centrale du potentiomètre à la broche analogique GP28. Le Raspberry Pi Pico W contient un convertisseur analogique-numérique multicanal de 16 bits. Cela signifie qu'il mappe la tension d'entrée entre 0 et la tension de fonctionnement (3,3V) à une valeur entière comprise entre 0 et 65535, donc la valeur de GP28 varie de 0 à 65535.
 
-The calculation formula is shown below.
+La formule de calcul est la suivante :
 
     (Vp/3.3V) x 65535 = Ap
 
-Then program the value of GP28 (potentiometer) as the PWM value of GP15 (LED).
-This way you will find that by rotating the potentiometer, the brightness of the LED will change at the same time.
+Ensuite, programmez la valeur de GP28 (potentiomètre) comme valeur PWM de GP15 (LED).
+De cette manière, vous remarquerez qu'en tournant le potentiomètre, la luminosité de la LED changera en même temps.
 
-
-
-**Wiring**
-
+**Câblage**
 
 |wiring_pot|
 
 **Code**
 
-
 .. note::
 
-    * You can open the file ``2.11_turn_the_knob.ino`` under the path of ``kepler-kit-main/arduino/2.11_turn_the_knob``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Vous pouvez ouvrir le fichier ``2.11_turn_the_knob.ino`` sous le chemin ``kepler-kit-main/arduino/2.11_turn_the_knob``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton Upload.
 
-
-
-When the program is running, we can see the analog value currently read by the GP28 pin in the Serial monitor. 
-Turn the knob, and the value will change from 0 to 1023.
-At the same time, the brightness of the LED will increase as the analog value increases.
-
+Lorsque le programme est en cours d'exécution, nous pouvons voir la valeur analogique actuellement lue par la broche GP28 dans le moniteur série. 
+Tournez le bouton, et la valeur variera de 0 à 1023.
+En même temps, la luminosité de la LED augmentera au fur et à mesure que la valeur analogique augmentera.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b3e3927a-bd1a-4756-83f2-141d47f99b1c/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-     
 
 
 
-**How it works?**
 
-To enable Serial Monitor, you need to start serial communication in ``setup()`` and set the datarate to 9600.
+**Comment ça marche ?**
+
+Pour activer le moniteur série, vous devez démarrer la communication série dans ``setup()`` et définir le débit de données à 9600.
 
 .. code-block:: arduino
     :emphasize-lines: 3
@@ -152,10 +143,9 @@ To enable Serial Monitor, you need to start serial communication in ``setup()`` 
         Serial.begin(9600);
     }
 
-    
 * `Serial <https://www.arduino.cc/reference/en/language/functions/communication/serial/>`_
 
-In the loop function, the value of the potentiometer is read, then the value is mapped from 0-1023 to 0-255 and finally the value after the mapping is used to control the brightness of the LED.
+Dans la fonction loop, la valeur du potentiomètre est lue, puis la valeur est mappée de 0-1023 à 0-255 et finalement la valeur après le mappage est utilisée pour contrôler la luminosité de la LED.
 
 .. code-block:: arduino
 
@@ -166,25 +156,25 @@ In the loop function, the value of the potentiometer is read, then the value is 
         analogWrite(ledPin, brightness);
     }
 
-* `analogRead() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ is used to read the value of the sensorPin (potentiometer) and assigns it to the variable ``sensorValue``.
+* `analogRead() <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ est utilisée pour lire la valeur de la broche sensorPin (potentiomètre) et l'attribue à la variable ``sensorValue``.
 
 .. code-block:: arduino
 
     int sensorValue = analogRead(sensorPin);
 
-* Print the value of SensorValue in Serial Monitor.
+* Imprimez la valeur de ``sensorValue`` dans le moniteur série.
 
 .. code-block:: arduino
 
     Serial.println(sensorValue);
 
-* Here, the `map(value, fromLow, fromHigh, toLow, toHigh) <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ function is required as the potentiometer value read is in the range 0-1023 and the value of a PWM pin is in the range 0-255. It is used to Re-maps a number from one range to another. That is, a value of fromLow would get mapped to toLow, a value of fromHigh to toHigh, values in-between to values in-between, etc.
+* Ici, la fonction `map(value, fromLow, fromHigh, toLow, toHigh) <https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/>`_ est requise car la valeur du potentiomètre lue est comprise entre 0-1023 et la valeur d'une broche PWM est comprise entre 0-255. Elle est utilisée pour re-mapper un nombre d'une plage à une autre.
 
 .. code-block:: arduino
 
     int brightness = map(sensorValue, 0, 1023, 0, 255);
 
-* Now we can use this value to control the brightness of the LED.
+* Maintenant, nous pouvons utiliser cette valeur pour contrôler la luminosité de la LED.
 
 .. code-block:: arduino
 

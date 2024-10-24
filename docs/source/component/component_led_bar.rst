@@ -1,35 +1,36 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_led_bar:
 
-LED Bar Graph
-=============
+Barre de LED (LED Bar Graph)
+=================================
 
 |img_led_bar|
 
-LED Bar Graph is an LED array, which is used to connect with electronic circuit or microcontroller. It's easy to connect LED bar graph with the circuit like as connecting 10 individual LEDs with 10 output pins. Generally we can use the LED bar graph as a Battery level Indicator, Audio equipments, and Industrial Control panels. There are many other applications of LED bar graphs.
+La barre de LED est un tableau de LEDs, utilisé pour se connecter à un circuit électronique ou un microcontrôleur. Il est aussi simple de connecter une barre de LED au circuit que de connecter 10 LEDs individuelles à 10 broches de sortie. En général, on peut utiliser la barre de LED comme indicateur de niveau de batterie, dans des équipements audio, ou encore dans des panneaux de contrôle industriels. Il existe de nombreuses autres applications pour les barres de LED.
 
-The following is the internal schematic diagram of LED Bar Graph. Generally speaking, the side with the label is the anode and the other side is the cathode.
+Le schéma interne suivant représente la structure de la barre de LED. En général, le côté portant l'étiquette est l'anode et l'autre côté est la cathode.
 
 |img_led_bar_pin|
 
 |img_led_bar_sche1|
 
 
-**Example**
+**Exemple**
 
-* :ref:`py_led_bar` (For MicroPython User)
-* :ref:`ar_led_bar` (For Arduino User)
-* :ref:`per_light_display` (For Piper Make User)
+
+* :ref:`py_led_bar` (pour les utilisateurs de MicroPython)
+* :ref:`ar_led_bar` (pour les utilisateurs d'Arduino)
+* :ref:`per_light_display` (pour les utilisateurs de Piper Make)

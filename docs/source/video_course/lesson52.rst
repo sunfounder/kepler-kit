@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Approfondissez vos connaissances en Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 52: Controlling Neopixels in MicroPython
+Leçon 52 : Contrôler des NeoPixels en MicroPython
 =============================================================================
-This tutorial covers controlling NeoPixel LED strips using the Raspberry Pi Pico W:
 
-* **Introduction**: Overview of NeoPixel strip with 8 LEDs and simple wiring (5V, GND, Data).
-* **Concept**: Explanation of power and data flow through the NeoPixel strip.
-* **Programming**: Import libraries: ``neopixel`` and ``machine``.
-* **Demonstration**: Show different colors on the NeoPixel strip. Display a pattern with a running green light over a red background.
-* **Conclusion**: Encourage experimenting with patterns. Preview upcoming advanced NeoPixel projects.
+Ce tutoriel explique comment contrôler des bandes de LED NeoPixel avec le Raspberry Pi Pico W :
 
+* **Introduction** : Présentation de la bande NeoPixel avec 8 LED et un câblage simple (5V, GND, Data).
+* **Concept** : Explication du flux de puissance et de données à travers la bande NeoPixel.
+* **Programmation** : Importer les bibliothèques : ``neopixel`` et ``machine``.
+* **Démonstration** : Afficher différentes couleurs sur la bande NeoPixel. Montrer un motif avec une lumière verte défilante sur un fond rouge.
+* **Conclusion** : Encourager à expérimenter avec des motifs. Aperçu des futurs projets avancés avec NeoPixel.
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

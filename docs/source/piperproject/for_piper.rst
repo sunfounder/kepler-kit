@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-For Piper Make
+Pour Piper Make
 ===================
 
-This chapter contains an introduction to Piper Make, how to connect and program Pico W win Piper Make, and several interesting projects to help you get up and running with Piper quickly.
+Ce chapitre contient une introduction à Piper Make, explique comment connecter et programmer le Pico W avec Piper Make, et présente plusieurs projets intéressants pour vous aider à démarrer rapidement avec Piper.
 
-We recommend that you read this chapter in order.
+Nous vous recommandons de lire ce chapitre dans l'ordre.
 
-Piper Make is a super easy and fun way to make projects using Raspberry Pi Pico W. It uses blocks like Scratch, so you don't need any programming experience to use it.
-The underlying principle is to use CircuitPython with auxiliary libraries.
+Piper Make est un moyen super simple et amusant de créer des projets avec le Raspberry Pi Pico W. Il utilise des blocs similaires à Scratch, ce qui signifie que vous n'avez besoin d'aucune expérience en programmation pour l'utiliser.
+Le principe de base repose sur l'utilisation de CircuitPython avec des bibliothèques auxiliaires.
 
-
-**1. Get Started**
+**1. Commencer**
 
 .. toctree::
     :maxdepth: 1
@@ -32,9 +31,7 @@ The underlying principle is to use CircuitPython with auxiliary libraries.
     piper_start/quick_guide_piper
     piper_start/save_import
 
-
-**2. Projects**
-
+**2. Projets**
 
 .. toctree::
     :maxdepth: 2
@@ -52,5 +49,4 @@ The underlying principle is to use CircuitPython with auxiliary libraries.
     2.11_reversing_system
     2.12_smart_fan
     2.13_reaction_game
-
 

@@ -1,37 +1,37 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 60: Control NeoPixel Colors with a Joystick in MicroPython
-=============================================================================
+Leçon 60 : Contrôler les couleurs des NeoPixels avec un joystick en MicroPython
+====================================================================================
 
-This tutorial covers controlling an LED strip with a joystick using the Raspberry Pi Pico W:
+Ce tutoriel explique comment contrôler une bande LED NeoPixel avec un joystick en utilisant le Raspberry Pi Pico W :
 
-* **Wiring Setup**:
+* **Configuration du câblage** :
 
-    - Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, VRY to GPIO pin 26. 
-    - Connect Neopixel ground to pin 38, 5V to pin 40, data to GPIO pin 0.
+    - Connectez la masse du joystick à la broche 38, 3,3V à la broche 36, VRX à la broche GPIO 27, VRY à la broche GPIO 26. 
+    - Connectez la masse du Neopixel à la broche 38, le 5V à la broche 40, et le signal de données à la broche GPIO 0.
     
-* **Code Implementation**: 
+* **Implémentation du code** : 
 
-    - Import libraries (``machine``, ``time``, ``math``, ``neopixel``). 
-    - Set up ADC for joystick and Neopixel. Read joystick values, calculate angles. 
-    - Convert angles to RGB for Neopixel.
+    - Importez les bibliothèques (``machine``, ``time``, ``math``, ``neopixel``). 
+    - Configurez l'ADC pour le joystick et le Neopixel. Lisez les valeurs du joystick, calculez les angles. 
+    - Convertissez les angles en valeurs RGB pour le Neopixel.
 
-* **Homework Assignment**: Write a program to control Neopixel color and brightness based on joystick angle and distance from center.
+* **Devoir** : Écrivez un programme pour contrôler la couleur et la luminosité du Neopixel en fonction de l'angle du joystick et de la distance par rapport au centre.
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

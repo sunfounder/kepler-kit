@@ -1,67 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_irremote:
 
-
-6.4 - IR Remote Control
+6.4 - Télécommande IR
 ================================
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
+Dans l'électronique grand public, les télécommandes sont utilisées pour contrôler des appareils tels que les téléviseurs et les lecteurs DVD.
+Dans certains cas, elles permettent aux utilisateurs de manipuler des dispositifs hors de portée, comme les climatiseurs centraux.
 
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+Le récepteur IR est un composant avec une photocellule réglée pour recevoir la lumière infrarouge. 
+Il est presque toujours utilisé pour la détection des télécommandes - chaque téléviseur et lecteur DVD en possède un à l'avant pour recevoir le signal IR de la télécommande.
+À l'intérieur de la télécommande se trouve une LED IR correspondante, qui émet des impulsions IR pour indiquer à la télévision de s'allumer, s'éteindre ou changer de chaîne.
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -70,30 +68,29 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_irrecv|
 
-**Wiring**
+**Câblage**
 
 |wiring_irrecv|
-
 
 **Code**
 
 .. note::
 
-    * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``kepler-kit-main/arduino/6.4_ir_remote_control``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``IRremote`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir le fichier ``6.4_ir_remote_control.ino`` sous le chemin ``kepler-kit-main/arduino/6.4_ir_remote_control``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * Ensuite, sélectionnez la carte Raspberry Pi Pico et le port correct avant de cliquer sur le bouton **Upload**.
+    * La bibliothèque ``IRremote`` est utilisée ici, vous pouvez l'installer depuis le **Gestionnaire de bibliothèques**.
 
       .. image:: img/lib_ir.png
 
@@ -101,58 +98,56 @@ You can also buy them separately from the links below.
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/71f50561-d1ad-4d9e-9db2-8eb7727df0a4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+La nouvelle télécommande possède un morceau de plastique à l'extrémité pour isoler la batterie à l'intérieur. Vous devez retirer ce morceau de plastique pour alimenter la télécommande lors de son utilisation.
+Une fois le programme en cours d'exécution, lorsque vous appuyez sur la télécommande, le Moniteur Série affichera la touche que vous avez pressée.
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Serial Monitor will print out the key you pressed.
 
+**Comment ça fonctionne ?**
 
-**How it works?**
+Ce code est conçu pour fonctionner avec une télécommande infrarouge (IR) en utilisant la bibliothèque ``IRremote``. Voici le détail :
 
-This code is designed to work with an infrared (IR) remote control using the ``IRremote`` library. Here's the breakdown:
-
-#. Including the library and defining constants. First, the IRremote library is included, and the pin number for the IR receiver is defined as 2.
+#. Inclusion de la bibliothèque et définition des constantes. Tout d'abord, la bibliothèque IRremote est incluse, et le numéro de broche pour le récepteur IR est défini sur 2.
 
    .. code-block:: cpp
  
      #include <IRremote.h>
      const int IR_RECEIVE_PIN = 17;
 
-
-#. Initializes serial communication at a baud rate of 9600. Initializes the IR receiver on the specified pin (``IR_RECEIVE_PIN``) and enables LED feedback (if applicable).
+#. Initialise la communication série à un débit de 9600 bauds. Initialise le récepteur IR sur la broche spécifiée (``IR_RECEIVE_PIN``) et active le retour LED (si applicable).
 
    .. code-block:: arduino
 
        void setup() {
-           Serial.begin(9600);                                     // Start serial communication at 9600 baud rate
-           IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Start the IR receiver
+           Serial.begin(9600);                                     // Démarrer la communication série à 9600 bauds
+           IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Démarrer le récepteur IR
        }
 
-#. The loop runs continuously to process incoming IR remote signals.
+#. La boucle s'exécute en continu pour traiter les signaux entrants de la télécommande IR.
 
    .. code-block:: arduino
 
       void loop() {
-         if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+         if (IrReceiver.decode()) {  // Vérifier si le récepteur IR a reçu un signal
             bool result = 0;
             String key = decodeKeyValue(IrReceiver.decodedIRData.command);
             if (key != "ERROR") {
-              Serial.println(key);  // Print the readable command
+              Serial.println(key);  // Imprimer la commande lisible
               delay(100);
             }
-         IrReceiver.resume();  // Prepare the IR receiver to receive the next signal
+         IrReceiver.resume();  // Préparer le récepteur IR à recevoir le prochain signal
         }
       }
-   
-   * Checks if an IR signal is received and successfully decoded.
-   * Decodes the IR command and stores it in ``decodedValue`` using a custom ``decodeKeyValue()`` function.
-   * Prints the decoded IR value to the serial monitor.
-   * Resumes IR signal reception for the next signal.
+
+   * Vérifie si un signal IR est reçu et décodé avec succès.
+   * Décode la commande IR et la stocke dans ``decodedValue`` en utilisant une fonction personnalisée ``decodeKeyValue()``.
+   * Imprime la valeur décodée IR sur le moniteur série.
+   * Relance la réception de signal IR pour le prochain signal.
 
    .. raw:: html
 
         <br/>
 
-#. Helper function to map received IR signals to corresponding keys
+#. Fonction auxiliaire pour mapper les signaux IR reçus aux touches correspondantes
 
    .. image:: img/ir_key.png
       :align: center
@@ -160,9 +155,9 @@ This code is designed to work with an infrared (IR) remote control using the ``I
 
    .. code-block:: arduino
 
-      // Function to map received IR signals to corresponding keys
+      // Fonction pour mapper les signaux IR reçus aux touches correspondantes
       String decodeKeyValue(long result) {
-        // Each case corresponds to a specific IR command
+        // Chaque case correspond à une commande IR spécifique
         switch (result) {
           case 0x16:
             return "0";

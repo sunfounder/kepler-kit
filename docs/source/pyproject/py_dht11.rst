@@ -1,76 +1,80 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_dht11:
 
-6.2 Temperature - Humidity
+6.2 Température - Humidité
 =======================================
 
+L'humidité et la température sont étroitement liées, tant en termes de 
+quantités physiques qu'en impact sur la vie quotidienne. La température 
+et l'humidité de l'environnement humain influencent directement la régulation 
+thermique et le transfert de chaleur du corps humain. Cela peut également 
+affecter l'activité mentale et l'état d'esprit, influençant ainsi l'efficacité 
+de nos études et de notre travail.
 
-Humidity and temperature are closely related from the physical quantity itself to the actual people's life.
-The temperature and humidity of human environment will directly affect the thermoregulatory function and heat transfer effect of human body.
-It will further affect the thinking activity and mental state, thus affecting the efficiency of our study and work.
+La température est l'une des sept grandeurs physiques fondamentales du Système 
+international d'unités, utilisée pour mesurer le degré de chaleur ou de froid 
+d'un objet. Le degré Celsius est l'une des échelles de température les plus 
+couramment utilisées dans le monde, exprimée par le symbole "℃".
 
-Temperature is one of the seven basic physical quantities in the International System of Units, which is used to measure the degree of hot and cold of an object.
-Celsius is one of the more widely used temperature scales in the world, expressed by the symbol "℃".
-
-Humidity is the concentration of water vapor present in the air.
-The relative humidity of air is commonly used in life and is expressed in %RH. Relative humidity is closely related to temperature.
-For a certain volume of sealed gas, the higher the temperature, the lower the relative humidity, and the lower the temperature, the higher the relative humidity.
+L'humidité est la concentration de vapeur d'eau présente dans l'air. L'humidité 
+relative de l'air est généralement utilisée au quotidien et est exprimée en %RH. 
+L'humidité relative est étroitement liée à la température. Pour un volume de gaz 
+scellé donné, plus la température est élevée, plus l'humidité relative est faible ; 
+et plus la température est basse, plus l'humidité relative est élevée.
 
 |img_Dht11|
 
-A basic digital temperature and humidity sensor, the **DHT11**, is provided in this kit.
-It uses a capacitive humidity sensor and thermistor to measure the surrounding air and outputs a digital signal on the data pins (no analog input pins are required).
+Un capteur numérique de base pour la température et l'humidité, le **DHT11**, est inclus dans ce kit. Il utilise un capteur capacitif d'humidité et une thermistance pour mesurer l'air ambiant et transmet un signal numérique via les broches de données (aucune broche d'entrée analogique n'est requise).
 
 * :ref:`cpn_dht11`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants : 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous :
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -79,20 +83,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
         - 1
         - |link_dht22_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_dht11|
 
-
-**Wiring**
-
+**Câblage**
 
 |wiring_dht11|
 
@@ -100,13 +102,13 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``6.2_temperature_humidity.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``6.2_temperature_humidity.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Exécuter le script actuel" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`. 
     
-    * Here you need to use the library called ``dht.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Vous devez utiliser la bibliothèque appelée ``dht.py``, vérifiez si elle a été téléchargée sur le Pico W. Pour un tutoriel détaillé, référez-vous à :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -116,7 +118,7 @@ You can also buy them separately from the links below.
 
     pin = Pin(16, Pin.IN)
     sensor = DHT11(pin)
-    time.sleep(5)  # initial delay
+    time.sleep(5)  # délai initial
 
     while True:
         try:
@@ -131,26 +133,27 @@ You can also buy them separately from the links below.
 
 
 
-After the code is run, you will see the Shell continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
+Après l'exécution du code, vous verrez le Shell afficher en continu la température et l'humidité, et à mesure que le programme fonctionne de manière stable, ces deux valeurs deviendront de plus en plus précises.
 
-**How it works?**
+**Comment ça marche ?**
 
-In the dht library, we have integrated the relevant functionality into the ``DHT11`` class.
+Dans la bibliothèque dht, les fonctionnalités pertinentes ont été intégrées dans la classe ``DHT11``.
 
 .. code-block:: python
 
     from dht import DHT11, InvalidPulseCount
 
-Initialize the ``DHT11`` object. This device only needs a digital input to be used.
+Initialisez l'objet ``DHT11``. Ce dispositif ne nécessite qu'une entrée numérique pour être utilisé.
 
 .. code-block:: python
 
     pin = Pin(16, Pin.IN)
     sensor = DHT11(pin)
 
-Use ``sensor.measure()`` to read the current temperature and humidity, which will be stored in ``sensor.temperature``, ``sensor.humidity``.
-They are then printed out.
-Finally the DHT11 sampling rate is 1HZ, a ``time.sleep(1)`` is needed in the loop.
+Utilisez ``sensor.measure()`` pour lire la température et l'humidité actuelles, 
+qui seront stockées dans ``sensor.temperature`` et ``sensor.humidity``. Elles 
+sont ensuite imprimées à l'écran. Enfin, le taux d'échantillonnage du DHT11 est 
+de 1HZ, il faut donc un ``time.sleep(1)`` dans la boucle.
 
 .. code-block:: python
 

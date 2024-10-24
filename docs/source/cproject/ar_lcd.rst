@@ -1,29 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_lcd:
 
-3.4 - Liquid Crystal Display
-===============================
+3.4 - Affichage à Cristaux Liquides
+========================================
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+Le LCD1602 est un afficheur à cristaux liquides de type caractère, 
+capable d'afficher 32 (16*2) caractères simultanément.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, 
-they share a common weakness. When they are connected to a controller, 
-multiple IOs will be occupied of the controller which has no so many outer ports. 
-Also it restricts other functions of the controller. 
-Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+Comme nous le savons, bien que les écrans LCD et d'autres dispositifs 
+d'affichage enrichissent grandement l'interaction homme-machine, ils 
+partagent un point faible commun. Lorsqu'ils sont connectés à un contrôleur, 
+plusieurs E/S seront occupées, limitant ainsi les autres fonctions du contrôleur. 
+Par conséquent, le LCD1602 avec un bus I2C a été développé pour résoudre ce problème.
 
 * :ref:`cpn_i2c_lcd`
 * `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
@@ -31,42 +32,42 @@ Therefore, LCD1602 with an I2C bus is developed to solve the problem.
 
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+Nous utiliserons ici l'interface I2C0 pour contrôler le LCD1602 et afficher du texte.
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -75,18 +76,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_lcd_ar|
 
-**Wiring**
+**Câblage**
 
 |wiring_lcd_ar|
 
@@ -94,10 +95,10 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``3.4_liquid_crystal_display.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir le fichier ``3.4_liquid_crystal_display.ino`` sous le chemin ``kepler-kit-main/arduino/3.4_liquid_crystal_display``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * Sélectionnez ensuite la carte Raspberry Pi Pico et le port correct avant de cliquer sur le bouton Upload.
+    * La bibliothèque ``LiquidCrystal I2C`` est utilisée ici, vous pouvez l'installer depuis le **Library Manager**.
 
       .. image:: img/lib_i2c_lcd.png
 
@@ -106,139 +107,138 @@ You can also buy them separately from the links below.
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1f464967-5937-473a-8a0d-8e4577c85e7d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-After the code is uploaded successfully, you will see “SunFounder”, “Hello World” on the I2C LCD1602.
+Après avoir téléchargé le code avec succès, vous verrez “SunFounder”, “Hello World” s'afficher sur le LCD1602 I2C.
 
 .. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+    Si le code et le câblage sont corrects mais que l'affichage reste vide, tournez le potentiomètre à l'arrière pour augmenter le contraste.
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-By calling the library ``LiquidCrystal_I2C.h``, you can easily drive the LCD. 
+En utilisant la bibliothèque ``LiquidCrystal_I2C.h``, vous pouvez facilement piloter le LCD. 
 
 .. code-block:: arduino
 
     #include "LiquidCrystal_I2C.h"
 
-**Library Functions**
+**Fonctions de la bibliothèque**
 
 .. code-block:: arduino
 
     LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
 
-Creates a new instance of the ``LiquidCrystal_I2C`` class that represents a particular LCD attached to your Arduino board.
+Crée une nouvelle instance de la classe ``LiquidCrystal_I2C`` représentant un LCD particulier connecté à votre carte Arduino.
 
-- **lcd_AddR**: The address of the LCD defaults to 0x27.
-- **lcd_cols**: The LCD1602 has 16 columns.
-- **lcd_rows**: The LCD1602 has 2 rows.
+- **lcd_AddR** : L'adresse du LCD est par défaut 0x27.
+- **lcd_cols** : Le LCD1602 dispose de 16 colonnes.
+- **lcd_rows** : Le LCD1602 dispose de 2 lignes.
 
 
 .. code-block:: arduino
 
     void init()
 
-Initialize the lcd.
+Initialise le LCD.
 
 .. code-block:: arduino
 
     void backlight()
 
-Turn the (optional) backlight on.
+Allume le rétroéclairage (optionnel).
 
 .. code-block:: arduino
 
     void nobacklight()
 
-Turn the (optional) backlight off.
+Éteint le rétroéclairage (optionnel).
 
 .. code-block:: arduino
 
     void display()
 
-Turn the LCD display on.
+Allume l'affichage du LCD.
 
 .. code-block:: arduino
 
     void nodisplay()
 
-Turn the LCD display off quickly.
+Éteint rapidement l'affichage du LCD.
 
 .. code-block:: arduino
 
     void clear()
 
-Clear display, set cursor position to zero.
+Efface l'affichage, et positionne le curseur à zéro.
 
 .. code-block:: arduino
 
     void setCursor(uint8_t col,uint8_t row)
 
-Set the cursor position to col,row.
+Positionne le curseur aux coordonnées col,row.
 
 .. code-block:: arduino
 
     void print(data,BASE)
 
-Prints text to the LCD.
+Affiche du texte sur le LCD.
 
-- **data**: The data to print (char, byte, int, long, or string).
+- **data** : Les données à afficher (char, byte, int, long, ou string).
 
-- **BASE (optional)**: The base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
-
-
+- **BASE (optionnel)** : La base pour afficher les nombres : BIN pour binaire (base 2), DEC pour décimal (base 10), OCT pour octal (base 8), HEX pour hexadécimal (base 16).
 
 
-**Learn More**
 
 
-Upload the codes to the Pico W, the content that you input in the serial monitor will be printed on the LCD.
+**En savoir plus**
+
+Téléchargez le code sur le Pico W, le contenu que vous saisissez dans le moniteur série sera imprimé sur le LCD.
 
 .. note::
 
-   * You can open the file ``3.4_liquid_crystal_display_2.ino`` under the path of ``kepler-kit-main/arduino/3.4_liquid_crystal_display_2``. 
-   * Or copy this code into **Arduino IDE**.
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * Vous pouvez ouvrir le fichier ``3.4_liquid_crystal_display_2.ino`` sous le chemin ``kepler-kit-main/arduino/3.4_liquid_crystal_display_2``. 
+   * Ou copiez ce code dans l'**Arduino IDE**.
+   * N'oubliez pas de sélectionner la carte Raspberry Pi Pico et le port correct avant de cliquer sur le bouton **Upload**.
 
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/631e0380-d594-4a8b-9bac-eb0688079b97/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-In addition to reading data from the electronic components, the Pico W
-can read the data input in the serial port monitor, and you can
-use ``Serial.read()`` as the controller of the circuit experiment. 
+En plus de lire les données provenant des composants électroniques, le Pico W peut lire les données 
+saisies dans le moniteur de port série, et vous pouvez utiliser ``Serial.read()`` comme contrôleur 
+pour l'expérience de circuit.
 
-Run the serial communication in ``setup()`` and set the data rate to 9600.
+Lancez la communication série dans ``setup()`` et définissez le débit de données à 9600.
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-The state of serial port monitor is judged in ``loop()``, and the information processing will be carried out only when the data are received.
+L'état du moniteur de port série est vérifié dans ``loop()``, et le traitement des informations ne se fera que lorsque les données seront reçues.
 
 .. code-block:: arduino
 
     if (Serial.available() > 0){}
 
-Clear the screen.
+Effacez l'écran.
 
 .. code-block:: arduino
 
     lcd.clear();
 
-Reads the input value in the serial port monitor and stores it to the variable incomingByte.
+Lisez la valeur d'entrée dans le moniteur de port série et stockez-la dans la variable incomingByte.
 
 .. code-block:: arduino
 
     char incomingByte = Serial.read();
 
-Display each character to the LCD and skip the line-feed character.
+Affichez chaque caractère sur le LCD en sautant le caractère de saut de ligne.
 
 .. code-block:: arduino
 
     while (Serial.available() > 0) {
         char incomingByte=Serial.read();
-        if(incomingByte==10){break;}// skip the line-feed character
-        lcd.print(incomingByte);// display each character to the LCD  
+        if(incomingByte==10){break;}// saute le caractère de saut de ligne
+        lcd.print(incomingByte);// affiche chaque caractère sur le LCD  
     } 
 
 

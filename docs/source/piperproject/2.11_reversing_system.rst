@@ -1,59 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _per_reversing_system:
 
-2.11 Reversing System
+2.11 Système de Recul
 ==========================
 
-For this project we used an ultrasonic module and an active buzzer to create a reversing alarm system. The ultrasonic module is used to detect the distance, and the buzzer emits different frequencies of alarm sounds depending on the distance.
+Pour ce projet, nous avons utilisé un module ultrasonique et un buzzer actif pour créer un système d'alarme de recul. Le module ultrasonique est utilisé pour détecter la distance, et le buzzer émet différents sons d'alarme en fonction de la distance détectée.
 
-**Required Components**
+**Composants Nécessaires**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est certainement plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément en suivant les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -62,18 +61,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Buzzer Actif :ref:`cpn_buzzer`
         - 1
         - 
     *   - 8
@@ -81,51 +80,46 @@ You can also buy them separately from the links below.
         - 1
         - |link_ultrasonic_buy|
 
-
-**Wiring**
+**Câblage**
 
 |reversing_system0|
 
-
-* The Echo and Trig pins of the ultrasonic module are connected to GP15 at the same time, so that the ultrasonic module sends and receives signals from GP15.
-* The middle pin of the transistor connected to the buzzer is connected to GP14 through a 1kΩ resistor.
+* Les broches Echo et Trig du module ultrasonique sont connectées simultanément à GP15, permettant au module d'envoyer et de recevoir des signaux depuis GP15.
+* La broche centrale du transistor connectée au buzzer est reliée à GP14 via une résistance de 1kΩ.
 
 **Code**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.11_reversing_system.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Vous pouvez vous référer à l'image ci-dessous pour écrire du code en utilisant le glisser-déposer. 
+    * Importez ``2.11_reversing_system.png`` depuis le chemin ``kepler-kit-main\piper``. Pour des tutoriels détaillés, veuillez consulter :ref:`import_code_piper`.
 
 |reversing_system|
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the ultrasonic detection distance is less than 5cm, the buzzer emits a sharp sound (0.1s).
-* When the detection distance is between 5~10cm, the buzzer emits a slightly slow sound (0.5s).
-* When the detection distance is greater than 10cm, there is a sound prompt every 1 second.
+* Après avoir connecté le Pico W, cliquez sur le bouton **Démarrer** pour lancer le code.
+* Lorsque la distance détectée par le capteur ultrasonique est inférieure à 5 cm, le buzzer émet un son aigu (0,1 s).
+* Lorsque la distance est comprise entre 5 et 10 cm, le buzzer émet un son légèrement plus lent (0,5 s).
+* Lorsque la distance est supérieure à 10 cm, il y a un bip sonore toutes les secondes.
 
-
-**How it Works?**
-
+**Comment ça fonctionne ?**
 
 |reversing_system1|
 
-Read the distance (in cm) of the ultrasonic detection, and store it in the variable [distance].
+Lisez la distance (en cm) détectée par le capteur ultrasonique et enregistrez-la dans la variable [distance].
 
 |reversing_system2|
 
-When distance is less than or equal to 5, set the variable intervals to 0.1s. The variable [intervals] is the interval between buzzer sounds.
+Quand la distance est inférieure ou égale à 5 cm, définissez la variable [intervals] à 0,1 s. La variable [intervals] représente l'intervalle entre les bips du buzzer.
 
 |reversing_system3|
 
-When distance is greater than 5 and less than or equal to 10, set the [intervals] to 0.5s.
+Quand la distance est supérieure à 5 cm et inférieure ou égale à 10 cm, définissez [intervals] à 0,5 s.
 
 |reversing_system4|
 
-When distance is greater than 10, set the [intervals] time to 1s.
+Quand la distance est supérieure à 10 cm, définissez le temps [intervals] à 1 s.
 
 |reversing_system5|
 
-Finally, make the buzzer sound every [intervals] seconds.
+Enfin, faites retentir le buzzer toutes les [intervals] secondes.
 

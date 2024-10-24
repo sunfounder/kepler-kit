@@ -1,69 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez plus profondément dans le Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_water:
 
-2.14 - Feel the Water Level
+2.14 - Mesurer le Niveau d'Eau
 =====================================
 
 |img_water_sensor|
 
-Water sensor is designed for water detection, which can be widely used in sensing rainfall, water level, and even liquid leakage.
+Le capteur d'eau est conçu pour détecter la présence d'eau, et il peut être largement utilisé pour mesurer la pluie, le niveau d'eau et même détecter des fuites de liquide.
 
-It measures the water level by having a series of exposed parallel wire traces to measure the size of the water drops/volume. The water volume is easily converted to an analog signal, and the output analog value can be read directly by the main control board to achieve the water level alarm effect.
+Il mesure le niveau d'eau à l'aide d'une série de traces parallèles exposées qui captent la taille des gouttes d'eau ou le volume. Ce volume d'eau est facilement converti en un signal analogique, et la valeur analogique en sortie peut être lue directement par la carte de contrôle principale pour déclencher une alarme de niveau d'eau.
 
 .. warning:: 
     
-    The sensor cannot be fully submerged in water, please only leave the part where the ten Traces are located in contact with water. Also, energizing the sensor in a humid environment will accelerate the corrosion of the probe and reduce the life of the sensor, so it is recommended that you only supply power when taking readings.
+    Le capteur ne doit pas être entièrement immergé dans l'eau ; veuillez ne laisser que la partie où se trouvent les dix traces en contact avec l'eau. De plus, alimenter le capteur dans un environnement humide accélère la corrosion de la sonde et réduit la durée de vie du capteur. Il est donc recommandé de ne l'alimenter que lors des relevés.
 
 * :ref:`cpn_water_level`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -72,19 +71,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_water_level`
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_water|
 
-
-**Wiring**
+**Câblage**
 
 |wiring_water|
 
@@ -92,31 +90,28 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``2.14_feel_the_water_level.ino`` under the path of ``kepler-kit-main/arduino/2.14_feel_the_water_level``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Vous pouvez ouvrir le fichier ``2.14_feel_the_water_level.ino`` dans le chemin ``kepler-kit-main/arduino/2.14_feel_the_water_level``. 
+    * Ou copiez ce code dans **Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton **Upload**.
 
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/32ee87a1-08eb-482f-bf4c-b12b24ef05c4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program is run, submerge the Water Sensor module slowly into the water, and as the depth increases, the Shell will print a larger value.
+Une fois le programme lancé, plongez lentement le module capteur d'eau dans l'eau, et à mesure que la profondeur augmente, la console Shell affichera une valeur plus élevée.
 
 
-**Learn More**
+**En savoir plus**
 
-There is a way to use the analog input module as a digital module.
+Il est possible d'utiliser le module d'entrée analogique comme un module numérique.
 
-First, take a reading of the Water Sensor in a dry environment first, record it, and use it as a threshold value. Then, complete the programming and re-read the reading of the water sensor. When the reading of the water sensor deviates significantly from the reading in a dry environment, it is exposed to liquid. In other words, by placing this device near a water pipe, it can detect if a water pipe is leaking.
-
+Tout d'abord, effectuez un relevé du capteur d'eau dans un environnement sec, enregistrez-le et utilisez-le comme valeur seuil. Ensuite, complétez le programme et relisez la valeur du capteur d'eau. Lorsque la lecture du capteur d'eau s'écarte significativement de celle en environnement sec, il détecte la présence de liquide. Autrement dit, en plaçant cet appareil près d'un tuyau d'eau, il peut détecter si un tuyau fuit.
 
 .. note::
 
-    * You can open the file ``2.14_water_level_threshold.ino`` under the path of ``kepler-kit-main/arduino/2.14_water_level_threshold``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Vous pouvez ouvrir le fichier ``2.14_water_level_threshold.ino`` dans le chemin ``kepler-kit-main/arduino/2.14_water_level_threshold``. 
+    * Ou copiez ce code dans **Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton **Upload**.
 
 .. :raw-code:

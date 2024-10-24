@@ -1,68 +1,69 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_pa_buz:
 
 
-3.2 - Custom Tone
+3.2 - Tonalité personnalisée
 ==========================================
 
+Dans le projet précédent, nous avons utilisé un buzzer actif. Cette fois, nous utiliserons un buzzer passif.
 
-We have used active buzzer in the previous project, this time we will use passive buzzer.
+Tout comme le buzzer actif, le buzzer passif fonctionne grâce au phénomène d'induction 
+électromagnétique. La différence réside dans le fait qu'un buzzer passif ne possède pas 
+de source d'oscillation intégrée, il ne produit donc pas de son avec des signaux continus DC. 
+Cependant, cela permet au buzzer passif de modifier sa fréquence d'oscillation et d'émettre 
+différentes notes comme "do, ré, mi, fa, sol, la, si".
 
-Like the active buzzer, the passive buzzer also uses the phenomenon of electromagnetic induction to work. The difference is that a passive buzzer does not have oscillating source, so it will not beep if DC signals are used.
-But this allows the passive buzzer to adjust its own oscillation frequency and can emit different notes such as "doh, re, mi, fa, sol, la, ti".
-
-Let the passive buzzer emit a melody!
+Faisons jouer une mélodie au buzzer passif !
 
 * :ref:`Buzzer`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -71,37 +72,37 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
-        - 1(S8050)
+        - 1 (S8050)
         - |link_transistor_buy|
     *   - 6
         - :ref:`cpn_resistor`
-        - 1(1KΩ)
+        - 1 (1KΩ)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Buzzer passif :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_buzzer|
 
-When the GP15 output is high, after the 1K current limiting resistor (to protect the transistor), the S8050 (NPN transistor) will conduct, so that the buzzer will sound.
+Lorsque la sortie de GP15 est haute, après le passage par la résistance de limitation de courant de 1K (pour protéger le transistor), le S8050 (transistor NPN) conduit, permettant ainsi au buzzer de sonner.
 
-The role of S8050 (NPN transistor) is to amplify the current and make the buzzer sound louder. In fact, you can also connect the buzzer directly to GP15, but you will find that the buzzer sound is smaller.
+Le rôle du S8050 (transistor NPN) est d'amplifier le courant et de rendre le son du buzzer plus fort. En fait, vous pouvez également connecter le buzzer directement à GP15, mais le son sera plus faible.
 
 
-**Wiring**
+**Câblage**
 
 |img_buzzer|
 
-Two buzzers are included in the kit, we use a passive buzzer (one with an exposed PCB on the back).
+Deux buzzers sont inclus dans le kit, nous utilisons un buzzer passif (celui avec le PCB visible à l'arrière).
 
-The buzzer needs a transistor to work, here we use S8050.
+Le buzzer nécessite un transistor pour fonctionner, nous utilisons ici le S8050.
 
 |wiring_buzzer|
 
@@ -110,9 +111,9 @@ The buzzer needs a transistor to work, here we use S8050.
 
 .. note::
 
-    * You can open the file ``3.2_custom_tone.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Vous pouvez ouvrir le fichier ``3.2_custom_tone.ino`` sous le chemin ``kepler-kit-main/arduino/3.2_custom_tone``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton Upload.
 
 
 
@@ -123,32 +124,32 @@ The buzzer needs a transistor to work, here we use S8050.
 
 
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-If the passive buzzer given a digital signal, it can only keep pushing the diaphragm without producing sound.
+Si un signal numérique est appliqué au buzzer passif, il ne fera que déplacer la membrane sans produire de son.
 
-Therefore, we use the ``tone()`` function to generate the PWM signal to make the passive buzzer sound.
+Nous utilisons donc la fonction ``tone()`` pour générer le signal PWM permettant au buzzer passif de produire un son.
 
-This function has three parameters:
+Cette fonction a trois paramètres :
 
-  * **pin**, the GPIO pin that controls the buzzer.
-  * **frequency**, the pitch of the buzzer is determined by the frequency, the higher the frequency, the higher the pitch.
-  * **Duration**, the duration of the tone.
+  * **pin**, le pin GPIO qui contrôle le buzzer.
+  * **frequency**, la hauteur du son du buzzer est déterminée par la fréquence ; plus la fréquence est élevée, plus le son est aigu.
+  * **duration**, la durée de la tonalité.
 
 
 * `tone <https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/>`_
 
-**Learn More**
+**En savoir plus**
 
-We can simulate the specific tone according to the fundamental frequency of the piano, so as to play a complete piece of music.
+Nous pouvons simuler des notes spécifiques en fonction des fréquences fondamentales du piano, afin de jouer une pièce musicale complète.
 
 * `Piano key frequencies - Wikipedia <https://en.wikipedia.org/wiki/Piano_key_frequencies>`_
 
 .. note::
 
-    * You can open the file ``3.2_custom_tone_2.ino`` under the path of ``kepler-kit-main/arduino/3.2_custom_tone_2``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Vous pouvez ouvrir le fichier ``3.2_custom_tone_2.ino`` sous le chemin ``kepler-kit-main/arduino/3.2_custom_tone_2``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton Upload.
 
 
 

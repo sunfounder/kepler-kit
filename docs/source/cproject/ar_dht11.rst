@@ -1,76 +1,74 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_dht11:
 
-
-6.2 - Temperature - Humidity
+6.2 - Température - Humidité
 =======================================
 
-Humidity and temperature are closely related from the physical quantity itself to the actual people's life.
-The temperature and humidity of human environment will directly affect the thermoregulatory function and heat transfer effect of human body.
-It will further affect the thinking activity and mental state, thus affecting the efficiency of our study and work.
+L'humidité et la température sont étroitement liées, que ce soit en tant que grandeurs physiques ou dans notre vie quotidienne.
+La température et l'humidité de notre environnement influencent directement la régulation thermique et le transfert de chaleur du corps humain.
+Cela peut également affecter notre activité mentale et notre état d'esprit, et par conséquent, l'efficacité de nos études et de notre travail.
 
-Temperature is one of the seven basic physical quantities in the International System of Units, which is used to measure the degree of hot and cold of an object.
-Celsius is one of the more widely used temperature scales in the world, expressed by the symbol "℃".
+La température est l'une des sept grandeurs physiques de base dans le Système international d'unités, utilisée pour mesurer le degré de chaleur d'un objet.
+Le Celsius est l'une des échelles de température les plus utilisées dans le monde, exprimée par le symbole "℃".
 
-Humidity is the concentration of water vapor present in the air.
-The relative humidity of air is commonly used in life and is expressed in %RH. Relative humidity is closely related to temperature.
-For a certain volume of sealed gas, the higher the temperature, the lower the relative humidity, and the lower the temperature, the higher the relative humidity.
+L'humidité désigne la concentration de vapeur d'eau présente dans l'air.
+L'humidité relative de l'air est couramment utilisée au quotidien et est exprimée en %RH. L'humidité relative est étroitement liée à la température.
+Pour un volume de gaz fermé, plus la température est élevée, plus l'humidité relative est faible, et plus la température est basse, plus l'humidité relative est élevée.
 
 |img_Dht11|
 
-A basic digital temperature and humidity sensor, the **DHT11**, is provided in this kit.
-It uses a capacitive humidity sensor and thermistor to measure the surrounding air and outputs a digital signal on the data pins (no analog input pins are required).
+Un capteur numérique de température et d'humidité de base, le **DHT11**, est fourni dans ce kit.
+Il utilise un capteur d'humidité capacitif et une thermistance pour mesurer l'air ambiant et fournit un signal numérique sur les broches de données (aucune broche d'entrée analogique n'est nécessaire).
 
 * :ref:`cpn_dht11`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -79,18 +77,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
         - 1
         - |link_dht22_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_dht11|
 
-**Wiring**
+**Câblage**
 
 |wiring_dht11|
 
@@ -98,55 +96,53 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * You can open the file ``6.2_dht11.ino`` under the path of ``kepler-kit-main/arduino/6.2_dht11``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``DHT sensor library`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir le fichier ``6.2_dht11.ino`` sous le chemin ``kepler-kit-main/arduino/6.2_dht11``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * Ensuite, sélectionnez la carte Raspberry Pi Pico et le port correct avant de cliquer sur le bouton Upload.
+    * La bibliothèque ``DHT sensor library`` est utilisée ici, vous pouvez l'installer via le **Gestionnaire de Bibliothèques**.
 
       .. image:: img/lib_dht.png
-
-
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b9e96e99-59d4-48ca-b41f-c03577acfb8f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the code is run, you will see the Serial Monitor continuously print out the temperature and humidity, and as the program runs steadily, these two values will become more and more accurate.
+Après l'exécution du code, vous verrez le Moniteur Série afficher en continu la température et l'humidité, et au fur et à mesure que le programme fonctionne de manière stable, ces deux valeurs deviendront de plus en plus précises.
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-#. Inclusion of necessary libraries and definition of constants.
-   This part of the code includes the DHT sensor library and defines the pin number and sensor type used in this project.
+#. Inclusion des bibliothèques nécessaires et définition des constantes.
+   Cette partie du code inclut la bibliothèque du capteur DHT et définit le numéro de broche et le type de capteur utilisés dans ce projet.
 
    .. code-block:: arduino
     
       #include <DHT.h>
-      #define DHTPIN 16       // Define the pin used to connect the sensor
-      #define DHTTYPE DHT11  // Define the sensor type
+      #define DHTPIN 16       // Définir la broche utilisée pour connecter le capteur
+      #define DHTTYPE DHT11  // Définir le type de capteur
 
-#. Creation of DHT object.
-   Here we create a DHT object using the defined pin number and sensor type.
+#. Création de l'objet DHT.
+   Ici, nous créons un objet DHT en utilisant le numéro de broche et le type de capteur définis.
 
    .. code-block:: arduino
 
-      DHT dht(DHTPIN, DHTTYPE);  // Create a DHT object
+      DHT dht(DHTPIN, DHTTYPE);  // Créer un objet DHT
 
-#. This function is executed once when the Arduino starts. We initialize the serial communication and the DHT sensor in this function.
+#. Cette fonction est exécutée une fois lorsque l'Arduino démarre. Nous initialisons la communication série et le capteur DHT dans cette fonction.
 
    .. code-block:: arduino
 
       void setup() {
         Serial.begin(9600);
         Serial.println(F("DHT11 test!"));
-        dht.begin();  // Initialize the DHT sensor
+        dht.begin();  // Initialiser le capteur DHT
       }
 
-#. Main loop.
-   The ``loop()`` function runs continuously after the setup function. Here, we read the humidity and temperature values, calculate the heat index, and print these values to the serial monitor.  If the sensor read fails (returns NaN), it prints an error message.
+#. Boucle principale.
+   La fonction ``loop()`` s'exécute en continu après la fonction setup. Ici, nous lisons les valeurs d'humidité et de température, calculons l'indice de chaleur, et affichons ces valeurs sur le moniteur série. Si la lecture du capteur échoue (retourne NaN), un message d'erreur est imprimé.
 
    .. note::
     
-      The |link_heat_index| is a way to measure how hot it feels outside by combining the air temperature and the humidity. It is also called the "felt air temperature" or "apparent temperature".
+      L'|link_heat_index| est une manière de mesurer la sensation de chaleur extérieure en combinant la température de l'air et l'humidité. On l'appelle également la "température ressentie" ou "température apparente".
 
    .. code-block:: arduino
 

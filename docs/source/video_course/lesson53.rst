@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Approfondissez vos connaissances en Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 53: Animating NeoPixel Strips Using MicroPython
+Leçon 53 : Animer des bandes NeoPixel avec MicroPython
 =============================================================================
-This tutorial covers controlling a NeoPixel array with the Raspberry Pi Pico W using MicroPython:
 
-* **Introduction**: Overview of an 8-LED NeoPixel array, wired to 5V, GND, and GPIO pin 0.
-* **Programming Basics**: Import ``neopixel`` and ``machine``, set up NeoPixel object, and control individual LEDs with defined colors.
-* **Animating the NeoPixel Array**: Code for a running pixel animation with forward and backward looping.
-* **Advanced Animation**: Homework to create a smooth rainbow transition using the HSV color wheel, encouraging experimentation with animations.
+Ce tutoriel explique comment contrôler une matrice de NeoPixel avec le Raspberry Pi Pico W en utilisant MicroPython :
+* **Introduction** : Présentation d'une matrice de 8 LED NeoPixel, connectée à 5V, GND et la broche GPIO 0.
+* **Notions de base en programmation** : Importer ``neopixel`` et ``machine``, configurer un objet NeoPixel et contrôler individuellement les LED avec des couleurs définies.
+* **Animer la matrice NeoPixel** : Code pour créer une animation de pixel défilant avec une boucle avant et arrière.
+* **Animation avancée** : Devoir consistant à créer une transition arc-en-ciel fluide en utilisant la roue chromatique HSV, et encourager l'expérimentation avec différentes animations.
 
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

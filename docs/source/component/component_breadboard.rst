@@ -1,39 +1,39 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_breadboard:
 
-Breadboard
-==============
+Plaque d'essai (Breadboard)
+==============================
 
 |img_bb|
 
-A breadboard is a construction base for prototyping of electronics. Originally the word referred to a literal bread board, a polished piece of wood used for slicing bread. 
-In the 1970s the solderless breadboard (a.k.a. plugboard, a terminal array board) became available and nowadays the term "breadboard" is commonly used to refer to these.
+Une plaque d'essai est une base de construction pour le prototypage électronique. À l'origine, le terme désignait une véritable planche à pain, un morceau de bois poli utilisé pour couper le pain. 
+Dans les années 1970, la plaque d'essai sans soudure (également appelée "plugboard" ou "terminal array board") est apparue, et aujourd'hui le terme "breadboard" fait principalement référence à ces dispositifs.
 
-It is used to build and test circuits quickly before finishing any circuit design. 
-And it has many holes into which components mentioned above can be inserted like ICs and resistors as well as jumper wires. 
-The breadboard allows you to plug in and remove components easily. 
+Elle est utilisée pour construire et tester rapidement des circuits avant de finaliser la conception. 
+Elle possède de nombreux trous dans lesquels on peut insérer les composants comme les circuits intégrés (ICs), les résistances, ainsi que les fils de connexion. 
+La plaque d'essai permet d'ajouter et de retirer facilement des composants.
 
-The picture shows the internal structure of a breadboard. 
-Although these holes on the breadboard appear to be independent of each other, they are actually connected to each other through metal strips internally.
+L'image montre la structure interne d'une breadboard. 
+Bien que ces trous semblent être indépendants les uns des autres, ils sont en réalité reliés entre eux par des bandes métalliques internes.
 
 |img_bbi|
 
-If you want to know more about breadboard, refer to: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
+Pour en savoir plus sur les plaques d'essai, consultez : `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Example**
+**Exemple**
 
 * :ref:`bc_bb`
 

@@ -1,60 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions de vacances.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-10. Plant Monitor in @SunFounder Controller
-================================================
+10. Moniteur de Plantes avec @SunFounder Controller
+=====================================================
 
-With this project, you will learn how to build a plant watering system using the Sunfounder Controller APP.
+Avec ce projet, vous apprendrez à construire un système d'arrosage pour plantes en utilisant l'application SunFounder Controller.
 
-In the APP, you can check the current temperature and humidity of the environment, as well as the level of water in potted plants.
-To water the plants, you can also click the button on the APP.
+Dans l'application, vous pouvez vérifier la température et l'humidité actuelles de l'environnement, ainsi que le niveau d'eau des plantes en pot. 
+Pour arroser les plantes, vous pouvez également cliquer sur un bouton dans l'application.
 
 
-**Required Components**
+**Composants nécessaires**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est très pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément avec les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -63,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_dht11`
@@ -82,11 +82,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - Batterie 18650
         - 1
         -  
     *   - 10
-        - Battery Holder
+        - Support de batterie
         - 1
         -  
     *   - 11
@@ -94,34 +94,35 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-**Steps**
+**Étapes**
 
 .. note::
-    It is recommended that you complete the previous project :ref:`play_sc`, as that will help you get to grips with the basic use of the SunFounder Controller.
+    Il est recommandé de compléter le projet précédent :ref:`play_sc`, car cela vous aidera à vous familiariser avec l'utilisation de base de l'application SunFounder Controller.
 
-#. Build the circuit.
+#. Construisez le circuit.
 
     .. image:: img/wiring/10.sc_2_bb.png
 
-#. Create a new controller, add the following widgets and change their names.
+#. Créez un nouveau contrôleur, ajoutez les widgets suivants et modifiez leurs noms.
 
     .. image:: img/10_plant2.jpg
         :width: 800
 
-#. Open the ``10_plant_monitor.py`` under the path of ``kepler-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+#. Ouvrez ``10_plant_monitor.py`` dans le chemin ``kepler-kit-main/iot``. Cliquez sur le bouton **Run current script** ou appuyez sur F5 pour l'exécuter. Après une connexion réussie, vous verrez l'adresse IP de Pico W.
 
     .. image:: img/10_plant_monitor.png
 
-
-#. Returning to the SunFounder APP, click Run after connecting to PicoW. On the APP, you will be able to see the temperature and humidity of the environment, as well as the water level of the potted plant. You can click the button to water the potted plant for five seconds if you think it's short of water.
+#. Retournez à l'application SunFounder, cliquez sur Run après vous être connecté au Pico W. Dans l'application, vous pourrez voir la température et l'humidité de l'environnement, ainsi que le niveau d'eau de la plante en pot. Vous pouvez cliquer sur le bouton pour arroser la plante pendant cinq secondes si vous pensez qu'elle manque d'eau.
 
     .. image:: img/10_plant2.jpg
         :width: 800
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Si vous souhaitez que ce script se lance au démarrage, vous pouvez le sauvegarder sur le Raspberry Pi Pico W en tant que ``main.py``.
 
-**How it works?**
 
-This project works basically the same way as :ref:`play_sc`.
 
-In addition the project also uses DHT11, pump and water level module, you can see the details of using these components in :ref:`py_dht11` , :ref:`py_pump`, :ref:`py_water`.
+**Comment ça marche ?**
+
+Ce projet fonctionne essentiellement de la même manière que :ref:`play_sc`.
+
+En plus, le projet utilise également le DHT11, la pompe et le module de niveau d'eau. Vous pouvez voir les détails d'utilisation de ces composants dans :ref:`py_dht11`, :ref:`py_pump`, :ref:`py_water`.

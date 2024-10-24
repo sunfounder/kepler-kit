@@ -1,70 +1,69 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_74hc_led:
 
 5.1 - Microchip - 74HC595
-===========================
+================================
 
-Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
+Un circuit intégré (integrated circuit) est un dispositif électronique miniature ou composant, représenté par la lettre "IC" dans les schémas.
 
-A certain process is used to interconnect the transistors, resistors, capacitors, inductors and other components and wiring required in a circuit, fabricate on a small or several small semiconductor wafers or dielectric substrates, and then package them in a package , it has become a micro-structure with the required circuit functions; all of the components have been structured as a whole, making electronic components a big step towards micro-miniaturization, low power consumption, intelligence and high reliability.
+Un certain procédé est utilisé pour interconnecter les transistors, résistances, condensateurs, inducteurs et autres composants et câblages nécessaires dans un circuit, fabriqués sur une ou plusieurs petites plaquettes semi-conductrices ou substrats diélectriques, puis encapsulés pour former une microstructure avec les fonctions de circuit requises ; tous les composants sont structurés comme un tout, ce qui permet aux composants électroniques de faire un grand pas vers la miniaturisation, la faible consommation d'énergie, l'intelligence et la haute fiabilité.
 
-The inventors of integrated circuits are Jack Kilby (integrated circuits based on germanium (Ge)) and Robert Norton Noyce (integrated circuits based on silicon (Si)).
+Les inventeurs des circuits intégrés sont Jack Kilby (circuits intégrés basés sur le germanium (Ge)) et Robert Norton Noyce (circuits intégrés basés sur le silicium (Si)).
 
-This kit is equipped with an IC, 74HC595, which can greatly save the use of GPIO pins.
-Specifically, it can replace 8 pins for digital signal output by writing an 8-bit binary number.
+Ce kit est équipé d'un CI, le 74HC595, qui permet de réduire considérablement l'utilisation des broches GPIO.
+Concrètement, il peut remplacer 8 broches pour la sortie de signaux numériques en écrivant un nombre binaire de 8 bits.
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
 * :ref:`74HC595`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -73,11 +72,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 8(220Ω)
+        - 8 (220Ω)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_led`
@@ -88,64 +87,58 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_74hc_led|
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* Lorsque MR (broche 10) est en niveau haut et OE (broche 13) est en niveau bas, les données sont entrées au front montant de SHcp et vont au registre de mémoire par le front montant de SHcp.
+* Si les deux horloges sont connectées ensemble, le registre à décalage est toujours une impulsion plus tôt que le registre de mémoire.
+* Il y a une broche d'entrée de décalage série (Ds), une broche de sortie série (Q) et un bouton de réinitialisation asynchrone (niveau bas) dans le registre de mémoire.
+* Le registre de mémoire produit un bus en parallèle de 8 bits et en trois états.
+* Lorsque OE est activé (niveau bas), les données du registre de mémoire sont sorties vers le bus (Q0 ~ Q7).
 
-
-**Wiring**
-
+**Câblage**
 
 |wiring_74hc_led|
 
 **Code**
 
-
 .. note::
 
-    * You can open the file ``5.1_microchip_74hc595.ino`` under the path of ``kepler-kit-main/arduino/5.1_microchip_74hc595``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Vous pouvez ouvrir le fichier ``5.1_microchip_74hc595.ino`` sous le chemin ``kepler-kit-main/arduino/5.1_microchip_74hc595``.
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton **Upload**.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/71854882-0c1b-4d09-b3e7-5ef7272f7293/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Lorsque le programme est en cours d'exécution, vous verrez les LED s'allumer une par une.
 
+**Comment ça marche ?**
 
-When the program is running, you can see the LEDs turning on one after another.
-
-**How it works?**
-
-Declare an array, store several 8 bit binary numbers that are used to change the working state of the eight LEDs controlled by 74HC595. 
+Déclarez un tableau, stockez plusieurs nombres binaires de 8 bits qui sont utilisés pour changer l'état de fonctionnement des huit LED contrôlées par le 74HC595.
 
 .. code-block:: arduino
 
     int datArray[] = {0b00000000, 0b00000001, 0b00000011, 0b00000111, 0b00001111, 0b00011111, 0b00111111, 0b01111111, 0b11111111};
 
-Set ``STcp`` to low level first and then high level. It will generate a rising edge pulse of ``STcp``.
+Réglez ``STcp`` sur niveau bas puis sur niveau haut. Cela générera une impulsion de front montant de ``STcp``.
 
 .. code-block:: arduino
 
     digitalWrite(STcp,LOW); 
 
-``shiftOut()`` is used to shift out a byte of data one bit at a time, which means to shift a byte of data in datArray[num] to the shifting register with the DS pin. MSBFIRST means to move from high bits.
+``shiftOut()`` est utilisé pour décaler un octet de données un bit à la fois, ce qui signifie déplacer un octet de données dans datArray[num] vers le registre de décalage avec la broche DS. MSBFIRST signifie déplacer à partir des bits de poids fort.
 
 .. code-block:: arduino
 
     shiftOut(DS,SHcp,MSBFIRST,datArray[num]);
 
-After ``digitalWrite(STcp,HIGH)`` is run, the STcp will be at the rising edge. At this time, the data in the shift register will be moved to the memory register. 
+Après que ``digitalWrite(STcp,HIGH)`` soit exécuté, STcp sera au front montant. À ce moment, les données du registre de décalage seront déplacées vers le registre de mémoire.
 
 .. code-block:: arduino
 
     digitalWrite(STcp,HIGH);
 
-A byte of data will be transferred into the memory register after 8 times. Then the data of memory register are output to the bus (Q0-Q7). For example, shiftout ``B00000001`` will light up the LED controlled by Q0 and turn off the LED controlled by Q1~Q7. 
+Un octet de données sera transféré dans le registre de mémoire après 8 itérations. Ensuite, les données du registre de mémoire sont sorties vers le bus (Q0-Q7). Par exemple, décaler ``B00000001`` allumera la LED contrôlée par Q0 et éteindra les LED contrôlées par Q1~Q7.

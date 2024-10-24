@@ -1,60 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_buzzer:
 
+
 Buzzer
-=======
+=========
 
 
-As a type of electronic buzzer with an integrated structure, buzzers, which are supplied by DC power, are widely used in computers, printers, photocopiers, alarms, electronic toys, automotive electronic devices, telephones, timers and other electronic products or voice devices. 
+Le buzzer est un type de dispositif sonore électronique à structure intégrée, alimenté par une source de courant continu. On le retrouve couramment dans les ordinateurs, imprimantes, photocopieurs, alarmes, jouets électroniques, dispositifs électroniques automobiles, téléphones, minuteurs et autres produits ou appareils à commande vocale.
 
-Buzzers can be categorized as active and passive ones (see the following picture). Turn the buzzer so that its pins are facing up, and the buzzer with a green circuit board is a passive buzzer, while the one enclosed with a black tape is an active one.
-
+Les buzzers peuvent être classés en deux catégories : actifs et passifs (voir l'image ci-dessous). En orientant le buzzer de manière à ce que ses broches soient dirigées vers le haut, vous verrez que celui avec une carte de circuit imprimé verte est un buzzer passif, tandis que celui entouré d'un ruban noir est un buzzer actif.
 
 |img_buzzer|
 
-The difference between an active buzzer and a passive buzzer: 
+Différence entre un buzzer actif et un buzzer passif :
 
-An active buzzer has a built-in oscillating source, so it will make sounds when electrified. But a passive buzzer does not have such source, so it will not beep if DC signals are used; instead, you need to use square waves whose frequency is between 2K and 5K to drive it. The active buzzer is often more expensive than the passive one because of multiple built-in oscillating circuits.
+Un buzzer actif possède une source d'oscillation intégrée, il émet donc un son lorsqu'il est alimenté. Un buzzer passif, en revanche, ne dispose pas de cette source, il ne produira donc pas de bip avec des signaux en courant continu ; vous devrez utiliser des ondes carrées dont la fréquence est comprise entre 2 kHz et 5 kHz pour le faire fonctionner. Le buzzer actif est souvent plus coûteux que le passif en raison des circuits oscillants intégrés.
 
-The following is the electrical symbol of a buzzer. It has two pins with positive and negative poles. With a + in the surface represents the anode and the other is the cathode. 
+Voici le symbole électrique d'un buzzer. Il possède deux broches avec des pôles positif et négatif. Le + sur la surface indique l'anode, l'autre broche étant la cathode.
 
 |img_buzzer_symbol|
 
-You can check the pins of the buzzer, the longer one is the anode and the shorter one is the cathode. Please don't mix them up when connecting, otherwise the buzzer will not make sound. 
+Vous pouvez identifier les broches du buzzer : la plus longue est l'anode et la plus courte est la cathode. Veillez à ne pas les inverser lors du branchement, sinon le buzzer ne produira aucun son.
 
 `Buzzer - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
 
 .. Example
 .. -------------------
 
-.. :ref:`Intruder Alarm`
+.. :ref:`Alarme anti-intrusion`
 
-.. :ref:`Custom Tone`
+.. :ref:`Tonalité personnalisée`
 
-**Example**
+**Exemple**
 
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_ac_buz` (pour les utilisateurs de MicroPython)
+* :ref:`py_pa_buz` (pour les utilisateurs de MicroPython)
+* :ref:`py_light_theremin` (pour les utilisateurs de MicroPython)
+* :ref:`py_alarm_lamp` (pour les utilisateurs de MicroPython)
+* :ref:`py_music_player` (pour les utilisateurs de MicroPython)
+* :ref:`py_fruit_piano` (pour les utilisateurs de MicroPython)
+* :ref:`py_reversing_aid` (pour les utilisateurs de MicroPython)
+* :ref:`ar_ac_buz` (pour les utilisateurs d'Arduino)
+* :ref:`ar_pa_buz` (pour les utilisateurs d'Arduino)
+* :ref:`per_service_bell` (pour les utilisateurs de Piper Make)
+* :ref:`per_reversing_system` (pour les utilisateurs de Piper Make)
+* :ref:`per_reaction_game` (pour les utilisateurs de Piper Make)

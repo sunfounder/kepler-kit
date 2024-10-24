@@ -1,62 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez au cœur des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_slide:
 
-2.7 Toggle Left and Right
-====================================
+2.7 Basculer à gauche et à droite
+========================================
 
 |img_slide|
 
-The slide switch is a 3-pin device, with pin 2 (middle) being the common pin. When the switch is toggled to the left, the left two pins are connected together, and when toggled to the right, the right two pins are connected together. 
+Le commutateur à glissière est un dispositif à 3 broches, la broche 2 (centrale) étant la broche commune. Lorsque le commutateur est basculé à gauche, les deux broches de gauche sont connectées, et lorsqu'il est basculé à droite, les deux broches de droite sont connectées.
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -65,35 +63,35 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_slide_switch`
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_slide|
 
-GP14 will get a different level, when you toggle the slide switch to the right or left.
+GP14 obtiendra un niveau différent lorsque vous basculerez le commutateur à glissière vers la gauche ou la droite.
 
-The purpose of the 10K resistor is to keep the GP14 low during toggling (not toggling to the far left and not toggling to the far right).
+La résistance de 10KΩ sert à maintenir GP14 à un niveau bas pendant que vous basculez (lorsque le commutateur n'est pas basculé complètement à gauche ou à droite).
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+Le condensateur céramique 104 est utilisé ici pour éliminer les interférences.
 
 * :ref:`cpn_slide_switch`
 * :ref:`cpn_capacitor`
 
-**Wiring**
+**Câblage**
 
 |wiring_slide|
 
@@ -101,11 +99,11 @@ The 104 ceramic capacitor is used here to eliminate jitter.
 
 .. note::
 
-    * Open the ``2.7_slide_switch.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``2.7_slide_switch.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez consulter :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -118,4 +116,4 @@ The 104 ceramic capacitor is used here to eliminate jitter.
             utime.sleep(1)
 
 
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the shell.
+Après l'exécution du programme, lorsque vous basculerez le commutateur à glissière vers la droite, "Le commutateur fonctionne !" apparaîtra dans le shell.

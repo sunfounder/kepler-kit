@@ -1,31 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Approfondissez vos connaissances en Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et découvrez des avant-goûts exclusifs.
+    - **Réductions spéciales** : Bénéficiez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 49: Improving IMU Performance with a Complimentary Filter
-=============================================================================
-This tutorial covers improving tilt measurement accuracy using the MPU6050 sensor and Raspberry Pi Pico W:
+Leçon 49 : Améliorer les performances de l'IMU avec un filtre complémentaire
+=================================================================================
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
-* **Challenges**: Accelerometers are noisy; gyroscopes suffer from drift.
-* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data.
-* **Implementation**: Calculate roll and pitch, blend using a complementary filter for accuracy and low noise.
-* **Results**: Achieve accurate, responsive tilt measurements with minimal noise and drift.
-* **Homework**: Implement and fine-tune the method, exploring ways to eliminate steady-state error.
+Ce tutoriel explique comment améliorer la précision des mesures d'inclinaison en utilisant le capteur MPU6050 avec le Raspberry Pi Pico W :
+
+* **Configuration** : Connectez le MPU6050 au Raspberry Pi Pico W.
+* **Défis** : Les accéléromètres sont sujets au bruit, tandis que les gyroscopes souffrent de dérive.
+* **Solution** : Utiliser un filtre complémentaire pour combiner les données de l'accéléromètre et du gyroscope.
+* **Mise en œuvre** : Calculer le roulis et le tangage, puis les combiner à l'aide d'un filtre complémentaire pour obtenir des mesures précises et avec peu de bruit.
+* **Résultats** : Obtenez des mesures d'inclinaison précises, réactives, avec un minimum de bruit et de dérive.
+* **Devoir** : Implémentez et affinez la méthode, en explorant des moyens d'éliminer les erreurs en régime permanent.
 
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

@@ -1,62 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans le monde du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et tirages au sort** : Participez à des promotions spéciales et à des concours.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _play_sc:
 
-9. Play in @SunFounder Controller
-====================================
+9. Jouer avec le contrôleur @SunFounder
+===========================================
 
-In this project, you will learn how to build a remote project using Sunfounder Controller APP.
-In a LAN environment, you can control your Pico W circuit with your phone/tablet.
-You will find this app very useful if you want to build a simple robot with Pico W.
+Dans ce projet, vous apprendrez à créer un projet à distance en utilisant l'application Sunfounder Controller.
+Dans un environnement LAN, vous pouvez contrôler votre circuit Pico W avec votre téléphone ou votre tablette.
+Vous trouverez cette application très utile si vous souhaitez construire un robot simple avec le Pico W.
 
-Here, we will use the slider bar on the APP to control the servo angle and the gauge on the APP to show the distance detected by ultrasonic.
+Ici, nous utiliserons la barre de curseur de l'application pour contrôler l'angle du servo et le manomètre de l'application pour afficher la distance détectée par le capteur ultrasonique.
 
-**1. Required Components**
+**1. Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est définitivement pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ARTICLES DANS CE KIT
+        - LIEN
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément à partir des liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -80,120 +80,116 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Batterie 18650
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Support de batterie
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Construire le circuit**
 
-.. warning:: 
-        
-    Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+.. warning::
+
+    Assurez-vous que votre module de charge Li-po est connecté comme indiqué sur le schéma. Sinon, un court-circuit pourrait endommager votre batterie et votre circuit.
 
 .. image:: img/wiring/9.sc_bb.png
     :width: 800
 
 
-**3. Setup SunFounder Controller**
+**3. Configurer le contrôleur SunFounder**
 
-1. Install `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ from **APP Store(iOS)** or **Google Play(Android)**.
+1. Installez `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_ depuis l'**APP Store (iOS)** ou **Google Play (Android)**.
 
-2. Open the APP and click the **+** button on the home page to create a controller.
+2. Ouvrez l'application et cliquez sur le bouton **+** sur la page d'accueil pour créer un contrôleur.
 
     .. image:: img/sc-a-2.jpg
         :width: 800
 
-3. Here we choose **Blank** and **Dual Stick**.
+3. Ici, nous choisissons **Blank** et **Dual Stick**.
 
     .. image:: img/sc-a-3.jpg
         :width: 800
 
-4. Now we get an empty controller.
+4. Vous obtenez maintenant un contrôleur vide.
 
     .. image:: img/sc-a-4.jpg
         :width: 800
 
-5. Click on the **H** area and add a **Slider** widget.
+5. Cliquez sur la zone **H** et ajoutez un widget **Slider**.
 
     .. image:: img/sc-a-5.jpg
         :width: 800
 
-6. Click the gear on the control to open the settings window.
+6. Cliquez sur l'engrenage du contrôle pour ouvrir la fenêtre des paramètres.
 
     .. image:: img/sc-a-6.png
         :width: 300
 
-7. Set Maximum to 180 and Minimum to 0, then click to **Confirm**.
+7. Réglez Maximum à 180 et Minimum à 0, puis cliquez sur **Confirmer**.
 
     .. image:: img/sc-a-7.jpg
         :width: 800
 
-8. Click on the L area and add a Gauge widget.
+8. Cliquez sur la zone L et ajoutez un widget Gauge.
 
     .. image:: img/sc-a-8.jpg
         :width: 800
 
-9. Click the gear of the Gauge, open the settings window, set Maximum to 100, Minimum to 0, and unit to cm.
+9. Cliquez sur l'engrenage du Gauge, ouvrez la fenêtre des paramètres, réglez Maximum à 100, Minimum à 0 et unité à cm.
 
     .. image:: img/sc-a-9.jpg
         :width: 800
 
-10. After finishing the widget settings, click Save.
+10. Après avoir terminé les réglages des widgets, cliquez sur Sauvegarder.
 
     .. image:: img/sc-a-10.png
         :width: 300
 
-
-
-**4. Run the Code**
+**4. Exécuter le code**
 
 .. note:: 
-    If your Pico W is now using the Anvil firmware, then you will need to :ref:`install_micropython_on_pico`.
+    Si votre Pico W utilise actuellement le firmware Anvil, vous devrez :ref:`install_micropython_on_pico`.
 
-
-1. Upload ``ws.py`` and ``websocket_helper.py`` from the path of ``kepler-kit-main/libs`` to the Raspberry Pi Pico W.
+1. Téléchargez ``ws.py`` et ``websocket_helper.py`` depuis le chemin ``kepler-kit-main/libs`` vers le Raspberry Pi Pico W.
 
     .. image:: img/9_sc3.png
 
-2. Double click the ``ws.py`` script and fill your WiFi's ``SSID`` and ``PASSWORD``.
+2. Double-cliquez sur le script ``ws.py`` et renseignez les ``SSID`` et ``PASSWORD`` de votre réseau Wi-Fi.
 
     .. image:: img/9_sc1.png
 
-3. Open the ``9_sunfounder_controller.py`` under the path of ``kepler-kit-main/iot``. Click the **Run current script** button or press F5 to run it. After successful connection, you will see the IP of Pico W.
+3. Ouvrez ``9_sunfounder_controller.py`` dans le chemin ``kepler-kit-main/iot``. Cliquez sur le bouton **Run current script** ou appuyez sur F5 pour l'exécuter. Après une connexion réussie, vous verrez l'adresse IP de Pico W.
 
     .. image:: img/9_sc2.png
 
     .. note::
-        If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+        Si vous souhaitez que ce script se lance au démarrage, vous pouvez le sauvegarder sur le Raspberry Pi Pico W en tant que ``main.py``.
 
-4. Back to SunFounder Controller APP, click the **Connect** button.
+4. Retournez sur l'application SunFounder Controller et cliquez sur le bouton **Connect**.
 
     .. image:: img/sc-c-4.jpg
         :width: 300
 
-5. If PicoW is detected, tap it directly to connect.
+5. Si Pico W est détecté, touchez-le directement pour vous connecter.
 
     .. image:: img/sc-c-5.jpg
         :width: 300
 
-6. If it doesn't search automatically, you can also manually enter the IP to connect.
+6. S'il ne se connecte pas automatiquement, vous pouvez aussi entrer manuellement l'adresse IP pour vous connecter.
 
     .. image:: img/sc-c-6.png
         :width: 800
 
-7. When you slide the slider bar in the H area after clicking the Run button, the servo will adjust its angle. The gauge in the L area will show the distance if your hand is within 100cm of the ultrasonic sensor.
+7. Lorsque vous faites glisser la barre de curseur dans la zone H après avoir cliqué sur le bouton Run, le servo ajustera son angle. Le manomètre dans la zone L affichera la distance si votre main se trouve à moins de 100 cm du capteur ultrasonique.
 
     .. image:: img/sc-c-8.jpg
         :width: 300
 
-**How it works?**
+**Comment ça marche ?**
 
-
-The ``WS_Server`` class in the ``ws.py`` library implements communication with the APP. Below is the framework for implementing its basic functionality.
+La classe ``WS_Server`` dans la bibliothèque ``ws.py`` permet de communiquer avec l'application. Voici le cadre pour implémenter sa fonctionnalité de base.
 
 .. code-block:: python
 
@@ -214,50 +210,47 @@ The ``WS_Server`` class in the ``ws.py`` library implements communication with t
     finally:
         ws.stop()
 
-
-First, we need to create a ``WS_Server`` object.
+Tout d'abord, nous devons créer un objet ``WS_Server``.
 
 .. code-block:: python
 
     ws = WS_Server(8765) 
 
-Star it.
+Lancer le serveur.
 
 .. code-block:: python
 
     ws.start()
 
-
-Next, a ``while True`` loop is used to perform the data transfer between Pico W and the SunFounder Controller APP.
+Ensuite, une boucle ``while True`` est utilisée pour effectuer le transfert de données entre Pico W et l'application SunFounder Controller.
 
 .. code-block:: python
 
     while True:
-        #  websocket transfer data
-        status,result = ws.transfer()
+        # transfert des données via websocket
+        status, result = ws.transfer()
 
-        # the status of transfer data
+        # état du transfert de données
         print(status)
 
-        # the data you recv
+        # données reçues
         print(result)
 
-        # the data you send
+        # données envoyées
         print(ws.send_dict)
-
         
         time.sleep_ms(100)
 
-``status`` is ``False`` if it fails to get data from the SunFounder Controller APP.
+``status`` est ``False`` si la réception des données de l'application échoue.
 
-And ``result`` is the data that Pico W fetched from the SunFounder Controller APP.
-Print it out and you will see something like the following. This is the value of all Widget areas.
+Et ``result`` contient les données que Pico W a récupérées depuis l'application. 
+En les affichant, vous verrez quelque chose comme ceci, qui représente les valeurs de toutes les zones des widgets.
 
 .. code-block:: 
 
     {'C': None, 'B': None, 'M': None,,,,, 'A': None, 'R': None}
 
-As in this case, we print the values of the H area separately and use them to operate the circuit.
+Dans cet exemple, nous imprimons les valeurs de la zone H séparément et les utilisons pour contrôler le circuit.
 
 .. code-block:: python
 
@@ -267,25 +260,25 @@ As in this case, we print the values of the H area separately and use them to op
             print(result['H'])
 
 
-And the ``ws.send_dict`` dictionary is the data that Pico W sends to the SunFounder Controller APP. It is created in the ``WS_Server`` class. It will be sent when ``ws.transfer()`` is executed.
+Le dictionnaire ``ws.send_dict`` contient les données que Pico W envoie à l'application SunFounder Controller. Il est créé dans la classe ``WS_Server`` et est envoyé lorsque ``ws.transfer()`` est exécuté.
 
-Its message is shown below.
+Le message est illustré ci-dessous.
 
 .. code-block:: python
 
     {'Check': 'SunFounder Controller', 'Name': 'PicoW', 'Type': 'Blank'}
 
-This is a blank message, to copy it to the widget on SunFounder Controller APP, we need to assign the value to the corresponding area in the dictionary. For example, assign the value ``50`` to the L area.
+C'est un message vierge, pour copier les données sur le widget de l'application, nous devons attribuer une valeur à la zone correspondante du dictionnaire. Par exemple, attribuer la valeur ``50`` à la zone L.
 
 .. code-block:: python
 
         ws.send_dict['L'] = 50
 
-The data is shown below:
+Les données apparaîtront ainsi :
 
 .. code-block:: python
 
     {'L': 50, 'Type': 'Blank', 'Name': 'PicoW', 'Check': 'SunFounder Controller'}
 
 
-For more details on using SunFounder Controller, please see `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.
+Pour plus de détails sur l'utilisation de SunFounder Controller, veuillez consulter `SunFounder Controller APP <https://docs.sunfounder.com/projects/sf-controller/en/latest/>`_.

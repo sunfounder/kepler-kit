@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 17:  Buttons and Pull Up Resistors in Micropython
+Leçon 17 : Boutons-poussoirs et résistances pull-up en MicroPython
 =============================================================================
 
-This tutorial covers using push buttons in MicroPython with the Raspberry Pi Pico W:
+Ce tutoriel explique comment utiliser des boutons-poussoirs en MicroPython avec le Raspberry Pi Pico W :
 
-* **Introduction**: Overview of using push buttons to control components like LEDs.
-* **Types of Push Buttons**: Describes various push buttons in the SunFounder kit.
-* **Circuit Setup**: Wiring a push button to GPIO pin 14 with internal pull-up resistors.
-* **How Push Buttons Work**: Explains open and closed states in circuits.
-* **Internal Pull-Up Resistors**: Activating pull-up resistors in MicroPython to simplify wiring.
+* **Introduction** : Vue d'ensemble sur l'utilisation des boutons-poussoirs pour contrôler des composants comme les LEDs.
+* **Types de boutons-poussoirs** : Description des différents boutons-poussoirs inclus dans le kit SunFounder.
+* **Configuration du circuit** : Câblage d'un bouton-poussoir à la broche GPIO 14 avec des résistances pull-up internes.
+* **Fonctionnement des boutons-poussoirs** : Explication des états ouvert et fermé dans les circuits.
+* **Résistances pull-up internes** : Activation des résistances pull-up en MicroPython pour simplifier le câblage.
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

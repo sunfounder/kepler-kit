@@ -1,65 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_light_theremin:
 
-7.1 Light Theremin
+7.1 Theremin lumineux
 =========================
 
-Theremin is an electronic musical instrument that does not require physical contact. Based on the position of the player's hand, it produces different tones.
+Le Theremin est un instrument de musique électronique qui ne nécessite aucun contact physique. En fonction de la position de la main du joueur, il produit différents sons.
 
-Its controlling section is usually made up of two metal antennas that sense the position of the thereminist's hands and control oscillators with one hand and volume with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+Sa partie de contrôle est généralement composée de deux antennes métalliques qui détectent la position des mains du thereministe : l'une contrôle les oscillateurs et l'autre le volume. Les signaux électriques émis par le theremin sont amplifiés et envoyés à un haut-parleur.
 
-We cannot reproduce the same instrument through Pico W, but we can use photoresistor and passive buzzer to achieve similar gameplay.
+Nous ne pouvons pas reproduire exactement le même instrument avec la Pico W, mais nous pouvons utiliser une photo-résistance et un buzzer passif pour obtenir un effet similaire.
 
 * `Theremin - Wikipedia <https://en.wikipedia.org/wiki/Theremin>`_
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous aurons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -68,7 +67,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -83,7 +82,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - Buzzer passif :ref:`cpn_buzzer`
         - 1
         - 
     *   - 9
@@ -91,19 +90,19 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_light_theremin|
 
-Before starting the project, wave your hand up and down over the photoresistor to calibrate the range of light intensity. The LED connected in GP16 is used to indicate the debugging time, and the LED is lit to indicate the start of debugging and off to indicate the end of debugging.
+Avant de commencer le projet, passez votre main de haut en bas au-dessus de la photo-résistance pour calibrer la plage d'intensité lumineuse. La LED connectée au GP16 est utilisée pour indiquer la période de calibration : la LED s'allume pour signaler le début de la calibration et s'éteint pour indiquer la fin.
 
-When GP15 outputs high level, S8050 (NPN transistor) conducts and the passive buzzer starts to sound.
+Lorsque GP15 émet un niveau haut, le transistor S8050 (NPN) conduit et le buzzer passif commence à émettre un son.
 
-When the light is stronger, GP28's value is smaller; vice versa, it is larger when the light is weaker.
-By programming the value of the photoresistor to affect the frequency of the passive buzzer, a photosensitive device can be simulated.
+Plus la lumière est forte, plus la valeur de GP28 est faible ; à l'inverse, elle est plus élevée lorsque la lumière est plus faible.
+En programmant la valeur de la photo-résistance pour affecter la fréquence du buzzer passif, on peut simuler un dispositif photosensible.
 
 
-**Wiring**
+**Câblage**
 
 |wiring_light_theremin|
 
@@ -112,60 +111,59 @@ By programming the value of the photoresistor to affect the frequency of the pas
 
 .. note::
 
-    * Open the ``7.1_light_theremin.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``7.1_light_theremin.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 .. code-block:: python
 
     import machine
     import utime
 
-    # Initialize LED, photoresistor, and buzzer
-    led = machine.Pin(16, machine.Pin.OUT)  # LED on pin 16
-    photoresistor = machine.ADC(28)  # Photoresistor on ADC pin 28
-    buzzer = machine.PWM(machine.Pin(15))  # Buzzer on pin 15 with PWM
+    # Initialiser la LED, la photo-résistance et le buzzer
+    led = machine.Pin(16, machine.Pin.OUT)  # LED sur la broche 16
+    photoresistor = machine.ADC(28)  # Photo-résistance sur la broche ADC 28
+    buzzer = machine.PWM(machine.Pin(15))  # Buzzer sur la broche 15 avec PWM
 
-    # Variables to store the highest and lowest light readings for calibration
+    # Variables pour stocker les valeurs maximales et minimales de la lumière pour la calibration
     light_low = 65535 
     light_high = 0 
 
-    # Function to map one range of values to another
+    # Fonction pour mapper une plage de valeurs à une autre
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    # Function to play a tone on the buzzer at a specified frequency for a set duration
+    # Fonction pour jouer une tonalité sur le buzzer à une fréquence spécifiée pendant une durée définie
     def tone(pin, frequency, duration):
-        pin.freq(frequency)  # Set buzzer frequency
-        pin.duty_u16(30000)  # Set duty cycle to around 50%
-        utime.sleep_ms(duration)  # Play the tone for the specified duration
-        pin.duty_u16(0)  # Turn off the tone by setting duty cycle to 0
+        pin.freq(frequency)  # Définir la fréquence du buzzer
+        pin.duty_u16(30000)  # Régler le cycle de service à environ 50%
+        utime.sleep_ms(duration)  # Jouer la tonalité pendant la durée spécifiée
+        pin.duty_u16(0)  # Éteindre la tonalité en réglant le cycle de service à 0
 
-    # Calibrate the photoresistor by finding the highest and lowest light values over 5 seconds
-    timer_init_start = utime.ticks_ms()  # Get the current time (start time)
-    led.value(1)  # Turn on LED to indicate calibration is in progress
-    while utime.ticks_diff(utime.ticks_ms(), timer_init_start) < 5000:  # Run calibration for 5 seconds
-        light_value = photoresistor.read_u16()  # Read the light value from the photoresistor
-        if light_value > light_high:  # Track the maximum light value
+    # Calibrer la photo-résistance en trouvant les valeurs maximales et minimales de la lumière sur 5 secondes
+    timer_init_start = utime.ticks_ms()  # Obtenir l'heure actuelle (heure de début)
+    led.value(1)  # Allumer la LED pour indiquer que la calibration est en cours
+    while utime.ticks_diff(utime.ticks_ms(), timer_init_start) < 5000:  # Effectuer la calibration pendant 5 secondes
+        light_value = photoresistor.read_u16()  # Lire la valeur de la lumière de la photo-résistance
+        if light_value > light_high:  # Suivre la valeur maximale de la lumière
             light_high = light_value
-        if light_value < light_low:  # Track the minimum light value
+        if light_value < light_low:  # Suivre la valeur minimale de la lumière
             light_low = light_value
-    led.value(0)  # Turn off the LED after calibration
+    led.value(0)  # Éteindre la LED après la calibration
 
-    # Main loop to read light levels and play corresponding tones
+    # Boucle principale pour lire les niveaux de lumière et jouer les tonalités correspondantes
     while True:
-        light_value = photoresistor.read_u16()  # Read the current light value from the photoresistor
-        pitch = int(interval_mapping(light_value, light_low, light_high, 50, 6000))  # Map light value to a pitch range
-        if pitch > 50:  # Only play tones if the pitch is above a minimum threshold
-            tone(buzzer, pitch, 20)  # Play the corresponding pitch for 20ms
-        utime.sleep_ms(10)  # Small delay between readings
+        light_value = photoresistor.read_u16()  # Lire la valeur actuelle de la lumière de la photo-résistance
+        pitch = int(interval_mapping(light_value, light_low, light_high, 50, 6000))  # Mapper la valeur de la lumière à une plage de tonalités
+        if pitch > 50:  # Jouer les tonalités uniquement si la fréquence est au-dessus d'un seuil minimal
+            tone(buzzer, pitch, 20)  # Jouer la tonalité correspondante pendant 20ms
+        utime.sleep_ms(10)  # Petit délai entre les lectures
 
 
-As soon as the program runs, the LED will light up, and we will have five seconds to calibrate the photoresistor's detection range.
+Dès que le programme se lance, la LED s'allume et vous aurez cinq secondes pour calibrer la plage de détection de la photo-résistance.
 
-This is due to the different light environments we may have when we use it (e.g., different light intensities at noon and dusk), as well as our hands' height above the photoresistor. You need to set the maximum and minimum height of your hand from the photoresistor, which is also the height at which you play the instrument.
+Cela est nécessaire en raison des différentes conditions d'éclairage auxquelles nous pouvons être confrontés (par exemple, intensités lumineuses différentes à midi et au crépuscule), ainsi que de la hauteur de votre main au-dessus de la photo-résistance. Vous devez définir la hauteur maximale et minimale de votre main par rapport à la photo-résistance, qui déterminera également la manière dont vous jouerez de l'instrument.
 
-After five seconds, the LED will turn off, at which point we can wave our hands over the photoresistor and play.
-
+Après cinq secondes, la LED s'éteindra, et vous pourrez alors agiter votre main au-dessus de la photo-résistance et commencer à jouer.

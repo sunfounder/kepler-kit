@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_led:
 
@@ -19,41 +19,40 @@ LED
 
 |img_led|
 
-Semiconductor light-emitting diode is a type of component which can turn electric energy into light energy via PN junctions. By wavelength, it can be categorized into laser diode, infrared light-emitting diode and visible light-emitting diode which is usually known as light-emitting diode (LED). 
-                    
-Diode has unidirectional conductivity, so the current flow will be as the arrow indicates in figure circuit symbol. You can only provide the anode with a positive power and the cathode with a negative. Thus the LED will light up. 
+La diode électroluminescente (LED) est un composant semi-conducteur capable de convertir l'énergie électrique en énergie lumineuse grâce aux jonctions PN. Selon la longueur d'onde, elle peut être classée en diode laser, diode émettant des infrarouges, et diode émettant de la lumière visible, généralement appelée LED.
+
+La diode a une conductivité unidirectionnelle, ce qui signifie que le courant circulera comme indiqué par la flèche dans le symbole de circuit. Il faut fournir une alimentation positive à l'anode et une alimentation négative à la cathode pour que la LED s'allume.
 
 |img_led_symbol|
 
-An LED has two pins. The longer one is the anode, and shorter one, the cathode. Pay attention not to connect them inversely. There is fixed forward voltage drop in the LED, so it cannot be connected with the circuit directly because the supply voltage can outweigh this drop and cause the LED to be burnt. The forward voltage of the red, yellow, and green LED is 1.8 V and that of the white one is 2.6 V. Most LEDs can withstand a maximum current of 20 mA, so we need to connect a current limiting resistor in series.                   
+Une LED possède deux broches : la plus longue est l'anode et la plus courte est la cathode. Faites attention à ne pas les connecter à l'envers. Il existe une chute de tension fixe en polarisation directe dans la LED, ce qui empêche de la connecter directement au circuit, car la tension d'alimentation pourrait dépasser cette chute de tension et endommager la LED. La tension de polarisation directe des LED rouges, jaunes et vertes est de 1,8 V, tandis que celle de la LED blanche est de 2,6 V. La plupart des LED supportent un courant maximum de 20 mA, il est donc nécessaire de connecter une résistance de limitation de courant en série.
 
-The formula of the resistance value is as follows:
+La formule pour déterminer la valeur de la résistance est la suivante :
 
     R = (Vsupply – VD)/I
 
-**R** stands for the resistance value of the current limiting resistor, **Vsupply** for voltage supply, **VD** for voltage drop and **I** for the working current of the LED.
+**R** représente la valeur de la résistance de limitation de courant, **Vsupply** la tension d'alimentation, **VD** la chute de tension et **I** le courant de fonctionnement de la LED.
 
-Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
+Voici une introduction détaillée sur les LED : `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
 
-.. **Example**
+.. **Exemple**
 
-.. * :ref:`Hello, Breadboard!` (For MicroPython User)
-.. * :ref:`fading_led_micropython` (For MicroPython User)
-.. * :ref:`fading_led_arduino` (For C/C++(Arduino) User)
-.. * :ref:`hello_led_arduino` (For C/C++(Arduino) User)
+.. * :ref:`Hello, Breadboard!` (pour les utilisateurs de MicroPython)
+.. * :ref:`fading_led_micropython` (pour les utilisateurs de MicroPython)
+.. * :ref:`fading_led_arduino` (pour les utilisateurs de C/C++(Arduino))
+.. * :ref:`hello_led_arduino` (pour les utilisateurs de C/C++(Arduino))
 
+**Exemple**
 
-**Example**
-
-* :ref:`py_led` (For MicroPython User)
-* :ref:`py_fade` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_led` (For Arduino User)
-* :ref:`ar_fade` (For Arduino User)
-* :ref:`per_blink` (For Piper Make User)
-* :ref:`per_button` (For Piper Make User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_led` (pour les utilisateurs de MicroPython)
+* :ref:`py_fade` (pour les utilisateurs de MicroPython)
+* :ref:`py_alarm_lamp` (pour les utilisateurs de MicroPython)
+* :ref:`py_traffic_light` (pour les utilisateurs de MicroPython)
+* :ref:`py_reversing_aid` (pour les utilisateurs de MicroPython)
+* :ref:`ar_led` (pour les utilisateurs d'Arduino)
+* :ref:`ar_fade` (pour les utilisateurs d'Arduino)
+* :ref:`per_blink` (pour les utilisateurs de Piper Make)
+* :ref:`per_button` (pour les utilisateurs de Piper Make)
+* :ref:`per_service_bell` (pour les utilisateurs de Piper Make)
+* :ref:`per_reversing_system` (pour les utilisateurs de Piper Make)
+* :ref:`per_reaction_game` (pour les utilisateurs de Piper Make)

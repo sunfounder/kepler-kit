@@ -1,64 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_led_bar:
 
-2.2 - Display the Level
+2.2 - Afficher le Niveau
 =============================
 
-
-The first project is simply to make the LED blink. In this project let's use the LED Bar Graph, which is made up of 10 LEDs packaged into a plastic case, generally used to display power or volume levels.
+Le premier projet consistait simplement à faire clignoter une LED. Dans ce projet, nous allons utiliser une barre de LED, composée de 10 LED regroupées dans un boîtier en plastique, généralement utilisée pour afficher des niveaux de puissance ou de volume.
 
 |img_led_bar_pin|
 
 * :ref:`cpn_led_bar`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -67,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -78,14 +76,13 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_ledbar|
 
-The LED Bar Graph contains 10 LEDs, each of which is individually controllable. Here, the anode of each of the 10 LEDs is connected to GP6~GP15, and the cathode is connected to a 220ohm resistor, and then to GND.
+La barre de LED contient 10 LED, chacune étant contrôlable individuellement. Ici, l'anode de chacune des 10 LED est connectée aux broches GP6 à GP15, et la cathode est reliée à une résistance de 220 ohms, puis à la masse (GND).
 
-
-**Wiring**
+**Câblage**
 
 |wiring_ledbar|
 
@@ -93,24 +90,23 @@ The LED Bar Graph contains 10 LEDs, each of which is individually controllable. 
 
 .. note::
 
-    * You can open the file ``2.2_display_the_level.ino`` under the path of ``kepler-kit-main/arduino/2.2_display_the_level``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Vous pouvez ouvrir le fichier ``2.2_display_the_level.ino`` sous le chemin ``kepler-kit-main/arduino/2.2_display_the_level``. 
+    * Ou copiez ce code dans l'**Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ae60e723-430e-4a58-ac39-566b9d1828e8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
 
-When the program is running, you will see the LEDs on the LED Bar Graph light up and then turn off in sequence.
+Lorsque le programme est en cours d'exécution, vous verrez les LED de la barre s'allumer puis s'éteindre successivement.
 
-**How it works?**
 
-Each of the ten LEDs on the LED Bar needs to be controlled by a pin, which means that we define these ten pins.
+**Comment ça fonctionne ?**
 
-The codes in ``setup()`` use the for loop to initialize pins 6~15 to output mode in turn.
+Chacune des dix LED de la barre doit être contrôlée par une broche, ce qui signifie que nous devons définir ces dix broches.
+
+Les lignes de code dans ``setup()`` utilisent une boucle for pour initialiser les broches 6 à 15 en mode sortie.
 
 .. code-block:: C
 
@@ -119,7 +115,7 @@ The codes in ``setup()`` use the for loop to initialize pins 6~15 to output mode
         pinMode(i,OUTPUT);
     }   
 
-The for loop is used in ``loop()`` to make the LED flash(turn on 0.5s, then turn off 0.5s) in sequence.
+La boucle for est utilisée dans ``loop()`` pour faire clignoter les LED (allumées pendant 0,5s, puis éteintes pendant 0,5s) en séquence.
 
 .. code-block:: C
 

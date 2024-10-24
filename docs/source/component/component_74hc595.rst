@@ -1,16 +1,16 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_74hc595:
 
@@ -19,46 +19,46 @@
 
 |img_74hc595|
 
-The 74HC595 consists of an 8−bit shift register and a storage register with three−state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU.
+Le 74HC595 est composé d'un registre à décalage 8 bits et d'un registre de stockage avec des sorties parallèles à trois états. Il permet de convertir une entrée série en sortie parallèle afin d'économiser les ports d'E/S d'un microcontrôleur.
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* Lorsque MR (broche 10) est à un niveau haut et que OE (broche 13) est à un niveau bas, les données sont entrées sur le front montant de SHcp et passent au registre mémoire via le front montant de SHcp.
+* Si les deux horloges sont connectées ensemble, le registre à décalage a toujours une impulsion d'avance par rapport au registre mémoire.
+* Le registre mémoire dispose d'une broche d'entrée série (Ds), d'une broche de sortie série (Q) et d'un bouton de réinitialisation asynchrone (niveau bas).
+* Le registre mémoire offre une sortie parallèle 8 bits en trois états.
+* Lorsque OE est activé (niveau bas), les données du registre mémoire sont transférées sur le bus (Q0 ~ Q7).
 
 * `74HC595 Datasheet <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
 
 |img_74jc595_pin|
 
-Pins of 74HC595 and their functions:
+Broches du 74HC595 et leurs fonctions :
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level; 
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level. 
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7** : Broches de sortie de données parallèles 8 bits, capables de contrôler directement 8 LEDs ou 8 broches d'un afficheur 7 segments.
+* **Q7'** : Broche de sortie série, connectée à DS d'un autre 74HC595 pour enchaîner plusieurs 74HC595 en série.
+* **MR** : Broche de réinitialisation, active à niveau bas ;
+* **SHcp** : Entrée d'horloge du registre à décalage. Sur le front montant, les données du registre à décalage se décalent successivement d'un bit, c'est-à-dire que les données de Q1 se déplacent vers Q2, et ainsi de suite. Sur le front descendant, les données restent inchangées.
+* **STcp** : Entrée d'horloge du registre de stockage. Sur le front montant, les données du registre à décalage sont transférées dans le registre mémoire.
+* **CE** : Broche d'activation de la sortie, active à niveau bas.
+* **DS** : Broche d'entrée de données série.
+* **VCC** : Tension d'alimentation positive.
+* **GND** : Masse.
 
 .. Example
 .. -------------------
 
 .. :ref:`Microchip - :ref:`cpn_74hc595``
 
-**Example**
+**Exemple**
 
-* :ref:`py_74hc_led` (For MicroPython User)
-* :ref:`py_74hc_7seg` (For MicroPython User)
-* :ref:`py_74hc_4dig` (For MicroPython User)
-* :ref:`py_74hc_788bs` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`py_10_second` (For MicroPython User)
-* :ref:`py_traffic_light` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_74hc_led` (For Arduino User)
-* :ref:`ar_74hc_7seg` (For Arduino User)
-* :ref:`ar_74hc_4dig` (For Arduino User)
-* :ref:`ar_74hc_788bs` (For Arduino User)
+* :ref:`py_74hc_led` (pour les utilisateurs de MicroPython)
+* :ref:`py_74hc_7seg` (pour les utilisateurs de MicroPython)
+* :ref:`py_74hc_4dig` (pour les utilisateurs de MicroPython)
+* :ref:`py_74hc_788bs` (pour les utilisateurs de MicroPython)
+* :ref:`py_passage_counter` (pour les utilisateurs de MicroPython)
+* :ref:`py_10_second` (pour les utilisateurs de MicroPython)
+* :ref:`py_traffic_light` (pour les utilisateurs de MicroPython)
+* :ref:`py_bubble_level` (pour les utilisateurs de MicroPython)
+* :ref:`ar_74hc_led` (pour les utilisateurs d'Arduino)
+* :ref:`ar_74hc_7seg` (pour les utilisateurs d'Arduino)
+* :ref:`ar_74hc_4dig` (pour les utilisateurs d'Arduino)
+* :ref:`ar_74hc_788bs` (pour les utilisateurs d'Arduino)

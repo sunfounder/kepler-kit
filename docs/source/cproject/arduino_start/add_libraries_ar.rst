@@ -1,42 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
+1.4 Installation des bibliothèques (Important)
+===================================================
 
-1.4 Install libraries (Important)
-======================================
+De nombreuses bibliothèques sont directement disponibles via le **Gestionnaire de Bibliothèques** d'Arduino. Vous pouvez y accéder en suivant ces étapes :
 
-Many libraries are available directly through the Arduino **Library Manager**. You can access the **Library Manager** by following these steps:
-
-In the **Library Manager**, you can search for the desired library by name or browse through different categories.
+Dans le **Gestionnaire de Bibliothèques**, vous pouvez rechercher la bibliothèque souhaitée par son nom ou parcourir les différentes catégories.
 
 .. note::
 
-   In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as “The DHT sensor library library is used here, you can install it from the **Library Manager**.” Simply install the recommended libraries as prompted.
+   Dans les projets nécessitant l'installation de bibliothèques, des indications vous guideront sur les bibliothèques à installer. Suivez les instructions fournies, telles que « La bibliothèque du capteur DHT est utilisée ici, vous pouvez l'installer via le **Gestionnaire de Bibliothèques**. » Il vous suffira d'installer les bibliothèques recommandées comme indiqué.
 
 .. image:: img/install_lib3.png
 
-Once you find the library you want to install, click on it and then click the **INSTALL** button.
+Une fois que vous avez trouvé la bibliothèque que vous souhaitez installer, cliquez dessus puis appuyez sur le bouton **INSTALLER**.
 
 .. image:: img/install_lib2.png
 
-The Arduino IDE will automatically download and install the library for you.
-
+L'IDE Arduino téléchargera et installera automatiquement la bibliothèque pour vous.
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Les bibliothèques installées se trouvent dans le répertoire de bibliothèque par défaut de l'IDE Arduino, qui est généralement situé à ``C:\Users\xxx\Documents\Arduino\libraries``.
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   Si votre répertoire de bibliothèques est différent, vous pouvez le vérifier en allant dans **Fichier** -> **Préférences**.
 
       .. image:: img/install_lib1.png

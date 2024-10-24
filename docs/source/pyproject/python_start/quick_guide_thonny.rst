@@ -1,52 +1,52 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-1.5 Quick Guide on Thonny
+1.5 Guide Rapide sur Thonny
 ==================================
 
 .. _open_run_code_py:
 
-Open and Run Code Directly
+Ouvrir et Exécuter du Code Directement
 ---------------------------------------------
 
-The code section in the projects tells you exactly which code is used, so double-click on the ``.py`` file with the serial number in the ``kepler-kit-main/micropython/`` path to open it. 
+La section de code des projets vous indique exactement quel code est utilisé, il suffit donc de double-cliquer sur le fichier ``.py`` avec le numéro de série dans le chemin ``kepler-kit-main/micropython/`` pour l'ouvrir.
 
-However, you must first download the package and upload the library, as described in :ref:`add_libraries_py`.
+Cependant, vous devez d'abord télécharger le package et charger la bibliothèque, comme décrit dans :ref:`add_libraries_py`.
 
-#. Open code.
+#. Ouvrir le code.
 
-    For example, ``2.1_hello_led.py``.
+    Par exemple, ``2.1_hello_led.py``.
 
-    If you double click on it, a new window will open on the right. You can open more than one code at the same time.
+    Si vous double-cliquez dessus, une nouvelle fenêtre s'ouvrira sur la droite. Vous pouvez ouvrir plusieurs codes en même temps.
 
     |open_code|
 
-#. Select correct interpreter
+#. Sélectionner le bon interpréteur
 
-    Use a micro USB cable to connect the Pico W to your computer and select the "MicroPython (Raspberry Pi Pico)" interpreter.
+    Utilisez un câble micro USB pour connecter le Pico W à votre ordinateur et sélectionnez l'interpréteur "MicroPython (Raspberry Pi Pico)".
 
     |sec_inter|
 
-#. Run the code
+#. Exécuter le code
 
-    To run the script, click the **Run current script** button or press F5.
+    Pour exécuter le script, cliquez sur le bouton **Exécuter le script actuel** ou appuyez sur F5.
 
     |run_it|
 
-    If the code contains any information that needs to be printed, it will appear in the Shell; otherwise, only the following information will appear.
+    Si le code contient des informations à imprimer, elles apparaîtront dans le Shell ; sinon, seule l'information suivante apparaîtra.
 
-    Click **View** -> **Edit** to open the Shell window if it doesn't appear on your Thonny.
+    Cliquez sur **Affichage** -> **Modifier** pour ouvrir la fenêtre Shell si elle n'apparaît pas sur votre Thonny.
 
         .. code-block::
 
@@ -55,84 +55,83 @@ However, you must first download the package and upload the library, as describe
             Type "help()" for more information.
             >>> %Run -c $EDITOR_CONTENT
 
-    * The first line shows the version of MicroPython, the date, and your device information.
-    * The second line prompts you to enter "help()" to get some help.
-    * The third line is a command from Thonny telling the MicroPython interpreter on your Pico W to run the contents of the script area - "EDITOR_CONTENT".
-    * If there is any message after the third line, it is usually a message that you tell MicroPython to print, or an error message for the code.
+    * La première ligne indique la version de MicroPython, la date, et les informations de votre appareil.
+    * La deuxième ligne vous invite à entrer "help()" pour obtenir de l'aide.
+    * La troisième ligne est une commande de Thonny qui demande à l'interpréteur MicroPython sur votre Pico W d'exécuter le contenu de la zone de script - "EDITOR_CONTENT".
+    * Si un message apparaît après la troisième ligne, il s'agit généralement d'un message que vous avez demandé à MicroPython d'imprimer, ou d'un message d'erreur pour le code.
 
 
-#. Stop running
+#. Arrêter l'exécution
 
     |stop_it|
 
-    To stop the running code, click the **Stop/Restart backend** button. The **%RUN -c $EDITOR_CONTENT** command will disappear after stopping.
+    Pour arrêter l'exécution du code, cliquez sur le bouton **Arrêter/Redémarrer le backend**. La commande **%RUN -c $EDITOR_CONTENT** disparaîtra après l'arrêt.
 
-#. Save or save as
+#. Enregistrer ou enregistrer sous
 
-    You can save changes made to the open example by pressing **Ctrl+S** or clicking the **Save** button on Thonny.
+    Vous pouvez enregistrer les modifications apportées à l'exemple ouvert en appuyant sur **Ctrl+S** ou en cliquant sur le bouton **Enregistrer** sur Thonny.
 
-    The code can be saved as a separate file within the Raspberry Pi Pico W by clicking on **File** -> **Save As**.
+    Le code peut être enregistré comme un fichier distinct sur le Raspberry Pi Pico W en cliquant sur **Fichier** -> **Enregistrer sous**.
 
     |save_as|
 
-    Select **Raspberry Pi Pico**.
+    Sélectionnez **Raspberry Pi Pico**.
 
     |sec_pico|
 
-    Then click **OK** after entering the file name and extension **.py**. On the Raspberry Pi Pico W drive, you will see your saved file.
+    Puis cliquez sur **OK** après avoir entré le nom du fichier et l'extension **.py**. Sur le lecteur Raspberry Pi Pico W, vous verrez votre fichier enregistré.
 
     |sec_name|
 
     .. note::
-        Regardless of what name you give your code, it's best to describe what type of code it is, and not give it a meaningless name like ``abc.py``.
-        When you save the code as ``main.py``, it will run automatically when the power is turned on.
+        Quel que soit le nom que vous donnez à votre code, il est préférable de décrire le type de code et de ne pas lui donner un nom inutile comme ``abc.py``.
+        Lorsque vous enregistrez le code sous ``main.py``, il s'exécutera automatiquement au démarrage.
 
 
-Create File and Run it
----------------------------
+Créer un Fichier et l'Exécuter
+------------------------------------
 
 
-The code is shown directly in the code section. You can copy it to Thonny and run it as follows.
+Le code est directement affiché dans la section de code. Vous pouvez le copier dans Thonny et l'exécuter comme suit.
 
-#. Create a new file
+#. Créer un nouveau fichier
 
-    Open Thonny IDE, click **New** button to create a new blank file.
+    Ouvrez Thonny IDE, cliquez sur le bouton **Nouveau** pour créer un fichier vierge.
 
     |new_file|
 
-#. Copy code
+#. Copier le code
 
-    Copy the code from the project to the Thonny IDE.
+    Copiez le code du projet dans Thonny IDE.
 
     |copy_file|
 
-#. Select correct interpreter
+#. Sélectionner le bon interpréteur
 
-    Plug the Pico W into your computer with a micro USB cable and select the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner.
+    Branchez le Pico W sur votre ordinateur avec un câble micro USB et sélectionnez l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
     |sec_inter|
 
-#. Run and save the code
+#. Exécuter et enregistrer le code
 
-    You need click **Run Current Script** or simply press F5 to run it. If your code has not been saved, a window will pop up asking to save to **This computer** or **Raspberry Pi Pico**.
+    Vous devez cliquer sur **Exécuter le script actuel** ou simplement appuyer sur F5 pour l'exécuter. Si votre code n'a pas été enregistré, une fenêtre apparaîtra vous demandant d'enregistrer sur **Cet ordinateur** ou **Raspberry Pi Pico**.
 
     |where_save|
 
     .. note::
-        Thonny saves your program on the Raspberry Pi Pico W hen you tell him to, so if you unplug the Pico W and plug it into someone else's computer, your program remains intact.
+        Thonny enregistre votre programme sur le Raspberry Pi Pico W lorsque vous lui demandez, donc si vous débranchez le Pico W et le connectez à l'ordinateur de quelqu'un d'autre, votre programme reste intact.
 
-    Click OK after selecting the location, naming the file and adding the extension **.py**.
+    Cliquez sur OK après avoir sélectionné l'emplacement, nommé le fichier et ajouté l'extension **.py**.
 
     |sec_name|
 
     .. note::
-        Regardless of what name you give your code, it's best to describe what type of code it is, and not give it a meaningless name like ``abc.py``.
-        When you save the code as ``main.py``, it will run automatically when the power is turned on.
+        Quel que soit le nom que vous donnez à votre code, il est préférable de décrire le type de code et de ne pas lui donner un nom inutile comme ``abc.py``.
+        Lorsque vous enregistrez le code sous ``main.py``, il s'exécutera automatiquement au démarrage.
 
-    Once your program is saved, it will run automatically and you will see the following information in the Shell area.
+    Une fois votre programme enregistré, il s'exécutera automatiquement et vous verrez les informations suivantes dans la zone Shell.
 
-    Click **View** -> **Edit** to open the Shell window if it does not appear on your Thonny.
-
+    Cliquez sur **Affichage** -> **Modifier** pour ouvrir la fenêtre Shell si elle n'apparaît pas sur votre Thonny.
 
     .. code-block::
 
@@ -141,23 +140,20 @@ The code is shown directly in the code section. You can copy it to Thonny and ru
         Type "help()" for more information.
         >>> %Run -c $EDITOR_CONTENT
 
+    * La première ligne indique la version de MicroPython, la date, et les informations de votre appareil.
+    * La deuxième ligne vous invite à entrer "help()" pour obtenir de l'aide.
+    * La troisième ligne est une commande de Thonny qui demande à l'interpréteur MicroPython sur votre Pico W d'exécuter le contenu de la zone de script - "EDITOR_CONTENT".
+    * Si un message apparaît après la troisième ligne, il s'agit généralement d'un message que vous avez demandé à MicroPython d'imprimer, ou d'un message d'erreur pour le code.
 
-    * The first line shows the version of MicroPython, the date, and your device information.
-    * The second line prompts you to enter "help()" to get some help.
-    * The third line is a command from Thonny telling the MicroPython interpreter on your Pico W to run the contents of the script area - "EDITOR_CONTENT".
-    * If there is any message after the third line, it is usually a message that you tell MicroPython to print, or an error message for the code.
-
-
-#. Stop running
+#. Arrêter l'exécution
 
     |stop_it|
 
-    To stop the running code, click the **Stop/Restart backend** button. The **%RUN -c $EDITOR_CONTENT** command will disappear after stopping.
+    Pour arrêter l'exécution du code, cliquez sur le bouton **Arrêter/Redémarrer le backend**. La commande **%RUN -c $EDITOR_CONTENT** disparaîtra après l'arrêt.
 
-#. Open file
+#. Ouvrir un fichier
 
-    Here are two ways to open a saved code file.
+    Voici deux façons d'ouvrir un fichier de code enregistré.
 
-    * The first method is to click the open icon on the Thonny toolbar, just like when you save a program, you will be asked if you want to open it from **this computer** or **Raspberry Pi Pico**, for example, click **Raspberry Pi Pico** and you will see a list of all the programs you have saved on the Pico W.
-    * The second is to open the file preview directly by clicking **View**-> **File**-> and then double-clicking on the corresponding ``.py`` file to open it.
-
+    * La première méthode consiste à cliquer sur l'icône d'ouverture sur la barre d'outils de Thonny. Comme pour l'enregistrement d'un programme, vous serez invité à choisir si vous souhaitez l'ouvrir depuis **cet ordinateur** ou **Raspberry Pi Pico**, par exemple, cliquez sur **Raspberry Pi Pico** et vous verrez la liste de tous les programmes que vous avez enregistrés sur le Pico W.
+    * La seconde est d'ouvrir directement l'aperçu du fichier en cliquant sur **Affichage** -> **Fichier** -> puis en double-cliquant sur le fichier ``.py`` correspondant pour l'ouvrir.

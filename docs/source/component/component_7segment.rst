@@ -1,49 +1,49 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Remises spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_7_segment:
 
-7-segment Display
+Afficheur 7 segments
 ======================
 
 |img_7seg|
 
 
-A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
+Un afficheur 7 segments est un composant en forme de 8 qui regroupe 7 LEDs. Chaque LED est appelée segment - lorsqu'elle est alimentée, elle forme une partie d'un chiffre à afficher.
 
-There are two types of pin connection: Common Cathode (CC) and Common Anode (CA). As the name suggests, a CC display has all the cathodes of the 7 LEDs connected when a CA display has all the anodes of the 7 segments connected.
+Il existe deux types de connexions des broches : Cathode Commune (CC) et Anode Commune (CA). Comme leur nom l'indique, un afficheur CC a toutes les cathodes des 7 LEDs connectées ensemble, tandis qu'un afficheur CA a tous les anodes des 7 segments connectés.
 
-In this kit, we use the Common Cathode 7-segment display, here is the electronic symbol.
+Dans ce kit, nous utilisons un afficheur 7 segments à cathode commune, dont voici le symbole électronique.
 
 |img_7seg_cathode|
 
-Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from "a" through to "g" representing each individual LED. The other LED pins are connected together forming a common pin. So by forward biasing the appropriate pins of the LED segments in a particular order, some segments will brighten and others stay dim, thus showing the corresponding character on the display. 
+Chacune des LEDs de l'afficheur est associée à un segment positionnel, avec une broche de connexion individuelle qui sort du boîtier en plastique rectangulaire. Ces broches sont étiquetées de "a" à "g", représentant chaque LED individuelle. Les autres broches des LEDs sont reliées entre elles pour former une broche commune. En polarisant les broches appropriées des segments LED dans un ordre particulier, certains segments s'allument tandis que d'autres restent éteints, permettant ainsi de montrer le caractère correspondant sur l'afficheur.
 
 
 * `Seven-segment Display - Wikipedia <https://en.wikipedia.org/wiki/Seven-segment_display>`_
 
-**Display Codes** 
+**Codes d'affichage** 
 
-To help you get to know how 7-segment displays(Common Cathode) display Numbers, we have drawn the following table. Numbers are the number 0-F displayed on the 7-segment display; (DP) GFEDCBA refers to the corresponding LED set to 0 or 1, For example, 00111111 means that DP and G are set to 0, while others are set to 1. Therefore, the number 0 is displayed on the 7-segment display, while HEX Code corresponds to hexadecimal number.
+Pour vous aider à comprendre comment les afficheurs 7 segments (cathode commune) affichent les chiffres, nous avons créé le tableau suivant. Les "Numbers" représentent les chiffres 0-F affichés sur l'afficheur ; (DP) GFEDCBA indique les LED correspondantes réglées sur 0 ou 1. Par exemple, 00111111 signifie que DP et G sont réglés sur 0, tandis que les autres sont sur 1. Ainsi, le chiffre 0 apparaît sur l'afficheur, et le code hexadécimal correspondant est affiché sous "Hex Code".
 
 .. list-table:: Glyph Code
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Numbers	
-        - Binary Code
-        - Hex Code  
+    *   - Chiffres
+        - Code binaire
+        - Code hexadécimal
     *   - 0	
         - 00111111	
         - 0x3f
@@ -96,9 +96,11 @@ To help you get to know how 7-segment displays(Common Cathode) display Numbers, 
 .. Example
 .. -------------------
 
-.. :ref:`LED Segment Display`
+.. :ref:`Afficheur LED segmenté`
 
-**Example**
+
+
+**Exemple**
 
 * :ref:`py_74hc_7seg` (For MicroPython User)
 * :ref:`ar_74hc_7seg` (For Arduino User)

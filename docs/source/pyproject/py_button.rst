@@ -1,61 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_button:
 
-2.5 Reading Button Value
+2.5 Lecture de la Valeur du Bouton
 ==============================================
 
-These pins have both input and output functions, as indicated by their name GPIO (General-purpose input/output). Previously, we used the output function; in this chapter, we will use the input function to input the button value.
+Ces broches ont à la fois des fonctions d'entrée et de sortie, comme l'indique leur nom GPIO (General-purpose input/output). Auparavant, nous avons utilisé la fonction de sortie ; dans ce chapitre, nous utiliserons la fonction d'entrée pour lire la valeur du bouton.
 
 * :ref:`cpn_button`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants : 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous :
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -64,53 +63,51 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_button`
         - 1
         - |link_button_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_button|
 
-As long as one side of the button pin is connected to 3.3v, and the other side pin is connected to GP14, then when the button is pressed, GP14 will be high. However, when the button is not pressed, GP14 is in a suspended state and may be high or low. In order to get a stable low level when the button is not pressed, GP14 needs to be reconnected to GND through a 10K pull-down resistor.
+Il suffit de connecter une broche du bouton à 3.3V et l'autre broche à GP14 ; ainsi, lorsque le bouton est pressé, GP14 sera à un niveau haut. Cependant, quand le bouton n'est pas pressé, GP14 est en état flottant et peut être soit haut, soit bas. Pour obtenir un niveau bas stable lorsque le bouton n'est pas pressé, GP14 doit être relié à la masse via une résistance de pull-down de 10KΩ.
 
-
-**Wiring**
+**Câblage**
 
 |wiring_button|
 
+.. Suivons la direction du schéma pour construire le circuit !
 
-.. Let's follow the direction of the circuit to build the circuit!
-
-.. 1. Connect the 3V3 pin of Pico W to the positive power bus of the breadboard.
-.. #. Insert the button into the breadboard and straddle the central dividing line.
+.. 1. Connectez la broche 3V3 du Pico W au bus d'alimentation positif de la breadboard.
+.. #. Insérez le bouton dans la breadboard en chevauchant la ligne centrale.
 
 .. note::
-    A four-pin button is shaped like an H. Its left two pins or right two pins are connected, which means that when it crosses the central gap, it connects two half rows with the same row number. (For example, in my circuit, E23 and F23 are already connected, as are E25 and F25).
+    Un bouton à quatre broches a la forme d'un "H". Les deux broches de gauche ou de droite sont connectées, ce qui signifie que lorsqu'il est placé sur la ligne centrale, il connecte deux demi-rangées ayant le même numéro de rangée. (Par exemple, dans mon circuit, E23 et F23 sont déjà connectés, tout comme E25 et F25).
 
-    Until the button is pressed, the left and right pins are independent of each other and current cannot flow from one side to the other.
+    Tant que le bouton n'est pas pressé, les broches gauche et droite sont indépendantes et le courant ne peut pas circuler d'un côté à l'autre.
 
-.. #. Use a jumper wire to connect one of the button pins to the positive bus (mine is the pin on the upper right).
-.. #. Connect the other pin (upper left or lower left) to GP14 with a jumper wire.
-.. #. Use a 10K resistor to connect the pin on the upper left corner of the button and the negative bus.
-.. #. Connect the negative power bus of the breadboard to Pico's GND.
+.. #. Utilisez un fil de connexion pour relier une broche du bouton au bus positif (dans mon cas, la broche en haut à droite).
+.. #. Connectez l'autre broche (en haut à gauche ou en bas à gauche) à GP14 avec un fil de connexion.
+.. #. Utilisez une résistance de 10KΩ pour connecter la broche en haut à gauche du bouton au bus négatif.
+.. #. Connectez le bus d'alimentation négatif de la breadboard à la masse (GND) du Pico.
 
 **Code**
 
 .. note::
 
-    * Open the ``2.5_read_button_value.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``2.5_read_button_value.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Exécuter le script actuel" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -122,21 +119,19 @@ As long as one side of the button pin is connected to 3.3v, and the other side p
             print("You pressed the button!")
             utime.sleep(1)
 
-As soon as the code runs, the shell prints "You pressed the button!"
+Dès que le code s'exécute, le Shell affiche "Vous avez appuyé sur le bouton !"
 
-**Pull-up Working Mode**
+**Mode de Fonctionnement Pull-up**
 
-
-The next part is the wiring and code when you use the button in the pull-up mode.
+La prochaine partie concerne le câblage et le code lorsque vous utilisez le bouton en mode pull-up.
 
 |sch_button_pullup|
 
 |wiring_button_pullup|
 
-The only difference you will see with the pull-down mode is that the 10K resistor is connected to 3.3V and the button is connected to GND, so that when the button is pressed, GP14 will get a low level, which is the opposite of the value obtained in pull-down mode.
-So just change this code to ``if button.value() == 0:``.
+La seule différence avec le mode pull-down est que la résistance de 10KΩ est connectée à 3.3V et le bouton à la masse, de sorte que lorsque le bouton est pressé, GP14 recevra un niveau bas, ce qui est l'inverse de la valeur obtenue en mode pull-down. 
+Il suffit donc de modifier le code par ``if button.value() == 0:``.
 
-
-Also see the reference here:  
+Voir également la référence ici :
 
 * `machine.Pin <https://docs.micropython.org/en/latest/library/machine.Pin.html>`_

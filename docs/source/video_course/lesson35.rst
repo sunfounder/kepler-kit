@@ -1,31 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et surmontez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 35: Remote Weather Station with RGB LED Temperature Indicator
+Leçon 35 : Station Météo Connectée avec Indicateur de Température par LED RGB
 =============================================================================
-This tutorial covers integrating an RGB LED to display temperature data on a weather station using the Raspberry Pi Pico W:
 
-* **Project Overview**: Build a remote weather station with Raspberry Pi Pico W, OLED display, and RGB LED to visually represent temperature.
-* **HSV to RGB Conversion**: Map temperatures from -20°F (violet) to 120°F (red) to angles on the HSV color wheel.
-* **Circuit Setup**: Connect the OLED display and RGB LED to the Raspberry Pi Pico W, configuring GPIO and PWM.
-* **Coding**: Fetch temperature data, calculate hue, convert to RGB, and control the RGB LED using the HSV to RGB conversion library.
-* **Demonstration**: Display temperature on the OLED and RGB LED, running the setup on battery power.
-* **Conclusion**: Customize the project with different color mappings and temperature ranges, and encourage interaction with the tutorial.
+Ce tutoriel explique comment intégrer une LED RGB pour afficher les données de température sur une station météo utilisant le Raspberry Pi Pico W :
 
+* **Aperçu du projet** : Construisez une station météo connectée avec le Raspberry Pi Pico W, un écran OLED et une LED RGB pour représenter visuellement la température.
+* **Conversion de HSV en RGB** : Associez des températures allant de -20°F (violet) à 120°F (rouge) à des angles sur la roue chromatique HSV.
+* **Configuration du circuit** : Connectez l'écran OLED et la LED RGB au Raspberry Pi Pico W, en configurant les GPIO et le PWM.
+* **Codage** : Récupérez les données de température, calculez la teinte, convertissez-la en RGB, et contrôlez la LED RGB en utilisant la bibliothèque de conversion HSV en RGB.
+* **Démonstration** : Affichez la température sur l'écran OLED et la LED RGB, en faisant fonctionner le montage sur batterie.
+* **Conclusion** : Personnalisez le projet avec différentes correspondances de couleurs et plages de températures, et encouragez l'interaction avec le tutoriel.
 
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

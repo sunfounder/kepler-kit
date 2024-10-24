@@ -1,71 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_mpu6050:
 
-6.3 6-axis Motion Tracking
+6.3 Suivi de Mouvement 6 Axes
 =====================================
 
+Le MPU-6050 est un dispositif de suivi de mouvement à 6 axes (qui combine un gyroscope 3 axes et un accéléromètre 3 axes).
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices.
+Un accéléromètre est un outil qui mesure l'accélération propre. Par exemple, un accéléromètre au repos sur la surface de la Terre mesurera une accélération due à la gravité terrestre, orientée vers le haut, avec une valeur approximative de g ≈ 9,81 m/s².
 
+Les accéléromètres ont de nombreuses applications dans l'industrie et la science, par exemple : systèmes de navigation inertielle pour les avions et les missiles, maintien des images verticales sur les tablettes et appareils photo numériques, etc.
 
-An accelerometer is a tool that measures proper acceleration.For example, an accelerometer at rest on the surface of the Earth will measure an acceleration due to Earth's gravity, straight upwards[3] (by definition) of g ≈ 9.81 m/s2.
-
-Accelerometers have many uses in industry and science. For example: inertial navigation systems for aircraft and missiles, for keeping images on tablets and digital cameras vertical, etc.
-
-Gyroscopes are used to measure orientation and angular velocity of a device or maintenance.
-Applications of gyroscopes include anti-rollover and airbag systems for automobiles, motion sensing systems for smart devices, attitude stabilization systems for drones, and more.
+Les gyroscopes sont utilisés pour mesurer l'orientation et la vitesse angulaire d'un dispositif. Ils sont intégrés dans des systèmes tels que les systèmes anti-retournement et les airbags pour les automobiles, les systèmes de détection de mouvement pour les appareils intelligents, les systèmes de stabilisation d'attitude pour les drones, et bien plus encore.
 
 * :ref:`cpn_mpu6050`
 
+**Composants requis**
 
-**Required Components**
+Dans ce projet, nous aurons besoin des composants suivants.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -74,19 +69,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_mpu6050|
 
-
-**Wiring**
+**Câblage**
 
 |wiring_mpu6050|
 
@@ -94,14 +88,13 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``6.3_6axis_motion_tracking.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``6.3_6axis_motion_tracking.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
     
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Vous devez utiliser les bibliothèques ``imu.py`` et ``vector3d.py``, veuillez vérifier si elles ont été téléchargées sur Pico W. Pour un tutoriel détaillé, consultez :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -118,16 +111,18 @@ You can also buy them separately from the links below.
         print("A: %s, B: %s, Y: %s"%(mpu.gyro.x, mpu.gyro.y, mpu.gyro.z))
         time.sleep(0.5)
 
-After running the program, you can see the 3-axis accelerometer values and 3-axis gyroscope values cycling through the output.
-At this point you rotate the MPU6050 at random, and these values will appear to change accordingly.
-To make it easier to see the changes, you can comment out one of the print lines and concentrate on another set of data.
+Une fois le programme lancé, vous pourrez voir les valeurs de l'accéléromètre 
+3 axes et du gyroscope 3 axes défiler à l'écran. À ce moment-là, faites pivoter 
+le MPU6050 de manière aléatoire, et vous verrez ces valeurs changer en conséquence. 
+Pour faciliter la visualisation des changements, vous pouvez commenter l'une des 
+lignes de print et vous concentrer sur l'autre ensemble de données.
 
-The unit of acceleration value is m/s², and the unit of gyroscope value is °/s.
+L'unité de mesure de l'accélération est le m/s², et celle de la vitesse angulaire est le °/s.
 
-**How it works?**
+**Comment ça marche ?**
 
-In the imu library, we have integrated the relevant functions into the ``MPU6050`` class.
-MPU6050 is an I2C module and requires a set of I2C pins to be defined for initialization.
+Dans la bibliothèque imu, nous avons intégré les fonctions pertinentes dans la classe ``MPU6050``.
+Le MPU6050 est un module I2C et nécessite un ensemble de broches I2C pour être initialisé.
 
 .. code-block:: python
 
@@ -137,7 +132,7 @@ MPU6050 is an I2C module and requires a set of I2C pins to be defined for initia
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-Subsequently, you will be able to get real-time acceleration and angular velocity values in ``mpu.accel.x``, ``mpu.accel.y``, ``mpu.accel.z``, ``mpu.gyro.x``, ``mpu.gyro.y``, ``mpu.gyro.z``.
+Ensuite, vous pourrez obtenir les valeurs en temps réel de l'accélération et de la vitesse angulaire avec ``mpu.accel.x``, ``mpu.accel.y``, ``mpu.accel.z``, ``mpu.gyro.x``, ``mpu.gyro.y``, ``mpu.gyro.z``.
 
 .. code-block:: python
 

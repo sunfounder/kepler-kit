@@ -1,48 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et des promotions de vacances.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _per_save_import:
 
-1.3 How to Save or Import Code?
-=========================================
+1.3 Comment Sauvegarder ou Importer du Code ?
+====================================================
 
-Save the Code
---------------------
+Sauvegarder le Code
+-----------------------
 
-After writing the code, you can change the code name and description, and then click the **Download** button to save the code locally or share it with others.
+Après avoir écrit le code, vous pouvez modifier son nom et sa description, puis cliquer sur le bouton **Télécharger** pour sauvegarder le code localement ou le partager avec d'autres.
 
 |save_download|
 
-Then enter the file name and click the **Download** button again to save the code as a ``.png`` file.
+Ensuite, entrez le nom du fichier et cliquez à nouveau sur le bouton **Télécharger** pour enregistrer le code sous forme de fichier ``.png``.
 
 |download_per|
 
 .. _import_code_piper:
 
-Import the Code
---------------------
+Importer du Code
+-----------------------
 
-In Piper Make's `home page <https://make.playpiper.com/>`_, click **Import Project**.
+Sur la `home page <https://make.playpiper.com/>`_, cliquez sur **Importer un Projet**.
 
 |per_import|
 
-Select the ``.png`` file in the path ``kepler-kit-main\piper`` and click **Import**. 
-Note that you need to download the `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ package first.
-Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_.
+Sélectionnez le fichier ``.png`` dans le chemin ``kepler-kit-main\piper`` et cliquez sur **Importer**. 
+Notez que vous devez d'abord télécharger le package `SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_.
+Ou consultez le code sur `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_.
 
 |choose_file|
 
-Now you can see the file you imported.
+Vous pouvez maintenant voir le fichier que vous avez importé.
 
 |import_led|

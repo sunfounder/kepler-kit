@@ -1,50 +1,49 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_irremote:
 
-
-6.4 IR Remote Control
+6.4 Télécommande IR
 ================================
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
+Dans l'électronique grand public, les télécommandes sont utilisées pour contrôler des appareils tels que les télévisions et les lecteurs DVD.
+Elles permettent aussi de piloter des dispositifs hors de portée, comme des climatiseurs centraux.
 
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+Le récepteur IR est un composant doté d'une cellule photoélectrique calibrée pour recevoir la lumière infrarouge. 
+Il est presque toujours utilisé pour la détection de télécommande - chaque téléviseur et lecteur DVD en a un à l'avant pour capter le signal IR de la télécommande.
+À l'intérieur de la télécommande se trouve une LED IR correspondante, qui émet des impulsions IR pour indiquer au téléviseur de s'allumer, s'éteindre ou changer de chaîne.
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 
 .. list-table::
@@ -52,16 +51,16 @@ You can also buy them separately from the links below.
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -70,18 +69,18 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_irrecv|
 
-**Wiring**
+**Câblage**
 
 
 |wiring_irrecv|
@@ -91,13 +90,13 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``6.4_ir_remote_control.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``6.4_ir_remote_control.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite. 
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`. 
     
-    * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Vous devez utiliser les bibliothèques dans le dossier ``ir_rx``, assurez-vous qu'elles ont été chargées sur le Pico. Pour un tutoriel détaillé, reportez-vous à :ref:`add_libraries_py`.
 
 
 .. code-block:: python
@@ -154,15 +153,15 @@ You can also buy them separately from the links below.
             return "MODE" 
         return "ERROR"
 
-    # User callback
+    # Fonction de rappel utilisateur
     def callback(data, addr, ctrl):
-        if data < 0:  # NEC protocol sends repeat codes.
+        if data < 0:  # Le protocole NEC envoie des codes répétitifs.
             pass
         else:
             print(decodeKeyValue(data))
 
-    ir = NEC_8(pin_ir, callback)  # Instantiate receiver
-    ir.error_function(print_error)  # Show debug information
+    ir = NEC_8(pin_ir, callback)  # Instancier le récepteur
+    ir.error_function(print_error)  # Afficher les informations de débogage
 
     try:
         while True:
@@ -171,12 +170,12 @@ You can also buy them separately from the links below.
         ir.close()
 
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Shell will print out the key you pressed.
+La nouvelle télécommande a un morceau de plastique à son extrémité pour isoler la pile à l'intérieur. Vous devez retirer cette pièce pour alimenter la télécommande lorsque vous l'utilisez.
+Une fois le programme en cours d'exécution, lorsque vous appuyez sur la télécommande, le terminal affichera la touche que vous avez pressée.
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-This program looks slightly complicated, but it actually does the basic functions of the IR receiver with just a few lines.
+Ce programme peut sembler un peu complexe, mais il exécute en fait les fonctions de base du récepteur IR avec seulement quelques lignes de code.
 
 .. code-block:: python
 
@@ -186,24 +185,24 @@ This program looks slightly complicated, but it actually does the basic function
 
     pin_ir = Pin(17, Pin.IN)
 
-    # User callback
+    # Fonction de rappel utilisateur
     def callback(data, addr, ctrl):
-        if data < 0:  # NEC protocol sends repeat codes.
+        if data < 0:  # Le protocole NEC envoie des codes répétitifs.
             pass
         else:
             print(decodeKeyValue(data))
 
-    ir = NEC_8(pin_ir, callback)  # Instantiate receiver
+    ir = NEC_8(pin_ir, callback)  # Instancier le récepteur
 
-Here an ``ir`` object is instantiated, which reads the signals acquired by the IR receiver at any time.
+Ici, un objet ``ir`` est instancié, capable de lire les signaux acquis par le récepteur IR à tout moment.
 
-The result will be recorded in ``data`` of the callback function.
+Le résultat sera enregistré dans ``data`` de la fonction de rappel.
 
 * `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
 
-If the IR receiver receives duplicate values (e.g. pressing a key and not releasing it), then data < 0 and this data needs to be filtered.
+Si le récepteur IR reçoit des valeurs en double (par exemple, en maintenant une touche enfoncée), alors ``data < 0`` et ces données doivent être filtrées.
 
-Otherwise data would be a usable value, but some unspeakable code, and the ``decodeKeyValue(data)`` function is used to decode it.
+Sinon, ``data`` contiendra une valeur utilisable, qui sera décodée par la fonction ``decodeKeyValue(data)``.
 
 .. code-block:: python
 
@@ -252,17 +251,17 @@ Otherwise data would be a usable value, but some unspeakable code, and the ``dec
             return "MODE" 
         return "ERROR"
 
-If we press key **1**, the IR receiver outputs a value like ``0x0C``, which needs to be decoded to correspond to the specific key.
+Si vous appuyez sur la touche **1**, le récepteur IR émet une valeur comme ``0x0C``, qui doit être décodée pour correspondre à la touche spécifique.
 
-Next are some debug functions. They are important, but not related to the effect we need to achieve, so we just put them in the program.
+Ensuite, quelques fonctions de débogage sont incluses. Elles sont importantes, mais non essentielles pour l'effet recherché, donc nous les incluons simplement dans le programme.
 
 .. code-block:: python
 
     from ir_rx.print_error import print_error
 
-    ir.error_function(print_error) # Show debug information
+    ir.error_function(print_error) # Afficher les informations de débogage
 
-Finally, we use an empty loop as the main program. And use try-except to make the program exit with the ``ir`` object terminated.
+Enfin, nous utilisons une boucle vide comme programme principal, avec un try-except pour quitter proprement et fermer l'objet ``ir``.
 
 .. code-block:: python
 

@@ -1,70 +1,69 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_74hc_led:
 
-5.1 Microchip - 74HC595
+5.1 Microcircuit - 74HC595
 ===========================
 
-Integrated circuit (integrated circuit) is a kind of miniature electronic device or component, which is represented by the letter "IC" in the circuit.
+Un circuit intégré (Integrated Circuit) est un dispositif électronique miniature, représenté par la lettre "IC" dans les circuits.
 
-A certain process is used to interconnect the transistors, resistors, capacitors, inductors and other components and wiring required in a circuit, fabricate on a small or several small semiconductor wafers or dielectric substrates, and then package them in a package , it has become a micro-structure with the required circuit functions; all of the components have been structured as a whole, making electronic components a big step towards micro-miniaturization, low power consumption, intelligence and high reliability.
+Un processus spécifique est utilisé pour interconnecter les transistors, résistances, condensateurs, inducteurs et autres composants et circuits nécessaires dans un dispositif, fabriqué sur une ou plusieurs petites plaquettes semi-conductrices ou substrats diélectriques, puis encapsulé dans un boîtier. Cela devient une microstructure dotée des fonctions nécessaires au circuit ; tous les composants sont structurés comme un ensemble, permettant aux composants électroniques de franchir un grand pas vers la miniaturisation, la faible consommation d'énergie, l'intelligence et une haute fiabilité.
 
-The inventors of integrated circuits are Jack Kilby (integrated circuits based on germanium (Ge)) and Robert Norton Noyce (integrated circuits based on silicon (Si)).
+Les inventeurs des circuits intégrés sont Jack Kilby (circuits intégrés à base de germanium (Ge)) et Robert Norton Noyce (circuits intégrés à base de silicium (Si)).
 
-This kit is equipped with an IC, 74HC595, which can greatly save the use of GPIO pins.
-Specifically, it can replace 8 pins for digital signal output by writing an 8-bit binary number.
+Ce kit est équipé d'un circuit intégré, le 74HC595, qui permet de réduire considérablement l'utilisation des broches GPIO.
+Il peut remplacer 8 broches pour la sortie de signaux numériques en écrivant un nombre binaire de 8 bits.
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
 * :ref:`74HC595`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Pour ce projet, nous avons besoin des composants suivants :
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ARTICLES DANS CE KIT
+        - LIEN
+    *   - Kepler Kit
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous :
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -73,7 +72,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -88,46 +87,44 @@ You can also buy them separately from the links below.
         - 1
         - |link_74hc595_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_74hc_led|
 
-* When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. 
-* If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. 
-* There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. 
-* The memory register outputs a Bus with a parallel 8-bit and in three states. 
-* When OE is enabled (low level), the data in memory register is output to the bus(Q0 ~ Q7).
+* Lorsque MR (broche 10) est au niveau haut et OE (broche 13) est au niveau bas, les données sont entrées au front montant de SHcp et se dirigent vers le registre mémoire par le même front montant de SHcp.
+* Si les deux horloges sont connectées ensemble, le registre de décalage est toujours une impulsion avant le registre mémoire.
+* Le registre mémoire comprend une entrée de décalage série (Ds), une sortie série (Q) et un bouton de réinitialisation asynchrone (niveau bas).
+* Le registre mémoire émet un bus avec un parallélisme de 8 bits et dans trois états. 
+* Lorsque OE est activé (niveau bas), les données du registre mémoire sont envoyées sur le bus (Q0 ~ Q7).
 
-**Wiring**
+**Câblage**
 
-.. The 74HC595 is a 16-pin IC with a semi-circular notch on one side (usually the left side of the label). With the notch facing upwards, its pins are shown in the diagram below.
+.. Le 74HC595 est un circuit intégré à 16 broches avec une encoche semi-circulaire sur un côté (généralement à gauche de l'étiquette). Avec l'encoche orientée vers le haut, ses broches sont affichées dans le schéma ci-dessous.
 
 
-.. Refer to the figure below to build the circuit.
-
+.. Référez-vous au schéma ci-dessous pour construire le circuit.
 
 |wiring_74hc_led|
 
-.. 1. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Insert 74HC595 across the middle gap into the breadboard.
-.. #. Connect the GP0 pin of Pico W to the DS pin (pin 14) of 74HC595 with a jumper wire.
-.. #. Connect the GP1 pin of Pico W to the STcp pin (12-pin) of 74HC595.
-.. #. Connect the GP2 pin of Pico W to the SHcp pin (pin 11) of 74HC595.
-.. #. Connect the VCC pin (16 pin) and MR pin (10 pin) on the 74HC595 to the positive power bus.
-.. #. Connect the GND pin (8-pin) and CE pin (13-pin) on the 74HC595 to the negative power bus.
-.. #. Insert 8 LEDs on the breadboard, and their anode leads are respectively connected to the Q0~Q1 pins (15, 1, 2, 3, 4, 5, 6, 7) of 74HC595.
-.. #. Connect the cathode leads of the LEDs with a 220Ω resistor in series to the negative power bus.
-
+.. 1. Connectez 3V3 et GND du Pico W au bus d'alimentation de la breadboard.
+.. #. Insérez le 74HC595 au-dessus de la coupure centrale de la breadboard.
+.. #. Connectez la broche GP0 du Pico W à la broche DS (broche 14) du 74HC595 avec un fil de connexion.
+.. #. Connectez la broche GP1 du Pico W à la broche STcp (broche 12) du 74HC595.
+.. #. Connectez la broche GP2 du Pico W à la broche SHcp (broche 11) du 74HC595.
+.. #. Connectez la broche VCC (broche 16) et MR (broche 10) du 74HC595 au bus d'alimentation positif.
+.. #. Connectez la broche GND (broche 8) et CE (broche 13) du 74HC595 au bus d'alimentation négatif.
+.. #. Insérez 8 LED sur la breadboard, et leurs anodes sont respectivement connectées aux broches Q0~Q7 (15, 1, 2, 3, 4, 5, 6, 7) du 74HC595.
+.. #. Connectez les cathodes des LED avec une résistance de 220Ω en série au bus d'alimentation négatif.
 
 **Code**
 
 .. note::
 
-    * Open the ``5.1_microchip_74hc595.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``5.1_microchip_74hc595.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Exécuter le script actuel" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Pour des tutoriels détaillés, veuillez vous référer à :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -164,9 +161,9 @@ You can also buy them separately from the links below.
         print("{:0>8b}".format(num))
         time.sleep_ms(200)
 
-When the program is running, ``num`` will be written into the 74HC595 chip as an eight-bit binary number to control the on and off of the 8 LEDs.
-We can see the current value of ``num`` in the shell.
+Lorsque le programme est en cours d'exécution, ``num`` sera écrit dans la puce 74HC595 sous forme de nombre binaire à huit bits pour contrôler l'allumage et l'extinction des 8 LED.
+Nous pouvons voir la valeur actuelle de ``num`` dans le shell.
 
-**How it works?**
+**Comment ça fonctionne ?**
 
-``hc595_shift()`` will make 74HC595 output 8 digital signals. It outputs the last bit of the binary number to Q0, and the output of the first bit to Q7. In other words, writing the binary number “00000001” will make Q0 output high level and Q1~Q7 output low level.
+``hc595_shift()`` fait en sorte que le 74HC595 émette 8 signaux numériques. Il envoie le dernier bit du nombre binaire à Q0, et le premier bit à Q7. En d'autres termes, écrire le nombre binaire “00000001” fera que Q0 émette un niveau haut et Q1~Q7 un niveau bas.

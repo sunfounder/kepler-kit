@@ -1,47 +1,44 @@
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans le monde des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _add_libraries_py:
 
-1.4 Upload the Libraries to Pico
-===================================
+1.4 Télécharger les Bibliothèques sur le Pico
+==================================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico W first, and then we can run the code directly later.
+Dans certains projets, vous aurez besoin de bibliothèques supplémentaires. Nous allons donc d'abord télécharger ces bibliothèques sur le Raspberry Pi Pico W, puis nous pourrons exécuter le code directement par la suite.
 
-#. Download the relevant code from the link below.
-
+#. Téléchargez le code pertinent depuis le lien ci-dessous.
 
    * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+#. Ouvrez l'IDE Thonny, branchez le Pico sur votre ordinateur avec un câble micro USB et cliquez sur l'interpréteur "MicroPython (Raspberry Pi Pico).COMXX" en bas à droite.
 
     .. image:: img/sec_inter.png
 
-#. In the top navigation bar, click **View** -> **Files**.
+#. Dans la barre de navigation en haut, cliquez sur **Affichage** -> **Fichiers**.
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler-kit-main/libs`` folder.
+#. Changez le chemin vers le dossier où vous avez précédemment téléchargé le `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_, puis accédez au dossier ``kepler-kit-main/libs``.
 
     .. image:: img/th_path.png
 
-#. Select all the files or folders in the ``libs/`` folder, right-click and click **Upload to**, it will take a while to upload.
+#. Sélectionnez tous les fichiers ou dossiers du dossier ``libs/``, faites un clic droit et cliquez sur **Télécharger vers**, cela prendra un certain temps pour terminer le téléchargement.
 
     .. image:: img/th_upload.png
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
+#. Vous verrez maintenant les fichiers que vous venez de télécharger dans votre lecteur ``Raspberry Pi Pico``.
 
     .. image:: img/th_done.png

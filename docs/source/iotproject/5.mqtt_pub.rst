@@ -1,68 +1,67 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans le Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez & partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions de vacances.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _nt_mqtt_publish:
 
-5. Cloud Calling System with @MQTT
+5. Système d'Appel avec @MQTT
 ============================================
 
-Message Queuing Telemetry Transport (MQTT) is a simple messaging protocol.
-It is also the most common messaging protocol for the Internet of Things (IoT).
+Le Message Queuing Telemetry Transport (MQTT) est un protocole de messagerie simple.
+C'est également le protocole de messagerie le plus courant pour l'Internet des Objets (IoT).
 
-MQTT protocols define the way IoT devices transfer data.
-They are event-driven and interconnected using the Pub/Sub model.
-The sender (Publisher) and the receiver (Subscriber) communicate via Topics.
-A device publishes a message on a specific topic, and all devices subscribed to that topic receive the message.
+Les protocoles MQTT définissent la manière dont les dispositifs IoT transfèrent les données.
+Ils sont pilotés par événements et interconnectés via le modèle Pub/Sub.
+L'expéditeur (Publisher) et le récepteur (Subscriber) communiquent via des Topics.
+Un appareil publie un message sur un sujet spécifique, et tous les appareils abonnés à ce sujet reçoivent le message.
 
-In this section, a service bell system will be made using Pico W, HiveMQ (a free public MQTT broker service), and four buttons.
-The four buttons mean four tables in the restaurant, and you will be able to see which table's guests need service on HiveMQ when the customer presses the button.
+Dans cette section, nous allons créer un système de sonnette de service en utilisant Pico W, HiveMQ (un service gratuit de courtier MQTT public), et quatre boutons.
+Les quatre boutons représentent quatre tables dans un restaurant, et vous pourrez voir sur HiveMQ quelle table a besoin de service lorsque le client appuie sur le bouton.
 
-**1. Required Components**
+**1. Composants nécessaires**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est évidemment plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
+    *   - Nom	
+        - ÉLÉMENTS DANS LE KIT
+        - LIEN
     *   - Kepler Kit	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT	
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -71,7 +70,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -86,96 +85,92 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Batterie 18650
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Support de Batterie
         - 1
         -  
 
-**2. Build the Circuit**
+**2. Monter le Circuit**
 
     .. warning:: 
         
-        Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
+        Assurez-vous que votre module de chargeur Li-po est connecté comme indiqué sur le schéma. Sinon, un court-circuit pourrait endommager votre batterie et votre circuit.
 
 .. image:: img/wiring/5.mqtt_pub.png
     :width: 800
 
-**3. Visit HiveMQ**
+**3. Visiter HiveMQ**
 
-HiveMQ is an MQTT broker and client-based messaging platform that enables fast, efficient and reliable data transfer to IoT devices.。
+HiveMQ est une plateforme de messagerie basée sur MQTT qui permet un transfert de données rapide, efficace et fiable vers les dispositifs IoT.
 
-1. Open |link_hivemq| in your browser.
+1. Ouvrez |link_hivemq| dans votre navigateur.
 
-2. Connects the client to the default public proxy.
+2. Connectez le client au proxy public par défaut.
 
    .. image:: img/mqtt-1.png
 
-
-3. Click on **Add New Topic Subscription**.
+3. Cliquez sur **Ajouter une nouvelle souscription à un sujet**.
 
    .. image:: img/mqtt-2.png
 
-
-4. Fill in the topics you want to follow and click **Subscribe**. The topics set here should be more personal to avoid getting messages from other users, and pay attention to case sensitive.
+4. Remplissez les sujets que vous souhaitez suivre et cliquez sur **S'abonner**. Les sujets définis ici doivent être plus personnels pour éviter de recevoir des messages d'autres utilisateurs, et faites attention à la sensibilité à la casse.
 
    .. image:: img/mqtt-3.png
 
+**4. Installer le Module MQTT**
 
+Avant de commencer le projet, nous devons installer le module MQTT pour Pico W.
 
-**4. Install the MQTT Module**
-
-Before we can start the project, we need to install the MQTT module for Pico W.
-
-1. Connect to the network by running ``do_connect()`` in the Shell, which we wrote earlier.
+1. Connectez-vous au réseau en exécutant ``do_connect()`` dans le Shell, que nous avons écrit précédemment.
 
     .. note::
-        * Type the following commands into the Shell and press ``Enter`` to run them.
-        * If you don't have ``do_connect.py`` and ``secrets.py`` scripts in your Pico W, please refer to :ref:`iot_access` to create them.
+        * Tapez les commandes suivantes dans le Shell et appuyez sur ``Entrée`` pour les exécuter.
+        * Si vous n'avez pas les scripts ``do_connect.py`` et ``secrets.py`` dans votre Pico W, veuillez vous référer à :ref:`iot_access` pour les créer.
 
     .. code-block:: python
 
         from do_connect import *
         do_connect()
 
-2. After a successful network connection, import the ``mip`` module in the shell and use ``mip`` to install the ``umqtt.simple`` module, which is a simplified MQTT client for MicroPython.
+2. Après une connexion réseau réussie, importez le module ``mip`` dans le shell et utilisez ``mip`` pour installer le module ``umqtt.simple``, un client MQTT simplifié pour MicroPython.
 
     .. code-block:: python
 
         import mip
         mip.install('umqtt.simple')
 
-3. You will see that the ``umqtt`` module is installed under the ``/lib/`` path of Pico W after completion.
+3. Vous verrez que le module ``umqtt`` est installé sous le chemin ``/lib/`` du Pico W après la fin de l'installation.
 
     .. image:: img/5_calling_system1.png
 
-**5. Run the Script**
+**5. Exécuter le Script**
 
-#. Open the ``5_mqtt_publish.py`` file under the path of ``kepler-kit-main/iot``.
+#. Ouvrez le fichier ``5_mqtt_publish.py`` dans le répertoire ``kepler-kit-main/iot``.
 
-#. Click the **Run current script** button or press F5 to run it.
+#. Cliquez sur le bouton **Exécuter le script actuel** ou appuyez sur F5 pour le lancer.
 
     .. image:: img/5_calling_system2.png
 
-#. Go back to |link_hivemq| again and when you press one of the buttons on the breadboard, you will be able to see the Messages prompt on HiveMQ.
+#. Retournez à |link_hivemq| et lorsque vous appuyez sur l'un des boutons de la plaque de prototypage, vous verrez une notification de message sur HiveMQ.
 
     .. image:: img/mqtt-4.png
-  
 
-#. If you want this script to be able to boot up, you can save it to the Raspberry Pi Pico W as ``main.py``.
+#. Si vous souhaitez que ce script soit lancé au démarrage, vous pouvez l'enregistrer sur le Raspberry Pi Pico W sous le nom de ``main.py``.
 
-**How it works?**
 
-The Raspberry Pi Pico W needs to be connected to the Internet, as described in :ref:`iot_access`. For this project, just use it.
+**Comment ça marche ?**
+
+Le Raspberry Pi Pico W doit être connecté à Internet, comme décrit dans :ref:`iot_access`. Utilisez simplement cette connexion pour ce projet.
 
 .. code-block:: python
 
     from do_connect import *
     do_connect()
 
-Initialize 4 button pins.
+Initialisez 4 broches pour les boutons.
 
 .. code-block:: python
 
@@ -184,15 +179,15 @@ Initialize 4 button pins.
     sensor3 = Pin(18, Pin.IN)
     sensor4 = Pin(19, Pin.IN)
 
-Create two variables to store the ``URL`` and ``client ID`` of the MQTT broker we will use to connect to it.
-Since we are using a public broker, our ``client ID`` will not be used, even if one is required.
+Créez deux variables pour stocker l'``URL`` et l'``ID client`` du courtier MQTT avec lequel nous allons nous connecter.
+Étant donné que nous utilisons un courtier public, notre ``ID client`` ne sera pas utilisé, même si un est requis.
 
 .. code-block:: python
 
     mqtt_server = 'broker.hivemq.com'
     client_id = 'Jimmy'
 
-Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
+Connectez-vous au courtier MQTT et maintenez la connexion pendant une heure. En cas d'échec, réinitialisez le Pico W.
 
 .. code-block:: python
 
@@ -205,14 +200,14 @@ Connect to the MQTT agent and hold for one hour. If it fails, reset the Pico W.
         time.sleep(5)
         machine.reset()
 
-Create a variable ``topic``, which is the topic that the subscriber needs to follow. It should be the same as the topic filled in **step 4** of **2. Visit HiveMQ** above.
-Incidentally, ``b`` here converts string to byte, because MQTT is a binary based protocol were the control elements are binary bytes and not text strings.
+Créez une variable ``topic``, qui est le sujet que l'abonné doit suivre. Elle doit correspondre au sujet défini à l'étape **4** de la section **2. Visiter HiveMQ** ci-dessus.
+Par ailleurs, ``b`` ici convertit la chaîne en octet, car MQTT est un protocole binaire où les éléments de contrôle sont des octets binaires et non des chaînes de texte.
 
 .. code-block:: python
 
     topic = b'SunFounder MQTT Test'
 
-Set interrupts for each button. When a button is pressed, a message is posted under ``topic``.
+Définissez des interruptions pour chaque bouton. Lorsqu'un bouton est pressé, un message est publié sous le ``topic``.
 
 .. code-block:: python
 

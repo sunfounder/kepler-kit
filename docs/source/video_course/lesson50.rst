@@ -1,31 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Approfondissez vos connaissances en Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 50: Removing Long Term Steady State Error from Sensor Data
-=============================================================================
-This tutorial covers improving tilt measurement accuracy using the MPU6050 sensor and Raspberry Pi Pico W:
+Leçon 50 : Éliminer les erreurs constantes à long terme dans les données des capteurs
+==========================================================================================
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W.
-* **Challenges**: Accelerometers are noisy, and gyroscopes drift over time.
-* **Solution**: Use a complementary filter to combine accelerometer and gyroscope data, with a low-pass filter and error correction.
-* **Results**: Achieve accurate, fast, and low-noise tilt measurements.
-* **Homework**: Implement the filter and error correction, and display tilt data on an OLED screen.
+Ce tutoriel explique comment améliorer la précision des mesures d'inclinaison en utilisant le capteur MPU6050 et le Raspberry Pi Pico W :
 
+* **Configuration** : Connectez le MPU6050 au Raspberry Pi Pico W.
+* **Défis** : Les accéléromètres sont sujets au bruit, et les gyroscopes dérivent avec le temps.
+* **Solution** : Utiliser un filtre complémentaire pour combiner les données de l'accéléromètre et du gyroscope, avec un filtre passe-bas et une correction des erreurs.
+* **Résultats** : Obtenez des mesures d'inclinaison précises, rapides et avec un faible niveau de bruit.
+* **Devoir** : Implémentez le filtre et la correction des erreurs, et affichez les données d'inclinaison sur un écran OLED.
 
-
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

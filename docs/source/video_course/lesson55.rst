@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Approfondissez vos connaissances en Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 55: Create a Dynamic Rainbow With Neopixels in MicroPython
-=============================================================================
-This tutorial covers creating a running rainbow pattern on a NeoPixel array using the Raspberry Pi Pico W and MicroPython:
+Leçon 55 : Créer un arc-en-ciel dynamique avec des NeoPixels en MicroPython
+================================================================================
 
-* **Wiring Setup**: Connect 5V, GND, and Data pin to GPIO pin 0 on the Pico W.
-* **Concept Explanation**: Create a running rainbow pattern by incrementing HSV values and applying them to each pixel.
-* **Code Implementation**: Use a function to convert HSV to RGB. Implement nested loops to cycle through the HSV color wheel and update the NeoPixel array.
-* **Demonstration and Testing**: Display the running rainbow pattern and provide troubleshooting tips.
-* **Homework Assignment**: Experiment with new patterns and share results with the community.
+Ce tutoriel explique comment créer un motif d'arc-en-ciel animé sur une matrice de NeoPixel en utilisant le Raspberry Pi Pico W et MicroPython :
 
+* **Configuration du câblage** : Connectez 5V, GND et la broche Data à la broche GPIO 0 sur le Pico W.
+* **Explication du concept** : Créez un motif d'arc-en-ciel en incrémentant les valeurs HSV et en les appliquant à chaque pixel.
+* **Implémentation du code** : Utilisez une fonction pour convertir les valeurs HSV en RGB. Implémentez des boucles imbriquées pour parcourir la roue chromatique HSV et mettre à jour la matrice NeoPixel.
+* **Démonstration et tests** : Affichez le motif d'arc-en-ciel animé et fournissez des conseils de dépannage.
+* **Devoir** : Expérimentez avec de nouveaux motifs et partagez vos résultats avec la communauté.
 
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

@@ -1,62 +1,61 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Plongez plus profondément dans le monde du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_room_temp:
 
-7.2 Room Temperature Meter
+7.2 Thermomètre de Pièce
 ======================================
 
-Using a thermistor and an I2C LCD1602, we can create a room temperature meter.
+À l'aide d'une thermistance et d'un écran LCD1602 I2C, nous pouvons créer un thermomètre de pièce.
 
-This project is very simple, it is based on :ref:`py_temp` with I2C LCD1602 to display the temperature.
+Ce projet est très simple, il se base sur :ref:`py_temp` avec l'ajout d'un écran LCD1602 I2C pour afficher la température.
 
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -65,11 +64,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_thermistor`
@@ -80,12 +79,12 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_room_temp|
 
 
-**Wiring**
+**Câblage**
 
 |wiring_room_temp|
 
@@ -93,12 +92,11 @@ You can also buy them separately from the links below.
 
 .. note::
 
-    * Open the ``7.2_room_temperature_meter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Ouvrez le fichier ``7.2_room_temperature_meter.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * N'oubliez pas de sélectionner l'interpréteur "MicroPython (Raspberry Pi Pico)" en bas à droite.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Pour des tutoriels détaillés, veuillez consulter :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -107,42 +105,43 @@ You can also buy them separately from the links below.
     import utime
     import math
 
-    # Initialize the thermistor (ADC on pin 28) and LCD display
-    thermistor = machine.ADC(28)  # Analog input from the thermistor
+    # Initialiser la thermistance (ADC sur la broche 28) et l'écran LCD
+    thermistor = machine.ADC(28)  # Entrée analogique de la thermistance
 
-    # Initialize I2C communication for the LCD1602 display
+    # Initialiser la communication I2C pour l'écran LCD1602
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 
-    # Create an LCD object for controlling the LCD1602 display
+    # Créer un objet LCD pour contrôler l'écran LCD1602
     lcd = LCD(i2c)
 
-    # Main loop to continuously read temperature and display it
+    # Boucle principale pour lire en continu la température et l'afficher
     while True:
-        # Read raw ADC value from the thermistor
+        # Lire la valeur brute de l'ADC de la thermistance
         temperature_value = thermistor.read_u16()
 
-        # Convert the raw ADC value to a voltage (0-3.3V range)
-        Vr = 3.3 * float(temperature_value) / 65535  # ADC value to voltage conversion
+        # Convertir la valeur brute de l'ADC en tension (gamme de 0-3,3V)
+        Vr = 3.3 * float(temperature_value) / 65535  # Conversion de la valeur ADC en tension
 
-        # Calculate the thermistor resistance (using a voltage divider with a 10kOhm resistor)
-        Rt = 10000 * Vr / (3.3 - Vr)  # Rt = thermistor resistance
+        # Calculer la résistance de la thermistance (en utilisant un diviseur de tension avec une résistance de 10kΩ)
+        Rt = 10000 * Vr / (3.3 - Vr)  # Rt = résistance de la thermistance
 
-        # Use the Steinhart-Hart equation to calculate the temperature in Kelvin
-        # The values used are specific to the thermistor (3950 is the beta coefficient)
-        temp = 1 / (((math.log(Rt / 10000)) / 3950) + (1 / (273.15 + 25)))  # Temperature in Kelvin
+        # Utiliser l'équation de Steinhart-Hart pour calculer la température en Kelvin
+        # Les valeurs utilisées sont spécifiques à la thermistance (3950 est le coefficient bêta)
+        temp = 1 / (((math.log(Rt / 10000)) / 3950) + (1 / (273.15 + 25)))  # Température en Kelvin
 
-        # Convert temperature from Kelvin to Celsius
+        # Convertir la température de Kelvin en Celsius
         Cel = temp - 273.15
 
-        # Display the temperature on the LCD in Celsius
-        string = " Temperature is \n    " + str('{:.2f}'.format(Cel)) + " C"  # Format string for the LCD
-        lcd.message(string)  # Display the string on the LCD
+        # Afficher la température sur l'écran LCD en Celsius
+        string = " Temperature is \n    " + str('{:.2f}'.format(Cel)) + " C"  # Format de la chaîne pour l'affichage LCD
+        lcd.message(string)  # Afficher la chaîne sur l'écran LCD
 
-        utime.sleep(1)  # Wait for 1 second
-        lcd.clear()  # Clear the LCD for the next reading
+        utime.sleep(1)  # Attendre 1 seconde
+        lcd.clear()  # Effacer l'écran LCD pour la prochaine lecture
 
 
-The LCD will display the temperature value in the current environment after the program runs.
+L'écran LCD affichera la valeur de la température dans l'environnement actuel après le démarrage du programme.
 
 .. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.
+    Si le code et le câblage sont corrects mais que l'écran LCD ne montre toujours rien, vous pouvez tourner le potentiomètre à l'arrière pour augmenter le contraste.
+

@@ -1,42 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_keypad:
 
-4x4 Keypad
+Clavier 4x4
 ========================
 
+Dans les systèmes à microcontrôleur, lorsque l'on utilise un grand nombre de touches, comme pour un verrou électronique ou un clavier de téléphone, il y a généralement au moins 12 à 16 touches, souvent disposées en clavier matriciel.
 
-Microcontroller system, if the use of more keys such as electronic code lock, telephone keypad, etc. generally have at least 12 to 16 keys, usually using a matrix keyboard.
+Le clavier matriciel, aussi appelé clavier à rangées, est un clavier avec quatre lignes d'E/S en tant que lignes de rangées et quatre lignes d'E/S en tant que lignes de colonnes. Une touche est placée à chaque intersection des lignes de rangées et de colonnes, ce qui donne un clavier de 4*4. Cette structure de clavier en rangées et colonnes permet d'améliorer efficacement l'utilisation des ports d'E/S dans un système à microcontrôleur.
 
-
-Matrix keypad is also called row keypad, it is a keypad with four I/O lines as row lines and four I/O lines as column lines. One key is set at each intersection of the row and column lines. Thus the number of keys on the keyboard is 4*4. This row and column keyboard structure can effectively improve the utilization of I/O ports in a microcontroller system.
-
-Their contacts are accessed via a header suitable for connection with a ribbon cable or insertion into a printed circuit board. 
-In some keypads, each button connects with a separate contact in the header, while all the buttons share a common ground.
+Les contacts de ces claviers sont accessibles via un connecteur adapté pour une connexion avec un câble ruban ou pour être insérés dans un circuit imprimé. 
+Dans certains claviers, chaque bouton est connecté à un contact séparé dans le connecteur, tandis que tous les boutons partagent une masse commune.
 
 |img_keypad|
 
-More often, the buttons are matrix encoded, meaning that each of them bridges a unique pair of conductors in a matrix. 
-This configuration is suitable for polling by a microcontroller, which can be programmed to send an output pulse to each of the four horizontal wires in turn. 
-During each pulse, it checks the remaining four vertical wires in sequence, to determine which one, if any, is carrying a signal. 
-Pullup or pulldown resistors should be added to the input wires to prevent the inputs of the microcontroller from behaving unpredictably when no signal is present.
+Le plus souvent, les boutons sont codés en matrice, ce qui signifie que chacun d'eux relie une paire unique de conducteurs dans une matrice. 
+Cette configuration est idéale pour être scannée par un microcontrôleur, qui peut être programmé pour envoyer une impulsion de sortie sur chacune des quatre lignes horizontales à tour de rôle. 
+Pendant chaque impulsion, il vérifie les quatre lignes verticales restantes, afin de déterminer si l'une d'entre elles transmet un signal. 
+Des résistances de pull-up ou de pull-down doivent être ajoutées aux fils d'entrée pour éviter que les entrées du microcontrôleur ne se comportent de manière imprévisible en l'absence de signal.
 
 * `Keypad - Wikipedia <https://en.wikipedia.org/wiki/Keypad>`_
 
-**Example**
+**Exemple**
 
-* :ref:`py_keypad` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`ar_keypad` (For Arduino User)
+* :ref:`py_keypad` (pour les utilisateurs de MicroPython)
+* :ref:`py_guess_number` (pour les utilisateurs de MicroPython)
+* :ref:`ar_keypad` (pour les utilisateurs d'Arduino)

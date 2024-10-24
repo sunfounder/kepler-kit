@@ -1,31 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 34: Convert HSV to RGB in Micropython
+Leçon 34 : Conversion de HSV à RGB en Micropython
 =============================================================================
-This tutorial covers converting HSV (Hue, Saturation, Value) color values to RGB (Red, Green, Blue) values and displaying them on an RGB LED using the Raspberry Pi Pico W:
 
-* **Introduction to the HSV Color Wheel**: Explains the HSV color wheel and its use for smooth color transitions, especially for visualizing temperature data.
-* **Project Setup and Goal**: Recap of the weather station project and the goal of adding RGB LED color representation for temperature.
-* **Understanding HSV to RGB Conversion**: Describes the HSV color wheel's mathematical representation, zones, and RGB conversion.
-* **Algorithm Development**: Creates a function to convert HSV to RGB values and sets up the RGB LED with PWM on the Raspberry Pi Pico W.
-* **Code Implementation**: Walkthrough of Python code for PWM control and HSV to RGB conversion, including a library function.
-* **Practical Demonstration**: Shows RGB LED color changes based on HSV, and assigns the task of integrating the LED into the weather station project.
+Ce tutoriel explique comment convertir les valeurs de couleur HSV (Teinte, Saturation, Valeur) en RGB (Rouge, Vert, Bleu) et les afficher sur une LED RGB en utilisant le Raspberry Pi Pico W :
 
+* **Introduction à la roue chromatique HSV** : Présente la roue chromatique HSV et son utilisation pour des transitions de couleur fluides, notamment pour visualiser des données de température.
+* **Configuration du projet et objectif** : Récapitulatif du projet de station météo et objectif d'ajouter une représentation des couleurs via la LED RGB pour indiquer la température.
+* **Compréhension de la conversion HSV en RGB** : Décrit la représentation mathématique de la roue chromatique HSV, ses zones, et le processus de conversion en RGB.
+* **Développement de l'algorithme** : Crée une fonction pour convertir les valeurs HSV en RGB et configure la LED RGB avec le PWM sur le Raspberry Pi Pico W.
+* **Implémentation du code** : Explication pas à pas du code Python pour le contrôle PWM et la conversion de HSV à RGB, en incluant une fonction de bibliothèque.
+* **Démonstration pratique** : Montre les changements de couleur de la LED RGB basés sur les valeurs HSV, et propose comme exercice d'intégrer la LED au projet de station météo.
 
-
-**Video**
+**Vidéo**
 
 .. raw:: html
 

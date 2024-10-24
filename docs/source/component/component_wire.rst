@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avance aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_wire:
 
-Jumper Wires
-==================
-Wires that connect two terminals are called jumper wires. There are various kinds of jumper wires. Here we focus on those used in breadboard. Among others, they are used to transfer electrical signals from anywhere on the breadboard to the input/output pins of a microcontroller.
+Fils de connexion (Jumper Wires)
+=====================================
 
-Jump wires are fitted by inserting their “end connectors” into the slots provided in the breadboard, beneath whose surface there are a few sets of parallel plates that connect the slots in groups of rows or columns depending on the area. The “end connectors” are inserted into the breadboard, without soldering, in the particular slots that need to be connected in the specific prototype.
+Les fils qui relient deux bornes sont appelés fils de connexion ou « jumper wires ». Il existe divers types de fils de connexion. Nous nous concentrons ici sur ceux utilisés dans les platines d'essai (breadboards). Parmi leurs usages, ils permettent de transférer des signaux électriques depuis n'importe quel point de la platine vers les broches d'entrée/sortie d'un microcontrôleur.
 
-There are three types of jumper wire: Female-to-Female, Male-to-Male, and Male-to-Female. The reason we call it Male-to-Female is because it has the outstanding tip in one end as well as a sunk female end. Male-to-Male means both side are male and Female-to-Female means both ends are female.
+Les fils de connexion sont installés en insérant leurs « connecteurs d'extrémité » dans les fentes prévues sur la platine, sous lesquelles se trouvent des ensembles de plaques parallèles qui relient les fentes par groupes de rangées ou de colonnes selon la zone. Les « connecteurs d'extrémité » sont insérés dans la platine sans soudure, dans les emplacements spécifiques nécessaires à la connexion du prototype.
+
+Il existe trois types de fils de connexion : Femelle-à-Femelle, Mâle-à-Mâle et Mâle-à-Femelle. On les nomme ainsi car un fil Mâle-à-Femelle a une pointe proéminente d'un côté et une extrémité en creux de l'autre. Mâle-à-Mâle signifie que les deux extrémités sont mâles, et Femelle-à-Femelle signifie que les deux extrémités sont femelles.
 
 |img_wire|
 
 .. note::
 
-    * More than one type of them may be used in a project.
-    * The color of the jump wires is different but it doesn't mean their function is different accordingly; it's just designed so to better identify the connection between each circuit.
+    * Plus d'un type de fil peut être utilisé dans un projet.
+    * La couleur des fils de connexion varie mais cela ne signifie pas que leur fonction diffère ; c'est simplement pour mieux identifier les connexions entre chaque circuit.

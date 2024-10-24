@@ -1,63 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Explorez plus en profondeur le Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_tilt:
 
-2.6 - Tilt It！
+2.6 - Inclinez-le !
 ==========================
 
 |img_tilt|
 
-The tilt switch is a 2-pin device with a metal ball in the middle. When you put it upright, the 2 pins are connected together; when you tilt the switch, 2 pins will be disconnected.
+Le capteur d'inclinaison est un dispositif à 2 broches avec une bille métallique au milieu. Lorsque vous le placez à la verticale, les 2 broches sont connectées ensemble ; en inclinant le capteur, les 2 broches se déconnectent.
 
 
-**Required Components**
+**Composants requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous avons besoin des composants suivants. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est pratique d'acheter un kit complet, voici le lien : 
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nom	
+        - ARTICLES DANS CE KIT
+        - LIEN D'ACHAT
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCTION DES COMPOSANTS	
+        - QUANTITÉ
+        - LIEN D'ACHAT
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -77,17 +76,17 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Schéma**
 
 |sch_tilt|
 
-When you put it upright, GP14 will get high; after tilting it, GP14 will get low.
+Lorsque le capteur est à la verticale, GP14 sera en état haut ; en l'inclinant, GP14 passera en état bas.
 
-The purpose of the 10K resistor is to keep the GP14 in a stable low state when the tilt switch is in a tilted state.
+La résistance de 10KΩ sert à maintenir GP14 dans un état bas stable lorsque le capteur d'inclinaison est incliné.
 
 * :ref:`cpn_tilt`
 
-**Wiring**
+**Câblage**
 
 |wiring_tilt|
 
@@ -95,17 +94,15 @@ The purpose of the 10K resistor is to keep the GP14 in a stable low state when t
 
 .. note::
 
-    * You can open the file ``2.6_tilt_it.ino`` under the path of ``kepler-kit-main/arduino/2.4_colorful_light``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Vous pouvez ouvrir le fichier ``2.6_tilt_it.ino`` dans le chemin ``kepler-kit-main/arduino/2.4_colorful_light``. 
+    * Ou copiez ce code dans **Arduino IDE**.
+    * N'oubliez pas de sélectionner la carte (Raspberry Pi Pico) et le port correct avant de cliquer sur le bouton **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0421b002-a697-4f22-a965-0e62e8dc3abf/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-    
 
 
-After the program runs, when you tilt the breadboard (tilt switch), "The switch works!" will appear in the shell.
+
+Après l'exécution du programme, lorsque vous inclinez la breadboard (avec le capteur d'inclinaison), "The switch works!" apparaîtra dans la console.

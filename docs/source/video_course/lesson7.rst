@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 7:  Controlling 3 LED with a Potentiometer in Micropython
+Leçon 7 : Contrôler 3 LEDs avec un potentiomètre en MicroPython
 ====================================================================
 
-This tutorial covers using a potentiometer to control three LEDs (green, yellow, and red) with the Raspberry Pi Pico W:
+Ce tutoriel explique comment utiliser un potentiomètre pour contrôler trois LEDs (verte, jaune et rouge) avec le Raspberry Pi Pico W :
 
-* **Homework Solution Review**: Recap of connecting a potentiometer and three LEDs, mapping readings from 0 to 100.
-* **Circuit Setup**: Wiring diagram for connecting the potentiometer and LEDs to the Raspberry Pi Pico W.
-* **Reading and Mapping Values**: Reading analog values and mapping them from 432-65,535 to a 0-100 scale.
-* **LED Control**: Using if statements to control LEDs based on the potentiometer's position (green for 0-79, yellow for 80-94, red for 95-100).
-* **Practical Demonstration**: Showcasing the circuit and code in action.
+* **Revue de la solution des devoirs** : Récapitulatif sur la connexion d'un potentiomètre et de trois LEDs, en mappant les valeurs de lecture de 0 à 100.
+* **Configuration du circuit** : Schéma de câblage pour connecter le potentiomètre et les LEDs au Raspberry Pi Pico W.
+* **Lecture et mappage des valeurs** : Lecture des valeurs analogiques et conversion de la plage 432-65 535 en une échelle de 0 à 100.
+* **Contrôle des LEDs** : Utilisation d'instructions if pour contrôler les LEDs en fonction de la position du potentiomètre (vert pour 0-79, jaune pour 80-94, rouge pour 95-100).
+* **Démonstration pratique** : Présentation du circuit et du code en fonctionnement.
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

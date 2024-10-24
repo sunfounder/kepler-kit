@@ -1,48 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_lipo_charger:
 
-Li-po Charger Module
+Module de chargeur Li-po
 =================================================
-
 
 |lipo_module|
 
-This is a Li-po charger module designed for Raspberry Pi Pico/Pico H/Pico W. Just plug it and the Pico into the breadboard as shown below, and then connect the battery at the other end and you are ready to use.
+Il s'agit d'un module de chargeur Li-po conçu pour Raspberry Pi Pico/Pico H/Pico W. Branchez simplement le module et le Pico sur la plaque de prototypage comme indiqué ci-dessous, puis connectez la batterie à l'autre extrémité, et vous êtes prêt à l'utiliser.
 
-When you plug in the Pico W with a USB cable connected to a computer or socket, the indicator light on the Li-po Charger module lights up, representing the battery will be charged at the same time. When you unplug the USB cable, the Pico W will be powered by the battery, so you can keep your project running.
-
+Lorsque vous connectez le Pico W à un ordinateur ou une prise via un câble USB, le voyant du module de chargeur Li-po s'allume, indiquant que la batterie est en charge. Lorsque vous débranchez le câble USB, le Pico W est alimenté par la batterie, ce qui permet à votre projet de continuer à fonctionner.
 
 .. note::
-    For some computers with poor performance, sometimes if you plug in your Pico W to your computer with this charging module attached, it may cause the computer not to recognize your Pico W.
+    Pour certains ordinateurs de faible performance, il peut arriver que si vous branchez votre Pico W à votre ordinateur avec ce module de charge, l'ordinateur ne reconnaisse pas votre Pico W.
 
-    The reason is that after plugging in, while charging the battery, the USB port voltage is pulled down, resulting in the Pico W power supply is insufficient to be recognized by the computer.
+    La raison est qu'après le branchement, tout en chargeant la batterie, la tension du port USB est abaissée, ce qui entraîne une alimentation insuffisante pour que le Pico W soit reconnu par l'ordinateur.
     
-    In this case, you need to pull out the Li-Po charging module and then plug in the Pico W again.
+    Dans ce cas, vous devez débrancher le module de charge Li-po puis rebrancher le Pico W.
 
 |lipo_wire|
 
-**Features**
+**Caractéristiques**
 
-* Input voltage: 5V
-* Output voltage: 3.3V
-* Size: 20mmx7mm
-* Interface model: PH2.0
-* There is a matching 1A battery holder as well as an 800mAh 18650 used together.
+* Tension d'entrée : 5V
+* Tension de sortie : 3,3V
+* Taille : 20mm x 7mm
+* Modèle d'interface : PH2.0
+* Il y a un support de batterie 1A assorti ainsi qu'une batterie 18650 de 800mAh à utiliser ensemble.
 
-
-**Schematic**
+**Schéma**
 
 |sch_lipo_charger|

@@ -1,48 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Avant-premières exclusives** : Profitez d'un accès anticipé aux annonces de nouveaux produits et aux aperçus en avant-première.
+    - **Remises spéciales** : Bénéficiez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et à des tirages au sort pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_mfrc522:
 
-MFRC522 Module
+Module MFRC522
 ====================
 
 |img_mfrc522|
 
-MFRC522 is a kind of integrated read and write card chip. It is commonly
-used in the radio at 13.56MHz. Launched by the NXP Company, it is a
-low-voltage, low-cost, and small-sized non-contact card chip, a best
-choice of intelligent instrument and portable handheld device.
+Le MFRC522 est une puce intégrée de lecture et écriture de cartes, couramment 
+utilisée dans la radio à 13,56 MHz. Lancée par la société NXP, il s'agit d'une 
+puce de carte sans contact à basse tension, peu coûteuse et de petite taille, 
+idéale pour les instruments intelligents et les appareils portables.
 
-The MF RC522 uses advanced modulation and demodulation concept which
-fully presented in all types of 13.56MHz passive contactless
-communication methods and protocols. In addition, it supports rapid
-CRYPTO1 encryption algorithm to verify MIFARE products. MFRC522 also
-supports MIFARE series of high-speed non-contact communication, with a
-two-way data transmission rate up to 424kbit/s. As a new member of the
-13.56MHz highly integrated reader card series, MF RC522 is much similar
-to the existing MF RC500 and MF RC530 but there also exists great
-differences. It communicates with the host machine via the serial manner
-which needs less wiring. You can choose between SPI, I2C and serial UART
-mode (similar to RS232), which helps reduce the connection, save PCB
-board space (smaller size), and reduce cost.
-
+Le MFRC522 utilise un concept avancé de modulation et de démodulation qui couvre 
+entièrement tous les types de méthodes et protocoles de communication sans contact 
+passifs à 13,56 MHz. En outre, il prend en charge l'algorithme de chiffrement 
+rapide CRYPTO1 pour la vérification des produits MIFARE. Le MFRC522 supporte 
+également les communications haute vitesse de la série MIFARE, avec un taux de 
+transmission de données bidirectionnel pouvant atteindre 424 kbit/s. En tant que 
+nouveau membre de la série de lecteurs de cartes hautement intégrés à 13,56 MHz, 
+le MFRC522 est similaire aux modèles existants MF RC500 et MF RC530, mais présente 
+également des différences notables. Il communique avec la machine hôte de manière 
+sérielle, nécessitant moins de câblage. Vous pouvez choisir entre les modes SPI, 
+I2C et UART série (similaire au RS232), ce qui permet de simplifier la connexion, 
+d'économiser de l'espace sur la carte PCB (format plus compact) et de réduire les coûts.
 
 * `MFRC522 Data sheet <https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf>`_
 
 
-**Example**
+**Exemple**
 
-* :ref:`py_rfid` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`ar_rfid` (For Arduino User)
+
+* :ref:`py_rfid` (pour les utilisateurs de MicroPython)
+* :ref:`py_music_player` (pour les utilisateurs de MicroPython)
+* :ref:`ar_rfid` (pour les utilisateurs d'Arduino)

@@ -1,72 +1,77 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Avant-premières exclusives** : Accédez en avance aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_ws2812:
 
-WS2812 RGB 8 LEDs Strip
-============================
+Bande LED WS2812 RGB 8 LEDs
+=================================
 
 |img_ws2812|
 
-The WS2812 RGB 8 LEDs Strip is composed of 8 RGB LEDs. 
-Only one pin is required to control all the LEDs. Each RGB LED has a WS2812 chip, which can be controlled independently. 
-It can realize 256-level brightness display and complete true color display of 16,777,216 colors. 
-At the same time, the pixel contains an intelligent digital interface data latch signal shaping amplifier drive circuit, 
-and a signal shaping circuit is built in to effectively ensure the color height of the pixel point light Consistent.
+La bande WS2812 RGB 8 LEDs est composée de 8 LED RGB. 
+Un seul pin est nécessaire pour contrôler toutes les LEDs. Chaque LED RGB possède une puce WS2812, qui peut être contrôlée indépendamment. 
+Elle permet d'afficher des niveaux de luminosité sur 256 niveaux et de reproduire la couleur réelle avec 16 777 216 couleurs. 
+De plus, chaque pixel intègre un circuit de verrouillage des données de l'interface numérique intelligente, ainsi qu'un circuit de mise en forme du signal d'amplification, garantissant efficacement une uniformité de couleur élevée des pixels lumineux.
 
-It is flexible, can be docked, bent, and cut at will, and the back is equipped with adhesive tape, which can be fixed on the uneven surface at will, and can be installed in a narrow space.
+Elle est flexible, peut être raccordée, pliée et découpée à volonté. L'arrière est équipé d'un ruban adhésif, ce qui permet de la fixer sur des surfaces irrégulières et dans des espaces étroits.
 
-**Features**
+**Caractéristiques**
 
-* Work Voltage: DC5V
-* IC: One IC drives one RGB LED
-* Consumption: 0.3w each LED
-* Working Temperature: -15-50
-* Color: Full color RGB
-* RGB Type: 5050RGB(Built-in IC WS2812B)
-* Light Strip Thickness: 2mm
-* Each LED can be controlled individually
+* Tension de fonctionnement : DC5V
+* IC : Une puce contrôle une LED RGB
+* Consommation : 0,3W par LED
+* Température de fonctionnement : -15 à 50°C
+* Couleur : RGB pleine couleur
+* Type de RGB : 5050RGB (IC intégré WS2812B)
+* Épaisseur de la bande lumineuse : 2mm
+* Chaque LED peut être contrôlée individuellement
 
-**WS2812B Introdction**
+**Présentation du WS2812B**
 
 * `WS2812B Datasheet <https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf>`_
 
-WS2812B is a intelligent control LED light source that the control circuit and RGB chip are integrated in
-a package of 5050 components. It internal include intelligent digital port data latch and signal reshaping ampli
-fication drive circuit. Also include a precision internal oscillator and a 12V voltage programmable constant curr
-e-nt control part, effectively ensuring the pixel point light color height consistent.
+Le WS2812B est une source lumineuse LED à contrôle intelligent où le circuit 
+de contrôle et la puce RGB sont intégrés dans un composant 5050. Il comprend 
+un port de données numériques intelligent avec verrouillage des données et un 
+circuit d'amplification de mise en forme du signal. Il intègre également un 
+oscillateur interne de haute précision et une partie de contrôle de courant 
+constant programmable en 12V, garantissant ainsi la cohérence de la couleur des 
+points lumineux.
 
-The data transfer protocol use single NZR communication mode. After the pixel power-on reset, the DIN
-port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch,
-the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade
-pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. pixel adopt auto resha
--ping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend
-on the speed of signal transmission.
+Le protocole de transfert de données utilise un mode de communication NZR unique. 
+Après le réinitialisation du pixel, le port DIN reçoit les données du contrôleur, 
+le premier pixel collecte les premières 24 bits de données puis les envoie au verrou 
+de données interne. Les autres données, restructurées par le circuit d'amplification 
+interne, sont envoyées au pixel suivant via le port DO. Après la transmission par chaque 
+pixel, le signal est réduit de 24 bits. Grâce à la technologie de retransmission automatique, 
+le nombre de pixels en cascade n'est pas limité par la transmission du signal, mais seulement 
+par la vitesse de transmission du signal.
 
-LED with low driving voltage, environmental protection and energy saving, high brightness, scattering angl
-e is large, good consistency, low power, long life and other advantages. The control chip integrated in LED
-above becoming more simple circuit, small volume, convenient installation.
+Les LED présentent une faible tension de conduite, sont écologiques et économes en 
+énergie, avec une haute luminosité, un grand angle de diffusion, une bonne cohérence, une 
+faible consommation d'énergie et une longue durée de vie. Le circuit de contrôle intégré dans 
+la LED rend le montage plus simple, de petite taille et facile à installer.
 
 .. Example
 .. -------------------
 
-.. :ref:`RGB LED Strip`
+.. :ref:`Bande LED RGB`
 
 
-**Example**
+**Exemple**
 
-* :ref:`py_neopixel` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`ar_neopixel` (For Arduino User)
-* :ref:`per_flowing_leds` (For Piper Make User)
+* :ref:`py_neopixel` (Pour utilisateurs MicroPython)
+* :ref:`py_music_player` (Pour utilisateurs MicroPython)
+* :ref:`ar_neopixel` (Pour utilisateurs Arduino)
+* :ref:`per_flowing_leds` (Pour utilisateurs Piper Make)

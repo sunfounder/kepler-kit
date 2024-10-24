@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 36: Control a Servo With MicroPython
+Leçon 36 : Contrôler un Servo avec MicroPython
 =============================================================================
-This tutorial covers controlling a servo motor using the Raspberry Pi Pico W:
 
-* **Servo Motor Control**: Introduction to using the SG90 servo with the Raspberry Pi Pico W, including servo connections and caution on power limits.
-* **Wiring Diagram and Setup**: Detailed instructions for connecting the SG90 to GPIO pin 15 and using pin 1 for a 5V supply.
-* **PWM Basics**: Explanation of PWM, calculating pulse widths for servo angles, and setting the frequency to 50Hz.
-* **Code Explanation**: Step-by-step code to set up PWM, convert angles to duty cycles, and control the servo.
-* **Practical Demonstration**: Running the code to move the servo to specific angles and ensuring safe operation.
-* **Homework Assignment**: Integrate a potentiometer to control the servo position based on its adjustments.
+Ce tutoriel explique comment contrôler un moteur servo à l'aide du Raspberry Pi Pico W :
+
+* **Contrôle du moteur servo** : Introduction à l'utilisation du servo SG90 avec le Raspberry Pi Pico W, y compris les connexions du servo et les précautions sur les limites de puissance.
+* **Schéma de câblage et configuration** : Instructions détaillées pour connecter le SG90 à la broche GPIO 15 et utiliser la broche 1 pour une alimentation de 5V.
+* **Notions de base sur le PWM** : Explication du PWM, calcul des largeurs d'impulsion pour les angles du servo et réglage de la fréquence à 50Hz.
+* **Explication du code** : Étape par étape, mise en place du PWM, conversion des angles en cycles de service et contrôle du servo.
+* **Démonstration pratique** : Exécution du code pour déplacer le servo à des angles spécifiques et assurer un fonctionnement sécurisé.
+* **Devoir** : Intégrer un potentiomètre pour contrôler la position du servo en fonction de ses réglages.
 
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

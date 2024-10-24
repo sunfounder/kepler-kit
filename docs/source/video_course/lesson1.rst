@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder pour les passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez aux concours et aux promotions de fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Lesson 1:  Write Your First Program for Absolute Beginners
-=================================================================
+Leçon 1 : Écrivez votre premier programme pour les débutants absolus
+=========================================================================
 
-This tutorial covers setting up and programming the Raspberry Pi Pico W with the SunFounder Kepler Kit:
+Ce tutoriel couvre l'installation et la programmation du Raspberry Pi Pico W avec le kit SunFounder Kepler :
 
-* **Setup**: Unbox and connect the Pico W to the PC via USB.
-* **MicroPython**: Install MicroPython on the Pico W.
-* **Thonny IDE**: Install and set up Thonny IDE.
-* **First Program**: Run a "Hello, World!" program in Thonny.
-* **GPIO**: Control the onboard LED with a simple blink program.
+* **Installation** : Déballez et connectez le Pico W au PC via USB.
+* **MicroPython** : Installez MicroPython sur le Pico W.
+* **Thonny IDE** : Installez et configurez l'IDE Thonny.
+* **Premier programme** : Lancez un programme "Hello, World!" dans Thonny.
+* **GPIO** : Contrôlez la LED intégrée avec un simple programme de clignotement.
 
-**Video**
+**Vidéo**
 
 .. raw:: html
 

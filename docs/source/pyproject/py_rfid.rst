@@ -1,68 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés SunFounder Raspberry Pi, Arduino & ESP32 sur Facebook ! Explorez en profondeur le Raspberry Pi, l'Arduino et l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _py_rfid:
 
-
-6.5 Radio Frequency Identification
+6.5 Identification par Radiofréquence (RFID)
 ================================================
 
-Radio Frequency Identification (RFID) is a technology that uses wireless communication between an object (or tag) and an interrogating device (or reader) to track and identify it. The tag's transmission range is limited to several meters. Readers and tags do not necessarily require a line of sight.
+L'Identification par Radiofréquence (RFID) est une technologie qui utilise la communication sans fil entre un objet (ou une étiquette) et un dispositif de lecture (ou lecteur) pour le suivre et l'identifier. La portée de transmission de l'étiquette est limitée à plusieurs mètres. Les lecteurs et les étiquettes ne nécessitent pas nécessairement une ligne de vue directe.
 
-An integrated circuit (IC) and an antenna are usually present on most tags. 
-As well as storing information, the microchip manages communication with the reader via radio frequency (RF).
-In passive tags, there is no independent energy source and they rely on an external electromagnetic signal from the reader for power. 
-An active tag is powered by an independent energy source, such as a battery. As a result, they may be more powerful in terms of processing, transmission, and range.
+La plupart des étiquettes contiennent un circuit intégré (IC) et une antenne. 
+En plus de stocker des informations, la puce gère la communication avec le lecteur via la radiofréquence (RF). 
+Dans le cas des étiquettes passives, il n'y a pas de source d'énergie indépendante ; elles dépendent d'un signal électromagnétique externe émis par le lecteur pour être alimentées. 
+Une étiquette active est alimentée par une source d'énergie indépendante, comme une batterie. En conséquence, elles peuvent offrir des capacités accrues en termes de traitement, de transmission et de portée.
 
 
 * :ref:`cpn_mfrc522`
 
-**Required Components**
+**Composants Requis**
 
-In this project, we need the following components. 
+Dans ce projet, nous aurons besoin des composants suivants.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Il est plus pratique d'acheter un kit complet, voici le lien :
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nom
+        - ÉLÉMENTS DANS CE KIT
+        - LIEN
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPOSANT
+        - QUANTITÉ
+        - LIEN
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Câble Micro USB
         - 1
         - 
     *   - 3
@@ -71,36 +69,34 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Plusieurs
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mfrc522`
         - 1
         - |link_rfid_buy|
 
-**Schematic**
+**Schéma**
 
 |sch_rfid|
 
-**Wiring**
-
-
+**Câblage**
 
 |wiring_rfid|
 
 **Code**
 
-Here you need to use the libraries in ``mfrc522`` folder, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+Ici, vous devez utiliser les bibliothèques dans le dossier ``mfrc522``, veuillez vérifier si elles ont été téléchargées sur Pico W, pour un tutoriel détaillé référez-vous à :ref:`add_libraries_py`.
 
-The main function is divided into two:
+La fonction principale est divisée en deux :
 
-* ``6.5_rfid_write.py``: Used to write information to the card (or key).
-* ``6.5_rfid_read.py``: used to read the information in the card (or key)
+* ``6.5_rfid_write.py`` : utilisé pour écrire des informations sur la carte (ou clé).
+* ``6.5_rfid_read.py`` : utilisé pour lire les informations stockées dans la carte (ou clé).
 
 
-Open the ``6.5_rfid_write.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+Ouvrez le fichier ``6.5_rfid_write.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-After running you will be able to type message in the shell and then put the card (or key) close to the MFRC522 module to write the message in.
+Après l'exécution, vous pourrez saisir un message dans le shell, puis approcher la carte (ou la clé) du module MFRC522 pour écrire le message.
 
 .. code-block:: python
 
@@ -116,9 +112,9 @@ After running you will be able to type message in the shell and then put the car
 
     write()
 
-Open the ``6.5_rfid_read.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+Ouvrez le fichier ``6.5_rfid_read.py`` sous le chemin ``kepler-kit-main/micropython`` ou copiez ce code dans Thonny, puis cliquez sur "Run Current Script" ou appuyez simplement sur F5 pour l'exécuter.
 
-After running, you will be able to read the message stored in the card (or key).
+Après l'exécution, vous pourrez lire le message stocké sur la carte (ou clé).
 
 .. code-block:: python
 
@@ -133,8 +129,7 @@ After running, you will be able to read the message stored in the card (or key).
 
     read()
 
-**How it works?**
-
+**Comment ça fonctionne ?**
 
 .. code-block:: python
 
@@ -142,17 +137,18 @@ After running, you will be able to read the message stored in the card (or key).
 
     reader = SimpleMFRC522(spi_id=0,sck=18,miso=16,mosi=19,cs=17,rst=9)
 
-Instantiate ``SimpleMFRC522()`` class.
+Instanciez la classe ``SimpleMFRC522()``.
 
 .. code-block:: python
 
     id, text = reader.read()
 
-This function is used to read card data. If the reading is successful, id and text will be returned.
+Cette fonction est utilisée pour lire les données de la carte. Si la lecture est réussie, l'identifiant (ID) et le texte seront renvoyés.
 
 .. code-block:: python
 
     id, text = reader.write("text")
 
-This function is used to write information to the card, press **Enter** key to finish writing. 
-``text`` is the information to be written to the card.
+
+Cette fonction est utilisée pour écrire des informations sur la carte. Appuyez sur la touche **Entrée** pour terminer l'écriture. 
+``texte`` correspond aux informations à écrire sur la carte.
