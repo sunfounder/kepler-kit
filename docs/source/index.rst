@@ -25,6 +25,9 @@ SunFounder |link_kepler_kit| をお選びいただき、ありがとうござい
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
 
     ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。
 
