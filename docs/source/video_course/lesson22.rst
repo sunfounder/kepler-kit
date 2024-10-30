@@ -1,29 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 22:  Using an LCD Display with the Pico W
+Lección 22: Uso de una Pantalla LCD con la Pico W
 =============================================================================
 
-This tutorial covers connecting and using an LCD 1602 display with the Raspberry Pi Pico W:
+Este tutorial cubre la conexión y uso de una pantalla LCD 1602 con la Raspberry Pi Pico W:
 
-* **Component Introduction and Setup**: Describes connecting the LCD 1602 display to the Raspberry Pi Pico W.
-* **Library Installation**: Guides on downloading and installing the LCD library from toptechboy.com.
-* **Code Explanation**: Explains creating an LCD object, writing text, and using ``LCD.clear()`` to avoid text overlap.
-* **Practical Demonstration**: Shows the program displaying names on the LCD and adjusting contrast with a potentiometer.
-* **Homework Assignment**: Integrate the LCD with the DHT11 project to display temperature and humidity based on a toggle button.
-
-
+* **Introducción de Componentes y Configuración**: Descripción de la conexión de la pantalla LCD 1602 a la Raspberry Pi Pico W.
+* **Instalación de Librería**: Guía para descargar e instalar la librería LCD desde toptechboy.com.
+* **Explicación del Código**: Explicación de cómo crear un objeto LCD, escribir texto y utilizar ``LCD.clear()`` para evitar la superposición de texto.
+* **Demostración Práctica**: Muestra el programa desplegando nombres en la pantalla LCD y ajustando el contraste con un potenciómetro.
+* **Tarea**: Integrar la pantalla LCD con el proyecto del DHT11 para mostrar temperatura y humedad según un botón de conmutación.
 
 **Video**
 

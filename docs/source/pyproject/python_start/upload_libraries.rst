@@ -1,47 +1,44 @@
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 .. _add_libraries_py:
 
-1.4 Upload the Libraries to Pico
-===================================
+1.4 Cargar las bibliotecas en el Pico
+=========================================
 
-In some projects, you will need additional libraries. So here we upload these libraries to Raspberry Pi Pico W first, and then we can run the code directly later.
+En algunos proyectos, necesitarás bibliotecas adicionales. Aquí subiremos estas bibliotecas a la Raspberry Pi Pico W primero, para que luego podamos ejecutar el código directamente.
 
-#. Download the relevant code from the link below.
-
+#. Descarga el código relevante desde el siguiente enlace.
 
    * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-
-#. Open Thonny IDE and plug the Pico into your computer with a micro USB cable and click on the "MicroPython (Raspberry Pi Pico).COMXX" interpreter in the bottom right corner.
+#. Abre Thonny IDE, conecta el Pico a tu computadora con un cable micro USB y haz clic en el intérprete "MicroPython (Raspberry Pi Pico).COMXX" en la esquina inferior derecha.
 
     .. image:: img/sec_inter.png
 
-#. In the top navigation bar, click **View** -> **Files**.
+#. En la barra de navegación superior, haz clic en **View** -> **Files**.
 
     .. image:: img/th_files.png
 
-#. Switch the path to the folder where you downloaded the `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ before, and then go to the ``kepler-kit-main/libs`` folder.
+#. Cambia la ruta a la carpeta donde descargaste el `code package <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`_ anteriormente, y luego ve a la carpeta ``kepler-kit-main/libs``.
 
     .. image:: img/th_path.png
 
-#. Select all the files or folders in the ``libs/`` folder, right-click and click **Upload to**, it will take a while to upload.
+#. Selecciona todos los archivos o carpetas en la carpeta ``libs/``, haz clic derecho y selecciona **Upload to**, esto tomará un momento.
 
     .. image:: img/th_upload.png
 
-#. Now you will see the files you just uploaded inside your drive ``Raspberry Pi Pico``.
+#. Ahora verás los archivos que acabas de cargar dentro de la unidad ``Raspberry Pi Pico``.
 
     .. image:: img/th_done.png

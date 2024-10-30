@@ -1,42 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_keypad:
 
-4x4 Keypad
+Teclado 4x4
 ========================
 
+En sistemas con microcontroladores, si se utilizan más teclas, como en un teclado numérico o un teclado de teléfono, generalmente se requieren al menos de 12 a 16 teclas, y se suele emplear un teclado matricial.
 
-Microcontroller system, if the use of more keys such as electronic code lock, telephone keypad, etc. generally have at least 12 to 16 keys, usually using a matrix keyboard.
+
+El teclado matricial, también llamado teclado de filas, es un teclado que cuenta con cuatro líneas de E/S como filas y cuatro líneas de E/S como columnas. En cada intersección de las líneas de fila y columna hay una tecla. Por lo tanto, el número total de teclas en el teclado es de 4x4. Esta estructura de filas y columnas puede mejorar eficazmente la utilización de los puertos de E/S en un sistema de microcontrolador.
 
 
-Matrix keypad is also called row keypad, it is a keypad with four I/O lines as row lines and four I/O lines as column lines. One key is set at each intersection of the row and column lines. Thus the number of keys on the keyboard is 4*4. This row and column keyboard structure can effectively improve the utilization of I/O ports in a microcontroller system.
-
-Their contacts are accessed via a header suitable for connection with a ribbon cable or insertion into a printed circuit board. 
-In some keypads, each button connects with a separate contact in the header, while all the buttons share a common ground.
+Sus contactos se acceden a través de un conector adecuado para conexión con un cable plano o para inserción en una placa de circuito impreso. 
+En algunos teclados, cada botón se conecta a un contacto separado en el conector, mientras que todos los botones comparten una conexión a tierra común.
 
 |img_keypad|
 
-More often, the buttons are matrix encoded, meaning that each of them bridges a unique pair of conductors in a matrix. 
-This configuration is suitable for polling by a microcontroller, which can be programmed to send an output pulse to each of the four horizontal wires in turn. 
-During each pulse, it checks the remaining four vertical wires in sequence, to determine which one, if any, is carrying a signal. 
-Pullup or pulldown resistors should be added to the input wires to prevent the inputs of the microcontroller from behaving unpredictably when no signal is present.
+Con mayor frecuencia, los botones están codificados en una matriz, lo que significa que cada uno de ellos conecta un par único de conductores en la matriz. 
+Esta configuración es ideal para el sondeo por parte de un microcontrolador, que se puede programar para enviar un pulso de salida a cada una de las cuatro líneas horizontales de forma secuencial. 
+Durante cada pulso, verifica las cuatro líneas verticales restantes en secuencia para determinar cuál, si es que alguna, está transmitiendo una señal. 
+Se deben agregar resistencias pull-up o pull-down a las líneas de entrada para evitar que los pines del microcontrolador se comporten de manera impredecible cuando no hay señal presente.
 
 * `Keypad - Wikipedia <https://en.wikipedia.org/wiki/Keypad>`_
 
-**Example**
+**Ejemplos**
 
-* :ref:`py_keypad` (For MicroPython User)
-* :ref:`py_guess_number` (For MicroPython User)
-* :ref:`ar_keypad` (For Arduino User)
+* :ref:`py_keypad` (Para usuarios de MicroPython)
+* :ref:`py_guess_number` (Para usuarios de MicroPython)
+* :ref:`ar_keypad` (Para usuarios de Arduino)

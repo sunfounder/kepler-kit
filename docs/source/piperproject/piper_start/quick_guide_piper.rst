@@ -1,87 +1,86 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales en días festivos.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _quick_guide_piper:
 
-1.2 Quick Guide on Piper Make
+1.2 Guía Rápida en Piper Make
 =================================
 
-1. Create New Project
------------------------
+1. Crear un Nuevo Proyecto
+------------------------------
 
-Now that you have set up Pico W, it is time to learn how to program it. 
-Now let's light up the onboard LED.
+Una vez que hayas configurado el Pico W, es hora de aprender a programarlo. 
+Vamos a encender el LED incorporado.
 
-
-Switch to ``CREATIVE MODE`` and click on the **New Project** button, 
-and a new project will appear in the **MY PROJECTS** section and 
-will be assigned a random name that can be changed from the programming page.
+Cambia a ``CREATIVE MODE`` y haz clic en el botón **New Project**. Un nuevo 
+proyecto aparecerá en la sección **MY PROJECTS** con un nombre aleatorio que 
+puedes cambiar desde la página de programación.
 
 |media9-s|
 
-Then open the new project just created.
+Luego abre el nuevo proyecto que acabas de crear.
 
 |media11-s|
 
-Now go to the Piper Make programming page.
+Ahora accede a la página de programación de Piper Make.
 
 |piper_intro1|
 
-* **START**: Used to run the code, if it's gray, it's not connected to Pico W at this time.
-* **Block palette**: contains different types of blocks.
-* **CONNECT**: Used to connect to Pico W, it is green when not connected to Pico W, when connected it will become **DISCONNECT(red)**.
-* **Programming Area**: Drag blocks here to finish programming by stacking them.
-* **Tools Area**: You can click **DIGITAL VIEW** to see the pin distribution of Pico W; you can view the print information in **CONSOLE**; you can read data from **DATA**, and you can click **Python** to view the Python source code.
-* **Project name and description**: You can change the project name and description.
-* **DOWNLOAD**: You can click the **DOWNLOAD** button to save it locally, usually in **|** format. Next time you can import it via the **Import Project** button on the home page.
+* **START**: Se usa para ejecutar el código. Si está en gris, significa que el Pico W no está conectado en este momento.
+* **Paleta de Bloques**: Contiene diferentes tipos de bloques.
+* **CONNECT**: Se usa para conectar el Pico W; cuando no está conectado aparece en verde, y al conectarse cambia a **DISCONNECT (rojo)**.
+* **Área de Programación**: Arrastra los bloques aquí y complétalo apilándolos.
+* **Área de Herramientas**: Puedes hacer clic en **DIGITAL VIEW** para ver la distribución de pines del Pico W; visualizar información en **CONSOLE**; leer datos en **DATA** y hacer clic en **Python** para ver el código fuente en Python.
+* **Nombre y Descripción del Proyecto**: Puedes cambiar el nombre y la descripción del proyecto.
+* **DOWNLOAD**: Puedes hacer clic en el botón **DOWNLOAD** para guardarlo localmente. La próxima vez podrás importarlo usando el botón **Import Project** en la página principal.
 
-Click on the **Chip** palette and drag the [start] block to the **Programming Area**.
+Haz clic en la paleta **Chip** y arrastra el bloque [start] al **Área de Programación**.
 
 |media12|
 
-Then drag the [loop] block in **loops** palette to the bottom of the [start] block, and set the loop interval to 1 second.
+Luego, arrastra el bloque [loop] desde la paleta **loops** debajo del bloque [start] y establece el intervalo de repetición en 1 segundo.
 
 |media14|
 
-The Raspberry Pi Pico's onboard LED is at pin25, so we use the [turn pin () ON/OFF] block on the **Chip** palette to control it.
+El LED incorporado de la Raspberry Pi Pico está en el pin25, por lo que usaremos el bloque [turn pin () ON/OFF] en la paleta **Chip** para controlarlo.
 
 |media15|
 
 .. _connect_pico_per:
 
-2. Connect to Pico W
------------------------
+2. Conectar el Pico W
+--------------------------
 
-Now click on the **CONNECT** button to connect to Pico W, after clicking on it a new popup will appear.
+Haz clic en el botón **CONNECT** para conectar el Pico W; al hacerlo, aparecerá una nueva ventana emergente.
 
 |media16|
 
-Select the recognized **CircuitPython CDC control (COMXX)** port, then click on **Connect**. 
+Selecciona el puerto **CircuitPython CDC control (COMXX)** reconocido y luego haz clic en **Connect**.
 
 |pico_port|
 
-When the connection is successful, the green **CONNECT** in the bottom left corner will change to a red **DISCONNECT**.
+Cuando la conexión sea exitosa, el **CONNECT** verde en la esquina inferior izquierda cambiará a **DISCONNECT** en rojo.
 
 |disconnect_per|
 
-3. Run the Code
-------------------
+3. Ejecutar el Código
+-------------------------
 
-Now click on the **START** button to run this code and you will see the LED on the Pico W lit up. If yours is gray, it means that the Pico W is not connected, please reconnect it.
+Haz clic en el botón **START** para ejecutar el código y verás el LED del Pico W encenderse. Si el botón está en gris, significa que el Pico W no está conectado; por favor, vuelve a conectarlo.
 
 |media166|
 
-Then turn off pin25 every second in the cycle, and click **START** on the upper left again, so that you can see the onboard LED lights flashing.
+Luego, apaga el pin25 cada segundo en el ciclo y haz clic nuevamente en **START** en la esquina superior izquierda, así podrás ver el LED parpadeando.
 
 |media17|

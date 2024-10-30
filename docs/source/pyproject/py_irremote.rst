@@ -1,67 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_irremote:
 
+6.4 Control Remoto IR
+==========================
 
-6.4 IR Remote Control
-================================
+En la electrónica de consumo, los controles remotos se utilizan para operar dispositivos como televisores y reproductores de DVD. 
+En algunos casos, los controles remotos permiten a las personas operar dispositivos que están fuera de su alcance, como aires acondicionados centrales.
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
-
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+El receptor IR es un componente con una fotocélula diseñada para recibir luz infrarroja. 
+Se usa casi siempre para la detección de controles remotos; cada televisor y reproductor de DVD tiene uno de estos en su parte frontal para recibir la señal IR del control remoto. 
+Dentro del control remoto, hay un LED IR que emite pulsos infrarrojos para indicar al televisor que se encienda, apague o cambie de canal.
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**Componentes Requeridos**
 
-In this project, we need the following components. 
+Para este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N.º
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -70,35 +68,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_irrecv|
 
-**Wiring**
-
+**Conexión**
 
 |wiring_irrecv|
 
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``6.4_ir_remote_control.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``6.4_ir_remote_control.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
     
-    * Here you need to use the libraries in ``ir_rx`` folder, please check if it has been uploaded to Pico, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Aquí necesitas usar las bibliotecas en la carpeta ``ir_rx``. Verifica que se hayan subido a Pico W; para un tutorial detallado, consulta :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -154,15 +149,15 @@ You can also buy them separately from the links below.
             return "MODE" 
         return "ERROR"
 
-    # User callback
+    # Función de retorno de llamada del usuario
     def callback(data, addr, ctrl):
-        if data < 0:  # NEC protocol sends repeat codes.
+        if data < 0:  # El protocolo NEC envía códigos de repetición.
             pass
         else:
             print(decodeKeyValue(data))
 
-    ir = NEC_8(pin_ir, callback)  # Instantiate receiver
-    ir.error_function(print_error)  # Show debug information
+    ir = NEC_8(pin_ir, callback)  # Instanciar receptor
+    ir.error_function(print_error)  # Mostrar información de depuración
 
     try:
         while True:
@@ -171,12 +166,12 @@ You can also buy them separately from the links below.
         ir.close()
 
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Shell will print out the key you pressed.
+El nuevo control remoto tiene una pieza de plástico en el extremo para aislar la batería interna. Debes retirar esta pieza para alimentar el control al usarlo.
+Una vez que el programa esté en ejecución, al presionar el control remoto, la consola Shell imprimirá la tecla que has presionado.
 
-**How it works?**
+**¿Cómo funciona?**
 
-This program looks slightly complicated, but it actually does the basic functions of the IR receiver with just a few lines.
+Este programa parece ligeramente complicado, pero en realidad realiza las funciones básicas del receptor IR con solo unas pocas líneas.
 
 .. code-block:: python
 
@@ -186,24 +181,24 @@ This program looks slightly complicated, but it actually does the basic function
 
     pin_ir = Pin(17, Pin.IN)
 
-    # User callback
+    # Función de retorno de llamada del usuario
     def callback(data, addr, ctrl):
-        if data < 0:  # NEC protocol sends repeat codes.
+        if data < 0:  # El protocolo NEC envía códigos de repetición.
             pass
         else:
             print(decodeKeyValue(data))
 
-    ir = NEC_8(pin_ir, callback)  # Instantiate receiver
+    ir = NEC_8(pin_ir, callback)  # Instanciar receptor
 
-Here an ``ir`` object is instantiated, which reads the signals acquired by the IR receiver at any time.
+Aquí se instancia un objeto ``ir`` que lee en cualquier momento las señales recibidas por el receptor IR.
 
-The result will be recorded in ``data`` of the callback function.
+El resultado se registra en ``data`` dentro de la función de retorno de llamada.
 
 * `Callback Function - Wikipedia <https://en.wikipedia.org/wiki/Callback_(computer_programming)>`_
 
-If the IR receiver receives duplicate values (e.g. pressing a key and not releasing it), then data < 0 and this data needs to be filtered.
+Si el receptor IR recibe valores duplicados (por ejemplo, al presionar una tecla sin soltarla), entonces data < 0 y este dato necesita ser filtrado.
 
-Otherwise data would be a usable value, but some unspeakable code, and the ``decodeKeyValue(data)`` function is used to decode it.
+De lo contrario, data contendría un valor utilizable, pero en un código no legible directamente, y la función ``decodeKeyValue(data)`` se utiliza para decodificarlo.
 
 .. code-block:: python
 
@@ -252,17 +247,17 @@ Otherwise data would be a usable value, but some unspeakable code, and the ``dec
             return "MODE" 
         return "ERROR"
 
-If we press key **1**, the IR receiver outputs a value like ``0x0C``, which needs to be decoded to correspond to the specific key.
+Si presionamos la tecla **1**, el receptor IR emite un valor como ``0x0C``, que necesita ser decodificado para corresponder a la tecla específica.
 
-Next are some debug functions. They are important, but not related to the effect we need to achieve, so we just put them in the program.
+A continuación, se incluyen algunas funciones de depuración. Son importantes, pero no están relacionadas con el efecto que necesitamos lograr, así que simplemente las dejamos en el programa.
 
 .. code-block:: python
 
     from ir_rx.print_error import print_error
 
-    ir.error_function(print_error) # Show debug information
+    ir.error_function(print_error) # Mostrar información de depuración
 
-Finally, we use an empty loop as the main program. And use try-except to make the program exit with the ``ir`` object terminated.
+Finalmente, usamos un bucle vacío como programa principal. Y empleamos try-except para que el programa salga con el objeto ``ir`` finalizado.
 
 .. code-block:: python
 

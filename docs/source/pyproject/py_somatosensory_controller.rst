@@ -1,68 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_somato_controller:
 
 
-7.11 Somatosensory Controller
-=============================
+7.11 Controlador Somatosensorial
+=====================================
 
-If you watch a lot of robot movies, you've probably seen images like this.
-The protagonist turned his wrist and the giant robot followed; the protagonist shakes his fist, and the robot follows, which is very cool.
+Si has visto muchas películas de robots, probablemente hayas visto imágenes como esta:
+El protagonista gira su muñeca y el robot gigante lo sigue; agita el puño, y el robot lo imita, ¡es muy impresionante!
 
-The use of this technology is already common in universities and research institutes, and the arrival of 5G will greatly expand its application areas.
-"Surgical robot da Vinci" remote surgery medical is a typical example.
+El uso de esta tecnología ya es común en universidades e institutos de investigación, y la llegada del 5G ampliará enormemente sus áreas de aplicación. Un ejemplo típico es el robot quirúrgico Da Vinci para cirugías remotas.
 
-A robotic system of this type is typically composed of two modules: a human motion capture module and a robotic arm actuation module (some application scenarios also include a data communication module).
+Un sistema robótico de este tipo se compone generalmente de dos módulos: un módulo de captura de movimiento humano y un módulo de accionamiento del brazo robótico (en algunos casos también incluye un módulo de comunicación de datos).
 
-The MPU6050 is used here to implement human motion capture (by mounting it on a glove) and the servo is used to represent robotic arm motion.
+Aquí utilizamos el MPU6050 para implementar la captura de movimiento humano (colocándolo en un guante) y el servo para representar el movimiento del brazo robótico.
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -71,7 +69,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
@@ -82,31 +80,27 @@ You can also buy them separately from the links below.
         - 1
         - |link_servo_buy|
 
-
-**Schematic**
+**Esquemático**
 
 |sch_somato|
 
-The MPU6050 calculates the attitude angle based on the acceleration values in each direction.
+El MPU6050 calcula el ángulo de actitud en función de los valores de aceleración en cada dirección.
 
-The program will control the servo to make the corresponding deflection angle as the attitude angle changes.
+El programa controlará el servo para que adopte el ángulo de deflexión correspondiente a medida que cambia el ángulo de actitud.
 
-**Wiring**
+**Conexiones**
 
 |wiring_somatosensory_controller| 
 
-
-**Code**
-
+**Código**
 
 .. note::
 
-    * Open the ``7.11_somatosensory_controller.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * Abre el archivo ``7.11_somatosensory_controller.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-    * Here you need to use the ``imu.py`` and ``vector3d.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
+    * Aquí necesitas usar los archivos ``imu.py`` y ``vector3d.py``, verifica que se hayan subido a Pico W. Consulta el tutorial detallado en :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -115,55 +109,55 @@ The program will control the servo to make the corresponding deflection angle as
     import time
     import math
 
-    # Initialize I2C communication for MPU6050 accelerometer
+    # Inicializar comunicación I2C para el acelerómetro MPU6050
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-    # Initialize PWM for the servo on pin 16 with a frequency of 50Hz
+    # Inicializar PWM para el servo en el pin 16 con una frecuencia de 50Hz
     servo = machine.PWM(machine.Pin(16))
     servo.freq(50)
 
-    # Function to map a value from one range to another
+    # Función para mapear un valor de un rango a otro
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    # Function to calculate the Euclidean distance between two points
+    # Función para calcular la distancia euclidiana entre dos puntos
     def dist(a, b):
         return math.sqrt((a * a) + (b * b))
 
-    # Function to calculate the rotation along the y-axis
+    # Función para calcular la rotación a lo largo del eje y
     def get_y_rotation(x, y, z):
         radians = math.atan2(x, dist(y, z))
         return -math.degrees(radians)
 
-    # Function to calculate the rotation along the x-axis
+    # Función para calcular la rotación a lo largo del eje x
     def get_x_rotation(x, y, z):
         radians = math.atan2(y, dist(x, z))
         return math.degrees(radians)
 
-    # Function to control the servo based on the angle
-    # Maps the angle (0-180) to the PWM duty cycle for servo control
+    # Función para controlar el servo en función del ángulo
+    # Mapea el ángulo (0-180) al ciclo de trabajo PWM para el control del servo
     def servo_write(pin, angle):
-        pulse_width = interval_mapping(angle, 0, 180, 0.5, 2.5)  # Map angle to pulse width in ms (0.5ms to 2.5ms)
-        duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))  # Convert pulse width to PWM duty cycle (0-65535)
-        pin.duty_u16(duty)  # Set the duty cycle for the servo PWM
+        pulse_width = interval_mapping(angle, 0, 180, 0.5, 2.5)  # Mapea el ángulo al ancho de pulso en ms (0.5ms a 2.5ms)
+        duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))  # Convierte el ancho de pulso al ciclo de trabajo PWM (0-65535)
+        pin.duty_u16(duty)  # Establece el ciclo de trabajo para el PWM del servo
 
-    # Define the number of readings to average for smoother motion
+    # Definir el número de lecturas para promediar y suavizar el movimiento
     times = 25
 
-    # Main loop
+    # Bucle principal
     while True:
         total = 0
-        # Take multiple readings to average the angle for smoothness
+        # Realizar múltiples lecturas para promediar el ángulo y suavizar
         for i in range(times):
-            angle = get_y_rotation(mpu.accel.x, mpu.accel.y, mpu.accel.z)  # Get the y-axis rotation value from the accelerometer
-            total += angle  # Accumulate the readings
+            angle = get_y_rotation(mpu.accel.x, mpu.accel.y, mpu.accel.z)  # Obtener el valor de rotación en el eje y del acelerómetro
+            total += angle  # Acumular las lecturas
 
-        average_angle = int(total / times)  # Calculate the average angle
-        # Map the average angle (-90 to 90) to the servo's movement range (0 to 180 degrees)
+        average_angle = int(total / times)  # Calcular el ángulo promedio
+        # Mapear el ángulo promedio (-90 a 90) al rango de movimiento del servo (0 a 180 grados)
         servo_write(servo, interval_mapping(average_angle, -90, 90, 0, 180))
 
-        time.sleep(0.1)  # Add a small delay to reduce jitter in the servo movement
+        time.sleep(0.1)  # Pequeño retraso para reducir el temblor en el movimiento del servo
 
 
-As soon as the program runs, the servo will turn left and right as you tilt the MPU6050 (or turn your wrist if it is mounted on a glove).
+Al ejecutar el programa, el servo girará de izquierda a derecha a medida que inclines el MPU6050 (o giras la muñeca si está montado en un guante).

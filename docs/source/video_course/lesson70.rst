@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 70:  Example of Cleanly Exiting Dual Core Program in MicroPython
+Lección 70: Ejemplo de Salida Limpia en Programas de Doble Núcleo en MicroPython
 ===================================================================================
 
-This tutorial covers using threading to control a servo and a button with the Raspberry Pi Pico W:
+Este tutorial cubre el uso de hilos para controlar un servo y un botón con la Raspberry Pi Pico W:
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch to control the servo's position. Use threading for servo movement and clean program exits.
-* **Homework Assignment**: Modify the program to exit cleanly, even if interrupted during servo movement.
-
+* **Configuración de Cableado**: Conecta el control del servo al GPIO 17, la alimentación al pin 40 y la tierra al pin 38. Conecta el botón al GPIO 16 y a tierra.
+* **Implementación de Código**: Importa ``machine``, ``time``, ``_thread`` y ``Servo``. Configura los pines para el botón y el servo. Implementa un interruptor para controlar la posición del servo. Usa hilos para el movimiento del servo y una salida limpia del programa.
+* **Tarea**: Modifica el programa para que salga de manera ordenada, incluso si se interrumpe durante el movimiento del servo.
 
 
 **Video**

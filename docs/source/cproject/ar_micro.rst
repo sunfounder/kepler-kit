@@ -1,66 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. ¡Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de Expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _ar_micro:
 
-2.8 - Press Gently
-==========================
+2.8 - Presiona Suavemente
+==============================
 
 |img_micro_switch|
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed) .
+El Micro Interruptor es un dispositivo de 3 pines; los pines están dispuestos en el siguiente orden: C (pin común), NO (normalmente abierto) y NC (normalmente cerrado).
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+Cuando el micro interruptor no está presionado, el pin 1 (C) y el pin 3 (NC) están conectados. Al presionarlo, se conectan el pin 1 (C) y el pin 2 (NO).
 
 * :ref:`cpn_micro_switch`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -69,50 +68,45 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_capacitor`
-        - 1(104)
+        - 1 (104)
         - |link_capacitor_buy|
     *   - 7
         - :ref:`cpn_micro_switch`
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
 |sch_limit_sw|
 
-By default, GP14 is low and when pressed, GP14 is high.
+Por defecto, GP14 está en bajo y, al presionar, GP14 pasa a alto.
 
-The purpose of the 10K resistor is to keep the GP14 low during pressing.
+El propósito de la resistencia de 10KΩ es mantener GP14 en bajo mientras se presiona.
 
-The 104 ceramic capacitor is used here to eliminate jitter.
+El capacitor cerámico de 104 se utiliza aquí para eliminar el rebote o interferencia en el circuito.
 
-
-**Wiring**
+**Conexión**
 
 |wiring_limit_sw|
 
-
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``2.8_press_gently.ino`` under the path of ``kepler-kit-main/arduino/2.8_press_gently``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Puedes abrir el archivo ``2.8_press_gently.ino`` en la ruta ``kepler-kit-main/arduino/2.8_press_gently``.
+    * O copia este código en el **Arduino IDE**.
+    * No olvides seleccionar la placa (Raspberry Pi Pico) y el puerto correcto antes de hacer clic en el botón **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/92a2e356-35da-4e34-92cd-80234e1b59c4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-After the program runs, when you toggle the slide switch to the right, "The switch works!" will appear in the Serial Monitor.
+Después de ejecutar el programa, cuando deslices el interruptor hacia la derecha, aparecerá "¡El interruptor funciona!" en el Monitor Serial.

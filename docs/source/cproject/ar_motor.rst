@@ -1,63 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. ¡Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de Expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _ar_motor:
 
-3.5 - Small Fan
-=======================
-Now we use the TA6586 to drive the DC motor to make it rotate clockwise and counterclockwise. 
-Since the DC motor requires a relatively large current, for safety reasons, 
-here we use a power module to supply power to the motor.
+3.5 - Pequeño Ventilador
+=============================
+
+Ahora utilizaremos el TA6586 para controlar el motor de corriente continua (DC) y hacer que gire en sentido horario y antihorario.
+Dado que el motor DC requiere una corriente relativamente alta, por razones de seguridad, usaremos un módulo de alimentación para suministrar energía al motor.
 
 * :ref:`cpn_motor`
 * :ref:`cpn_ta6586`
 * :ref:`cpn_power_module`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -81,49 +81,44 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Batería 18650
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Soporte para batería
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
 |sch_motor|
 
-**Wiring**
+**Conexión**
 
 .. note::
 
-    * Since DC motors require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
+    * Dado que los motores de corriente continua requieren una corriente alta, utilizamos aquí un módulo cargador de Li-po para alimentar el motor por razones de seguridad.
+    * Asegúrate de que el módulo cargador de Li-po esté conectado como se muestra en el diagrama. De lo contrario, un cortocircuito podría dañar la batería y el circuito.
 
 |wiring_motor|
 
-
-
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``3.5_small_fan.ino`` under the path of ``kepler-kit-main/arduino/3.5_small_fan``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Puedes abrir el archivo ``3.5_small_fan.ino`` en la ruta ``kepler-kit-main/arduino/3.5_small_fan``.
+    * O copia este código en el **Arduino IDE**.
+    * No olvides seleccionar la placa (Raspberry Pi Pico) y el puerto correcto antes de hacer clic en el botón **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/26d75a18-6b91-40f4-80ab-f2cdf58644ac/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once the program is running, the motor will rotate back and forth in a regular pattern.
-
+Una vez que el programa esté en ejecución, el motor girará hacia adelante y hacia atrás en un patrón regular.
 
 .. note::
 
-    * If you can not upload the code again, this time you need to connect the **RUN** pin on the Pico W with a wire to GND to reset it, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * Si no puedes cargar el código nuevamente, en esta ocasión debes conectar el pin **RUN** en el Pico W a GND con un cable para reiniciarlo, y luego desconectar este cable para ejecutar el código nuevamente.
+    * Esto se debe a que el motor opera con mucha corriente, lo cual puede hacer que el Pico W se desconecte de la computadora.
 
     |wiring_run_reset|

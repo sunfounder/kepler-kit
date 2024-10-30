@@ -1,73 +1,74 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Explora en profundidad sobre Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_lcd:
 
-3.4 Liquid Crystal Display
-===============================
+3.4 Pantalla de Cristal Líquido
+=====================================
 
-LCD1602 is a character type liquid crystal display, which can display 32 (16*2) characters at the same time.
+El LCD1602 es una pantalla de cristal líquido de tipo carácter, capaz de 
+mostrar 32 caracteres (16*2) simultáneamente.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, 
-they share a common weakness. When they are connected to a controller, 
-multiple IOs will be occupied of the controller which has no so many outer ports. 
-Also it restricts other functions of the controller. 
-Therefore, LCD1602 with an I2C bus is developed to solve the problem.
+Como bien sabemos, aunque el LCD y otras pantallas enriquecen la interacción 
+entre el usuario y la máquina, todas comparten una debilidad común. Cuando se 
+conectan a un controlador, ocupan múltiples puertos de entrada/salida (IO), 
+lo cual es una limitación si el controlador no cuenta con muchos puertos. 
+Además, esto restringe otras funciones del controlador. Por lo tanto, el LCD1602 
+con un bus I2C se desarrolló para resolver este problema.
 
 * :ref:`cpn_i2c_lcd`
 * `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
 
-
 |pin_i2c|
 
-Here we will use the I2C0 interface to control the LCD1602 and display text.
+Aquí utilizaremos la interfaz I2C0 para controlar el LCD1602 y mostrar texto.
 
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es más conveniente adquirir un kit completo. Aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -76,33 +77,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_i2c_lcd`
         - 1
         - |link_i2clcd1602_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_lcd|
 
-**Wiring**
+**Conexiones**
 
 |wiring_lcd|
 
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``3.4_liquid_crystal_display.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``3.4_liquid_crystal_display.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``lcd1602.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
+    * Aquí necesitas usar la biblioteca llamada ``lcd1602.py``, verifica si ha sido cargada en Pico W. Para un tutorial detallado, consulta :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -110,58 +110,58 @@ You can also buy them separately from the links below.
     from lcd1602 import LCD
     import time
 
-    # Initialize I2C communication;
+    # Inicializar la comunicación I2C
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 
-    # Create an LCD object for interfacing with the LCD1602 display
+    # Crear un objeto LCD para interactuar con la pantalla LCD1602
     lcd = LCD(i2c)
 
-    # Display the first message on the LCD
-    # Use '\n' to create a new line.
+    # Mostrar el primer mensaje en el LCD
+    # Utilizar '\n' para crear una nueva línea.
     string = "SunFounder\n    LCD Tutorial"
     lcd.message(string)
-    # Wait for 2 seconds
+    # Esperar 2 segundos
     time.sleep(2)
-    # Clear the display
+    # Limpiar la pantalla
     lcd.clear()
 
-    # Display the second message on the LCD
+    # Mostrar el segundo mensaje en el LCD
     string = "Hello\n  World!"
     lcd.message(string)
-    # Wait for 5 seconds
+    # Esperar 5 segundos
     time.sleep(5)
-    # Clear the display before exiting
+    # Limpiar la pantalla antes de salir
     lcd.clear()
 
-After the program runs, you will be able to see two lines of text appear on the LCD in turn, and then disappear.
+Después de que el programa se ejecute, podrás ver dos líneas de texto que aparecerán en el LCD en secuencia y luego desaparecerán.
 
 .. note:: When the code is running, if the screen is blank, you can turn the potentiometer on the back to increase the contrast.
 
-**How it works?**
+**¿Cómo funciona?**
 
-#. Setting up I2C Communication
+#. Configuración de la Comunicación I2C
 
-   The ``machine`` module is used to set up I2C communication. SDA (Serial Data) and SCL (Serial Clock) pins are defined (pin 20 and 21 respectively), along with the I2C frequency (400kHz).
+   El módulo ``machine`` se utiliza para configurar la comunicación I2C. Se definen los pines SDA (Serial Data) y SCL (Serial Clock) (pines 20 y 21 respectivamente), junto con la frecuencia de I2C (400kHz).
 
    .. code-block:: python
       
       from machine import I2C, Pin
       i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 
-#. Initializing the LCD Display
+#. Inicialización de la Pantalla LCD
 
-   The ``LCD`` class from the ``lcd1602`` module is instantiated. This class handles the communication with the LCD display through I2C. An ``LCD`` object is created using the ``i2c`` object.
+   La clase ``LCD`` del módulo ``lcd1602`` se instancia para manejar la comunicación con la pantalla LCD a través de I2C. Se crea un objeto ``LCD`` usando el objeto ``i2c``.
 
-   For more usage of the ``lcd1602`` library, please refer to ``lcd1602.py``.
+   Para más detalles sobre el uso de la biblioteca ``lcd1602``, consulta el archivo ``lcd1602.py``.
 
    .. code-block:: python
       
       from lcd1602 import LCD
       lcd = LCD(i2c)
 
-#. Displaying Messages on the LCD
+#. Mostrando Mensajes en la Pantalla LCD
 
-   The ``message`` method of the ``LCD`` object is used to display text on the screen. The ``\n`` character creates a new line on the LCD. The ``time.sleep()`` function pauses execution for a specified number of seconds.
+   El método ``message`` del objeto ``LCD`` se usa para mostrar texto en la pantalla. El carácter ``\n`` crea una nueva línea en el LCD. La función ``time.sleep()`` pausa la ejecución durante el número de segundos especificado.
 
    .. code-block:: python
       
@@ -170,17 +170,17 @@ After the program runs, you will be able to see two lines of text appear on the 
       time.sleep(2)
       lcd.clear()
 
-#. Clearing the Display
+#. Limpiar la Pantalla
 
-   The ``clear`` method of the ``LCD`` object is called to clear the text from the display.
+   El método ``clear`` del objeto ``LCD`` se llama para borrar el texto de la pantalla.
 
    .. code-block:: python
       
       lcd.clear()
 
-#. Displaying a Second Message
+#. Mostrando un Segundo Mensaje
 
-   A new message is displayed, followed by a delay and then clearing the screen again.
+   Se muestra un nuevo mensaje, seguido de una demora y luego se borra nuevamente la pantalla.
 
    .. code-block:: python
       

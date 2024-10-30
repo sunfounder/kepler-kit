@@ -1,62 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Explora a fondo Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_photoresistor:
 
 
-2.12 - Feel the Light
+2.12 - Siente la Luz
 =================================
-The photoresistor is a typical device for analog inputs and it is used in a very similar way to a potentiometer. Its resistance value depends on the intensity of the light, the stronger the irradiated light, the smaller its resistance value; conversely, it increases.
+
+El fotorresistor es un dispositivo típico para entradas analógicas, y su uso es muy similar al de un potenciómetro. Su valor de resistencia depende de la intensidad de la luz: a mayor intensidad de luz, menor resistencia, y viceversa.
 
 
 * :ref:`cpn_photoresistor`
 
-**Required Components**
+**Componentes necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente comprar un kit completo; aquí está el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -65,53 +65,45 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_photoresistor`
         - 1
         - |link_photoresistor_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_photoresistor|
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the photoresistor.
+En este circuito, el resistor de 10K y el fotorresistor están conectados en serie, y la corriente que pasa por ellos es la misma. El resistor de 10K actúa como protección, y el pin GP28 lee el valor después de la conversión de voltaje del fotorresistor.
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from GP28 will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+Cuando la luz se intensifica, la resistencia del fotorresistor disminuye, entonces su voltaje también disminuye, y el valor de GP28 también disminuirá. Si la luz es lo suficientemente fuerte, la resistencia del fotorresistor se acercará a 0, y el valor de GP28 será cercano a 0. En este punto, el resistor de 10K desempeña un rol protector para evitar un cortocircuito al impedir que se unan 3.3V y GND.
 
-If you place the photoresistor in a dark situation, the value of GP28 will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+Si colocas el fotorresistor en la oscuridad, el valor de GP28 aumentará. En una situación lo suficientemente oscura, la resistencia del fotorresistor será infinita, y su voltaje se aproximará a 3.3V (el resistor de 10K es despreciable), y el valor de GP28 será cercano al valor máximo de 65535.
 
-
-The calculation formula is shown below.
+La fórmula de cálculo se muestra a continuación.
 
     (Vp/3.3V) x 65535 = Ap
 
-
-
-**Wiring**
-
+**Conexión**
 
 |wiring_photoresistor|
 
-**code**
-
+**Código**
 
 .. note::
 
-    * You can open the file ``2.12_feel_the_light.ino`` under the path of ``kepler-kit-main/arduino/2.12_feel_the_light``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Puedes abrir el archivo ``2.12_feel_the_light.ino`` en la ruta ``kepler-kit-main/arduino/2.12_feel_the_light``.
+    * O copiar este código en el **IDE de Arduino**.
+    * No olvides seleccionar la placa Raspberry Pi Pico y el puerto correcto antes de hacer clic en el botón **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/44074b9e-3e4e-475b-af37-689254f87ab2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program runs, the Serial Monitor prints out the photoresistor values. You can shine a flashlight on it or cover it up with your hand to see how the value will change.
-
+Después de ejecutar el programa, el Monitor Serial mostrará los valores del fotorresistor. Puedes iluminarlo con una linterna o cubrirlo con la mano para observar cómo cambia el valor.

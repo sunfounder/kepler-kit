@@ -1,58 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_pir:
 
-PIR Motion Sensor Module
+Módulo Sensor de Movimiento PIR
 ==================================
 
 |img_pir|
 
-The PIR sensor detects infrared heat radiation that can be used to detect the presence of organisms that emit infrared heat radiation.
+El sensor PIR detecta la radiación de calor infrarrojo que puede ser utilizada para identificar la presencia de organismos que emiten este tipo de radiación.
 
-The PIR sensor is split into two slots that are connected to a differential amplifier. Whenever a stationary object is in front of the sensor, the two slots receive the same amount of radiation and the output is zero. Whenever a moving object is in front of the sensor, one of the slots receives more radiation than the other , which makes the output fluctuate high or low. This change in output voltage is a result of detection of motion.
+El sensor PIR está dividido en dos ranuras conectadas a un amplificador diferencial. Cuando un objeto estacionario se encuentra frente al sensor, ambas ranuras reciben la misma cantidad de radiación y la salida es cero. Si un objeto en movimiento se coloca frente al sensor, una de las ranuras recibe más radiación que la otra, lo que hace que la salida fluctúe de alto a bajo. Este cambio en el voltaje de salida indica la detección de movimiento.
 
 |img_PIR_working_principle|
 
-After the sensing module is wired, there is a one-minute initialization. During the initialization, module will output for 0~3 times at intervals. Then the module will be in the standby mode. Please keep the interference of light source and other sources away from the surface of the module so as to avoid the misoperation caused by the interfering signal. Even you'd better use the module without too much wind, because the wind can also interfere with the sensor.
+Después de cablear el módulo sensor, se inicia una fase de inicialización de un minuto. Durante esta fase, el módulo puede emitir señales de 0 a 3 veces en intervalos. Luego, el módulo entrará en modo de espera. Por favor, mantén la superficie del módulo libre de interferencias de fuentes de luz y otras posibles interferencias para evitar errores de operación. Es mejor usar el módulo en ausencia de corrientes de aire fuertes, ya que el viento también puede interferir con el sensor.
 
 |img_pir_back|
 
-**Distance Adjustment**
+**Ajuste de Distancia**
 
-Turning the knob of the distance adjustment potentiometer clockwise, the range of sensing distance increases, and the maximum sensing distance range is about 0-7 meters. If turn it anticlockwise, the range of sensing distance is reduced, and the minimum sensing distance range is about 0-3 meters.
+Girando la perilla del potenciómetro de ajuste de distancia en el sentido de las agujas del reloj, el rango de distancia de detección aumentará, alcanzando un máximo de aproximadamente 0-7 metros. Si se gira en sentido contrario, el rango de distancia de detección disminuirá, con un mínimo de aproximadamente 0-3 metros.
 
-**Delay adjustment**
+**Ajuste de Retardo**
 
-Rotate the knob of the delay adjustment potentiometer clockwise, you can also see the sensing delay increasing. The maximum of the sensing delay can reach up to 300s. On the contrary, if rotate it anticlockwise, you can shorten the delay with a minimum of 5s. 
+Al girar la perilla del potenciómetro de ajuste de retardo en el sentido de las agujas del reloj, se incrementa el tiempo de retardo de la detección. El máximo de retardo puede llegar hasta 300s. Por el contrario, si se gira en sentido contrario, se reduce el retardo con un mínimo de 5s.
 
-**Two Trigger Modes**
+**Dos Modos de Disparo**
 
-Choosing different modes by using the jumper cap.
+Selecciona diferentes modos usando el capuchón de puente.
 
-* **H**: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range,the output will keep being the high level.
-* **L**: Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically.
+* **H**: Modo de disparo repetitivo. Después de detectar la presencia de una persona, el módulo emite una señal de nivel alto. Durante el periodo de retardo, si alguien entra en el rango de detección, la salida se mantendrá en nivel alto.
+* **L**: Modo de disparo no repetitivo. Emite un nivel alto cuando detecta la presencia de una persona. Después del retardo, la salida cambiará automáticamente de nivel alto a nivel bajo.
 
-.. Example 
+.. Ejemplo 
 .. -------------------
 
 .. :ref:`Intruder Alarm`
 
 
-**Example**
+**Ejemplos**
 
-* :ref:`py_pir` (For MicroPython User)
-* :ref:`py_passage_counter` (For MicroPython User)
-* :ref:`ar_pir` (For Arduino User)
-* :ref:`per_lucky_cat` (For Piper Make User)
+* :ref:`py_pir` (Para usuarios de MicroPython)
+* :ref:`py_passage_counter` (Para usuarios de MicroPython)
+* :ref:`ar_pir` (Para usuarios de Arduino)
+* :ref:`per_lucky_cat` (Para usuarios de Piper Make)

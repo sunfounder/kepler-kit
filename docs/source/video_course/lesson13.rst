@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 13:  User Specified RGB LED Colors Using Micropython
-==========================================================================
+Lección 13: Colores de LED RGB Especificados por el Usuario Usando MicroPython
+=================================================================================
 
-This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:
+Este tutorial cubre el control de un LED RGB utilizando el Kit Kepler de SunFounder y la Raspberry Pi Pico W:
 
-* **RGB LED Control**: Demonstrates controlling an RGB LED with PWM to achieve different colors using red, green, blue, and ground legs.
-* **Wiring Diagram and Setup**: Detailed wiring diagram for connecting RGB LED to GPIO pins 13, 14, and 15, each with a 220 Ohm resistor.
-* **Code Explanation**: MicroPython code for setting up PWM on each color channel, allowing color control based on user input.
-* **Practical Demonstration**: Shows how to input a color and change the RGB LED color accordingly.
-* **Homework Assignment**: Extend the project by using three potentiometers to manually control the RGB LED colors.
-
+* **Control del LED RGB**: Demostración del control de un LED RGB con PWM para lograr distintos colores usando las patas de rojo, verde, azul y tierra.
+* **Diagrama de Conexión y Configuración**: Diagrama detallado de cableado para conectar el LED RGB a los pines GPIO 13, 14 y 15, cada uno con una resistencia de 220 ohmios.
+* **Explicación del Código**: Código en MicroPython para configurar PWM en cada canal de color, permitiendo el control de colores según la entrada del usuario.
+* **Demostración Práctica**: Muestra cómo ingresar un color y cambiar el color del LED RGB en consecuencia.
+* **Tarea**: Ampliar el proyecto usando tres potenciómetros para controlar manualmente los colores del LED RGB.
 
 **Video**
 

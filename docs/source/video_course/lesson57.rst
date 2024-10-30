@@ -1,28 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 57: Calibrating a Joystick in MicroPython
+Lección 57: Calibración de un Joystick en MicroPython
 =============================================================================
 
-This tutorial covers calibrating a joystick with the Raspberry Pi Pico W:
+Este tutorial cubre la calibración de un joystick con la Raspberry Pi Pico W:
 
-* **Wiring Setup**: Connect ground to pin 38, 3.3V to pin 36, VRX to GPIO pin 27, and VRY to GPIO pin 26.
-* **Code Implementation**: Import ``machine``, ``time``, ``math``; set up ADC for joystick axes; read and print joystick values.
-* **Calibration**: Convert raw ADC values to a scale of -100 to +100, adjusting for neutral position noise.
-* **Homework Assignment**: Write a program to calculate and report the angle of the joystick based on its position.
-
-
+* **Configuración de Conexiones**: Conecta tierra al pin 38, 3.3V al pin 36, VRX al pin GPIO 27 y VRY al pin GPIO 26.
+* **Implementación de Código**: Importa las librerías ``machine``, ``time``, ``math``; configura el ADC para los ejes del joystick; lee e imprime los valores del joystick.
+* **Calibración**: Convierte los valores brutos del ADC a una escala de -100 a +100, ajustando para eliminar el ruido en la posición neutra.
+* **Tarea**: Escribe un programa que calcule y reporte el ángulo del joystick en función de su posición.
 
 
 **Video**

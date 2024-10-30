@@ -1,26 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y profundiza en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 67:  Use Both Cores on Your Pi Pico with MicroPython
+Lección 67: Usa Ambos Núcleos en tu Pi Pico con MicroPython
 ===================================================================================
 
-This tutorial covers using both cores of the Raspberry Pi Pico W:
+Este tutorial cubre el uso de ambos núcleos en la Raspberry Pi Pico W:
 
-* **Concept Overview**: Control LEDs and a servo using threading and functions.
-* **Example Implementation**: Connect red and green LEDs to GPIO pins, set up threading to blink LEDs on separate cores, and control a servo based on direction.
-* **Homework Assignment**: Add servo control, blink the red LED when the servo moves backward, and blink the green LED when it moves forward.
-* **Key Takeaways**: Learn to use threading to control LEDs and servos simultaneously on separate cores.
+* **Resumen del Concepto**: Control de LEDs y un servo utilizando subprocesos y funciones.
+* **Implementación del Ejemplo**: Conecta LEDs rojo y verde a los pines GPIO, configura el uso de subprocesos para hacer parpadear los LEDs en núcleos separados y controla un servo según la dirección.
+* **Tarea**: Agrega control de servo, parpadea el LED rojo cuando el servo se mueve hacia atrás y el LED verde cuando se mueve hacia adelante.
+* **Conclusiones Clave**: Aprende a utilizar subprocesos para controlar LEDs y servos simultáneamente en núcleos separados.
 
 
 **Video**

@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-What is Included in This Kit
+Contenido del Kit
 =============================
 
-The following is a list of this kit so you can check the contents of the kit once you receive it.
+La siguiente es una lista de los componentes incluidos en este kit para que puedas verificar el contenido una vez lo recibas.
 
-There are some components in the kit that are very small and look the same, and staff may miss or send them by mistake when packing the kit. You are welcome to send us the name of the missing or incorrect component if you find one.
+Hay algunos componentes en el kit que son muy pequeños y pueden parecer iguales. El personal puede olvidarlos o enviarlos por error al empacar el kit. Te invitamos a enviarnos el nombre del componente faltante o incorrecto si encuentras alguno.
 
-Here is the email: service@sunfounder.com.
+Aquí está el correo electrónico: service@sunfounder.com.
 
 |compoents_list|
 
 
-**Basic**
+**Básicos**
 
 .. toctree::
     :maxdepth: 1
@@ -46,7 +46,7 @@ Here is the email: service@sunfounder.com.
     component_74hc595
     component_ta6585
 
-**Display**
+**Pantalla**
 
 .. toctree::
     :maxdepth: 1
@@ -60,14 +60,14 @@ Here is the email: service@sunfounder.com.
     component_i2clcd1602
     component_ws2812
 
-**Sound**
+**Sonido**
 
 .. toctree::
     :maxdepth: 1
 
     component_buzzer
 
-**Actuators**
+**Actuadores**
 
 .. toctree::
     :maxdepth: 1
@@ -77,9 +77,7 @@ Here is the email: service@sunfounder.com.
     component_pump
     component_relay
 
-
-
-**Controller**
+**Controlador**
 
 .. toctree::
     :maxdepth: 1

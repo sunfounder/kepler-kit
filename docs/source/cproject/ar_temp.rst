@@ -1,73 +1,70 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_temp:
 
-2.13 - Thermometer
+2.13 - Termómetro
 ===========================
 
-A thermometer is a device that measures temperature or a temperature gradient (the degree of hotness or coldness of an object). 
-A thermometer has two important elements: (1) a temperature sensor (e.g. the bulb of a mercury-in-glass thermometer or the pyrometric sensor in an infrared thermometer) in which some change occurs with a change in temperature; 
-and (2) some means of converting this change into a numerical value (e.g. the visible scale that is marked on a mercury-in-glass thermometer or the digital readout on an infrared model). 
-Thermometers are widely used in technology and industry to monitor processes, in meteorology, in medicine, and in scientific research.
+Un termómetro es un dispositivo que mide la temperatura o un gradiente de temperatura (el nivel de calor o frío de un objeto). 
+Un termómetro tiene dos elementos importantes: (1) un sensor de temperatura (p. ej., el bulbo de un termómetro de mercurio o el sensor pirométrico en un termómetro infrarrojo) en el cual ocurre algún cambio con la temperatura; 
+y (2) un medio para convertir este cambio en un valor numérico (p. ej., la escala visible en un termómetro de mercurio o la lectura digital en un modelo infrarrojo). 
+Los termómetros se utilizan ampliamente en tecnología e industria para monitorear procesos, en meteorología, en medicina y en investigación científica.
 
+Un termistor es un tipo de sensor de temperatura cuya resistencia depende significativamente de la temperatura, y existen dos tipos:
+Coeficiente de Temperatura Negativo (NTC) y Coeficiente de Temperatura Positivo (PTC).
+La resistencia de un termistor PTC aumenta con la temperatura, mientras que el NTC muestra el comportamiento contrario.
 
-A thermistor is a type of temperature sensor whose resistance is strongly dependent on temperature, and it has two types: 
-Negative Temperature Coefficient (NTC) and Positive Temperature Coefficient (PTC), 
-also known as NTC and PTC. The resistance of PTC thermistor increases with temperature, while the condition of NTC is opposite to the former.
-
-In this experiment we use an **NTC thermistor** to make a thermometer.
-
+En este experimento usaremos un **termistor NTC** para construir un termómetro.
 
 * :ref:`cpn_thermistor`
 
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente comprar un kit completo; aquí está el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -76,7 +73,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -87,94 +84,82 @@ You can also buy them separately from the links below.
         - 1
         - |link_thermistor_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_temp|
 
-In this circuit, the 10K resistor and the thermistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the GP28 reads the value after the voltage conversion of the thermistor.
+En este circuito, la resistencia de 10K y el termistor están conectados en serie, y la corriente que los atraviesa es la misma. La resistencia de 10K actúa como protección, y el pin GP28 lee el valor tras la conversión de voltaje del termistor.
 
-When the temperature increases, the resistance value of NTC thermistor decreases, then its voltage decreases, so the value from GP28 will decrease; If the temperature is high enough, the resistance of the thermistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
+Cuando aumenta la temperatura, el valor de resistencia del termistor NTC disminuye, y su voltaje baja, por lo que el valor de GP28 también disminuye. Si la temperatura es lo suficientemente alta, la resistencia del termistor se aproximará a 0 y el valor de GP28 será cercano a 0. En este momento, la resistencia de 10K juega un papel protector, evitando que se conecten los 3.3V y GND, lo cual provocaría un cortocircuito.
 
-When the temperature drops, the value of GP28 will increase. When the temperature is low enough, the resistance of the thermistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+Cuando la temperatura desciende, el valor de GP28 aumentará. En condiciones de frío extremo, la resistencia del termistor será infinita y su voltaje se acercará a 3.3V (la resistencia de 10K es despreciable), por lo que el valor de GP28 estará cerca del valor máximo de 65535.
 
-
-The calculation formula is shown below.
+La fórmula de cálculo se muestra a continuación:
 
     (Vp/3.3V) x 65535 = Ap
 
-
-**Wiring**
-
+**Conexión**
 
 |wiring_temp|
- 
-.. #. Connect 3V3 and GND of Pico W to the power bus of the breadboard.
-.. #. Connect one lead of the thermistor to the GP28 pin, then connect the same lead to the positive power bus with a 10K ohm resistor.
-.. #. Connect another lead of thermistor to the negative power bus.
+
+.. #. Conecta 3V3 y GND de la Pico W al bus de alimentación de la breadboard.
+.. #. Conecta un terminal del termistor al pin GP28 y al mismo terminal, conecta una resistencia de 10K ohmios al bus positivo de alimentación.
+.. #. Conecta el otro terminal del termistor al bus negativo de alimentación.
 
 .. note::
-    * The thermistor is black and marked 103.
-    * The color ring of the 10K ohm resistor is red, black, black, red and brown.
+    * El termistor es negro y está marcado como 103.
+    * El anillo de colores de la resistencia de 10K ohmios es rojo, negro, negro, rojo y marrón.
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``2.13_thermometer.ino`` under the path of ``kepler-kit-main/arduino/2.13_thermometer``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-
+    * Puedes abrir el archivo ``2.13_thermometer.ino`` en la ruta ``kepler-kit-main/arduino/2.13_thermometer``. 
+    * O copia este código en **Arduino IDE**.
+    * No olvides seleccionar la placa (Raspberry Pi Pico) y el puerto correcto antes de hacer clic en el botón **Subir**.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1ae1a028-2647-4e4c-b647-0d4759f6fd03/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
-    
 
+Cuando el programa se ejecuta, el Monitor Serial imprimirá las temperaturas en grados Celsius y Fahrenheit.
 
-After the program runs, the Serial Monitor will print out the Celsius and Fahrenheit temperatures.
+**¿Cómo funciona?**
 
-**How it works?**
+Cada termistor tiene una resistencia nominal. Aquí es de 10K ohmios, medida a 25 grados Celsius.
 
-Each thermistor has a normal resistance. 
-Here it is 10k ohm, which is measured under 25 degree Celsius. 
+Cuando la temperatura aumenta, la resistencia del termistor disminuye.
+Luego, los datos de voltaje se convierten en valores digitales mediante el adaptador A/D.
 
-When the temperature gets higher, the resistance of the thermistor decreases. 
-Then the voltage data is converted to digital quantities by the A/D adapter. 
-
-The temperature in Celsius or Fahrenheit is output via programming. 
-
+La temperatura en grados Celsius o Fahrenheit se muestra mediante programación.
 
 .. code-block:: arduino
 
     long a = analogRead(analogPin);
 
-This line is used to read the value of the thermistor. 
+Esta línea se usa para leer el valor del termistor.
 
 .. code-block:: arduino
 
     float tempC = beta / (log((1025.0 * 10 / a - 10) / 10) + beta / 298.0) - 273.0;
     float tempF = 1.8 * tempC + 32.0;
 
-These calculations convert the thermistor values into centigrade degree and Fahrenheit degree. 
-
+Estos cálculos convierten los valores del termistor en grados centígrados y grados Fahrenheit.
 
 .. note::
-    Here is the relation between the resistance and temperature: 
+    Aquí está la relación entre la resistencia y la temperatura:
 
-    **RT =RN expB(1/TK – 1/TN)** 
+    **RT = RN expB(1/TK – 1/TN)** 
 
-    * RT is the resistance of the NTC thermistor when the temperature is TK. 
-    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
-    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
-    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
-    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+    * RT es la resistencia del termistor NTC cuando la temperatura es TK.
+    * RN es la resistencia del termistor NTC a la temperatura nominal TN. Aquí, el valor de RN es 10k.
+    * TK es la temperatura en Kelvin y su unidad es K. Aquí, el valor de TK es 273.15 + grados Celsius.
+    * TN es la temperatura nominal en Kelvin; la unidad también es K. Aquí, el valor de TN es 273.15+25.
+    * B (beta), la constante material del termistor NTC, también se llama índice de sensibilidad térmica, con un valor numérico de 3950.
+    * exp es la abreviatura de exponencial, y el número base e es un número natural, aproximadamente igual a 2.7.
 
-    Convert this formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+    Convierte esta fórmula TK=1/(ln(RT/RN)/B+1/TN) para obtener la temperatura en Kelvin, la cual menos 273.15 dará la temperatura en grados Celsius.
 
-    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+    Esta relación es una fórmula empírica. Es precisa solo cuando la temperatura y la resistencia están dentro del rango efectivo.
 
-This code refers to plugging Rt into the formula TK=1/(ln(RT/RN)/B+1/TN) to get Kelvin temperature. 
-
-
+Este código se refiere a ingresar Rt en la fórmula TK=1/(ln(RT/RN)/B+1/TN) para obtener la temperatura en Kelvin.

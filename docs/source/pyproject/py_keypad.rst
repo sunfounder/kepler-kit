@@ -1,66 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Explora más sobre Raspberry Pi, Arduino y ESP32 junto a otros aficionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede a anuncios y adelantos de nuevos productos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_keypad:
 
-4.2 4x4 Keypad
+4.2 Teclado 4x4
 ========================
 
-The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
+El teclado 4x4, también conocido como teclado matricial, es una matriz de 16 teclas organizadas en un solo panel.
 
-The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+Este tipo de teclado se encuentra en dispositivos que requieren entrada digital, como calculadoras, controles remotos de TV, teléfonos con botones, máquinas expendedoras, cajeros automáticos, cerraduras de combinación y cerraduras digitales de puertas.
 
-In this project, we will learn how to determine which key is pressed and get the related key value.
+En este proyecto, aprenderemos cómo determinar qué tecla se ha presionado y obtener el valor correspondiente.
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es más conveniente adquirir un kit completo. Aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ARTÍCULOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -69,45 +68,42 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(10KΩ)
+        - 4 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_keypad`
         - 1
         - |link_keypad_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_keypad|
 
-4 pull-down resistors are connected to each of the columns of the matrix keyboard, so that G6 ~ G9 get a stable low level when the keys are not pressed.
+Se conectan 4 resistencias pull-down a cada una de las columnas del teclado matricial, de modo que G6 ~ G9 tengan un nivel bajo estable cuando las teclas no están presionadas.
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+Las filas del teclado (G2 ~ G5) se programan para estar en nivel alto; si alguna de G6 ~ G9 está en nivel alto al ser leída, sabemos qué tecla ha sido presionada.
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+Por ejemplo, si G6 se lee en alto, entonces se ha presionado la tecla numérica 1; esto es porque los pines de control de la tecla 1 son G2 y G6, y al presionar la tecla, G2 y G6 se conectan y G6 se pone en alto.
 
-
-**Wiring**
+**Conexiones**
 
 |wiring_keypad|
 
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G6 ~ G9 are located at the same time.
+Para facilitar el cableado, en el diagrama anterior, la fila de columnas del teclado y las resistencias de 10K se insertan en los agujeros donde se encuentran G6 ~ G9.
 
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``4.2_4x4_keypad.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``4.2_4x4_keypad.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -151,9 +147,9 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
             print(current_key)
         time.sleep(0.1)
 
-After the program runs, the Shell will print out the keys you pressed on the Keypad.
+Una vez que el programa se esté ejecutando, la consola Shell imprimirá las teclas que presionas en el teclado.
 
-**How it works**
+**Cómo funciona**
 
 .. code-block:: python
 
@@ -174,7 +170,7 @@ After the program runs, the Shell will print out the keys you pressed on the Key
         col.append(None)
         col[i] = machine.Pin(pin[i], machine.Pin.IN)
 
-Declare each key of the matrix keyboard to the array ``characters[]`` and define the pins on each row and column.
+Declara cada tecla del teclado matricial en el array ``characters[]`` y define los pines en cada fila y columna.
 
 .. code-block:: python
 
@@ -188,18 +184,18 @@ Declare each key of the matrix keyboard to the array ``characters[]`` and define
             print(current_key)
         time.sleep(0.1)
 
-This is the part of the main function that reads and prints the button value.
+Esta es la parte de la función principal que lee e imprime el valor del botón.
 
-The function ``readKey()`` will read the state of every button.
+La función ``readKey()`` leerá el estado de cada botón.
 
-The statement ``if current_key != None`` and ``if current_key == last_key`` 
-is used to judge whether a key is pressed and the state of the pressed button. 
-(If you press \'3\' when you press \'1\', the judgement is tenable.)
+Las instrucciones ``if current_key != None`` y ``if current_key == last_key`` 
+se usan para verificar si se ha presionado una tecla y el estado de la tecla presionada. 
+(Si presionas '3' cuando has presionado '1', la condición es válida.)
 
-Prints the value of the currently pressed key when the condition is tenable.
+Imprime el valor de la tecla presionada cuando la condición es verdadera.
 
-The statement ``last_key = current_key`` assigns the state of each judgment 
-to an array ``last_key`` to facilitate the next round of conditional judgment.
+La instrucción ``last_key = current_key`` asigna el estado de cada evaluación 
+a un array ``last_key`` para facilitar la siguiente ronda de evaluaciones.
 
 .. code-block:: python
 
@@ -216,24 +212,26 @@ to an array ``last_key`` to facilitate the next round of conditional judgment.
         else:
             return key
 
-This function assigns a high level to each row in turn, and when the button is pressed, 
-the column in which the key is located gets a high level. 
-After the two-layer loop is judged, the value of the button whose state is 1 is stored in the array ``key`` .
+Esta función asigna un nivel alto a cada fila sucesivamente, y cuando se presiona el botón, 
+la columna en la que se encuentra la tecla obtiene un nivel alto. 
+Tras el bucle de doble capa, el valor del botón cuyo estado es 1 se almacena en el array ``key``.
 
-If you press the key \'3\':
+Si presionas la tecla '3':
 
 |img_keypad_pressed|
 
 
-``row[0]`` is written in high level, and ``col[2]`` gets high level.
+``row[0]`` se escribe en nivel alto y ``col[2]`` obtiene nivel alto.
 
-``col[0]``, ``col[1]``, ``col[3]`` get low level.
 
-There are four states:0, 0, 1, 0; and we write \'3\' into ``pressed_keys``.
 
-When ``row[1]`` , ``row[2]`` , ``row[3]`` are written into high level,
-``col[0]`` ~ ``col[4]`` get low level.
+``col[0]``, ``col[1]``, ``col[3]`` obtienen nivel bajo.
 
-The loop stopped, there returns key = \'3\'.
+Hay cuatro estados: 0, 0, 1, 0; y se escribe \'3\' en ``pressed_keys``.
 
-If you press the buttons \'1\' and \'3\', there will return key = [\'1\',\'3\'].
+Cuando ``row[1]``, ``row[2]``, ``row[3]`` se escriben en nivel alto, 
+``col[0]`` ~ ``col[4]`` obtienen nivel bajo.
+
+El bucle se detiene y se retorna key = \'3\'.
+
+Si presionas las teclas \'1\' y \'3\', se devolverá key = [\'1\',\'3\'].

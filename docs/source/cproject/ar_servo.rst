@@ -1,64 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_servo:
 
-3.7 - Swinging Servo
-=======================
+3.7 - Balanceo de un Servo
+===============================
 
-In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
+En este kit, además del LED y el zumbador pasivo, también tenemos un dispositivo controlado por señal PWM: el servo.
 
-Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
+Un servo es un dispositivo de servomecanismo de posición (ángulo), adecuado para sistemas de control que requieren cambios constantes de ángulo y deben mantenerse en ese estado. Los servos son ampliamente usados en juguetes de control remoto avanzados, como aviones, modelos de submarinos y robots.
 
-Now, try to make the servo sway!
+¡Ahora intentemos hacer que el servo oscile!
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente comprar un kit completo; aquí está el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -67,85 +67,84 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_servo|
 
-**Wiring**
+**Conexión**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* El cable naranja es la señal y está conectado a GP15.
+* El cable rojo es VCC y está conectado a VBUS (5V).
+* El cable marrón es GND y está conectado a GND.
 
-**Code**
 
+**Código**
 
 .. note::
 
-    * You can open the file ``3.7_swinging_servo.ino`` under the path of ``kepler-kit-main/arduino/3.7_swinging_servo``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
+    * Puedes abrir el archivo ``3.7_swinging_servo.ino`` en la ruta ``kepler-kit-main/arduino/3.7_swinging_servo``. 
+    * O copia este código en el **Arduino IDE**.
+    * No olvides seleccionar la placa (Raspberry Pi Pico) y el puerto correcto antes de hacer clic en el botón **Subir**.
 
 .. raw:: html
-    
+
     <iframe src=https://create.arduino.cc/editor/sunfounder01/d52a67be-be6b-4cbf-b411-810160f56928/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+Al ejecutar el programa, veremos el brazo del servo moviéndose de un lado a otro de 0° a 180°.
 
 
-**How it works?**
+**¿Cómo funciona?**
 
-By calling the library ``Servo.h``, you can drive the servo easily. 
+Al llamar a la biblioteca ``Servo.h``, puedes controlar el servo fácilmente.
 
 .. code-block:: arduino
 
     #include <Servo.h> 
 
-**Library Functions**
+**Funciones de la Biblioteca**
 
 .. code-block:: arduino
 
     Servo
 
-Create **Servo** object to control a servo.
+Crear un objeto **Servo** para controlar el servo.
 
 .. code-block:: arduino
 
     uint8_t attach(int pin); 
 
-Turn a pin into a servo driver. Calls pinMode. Returns 0 on failure.
+Convierte un pin en controlador de servo. Llama a pinMode. Devuelve 0 si falla.
 
 .. code-block:: arduino
 
     void detach();
 
-Release a pin from servo driving.
+Libera un pin del control de servo.
 
 .. code-block:: arduino
 
     void write(int value); 
 
-Set the angle of the servo in degrees, 0 to 180.
+Establece el ángulo del servo en grados, de 0 a 180.
 
 .. code-block:: arduino
 
     int read();
 
-Return that value set with the last write().
+Devuelve el valor establecido con el último write().
 
 .. code-block:: arduino
 
     bool attached(); 
 
-Return 1 if the servo is currently attached.
+Devuelve 1 si el servo está actualmente conectado.

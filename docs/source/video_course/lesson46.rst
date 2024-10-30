@@ -1,30 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y profundiza en el fascinante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 46: Build a 2 Axis Tilt Meter with Display Using the MPU6050
-=============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to create a two-axis tilt meter:
+Lección 46: Construye un Medidor de Inclinación de 2 Ejes con Pantalla Usando el MPU6050
+=================================================================================================
 
-* **Setup**: Connect MPU6050 and OLED 1306 to Raspberry Pi Pico W.
-* **Concept**: Measure tilt using pitch and roll angles, display bubble level on OLED.
-* **Equation**: 
+Este tutorial cubre el uso del sensor MPU6050 con la Raspberry Pi Pico W para crear un inclinómetro de dos ejes:
+
+* **Configuración**: Conecta el MPU6050 y el OLED 1306 a la Raspberry Pi Pico W.
+* **Concepto**: Mide la inclinación usando ángulos de cabeceo (pitch) y balanceo (roll), mostrando el nivel en forma de burbuja en el OLED.
+* **Ecuación**: 
    - Pitch: \(\arctan\left(\frac{Y}{Z}\right)\)
    - Roll: \(\arctan\left(\frac{X}{Z}\right)\)
-   - Convert radians to degrees.
-* **Code**: Set up libraries, measure X, Y, Z acceleration, calculate angles, and display on OLED.
-* **Demonstration**: Test tilt, adjust bubble movement for responsiveness.
-* **Advanced**: Stabilize tilt readings to avoid errors from acceleration or vibrations.
+   - Convierte los valores de radianes a grados.
+* **Código**: Configura las bibliotecas, mide la aceleración en X, Y, Z, calcula los ángulos y muéstralos en el OLED.
+* **Demostración**: Prueba la inclinación y ajusta el movimiento de la burbuja para mayor sensibilidad.
+* **Avanzado**: Estabiliza las lecturas de inclinación para evitar errores causados por aceleración o vibraciones.
 
 **Video**
 

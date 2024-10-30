@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 30: Project to Connect Your Raspberry Pi Pico W to the Internet
+Lección 30: Proyecto para Conectar tu Raspberry Pi Pico W a Internet
 =============================================================================
 
-This tutorial covers connecting the Raspberry Pi Pico W to the internet and fetching data from APIs:
+Este tutorial cubre cómo conectar la Raspberry Pi Pico W a internet y obtener datos desde APIs:
 
-* **Fetching Data from APIs**: Use ``urequests.get()`` to fetch JSON data and parse it to extract relevant information.
-* **Code Example**: Fetch data about astronauts in space, list their names and spacecraft.
-* **Homework**: Find a real-time data set (e.g., weather), fetch and display it using the Raspberry Pi Pico W.
-
+* **Obtención de Datos desde APIs**: Usa ``urequests.get()`` para obtener datos en formato JSON y analizarlos para extraer la información relevante.
+* **Ejemplo de Código**: Obtén datos sobre astronautas en el espacio, listando sus nombres y naves espaciales.
+* **Tarea**: Encuentra un conjunto de datos en tiempo real (por ejemplo, el clima), obtén y despliega la información usando la Raspberry Pi Pico W.
 
 **Video**
 

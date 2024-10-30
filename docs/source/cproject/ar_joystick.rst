@@ -1,68 +1,67 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. ¡Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de Expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _ar_joystick:
 
-4.1 - Toggle the Joystick
+4.1 - Activación del Joystick
 ================================
 
-If you play a lot of video games, then you should be very familiar with the Joystick.
-It is usually used to move the character around, rotate the screen, etc.
+Si juegas muchos videojuegos, entonces seguramente estás muy familiarizado con el joystick.
+Normalmente se usa para mover al personaje, rotar la pantalla, etc.
 
-The principle behind Joystick's ability to allow the computer to read our actions is very simple.
-It can be thought of as consisting of two potentiometers that are perpendicular to each other.
-These two potentiometers measure the analog value of the joystick vertically and horizontally, resulting in a value (x,y) in a planar right-angle coordinate system.
+El principio detrás de cómo el joystick permite que la computadora lea nuestras acciones es muy simple.
+Se puede imaginar como dos potenciómetros perpendiculares entre sí.
+Estos dos potenciómetros miden el valor analógico del joystick en las direcciones vertical y horizontal, generando así un valor (x,y) en un sistema de coordenadas rectangulares.
 
-
-The joystick of this kit also has a digital input, which is activated when the joystick is pressed.
+El joystick de este kit también tiene una entrada digital, que se activa al presionar el joystick.
 
 * :ref:`cpn_joystick`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -71,43 +70,41 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 1(10KΩ)
+        - 1 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_joystick`
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
 |sch_joystick|
 
-The SW pin is connected to a 10K pull-up resistor, the reason is to be able to get a stable high level on the SW pin (Z axis) when the joystick is not pressed; otherwise the SW is in a suspended state and the output value may vary between 0/1.
+El pin SW está conectado a una resistencia pull-up de 10K, la razón es poder obtener un nivel alto estable en el pin SW (eje Z) cuando el joystick no está presionado; de lo contrario, el pin SW estaría en un estado flotante y el valor de salida podría variar entre 0 y 1.
 
-
-**Wiring**
+**Conexión**
 
 |wiring_joystick|
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``4.1_toggle_the_joyostick.ino`` under the path of ``kepler-kit-main/arduino/4.1_toggle_the_joyostick``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
-
-    
+    * Puedes abrir el archivo ``4.1_toggle_the_joystick.ino`` en la ruta ``kepler-kit-main/arduino/4.1_toggle_the_joystick``.
+    * O copia este código en el **IDE de Arduino**.
+    * No olvides seleccionar la placa (Raspberry Pi Pico) y el puerto correcto antes de hacer clic en el botón **Upload**.
 
 .. raw:: html
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/dfe53878-7cb4-4543-bb97-7f5ef5aad15a/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the program runs, the Shell prints out the x,y,z values of joystick.
+Después de ejecutar el programa, la consola imprimirá los valores de x, y, z del joystick.
 
-* The x-axis and y-axis values are analog values that vary from 0 to 65535.
-* The Z-axis is a digital value with a status of 1 or 0.
+
+* Los valores de los ejes x e y son valores analógicos que varían de 0 a 65535.
+* El eje Z es un valor digital con un estado de 1 o 0.

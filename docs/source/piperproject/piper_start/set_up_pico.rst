@@ -1,50 +1,60 @@
+.. note::
+
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
+
+    **¿Por qué unirte?**
+
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales en días festivos.
+
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
+
 .. _per_setup_pico:
 
-1.1 Set up the Pico
-----------------------
+1.1 Configurar el Pico
+===========================
 
-First, visit Piper Make through the following link: 
+Primero, visita Piper Make a través del siguiente enlace:
 
 https://make.playpiper.com/
 
-In the pop-up page, if you don't need to subscribe for more tutorials, you can just click **Let's Go!** or the **x** button.
+En la página emergente, si no deseas suscribirte para obtener más tutoriales, simplemente haz clic en **Let's Go!** o en el botón **x**.
 
 |media1|
 
-
 .. note::
-    If you see a different pop-up window, your browser version is not supported, please update your browser and try again. 
+    Si ves una ventana emergente diferente, significa que la versión de tu navegador no es compatible. Por favor, actualiza tu navegador e inténtalo nuevamente.
 
-
-Find the ``SETUP MY PICO`` button, click it, and follow the prompts to configure it.
+Encuentra el botón ``SETUP MY PICO``, haz clic en él y sigue las instrucciones para configurarlo.
 
 |media2-s|
 
-
-Click **Next** to start configuring your Pico W, even if you have set it up before, these are the same steps you will use to update your Pico W firmware.
+Haz clic en **Next** para comenzar la configuración de tu Pico W. Aunque ya lo hayas configurado antes, estos son los mismos pasos que debes seguir para actualizar el firmware de tu Pico W.
 
 |media3|
 
-In this step, you need to make sure that your Pico W is unplugged from your computer, as it needs to be plugged in in a specific way in the next step. Make sure your cable can handle power and data, as many micro USB cables only have power.
+En este paso, asegúrate de que tu Pico W esté desconectado de la computadora, ya que deberá conectarse de una forma específica en el siguiente paso. Asegúrate de que tu cable pueda manejar tanto energía como datos, ya que muchos cables micro USB solo transmiten energía.
 
 |media4|
 
-Now, press and hold the RST (white) button on the Pico W and plug the Pico W into your computer. Once plugged in, you can release the button.
+Ahora, mantén presionado el botón RST (blanco) en el Pico W y conéctalo a tu computadora. Una vez conectado, puedes soltar el botón.
 
 |media5|
 
-Your Pico W will appear as a USB drive, click **Next** after that select **RPI-RP2** drive.
+Tu Pico W aparecerá como una unidad USB; haz clic en **Next** y selecciona la unidad **RPI-RP2**.
 
 .. note::
-    After select **RPI-RP2** drive, there will be a pop up window at the top that you need to allow the web page to view files.
+    Después de seleccionar la unidad **RPI-RP2**, aparecerá una ventana emergente en la parte superior en la que deberás permitir que la página web acceda a los archivos.
 
 |media6|
 
-Now Piper Make will load the firmware to your Pico W, again you need to allow save changes to the hard drive where the Pico W is located.
+Ahora Piper Make cargará el firmware en tu Pico W; nuevamente, necesitarás permitir guardar los cambios en la unidad donde está ubicado el Pico W.
 
 |media7|
 
-When this prompt appears, it means your Pico W is set up and you can start using it.
-
+Cuando aparezca este mensaje, significa que tu Pico W está configurado y puedes empezar a usarlo.
 
 |media8|

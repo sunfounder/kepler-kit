@@ -1,61 +1,60 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_10_second:
 
-7.5 GAME - 10 Second
-=======================
+7.5 JUEGO - 10 Segundos
+============================
 
 
-To challenge your concentration, follow me next to make a game device. 
-Make a magic wand by connecting the tilt switch with a stick. When you shake the wand, the 4-digit segment display will start counting, and when you shake it again, it will stop counting. In order to win, you must keep the displayed count at **10.00**. You can play the game with your friends to see who is the time wizard.
+Para poner a prueba tu concentración, vamos a crear un dispositivo de juego. 
+Haremos una varita mágica conectando un interruptor de inclinación a un palo. Cuando agites la varita, la pantalla de 4 dígitos empezará a contar, y cuando la vuelvas a agitar, se detendrá. Para ganar, el contador debe detenerse en **10.00**. Puedes jugar con tus amigos para ver quién es el "mago del tiempo".
 
-**Required Components**
+**Componentes Requeridos**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N.º
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -64,11 +63,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 5(4-220Ω, 1-10KΩ)
+        - 5 (4 de 220Ω, 1 de 10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_4_dit_7_segment`
@@ -83,119 +82,116 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
 
 |sch_10_second|
 
 
-* This circuit is based on :ref:`py_74hc_4dig` with the addition of a tilt switch.
-* GP16 is high when the tilt switch is upright; low when tilted.
-
-**Wiring**
-
-|wiring_game_10_second| 
+* Este circuito se basa en :ref:`py_74hc_4dig` con la adición de un interruptor de inclinación.
+* GP16 es alto cuando el interruptor de inclinación está en posición vertical; bajo cuando está inclinado.
 
 
-**Code**
+**Conexión**
 
+|wiring_game_10_second|
+
+**Código**
 
 .. note::
 
-    * Open the ``7.5_game_10_second.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``7.5_game_10_second.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
     import machine
     import time
 
-    # 7-segment display codes for digits 0-9, using hexadecimal to represent LED segments
+    # Códigos del display de 7 segmentos para los dígitos 0-9, en hexadecimal
     SEGCODE = [0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f]
 
-    # Define pins for shift register communication (74HC595)
-    sdi = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input
-    rclk = machine.Pin(19, machine.Pin.OUT)  # Register Clock (Latch)
-    srclk = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock
+    # Definir pines para la comunicación del registro de desplazamiento (74HC595)
+    sdi = machine.Pin(18, machine.Pin.OUT)   # Entrada de Datos Seriales
+    rclk = machine.Pin(19, machine.Pin.OUT)  # Reloj de Registro (Latch)
+    srclk = machine.Pin(20, machine.Pin.OUT) # Reloj de Registro de Desplazamiento
 
-    # Initialize list to store 4 digit control pins
+    # Inicializar lista para almacenar los pines de control de los 4 dígitos
     placePin = []
 
-    # Define control pins for each of the four digits (common anodes)
-    pin = [10,13,12,11]  # Pin numbers for the 4-digit display
+    # Definir pines de control para cada uno de los cuatro dígitos (ánodos comunes)
+    pin = [10,13,12,11]
     for i in range(4):
-        placePin.append(None)  # Reserve space in list
-        placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Initialize pin as output
+        placePin.append(None)
+        placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)
 
-    # Function to select which digit (0-3) to display by controlling the common anode pins
+    # Función para seleccionar cuál dígito (0-3) mostrar controlando los pines de ánodo común
     def pickDigit(digit):
         for i in range(4):
-            placePin[i].value(1)  # Turn off all digits
-        placePin[digit].value(0)  # Turn on the selected digit
+            placePin[i].value(1)
+        placePin[digit].value(0)
 
-    # Function to clear the display by sending '0x00' to the shift register
+    # Función para limpiar la pantalla enviando '0x00' al registro de desplazamiento
     def clearDisplay():
         hc595_shift(0x00)
 
-    # Function to send data to the shift register (74HC595)
+    # Función para enviar datos al registro de desplazamiento (74HC595)
     def hc595_shift(dat):
-        rclk.low()  # Pull latch low to prepare for data shifting
-        time.sleep_us(200)  # Small delay for timing stability
-        for bit in range(7, -1, -1):  # Loop through each bit (MSB first)
-            srclk.low()  # Prepare to send the next bit
+        rclk.low()
+        time.sleep_us(200)
+        for bit in range(7, -1, -1):
+            srclk.low()
             time.sleep_us(200)
-            value = 1 & (dat >> bit)  # Extract the current bit from the data
-            sdi.value(value)  # Set the data line to the current bit value
+            value = 1 & (dat >> bit)
+            sdi.value(value)
             time.sleep_us(200)
-            srclk.high()  # Pulse the shift clock to store the bit in the register
+            srclk.high()
             time.sleep_us(200)
         time.sleep_us(200)
-        rclk.high()  # Pulse the register clock to move the data to the output
+        rclk.high()
 
-    # Function to display a number on the 7-segment display
-    # This function breaks down the number into its individual digits and displays them one at a time
+    # Función para mostrar un número en el display de 7 segmentos
     def display(num):
-        pickDigit(0)  # Select the units place
-        hc595_shift(SEGCODE[num % 10])  # Display units
+        pickDigit(0)
+        hc595_shift(SEGCODE[num % 10])
 
-        pickDigit(1)  # Select the tens place
-        hc595_shift(SEGCODE[num % 100 // 10])  # Display tens
+        pickDigit(1)
+        hc595_shift(SEGCODE[num % 100 // 10])
 
-        pickDigit(2)  # Select the hundreds place
-        hc595_shift(SEGCODE[num % 1000 // 100] + 0x80)  # Display hundreds (with decimal point)
+        pickDigit(2)
+        hc595_shift(SEGCODE[num % 1000 // 100] + 0x80)
 
-        pickDigit(3)  # Select the thousands place
-        hc595_shift(SEGCODE[num % 10000 // 1000])  # Display thousands
+        pickDigit(3)
+        hc595_shift(SEGCODE[num % 10000 // 1000])
 
-    # Initialize the tilt switch sensor on pin 16
+    # Inicializar el sensor de inclinación en el pin 16
     tilt_switch = machine.Pin(16, machine.Pin.IN)
 
-    # Boolean flag to control whether the counting should continue
+    # Bandera booleana para controlar si la cuenta debe continuar
     count_flag = False
 
-    # Interrupt handler for the tilt switch, toggles the counting flag on each trigger
+    # Manejador de interrupción para el interruptor de inclinación, alterna la bandera de cuenta
     def shake(pin):
         global timeStart, count_flag
-        count_flag = not count_flag  # Toggle the counting state
+        count_flag = not count_flag
         if count_flag == True:
-            timeStart = time.ticks_ms()  # Record the time when counting starts
+            timeStart = time.ticks_ms()
 
-    # Set up an interrupt on the tilt switch to detect shaking and call the shake() function
+    # Configurar una interrupción en el interruptor de inclinación para detectar movimiento
     tilt_switch.irq(trigger=machine.Pin.IRQ_RISING, handler=shake)
 
-    # Initialize the count variable to zero
+    # Inicializar la variable de conteo a cero
     count = 0
 
-    # Main loop to continuously update the display based on the elapsed time since the tilt switch was triggered
+    # Bucle principal para actualizar continuamente la pantalla según el tiempo transcurrido desde que se activó el interruptor de inclinación
     while True:
         if count_flag == True:
-            count = int((time.ticks_ms() - timeStart) / 10)  # Calculate the count in tenths of a second
-        display(count)  # Update the display with the current count
+            count = int((time.ticks_ms() - timeStart) / 10)
+        display(count)
 
 
-The 4-digit 7-segment display will begin counting when you shake the wand, and will stop counting when you shake it again. 
-You win if you manage to keep the displayed count at 10.00. The game will continue after one more shake.
+La pantalla de 7 segmentos de 4 dígitos comenzará a contar cuando agites la varita y se detendrá al volver a agitarla.
+Ganas si logras detener el contador en 10.00. El juego continuará con una nueva agitación.

@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y profundiza en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 68:  MicroPython Multicore Threading Example with LEDs and Servo
+Lección 68: Ejemplo de Multitarea en MicroPython con LED y Servo
 ===================================================================================
 
-This tutorial covers controlling a servo and LEDs with the Raspberry Pi Pico W using both cores:
+Este tutorial cubre el control de un servo y LEDs en la Raspberry Pi Pico W usando ambos núcleos:
 
-* **Wiring Setup**: Connect red LED to GPIO 15, green LED to GPIO 14, servo to GPIO 17, power to pin 40, and ground to pin 38.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, and ``Servo``. Set up pins for LEDs and servo. Define ``other_core`` function to blink LEDs based on servo direction.
-* **Homework Assignment**: Modify code to blink red LED for clockwise and green LED for counterclockwise servo movement.
+* **Configuración de Cableado**: Conecta el LED rojo al GPIO 15, el LED verde al GPIO 14, el servo al GPIO 17, alimentación al pin 40, y tierra al pin 38.
+* **Implementación de Código**: Importa ``machine``, ``time``, ``_thread`` y ``Servo``. Configura los pines para los LEDs y el servo. Define la función ``other_core`` para hacer parpadear los LEDs según la dirección del servo.
+* **Tarea**: Modifica el código para hacer parpadear el LED rojo en movimiento horario y el LED verde en movimiento antihorario del servo.
 
 
 **Video**

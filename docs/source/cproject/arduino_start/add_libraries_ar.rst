@@ -1,42 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 
-1.4 Install libraries (Important)
-======================================
+1.4 Instalación de librerías (Importante)
+============================================
 
-Many libraries are available directly through the Arduino **Library Manager**. You can access the **Library Manager** by following these steps:
+Muchas librerías están disponibles directamente a través del **Administrador de Librerías** de Arduino. Puedes acceder al **Administrador de Librerías** siguiendo estos pasos:
 
-In the **Library Manager**, you can search for the desired library by name or browse through different categories.
+En el **Administrador de Librerías**, puedes buscar la librería deseada por su nombre o explorar las diferentes categorías.
 
 .. note::
 
-   In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as “The DHT sensor library library is used here, you can install it from the **Library Manager**.” Simply install the recommended libraries as prompted.
+   En los proyectos donde se requiera la instalación de librerías, aparecerán indicaciones sobre cuáles instalar. Sigue las instrucciones proporcionadas, como “Aquí se utiliza la librería del sensor DHT, puedes instalarla desde el **Administrador de Librerías**.” Simplemente instala las librerías recomendadas según las indicaciones.
 
 .. image:: img/install_lib3.png
 
-Once you find the library you want to install, click on it and then click the **INSTALL** button.
+Una vez que encuentres la librería que deseas instalar, haz clic en ella y luego en el botón **INSTALAR**.
 
 .. image:: img/install_lib2.png
 
-The Arduino IDE will automatically download and install the library for you.
+El IDE de Arduino descargará e instalará automáticamente la librería por ti.
 
 
 .. note::
 
-   The libraries installed can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Las librerías instaladas se encuentran en el directorio predeterminado de librerías del IDE de Arduino, que normalmente está ubicado en ``C:\Users\xxx\Documents\Arduino\libraries``.
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   Si tu directorio de librerías es diferente, puedes verificarlo yendo a **Archivo** -> **Preferencias**.
 
       .. image:: img/install_lib1.png

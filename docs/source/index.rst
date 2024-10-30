@@ -1,58 +1,59 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso exclusivo**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos**: Participa en sorteos y promociones festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-SunFounder |link_kepler_kit| for Raspberry Pi Pico W
+SunFounder |link_kepler_kit| para Raspberry Pi Pico W
 ======================================================================
 
 |link_Kepler_Ultimate_Kit|
 
-Thanks for choosing our |link_kepler_kit|.
+Gracias por elegir nuestro |link_kepler_kit|.
 
 .. note::
-    This document is available in the following languages.
+    Este documento está disponible en los siguientes idiomas.
 
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Haz clic en los enlaces correspondientes para acceder al documento en tu idioma preferido.
 
 
-Thank you for choosing the SunFounder Kepler Kit
+Gracias por elegir el Kit Kepler de SunFounder.
 
-This is an learning kit based on the Raspberry Pi Pico W. 
+Este es un kit de aprendizaje basado en el Raspberry Pi Pico W.
 
-Raspberry Pi Pico W adds on-board single-band 2.4GHz wireless interfaces (802.11n) using the Infineon CYW4343 while retaining the Pico form factor, so in addition to the basic GPIO function, it can also connect to the network so we can use it for some IoT projects.
-For example, using IFTTT for a security system, building a cloud player and a cloud service bell system using MQTT and so on.
+El Raspberry Pi Pico W añade interfaces inalámbricas de banda única de 2.4GHz (802.11n) utilizando el Infineon CYW4343, manteniendo el factor de forma del Pico. Así que, además de la función básica de GPIO, también puede conectarse a la red, lo que permite utilizarlo para algunos proyectos de IoT. 
+Por ejemplo, usar IFTTT para un sistema de seguridad, construir un reproductor en la nube y un sistema de timbre en la nube utilizando MQTT, y así sucesivamente.
 
-This kit contains a variety of components, including displays, sounds, drivers, controllers and sensors, which allows you to gain a comprehensive understanding of electronic devices.
+Este kit contiene una variedad de componentes, incluyendo pantallas, sonidos, controladores y sensores, lo que te permite obtener una comprensión integral de los dispositivos electrónicos.
 
-Additionally, we offer three programming languages. MicroPython, C/C++ (Arduino) and Piper Make are all available. To help you get started quickly, each language has targeted and interesting projects, so you can pick one that meets your needs.
+Además, ofrecemos tres lenguajes de programación. MicroPython, C/C++ (Arduino) y Piper Make están disponibles. Para ayudarte a comenzar rápidamente, cada lenguaje tiene proyectos interesantes y específicos, para que puedas elegir uno que se adapte a tus necesidades.
 
-Please feel free to e-mail us if you are interested in learning other projects we don't have. We will update our online tutorials as soon as possible.
+No dudes en enviarnos un correo electrónico si estás interesado en aprender otros proyectos que no tenemos. Actualizaremos nuestros tutoriales en línea lo antes posible.
 
-Here is the email: service@sunfounder.com.
+Aquí está el correo electrónico: service@sunfounder.com.
 
-
-**Source Code**
+**Código Fuente**
 
 * :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+* O consulta el código en `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
 
-
-**Content**
+**Contenido**
 
 .. toctree::
     :maxdepth: 2
@@ -69,9 +70,7 @@ Here is the email: service@sunfounder.com.
     component/what_is_included_in_this_kit
     faq
 
-
-Copyright Notice
+Aviso de Copyright
 --------------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+Todo el contenido, incluidos pero no limitados a textos, imágenes y código en este manual, son propiedad de la empresa SunFounder. Solo debes usarlo para estudio personal, investigación, disfrute u otros fines no comerciales o sin fines de lucro, bajo las regulaciones y leyes de derechos de autor pertinentes, sin infringir los derechos legales del autor y de los titulares de derechos relevantes. Para cualquier individuo u organización que use esto con fines comerciales sin permiso, la empresa se reserva el derecho de tomar acciones legales.

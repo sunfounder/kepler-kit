@@ -1,47 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_pump:
 
-DC Water Pump
-================
+Bomba de Agua DC
+=====================
 
 |img_pump|
 
-This pump essentially functions as a DC motor, operating at a voltage of 3V and a current of 100mA. Upon powering, the pump draws water in from the bottom of its plastic casing and expels it from the outlet pipe. It must always be kept immersed in water to function properly. Reversing the polarity won't turn it into a water intake device; it will only pump water out!
+Esta bomba funciona esencialmente como un motor DC, operando a un voltaje de 3V y una corriente de 100mA. Al encenderse, la bomba aspira agua desde la parte inferior de su carcasa de plástico y la expulsa por el tubo de salida. Siempre debe mantenerse sumergida en agua para funcionar correctamente. Invertir la polaridad no la convertirá en un dispositivo de succión; ¡solo expulsará agua!
 
-It's highly suitable for beginners to create a fountain or plant watering project using this submersible pump, as it is incredibly user-friendly!
+Es ideal para principiantes que deseen crear un proyecto de fuente o riego de plantas usando esta bomba sumergible, ya que es extremadamente fácil de usar.
 
+**Características**
 
-**Features**
+* **Rango de Voltaje**: DC 3 ~ 4.5V
+* **Corriente de Operación**: 120 ~ 180mA
+* **Potencia**: 0.36 ~ 0.91W
+* **Altura Máxima de Agua**: 0.35 ~ 0.55M
+* **Caudal Máximo**: 80 ~ 100 L/H
+* **Vida Útil de Trabajo Continuo**: 100 horas
+* **Grado de Impermeabilidad**: IP68
+* **Modo de Conducción**: DC, Conducción Magnética
+* **Material**: Plástico de Ingeniería
+* **Diámetro Exterior de la Salida**: 7.8 mm
+* **Diámetro Interior de la Salida**: 6.5 mm
+* Es una bomba sumergible y debe utilizarse de esa forma. Tiende a calentarse demasiado, con el riesgo de sobrecalentamiento si se enciende sin estar sumergida.
+* Viene con un cable macho de 25cm, lo que permite una fácil inserción en una protoboard.
 
-* **Voltage Scope**: DC 3 ~ 4.5V
-* **Operating Current**: 120 ~ 180mA
-* **Power**: 0.36 ~ 0.91W
-* **Max Water Head**: 0.35 ~ 0.55M
-* **Max Flow Rate**: 80 ~ 100 L/H
-* **Continuous Working Life**: 100 hours
-* **Water Fing Grade**: IP68
-* **Driving Mode**: DC, Magnetic Driving
-* **Material**: Engineering Plastic
-* **Outlet Outside Diameter**: 7.8 mm
-* **Outlet Inside Diameter**: 6.5 mm
-* It is a submersible pump and should be used that way. It tends to heat too much that there's a risk of overheating if you turn it on unsubmerged.
-* It comes with a 25cm male wire, allowing for easy insertion into a breadboard.
+**Ejemplos**
 
-
-**Example**
-
-* :ref:`py_pump` (For MicroPython User)
-* :ref:`ar_pump` (For Arduino User)
+* :ref:`py_pump` (Para usuarios de MicroPython)
+* :ref:`ar_pump` (Para usuarios de Arduino)

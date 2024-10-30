@@ -1,66 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos lanzamientos de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_service_bell:
 
-2.3 Service Bell
+2.3 Timbre de Servicio
 ==========================
 
-For this project we used a microswitch and an active buzzer to create a service bell. Tap the switch and the buzzer makes a sound.
+Para este proyecto, usaremos un microinterruptor y un zumbador activo para crear un timbre de servicio. Pulsa el interruptor y el zumbador emitirá un sonido.
 
-Micro Switch is also a 3-pin device, the sequence of the 3 pins are C (common pin), NO (normally open) and NC (normally closed).
+El microinterruptor es también un dispositivo de 3 pines, cuya secuencia es: C (pin común), NO (normalmente abierto) y NC (normalmente cerrado).
 
-When the micro switch is not pressed, 1 (C) and 3 (NC) are connected together, when pressed 1 (C) and 2 (NO) are connected together.
+Cuando el microinterruptor no está presionado, el pin 1 (C) y el pin 3 (NC) están conectados. Al presionar el interruptor, el pin 1 (C) se conecta con el pin 2 (NO).
 
 |img_micro_switch|
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Un kit completo es conveniente, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -69,7 +68,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -92,28 +91,24 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Wiring**
+**Conexión**
 
 |service_bell0|
 
-* By default, pins 1 and 3 of the Micro Switch are connected together and GP14 is low. When the Micro Switch is pressed, GP14 is high.
-* GP15 outputs high to make the buzzer sound.
+* De forma predeterminada, los pines 1 y 3 del microinterruptor están conectados, y GP14 está en estado bajo. Al presionar el microinterruptor, GP14 cambia a alto.
+* GP15 emite un estado alto para hacer sonar el zumbador.
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.3_service_bell.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
-
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando.
+    * Importa ``2.3_service_bell.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 |service_bell|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Tap the switch and the buzzer makes a sound.
+Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse. Pulsa el interruptor y el zumbador emitirá un sonido.
 
 .. note::
-    This project code is exactly the same as the previous project :ref:`per_button`.
-
-
-
+    El código de este proyecto es exactamente el mismo que el del proyecto anterior :ref:`per_button`.
 

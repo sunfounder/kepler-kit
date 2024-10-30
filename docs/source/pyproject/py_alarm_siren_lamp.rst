@@ -1,64 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_alarm_lamp:
 
-7.3 Alarm Siren Lamp
-=======================
+7.3 Lámpara de Alarma
+===========================
 
-Police lights are often visible in real life (or in movies). Usually, it is used to maintain traffic, serve as a warning device, and serve as an important safety prop for officers, emergency vehicles, fire trucks, and engineering vehicles. When you see its lights or hear its sound, you must be careful, which means you (or those around you) may be in danger.
+Las luces policiales son comunes en la vida real (o en películas). Usualmente se emplean para mantener el tráfico, como dispositivos de advertencia y como elemento de seguridad esencial en vehículos oficiales, de emergencia, bomberos y de ingeniería. Cuando ves sus luces o escuchas su sonido, debes estar alerta, ya que significa que podrías estar en una situación peligrosa.
 
-An LED and buzzer are used here to create a small warning light, which is activated by a slide switch.
+En este proyecto, utilizamos un LED y un zumbador para crear una pequeña luz de advertencia, activada mediante un interruptor deslizante.
 
 |sirem_alarm|
 
 
-**Required Components**
+**Componentes Requeridos**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N.º
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -67,7 +66,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_led`
@@ -82,7 +81,7 @@ You can also buy them separately from the links below.
         - 3(1KΩ, 220Ω, 10KΩ)
         - |link_resistor_buy|
     *   - 8
-        - Passive :ref:`cpn_buzzer`
+        - Zumbador Pasivo :ref:`cpn_buzzer`
         - 1
         - |link_passive_buzzer_buy|
     *   - 9
@@ -94,92 +93,86 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-
-**Schematic**
+**Esquema**
 
 |sch_alarm_siren_lamp|
 
-* GP17 is connected to the middle pin of the slider, along with a 10K resistor and a capacitor (filter) in parallel to GND, which allows the slider to output a steady high or low level when toggled to the left or right.
-* As soon as GP15 is high, the NPN transistor conducts, causing the passive buzzer to start sounding. This passive buzzer is programmed to gradually increase in frequency to produce a siren sound.
-* An LED is connected to GP16 and is programmed to periodically change its brightness in order to simulate a siren.
+* GP17 está conectado al pin central del interruptor deslizable, junto con una resistencia de 10K y un capacitor (filtro) en paralelo a GND, lo que permite que el interruptor proporcione un nivel alto o bajo estable al moverse a la izquierda o derecha.
+* Cuando GP15 está en alto, el transistor NPN se activa, haciendo que el zumbador pasivo emita sonido. Este zumbador se programa para aumentar gradualmente en frecuencia y simular un sonido de sirena.
+* Un LED está conectado a GP16 y se programa para cambiar periódicamente su brillo y simular una luz de sirena.
 
-
-
-**Wiring**
+**Conexión**
 
 |wiring_alarm_siren_lamp|
 
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``7.3_alarm_siren_lamp.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``7.3_alarm_siren_lamp.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
     import machine
     import time
 
-    # Initialize the PWM for the buzzer (on pin 15) and LED (on pin 16)
-    buzzer = machine.PWM(machine.Pin(15))  # PWM for buzzer
-    led = machine.PWM(machine.Pin(16))  # PWM for LED
-    led.freq(1000)  # Set the frequency of the LED PWM to 1kHz
+    # Inicializa el PWM para el zumbador (en el pin 15) y el LED (en el pin 16)
+    buzzer = machine.PWM(machine.Pin(15))  # PWM para el zumbador
+    led = machine.PWM(machine.Pin(16))  # PWM para el LED
+    led.freq(1000)  # Establece la frecuencia del PWM del LED en 1kHz
 
-    # Initialize the switch (on pin 17) as an input pin
+    # Inicializa el interruptor (en el pin 17) como pin de entrada
     switch = machine.Pin(17, machine.Pin.IN)
 
-    # Function to stop the buzzer by setting the duty cycle to 0%
+    # Función para detener el zumbador estableciendo el ciclo de trabajo en 0%
     def noTone(pin):
-        pin.duty_u16(0)  # Set the PWM duty cycle to 0, stopping the sound
+        pin.duty_u16(0)  # Configura el ciclo de trabajo del PWM a 0, deteniendo el sonido
 
-    # Function to play a tone on the buzzer with a specified frequency
+    # Función para reproducir un tono en el zumbador con una frecuencia específica
     def tone(pin, frequency):
-        pin.freq(frequency)  # Set the frequency for the buzzer
-        pin.duty_u16(30000)  # Set duty cycle to around 50% (30000 out of 65535)
+        pin.freq(frequency)  # Establece la frecuencia del zumbador
+        pin.duty_u16(30000)  # Ciclo de trabajo al 50% (30000 de 65535)
 
-    # Function to map a value from one range to another
+    # Función para mapear un valor de un rango a otro
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    # Interrupt handler function to toggle the bell_flag when the switch is pressed
+    # Función de interrupción para alternar el bell_flag cuando se pulsa el interruptor
     def toggle(pin):
         global bell_flag
-        bell_flag = not bell_flag  # Toggle the bell_flag value
-        print(bell_flag)  # Print the current state of bell_flag for debugging
+        bell_flag = not bell_flag  # Alterna el valor de bell_flag
+        print(bell_flag)  # Imprime el estado actual de bell_flag para depuración
         
-        # Change the switch interrupt depending on the state of the bell_flag
+        # Cambia la interrupción del interruptor según el estado de bell_flag
         if bell_flag:
-            # If bell_flag is True, listen for a falling edge (when switch is released)
+            # Si bell_flag es True, detecta el borde descendente (cuando se suelta el interruptor)
             switch.irq(trigger=machine.Pin.IRQ_FALLING, handler=toggle)
         else:
-            # If bell_flag is False, listen for a rising edge (when switch is pressed)
+            # Si bell_flag es False, detecta el borde ascendente (cuando se pulsa el interruptor)
             switch.irq(trigger=machine.Pin.IRQ_RISING, handler=toggle)
 
-    # Initialize bell_flag to False (buzzer and LED off by default)
+    # Inicializa bell_flag en False (zumbador y LED apagados por defecto)
     bell_flag = False
 
-    # Set up an interrupt to detect when the switch is pressed (rising edge)
+    # Configura una interrupción para detectar cuando se pulsa el interruptor (borde ascendente)
     switch.irq(trigger=machine.Pin.IRQ_RISING, handler=toggle)
 
-    # Main loop to control the buzzer and LED based on the bell_flag
+    # Bucle principal para controlar el zumbador y el LED basado en bell_flag
     while True:
         if bell_flag == True:
-            # If bell_flag is True, gradually increase the brightness of the LED
-            # and change the buzzer frequency to simulate a bell ringing effect
-            for i in range(0, 100, 2):  # Loop from 0 to 100 in steps of 2
-                led.duty_u16(int(interval_mapping(i, 0, 100, 0, 65535)))  # Map i to LED brightness
-                tone(buzzer, int(interval_mapping(i, 0, 100, 130, 800)))  # Map i to buzzer frequency
-                time.sleep_ms(10)  # Short delay to create a smooth ramp
+            # Si bell_flag es True, incrementa gradualmente el brillo del LED
+            # y cambia la frecuencia del zumbador para simular el efecto de una campana
+            for i in range(0, 100, 2):  # Bucle de 0 a 100 en pasos de 2
+                led.duty_u16(int(interval_mapping(i, 0, 100, 0, 65535)))  # Mapea i a brillo del LED
+                tone(buzzer, int(interval_mapping(i, 0, 100, 130, 800)))  # Mapea i a frecuencia del zumbador
+                time.sleep_ms(10)  # Pequeña pausa para crear un aumento suave
         else:
-            # If bell_flag is False, stop the buzzer and turn off the LED
-            noTone(buzzer)  # Stop the buzzer
-            led.duty_u16(0)  # Turn off the LED (set duty cycle to 0)
+            # Si bell_flag es False, detiene el zumbador y apaga el LED
+            noTone(buzzer)  # Detiene el zumbador
+            led.duty_u16(0)  # Apaga el LED (ciclo de trabajo a 0)
 
-
-Once the program is running, toggle the slide switch to the left (yours may be to the right, depending on how your slide switch is wired) and the buzzer will emit a progressive warning tone and the LED will change its brightness accordingly; toggle the slide switch to the right and the buzzer and LED will stop working.
+Al ejecutar el programa, desliza el interruptor hacia la izquierda (o hacia la derecha, según tu configuración) y el zumbador emitirá un tono progresivo de advertencia mientras el LED cambia su brillo; mueve el interruptor a la posición opuesta y el zumbador y el LED se detendrán.

@@ -1,60 +1,59 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_buzzer:
 
 Buzzer
-=======
+============
 
 
-As a type of electronic buzzer with an integrated structure, buzzers, which are supplied by DC power, are widely used in computers, printers, photocopiers, alarms, electronic toys, automotive electronic devices, telephones, timers and other electronic products or voice devices. 
+Como un tipo de zumbador electrónico con una estructura integrada, los zumbadores, que funcionan con corriente continua (DC), se utilizan ampliamente en computadoras, impresoras, fotocopiadoras, alarmas, juguetes electrónicos, dispositivos electrónicos automotrices, teléfonos, temporizadores y otros productos electrónicos o dispositivos de voz.
 
-Buzzers can be categorized as active and passive ones (see the following picture). Turn the buzzer so that its pins are facing up, and the buzzer with a green circuit board is a passive buzzer, while the one enclosed with a black tape is an active one.
-
+Los zumbadores se pueden clasificar en activos y pasivos (ver la imagen a continuación). Gira el zumbador de forma que los pines queden hacia arriba; el zumbador con una placa de circuito verde es un zumbador pasivo, mientras que el que está cubierto con una cinta negra es un zumbador activo.
 
 |img_buzzer|
 
-The difference between an active buzzer and a passive buzzer: 
+Diferencias entre un zumbador activo y uno pasivo:
 
-An active buzzer has a built-in oscillating source, so it will make sounds when electrified. But a passive buzzer does not have such source, so it will not beep if DC signals are used; instead, you need to use square waves whose frequency is between 2K and 5K to drive it. The active buzzer is often more expensive than the passive one because of multiple built-in oscillating circuits.
+Un zumbador activo tiene una fuente de oscilación incorporada, por lo que emitirá sonidos cuando se energice. Pero un zumbador pasivo no tiene dicha fuente, por lo que no emitirá sonido si se utilizan señales de corriente continua (DC); en cambio, necesitas usar ondas cuadradas cuya frecuencia esté entre 2K y 5K para hacerlo funcionar. El zumbador activo suele ser más caro que el pasivo debido a los múltiples circuitos de oscilación que tiene integrados.
 
-The following is the electrical symbol of a buzzer. It has two pins with positive and negative poles. With a + in the surface represents the anode and the other is the cathode. 
+A continuación se muestra el símbolo eléctrico de un zumbador. Tiene dos pines con polos positivo y negativo. El símbolo "+" en la superficie representa el ánodo y el otro es el cátodo.
 
 |img_buzzer_symbol|
 
-You can check the pins of the buzzer, the longer one is the anode and the shorter one is the cathode. Please don't mix them up when connecting, otherwise the buzzer will not make sound. 
+Puedes comprobar los pines del zumbador: el más largo es el ánodo y el más corto es el cátodo. No los conectes de forma incorrecta, de lo contrario, el zumbador no emitirá sonido.
 
 `Buzzer - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
 
 .. Example
 .. -------------------
 
-.. :ref:`Intruder Alarm`
+.. :ref:`Alarma de Intruso`
 
-.. :ref:`Custom Tone`
+.. :ref:`Tono Personalizado`
 
-**Example**
+**Ejemplos**
 
-* :ref:`py_ac_buz` (For MicroPython User)
-* :ref:`py_pa_buz` (For MicroPython User)
-* :ref:`py_light_theremin` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`py_music_player` (For MicroPython User)
-* :ref:`py_fruit_piano` (For MicroPython User)
-* :ref:`py_reversing_aid` (For MicroPython User)
-* :ref:`ar_ac_buz` (For Arduino User)
-* :ref:`ar_pa_buz` (For Arduino User)
-* :ref:`per_service_bell` (For Piper Make User)
-* :ref:`per_reversing_system` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_ac_buz` (Para usuarios de MicroPython)
+* :ref:`py_pa_buz` (Para usuarios de MicroPython)
+* :ref:`py_light_theremin` (Para usuarios de MicroPython)
+* :ref:`py_alarm_lamp` (Para usuarios de MicroPython)
+* :ref:`py_music_player` (Para usuarios de MicroPython)
+* :ref:`py_fruit_piano` (Para usuarios de MicroPython)
+* :ref:`py_reversing_aid` (Para usuarios de MicroPython)
+* :ref:`ar_ac_buz` (Para usuarios de Arduino)
+* :ref:`ar_pa_buz` (Para usuarios de Arduino)
+* :ref:`per_service_bell` (Para usuarios de Piper Make)
+* :ref:`per_reversing_system` (Para usuarios de Piper Make)
+* :ref:`per_reaction_game` (Para usuarios de Piper Make)

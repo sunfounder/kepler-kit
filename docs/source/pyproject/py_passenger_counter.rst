@@ -1,69 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_passage_counter:
 
+7.4 Contador de Pasajeros
+==================================
 
-7.4 Passenger Counter
-==============================
+Para centros comerciales, cadenas de tiendas, aeropuertos, estaciones, museos y otros espacios públicos como salas de exposición, el flujo de personas es un dato indispensable.
 
-For large shopping malls, shopping centers, chain stores, airports, stations, museums, and public places such as exhibition halls, passenger traffic is an indispensable data.
+Por ejemplo, en aeropuertos y estaciones, se necesita controlar estrictamente el número de personas 
+para garantizar la seguridad y el flujo fluido. Además, se puede analizar cuándo hay más visitantes 
+en centros comerciales y tiendas, cuántas compras genera cada usuario, entre otros. De este modo, se pueden estudiar los hábitos de consumo y aumentar las ventas.
 
-In airports and stations, for example, the number of people needs to be strictly controlled to ensure safety and smooth flow.
-It is also possible to know when there are more visitors in shopping centers and chain stores, how many orders each user can generate, etc.
-As a result, we can analyze people's consumption habits and increase turnover.
+Los contadores de pasajeros ayudan a comprender el funcionamiento de estos espacios públicos y a organizar sus operaciones de forma eficiente.
 
-Passenger counters can help people understand the operation of these public places and organize their operations efficiently.
+Crearemos un contador de pasajeros sencillo utilizando un sensor PIR y una pantalla de 7 segmentos de 4 dígitos.
 
-A simple passenger counter is created using a PIR sensor and a 4-digit 7-segment display.
+**Componentes Necesarios**
 
+Para este proyecto, necesitamos los siguientes componentes.
 
-**Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -72,7 +69,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -91,115 +88,108 @@ You can also buy them separately from the links below.
         - 1
         - |link_pir_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_passager_counter| 
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of a PIR module.
-* The PIR will send a high signal of about 2.8s long when someone passes by.
-* The PIR module has two potentiometers: one adjusts sensitivity, the other adjusts detection distance. To make the PIR module work better, you need to turn both of them counterclockwise to the end.
+* Este circuito se basa en el :ref:`py_74hc_4dig` con la adición de un módulo PIR.
+* El PIR enviará una señal alta de aproximadamente 2.8 segundos cuando alguien pase frente a él.
+* El módulo PIR tiene dos potenciómetros: uno ajusta la sensibilidad y el otro la distancia de detección. Para mejorar el rendimiento del módulo PIR, ajusta ambos potenciómetros completamente en sentido antihorario.
 
     |img_PIR_TTE|
 
+**Conexiones**
 
-**Wiring**
+|wiring_passager_counter|
 
-
-|wiring_passager_counter| 
-
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``7.4_passenger_counter.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``7.4_passenger_counter.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
     import machine
     import time
 
-    # Initialize PIR sensor on pin 16, configured as an input
+    # Inicializa el sensor PIR en el pin 16, configurado como entrada
     pir_sensor = machine.Pin(16, machine.Pin.IN)
 
-    # 7-segment display codes for digits 0-9, using hexadecimal to represent LED segments
+    # Códigos de 7 segmentos para los dígitos 0-9, usando hexadecimal para representar los segmentos LED
     SEGCODE = [0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f]
 
-    # Define pins for shift register communication (74HC595)
-    sdi = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input
-    rclk = machine.Pin(19, machine.Pin.OUT)  # Register Clock (Latch)
-    srclk = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock
+    # Define los pines para la comunicación con el registro de desplazamiento (74HC595)
+    sdi = machine.Pin(18, machine.Pin.OUT)   # Entrada de datos en serie
+    rclk = machine.Pin(19, machine.Pin.OUT)  # Reloj del registro (Latch)
+    srclk = machine.Pin(20, machine.Pin.OUT) # Reloj del registro de desplazamiento
 
-    # Initialize list to store 4 digit control pins
+    # Inicializa la lista para almacenar los pines de control de 4 dígitos
     placePin = []
 
-    # Define control pins for each of the four digits (common anodes)
-    pin = [10,13,12,11] # Pin numbers for the 4-digit display
+    # Define los pines de control para cada uno de los cuatro dígitos (ánodos comunes)
+    pin = [10,13,12,11] # Números de pines para la pantalla de 4 dígitos
     for i in range(4):
-        placePin.append(None)  # Reserve space in list
-        placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Initialize pin as output
+        placePin.append(None)  # Reserva espacio en la lista
+        placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Inicializa el pin como salida
 
-    # Initialize counter to keep track of detected motion events
+    # Inicializa el contador para rastrear eventos de detección de movimiento
     count = 0
 
-    # Function to select which digit (0-3) to display by controlling the common anode pins
+    # Función para seleccionar qué dígito (0-3) mostrar controlando los pines de ánodo común
     def pickDigit(digit):
         for i in range(4):
-            placePin[i].value(1)  # Turn off all digits
-        placePin[digit].value(0)  # Turn on the selected digit
+            placePin[i].value(1)  # Apaga todos los dígitos
+        placePin[digit].value(0)  # Enciende el dígito seleccionado
 
-    # Function to clear the display by sending '0x00' to the shift register
+    # Función para limpiar la pantalla enviando '0x00' al registro de desplazamiento
     def clearDisplay():
         hc595_shift(0x00)
 
-    # Function to send data to the shift register (74HC595)
+    # Función para enviar datos al registro de desplazamiento (74HC595)
     def hc595_shift(dat):
-        rclk.low()  # Pull latch low to prepare for data shifting
-        time.sleep_us(200)  # Small delay for timing stability
-        for bit in range(7, -1, -1):  # Loop through each bit (MSB first)
-            srclk.low()  # Prepare to send the next bit
+        rclk.low()  # Baja el latch para preparar el desplazamiento de datos
+        time.sleep_us(200)  # Pequeña demora para estabilidad de sincronización
+        for bit in range(7, -1, -1):  # Bucle a través de cada bit (MSB primero)
+            srclk.low()  # Prepara el siguiente bit
             time.sleep_us(200)
-            value = 1 & (dat >> bit)  # Extract the current bit from the data
-            sdi.value(value)  # Set the data line to the current bit value
+            value = 1 & (dat >> bit)  # Extrae el bit actual de los datos
+            sdi.value(value)  # Establece el valor de la línea de datos
             time.sleep_us(200)
-            srclk.high()  # Pulse the shift clock to store the bit in the register
+            srclk.high()  # Pulso en el reloj de desplazamiento para almacenar el bit
             time.sleep_us(200)
         time.sleep_us(200)
-        rclk.high()  # Pulse the register clock to move the data to the output
+        rclk.high()  # Pulso en el reloj del registro para mover los datos a la salida
 
-    # Interrupt handler for PIR sensor, triggered on motion detection (rising edge)
-    # Increments the motion count each time the sensor is triggered
+    # Manejador de interrupción para el sensor PIR, activado en detección de movimiento (flanco ascendente)
+    # Incrementa el contador de movimiento cada vez que se detecta el sensor
     def motion_detected(pin):
         global count
-        count = count + 1  # Increment the count when motion is detected
+        count = count + 1  # Incrementa el conteo al detectar movimiento
 
-    # Set up an interrupt to detect motion using the PIR sensor
+    # Configura una interrupción para detectar movimiento usando el sensor PIR
     pir_sensor.irq(trigger=machine.Pin.IRQ_RISING, handler=motion_detected)
 
-    # Main loop to continuously update the 7-segment display with the current count
+    # Bucle principal para actualizar continuamente la pantalla de 7 segmentos con el conteo actual
     while True:
-        # Update the first digit (units place)
+        # Actualiza el primer dígito (unidades)
         pickDigit(0)
         hc595_shift(SEGCODE[count % 10])
 
-        # Update the second digit (tens place)
+        # Actualiza el segundo dígito (decenas)
         pickDigit(1)
         hc595_shift(SEGCODE[count % 100 // 10])
 
-        # Update the third digit (hundreds place)
+        # Actualiza el tercer dígito (centenas)
         pickDigit(2)
         hc595_shift(SEGCODE[count % 1000 // 100])
 
-        # Update the fourth digit (thousands place)
+        # Actualiza el cuarto dígito (millares)
         pickDigit(3)
         hc595_shift(SEGCODE[count % 10000 // 1000])
 
-
-
-When the code is run, the number on the 4-digit 7-segment display will be added by one if someone passes in front of the PIR module.
-
+Cuando se ejecuta el código, el número en la pantalla de 4 dígitos de 7 segmentos aumentará en uno cada vez que alguien pase frente al módulo PIR.

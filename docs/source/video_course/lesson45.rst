@@ -1,26 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 45: Calculating Height from a Dropped Object in Freefall
+Lección 45: Cálculo de Altura a partir de un Objeto en Caída Libre
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure vertical distances:
 
-* **Setup**: Connect the MPU6050 and OLED 1306 to the Raspberry Pi Pico W, ensuring secure connections to reduce noise.
-* **Concept**: Measure vertical distance by calculating the time (T_drop) in freefall and use it to determine the height dropped.
-* **Equation**: Calculate height (H) with \( H = 16 \times (T_{drop})^2 \), converting time from milliseconds to seconds.
-* **Code Implementation**: Set up libraries, measure Z-axis acceleration to detect 0G, start a timer during freefall, and display height and drop time on the OLED.
-* **Practical Demonstration**: Test by dropping the sensor from known heights and adjust for accuracy as needed.
+Este tutorial cubre el uso del sensor MPU6050 con la Raspberry Pi Pico W para medir distancias verticales:
+
+* **Configuración**: Conecta el MPU6050 y el OLED 1306 a la Raspberry Pi Pico W, asegurando conexiones firmes para reducir el ruido.
+* **Concepto**: Mide la distancia vertical calculando el tiempo de caída libre (T_drop) y utilízalo para determinar la altura desde la que fue soltado.
+* **Ecuación**: Calcula la altura (H) con \( H = 16 \times (T_{drop})^2 \), convirtiendo el tiempo de milisegundos a segundos.
+* **Implementación del Código**: Configura las bibliotecas, mide la aceleración en el eje Z para detectar 0G, inicia un temporizador durante la caída libre y muestra la altura y el tiempo de caída en el OLED.
+* **Demostración Práctica**: Prueba el sensor dejándolo caer desde alturas conocidas y ajusta según sea necesario para mayor precisión.
 
 **Video**
 

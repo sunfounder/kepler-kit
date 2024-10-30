@@ -1,65 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_transistor:
 
-2.15 Two Kinds of Transistors
-==========================================
-This kit is equipped with two types of transistors, S8550 and S8050, the former is PNP and the latter is NPN. They look very similar, and we need to check carefully to see their labels.
-When a High level signal goes through an NPN transistor, it is energized. But a PNP one needs a Low level signal to manage it. Both types of transistor are frequently used for contactless switches, just like in this experiment.
+2.15 Dos Tipos de Transistores
+=====================================
+
+Este kit incluye dos tipos de transistores, el S8550 y el S8050; el primero es PNP y el segundo es NPN. Son muy similares en apariencia, por lo que es necesario verificar cuidadosamente sus etiquetas. Cuando un transistor NPN recibe una señal de alto nivel, se activa, mientras que un transistor PNP necesita una señal de bajo nivel para funcionar. Ambos tipos se utilizan frecuentemente en interruptores sin contacto, como en este experimento.
 
 |img_NPN&PNP|
 
-Let's use LED and button to understand how to use transistor!
+Vamos a usar un LED y un botón para entender cómo funciona el transistor.
 
 :ref:`cpn_transistor`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -68,7 +67,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -87,41 +86,35 @@ You can also buy them separately from the links below.
         - 1(S8050/S8550)
         - |link_transistor_buy|
 
-
-**Way to connect NPN (S8050) transistor**
+**Cómo conectar el transistor NPN (S8050)**
 
 |sch_s8050|
 
-In this circuit, when the button is pressed, GP14 is high.
+En este circuito, al presionar el botón, GP14 se activa en alto.
 
-By programming GP15 to output high, after a 1k current limiting resistor (to protect the transistor), the S8050 (NPN transistor) is allowed to conduct, thus allowing the LED to light up.
-
+Al programar GP15 para que emita una señal alta y tras un resistor limitador de corriente de 1k (para proteger el transistor), se permite que el S8050 (transistor NPN) conduzca, encendiendo así el LED.
 
 |wiring_s8050|
 
-**Way to connect PNP(S8550) transistor**
+**Cómo conectar el transistor PNP (S8550)**
 
 |sch_s8550|
 
-In this circuit, GP14 is low by the default and will change to high when the button is pressed.
+En este circuito, GP14 está en bajo por defecto y cambiará a alto cuando se presione el botón.
 
-By programming GP15 to output **low**, after a 1k current limiting resistor (to protect the transistor), the S8550 (PNP transistor) is allowed to conduct, thus allowing the LED to light up.
+Al programar GP15 para que emita una señal **baja** y a través de un resistor limitador de corriente de 1k (para proteger el transistor), se permite que el S8550 (transistor PNP) conduzca, encendiendo así el LED.
 
-The only difference you will notice between this circuit and the previous one is that in the previous circuit the cathode of the LED is connected to the **collector** of the **S8050 (NPN transistor)**, while this one is connected to the **emitter** of the **S8550 (PNP transistor)**.
+La única diferencia que notarás entre este circuito y el anterior es que, en el circuito anterior, el cátodo del LED está conectado al **colector** del **S8050 (transistor NPN)**, mientras que en este caso está conectado al **emisor** del **S8550 (transistor PNP)**.
 
 |wiring_s8550|
 
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``2.15_transistor.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Abre el archivo ``2.15_transistor.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -138,8 +131,8 @@ The only difference you will notice between this circuit and the previous one is
 
 
 
-Two kinds of transistors can be controlled with the same code. When we press the button, Pico W will send a high-level signal to the transistor; when we release it, it will send a low-level signal.
-We can see that diametrically opposite phenomena have occurred in the two circuits.
+Ambos tipos de transistores pueden ser controlados con el mismo código. Cuando presionamos el botón, Pico W enviará una señal de alto nivel al transistor; al soltarlo, enviará una señal de bajo nivel.
+Podemos observar fenómenos diametralmente opuestos en los dos circuitos:
 
-* The circuit using the S8050 (NPN transistor) will light up when the button is pressed, which means it is receiving a high-level conduction circuit;
-* The circuit that uses the S8550 (PNP transistor) will light up when it is released, which means it is receiving a low-level conduction circuit.
+* El circuito que utiliza el S8050 (transistor NPN) encenderá el LED cuando se presiona el botón, indicando un circuito de conducción de alto nivel.
+* El circuito que utiliza el S8550 (transistor PNP) encenderá el LED cuando se suelta el botón, indicando un circuito de conducción de bajo nivel.

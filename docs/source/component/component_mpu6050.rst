@@ -1,109 +1,106 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_mpu6050:
 
-MPU6050 Module
+Módulo MPU6050
 ===========================
 
 **MPU6050**
 
 |img_mpu6050|
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis
-Accelerometer) motion tracking devices.
+El MPU-6050 es un dispositivo de seguimiento de movimiento de 6 ejes 
+(combina un giroscopio de 3 ejes y un acelerómetro de 3 ejes).
 
-Its three coordinate systems are defined as follows:
+Sus tres sistemas de coordenadas se definen de la siguiente manera:
 
-Put MPU6050 flat on the table, assure that the face with label is upward
-and a dot on this surface is on the top left corner. Then the upright
-direction upward is the z-axis of the chip. The direction from left to
-right is regarded as the X-axis. Accordingly the direction from back to
-front is defined as the Y-axis.
+Coloca el MPU6050 plano sobre la mesa, asegurándote de que la cara con la 
+etiqueta quede hacia arriba y un punto en esta superficie esté en la esquina 
+superior izquierda. Entonces, la dirección vertical hacia arriba es el eje Z 
+del chip. La dirección de izquierda a derecha se considera el eje X. En 
+consecuencia, la dirección de atrás hacia adelante se define como el eje Y.
 
-|img_mpu6050_a| 
+|img_mpu6050_a|
 
+**Acelerómetro de 3 ejes**
 
-**3-axis Accelerometer**
+El acelerómetro funciona bajo el principio del efecto piezoeléctrico, la 
+capacidad de ciertos materiales para generar una carga eléctrica en respuesta 
+a un esfuerzo mecánico aplicado.
 
-The accelerometer works on the principle of piezo electric effect, the
-ability of certain materials to generate an electric charge in response
-to applied mechanical stress.
-
-Here, imagine a cuboidal box, having a small ball inside it, like in the
-picture above. The walls of this box are made with piezo electric
-crystals. Whenever you tilt the box, the ball is forced to move in the
-direction of the inclination, due to gravity. The wall with which the
-ball collides, creates tiny piezo electric currents. There are totally,
-three pairs of opposite walls in a cuboid. Each pair corresponds to an
-axis in 3D space: X, Y and Z axes. Depending on the current produced
-from the piezo electric walls, we can determine the direction of
-inclination and its magnitude.
+Aquí, imagina una caja en forma de cuboide que tiene una pequeña bola dentro, 
+como en la imagen de arriba. Las paredes de esta caja están hechas con cristales 
+piezoeléctricos. Siempre que inclines la caja, la bola se ve obligada a moverse 
+en la dirección de la inclinación debido a la gravedad. La pared con la que 
+choca la bola genera pequeñas corrientes piezoeléctricas. Hay en total tres 
+pares de paredes opuestas en el cuboide. Cada par corresponde a un eje en el 
+espacio 3D: ejes X, Y y Z. Dependiendo de la corriente producida por las 
+paredes piezoeléctricas, se puede determinar la dirección de la inclinación y 
+su magnitud.
 
 |img_mpu6050_a2|
 
+Podemos usar el MPU6050 para detectar su aceleración en cada eje de coordenadas 
+(en estado estacionario en un escritorio, la aceleración en el eje Z es 1 unidad 
+de gravedad, y en los ejes X e Y es 0). Si se inclina o se encuentra en una 
+condición de ingravidez/sobrecarga, la lectura correspondiente cambiará.
 
-We can use the MPU6050 to detect its acceleration on each coordinate
-axis (in the stationary desktop state, the Z-axis acceleration is 1
-gravity unit, and the X and Y axes are 0). If it is tilted or in a
-weightless/overweight condition, the corresponding reading will change.
+Hay cuatro rangos de medición que se pueden seleccionar programáticamente: 
++/-2g, +/-4g, +/-8g y +/-16g (por defecto es 2g), correspondientes a diferentes 
+niveles de precisión. Los valores oscilan entre -32768 y 32767.
 
-There are four kinds of measuring ranges that can be selected
-programmatically: +/-2g, +/-4g, +/-8g, and +/-16g (2g by default)
-corresponding to each precision. Values range from -32768 to 32767.
+La lectura del acelerómetro se convierte en un valor de aceleración mapeando 
+la lectura del rango de medición:
 
-The reading of accelerometer is converted to an acceleration value by
-mapping the reading from the reading range to the measuring range.
+Aceleración = (Datos en bruto del eje del acelerómetro / 65536 \* rango completo 
+de aceleración) g
 
-Acceleration = (Accelerometer axis raw data / 65536 \* full scale
-Acceleration range) g
+Tomando el eje X como ejemplo, cuando los datos en bruto del eje X del 
+acelerómetro son 16384 y el rango seleccionado es +/-2g:
 
-Take the X-axis as an example, when Accelerometer X axis raw data is
-16384 and the range is selected as +/-2g:
+**Aceleración a lo largo del eje X = (16384 / 65536 \* 4) g** **=1g**
 
-**Acceleration along the X axis = (16384 / 65536 \* 4) g**  **=1g**
+**Giroscopio de 3 ejes**
 
-**3-axis Gyroscope**
-
-Gyroscopes work on the principle of Coriolis acceleration. Imagine that
-there is a fork like structure, that is in constant back and forth
-motion. It is held in place using piezo electric crystals. Whenever, you
-try to tilt this arrangement, the crystals experience a force in the
-direction of inclination. This is caused as a result of the inertia of
-the moving fork. The crystals thus produce a current in consensus with
-the piezo electric effect, and this current is amplified.
+Los giroscopios funcionan bajo el principio de la aceleración de Coriolis. 
+Imagina una estructura en forma de horquilla que se mueve constantemente 
+hacia adelante y hacia atrás. Está sostenida en su lugar por cristales 
+piezoeléctricos. Siempre que intentes inclinar este arreglo, los cristales 
+experimentan una fuerza en la dirección de la inclinación. Esto se debe a 
+la inercia de la horquilla en movimiento. Los cristales generan una corriente 
+en consenso con el efecto piezoeléctrico, y esta corriente se amplifica.
 
 |img_mpu6050_g|
 
-The Gyroscope also has four kinds of measuring ranges: +/- 250, +/- 500,
-+/- 1000, +/- 2000. The calculation method and Acceleration are
-basically consistent.
+El giroscopio también tiene cuatro rangos de medición: +/- 250, +/- 500, 
++/- 1000, +/- 2000. El método de cálculo es básicamente consistente con 
+el de la aceleración.
 
-The formula for converting the reading into angular velocity is as
-follows:
+La fórmula para convertir la lectura en velocidad angular es la siguiente:
 
-Angular velocity = (Gyroscope axis raw data / 65536 \* full scale
-Gyroscope range) °/s
+Velocidad angular = (Datos en bruto del eje del giroscopio / 65536 \* rango 
+completo del giroscopio) °/s
 
-The X axis, for example, the Accelerometer X axis raw data is 16384 and
-ranges + / - 250°/ s:
+Por ejemplo, en el eje X, si los datos en bruto del eje X del acelerómetro 
+son 16384 y el rango es +/- 250°/ s:
 
-**Angular velocity along the X axis = (16384 / 65536 \* 500)°/s** **=125°/s**
+**Velocidad angular a lo largo del eje X = (16384 / 65536 \* 500)°/s** **=125°/s**
 
-**Example**
+**Ejemplos**
 
-* :ref:`py_mpu6050` (For MicroPython User)
-* :ref:`py_somato_controller` (For MicroPython User)
-* :ref:`py_bubble_level` (For MicroPython User)
-* :ref:`ar_mpu6050` (For Arduino User)
+* :ref:`py_mpu6050` (Para usuarios de MicroPython)
+* :ref:`py_somato_controller` (Para usuarios de MicroPython)
+* :ref:`py_bubble_level` (Para usuarios de MicroPython)
+* :ref:`ar_mpu6050` (Para usuarios de Arduino)

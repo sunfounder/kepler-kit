@@ -1,42 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_reversing_system:
 
-2.11 Reversing System
+
+2.11 Sistema de Reversa
 ==========================
 
-For this project we used an ultrasonic module and an active buzzer to create a reversing alarm system. The ultrasonic module is used to detect the distance, and the buzzer emits different frequencies of alarm sounds depending on the distance.
+En este proyecto usamos un módulo ultrasónico y un zumbador activo para crear un sistema de alarma de reversa. El módulo ultrasónico detecta la distancia y el zumbador emite sonidos de alerta a diferentes frecuencias dependiendo de la distancia.
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+
+También puedes comprarlos por separado en los enlaces a continuación.
 
 
 .. list-table::
@@ -82,50 +84,50 @@ You can also buy them separately from the links below.
         - |link_ultrasonic_buy|
 
 
-**Wiring**
+**Conexión**
 
 |reversing_system0|
 
 
-* The Echo and Trig pins of the ultrasonic module are connected to GP15 at the same time, so that the ultrasonic module sends and receives signals from GP15.
-* The middle pin of the transistor connected to the buzzer is connected to GP14 through a 1kΩ resistor.
+* Los pines Echo y Trig del módulo ultrasónico están conectados simultáneamente al GP15, de modo que el módulo envía y recibe señales desde GP15.
+* El pin medio del transistor conectado al zumbador se conecta a GP14 a través de una resistencia de 1kΩ.
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.11_reversing_system.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando.
+    * Importa ``2.11_reversing_system.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 
 |reversing_system|
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the ultrasonic detection distance is less than 5cm, the buzzer emits a sharp sound (0.1s).
-* When the detection distance is between 5~10cm, the buzzer emits a slightly slow sound (0.5s).
-* When the detection distance is greater than 10cm, there is a sound prompt every 1 second.
+* Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse.
+* Cuando la distancia de detección ultrasónica es menor a 5 cm, el zumbador emite un sonido agudo (0.1s).
+* Cuando la distancia de detección está entre 5 y 10 cm, el zumbador emite un sonido más lento (0.5s).
+* Cuando la distancia de detección es mayor a 10 cm, hay una señal sonora cada 1 segundo.
 
 
-**How it Works?**
+**¿Cómo funciona?**
 
 
 |reversing_system1|
 
-Read the distance (in cm) of the ultrasonic detection, and store it in the variable [distance].
+Lee la distancia (en cm) detectada por el ultrasonido y guárdala en la variable [distance].
 
 |reversing_system2|
 
-When distance is less than or equal to 5, set the variable intervals to 0.1s. The variable [intervals] is the interval between buzzer sounds.
+Cuando la distancia es menor o igual a 5, establece el intervalo de la variable [intervals] en 0.1s. La variable [intervals] es el intervalo entre los sonidos del zumbador.
 
 |reversing_system3|
 
-When distance is greater than 5 and less than or equal to 10, set the [intervals] to 0.5s.
+Cuando la distancia es mayor a 5 y menor o igual a 10, ajusta [intervals] a 0.5s.
 
 |reversing_system4|
 
-When distance is greater than 10, set the [intervals] time to 1s.
+Cuando la distancia es mayor a 10, establece el tiempo de [intervals] en 1s.
 
 |reversing_system5|
 
-Finally, make the buzzer sound every [intervals] seconds.
+Finalmente, haz que el zumbador emita un sonido cada [intervals] segundos.
 

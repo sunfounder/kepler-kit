@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 55: Create a Dynamic Rainbow With Neopixels in MicroPython
+Lección 55: Crear un Arcoíris Dinámico con NeoPixels en MicroPython
 =============================================================================
-This tutorial covers creating a running rainbow pattern on a NeoPixel array using the Raspberry Pi Pico W and MicroPython:
 
-* **Wiring Setup**: Connect 5V, GND, and Data pin to GPIO pin 0 on the Pico W.
-* **Concept Explanation**: Create a running rainbow pattern by incrementing HSV values and applying them to each pixel.
-* **Code Implementation**: Use a function to convert HSV to RGB. Implement nested loops to cycle through the HSV color wheel and update the NeoPixel array.
-* **Demonstration and Testing**: Display the running rainbow pattern and provide troubleshooting tips.
-* **Homework Assignment**: Experiment with new patterns and share results with the community.
+Este tutorial cubre la creación de un patrón de arcoíris en movimiento en una matriz de NeoPixel usando la Raspberry Pi Pico W y MicroPython:
 
-
+* **Configuración de Conexiones**: Conecta 5V, GND y el pin de datos al pin GPIO 0 en la Pico W.
+* **Explicación del Concepto**: Crea un patrón de arcoíris en movimiento incrementando los valores HSV y aplicándolos a cada píxel.
+* **Implementación de Código**: Usa una función para convertir HSV a RGB. Implementa bucles anidados para recorrer el círculo cromático HSV y actualizar la matriz NeoPixel.
+* **Demostración y Pruebas**: Muestra el patrón de arcoíris en movimiento y proporciona consejos para la resolución de problemas.
+* **Tarea**: Experimenta con nuevos patrones y comparte los resultados con la comunidad.
 
 **Video**
 

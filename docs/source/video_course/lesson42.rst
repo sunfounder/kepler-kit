@@ -1,30 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 42: Measuring Tilt With an MPU6050 Accelerometer
+Lección 42: Medición de Inclinación con un Acelerómetro MPU6050
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure and calculate tilt angles:
 
-* **Introduction**: Measuring acceleration in X, Y, and Z axes with MPU6050, and setting up hardware and software.
-* **Previous Lesson Recap**: Recap of measuring accelerations and homework on tilt calculation.
-* **Z-Axis Acceleration**: Explains 1G acceleration in the Z-axis due to gravity and tilt effects on readings.
-* **Calculating Tilt Angles**: Uses trigonometry to derive tilt equations (pitch and roll) and implements in Python.
-* **Practical Application**: Tests code for tilt accuracy and homework to refine pitch and roll measurements.
-* **Conclusion**: Emphasizes understanding concepts over using libraries, and encourages support via Patreon.
+Este tutorial cubre el uso del sensor MPU6050 con la Raspberry Pi Pico W para medir y calcular ángulos de inclinación:
 
-
-
+* **Introducción**: Medición de la aceleración en los ejes X, Y y Z con el MPU6050, y configuración de hardware y software.
+* **Resumen de la Lección Anterior**: Repaso sobre la medición de aceleraciones y la tarea de cálculo de inclinación.
+* **Aceleración en el Eje Z**: Explicación de la aceleración de 1G en el eje Z debido a la gravedad y los efectos de inclinación en las lecturas.
+* **Cálculo de Ángulos de Inclinación**: Uso de trigonometría para derivar ecuaciones de inclinación (pitch y roll) e implementación en Python.
+* **Aplicación Práctica**: Pruebas de precisión de inclinación y tarea para perfeccionar las mediciones de pitch y roll.
+* **Conclusión**: Enfatiza la importancia de comprender los conceptos en lugar de depender de librerías y anima al apoyo a través de Patreon.
 
 **Video**
 

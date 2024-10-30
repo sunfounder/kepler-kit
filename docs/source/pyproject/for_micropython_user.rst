@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
 .. _micropython_user:
 
-For MicroPython User
-======================
-In this section, you will learn the history of MicroPython, how to install MicroPython in Pico W, the basic syntax, and a dozen interesting and practical projects to help you learn MicroPython quickly.
+Para Usuarios de MicroPython
+===================================
+En esta sección, aprenderás sobre la historia de MicroPython, cómo instalar MicroPython en el Pico W, la sintaxis básica y una docena de proyectos interesantes y prácticos que te ayudarán a aprender MicroPython rápidamente.
 
-We recommend that you read the chapters in order.
+Te recomendamos leer los capítulos en orden.
 
 
-**1. Get Started**
+**1. Primeros Pasos**
 
 .. toctree::
     :maxdepth: 1
@@ -35,8 +35,7 @@ We recommend that you read the chapters in order.
     python_start/syntax/micropython_basic_syntax
 
 
-
-**2. Output & Input**
+**2. Salida y Entrada**
 
 .. toctree::
     :maxdepth: 1
@@ -58,7 +57,7 @@ We recommend that you read the chapters in order.
     py_transistor
     py_relay
 
-**3. Sound & Display & Movement**
+**3. Sonido, Pantalla y Movimiento**
 
 .. toctree::
     :maxdepth: 1
@@ -71,7 +70,7 @@ We recommend that you read the chapters in order.
     py_pump
     py_servo
 
-**4. Controller**
+**4. Controlador**
 
 .. toctree::
     :maxdepth: 1
@@ -90,7 +89,7 @@ We recommend that you read the chapters in order.
     py_74hc595_4dig
     py_74hc595_matrix
 
-**6. Advanced**
+**6. Avanzado**
 
 .. toctree::
     :maxdepth: 1
@@ -101,7 +100,7 @@ We recommend that you read the chapters in order.
     py_irremote
     py_rfid
 
-**7. Funny Project**
+**7. Proyectos Divertidos**
 
 .. toctree::
     :maxdepth: 1

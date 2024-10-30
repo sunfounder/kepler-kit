@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 18:  Push Button Control of LEDs in Micropython
+Lección 18: Control de LEDs con Botón Pulsador en MicroPython
 =============================================================================
 
-This tutorial covers using push buttons to toggle an LED on and off with the Raspberry Pi Pico W:
+Este tutorial cubre el uso de botones pulsadores para alternar el encendido y apagado de un LED con la Raspberry Pi Pico W:
 
-* **Introduction**: Overview of using push buttons to control LEDs.
-* **Homework Solution**: Solution for toggling an LED with a push button.
-* **Circuit Setup**: Wiring a push button to GPIO 14 and an LED to GPIO 15.
-* **Toggle Logic**: Explains logic for toggling LED state using button press.
-* **Practical Demonstration**: Step-by-step demo of toggling the LED with the button.
-* **Homework Assignment**: Use multiple buttons to control RGB LED colors.
+* **Introducción**: Descripción general del uso de botones pulsadores para controlar LEDs.
+* **Solución de Tarea**: Solución para alternar el estado de un LED con un botón pulsador.
+* **Configuración del Circuito**: Cableado de un botón pulsador al GPIO 14 y un LED al GPIO 15.
+* **Lógica de Alternancia**: Explicación de la lógica para alternar el estado del LED usando el botón.
+* **Demostración Práctica**: Demostración paso a paso de cómo alternar el LED con el botón.
+* **Tarea**: Utilizar varios botones para controlar los colores de un LED RGB.
 
 **Video**
 

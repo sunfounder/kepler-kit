@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros apasionados y explora en profundidad el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 72:  Understanding Using Dictionaries in MicroPython
+Lección 72: Comprensión y Uso de Diccionarios en MicroPython
 ===================================================================================
 
-This tutorial covers using dictionaries in Python with the Raspberry Pi Pico W:
+Este tutorial explica cómo usar diccionarios en Python con la Raspberry Pi Pico W:
 
-* **Task Overview**: Learn to use dictionaries in Python for storing and managing data.
-* **Key Steps**: 
+* **Resumen de la Tarea**: Aprende a utilizar diccionarios en Python para almacenar y gestionar datos.
+* **Pasos Clave**:
 
-  - Create dictionaries with key-value pairs.
-  - Access, modify, and delete dictionary elements.
-  - Use dictionary methods like ``keys()``, ``values()``, and check keys using ``in``.
-  - Implement a practical example to store personal information.
+  - Crea diccionarios con pares clave-valor.
+  - Accede, modifica y elimina elementos de un diccionario.
+  - Usa métodos de diccionario como ``keys()``, ``values()`` y verifica claves usando ``in``.
+  - Implementa un ejemplo práctico para almacenar información personal.
 
-* **Homework Assignment**: Write a program to control an RGB LED by mapping color names to RGB values using a dictionary and allowing user input to change the LED color.
+* **Tarea**: Escribe un programa para controlar un LED RGB asignando nombres de colores a valores RGB mediante un diccionario, permitiendo al usuario cambiar el color del LED mediante entrada de texto.
 
 **Video**
 

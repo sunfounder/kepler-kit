@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 61: How to Write Modular Code With Micropython Functions
+Lección 61: Cómo Escribir Código Modular con Funciones en MicroPython
 =============================================================================
 
-This tutorial covers using functions in MicroPython on the Raspberry Pi Pico W:
+Este tutorial cubre el uso de funciones en MicroPython en la Raspberry Pi Pico W:
 
-* **Concept Overview**: Intro to modular programming with functions.
-* **Example Implementation**: Calculate rectangle's perimeter, area, and diagonal using functions. Define and call functions in MicroPython. Use return values to pass results.
-* **Homework Assignment**: Write a program to input grades, find the highest, lowest, calculate average, and sort them using functions.
-* **Key Takeaways**: Learn modular programming, define and use functions in MicroPython.
+* **Resumen del Concepto**: Introducción a la programación modular usando funciones.
+* **Implementación de Ejemplo**: Calcula el perímetro, área y diagonal de un rectángulo usando funciones. Define y llama a funciones en MicroPython, y usa valores de retorno para pasar resultados.
+* **Tarea**: Escribe un programa que permita ingresar calificaciones, encuentre la más alta y la más baja, calcule el promedio y las ordene usando funciones.
+* **Conclusiones Clave**: Aprende a programar de manera modular, definir y usar funciones en MicroPython.
 
 
-**Video** 
+**Video**
 
 .. raw:: html
 

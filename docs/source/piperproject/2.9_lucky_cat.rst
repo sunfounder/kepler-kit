@@ -1,58 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_lucky_cat:
 
-2.9 Lucky Cat
+2.9 Gato de la Suerte
 ==========================
 
-In this project, we use pir and servo to make a lucky cat. The PIR Module is used to detect the visitors and servo is used to imitate the beckoning motion of the lucky cat.
+En este proyecto, usamos un módulo PIR y un servo para crear un "Gato de la Suerte". El módulo PIR se utiliza para detectar visitantes, mientras que el servo imita el movimiento de saludo característico de este gato.
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -61,7 +61,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -73,48 +73,46 @@ You can also buy them separately from the links below.
         - |link_pir_buy|
 
 
-**Wiring**
+**Conexión**
 
 |lucky_cat0|
 
 
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
-* The middle pin of the PIR module is connected to the GP3.
+* El cable naranja (señal) del servo está conectado a GP15, el cable rojo (alimentación) está conectado a VBUS y el cable marrón (tierra) está conectado a GND. 
+* El pin central del módulo PIR está conectado al GP3.
 
-**Code**
-
+**Código**
 
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.9_lucky_cat.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando.
+    * Importa ``2.9_lucky_cat.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 |lucky_cat|
 
 
 
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* When the PIR module detects a customer arrival, the servo oscillates back and forth five times and then stops.
+* Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse.
+* Cuando el módulo PIR detecta la llegada de un visitante, el servo oscila de un lado a otro cinco veces y luego se detiene.
 
 
-**How it Works?**
+**¿Cómo Funciona?**
 
 
 |lucky_cat1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+Configura la velocidad de rotación del pin15 (servo) al 15%.
 
 |lucky_cat2|
 
-If GP14 is low, set the variable [prestate] to 0. When the variable [prestate] is 0 and GP14 is high (human detected), set the variable [prestate] to 1.
+Si GP14 está en bajo, establece la variable [prestate] en 0. Cuando la variable [prestate] es 0 y GP14 cambia a alto (humano detectado), establece la variable [prestate] en 1.
 
-The purpose of this is to make the main code work only when the GP14 changes from low to high, and to respond only once if the PIR module keeps detecting people.
+Esto permite que el código principal solo funcione cuando GP14 cambia de bajo a alto, respondiendo una sola vez aunque el módulo PIR siga detectando personas.
 
 |lucky_cat3|
 
-Make the servo cycle 5 times from 0 to 180 degrees rotation.
+Haz que el servo gire cinco veces en un ciclo de 0 a 180 grados.
 
-* [repeat () times do]: Loop through the code inside the do block a finite number of times.
-
+* [repeat () times do]: Repite el código dentro del bloque do un número finito de veces.
 

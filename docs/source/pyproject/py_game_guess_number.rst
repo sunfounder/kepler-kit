@@ -1,64 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_guess_number:
 
-7.7 Guess Number
-==============================
+7.7 Adivina el Número
+===========================
 
 
-Guessing Numbers is a fun party game where you and your friends input numbers (0-99). With each input of the number, the range will shrink until a player answers the riddle correctly. Then the player is defeated and punished. 
+"Adivina el Número" es un divertido juego en el que tú y tus amigos ingresan números (0-99). Con cada número ingresado, el rango se reduce hasta que alguien acierta el número secreto. Luego, el jugador pierde y recibe un castigo.
 
-As an example, if the lucky number is 51, which the players cannot see, and the player 1 inputs 50, the prompt changes to 50 - 99; if the player 2 inputs 70, the range changes to 50 - 70; if the player 3 inputs 51, the player is unlucky. In this case, numbers are inputted through the keypad, and outcomes are displayed on a LCD screen.
+Por ejemplo, si el número secreto es 51 (desconocido para los jugadores), y el jugador 1 ingresa 50, el rango cambia a 50-99; si el jugador 2 ingresa 70, el rango se ajusta a 50-70; si el jugador 3 ingresa 51, ¡pierde el juego! Los números se ingresan a través de un teclado y los resultados se muestran en una pantalla LCD.
 
 |guess_number|
 
-**Required Components**
+**Componentes Requeridos**
 
-In this project, we need the following components. 
+Para este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N.º
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -67,11 +66,11 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(10KΩ)
+        - 4 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_keypad`
@@ -82,31 +81,28 @@ You can also buy them separately from the links below.
         - 1
         - |link_i2clcd1602_buy|
 
-
-**Schematic**
-
+**Esquema**
 
 |sch_guess_number|
 
-This circuit is based on :ref:`py_keypad` with the addition of an I2C LCD1602 to display the pressed keys.
+Este circuito está basado en :ref:`py_keypad` con la adición de un LCD I2C 1602 para mostrar los números ingresados.
+
+**Conexión**
+
+|wiring_game_guess_number|
+
+Para facilitar la conexión, en el diagrama anterior, la fila de columnas del teclado matricial y las resistencias de 10K están conectadas a los mismos agujeros donde están ubicados G10 ~ G13.
 
 
-**Wiring**
-
-|wiring_game_guess_number| 
-
-To make the wiring easier, in the above diagram, the column row of the matrix keyboard and the 10K resistors are inserted into the holes where G10 ~ G13 are located at the same time.
-
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``7.7_game_guess_number.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``7.7_game_guess_number.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -115,118 +111,110 @@ To make the wiring easier, in the above diagram, the column row of the matrix ke
     import time
     import urandom
 
-    # Initialize I2C communication for the LCD1602 display
+    # Inicializar comunicación I2C para el LCD1602
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
 
-    # Create an LCD object for controlling the LCD1602 display
+    # Crear objeto LCD para controlar el LCD1602
     lcd = LCD(i2c)
 
-    # Keypad character mapping for a 4x4 matrix keypad
+    # Mapeo de caracteres para el teclado matricial 4x4
     characters = [["1", "2", "3", "A"], 
                 ["4", "5", "6", "B"], 
                 ["7", "8", "9", "C"], 
                 ["*", "0", "#", "D"]]
 
-    # Define row pins for the keypad
+    # Definir pines de fila para el teclado
     pin = [21, 20, 19, 18]
     row = []
     for i in range(4):
         row.append(None)
-        row[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Set row pins as output
+        row[i] = machine.Pin(pin[i], machine.Pin.OUT)
 
-    # Define column pins for the keypad
+    # Definir pines de columna para el teclado
     pin = [13, 12, 11, 10]
     col = []
     for i in range(4):
         col.append(None)
-        col[i] = machine.Pin(pin[i], machine.Pin.IN)  # Set column pins as input
+        col[i] = machine.Pin(pin[i], machine.Pin.IN)
 
-    # Function to read a key from the keypad
+    # Función para leer una tecla del teclado
     def readKey():
         key = []
         for i in range(4):
-            row[i].high()  # Set the row pin high
+            row[i].high()
             for j in range(4):
-                if col[j].value() == 1:  # Check if any column is pressed
-                    key.append(characters[i][j])  # Record the corresponding key
-            row[i].low()  # Set the row pin low
+                if col[j].value() == 1:
+                    key.append(characters[i][j])
+            row[i].low()
         if key == []:
-            return None  # Return None if no key is pressed
+            return None
         else:
-            return key  # Return the pressed key
+            return key
 
-    # Initialize and reset the game variables (random pointValue, upper/lower limits)
+    # Inicializar y reiniciar variables del juego (valor de punto aleatorio, límites superior/inferior)
     def init_new_value():
         global pointValue, upper, count, lower
-        pointValue = int(urandom.uniform(0, 99))  # Generate a random number between 0 and 99
-        print(pointValue)  # Print the target number (for debugging)
-        upper = 99  # Set initial upper bound
-        lower = 0  # Set initial lower bound
-        count = 0  # Reset the player's guess count
-        return False  # Indicate that the game has not ended
+        pointValue = int(urandom.uniform(0, 99))
+        print(pointValue)
+        upper = 99
+        lower = 0
+        count = 0
+        return False
 
-    # Function to display the game information on the LCD
-    # If the player has guessed correctly, show "GAME OVER"
-    # Otherwise, show the current guess and range
+    # Función para mostrar información del juego en el LCD
     def lcd_show(result):
-        lcd.clear()  # Clear the LCD display
-        if result == True:  # If the player guessed correctly
+        lcd.clear()
+        if result == True:
             string = "GAME OVER!\n"
-            string += "Point is " + str(pointValue)  # Display the correct number
+            string += "Point is " + str(pointValue)  
         else:
-            string = "Enter number: " + str(count) + "\n"  # Show the player's current guess
-            string += str(lower) + " < Point < " + str(upper)  # Show the range of possible values
-        lcd.message(string)  # Send the string to the LCD
+            string = "Enter number: " + str(count) + "\n"
+            string += str(lower) + " < Point < " + str(upper)
+        lcd.message(string)
         return
 
-    # Process the player's guess and update the upper or lower bound
-    # If the guess matches the pointValue, return True to indicate the game is over
-    # Otherwise, update the bounds and return False
+    # Procesar la suposición del jugador y actualizar el límite superior o inferior
     def number_processing():
         global upper, count, lower
         if count > pointValue:
             if count < upper:
-                upper = count  # Update the upper bound if the guess is too high
+                upper = count
         elif count < pointValue:
             if count > lower:
-                lower = count  # Update the lower bound if the guess is too low
+                lower = count
         elif count == pointValue:
-            return True  # Return True if the guess matches the pointValue
-        count = 0  # Reset the guess count for the next attempt
+            return True
+        count = 0
         return False
 
-    ## Main game setup and loop
-    # Display a welcome message and prompt the user to press 'A' to start
-    string = "Press A to Start!"
+    # Configuración y bucle principal del juego
+    string = "Presiona A para Iniciar!"
     lcd.message(string)
-    result = init_new_value()  # Initialize game variables
+    result = init_new_value()
 
-    # Main loop to handle keypad input and update the display
+    # Bucle principal para gestionar la entrada y actualizar el LCD
     last_key = None
     while True:
-        current_key = readKey()  # Read the current key pressed
+        current_key = readKey()
         if current_key == last_key:
-            continue  # Skip processing if the same key is still pressed
-        last_key = current_key  # Update the last pressed key
+            continue
+        last_key = current_key
         
         if current_key != None:
-            # If 'A' is pressed, restart the game with a new target number
             if current_key == ["A"]:
                 result = init_new_value()
-            # If 'D' is pressed, check if the current guess is correct
             elif current_key == ["D"]:
                 result = number_processing()
-            # If a number is pressed and the count is less than 10 digits
             elif current_key[0] in list("1234567890") and count < 10:
-                count = count * 10 + int(current_key[0])  # Add the digit to the current guess
-            lcd_show(result)  # Update the LCD with the current game state
-        time.sleep(0.1)  # Small delay for key debounce
+                count = count * 10 + int(current_key[0])
+            lcd_show(result)
+        time.sleep(0.1)
 
+* Después de ejecutar el código, presiona ``A`` para iniciar el juego. Se genera un número aleatorio como ``punto`` pero no se muestra en el LCD, y tu objetivo es adivinarlo.
+* El número que ingresas aparece al final de la primera línea hasta que se realiza la verificación final (presiona ``D`` para iniciar la comparación).
+* El rango del número ``punto`` se muestra en la segunda línea. Debes ingresar un número dentro del rango indicado.
+* Si adivinas correctamente el número, aparecerá ``GAME OVER!``.
 
-* After the code runs, press ``A`` to start the game. A random number ``point`` is produced but not displayed on the LCD, and what you need to do is to guess it. 
-* The number you have typed appears at the end of the first line till the final calculation is finished. (Press ``D`` to start the comparation.)
-* The number range of ``point`` is displayed on the second line. And you must type the number within the range. 
-* When you type a number, the range narrows; if you got the lucky number luckily or unluckily, there will appear ``GAME OVER!``.
+.. note::
+    Si el código y las conexiones son correctos, pero el LCD aún no muestra contenido, ajusta el potenciómetro en la parte posterior para aumentar el contraste.
 
-.. note:: 
-    If the code and wiring are fine, but the LCD still does not display content, you can turn the potentiometer on the back to increase the contrast.

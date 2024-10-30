@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 12:  Create a Dimmable LED in Micropython
+Lección 12: Crear un LED Regulable en MicroPython
 ==========================================================================
-This tutorial covers controlling LED brightness using a potentiometer and PWM on the Raspberry Pi Pico W:
 
-* **LED Brightness Control**: Explains controlling brightness with PWM and introduces exponential scaling for smoother brightness perception.
-* **Wiring Diagram and Setup**: Detailed diagram for connecting a potentiometer and LED with a 220 Ohm resistor to the Pico W.
-* **Code Explanation**: Code setup for PWM, reading analog values from the potentiometer, and converting them to PWM duty cycles.
-* **Practical Demonstration**: Shows how to visualize PWM signals with an oscilloscope and demonstrates the effect of exponential scaling on brightness transitions.
-
+Este tutorial cubre el control de la intensidad de un LED utilizando un potenciómetro y PWM en la Raspberry Pi Pico W:
+* **Control de Intensidad del LED**: Explica cómo controlar el brillo con PWM e introduce la escala exponencial para una transición de brillo más suave.
+* **Diagrama de Conexión y Configuración**: Diagrama detallado para conectar un potenciómetro y un LED con una resistencia de 220 ohmios a la Pico W.
+* **Explicación del Código**: Configuración del código para PWM, lectura de valores analógicos del potenciómetro y conversión a ciclos de trabajo PWM.
+* **Demostración Práctica**: Muestra cómo visualizar señales PWM con un osciloscopio y demuestra el efecto de la escala exponencial en las transiciones de brillo.
 
 **Video**
 

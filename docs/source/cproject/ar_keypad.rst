@@ -1,66 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. ¡Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de Expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _ar_keypad:
 
-4.2 - 4x4 Keypad
+4.2 - Teclado 4x4
 ========================
 
-The 4x4 keyboard, also known as the matrix keyboard, is a matrix of 16 keys excluded in a single panel.
+El teclado 4x4, también conocido como teclado matricial, es una matriz de 16 teclas dispuestas en un solo panel.
 
-The keypad can be found on devices that mainly require digital input, such as calculators, TV remote controls, push-button phones, vending machines, ATMs, combination locks, and digital door locks.
+Los teclados matriciales se encuentran en dispositivos que requieren principalmente entrada digital, como calculadoras, controles remotos de TV, teléfonos con teclado, máquinas expendedoras, cajeros automáticos, cerraduras combinadas y cerraduras digitales para puertas.
 
-In this project, we will learn how to determine which key is pressed and get the related key value.
+En este proyecto, aprenderemos a determinar qué tecla se ha presionado y obtener el valor correspondiente.
 
 * :ref:`cpn_keypad`
 * `E.161 - Wikipedia <https://en.wikipedia.org/wiki/E.161>`_
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -69,39 +68,38 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
-        - 4(10KΩ)
+        - 4 (10KΩ)
         - |link_resistor_buy|
     *   - 6
         - :ref:`cpn_keypad`
         - 1
         - |link_keypad_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_keypad_ar|
 
-The rows of the keyboard (G2 ~ G5) are programmed to go high; if one of G6 ~ G9 is read high, then we know which key is pressed.
+Las filas del teclado (G2 ~ G5) se configuran para estar en alto; si una de las columnas (G6 ~ G9) se lee en alto, sabremos qué tecla se ha presionado.
 
-For example, if G6 is read high, then numeric key 1 is pressed; this is because the control pins of numeric key 1 are G2 and G6, when numeric key 1 is pressed, G2 and G6 will be connected together and G6 is also high.
+Por ejemplo, si G6 se lee en alto, entonces se ha presionado la tecla numérica 1; esto es porque los pines de control de la tecla numérica 1 son G2 y G6. Cuando se presiona la tecla 1, G2 y G6 se conectan y G6 también queda en alto.
 
 
-**Wiring**
+**Conexión**
 
 |wiring_keypad_ar|
 
-**Code**
-
+**Código**
 
 .. note::
 
-    * You can open the file ``4.2_4x4_keypad.ino`` under the path of ``kepler-kit-main/arduino/4.2_4x4_keypad``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit Keypad`` library is used here, you can install it from the **Library Manager**.
+    * Puedes abrir el archivo ``4.2_4x4_keypad.ino`` en la ruta ``kepler-kit-main/arduino/4.2_4x4_keypad``.
+    * O copia este código en el **IDE de Arduino**.
+    * Luego selecciona la placa Raspberry Pi Pico y el puerto correcto antes de hacer clic en el botón de carga.
+    * Aquí se utiliza la librería ``Adafruit Keypad``, que puedes instalar desde el **Administrador de Librerías**.
 
       .. image:: img/lib_ad_keypad.png
 
@@ -109,21 +107,19 @@ For example, if G6 is read high, then numeric key 1 is pressed; this is because 
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6c776dfc-cb74-49d7-8906-f1382e0e7b7b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+Después de ejecutar el programa, la consola imprimirá las teclas que presionaste en el teclado.
 
-After the program runs, the Shell will print out the keys you pressed on the Keypad.
+**¿Cómo funciona?**
 
+1. Incluir la Librería
 
-**How it works**
-
-1. Including the Library
-
-   We start by including the ``Adafruit_Keypad`` library, which allows us to easily interface with the keypad.
+   Comenzamos incluyendo la librería ``Adafruit_Keypad``, que nos permite interactuar fácilmente con el teclado.
 
    .. code-block:: arduino
 
      #include "Adafruit_Keypad.h"
 
-2. Keypad Configuration
+2. Configuración del Teclado
 
    .. code-block:: arduino
 
@@ -138,26 +134,26 @@ After the program runs, the Shell will print out the keys you pressed on the Key
      byte rowPins[ROWS] = { 2, 3, 4, 5 };
      byte colPins[COLS] = { 8, 9, 10, 11 };
 
-   - The ``ROWS`` and ``COLS`` constants define the dimensions of the keypad. 
-   - ``keys`` is a 2D array storing the label for each button on the keypad.
-   - ``rowPins`` and ``colPins`` are arrays that store the Arduino pins connected to the keypad rows and columns.
+   - Las constantes ``ROWS`` y ``COLS`` definen las dimensiones del teclado.
+   - ``keys`` es un array 2D que almacena la etiqueta de cada botón en el teclado.
+   - ``rowPins`` y ``colPins`` son arrays que almacenan los pines de Arduino conectados a las filas y columnas del teclado.
 
    .. raw:: html
 
       <br/>
 
 
-3. Initialize Keypad
+3. Inicialización del Teclado
 
-   Create an instance of ``Adafruit_Keypad`` called ``myKeypad`` and initialize it.
+   Crea una instancia de ``Adafruit_Keypad`` llamada ``myKeypad`` e inicialízala.
 
    .. code-block:: arduino
 
      Adafruit_Keypad myKeypad = Adafruit_Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
-4. setup() Function
+4. Función setup()
 
-   Initialize Serial communication and the custom keypad.
+   Inicializa la comunicación Serial y el teclado personalizado.
 
    .. code-block:: arduino
 
@@ -166,9 +162,9 @@ After the program runs, the Shell will print out the keys you pressed on the Key
        myKeypad.begin();
      }
 
-5. Main Loop
+5. Bucle Principal
 
-   Check for key events and display them in the Serial Monitor.
+   Verifica los eventos de teclas y los muestra en el Monitor Serial.
 
    .. code-block:: arduino
 

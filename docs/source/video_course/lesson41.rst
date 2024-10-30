@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 41: Inferring Tilt From a 3 Axis Accelerometer
+Lección 41: Inferir Inclinación con un Acelerómetro de 3 Ejes
 =============================================================================
-This tutorial covers measuring acceleration in three axes using the MPU6050 sensor with the Raspberry Pi Pico W:
 
-* **Introduction**: Measuring acceleration in X, Y, and Z axes, focusing on Z-axis due to gravity.
-* **Review of Previous Lesson**: Recap of X and Y axes acceleration and homework on Z-axis prediction.
-* **Z-Axis Acceleration**: Explains 1G acceleration in Z-axis when stationary and how tilting affects sensor readings.
-* **Practical Application**: Using the sensor for tilt measurement (pitch and roll) in carpentry, off-roading, and aviation.
-* **Homework Assignment**: Calculate tilt angles (pitch and roll) using sensor data and apply previous math concepts.
+Este tutorial cubre la medición de la aceleración en tres ejes usando el sensor MPU6050 con la Raspberry Pi Pico W:
 
-
+* **Introducción**: Medición de la aceleración en los ejes X, Y y Z, con enfoque en el eje Z debido a la gravedad.
+* **Revisión de la Lección Anterior**: Repaso de la aceleración en los ejes X e Y y la tarea sobre la predicción del eje Z.
+* **Aceleración en el Eje Z**: Explicación de la aceleración de 1G en el eje Z cuando el sensor está en reposo y cómo la inclinación afecta las lecturas.
+* **Aplicación Práctica**: Uso del sensor para medir inclinación (inclinación y balanceo) en carpintería, conducción todoterreno y aviación.
+* **Tarea**: Calcular los ángulos de inclinación (pitch y roll) usando los datos del sensor y aplicar los conceptos matemáticos anteriores.
 
 **Video**
 

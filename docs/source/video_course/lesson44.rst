@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 44: Measure Simultaneous 0 G on All Three Axis of MPU6050
+Lección 44: Medición de 0 G Simultáneo en los Tres Ejes del MPU6050
 =============================================================================
-This tutorial covers using the MPU6050 sensor with the Raspberry Pi Pico W to measure pitch, roll, and vertical displacement:
 
-* **Setup**: Connect the MPU6050 to the Raspberry Pi Pico W using the provided schematic.
+Este tutorial cubre el uso del sensor MPU6050 con la Raspberry Pi Pico W para medir pitch, roll y desplazamiento vertical:
 
-* **Measuring Zero G**: Determine conditions where all accelerometer axes read zero G simultaneously by dropping the sensor.
+* **Configuración**: Conecta el MPU6050 a la Raspberry Pi Pico W siguiendo el esquema proporcionado.
 
-* **Homework**: Create a method to determine the height from which the sensor was dropped by calculating the time it was in freefall and using the acceleration of gravity.
+* **Medición de Cero G**: Determina las condiciones en las que todos los ejes del acelerómetro marcan simultáneamente cero G al dejar caer el sensor.
 
+* **Tarea**: Crea un método para calcular la altura desde la que se dejó caer el sensor, midiendo el tiempo en caída libre y utilizando la aceleración de la gravedad.
 
 **Video**
 

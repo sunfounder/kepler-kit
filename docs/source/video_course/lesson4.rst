@@ -1,27 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Soluciona problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 4:  Create a Binary Counter Using the Pico W
+Lección 4: Crear un Contador Binario con la Pico W
 =================================================================
 
-This tutorial covers creating a 4-bit digital counter using the SunFounder Kepler Kit for Raspberry Pi Pico W:
+Este tutorial cubre la creación de un contador digital de 4 bits utilizando el Kit Kepler de SunFounder para Raspberry Pi Pico W:
 
-* **Homework Review**: Review of the 4-bit counter using LEDs.
-* **Schematic Setup**: Connect four LEDs with 220 Ohm resistors to the Pico W.
-* **Code**: Write Python code to create a 4-bit counter from 0 to 15 using LEDs.
-* **Demonstration**: Test the counter and verify functionality.
-
+* **Revisión de Tareas**: Repaso del contador de 4 bits usando LEDs.
+* **Configuración del Esquema**: Conectar cuatro LEDs con resistencias de 220 ohmios a la Pico W.
+* **Código**: Escribir código en Python para crear un contador de 4 bits que cuente de 0 a 15 utilizando LEDs.
+* **Demostración**: Probar el contador y verificar su funcionamiento.
 
 **Video**
 

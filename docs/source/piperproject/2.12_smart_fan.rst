@@ -1,56 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_smart_fan:
 
-2.12 Smart Fan
-=============================
 
-Here we make a temperature controlled smart fan with thermistor, TA6586, motor, and power module. The fan rotates automatically when the set temperature is reached.
+2.12 Ventilador Inteligente
+=================================
 
-In this project, we need the following components. 
+Aquí crearemos un ventilador inteligente controlado por temperatura usando un termistor, TA6586, motor y módulo de alimentación. El ventilador gira automáticamente cuando se alcanza la temperatura configurada.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+En este proyecto, necesitamos los siguientes componentes. 
+
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -59,7 +60,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -74,11 +75,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Batería 18650
         - 1
         -  
     *   - 9
-        - Battery Holder
+        - Portapilas
         - 1
         - 
     *   - 10
@@ -90,63 +91,60 @@ You can also buy them separately from the links below.
         - 1
         - |link_photoresistor_buy|
 
-**Wiring**
+**Conexión**
 
 |temperature_controlled_fan0|
 
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.12_smart_fan.png.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando. 
+    * Importa ``2.12_smart_fan.png.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 |temperature_controlled_fan|
 
-
-* After connecting Pico W, click the **Start** button and the code starts to run.
-* Click CONSLE, you will see the current temperature in Celsius.
-* The fan starts spinning when it is above 25 degrees, and stops spinning when it is below 25 degrees.
+* Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse.
+* Haz clic en CONSOLA para ver la temperatura actual en Celsius.
+* El ventilador comienza a girar cuando la temperatura es superior a 25 grados y se detiene cuando es inferior a 25 grados.
 
 .. note::
 
-    * If the motor is still spinning after you click the Stop button, you need to reset the Run pin on the Pico W with a wire to GND at this time, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * Si el motor sigue girando después de hacer clic en el botón Stop, conecta temporalmente el pin Run del Pico W a GND usando un cable, y luego retira el cable para ejecutar el código nuevamente.
+    * Esto se debe a que el motor consume mucha corriente, lo que puede hacer que el Pico W se desconecte de la computadora. 
 
     |wiring_run_reset|
 
 
-**How it Works?**
+**¿Cómo funciona?**
 
 |temperature_controlled_fan1|
 
-The voltage of A0 (GP26) is read and assigned to the variable [Vr].
+Se lee el voltaje de A0 (GP26) y se asigna a la variable [Vr].
 
 |temperature_controlled_fan2|
 
-
-These calculations convert the thermistor values into centigrade degree. 
-
+Estos cálculos convierten los valores del termistor a grados centígrados. 
 
 .. note::
-    Here is the relation between the resistance and temperature: 
+    Aquí está la relación entre la resistencia y la temperatura:
 
     **RT =RN expB(1/TK – 1/TN)** 
 
-    * RT is the resistance of the NTC thermistor when the temperature is TK. 
-    * RN is the resistance of the NTC thermistor under the rated temperature TN. Here, the numerical value of RN is 10k. 
-    * TK is a Kelvin temperature and the unit is K. Here, the numerical value of TK is 273.15 + degree Celsius. 
-    * TN is a rated Kelvin temperature; the unit is K too. Here, the numerical value of TN is 273.15+25.
-    * And B(beta), the material constant of NTC thermistor, is also called heat sensitivity index with a numerical value 3950. 
-    * exp is the abbreviation of exponential, and the base number e is a natural number and equals 2.7 approximately. 
+    * RT es la resistencia del termistor NTC cuando la temperatura es TK. 
+    * RN es la resistencia del termistor NTC bajo la temperatura nominal TN. Aquí, el valor de RN es 10k. 
+    * TK es una temperatura en Kelvin y la unidad es K. Aquí, el valor de TK es 273.15 + grados Celsius. 
+    * TN es una temperatura nominal en Kelvin; la unidad también es K. Aquí, el valor de TN es 273.15+25.
+    * B (beta) es la constante del material del termistor NTC, también conocida como índice de sensibilidad térmica, con un valor de 3950. 
+    * exp es la abreviatura de exponencial, y la base e es un número natural que vale aproximadamente 2.7.
 
-    Convert this formula **TK=1/(ln(RT/RN)/B+1/TN)** to get Kelvin temperature that minus 273.15 equals degree Celsius. 
+    Convierte esta fórmula a **TK=1/(ln(RT/RN)/B+1/TN)** para obtener la temperatura en Kelvin, que menos 273.15 equivale a grados Celsius. 
 
-    This relation is an empirical formula. It is accurate only when the temperature and resistance are within the effective range.
+    Esta relación es una fórmula empírica y es precisa solo cuando la temperatura y la resistencia están dentro del rango efectivo.
 
 
 |temperature_controlled_fan5|
 
-When the temperature is higher than 25 degrees Celsius, set GP14 to ON and GP15 to OFF to make the motor rotate, or you can reverse their levels. When the temperature is lower than 25 degrees Celsius, set GP14 and GP15 both low to stop the motor.
+Cuando la temperatura es superior a 25 grados Celsius, ajusta GP14 a ON y GP15 a OFF para que el motor gire, o invierte sus niveles. Cuando la temperatura es inferior a 25 grados Celsius, ajusta GP14 y GP15 ambos en bajo para detener el motor.
 

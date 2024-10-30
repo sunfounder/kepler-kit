@@ -1,64 +1,64 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_servo:
 
-3.7 Swinging Servo
-===================
+3.7 Movimiento Oscilante del Servo
+======================================
 
-In this kit, in addition to LED and passive buzzer, there is also a device controlled by PWM signal, Servo.
+En este kit, además de un LED y un zumbador pasivo, también hay un dispositivo controlado mediante una señal PWM: el servo.
 
-Servo is a position (angle) servo device, which is suitable for those control systems that require constant angle changes and can be maintained. It has been widely used in high-end remote control toys, such as airplanes, submarine models, and remote control robots.
+El servo es un dispositivo de control de posición (ángulo), ideal para sistemas que requieren cambios constantes de ángulo que se mantengan estables. Se utiliza ampliamente en juguetes de control remoto de alta gama, como aviones, modelos de submarinos y robots de control remoto.
 
-Now, try to make the servo sway!
+¡Ahora intentemos hacer que el servo oscile!
 
 * :ref:`cpn_servo`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitaremos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -67,45 +67,40 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
         - 1
         - |link_servo_buy|
 
-
-**Schematic**
+**Esquemático**
 
 |sch_servo|
 
-**Wiring**
+**Conexiones**
 
 |wiring_servo|
 
-* Orange wire is signal and connected to GP15.
-* Red wire is VCC and connected to VBUS(5V).
-* Brown wire is GND and connected to GND.
+* El cable naranja es la señal y se conecta a GP15.
+* El cable rojo es VCC y se conecta a VBUS (5V).
+* El cable marrón es GND y se conecta a GND.
 
+.. 1. Inserta el Brazo del Servo en el eje de salida del Servo. Si es necesario, fíjalo con tornillos.
+.. #. Conecta **VBUS** (no 3V3) y GND del Pico W al bus de alimentación de la breadboard.
+.. #. Conecta el cable rojo del servo al bus positivo de alimentación con un puente.
+.. #. Conecta el cable amarillo del servo al pin GP15 con un puente.
+.. #. Conecta el cable marrón del servo al bus negativo de alimentación con un puente.
 
-.. 1. Press the Servo Arm into the Servo output shaft. If necessary, fix it with screws.
-.. #. Connect **VBUS** (not 3V3) and GND of Pico W to the power bus of the breadboard.
-.. #. Connect the red lead of the servo to the positive power bus with a jumper.
-.. #. Connect the yellow lead of the servo to the GP15 pin with a jumper wire.
-.. #. Connect the brawn lead of the servo to the negative power bus with a jumper wire.
-
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``3.7_swinging_servo.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``3.7_swinging_servo.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -118,47 +113,46 @@ You can also buy them separately from the links below.
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    def servo_write(pin,angle):
-        pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
-        duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
+    def servo_write(pin, angle):
+        pulse_width = interval_mapping(angle, 0, 180, 0.5, 2.5)
+        duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))
         pin.duty_u16(duty)
 
     while True:
         for angle in range(180):
-            servo_write(servo,angle)
+            servo_write(servo, angle)
             utime.sleep_ms(20)
-        for angle in range(180,-1,-1):
-            servo_write(servo,angle)
+        for angle in range(180, -1, -1):
+            servo_write(servo, angle)
             utime.sleep_ms(20)
 
+Cuando el programa se ejecute, veremos el Brazo del Servo oscilar de un lado a otro, entre los ángulos de 0° a 180°.
 
-When the program is running, we can see the Servo Arm swinging back and forth from 0° to 180°. 
+El programa se ejecutará de manera continua debido al bucle ``while True``; para detenerlo, es necesario presionar el botón de detención.
 
-The program will always run because of the ``while True`` loop, we need to press the Stop button to end the program.
+**¿Cómo funciona?**
 
-**How it works?**
+Definimos la función ``servo_write()`` para controlar el movimiento del servo.
 
-We defined the ``servo_write()`` function to make the servo run.
+Esta función tiene dos parámetros:
 
-This function has two parameters:
+* ``pin``, el pin GPIO que controla el servo.
+* ``angle``, el ángulo de salida del eje.
 
-* ``pin``, the GPIO pin that controls the servo.
-* ``Angle``, the angle of the shaft output.
-
-In this function, ``interval_mapping()`` is called to map the angle range 0 ~ 180 to the pulse width range 0.5 ~ 2.5ms.
+En esta función, se llama a ``interval_mapping()`` para mapear el rango de ángulos de 0 a 180 en el rango de ancho de pulso de 0.5 a 2.5ms.
 
 .. code-block:: python
 
-    pulse_width=interval_mapping(angle, 0, 180, 0.5,2.5)
+    pulse_width = interval_mapping(angle, 0, 180, 0.5, 2.5)
 
-Why is it 0.5~2.5? This is determined by the working mode of the Servo. 
+¿Por qué el rango es 0.5~2.5? Esto está determinado por el modo de funcionamiento del Servo.
 
 :ref:`cpn_servo`
 
-Next, convert the pulse width from period to duty. Since ``duty_u16()`` cannot have decimals when used (the value cannot be a float type), we used ``int()`` to force the duty to be converted to an int type.
+Luego, convertimos el ancho de pulso a período de duty. Dado que ``duty_u16()`` no acepta valores decimales (el valor no puede ser de tipo float), usamos ``int()`` para forzar la conversión de duty a un tipo int.
 
 .. code-block:: python
 
-    duty=int(interval_mapping(pulse_width, 0, 20, 0,65535))
+    duty = int(interval_mapping(pulse_width, 0, 20, 0, 65535))
 
-Finally, write the duty value into ``duty_u16()``.
+Finalmente, escribimos el valor de duty en ``duty_u16()``.

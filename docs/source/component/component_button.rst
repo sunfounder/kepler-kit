@@ -1,45 +1,45 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_button:
 
-Button
+Botón
 ==========
 
 |img_button|
 
-Buttons are a common component used to control electronic devices. They are usually used as switches to connect or break circuits. Although buttons come in a variety of sizes and shapes, the one used here is a 6mm mini-button as shown in the following pictures.
-Pin 1 is connected to pin 2 and pin 3 to pin 4. So you just need to connect either of pin 1 and pin 2 to pin 3 or pin 4.
+Los botones son componentes comunes que se utilizan para controlar dispositivos electrónicos. Generalmente se usan como interruptores para conectar o interrumpir circuitos. Aunque hay botones de diferentes tamaños y formas, el que se utiliza aquí es un mini-botón de 6 mm como se muestra en las siguientes imágenes.
+El pin 1 está conectado al pin 2, y el pin 3 al pin 4. Por lo tanto, solo necesitas conectar cualquiera de los pines 1 y 2 con los pines 3 o 4.
 
-The following is the internal structure of a button. The symbol on the right below is usually used to represent a button in circuits. 
+A continuación se muestra la estructura interna de un botón. El símbolo en la parte inferior derecha se usa habitualmente para representar un botón en los circuitos.
 
 |img_button_symbol|
 
-Since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+Dado que el pin 1 está conectado al pin 2, y el pin 3 al pin 4, cuando se presiona el botón, los 4 pines se conectan, cerrando así el circuito.
 
 |img_button2|
 
 .. Examples
 .. -------------------
 
-.. :ref:`Reading Button Value`
+.. :ref:`Lectura del Valor del Botón`
 
-**Example**
+**Ejemplos**
 
-* :ref:`py_button` (For MicroPython User)
-* :ref:`ar_button` (For Arduino User)
-* :ref:`per_button` (For Piper Make User)
-* :ref:`per_rainbow_light` (For Piper Make User)
-* :ref:`per_drum_kit` (For Piper Make User)
-* :ref:`per_reaction_game` (For Piper Make User)
+* :ref:`py_button` (Para usuarios de MicroPython)
+* :ref:`ar_button` (Para usuarios de Arduino)
+* :ref:`per_button` (Para usuarios de Piper Make)
+* :ref:`per_rainbow_light` (Para usuarios de Piper Make)
+* :ref:`per_drum_kit` (Para usuarios de Piper Make)
+* :ref:`per_reaction_game` (Para usuarios de Piper Make)

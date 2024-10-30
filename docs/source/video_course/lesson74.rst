@@ -1,26 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y profundiza en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 74:  Create a MicroPython Class for Controlling RGB LED
+Lección 74: Crear una Clase en MicroPython para Controlar un LED RGB
 ===================================================================================
 
-This tutorial covers creating a MicroPython library for controlling an RGB LED with the Raspberry Pi Pico W:
+Este tutorial explica cómo crear una biblioteca en MicroPython para controlar un LED RGB con el Raspberry Pi Pico W:
 
-* **Concept Overview**: Control RGB LED with a custom RGB_LED class using PWM.
-* **Example Implementation**: Connect RGB LED to GPIO pins, define a class to manage color changes via PWM, and prompt user input to adjust LED color.
-* **Homework Assignment**: Extend the RGB_LED class to add color patterns or more features. Ensure the main program remains simple and leverages the library.
-* **Key Takeaways**: Learn to structure code using custom classes for hardware control and handle user inputs efficiently in MicroPython.
+* **Resumen del Concepto**: Controlar un LED RGB mediante una clase personalizada ``RGB_LED`` usando PWM.
+* **Implementación del Ejemplo**: Conecta el LED RGB a los pines GPIO, define una clase para gestionar los cambios de color mediante PWM e incluye una entrada de usuario para ajustar el color del LED.
+* **Tarea**: Extiende la clase ``RGB_LED`` para añadir patrones de color o más características. Asegúrate de que el programa principal sea simple y aproveche la biblioteca.
+* **Conclusiones Clave**: Aprende a estructurar el código utilizando clases personalizadas para el control de hardware y a manejar eficientemente las entradas de usuario en MicroPython.
 
 
 **Video**

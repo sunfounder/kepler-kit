@@ -1,62 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos lanzamientos de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_rainbow_light:
 
-2.4 Rainbow Light
-==================
+2.4 Luz Arcoíris
+=====================
 
-In this project, we will make the RGB LEDs display a rainbow of colors. 
+En este proyecto, haremos que los LEDs RGB muestren una variedad de colores, como un arcoíris.
 
-RGB LED is equivalent to encapsulating Red LED, Green LED, Blue LED under one lamp cap, and the three LEDs share one cathode pin. Since the electric signal is provided for each anode pin, the light of the corresponding color can be displayed. By changing the electrical signal intensity of each anode, it can be made to produce various colors.
+Un LED RGB es como encapsular LEDs de color rojo, verde y azul bajo una misma tapa, compartiendo un pin de cátodo común. Al proporcionar señales eléctricas a cada pin de ánodo, se puede mostrar el color correspondiente. Al cambiar la intensidad de la señal eléctrica de cada ánodo, se pueden generar diversos colores.
 
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Un kit completo es conveniente, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
 
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -65,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -80,33 +80,36 @@ You can also buy them separately from the links below.
         - 1
         - |link_rgb_led_buy|
 
-**Wiring**
+**Conexión**
 
 |img_rgb_pin|
 
-An RGB LED has 4 pins: the longest pin is the common cathode pin, which is usually connected to GND, the left pin next to the longest pin is Red, and the 2 pins on the right are Green and Blue.
+Un LED RGB tiene 4 pines: el pin más largo es el cátodo común, que normalmente se conecta a GND; el pin a la izquierda del más largo es el rojo, y los otros dos pines a la derecha son verde y azul.
 
 |rgb0|
 
 
-* When using the same power supply intensity, the Red LED will be brighter than the other two, and a slightly larger resistor(330Ω) needs to be used to reduce its brightness.
-* The 3 buttons are used to control the lighting of the Red, Green and Blue LEDs respectively. 
+* Cuando se usa la misma intensidad de suministro de energía, el LED rojo será más brillante que los otros dos, por lo que es necesario usar una resistencia ligeramente mayor (330Ω) para reducir su brillo.
+* Los tres botones se utilizan para controlar la iluminación de los LEDs rojo, verde y azul, respectivamente.
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.4_rainbow_light.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando.
+    * Importa ``2.4_rainbow_light.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 |rgb_led|
 
-After connecting Pico W, click the **Start** button and the code starts to run. Pressing these buttons individually will emit a single color of light, but if two of the buttons are pressed at the same time, or all 3 buttons are pressed at the same time, the RGB LEDs will emit a variety of different colors, up to a maximum of 7.
+Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse. Al presionar estos botones individualmente, se emitirá un solo color de luz; sin embargo, si presionas dos botones al mismo tiempo o los tres botones juntos, los LEDs RGB emitirán una variedad de colores diferentes, hasta un máximo de siete.
 
 .. note::
-    In fact, RGB LED can emit up to 16 million colors, but since Piper Make does not have a block to output PWM signal, here we just use the [turn pin() (ON/OFF)] block to make RGB LEDs show 7 colors.
+    En realidad, el LED RGB puede emitir hasta 16 millones de colores, pero como Piper Make no tiene un bloque para enviar señales PWM, aquí simplemente usamos el bloque [turn pin() (ON/OFF)] para que los LEDs RGB muestren 7 colores.
 
-**How it Works?**
 
-You can think of this project as using three buttons to control the RGB LED, and setting three if judgment conditions to determine whether the three buttons are pressed or not.
-When the buttons are pressed, the levels of the corresponding pins are pulled high, causing the RGB LED to display different colors.
+
+**Cómo Funciona**
+
+Puedes pensar en este proyecto como una forma de usar tres botones para controlar el LED RGB, estableciendo tres condiciones de juicio (if) para verificar si los tres botones están presionados o no.
+Cuando los botones están presionados, los niveles de los pines correspondientes se elevan, lo que hace que el LED RGB muestre diferentes colores.
+

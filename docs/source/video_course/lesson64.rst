@@ -1,35 +1,34 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y profundiza en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 64:  Object Oriented Programming Example in MicroPython with LEDs
+Lección 64: Ejemplo de Programación Orientada a Objetos en MicroPython con LEDs
 ===================================================================================
 
-This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pico W, focusing on controlling LEDs:
+Este tutorial cubre la programación orientada a objetos (POO) en la Raspberry Pi Pico W, enfocándose en el control de LEDs:
 
+* **Configuración de Conexión**: Conecta el LED rojo al GPIO 15 y el LED verde al GPIO 14, ambos con resistencias de 330 ohmios a tierra.
+* **Clase y Métodos**:
 
-* **Wiring Setup**: Connect red LED to GPIO 15 and green LED to GPIO 14, with 330-ohm resistors to ground.
-* **Class and Methods**: 
+   1. Define una clase ``LED``.
+   2. Usa ``__init__`` para configurar el pin.
+   3. Implementa el método ``blink`` para controlar el LED.
 
-   1. Define an ``LED`` class.
-   2. Use ``__init__`` to set up the pin.
-   3. Implement ``blink`` method to control the LED.
+* **Implementación del Código**:
 
-* **Code Implementation**: 
-
-   1. Import ``machine`` and ``time``.
-   2. Create ``LED`` class with ``__init__`` and ``blink``.
-   3. Instantiate red and green LEDs.
+   1. Importa ``machine`` y ``time``.
+   2. Crea la clase ``LED`` con ``__init__`` y ``blink``.
+   3. Instancia los LEDs rojo y verde.
   
 
 **Video**
@@ -37,3 +36,4 @@ This tutorial covers object-oriented programming (OOP) with the Raspberry Pi Pic
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/3wyCL9QK_uY?si=G0GXEHqdo2jQ_F-5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

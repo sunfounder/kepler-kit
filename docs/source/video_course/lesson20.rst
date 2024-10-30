@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 20:  Using the DHT11 Temperature and Humidity Sensor in MicroPython
+Lección 20: Uso del Sensor de Temperatura y Humedad DHT11 en MicroPython
 =============================================================================
 
-This tutorial covers measuring temperature and humidity using the DHT11 sensor with the Raspberry Pi Pico W:
+Este tutorial cubre la medición de temperatura y humedad usando el sensor DHT11 con la Raspberry Pi Pico W:
 
-* **Introduction**: Focus on using the DHT11 sensor for temperature and humidity measurement.
-* **Previous Lessons Recap**: Review of digital writes, analog writes, and sensor reads.
-* **Component Introduction**: Introduce the DHT11 sensor from the SunFounder Kepler kit.
-* **Code Explanation**: Import libraries, set up GPIO, initialize the sensor, and read data in a loop.
-* **Practical Demonstration**: Run code and observe real-time temperature and humidity readings.
-* **Formatting Output**: Format output for Celsius and humidity, and print the degree symbol.
-* **Homework Assignment**: Add a button to toggle between Celsius and Fahrenheit.
-
+* **Introducción**: Enfoque en el uso del sensor DHT11 para medir temperatura y humedad.
+* **Resumen de Lecciones Anteriores**: Repaso de escrituras digitales, escrituras analógicas y lecturas de sensores.
+* **Introducción al Componente**: Presentación del sensor DHT11 del kit SunFounder Kepler.
+* **Explicación del Código**: Importación de bibliotecas, configuración de GPIO, inicialización del sensor y lectura de datos en un bucle.
+* **Demostración Práctica**: Ejecución del código y observación de lecturas de temperatura y humedad en tiempo real.
+* **Formateo de la Salida**: Formateo de la salida para mostrar grados Celsius y humedad, e impresión del símbolo de grado.
+* **Tarea**: Agregar un botón para alternar entre grados Celsius y Fahrenheit.
 
 **Video**
 

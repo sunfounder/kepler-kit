@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros aficionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Accede de forma anticipada a los anuncios y adelantos de nuevos productos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 2:  Understanding and Using Breadboards
+Lección 2: Comprender y Usar una Protoboard
 =================================================================
 
-This tutorial covers using a breadboard and controlling an external LED with the Raspberry Pi Pico W from the SunFounder kit:
+Este tutorial cubre el uso de una protoboard y el control de un LED externo con la Raspberry Pi Pico W del kit SunFounder:
 
-* **Introduction**: Overview of the tutorial series and sponsor shoutout to SunFounder.
-* **Review of Previous Lesson**: Recap of installing MicroPython, setting up Thonny, and writing basic programs to control GPIO pins.
-* **Breadboard Basics**: Explanation of how a breadboard works, including understanding rows, columns, and connections.
-* **Building an LED Circuit**: Guide to build an external LED circuit using the breadboard, GPIO pins, and a 220 Ohm resistor.
-* **Programming the LED**: Writing a Python program in Thonny to control the external LED by turning it on, off, and making it blink.
-
+* **Introducción**: Visión general de la serie de tutoriales y agradecimiento al patrocinador SunFounder.
+* **Revisión de la Lección Anterior**: Repaso de la instalación de MicroPython, configuración de Thonny y creación de programas básicos para controlar los pines GPIO.
+* **Fundamentos de la Protoboard**: Explicación de cómo funciona una protoboard, incluyendo el uso de filas, columnas y conexiones.
+* **Construcción de un Circuito con LED**: Guía para construir un circuito con un LED externo utilizando la protoboard, pines GPIO y una resistencia de 220 ohmios.
+* **Programación del LED**: Creación de un programa en Python en Thonny para controlar el LED externo encendiéndolo, apagándolo y haciendo que parpadee.
 
 **Video**
 

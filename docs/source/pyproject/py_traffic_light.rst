@@ -1,70 +1,66 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_traffic_light:
 
+7.6 Semáforo
+=================
 
-7.6 Traffic Light
-=================================
+Un `Traffic Light <https://en.wikipedia.org/wiki/Traffic_light>`_ es un dispositivo de señalización ubicado en intersecciones, pasos peatonales y otros lugares, cuyo objetivo es regular el flujo de tráfico.
 
+Las señales de tráfico están estandarizadas según la `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_. Estas señales alternan entre tres colores LED para indicar el paso.
 
-`Traffic Light <https://en.wikipedia.org/wiki/Traffic_light>`_ is a signal device located at roadway intersections, crosswalks and other locations to control the flow of traffic.
+* **Luz roja**: Indica a los conductores que deben detenerse, similar a una señal de alto.
+* **Luz amarilla**: Una señal de advertencia de que la luz cambiará a roja. Este color tiene diferentes interpretaciones según el país o región.
+* **Luz verde**: Permite el paso en la dirección indicada.
 
-Traffic signals are standardized by the `Vienna Convention on Road Signs and Signals <https://en.wikipedia.org/wiki/Vienna_Convention_on_Road_Signs_and_Signals>`_.
-Provides users with the right-of-way by alternating LEDs in three standard colors.
+En este proyecto, utilizaremos tres LEDs de colores para simular el cambio de luces en un semáforo y un display de 7 segmentos de 4 dígitos para mostrar el tiempo de cada estado de tráfico.
 
-* **Red light**: Traffic should stop if it sees a flashing red light, equivalent to a stop sign.
-* **Yellow light**: A warning signal is about to turn red. Yellow lights are interpreted differently in different countries (regions).
-* **Green light**: Allows traffic to move in the indicated direction.
+**Componentes Necesarios**
 
-In this project, we will use three colors of LEDs to implement traffic light changes and a 4-digit 7-segment display to show the time of each traffic state.
+Para este proyecto, necesitaremos los siguientes componentes. 
 
-**Required Components**
-
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -73,7 +69,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -92,31 +88,24 @@ You can also buy them separately from the links below.
         - 1
         - |link_led_buy|
 
-
-**Schematic**
-
+**Esquemático**
 
 |sch_traffic_light|
 
+* Este circuito se basa en el :ref:`py_74hc_4dig` y añade 3 LEDs.
+* Los 3 LEDs de color rojo, amarillo y verde están conectados respectivamente a los pines GP7~GP9.
 
-* This circuit is based on the :ref:`py_74hc_4dig` with the addition of 3 LEDs.
-* The 3 red, yellow and green LEDs are connected to GP7~GP9 respectively.
+**Conexiones**
 
-**Wiring**
+|wiring_traffic_light|
 
-
-|wiring_traffic_light| 
-
-
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``7.6_traffic_light.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
-
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
-
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Abre el archivo ``7.6_traffic_light.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -124,98 +113,98 @@ You can also buy them separately from the links below.
     import time
     from machine import Timer
 
-    # Define the duration for each traffic light color in seconds [Green, Yellow, Red]
+    # Duración de cada color del semáforo en segundos [Verde, Amarillo, Rojo]
     lightTime = [30, 5, 30]
 
-    # 7-segment display codes for digits 0-9, using hexadecimal to represent LED segments
+    # Códigos de 7 segmentos para los dígitos 0-9, en hexadecimal para representar segmentos LED
     SEGCODE = [0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f]
 
-    # Initialize pins for shift register communication (74HC595)
-    sdi = machine.Pin(18, machine.Pin.OUT)   # Serial Data Input
-    rclk = machine.Pin(19, machine.Pin.OUT)  # Register Clock (Latch)
-    srclk = machine.Pin(20, machine.Pin.OUT) # Shift Register Clock
+    # Inicializar pines para la comunicación con el registro de desplazamiento (74HC595)
+    sdi = machine.Pin(18, machine.Pin.OUT)   # Entrada de datos serie
+    rclk = machine.Pin(19, machine.Pin.OUT)  # Reloj del registro (Latch)
+    srclk = machine.Pin(20, machine.Pin.OUT) # Reloj del registro de desplazamiento
 
-    # Initialize list to store 4 digit control pins for the 7-segment display
+    # Inicializar lista para almacenar pines de control de 4 dígitos para el display de 7 segmentos
     placePin = []
-    pin = [10, 13, 12, 11]  # Pin numbers for the 4-digit display
+    pin = [10, 13, 12, 11]  # Números de pines para el display de 4 dígitos
     for i in range(4):
-        placePin.append(None)  # Reserve space in list
-        placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Initialize pins as output
+        placePin.append(None)  # Reservar espacio en la lista
+        placePin[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Inicializar pines como salida
 
-    # Function to select which digit (0-3) to display by controlling the common anode pins
+    # Función para seleccionar el dígito (0-3) que se mostrará, controlando los pines de ánodo común
     def pickDigit(digit):
         for i in range(4):
-            placePin[i].value(1)  # Turn off all digits
-        placePin[digit].value(0)  # Turn on the selected digit
+            placePin[i].value(1)  # Apagar todos los dígitos
+        placePin[digit].value(0)  # Encender el dígito seleccionado
 
-    # Function to clear the display by sending '0x00' to the shift register
+    # Función para limpiar el display enviando '0x00' al registro de desplazamiento
     def clearDisplay():
         hc595_shift(0x00)
 
-    # Function to send data to the shift register (74HC595)
+    # Función para enviar datos al registro de desplazamiento (74HC595)
     def hc595_shift(dat):
-        rclk.low()  # Pull latch low to prepare for data shifting
-        time.sleep_us(200)  # Small delay for timing stability
-        for bit in range(7, -1, -1):  # Loop through each bit (MSB first)
-            srclk.low()  # Prepare to send the next bit
+        rclk.low()  # Bajar el latch para preparar el desplazamiento de datos
+        time.sleep_us(200)  # Pequeño retraso para estabilidad de temporización
+        for bit in range(7, -1, -1):  # Recorrer cada bit (MSB primero)
+            srclk.low()  # Prepararse para enviar el siguiente bit
             time.sleep_us(200)
-            value = 1 & (dat >> bit)  # Extract the current bit from the data
-            sdi.value(value)  # Set the data line to the current bit value
+            value = 1 & (dat >> bit)  # Extraer el bit actual de los datos
+            sdi.value(value)  # Establecer el valor de la línea de datos en el bit actual
             time.sleep_us(200)
-            srclk.high()  # Pulse the shift clock to store the bit in the register
+            srclk.high()  # Pulso del reloj de desplazamiento para almacenar el bit en el registro
             time.sleep_us(200)
         time.sleep_us(200)
-        rclk.high()  # Pulse the register clock to move the data to the output
+        rclk.high()  # Pulso del reloj de registro para mover los datos a la salida
 
-    # Function to display a number on the 7-segment display
-    # This function breaks down the number into its individual digits and displays them
+    # Función para mostrar un número en el display de 7 segmentos
+    # Esta función descompone el número en sus dígitos individuales y los muestra
     def display(num):
-        pickDigit(0)  # Select the units place
-        hc595_shift(SEGCODE[num % 10])  # Display units
+        pickDigit(0)  # Seleccionar las unidades
+        hc595_shift(SEGCODE[num % 10])  # Mostrar unidades
 
-        pickDigit(1)  # Select the tens place
-        hc595_shift(SEGCODE[num % 100 // 10])  # Display tens
+        pickDigit(1)  # Seleccionar las decenas
+        hc595_shift(SEGCODE[num % 100 // 10])  # Mostrar decenas
 
-        pickDigit(2)  # Select the hundreds place
-        hc595_shift(SEGCODE[num % 1000 // 100])  # Display hundreds
+        pickDigit(2)  # Seleccionar las centenas
+        hc595_shift(SEGCODE[num % 1000 // 100])  # Mostrar centenas
 
-        pickDigit(3)  # Select the thousands place
-        hc595_shift(SEGCODE[num % 10000 // 1000])  # Display thousands
+        pickDigit(3)  # Seleccionar los millares
+        hc595_shift(SEGCODE[num % 10000 // 1000])  # Mostrar millares
 
-    # Setup for traffic light LEDs (Red, Yellow, Green)
-    # LEDs are connected to pins 9 (Green), 8 (Yellow), and 7 (Red)
-    pin = [7, 8, 9]  # LED pin numbers
+    # Configuración para LEDs del semáforo (Rojo, Amarillo, Verde)
+    # LEDs conectados a pines 9 (Verde), 8 (Amarillo) y 7 (Rojo)
+    pin = [7, 8, 9]  # Números de pines para LEDs
     led = []
     for i in range(3):
-        led.append(None)  # Reserve space in list
-        led[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Initialize each pin as output for LEDs
+        led.append(None)  # Reservar espacio en la lista
+        led[i] = machine.Pin(pin[i], machine.Pin.OUT)  # Inicializar cada pin como salida para LEDs
 
-    # Function to turn on the correct LED based on the current state
-    # 0 = Green, 1 = Yellow, 2 = Red
+    # Función para encender el LED correcto según el estado actual
+    # 0 = Verde, 1 = Amarillo, 2 = Rojo
     def lightup(state):
         for i in range(3):
-            led[i].value(0)  # Turn off all LEDs
-        led[state].value(1)  # Turn on the selected LED (Green, Yellow, or Red)
+            led[i].value(0)  # Apagar todos los LEDs
+        led[state].value(1)  # Encender el LED seleccionado (Verde, Amarillo o Rojo)
 
-    # Timer-related variables
-    counter = 0  # Counter for the remaining time
-    color_state = 0  # Current state of the traffic light (0 = Green, 1 = Yellow, 2 = Red)
+    # Variables relacionadas con el temporizador
+    counter = 0  # Contador para el tiempo restante
+    color_state = 0  # Estado actual del semáforo (0 = Verde, 1 = Amarillo, 2 = Rojo)
 
-    # Timer interrupt callback to update the traffic light state and counter
+    # Callback del temporizador para actualizar el estado del semáforo y el contador
     def time_count(ev):
         global counter, color_state
-        counter -= 1  # Decrease the counter by 1 second
-        if counter <= 0:  # If the counter reaches zero, switch to the next light color
-            color_state = (color_state + 1) % 3  # Cycle through Green, Yellow, and Red
-            counter = lightTime[color_state]  # Reset counter based on the new color's duration
+        counter -= 1  # Reducir el contador en 1 segundo
+        if counter <= 0:  # Si el contador llega a cero, cambiar al siguiente color
+            color_state = (color_state + 1) % 3  # Ciclar entre Verde, Amarillo y Rojo
+            counter = lightTime[color_state]  # Reiniciar el contador según la duración del nuevo color
 
-    # Initialize a timer to call the time_count function every 1 second (1000ms)
+    # Inicializar un temporizador para llamar a la función time_count cada 1 segundo (1000ms)
     tim = Timer(period=1000, mode=Timer.PERIODIC, callback=time_count)
 
-    # Main loop to update the 7-segment display and traffic light LEDs
+    # Bucle principal para actualizar el display de 7 segmentos y LEDs del semáforo
     while True:
-        display(counter)  # Update the display with the remaining time
-        lightup(color_state)  # Update the traffic light LEDs based on the current color
+        display(counter)  # Actualizar el display con el tiempo restante
+        lightup(color_state)  # Actualizar los LEDs del semáforo según el color actual
 
 
-When the code runs, the green LED stays on for 30 seconds, the yellow LED stays on for 5 seconds, and the green LED stays on for 30 seconds.
+Cuando el código se ejecute, el LED verde permanecerá encendido durante 30 segundos, el LED amarillo durante 5 segundos y el LED rojo durante 30 segundos.

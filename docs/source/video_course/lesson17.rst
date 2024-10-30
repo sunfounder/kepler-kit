@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 17:  Buttons and Pull Up Resistors in Micropython
+Lección 17: Botones y Resistencias Pull-Up en MicroPython
 =============================================================================
 
-This tutorial covers using push buttons in MicroPython with the Raspberry Pi Pico W:
+Este tutorial cubre el uso de botones pulsadores en MicroPython con la Raspberry Pi Pico W:
 
-* **Introduction**: Overview of using push buttons to control components like LEDs.
-* **Types of Push Buttons**: Describes various push buttons in the SunFounder kit.
-* **Circuit Setup**: Wiring a push button to GPIO pin 14 with internal pull-up resistors.
-* **How Push Buttons Work**: Explains open and closed states in circuits.
-* **Internal Pull-Up Resistors**: Activating pull-up resistors in MicroPython to simplify wiring.
-
+* **Introducción**: Descripción general del uso de botones pulsadores para controlar componentes como LEDs.
+* **Tipos de Botones Pulsadores**: Descripción de los diferentes botones disponibles en el kit SunFounder.
+* **Configuración del Circuito**: Conexión de un botón pulsador al pin GPIO 14 con resistencias pull-up internas.
+* **Cómo Funcionan los Botones Pulsadores**: Explicación de los estados abierto y cerrado en los circuitos.
+* **Resistencias Pull-Up Internas**: Activación de las resistencias pull-up en MicroPython para simplificar el cableado.
 
 **Video**
 

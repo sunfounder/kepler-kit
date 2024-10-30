@@ -1,64 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _py_fruit_piano:
 
-7.9 Fruit Piano
-============================
+7.9 Piano de Frutas
+==========================
 
-
-Electrical conductivity is found in many metal objects, as well as in the human body and fruits.
-This property can be used to create a fun little project: a fruit piano.
-In other words, we turn fruits into keyboards that can play music just by touching them.
+La conductividad eléctrica se encuentra en muchos objetos metálicos, así como en el cuerpo humano y en las frutas.
+Podemos aprovechar esta propiedad para crear un proyecto divertido: un piano de frutas.
+Es decir, convertimos frutas en teclas de un teclado que pueden tocar música simplemente al tocarlas.
 
 |fruit_piano|
 
-**Required Components**
+**Componentes Requeridos**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+    *   - N.º
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -67,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -78,7 +76,7 @@ You can also buy them separately from the links below.
         - 4(1-1KΩ, 1-330Ω, 2-220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Passive :ref:`cpn_buzzer`
+        - Buzzer :ref:`cpn_buzzer` Pasivo
         - 1
         - |link_passive_buzzer_buy|
     *   - 8
@@ -90,36 +88,31 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
-|sch_fruit_piano| 
+|sch_fruit_piano|
 
-To turn the fruit into a piano key, you still need to connect the electrodes on the MPR121 to the fruit (e.g. into the banana handle).
+Para convertir la fruta en una tecla de piano, necesitas conectar los electrodos del MPR121 a la fruta (por ejemplo, a la cáscara de un plátano).
 
-In the beginning, MPR121 will initialize and each electrode will get a value based on the current charge; when a conductor (such as a human body) touches an electrode, the charge will shift and rebalance.
-As a result, the electrode's value is different from its initial value, telling the main control board that it has been touched.
-During this process, ensure that the wiring of each electrode is stable so that its charge is balanced when initializing.
+Al inicio, el MPR121 se inicializa y cada electrodo recibe un valor basado en la carga actual. Cuando un conductor (como el cuerpo humano) toca un electrodo, la carga cambia y se reequilibra.
+Como resultado, el valor del electrodo se diferencia de su valor inicial, indicando a la placa de control que ha sido tocado.
+Durante este proceso, asegúrate de que el cableado de cada electrodo esté estable para mantener la carga equilibrada al iniciar.
 
-
-**Wiring**
-
+**Conexión**
 
 |wiring_fruit_piano| 
 
-
-**Code**
-
+**Código**
 
 .. note::
 
-    * Open the ``7.9_fruit_piano.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``7.9_fruit_piano.py`` en la ruta ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`. 
 
+    * Necesitarás la librería ``mpr121.py``; verifica si se ha subido a Pico W. Para más detalles, consulta :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -128,11 +121,11 @@ During this process, ensure that the wiring of each electrode is stable so that 
     import time
     import urandom
 
-    # Initialize I2C connection for MPR121 capacitive touch sensor
-    i2c = I2C(1, sda=Pin(6), scl=Pin(7))  # Set up I2C bus with SDA on pin 6 and SCL on pin 7
-    mpr = MPR121(i2c)  # Create an instance of the MPR121 touch sensor
+    # Inicializar conexión I2C para el sensor táctil capacitivo MPR121
+    i2c = I2C(1, sda=Pin(6), scl=Pin(7))
+    mpr = MPR121(i2c)
 
-    # Buzzer notes frequencies (in Hertz) for different musical notes
+    # Frecuencias de las notas para el buzzer (en Hz)
     NOTE_A3 = 220
     NOTE_B3 = 247
     NOTE_C4 = 262
@@ -146,73 +139,70 @@ During this process, ensure that the wiring of each electrode is stable so that 
     NOTE_D5 = 587
     NOTE_E5 = 659
 
-    # Initialize PWM for buzzer on pin 15
+    # Inicializar PWM para el buzzer en el pin 15
     buzzer = machine.PWM(machine.Pin(15))
 
-    # List of note frequencies to be played by the buzzer
+    # Lista de frecuencias de notas para el buzzer
     note = [NOTE_A3, NOTE_B3, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_D5, NOTE_E5]
 
-    # Function to play a tone on the buzzer at a specified frequency
+    # Función para reproducir un tono en el buzzer con una frecuencia específica
     def tone(pin, frequency):
-        pin.freq(frequency)  # Set buzzer frequency
-        pin.duty_u16(30000)  # Set duty cycle to 50% (approx)
+        pin.freq(frequency)
+        pin.duty_u16(30000)
 
-    # Function to stop playing the tone (mute the buzzer)
+    # Función para silenciar el tono (detener el buzzer)
     def noTone(pin):
-        pin.duty_u16(0)  # Set duty cycle to 0% (mute)
+        pin.duty_u16(0)
 
-    # RGB LED initialization using PWM on pins 13, 12, and 11 (for red, green, blue)
+    # Inicialización del LED RGB usando PWM en los pines 13, 12 y 11
     red = machine.PWM(machine.Pin(13))
     green = machine.PWM(machine.Pin(12))
     blue = machine.PWM(machine.Pin(11))
 
-    # Set the PWM frequency for each color (1kHz)
+    # Configurar la frecuencia PWM para cada color (1kHz)
     red.freq(1000)
     green.freq(1000)
     blue.freq(1000)
 
-    # Function to map a value `x` from one range to another
+    # Función para mapear un valor `x` de un rango a otro
     def interval_mapping(x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-    # Function to randomly light up the RGB LED with random color values
+    # Función para iluminar aleatoriamente el LED RGB con valores de color aleatorios
     def lightup():
-        red.duty_u16(int(urandom.uniform(0, 65535)))  # Set random intensity for red
-        green.duty_u16(int(urandom.uniform(0, 65535)))  # Set random intensity for green
-        blue.duty_u16(int(urandom.uniform(0, 65535)))  # Set random intensity for blue
+        red.duty_u16(int(urandom.uniform(0, 65535)))
+        green.duty_u16(int(urandom.uniform(0, 65535)))
+        blue.duty_u16(int(urandom.uniform(0, 65535)))
 
-    # Function to turn off all RGB LED colors (set all to 0)
+    # Función para apagar todos los colores del LED RGB (todos en 0)
     def dark():
-        red.duty_u16(0)  # Turn off red LED
-        green.duty_u16(0)  # Turn off green LED
-        blue.duty_u16(0)  # Turn off blue LED
+        red.duty_u16(0)
+        green.duty_u16(0)
+        blue.duty_u16(0)
 
-    # Main project loop
-    lastState = mpr.get_all_states()  # Get initial state of all touch inputs
-    touchMills = time.ticks_ms()  # Record the time of the last touch event
-    beat = 500  # Set the duration of sound and light effect (500ms)
+    # Bucle principal del proyecto
+    lastState = mpr.get_all_states()
+    touchMills = time.ticks_ms()
+    beat = 500
 
-    # Main loop to handle touch detection and effects
+    # Bucle principal para detectar toques y ejecutar efectos
     while True:
-        currentState = mpr.get_all_states()  # Get current state of all touch inputs
+        currentState = mpr.get_all_states()
         
         # Check if there's a change in the touch input state (touch started or ended)
         if currentState != lastState:
-            for i in range(12):  # Iterate over 12 possible touch inputs
-                # Check if a touch has started (touched in current state but not in the last state)
+            for i in range(12):
                 if i in list(currentState) and not i in list(lastState):
-                    tone(buzzer, note[i])  # Play corresponding note for the touched input
-                    lightup()  # Light up the RGB LED with random colors
-                    touchMills = time.ticks_ms()  # Record the time of the touch event
+                    tone(buzzer, note[i])
+                    lightup()
+                    touchMills = time.ticks_ms()
         
-        # Check if the beat duration has passed or if no touch inputs are active
         if time.ticks_diff(time.ticks_ms(), touchMills) >= beat or len(currentState) == 0:
-            noTone(buzzer)  # Stop playing the buzzer
-            dark()  # Turn off the RGB LED
+            noTone(buzzer)
+            dark()
         
-        # Update the last state to the current state for the next iteration
         lastState = currentState
 
 
-Please do not touch the fruit before the program runs to avoid getting a non-correct reference during initialization.
-After the program runs, touch the fruit gently, the buzzer will sound the corresponding tone and the RGB light will flash once randomly.
+No toques la fruta antes de que el programa se ejecute para evitar obtener una referencia incorrecta durante la inicialización.
+Una vez que el programa esté en ejecución, toca la fruta suavemente, el buzzer emitirá el tono correspondiente y el LED RGB parpadeará aleatoriamente.

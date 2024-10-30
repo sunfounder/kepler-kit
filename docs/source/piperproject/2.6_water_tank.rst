@@ -1,58 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_water_tank:
 
-2.6 Smart Water Tank
-=============================
+2.6 Tanque de Agua Inteligente
+=================================
 
-In this project, we use a water level sensor module and a servo to simulate a smart water tank. The water level sensor is fixed inside the tank to measure the water level, and when the water level is below a threshold, the valve controlled by the servo is allowed to open to let water in.
+En este proyecto, usaremos un módulo sensor de nivel de agua y un servomotor para simular un tanque de agua inteligente. El sensor de nivel de agua se fija dentro del tanque para medir el nivel de agua, y cuando el nivel está por debajo de un umbral, la válvula controlada por el servo se abrirá para dejar entrar agua.
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Un kit completo es conveniente, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -61,7 +61,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_servo`
@@ -72,52 +72,49 @@ You can also buy them separately from the links below.
         - 1
         - 
 
-**Wiring**
+**Conexión**
 
 |pin_adc|
 
-Pico W has three GPIO pins that can use analog input, GP26, GP27, GP28. That is, analog channels 0, 1, and 2.
-In addition, there is a fourth analog channel, which is connected to the built-in temperature sensor and will not be introduced here.
-
+Pico W tiene tres pines GPIO que pueden usar entrada analógica: GP26, GP27, GP28. Es decir, los canales analógicos 0, 1 y 2.
+Además, hay un cuarto canal analógico, que está conectado al sensor de temperatura integrado y no se explicará aquí.
 
 |water_tank0|
 
-* S of water level sensor is connected to GP26(A0), + to VBUS, - pin to GND.
-* The orange wire (signal) of the servo is connected to GP15, the red wire (power) is connected to VBUS, and the brown wire (ground) is connected to GND. 
+* La conexión S del sensor de nivel de agua se conecta a GP26 (A0), el pin + a VBUS, y el pin - a GND.
+* El cable naranja (señal) del servomotor se conecta a GP15, el cable rojo (alimentación) a VBUS, y el cable marrón (tierra) a GND. 
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.6_water_tank.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando.
+    * Importa ``2.6_water_tank.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 |water_tank|
 
 
 
-After connecting Pico W, click the **Start** button and the code starts to run. When the water level is lower than 1/3 of the water level sensor, the servo rotates to 180 degrees to simulate the inlet opening; when the water level is higher than 1/3 of the water level sensor, the servo rotates to 0 degrees to imitate the inlet closing.
+Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse. Cuando el nivel de agua es menor a 1/3 del sensor de nivel de agua, el servo gira a 180 grados simulando la apertura de la entrada de agua; cuando el nivel de agua es mayor a 1/3 del sensor, el servo gira a 0 grados para simular el cierre de la entrada.
 
-**How it Works?**
+**¿Cómo Funciona?**
 
 |water_tank1|
 
-Set the rotation speed of pin15 (servo) to 15%.
+Configura la velocidad de rotación del pin15 (servo) al 15%.
 
-* [servo pin() set speed to ()%]: Used to set the rotation speed of the servo pin, the range is 0%~100%.
+* [servo pin() set speed to ()%]: Se usa para ajustar la velocidad de rotación del pin del servo, el rango es de 0%~100%.
 
 |water_tank2|
 
-Reads the value of pin A0 and stores it in the variable [water_level].
+Lee el valor del pin A0 y lo almacena en la variable [water_level].
 
-* [set (water_level) to]: Used to set the value of the variable, you need to create the variable from the **Variables** palette.
-* [read voltage from pin ()]: Used to read the voltage of the analog pins (A0~A2), the range is 0 ~ 3.3V.
+* [set (water_level) to]: Se usa para definir el valor de la variable; debes crear la variable desde la paleta **Variables**.
+* [read voltage from pin ()]: Se usa para leer el voltaje de los pines analógicos (A0~A2), el rango es de 0 ~ 3.3V.
 
 |water_tank3|
 
-Set the voltage threshold to 1. When the voltage of water level sensor is less than 1, let the servo rotate to 180° position, otherwise rotate to 0° position.
+Define el umbral de voltaje en 1. Cuando el voltaje del sensor de nivel de agua es inferior a 1, deja que el servo gire a la posición de 180°; de lo contrario, gira a la posición de 0°.
 
-* [servo pin () set angle to ()]: Set the angle of servo pin to, the range is 0 ~ 180°.
-
-
+* [servo pin () set angle to ()]: Configura el ángulo del pin del servo, el rango es de 0 ~ 180°.
 

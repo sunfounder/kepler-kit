@@ -1,20 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-Operators
-============
-Operators are used to perform operations on variables and values.
+Operadores
+==============
+
+Los operadores se utilizan para realizar operaciones en variables y valores.
 
 * :ref:`Arithmetic operators`
 
@@ -30,32 +31,31 @@ Operators are used to perform operations on variables and values.
 
 * :ref:`Bitwise operators`
 
-Arithmetic Operators
-----------------------
-You can use arithmetic operators to do some common mathematical operations.
+Arithmetic operators
+---------------------------
+
+Puedes utilizar operadores aritméticos para realizar algunas operaciones matemáticas comunes.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
-    *   - Operator
-        - Name
+    *   - Operador
+        - Nombre
     *   - ``+``
-        - Addition
+        - Suma
     *   - ``-``
-        - Subtraction
+        - Resta
     *   - ``*``
-        - Multiplication
+        - Multiplicación
     *   - ``/``
-        - Division
+        - División
     *   - ``%``
-        - Modulus
+        - Módulo
     *   - ``**``
-        - Exponentiation
+        - Exponenciación
     *   - ``//``
-        - Floor division
-
-
+        - División entera
 
 .. code-block:: python
 
@@ -92,17 +92,17 @@ You can use arithmetic operators to do some common mathematical operations.
 >>> 
 
 Assignment operators
----------------------
+----------------------------
 
-Assignment operators can used to assign values to variables.
+Los operadores de asignación se pueden usar para asignar valores a variables.
 
 .. list-table:: 
     :widths: 10 30 30
     :header-rows: 1
 
-    *   - Operator
-        - Example
-        - Same As
+    *   - Operador
+        - Ejemplo
+        - Equivale a
     *   - ``=``
         - a = 6
         - a =6
@@ -157,30 +157,28 @@ Assignment operators can used to assign values to variables.
 >>> 
 
 Comparison Operators
-------------------------
-Comparison operators are used to compare two values.
+-----------------------------
+
+Los operadores de comparación se utilizan para comparar dos valores.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
-    *   - Operator
-        - Name
+    *   - Operador
+        - Nombre
     *   - ``==``
-        - Equal
+        - Igual a
     *   - ``!=``
-        - Not equal
+        - Distinto de
     *   - ``<``
-        - Less than
+        - Menor que
     *   - ``>``
-        - Greater than
+        - Mayor que
     *   - ``>=``
-        - Greater than or equal to
+        - Mayor o igual que
     *   - ``<=``
-        - Less than or equal to
-
-
-
+        - Menor o igual que
 
 .. code-block:: python
 
@@ -193,25 +191,25 @@ Comparison operators are used to compare two values.
 False
 >>> 
 
-Return **False**, beause the **a** is less than the **b**.
+Devuelve **False**, porque **a** es menor que **b**.
 
 Logical Operators
 -----------------------
 
-Logical operators are used to combine conditional statements.
+Los operadores lógicos se utilizan para combinar declaraciones condicionales.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
-    *   - Operator
-        - Description
+    *   - Operador
+        - Descripción
     *   - ``and``
-        - Returns True if both statements are true
+        - Devuelve True si ambas declaraciones son verdaderas
     *   - ``or``
-        - Returns True if one of the statements is true
+        - Devuelve True si una de las declaraciones es verdadera
     *   - ``not``
-        - Reverse the result, returns False if the result is true
+        - Invierte el resultado, devuelve False si el resultado es verdadero
 
 .. code-block:: python
 
@@ -223,20 +221,20 @@ True
 >>> 
 
 Identity Operators
-------------------------
+----------------------------
 
-Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location.
+Los operadores de identidad se utilizan para comparar objetos, no si son iguales, sino si realmente son el mismo objeto, con la misma ubicación en memoria.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
-    *   - Operator
-        - Description
+    *   - Operador
+        - Descripción
     *   - ``is``
-        - Returns True if both variables are the same object
+        - Devuelve True si ambas variables son el mismo objeto
     *   - ``is not``
-        - Returns True if both variables are not the same object
+        - Devuelve True si ambas variables no son el mismo objeto
 
 .. code-block:: python
 
@@ -260,19 +258,20 @@ True
 >>> 
 
 Membership Operators
-----------------------
-Membership operators are used to test if a sequence is presented in an object.
+-------------------------------
+
+Los operadores de pertenencia se utilizan para comprobar si una secuencia está presente en un objeto.
 
 .. list-table:: 
     :widths: 10 30
     :header-rows: 1
 
-    *   - Operator
-        - Description
+    *   - Operador
+        - Descripción
     *   - ``in``
-        - Returns True if a sequence with the specified value is present in the object
+        - Devuelve True si una secuencia con el valor especificado está presente en el objeto
     *   - ``not in``
-        - Returns True if a sequence with the specified value is not present in the object
+        - Devuelve True si una secuencia con el valor especificado no está presente en el objeto
 
 .. code-block:: python
 
@@ -287,33 +286,33 @@ True
 Bitwise Operators
 ------------------------
 
-Bitwise operators are used to compare (binary) numbers.
+Los operadores bit a bit se utilizan para comparar números (binarios).
 
 .. list-table:: 
     :widths: 10 20 50
     :header-rows: 1
 
-    *   - Operator
-        - Name
-        - Description
+    *   - Operador
+        - Nombre
+        - Descripción
     *   - ``&``
         - AND
-        - Sets each bit to 1 if both bits are 1
+        - Establece cada bit en 1 si ambos bits son 1
     *   - ``|``
         - OR
-        - Sets each bit to 1 if one of two bits is 1
+        - Establece cada bit en 1 si uno de los bits es 1
     *   - ``^``
         - XOR
-        - Sets each bit to 1 if only one of two bits is 1
+        - Establece cada bit en 1 si solo uno de los bits es 1
     *   - ``~``
         - NOT
-        - Inverts all the bits
+        - Invierte todos los bits
     *   - ``<<``
-        - Zero fill left shift
-        - Shift left by pushing zeros in from the right and let the leftmost bits fall off
+        - Desplazamiento a la izquierda con relleno de ceros
+        - Desplaza a la izquierda insertando ceros desde la derecha y dejando que los bits más a la izquierda se pierdan
     *   - ``>>``
-        - Signed right shift
-        - Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+        - Desplazamiento a la derecha con signo
+        - Desplaza a la derecha insertando copias del bit más a la izquierda desde la izquierda, y dejando que los bits más a la derecha se pierdan
 
 .. code-block:: python
 

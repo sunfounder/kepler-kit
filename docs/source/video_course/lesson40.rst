@@ -1,30 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 40: Measuring Acceleration with the MPU6050 Six Axis IMU
+Lección 40: Medición de Aceleración con el IMU de Seis Ejes MPU6050
 =============================================================================
-This tutorial covers using the MPU6050 accelerometer and gyroscope with the Raspberry Pi Pico W:
 
-* **Introduction**: Overview of using the MPU6050 sensor to measure acceleration and gyroscopic movements.
-* **Setting Up the Hardware**: Instructions for connecting the MPU6050 and OLED display to the Raspberry Pi Pico W.
-* **Understanding the Sensor**: Explanation of how the MPU6050 measures acceleration in X, Y, and Z axes using MEMS technology.
-* **Installing Required Libraries**: Guide to downloading and setting up libraries from the SunFounder GitHub repository.
-* **Coding and Testing**: Step-by-step MicroPython code to read and print acceleration values, with real-time visualization using Thonny plotter.
-* **Homework Assignment**: Measure Z-axis acceleration and compare predictions with actual values.
-* **Conclusion**: Recap and preview of future Lessons on practical MPU6050 applications.
+Este tutorial cubre el uso del acelerómetro y giroscopio MPU6050 con la Raspberry Pi Pico W:
 
-
+* **Introducción**: Descripción general del uso del sensor MPU6050 para medir aceleración y movimientos giroscópicos.
+* **Configuración del Hardware**: Instrucciones para conectar el MPU6050 y la pantalla OLED a la Raspberry Pi Pico W.
+* **Comprensión del Sensor**: Explicación de cómo el MPU6050 mide la aceleración en los ejes X, Y y Z mediante tecnología MEMS.
+* **Instalación de Librerías Necesarias**: Guía para descargar y configurar las librerías desde el repositorio de SunFounder en GitHub.
+* **Codificación y Pruebas**: Código en MicroPython paso a paso para leer e imprimir valores de aceleración, con visualización en tiempo real usando Thonny plotter.
+* **Tarea**: Medir la aceleración en el eje Z y comparar las predicciones con los valores reales.
+* **Conclusión**: Resumen y avance de futuras lecciones sobre aplicaciones prácticas del MPU6050.
 
 **Video**
 

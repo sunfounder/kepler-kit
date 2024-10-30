@@ -1,28 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 59: Controlling a Servo with a Joystick
+Lección 59: Control de un Servo con un Joystick
 =============================================================================
 
-This tutorial covers controlling a servo with a joystick using the Raspberry Pi Pico W:
+Este tutorial cubre cómo controlar un servo con un joystick utilizando la Raspberry Pi Pico W:
 
-
-* **Wiring Setup**: Connect joystick ground to pin 38, 3.3V to pin 36, VRX to GPIO 27, VRY to GPIO 26. Connect servo 5V to pin 40, ground to pin 38, control to GPIO 15.
-* **Code Implementation**: Import ``machine``, ``time``, ``math``. Set up ADC for joystick and PWM for servo. Read and print joystick values.
-* **Calibration and Control**: Scale ADC values to -100 to +100. Calculate joystick angle. Map angle to PWM for servo.
-* **Homework Assignment**: Write code to control servo from joystick angle (0-180 degrees).
-
+* **Configuración de Conexiones**: Conecta la tierra del joystick al pin 38, 3.3V al pin 36, VRX al GPIO 27 y VRY al GPIO 26. Conecta el 5V del servo al pin 40, tierra al pin 38 y el control al GPIO 15.
+* **Implementación de Código**: Importa ``machine``, ``time`` y ``math``. Configura el ADC para el joystick y PWM para el servo. Lee e imprime los valores del joystick.
+* **Calibración y Control**: Escala los valores del ADC de -100 a +100. Calcula el ángulo del joystick y mapea este ángulo al PWM del servo.
+* **Tarea**: Escribe un código para controlar el servo en función del ángulo del joystick (0-180 grados).
 
 **Video**
 

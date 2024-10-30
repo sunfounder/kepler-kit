@@ -1,28 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 37: Control a Servo With a Potentiometer in MicroPython
+Lección 37: Control de un Servo con un Potenciómetro en MicroPython
 =============================================================================
-This tutorial covers controlling a servo motor using a potentiometer with the Raspberry Pi Pico W:
 
-* **Servo Motor Control**: Connect the SG90 servo to the Raspberry Pi Pico W, with ground, power (5V), and control on GPIO pin 15.
-* **Wiring Setup**: Connect the potentiometer to 3.3V, ground, and signal to GPIO pin 26.
-* **PWM Basics**: Use PWM at 50Hz to control the servo's position.
-* **Code Explanation**: Set up PWM on GPIO 15 and convert potentiometer input to servo angles.
-* **Practical Demonstration**: Run the code to control the servo with the potentiometer, avoiding manual servo horn rotation.
-* **Application Ideas**: Use external power to control larger servos for advanced projects.
+Este tutorial cubre el control de un motor servo usando un potenciómetro con la Raspberry Pi Pico W:
 
+* **Control del Motor Servo**: Conecta el servo SG90 a la Raspberry Pi Pico W, con tierra, alimentación (5V) y control en el pin GPIO 15.
+* **Configuración de Cableado**: Conecta el potenciómetro a 3.3V, tierra y la señal al pin GPIO 26.
+* **Fundamentos de PWM**: Usa PWM a 50Hz para controlar la posición del servo.
+* **Explicación del Código**: Configura PWM en el GPIO 15 y convierte la entrada del potenciómetro en ángulos para el servo.
+* **Demostración Práctica**: Ejecuta el código para controlar el servo con el potenciómetro, evitando la rotación manual del brazo del servo.
+* **Ideas de Aplicación**: Usa alimentación externa para controlar servos más grandes en proyectos avanzados.
 
 **Video**
 

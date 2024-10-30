@@ -1,42 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! ¡Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_slide_switch:
 
-Slide Switch
-==============
+Interruptor Deslizante
+==============================
 
 |img_slide|
 
-A slide switch, just as its name implies, is to slide the switch bar to connect or break the circuit, and further switch circuits. The common-used types are SPDT, SPTT, DPDT, DPTT etc. The slide switch is commonly used in low-voltage circuit. It has the features of flexibility and stability, and  applies in electric instruments and electric toys widely.
-How it works: Set the middle pin as the fixed one. When you pull the slide to the left, the  two pins on the left are connected; when you pull it to the right, the two pins on the right are connected. Thus, it works as a switch connecting or disconnecting circuits. See the figure below:
+Un interruptor deslizante, como su nombre lo indica, se acciona deslizando la barra del interruptor para conectar o desconectar el circuito, y así cambiar entre circuitos. Los tipos más comunes son SPDT, SPTT, DPDT, DPTT, etc. El interruptor deslizante se utiliza comúnmente en circuitos de baja tensión. Se caracteriza por su flexibilidad y estabilidad, y se aplica ampliamente en instrumentos eléctricos y juguetes eléctricos.
+¿Cómo funciona? Establezca el pin central como el fijo. Cuando desliza el interruptor hacia la izquierda, se conectan los dos pines de la izquierda; cuando lo desliza hacia la derecha, se conectan los dos pines de la derecha. De esta manera, funciona como un interruptor que conecta o desconecta circuitos. Vea la figura a continuación:
 
 |img_slide_prin|
 
-The circuit symbol of the slide switch is shown as below. The pin2 in the figure refers to the middle pin.
+El símbolo de circuito del interruptor deslizante se muestra a continuación. El pin2 en la figura se refiere al pin central.
 
 |img_slide_symbol|
 
-.. **Example**
+.. **Ejemplo**
 
-.. * :ref:`Reading Button Value` (For MicroPython User)
-.. * :ref:`Warning Light` (For C/C++(Arduino) User)
+.. * :ref:`Reading Button Value` (Para usuarios de MicroPython)
+.. * :ref:`Warning Light` (Para usuarios de C/C++(Arduino))
 
 
-**Example**
+**Ejemplos**
 
-* :ref:`py_slide` (For MicroPython User)
-* :ref:`py_alarm_lamp` (For MicroPython User)
-* :ref:`ar_slide` (For Arduino User)
-* :ref:`per_drum_kit` (For Piper Make User)
+* :ref:`py_slide` (Para usuarios de MicroPython)
+* :ref:`py_alarm_lamp` (Para usuarios de MicroPython)
+* :ref:`ar_slide` (Para usuarios de Arduino)
+* :ref:`per_drum_kit` (Para usuarios de Piper Make)

@@ -1,28 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 11:  Understanding and Controlling an RGB LED in MicroPython
+Lección 11: Comprender y Controlar un LED RGB en MicroPython
 ==========================================================================
 
-This tutorial covers controlling an RGB LED using the SunFounder Kepler Kit and Raspberry Pi Pico W:
+Este tutorial cubre el control de un LED RGB utilizando el Kit Kepler de SunFounder y la Raspberry Pi Pico W:
 
-* **RGB LED Control**: Explains controlling RGB LED colors with PWM, emphasizing the use of separate resistors for each color channel.
-* **Wiring Diagram and Setup**: Detailed diagram for connecting the RGB LED and resistors to GPIO pins 13, 14, and 15 on the Pico W.
-* **Code Explanation**: Code setup for PWM control of red, green, and blue channels, adjusting brightness and colors.
-* **Practical Demonstration**: Shows how to change RGB LED colors by controlling each color channel.
-* **Homework Assignment**: Create a program that prompts for a color and adjusts the RGB LED to display it using PWM.
-
+* **Control del LED RGB**: Explicación sobre el control de los colores de un LED RGB con PWM, destacando la importancia de usar resistencias separadas para cada canal de color.
+* **Diagrama de Conexión y Configuración**: Diagrama detallado para conectar el LED RGB y las resistencias a los pines GPIO 13, 14 y 15 de la Pico W.
+* **Explicación del Código**: Configuración del código para el control PWM de los canales rojo, verde y azul, ajustando el brillo y los colores.
+* **Demostración Práctica**: Muestra cómo cambiar los colores del LED RGB controlando cada canal de color.
+* **Tarea**: Crear un programa que solicite un color y ajuste el LED RGB para mostrarlo utilizando PWM.
 
 **Video**
 

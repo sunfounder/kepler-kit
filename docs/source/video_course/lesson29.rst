@@ -1,29 +1,28 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 29: Simple Client Server Project to Control RGB LED
+Lección 29: Proyecto Cliente-Servidor Simple para Controlar un LED RGB
 =============================================================================
 
-This tutorial covers setting up a remote-controlled RGB LED using a Raspberry Pi Pico W and a PC over Wi-Fi:
+Este tutorial cubre la configuración de un LED RGB controlado de forma remota mediante una Raspberry Pi Pico W y una PC a través de Wi-Fi:
 
-* **Introduction**: Goal is to control an RGB LED on a Raspberry Pi Pico W remotely using Wi-Fi.
-* **Wiring Diagram and Setup**: Connect RGB LED to GPIO pins 16, 17, 18, and OLED to GPIO pins 2 (SDA) and 3 (SCL).
-* **Server Side Setup**: Import libraries, initialize GPIO pins, connect to Wi-Fi, create a UDP server, and display the IP on the OLED.
-* **Client Side Setup**: Create a UDP client on the PC to send color commands to the server.
-* **Practical Demonstration**: Show changing RGB LED color via commands sent from the PC, with the OLED displaying the commands and IP.
-* **Final Setup and Testing**: Power the Raspberry Pi Pico W with a battery, save the code as ``main.py``, and demonstrate wireless operation.
-
+* **Introducción**: El objetivo es controlar un LED RGB en una Raspberry Pi Pico W de forma remota utilizando Wi-Fi.
+* **Diagrama de Cableado y Configuración**: Conectar el LED RGB a los pines GPIO 16, 17 y 18, y la OLED a los pines GPIO 2 (SDA) y 3 (SCL).
+* **Configuración del Servidor**: Importar bibliotecas, inicializar los pines GPIO, conectarse a Wi-Fi, crear un servidor UDP y mostrar la IP en la pantalla OLED.
+* **Configuración del Cliente**: Crear un cliente UDP en la PC para enviar comandos de color al servidor.
+* **Demostración Práctica**: Muestra cómo cambiar el color del LED RGB mediante comandos enviados desde la PC, con la OLED mostrando los comandos y la IP.
+* **Configuración Final y Pruebas**: Alimentar la Raspberry Pi Pico W con una batería, guardar el código como ``main.py`` y demostrar el funcionamiento inalámbrico.
 
 **Video**
 

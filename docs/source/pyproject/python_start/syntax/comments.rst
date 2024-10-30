@@ -1,63 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Comments
+Comentarios
 =============
 
-The comments in the code help us understand the code, make the entire code more readable and comment out part of the code during testing, so that this part of the code does not run.
+Los comentarios en el código nos ayudan a entenderlo, lo hacen más legible y permiten desactivar partes específicas durante las pruebas para que esas líneas no se ejecuten.
 
-Single-line Comment
+Comentario de línea única
 ----------------------------
 
-Single-line comments in MicroPython begin with #, and the following text is considered a comment until the end of the line. Comments can be placed before or after the code.
+En MicroPython, los comentarios de una sola línea comienzan con #, y el texto que sigue se considera comentario hasta el final de la línea. Los comentarios pueden colocarse antes o después del código.
 
 .. code-block:: python
 
-    print("hello world") #This is a annotationhello world
+    print("hello world") #Esto es un comentario
 
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-Comments are not necessarily text used to explain the code. You can also comment out part of the code to prevent micropython from running the code.
+Los comentarios no tienen que ser solo texto explicativo del código; también puedes comentar parte del código para evitar que MicroPython lo ejecute.
 
 
 .. code-block:: python
 
-    #print("Can't run it！")
-    print("hello world") #This is a annotationhello world
+    #print("No puede ejecutarse！")
+    print("hello world") #Esto es un comentario
 
 >>> %Run -c $EDITOR_CONTENT
 hello world
 
-Multi-line comment
-------------------------------
+Comentario de múltiples líneas
+-----------------------------------
 
-If you want to comment on multiple lines, you can use multiple # signs.
+Si deseas comentar en varias líneas, puedes usar múltiples signos #.
 
 .. code-block:: python
 
-    #This is a comment
-    #written in
-    #more than just one line
+    #Esto es un comentario
+    #escrito en
+    #más de una línea
     print("Hello, World!")
 
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-Or, you can use multi-line strings instead of expected.
+También puedes utilizar cadenas de texto en múltiples líneas.
 
-Since MicroPython ignores string literals that are not assigned to variables, you can add multiple lines of strings (triple quotes) to the code and put comments in them:
+Como MicroPython ignora las cadenas que no están asignadas a variables, puedes añadir líneas múltiples de texto (usando comillas triples) y colocar comentarios dentro:
 
 .. code-block:: python
 
@@ -71,4 +71,5 @@ Since MicroPython ignores string literals that are not assigned to variables, yo
 >>> %Run -c $EDITOR_CONTENT
 Hello, World!
 
-As long as the string is not assigned to a variable, MicroPython will ignore it after reading the code and treat it as if you made a multi-line comment.
+Mientras la cadena no esté asignada a una variable, MicroPython la ignorará y la interpretará como un comentario de varias líneas.
+

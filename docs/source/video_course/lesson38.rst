@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 38: Learn Trigonometry Fundamentals in One Session (EASY)
+Lección 38: Aprende Fundamentos de Trigonometría en una Sesión (FÁCIL)
 =============================================================================
-This tutorial covers the basics of trigonometry and its applications using the Raspberry Pi Pico W:
 
-* **Introduction to Trigonometry**: Addresses common issues in learning trigonometry and focuses on using circles to simplify concepts.
-* **Understanding Circles**: Explains unit circles and how rotating a vector traces a circle, introducing radians and degrees.
-* **Basic Trigonometric Functions**: Demonstrates sine, cosine, and tangent using circles, and introduces inverse functions to find angles.
-* **Programming Examples**: Shows how to calculate sine and cosine in MicroPython, with example code for degrees to radians conversion.
-* **Homework Assignment**: Find sine and cosine for key angles (0°, 90°, 180°, 270°, 360°) without a calculator, emphasizing visual understanding.
+Este tutorial cubre los fundamentos de la trigonometría y sus aplicaciones usando la Raspberry Pi Pico W:
 
+* **Introducción a la Trigonometría**: Aborda problemas comunes en el aprendizaje de la trigonometría y se enfoca en usar círculos para simplificar los conceptos.
+* **Comprensión de los Círculos**: Explica el círculo unitario y cómo la rotación de un vector traza un círculo, introduciendo los radianes y los grados.
+* **Funciones Trigonométricas Básicas**: Demuestra el seno, coseno y tangente usando círculos, e introduce las funciones inversas para encontrar ángulos.
+* **Ejemplos de Programación**: Muestra cómo calcular el seno y coseno en MicroPython, con código de ejemplo para la conversión de grados a radianes.
+* **Tarea**: Encontrar el seno y coseno de ángulos clave (0°, 90°, 180°, 270°, 360°) sin calculadora, enfatizando la comprensión visual.
 
 **Video**
 

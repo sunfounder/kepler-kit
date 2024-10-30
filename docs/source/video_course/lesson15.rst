@@ -1,28 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora a fondo el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 15:  For Loops in Micropython
+Lección 15: Bucles For en MicroPython
 ==========================================================================
-This tutorial covers using for loops in MicroPython with the Raspberry Pi Pico W:
 
-* **Introduction to For Loops**: Explains the difference between for and while loops, highlighting when to use each.
-* **Basic For Loop Syntax**: Demonstrates looping through a range of numbers and explains the start, stop, and step values.
-* **Looping Through Arrays**: Shows how to iterate through arrays with different data types like numbers and strings.
-* **Nested Loops**: Introduces nested loops and their use in multi-dimensional arrays or complex operations.
-* **Practical Example with Hardware**: Uses a for loop to control LED blinking based on user input.
-* **Combining Loops and User Input**: Combines user input with loops for dynamic programs, converting strings to integers.
-* **Homework Assignment**: Replace the LED with an RGB LED, ask for a sequence of colors, and display them using a for loop.
+Este tutorial cubre el uso de bucles for en MicroPython con la Raspberry Pi Pico W:
+
+* **Introducción a los Bucles For**: Explicación de la diferencia entre los bucles for y while, destacando cuándo usar cada uno.
+* **Sintaxis Básica de For**: Demostración de cómo recorrer un rango de números y explicación de los valores de inicio, fin y paso.
+* **Recorrido de Arreglos**: Muestra cómo iterar a través de arreglos con diferentes tipos de datos, como números y cadenas.
+* **Bucles Anidados**: Introducción a los bucles anidados y su uso en arreglos multidimensionales o en operaciones complejas.
+* **Ejemplo Práctico con Hardware**: Uso de un bucle for para controlar el parpadeo de un LED en función de la entrada del usuario.
+* **Combinación de Bucles y Entrada del Usuario**: Combina la entrada del usuario con bucles para crear programas dinámicos, convirtiendo cadenas en enteros.
+* **Tarea**: Sustituir el LED por un LED RGB, solicitar una secuencia de colores e implementarla usando un bucle for.
 
 **Video**
 

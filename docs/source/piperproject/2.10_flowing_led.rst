@@ -1,63 +1,62 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _per_flowing_leds:
 
 
-2.10 Flowing LEDs
-====================
+2.10 Luces Fluyentes
+=========================
 
-The kit is equipped with a WS2812 RGB LED Strip, which can display colorful colors, and each LED can be independently controlled. 
+El kit incluye una tira de LED RGB WS2812, que puede mostrar una variedad de colores y cada LED se puede controlar de manera independiente.
 
-Here we try to use the tilt switch to control the flow direction of the LEDs on the WS2812 RGB LED Strip.
+Aquí intentamos utilizar el interruptor de inclinación para controlar la dirección de flujo de los LEDs en la tira de LED RGB WS2812.
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - COMPONENTES EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +65,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_resistor`
@@ -82,59 +81,53 @@ You can also buy them separately from the links below.
         - |link_ws2812_buy|
 
 
-**Wiring**
+**Conexión**
 
 |WS2812_Flow_friz|
 
 
-**Code**
+**Código**
 
 
 .. note::
 
-    * You can refer to the image below to write code by dragging and dropping. 
-    * Import ``2.10_flowing_led.png`` from the path of ``kepler-kit-main\piper``. For detailed tutorials, please refer to :ref:`import_code_piper`.
+    * Puedes referirte a la imagen a continuación para escribir el código arrastrando y soltando.
+    * Importa ``2.10_flowing_led.png`` desde la ruta ``kepler-kit-main\piper``. Para obtener tutoriales detallados, consulta :ref:`import_code_piper`.
 
 |neopixel|
 
-After connecting Pico W, click the **Start** button and the code starts to run.
+Después de conectar el Pico W, haz clic en el botón **Start** y el código comenzará a ejecutarse.
 
-When the tilt switch is placed vertically, it makes the LEDs on the WS2812 RGB LED Strip light up one by one in green, and when the tilt switch is placed horizontally, the LEDs light up one by one in the opposite direction in green.
-
-
-
-**Programming**
+Cuando el interruptor de inclinación está en posición vertical, hace que los LEDs de la tira WS2812 RGB se enciendan uno por uno en verde, y cuando el interruptor de inclinación está en posición horizontal, los LEDs se encienden uno por uno en la dirección opuesta en verde.
 
 
-**Step 1**: Use the [setup neopixel pin() pixels()] block in the **Actions** palette to initialize the WS2812 RGB LED Strip. **0** means the connected pin is GP0 and **8** means there are 8 RGB LEDs on the WS2812 RGB LED Strip.
+**Programación**
+
+
+**Paso 1**: Usa el bloque [setup neopixel pin() pixels()] en el menú **Actions** para inicializar la tira de LED RGB WS2812. **0** significa que el pin conectado es GP0 y **8** indica que hay 8 LEDs RGB en la tira WS2812 RGB.
 
 |neo1|
 
-**Step 2**: In the **Variables** palette, click the **Create variable** button to create a variable called **i** to represent the LEDs on the WS2812 RGB LED Strip. 
+**Paso 2**: En el menú **Variables**, haz clic en el botón **Create variable** para crear una variable llamada **i** que representará los LEDs en la tira WS2812 RGB.
 
 |neo2|
 
-**Step 3**: Set the initial value of variable **i** to 1 (the LED near the wires), then in [repeat forever] block, use [() mod ()] to set the value of i from 0 to 7. e.g. 1 mod 8 = 1... 8 mod 8 =0, 9 mod 8 =1, etc.
+**Paso 3**: Establece el valor inicial de la variable **i** en 1 (el LED más cercano a los cables), luego en el bloque [repeat forever] usa [() mod ()] para fijar el valor de **i** de 0 a 7, por ejemplo: 1 mod 8 = 1... 8 mod 8 =0, 9 mod 8 =1, etc.
 
-* [() mod ()]: This is the modulo operator block, from the **Loops** palette, drop down [() = ()] to select **mod**.
+* [() mod ()]: Este es el bloque de operador de módulo, en el menú **Loops**, selecciona [() = ()] y elige **mod**.
 
 |neo3|
 
-**Step 4**: Set all neopixels to black to make all LEDs go off, then use [updates neopixels] to make this effect update to the WS2812 RGB LED Strip.
+**Paso 4**: Configura todos los neopixels a negro para apagar todos los LEDs, luego usa [updates neopixels] para actualizar este efecto en la tira de LED RGB WS2812.
 
 |neo4|
 
-* [set all neopixels to ()]: Use to set a color for all LEDs, there are 13*9 colors, the top right color is black to make LEDs to go off.
-* [updates neopixels]: Update the effect to the WS2812 RGB LED Strip.
+* [set all neopixels to ()]: Usado para establecer un color en todos los LEDs, hay 13*9 colores; el color en la esquina superior derecha es negro para apagar los LEDs.
+* [updates neopixels]: Actualiza el efecto en la tira de LED RGB WS2812.
 
-**Step 5**: If pin14 is read high, let the LEDs on the WS2812 RGB LED Strip light up one by one in green, otherwise light up green one by one in the opposite direction.
+**Paso 5**: Si el pin14 lee alto, enciende los LEDs de la tira WS2812 RGB uno por uno en verde; de lo contrario, enciéndelos en la dirección opuesta también en verde.
 
 |neo5|
 
-* [change () by ()]: Used to increase (positive) or decrease (negative) the value of a variable by a specific step.
-
-
-
-
-
+* [change () by ()]: Usado para aumentar (positivo) o disminuir (negativo) el valor de una variable en un paso específico.
 

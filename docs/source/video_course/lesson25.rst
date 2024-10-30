@@ -1,34 +1,33 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros entusiastas y explora en profundidad el apasionante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y supera desafíos técnicos con el apoyo de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 25:  Getting Started with OLED 1306 in Micropython
+Lección 25: Introducción a la Pantalla OLED 1306 en MicroPython
 =============================================================================
 
-This tutorial covers using the Raspberry Pi Pico W and an OLED display for portable projects:
+Este tutorial cubre el uso de la Raspberry Pi Pico W y una pantalla OLED para proyectos portátiles:
 
-* **Introduction**: Focuses on making projects more portable and power-efficient.
-* **Introducing the OLED Display**: Suggests using a low-power OLED display, connected via I2C to GPIO pins 2 and 3.
-* **Library Installation and Initial Setup**: Installs the SSD1306 library and sets up the I2C and display objects.
-* **Displaying Text and Graphics**: Provides code to display text, draw lines, and create shapes on the OLED.
-* **Power Management**: Explains turning the display on and off to save battery.
-* **Practical Demonstration**: Shows text and graphics on the OLED, highlighting its benefits over LCD.
-* **Homework Assignment**: Task to display "My Circle" and draw a circle on the OLED, encouraging sharing the results online.
-
-
+* **Introducción**: Enfoque en cómo hacer proyectos más portátiles y eficientes en consumo de energía.
+* **Introducción a la Pantalla OLED**: Sugiere el uso de una pantalla OLED de bajo consumo conectada vía I2C a los pines GPIO 2 y 3.
+* **Instalación de Librería y Configuración Inicial**: Instalación de la librería SSD1306 y configuración de los objetos I2C y de pantalla.
+* **Mostrar Texto y Gráficos**: Proporciona código para mostrar texto, dibujar líneas y crear formas en la pantalla OLED.
+* **Gestión de Energía**: Explicación de cómo encender y apagar la pantalla para ahorrar batería.
+* **Demostración Práctica**: Muestra texto y gráficos en la OLED, resaltando sus ventajas sobre la LCD.
+* **Tarea**: Desafío de mostrar "Mi Círculo" y dibujar un círculo en la OLED, con la invitación a compartir los resultados en línea.
 
 **Video**
 
 .. raw:: html
 
     <iframe width="700" height="500" src="https://www.youtube.com/embed/6SdNvqofWww?si=ZVxzi5Nm3lP5PniU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+

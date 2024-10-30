@@ -1,61 +1,63 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones durante festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_mpr121:
 
-4.3 Electrode Keyboard
+4.3 Teclado de Electrodos
 ================================
 
-The MPR121 is a good choice when you want to add a large number of touch switches to your project. It has electrodes that can be extended with conductors.
-If you connect the electrodes to a banana, you can turn the banana into a touch switch.
+El MPR121 es una excelente opción si deseas agregar una gran cantidad de 
+interruptores táctiles a tu proyecto. Este módulo cuenta con electrodos 
+que pueden extenderse mediante conductores. Por ejemplo, si conectas los 
+electrodos a un plátano, puedes convertirlo en un interruptor táctil.
 
 * :ref:`cpn_mpr121`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitaremos los siguientes componentes. 
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE	
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -64,34 +66,32 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpr121`
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
 |sch_mpr121|
 
-
-**Wiring**
+**Conexiones**
 
 |wiring_mpr121|
 
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``4.3_electrode_keyboard.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``4.3_electrode_keyboard.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`. 
-    
-    * Here you need to use the library called ``mpr121.py``, please check if it has been uploaded to Pico W, for a detailed tutorial refer to :ref:`add_libraries_py`.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
+    * Aquí necesitas usar la biblioteca llamada ``mpr121.py``. Verifica si ha sido cargada en Pico W. Para un tutorial detallado, consulta :ref:`add_libraries_py`.
 
 .. code-block:: python
 
@@ -102,26 +102,26 @@ You can also buy them separately from the links below.
     i2c = I2C(1, sda=Pin(6), scl=Pin(7))
     mpr = MPR121(i2c)
 
-    # check all keys
+    # comprobar todas las teclas
     while True:
         value = mpr.get_all_states()
         if len(value) != 0:
             print(value)
         time.sleep_ms(100)
 
-After the program runs, you can touch the twelve electrodes on the MPR121 with your hand and the touched electrodes will be printed out.
+Una vez que el programa esté en ejecución, puedes tocar los doce electrodos en el MPR121 con la mano, y los electrodos tocados se imprimirán en pantalla.
 
-You can extend the electrodes to connect other conductors such as fruit, wire, foil, etc. This will give you more ways to trigger these electrodes.
+Puedes extender los electrodos conectando otros conductores como frutas, cables, láminas de aluminio, etc. Esto te permitirá nuevas formas de activar los electrodos.
 
-**How it works?**
+**¿Cómo funciona?**
 
-In the mpr121 library, we have integrated the functionality into the ``MPR121`` class.
+En la biblioteca mpr121, hemos integrado la funcionalidad en la clase ``MPR121``.
 
 .. code-block:: python
 
     from mpr121 import MPR121
 
-MPR121 is an I2C module that requires a set of I2C pins to be defined to initialize the ``MPR121`` object. At this point the state of the module's electrodes will be recorded as initial values. If the electrodes are extended, the example needs to be rerun to reset the initial values.
+MPR121 es un módulo I2C que requiere un conjunto de pines I2C para inicializar el objeto ``MPR121``. En este punto, el estado de los electrodos del módulo se registrará como valores iniciales. Si los electrodos se extienden, será necesario volver a ejecutar el ejemplo para restablecer los valores iniciales.
 
 .. code-block:: python
 
@@ -131,8 +131,7 @@ MPR121 is an I2C module that requires a set of I2C pins to be defined to initial
 
 * `Inter-Integrated Circuit - Wikipedia <https://en.wikipedia.org/wiki/I2C>`_
 
-Then use ``mpr.get_all_states()`` to read if the electrodes are triggered. If electrodes 2 and 3 are triggered, the value ``[2, 3]`` will be generated.
-
+Luego usa ``mpr.get_all_states()`` para leer si los electrodos están activados. Si los electrodos 2 y 3 están activados, se generará el valor ``[2, 3]``.
 
 .. code-block::
 
@@ -142,7 +141,7 @@ Then use ``mpr.get_all_states()`` to read if the electrodes are triggered. If el
             print(value)
         time.sleep_ms(100)
 
-You can also use ``mpr.is_touched(electrode)`` to detect a specific electrode. When triggered, it returns ``True``, otherwise it returns ``False``.
+También puedes usar ``mpr.is_touched(electrode)`` para detectar un electrodo específico. Cuando se activa, devuelve ``True``; de lo contrario, devuelve ``False``.
 
 .. code-block:: python
 

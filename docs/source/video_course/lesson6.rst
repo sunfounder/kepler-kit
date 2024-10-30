@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el fascinante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Soluciona problemas posventa y supera desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 6:  Understanding If Statements in MicroPython
+Lección 6: Comprender las Instrucciones If en MicroPython
 =================================================================
 
-This tutorial covers using if statements and conditionals in MicroPython with the Raspberry Pi Pico W:
+Este tutorial cubre el uso de instrucciones if y condicionales en MicroPython con la Raspberry Pi Pico W:
 
-* **User Input Handling**: How to get and convert user input into different data types.
-* **Basic If Statements**: Use if statements to check conditions like equality, inequality, and comparisons.
-* **Conditional Logic**: Control an LED's state (on, off, toggle) using if, elif, and else statements.
-* **Practical Demonstration**: Set up an LED circuit and control it based on user input.
-* **Homework Assignment**: Build a circuit with a potentiometer and three LEDs, lighting them up based on input ranges.
+* **Manejo de Entradas del Usuario**: Cómo obtener y convertir entradas del usuario en diferentes tipos de datos.
+* **Instrucciones If Básicas**: Uso de instrucciones if para verificar condiciones como igualdad, desigualdad y comparaciones.
+* **Lógica Condicional**: Control de un LED (encendido, apagado, alternancia) utilizando las instrucciones if, elif y else.
+* **Demostración Práctica**: Configuración de un circuito con LED y control basado en la entrada del usuario.
+* **Tarea**: Construir un circuito con un potenciómetro y tres LEDs, iluminándolos según los rangos de entrada.
 
 **Video**
 

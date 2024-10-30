@@ -1,67 +1,65 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. ¡Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de Expertos**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _ar_irremote:
 
+6.4 - Control Remoto Infrarrojo (IR)
+=======================================
 
-6.4 - IR Remote Control
-================================
+En la electrónica de consumo, los controles remotos se utilizan para operar dispositivos como televisores y reproductores de DVD.
+En algunos casos, permiten a las personas operar dispositivos fuera de su alcance, como aires acondicionados centrales.
 
-In consumer electronics, remote controls are used to operate devices such as televisions and DVD players.
-In some cases, remote controls allow people to operate devices that are out of their reach, such as central air conditioners.
-
-IR Receiver is a component with photocell that is tuned to receive to infrared light. 
-It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. 
-Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels.
+El receptor IR es un componente con una fotocélula ajustada para recibir luz infrarroja. 
+Se usa casi siempre para la detección de controles remotos; cada televisor y reproductor de DVD tiene uno de estos en la parte frontal para recibir la señal IR del mando. 
+Dentro del control remoto hay un LED IR correspondiente que emite pulsos IR para indicar al televisor que se encienda, apague o cambie de canal.
 
 * :ref:`cpn_ir_receiver`
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo, aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°
+        - INTRODUCCIÓN DEL COMPONENTE
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -70,30 +68,29 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ir_receiver`
         - 1
         - |link_receiver_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_irrecv|
 
-**Wiring**
+**Conexión**
 
 |wiring_irrecv|
 
-
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``6.4_ir_remote_control.ino`` under the path of ``kepler-kit-main/arduino/6.4_ir_remote_control``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``IRremote`` library is used here, you can install it from the **Library Manager**.
+    * Puedes abrir el archivo ``6.4_ir_remote_control.ino`` en la ruta ``kepler-kit-main/arduino/6.4_ir_remote_control``.
+    * O copia este código en el **IDE de Arduino**.
+    * Luego selecciona la placa Raspberry Pi Pico y el puerto correcto antes de hacer clic en el botón de carga.
+    * Aquí se utiliza la librería ``IRremote``, que puedes instalar desde el **Administrador de Librerías**.
 
       .. image:: img/lib_ir.png
 
@@ -101,58 +98,56 @@ You can also buy them separately from the links below.
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/71f50561-d1ad-4d9e-9db2-8eb7727df0a4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
+El control remoto nuevo tiene una pieza de plástico en el extremo para aislar la batería interna. Necesitas retirar esta pieza para activar el control remoto cuando lo uses.
+Una vez que el programa esté en ejecución, al presionar el control remoto, el Monitor Serial imprimirá la tecla que presionaste.
 
-The new remote control has a plastic piece at the end to isolate the battery inside. You need to pull out this plastic piece to power up the remote when you are using it.
-Once the program is running, when you press the remote control, the Serial Monitor will print out the key you pressed.
 
+**¿Cómo funciona?**
 
-**How it works?**
+Este código está diseñado para funcionar con un control remoto infrarrojo (IR) utilizando la librería ``IRremote``. A continuación se explica cada parte:
 
-This code is designed to work with an infrared (IR) remote control using the ``IRremote`` library. Here's the breakdown:
-
-#. Including the library and defining constants. First, the IRremote library is included, and the pin number for the IR receiver is defined as 2.
+#. Inclusión de la librería y definición de constantes. Primero, se incluye la librería IRremote y se define el número de pin para el receptor IR como 2.
 
    .. code-block:: cpp
  
      #include <IRremote.h>
      const int IR_RECEIVE_PIN = 17;
 
-
-#. Initializes serial communication at a baud rate of 9600. Initializes the IR receiver on the specified pin (``IR_RECEIVE_PIN``) and enables LED feedback (if applicable).
+#. Inicializa la comunicación serial a una velocidad de 9600 baudios. Inicializa el receptor IR en el pin especificado (``IR_RECEIVE_PIN``) y habilita el LED de retroalimentación (si corresponde).
 
    .. code-block:: arduino
 
        void setup() {
-           Serial.begin(9600);                                     // Start serial communication at 9600 baud rate
-           IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Start the IR receiver
+           Serial.begin(9600);                                     // Inicia la comunicación serial a 9600 baudios
+           IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Inicia el receptor IR
        }
 
-#. The loop runs continuously to process incoming IR remote signals.
+#. El bucle se ejecuta continuamente para procesar las señales del control remoto IR.
 
    .. code-block:: arduino
 
       void loop() {
-         if (IrReceiver.decode()) {  // Check if the IR receiver has received a signal
+         if (IrReceiver.decode()) {  // Verifica si el receptor IR ha recibido una señal
             bool result = 0;
             String key = decodeKeyValue(IrReceiver.decodedIRData.command);
             if (key != "ERROR") {
-              Serial.println(key);  // Print the readable command
+              Serial.println(key);  // Imprime el comando decodificado
               delay(100);
             }
-         IrReceiver.resume();  // Prepare the IR receiver to receive the next signal
+         IrReceiver.resume();  // Prepara el receptor IR para recibir la siguiente señal
         }
       }
    
-   * Checks if an IR signal is received and successfully decoded.
-   * Decodes the IR command and stores it in ``decodedValue`` using a custom ``decodeKeyValue()`` function.
-   * Prints the decoded IR value to the serial monitor.
-   * Resumes IR signal reception for the next signal.
+   * Verifica si se ha recibido y decodificado correctamente una señal IR.
+   * Decodifica el comando IR y lo almacena en ``decodedValue`` usando la función personalizada ``decodeKeyValue()``.
+   * Imprime el valor IR decodificado en el monitor serial.
+   * Restaura el receptor IR para la próxima señal.
 
    .. raw:: html
 
         <br/>
 
-#. Helper function to map received IR signals to corresponding keys
+#. Función auxiliar para mapear señales IR recibidas a las teclas correspondientes.
 
    .. image:: img/ir_key.png
       :align: center
@@ -160,9 +155,9 @@ This code is designed to work with an infrared (IR) remote control using the ``I
 
    .. code-block:: arduino
 
-      // Function to map received IR signals to corresponding keys
+      // Función para mapear señales IR recibidas a las teclas correspondientes
       String decodeKeyValue(long result) {
-        // Each case corresponds to a specific IR command
+        // Cada caso corresponde a un comando específico del control remoto IR
         switch (result) {
           case 0x16:
             return "0";

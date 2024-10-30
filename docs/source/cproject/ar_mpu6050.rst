@@ -1,69 +1,68 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Explora a fondo Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones exclusivas**: Obtén acceso anticipado a anuncios y adelantos de nuevos productos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_mpu6050:
 
-6.3 - 6-axis Motion Tracking
-===================================
+6.3 - Seguimiento de Movimiento en 6 Ejes
+=============================================
 
-The MPU-6050 is a 6-axis(combines 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices.
+El MPU-6050 es un dispositivo de seguimiento de movimiento en 6 ejes (combinando un giroscopio de 3 ejes y un acelerómetro de 3 ejes).
 
 
-An accelerometer is a tool that measures proper acceleration.For example, an accelerometer at rest on the surface of the Earth will measure an acceleration due to Earth's gravity, straight upwards[3] (by definition) of g ≈ 9.81 m/s2.
+Un acelerómetro es una herramienta que mide la aceleración propia. Por ejemplo, un acelerómetro en reposo en la superficie terrestre medirá una aceleración debida a la gravedad de la Tierra, orientada hacia arriba [3], con un valor aproximado de g ≈ 9.81 m/s².
 
-Accelerometers have many uses in industry and science. For example: inertial navigation systems for aircraft and missiles, for keeping images on tablets and digital cameras vertical, etc.
+Los acelerómetros tienen muchos usos en la industria y la ciencia. Ejemplos incluyen sistemas de navegación inercial para aviones y misiles, y para mantener imágenes en dispositivos como tabletas y cámaras digitales en posición vertical.
 
-Gyroscopes are used to measure orientation and angular velocity of a device or maintenance.
-Applications of gyroscopes include anti-rollover and airbag systems for automobiles, motion sensing systems for smart devices, attitude stabilization systems for drones, and more.
+Los giroscopios se utilizan para medir la orientación y la velocidad angular de un dispositivo. Sus aplicaciones incluyen sistemas 
+de antirrolido y de bolsas de aire para automóviles, sistemas de detección de movimiento para dispositivos inteligentes, sistemas de estabilización de actitud para drones, entre otros.
 
 * :ref:`cpn_mpu6050`
 
-**Required Components**
+**Componentes necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente comprar un kit completo, aquí está el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°	
+        - INTRODUCCIÓN DEL COMPONENTE	
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -72,29 +71,29 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_mpu6050`
         - 1
         - 
 
-**Schematic**
+**Esquema**
 
 |sch_mpu6050_ar|
 
-**Wiring**
+**Conexión**
 
 |wiring_mpu6050_ar|
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``6.3_6axis_motion_tracking.ino`` under the path of ``kepler-kit-main/arduino/6.3_6axis_motion_tracking``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit MPU6050`` library is used here, you can install it from the **Library Manager**.
+    * Puedes abrir el archivo ``6.3_6axis_motion_tracking.ino`` en la ruta ``kepler-kit-main/arduino/6.3_6axis_motion_tracking``.
+    * O copiar este código en el **IDE de Arduino**.
+    * Luego selecciona la placa (Raspberry Pi Pico) y el puerto correcto antes de hacer clic en el botón **Upload**.
+    * Aquí se utiliza la biblioteca ``Adafruit MPU6050``, que puedes instalar desde el **Library Manager**.
 
       .. image:: img/lib_mpu6050.png
 
@@ -103,14 +102,14 @@ You can also buy them separately from the links below.
     <iframe src=https://create.arduino.cc/editor/sunfounder01/318f62d3-1d7b-4ee6-a1a2-97e783cf2d5e/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     
 
-After running the program, you can see the 3-axis accelerometer values and 3-axis gyroscope values cycling through the output.
-At this point you rotate the MPU6050 at random, and these values will appear to change accordingly.
-To make it easier to see the changes, you can comment out one of the print lines and concentrate on another set of data.
+Después de ejecutar el programa, verás que los valores del acelerómetro en 3 ejes y del giroscopio en 3 ejes 
+aparecen en la salida de manera continua. En este momento, si giras el MPU6050 en cualquier dirección, notarás 
+cómo estos valores cambian en consecuencia. Para facilitar la visualización, puedes comentar alguna línea de 
+impresión y concentrarte en otro conjunto de datos.
 
+**¿Cómo funciona?**
 
-**How it works?**
-
-Instantiate an ``MPU6050`` object.
+Instancia un objeto ``MPU6050``.
 
 .. code-block:: arduino
 
@@ -119,28 +118,27 @@ Instantiate an ``MPU6050`` object.
 
     Adafruit_MPU6050 mpu;
 
-
-Initialize the MPU6050 and set its accuracy.
+Inicializa el MPU6050 y configura su precisión.
 
 .. code-block:: arduino
 
     void setup(void) {
         Serial.begin(115200);
         while (!Serial)
-            delay(10); // will pause Zero, Leonardo, etc until serial console opens
+            delay(10); // pausará Zero, Leonardo, etc. hasta que se abra la consola serial
 
         Serial.println("Adafruit MPU6050 test!");
 
-        // Try to initialize!
+        // Intenta inicializar
         if (!mpu.begin()) {
             Serial.println("Failed to find MPU6050 chip");
             while (1) {
-            delay(10);
+                delay(10);
             }
         }
         Serial.println("MPU6050 Found!");
 
-        // Set range
+        // Configura el rango
         mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
         mpu.setGyroRange(MPU6050_RANGE_500_DEG);
         mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
@@ -149,14 +147,14 @@ Initialize the MPU6050 and set its accuracy.
         delay(100);
     }
 
-Get new sensor events with the readings.
+Obtén nuevos eventos de sensor con las lecturas.
 
 .. code-block:: arduino
 
     sensors_event_t a, g, temp;
     mpu.getEvent(&a, &g, &temp);
 
-Subsequently, you will be able to get real-time acceleration and angular velocity values in the data ``a.acceleration.x``, ``a.acceleration.y``, ``a.acceleration.z``, ``g.gyro.x``, ``g.gyro.y``, ``g.gyro.z``.
+Posteriormente, podrás obtener valores de aceleración y velocidad angular en tiempo real en los datos ``a.acceleration.x``, ``a.acceleration.y``, ``a.acceleration.z``, ``g.gyro.x``, ``g.gyro.y``, ``g.gyro.z``.
 
 .. code-block:: arduino
 

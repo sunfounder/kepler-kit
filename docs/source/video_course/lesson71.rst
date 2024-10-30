@@ -1,26 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Únete a otros apasionados y explora a fondo el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Obtén acceso anticipado a nuevos anuncios y adelantos de productos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 71:  Allow Thread to Complete Task Before Termination
+Lección 71: Permitir que el Hilo Complete la Tarea Antes de Terminar
 ===================================================================================
 
-This tutorial covers gracefully terminating a multi-threaded program on the Raspberry Pi Pico W:
+Este tutorial cubre la terminación ordenada de un programa multihilo en la Raspberry Pi Pico W:
 
-* **Wiring Setup**: Connect servo control to GPIO 17, power to pin 40, ground to pin 38. Connect button to GPIO 16 and ground.
-* **Code Implementation**: Import ``machine``, ``time``, ``_thread``, ``Servo``. Set up pins for button and servo. Implement a toggle switch for servo movement, using threading for clean exits.
-* **Handling Clean Termination**: Use a global ``running`` variable to manage loop execution. Implement a lock to control critical sections. Ensure the servo completes movement before terminating.
-* **Homework Assignment**: Modify the program to handle more components or sensors, ensuring clean termination in all cases.
+* **Configuración de Cableado**: Conecta el control del servo al GPIO 17, la alimentación al pin 40 y la tierra al pin 38. Conecta el botón al GPIO 16 y a tierra.
+* **Implementación de Código**: Importa ``machine``, ``time``, ``_thread`` y ``Servo``. Configura los pines para el botón y el servo. Implementa un interruptor para el movimiento del servo, usando hilos para salidas limpias.
+* **Manejo de Terminación Ordenada**: Usa una variable global ``running`` para gestionar la ejecución del bucle. Implementa un bloqueo para controlar las secciones críticas. Asegura que el servo complete su movimiento antes de terminar.
+* **Tarea**: Modifica el programa para manejar más componentes o sensores, asegurando una terminación ordenada en todos los casos.
 
 
 **Video**

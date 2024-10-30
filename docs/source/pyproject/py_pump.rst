@@ -1,27 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_pump:
 
-3.6 Pumping
+3.6 Bombeo
 =======================
 
+Las pequeñas bombas centrífugas son ideales para proyectos de riego automático de plantas. 
+También se pueden utilizar para crear pequeñas fuentes de agua inteligentes.
 
-Small centrifugal pumps are suitable for projects with automatic plant watering.
-It can also be used to make tiny smart water features.
-
-Its power component is an electric motor, driven in exactly the same way as a normal motor.
+Su componente de potencia es un motor eléctrico, que se controla de la misma manera que un motor normal.
 
 * :ref:`cpn_pump`
 * :ref:`cpn_motor`
@@ -30,46 +29,45 @@ Its power component is an electric motor, driven in exactly the same way as a no
 
 .. note::
 
-    #. Connect the tube to the motor outlet, submerge the pump in water, and then power it on.
-    #. You need to make sure that the water level is always higher than the motor. Idling may damage the motor due to heat generation and will also generate noise.
-    #. If you are watering plants, you need to avoid soil being drawn in, as this can clog the pump.
-    #. If water does not come out of the tube, there may be residual water in the tube blocking the air flow and needs to be drained first.
+    #. Conecta el tubo a la salida del motor, sumerge la bomba en agua y enciéndela.
+    #. Debes asegurarte de que el nivel del agua siempre esté por encima del motor. Funcionarlo en vacío puede dañar el motor debido a la generación de calor y también generará ruido.
+    #. Si estás regando plantas, evita que la tierra sea absorbida, ya que esto podría obstruir la bomba.
+    #. Si no sale agua por el tubo, es posible que haya agua residual bloqueando el flujo de aire, en cuyo caso se necesita drenar primero.
 
+**Componentes Necesarios**
 
-**Required Components**
+Para este proyecto, necesitamos los siguientes componentes.
 
-In this project, we need the following components. 
-
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -78,7 +76,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ta6586`
@@ -89,11 +87,11 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 7
-        - 18650 Battery
+        - Batería 18650
         - 1
         -  
     *   - 8
-        - Battery Holder
+        - Portapilas
         - 1
         -  
     *   - 9
@@ -101,33 +99,28 @@ You can also buy them separately from the links below.
         - 1
         -  
 
-
-**Schematic**
+**Esquema**
 
 |sch_pump|
 
-
-**Wiring**
+**Conexiones**
 
 .. note::
 
-    * Since pump require a high current, we use a Li-po Charger module to power the motor here for safety reasons.
-    * Make sure your Li-po Charger Module is connected as shown in the diagram. Otherwise, a short circuit will likely damage your battery and circuitry.
-
-
+    * Dado que la bomba requiere una alta corriente, usamos un módulo de cargador Li-po para alimentar el motor por razones de seguridad.
+    * Asegúrate de que el módulo Li-po Charger esté conectado como se muestra en el diagrama. De lo contrario, es probable que un cortocircuito dañe la batería y el circuito.
 
 |wiring_pump|
 
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``3.6_pumping.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``3.6_pumping.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
-
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 .. code-block:: python
 
@@ -141,12 +134,11 @@ You can also buy them separately from the links below.
         motor1A.high()
         motor2A.low()
 
-
-After the code is run, the pump starts working and you will see water flowing out of the tube at the same time.
+Después de ejecutar el código, la bomba comenzará a funcionar y verás agua fluyendo por el tubo al mismo tiempo.
 
 .. note::
 
-    * If the motor is still spinning after you click the Stop button, you need to reset the **RUN** pin on the Pico W with a wire to GND at this time, and then unplug this wire to run the code again.
-    * This is because the motor is operating with too much current, which may cause the Pico W to disconnect from the computer. 
+    * Si el motor sigue girando después de hacer clic en el botón de detener, necesitas restablecer el pin **RUN** en el Pico W conectándolo a GND con un cable y luego desconectarlo para ejecutar el código nuevamente.
+    * Esto se debe a que el motor está funcionando con una corriente demasiado alta, lo que podría hacer que el Pico W se desconecte de la computadora.
 
     |wiring_run_reset|

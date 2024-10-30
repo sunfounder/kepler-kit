@@ -1,63 +1,60 @@
-
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones Exclusivas**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones en temporadas festivas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _py_reversing_aid:
 
-7.10 Reversing Aid
-======================
+7.10 Ayuda de Reversa
+========================
 
-This project uses an LED, a buzzer and an ultrasonic module to create a reversing assist system.
-We can put it on a remote control car to simulate the the actual process of reversing a car into a garage.
+Este proyecto utiliza un LED, un zumbador y un módulo ultrasónico para crear un sistema de asistencia de reversa.
+Podemos colocarlo en un coche de control remoto para simular el proceso real de estacionamiento en reversa en un garaje.
 
 
-**Required Components**
+**Componentes Necesarios**
 
-In this project, we need the following components. 
+Para este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente adquirir un kit completo; aquí tienes el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - LINK
-    *   - Kepler Kit	
+    *   - Nombre
+        - ELEMENTOS EN ESTE KIT
+        - ENLACE
+    *   - Kit Kepler
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
-
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
     *   - SN
-        - COMPONENT	
-        - QUANTITY
-        - LINK
+        - COMPONENTE
+        - CANTIDAD
+        - ENLACE
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -66,7 +63,7 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_transistor`
@@ -77,7 +74,7 @@ You can also buy them separately from the links below.
         - 2(1KΩ, 220Ω)
         - |link_resistor_buy|
     *   - 7
-        - Active :ref:`cpn_buzzer`
+        - Zumbador Activo :ref:`cpn_buzzer`
         - 1
         -
     *   - 8
@@ -89,24 +86,24 @@ You can also buy them separately from the links below.
         - 1
         - |link_ultrasonic_buy|
 
-**Schematic**
+**Diagrama**
 
 |sch_reversing_aid|
 
 
-**Wiring**
+**Conexiones**
 
 |wiring_reversing_aid| 
 
-**Code**
+**Código**
 
 .. note::
 
-    * Open the ``7.10_reversing_aid.py`` file under the path of ``kepler-kit-main/micropython`` or copy this code into Thonny, then click "Run Current Script" or simply press F5 to run it.
+    * Abre el archivo ``7.10_reversing_aid.py`` en la ruta de ``kepler-kit-main/micropython`` o copia este código en Thonny, luego haz clic en "Run Current Script" o simplemente presiona F5 para ejecutarlo.
 
-    * Don't forget to click on the "MicroPython (Raspberry Pi Pico)" interpreter in the bottom right corner. 
+    * No olvides seleccionar el intérprete "MicroPython (Raspberry Pi Pico)" en la esquina inferior derecha.
 
-    * For detailed tutorials, please refer to :ref:`open_run_code_py`.
+    * Para tutoriales detallados, consulta :ref:`open_run_code_py`.
 
 
 
@@ -115,17 +112,17 @@ You can also buy them separately from the links below.
     import machine
     import time
 
-    # Initialize pins for the buzzer and LED
-    buzzer = machine.Pin(15, machine.Pin.OUT)  # Buzzer on pin 15
-    led = machine.Pin(14, machine.Pin.OUT)  # LED on pin 14
+    # Inicializar los pines para el zumbador y el LED
+    buzzer = machine.Pin(15, machine.Pin.OUT)  # Zumbador en el pin 15
+    led = machine.Pin(14, machine.Pin.OUT)  # LED en el pin 14
 
-    # Initialize pins for the ultrasonic sensor (HC-SR04)
-    TRIG = machine.Pin(17, machine.Pin.OUT)  # Trigger pin for the ultrasonic sensor
-    ECHO = machine.Pin(16, machine.Pin.IN)  # Echo pin for the ultrasonic sensor
+    # Inicializar los pines para el sensor ultrasónico (HC-SR04)
+    TRIG = machine.Pin(17, machine.Pin.OUT)  # Pin de disparo para el sensor ultrasónico
+    ECHO = machine.Pin(16, machine.Pin.IN)  # Pin de eco para el sensor ultrasónico
 
-    dis = 100  # Global variable to store the distance
+    dis = 100  # Variable global para almacenar la distancia
 
-    # Function to measure distance using the ultrasonic sensor
+    # Función para medir la distancia usando el sensor ultrasónico
     def distance():
         TRIG.low()
         time.sleep_us(2)
@@ -133,69 +130,68 @@ You can also buy them separately from the links below.
         time.sleep_us(10)
         TRIG.low()
 
-        timeout_start = time.ticks_us()  # Use microseconds for more precision
+        timeout_start = time.ticks_us()  # Usar microsegundos para mayor precisión
         
-        # Wait for ECHO pin to go high (start of echo pulse)
+        # Esperar a que el pin ECHO pase a alto (inicio del pulso de eco)
         while not ECHO.value():
-            if time.ticks_diff(time.ticks_us(), timeout_start) > 30000:  # 30ms timeout
-                return -1  # Timeout, return -1 if no pulse is detected
+            if time.ticks_diff(time.ticks_us(), timeout_start) > 30000:  # Tiempo de espera de 30ms
+                return -1  # Tiempo de espera agotado, retornar -1 si no se detecta pulso
         
-        time1 = time.ticks_us()  # Start time for pulse width calculation
+        time1 = time.ticks_us()  # Tiempo de inicio para el cálculo de ancho de pulso
         
-        # Wait for ECHO pin to go low (end of echo pulse)
+        # Esperar a que el pin ECHO pase a bajo (fin del pulso de eco)
         while ECHO.value():
-            if time.ticks_diff(time.ticks_us(), time1) > 30000:  # 30ms timeout
-                return -1  # Timeout, return -1 if pulse is too long
+            if time.ticks_diff(time.ticks_us(), time1) > 30000:  # Tiempo de espera de 30ms
+                return -1  # Tiempo de espera agotado, retornar -1 si el pulso es demasiado largo
         
-        time2 = time.ticks_us()  # End time for pulse width calculation
+        time2 = time.ticks_us()  # Tiempo de fin para el cálculo de ancho de pulso
         
-        # Calculate the distance based on the duration of the echo pulse
+        # Calcular la distancia basada en la duración del pulso de eco
         during = time.ticks_diff(time2, time1)
-        distance_cm = during * 340 / 2 / 10000  # Convert time to distance in cm
+        distance_cm = during * 340 / 2 / 10000  # Convertir tiempo a distancia en cm
         return distance_cm
 
-    # Function to beep the buzzer and light up the LED
+    # Función para hacer sonar el zumbador y encender el LED
     def beep():
-        buzzer.value(1)  # Turn on the buzzer
-        led.value(1)  # Turn on the LED
-        time.sleep(0.1)  # Beep duration
-        buzzer.value(0)  # Turn off the buzzer
-        led.value(0)  # Turn off the LED
-        time.sleep(0.1)  # Short pause between beeps
+        buzzer.value(1)  # Encender el zumbador
+        led.value(1)  # Encender el LED
+        time.sleep(0.1)  # Duración del pitido
+        buzzer.value(0)  # Apagar el zumbador
+        led.value(0)  # Apagar el LED
+        time.sleep(0.1)  # Breve pausa entre pitidos
 
-    # Initialize variables for controlling beep intervals
-    intervals = 2000  # Default long initial interval
-    previousMillis = time.ticks_ms()  # Store the previous time to track beep intervals
+    # Inicializar variables para controlar los intervalos de pitido
+    intervals = 2000  # Intervalo largo inicial por defecto
+    previousMillis = time.ticks_ms()  # Almacenar el tiempo anterior para controlar los intervalos de pitido
 
-    # Main loop to handle distance-based beeping intervals
+    # Bucle principal para manejar los intervalos de pitido según la distancia
     while True:
-        dis = distance()  # Measure the distance directly in the main loop
+        dis = distance()  # Medir la distancia directamente en el bucle principal
 
-        # Adjust beep intervals based on the distance
-        if dis > 0:  # Ensure valid distance is measured
+        # Ajustar los intervalos de pitido en función de la distancia
+        if dis > 0:  # Asegurarse de que se mida una distancia válida
             if dis <= 10:
-                intervals = 300  # Close distance, faster beeps
+                intervals = 300  # Distancia cercana, pitidos más rápidos
             elif dis <= 20:
-                intervals = 500  # Medium-close distance, moderate beeps
+                intervals = 500  # Distancia media-cercana, pitidos moderados
             elif dis <= 50:
-                intervals = 1000  # Medium distance, slower beeps
+                intervals = 1000  # Distancia media, pitidos más lentos
             else:
-                intervals = 2000  # Far distance, much slower beeps
+                intervals = 2000  # Distancia lejana, pitidos mucho más lentos
 
-            # Print the measured distance
+            # Imprimir la distancia medida
             print(f'Distance: {dis:.2f} cm')
             
-            # Check if it's time to beep again based on the interval
-            currentMillis = time.ticks_ms()  # Get the current time
+            # Verificar si es momento de pitido según el intervalo
+            currentMillis = time.ticks_ms()  # Obtener el tiempo actual
             if time.ticks_diff(currentMillis, previousMillis) >= intervals:
-                beep()  # Beep the buzzer and blink the LED
-                previousMillis = currentMillis  # Update the time of the last beep
+                beep()  # Emitir el pitido y parpadear el LED
+                previousMillis = currentMillis  # Actualizar el tiempo del último pitido
             
-        time.sleep_ms(100)  # Small delay to avoid too frequent readings
+        time.sleep_ms(100)  # Pequeña pausa para evitar lecturas demasiado frecuentes
 
 
-* As soon as the program runs, the ultrasonic sensor will continuously read the distance to the obstacle in front of you, and you will be able to see the exact distance value on the shell.
-* The LED and buzzer will change the frequency of blinking and beeping depending on the distance value, thus indicating the approach of the obstacle.
-* The :ref:`py_ultrasonic` article mentioned that when the ultrasonic sensor works, the program will be paused.
-* To avoid interfering with the LED or buzzer timing, we created a separate thread for ranging in this example.
-
+* Al ejecutar el programa, el sensor ultrasónico leerá continuamente la distancia al obstáculo frente a él, y podrás ver el valor exacto de la distancia en el shell.
+* El LED y el zumbador cambiarán la frecuencia de parpadeo y pitido según el valor de la distancia, indicando así la cercanía del obstáculo.
+* En el artículo :ref:`py_ultrasonic` se mencionó que cuando el sensor ultrasónico funciona, el programa se pausa.
+* Para evitar interferir con el tiempo del LED o el zumbador, hemos creado un hilo separado para la medición de distancia en este ejemplo.

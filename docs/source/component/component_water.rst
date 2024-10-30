@@ -1,41 +1,39 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenidos a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previews Exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos Especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones Festivas y Sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_water_level:
 
-Water Level Sensor Module
+Módulo Sensor de Nivel de Agua
 =================================
 
 |img_water_sensor|
 
-The water level sensor transmits the sensed water level signal to the controller, and the computer in the controller compares the measured water level signal with the set signal to derive the deviation, and then issues "on" and "off" commands to the feedwater electric valve according to the nature of the deviation to ensure that the vessel reaches the set water level.
+El sensor de nivel de agua transmite la señal del nivel detectado al controlador, y el ordenador en el controlador compara la señal medida con la señal establecida para determinar la desviación, emitiendo comandos de "encendido" y "apagado" a la válvula eléctrica de suministro de agua según la naturaleza de la desviación, para asegurar que el recipiente alcance el nivel de agua establecido.
 
+El sensor de nivel de agua tiene diez trazas de cobre expuestas, cinco para las trazas de potencia y cinco para las trazas del sensor, que se cruzan y conectan por el agua cuando el sensor está sumergido.
+La placa de circuito tiene un LED de alimentación que se enciende cuando la placa está energizada.
 
-The water level sensor has ten exposed copper traces, five for the Power traces and five for the Sensor traces, which are crossed and bridged by water when flooded.
-The circuit board has a power LED that lights up when the board is energized.
-
-The combination of these traces acts like a variable resistor, changing the resistance value according to the water level.
-To be more precise, the more water the sensor is immersed in, the better the conductivity and the lower the resistance. Conversely, the less conductive it is, the higher the resistance.
-Next, the sensor will process the output signal voltage which will be sent to the microcontroller, thus helping us to determine the water level.
-
+La combinación de estas trazas actúa como una resistencia variable, cambiando el valor de la resistencia de acuerdo con el nivel de agua.
+Para ser más precisos, cuanto más agua esté inmerso el sensor, mejor será la conductividad y menor la resistencia. Por el contrario, cuanto menos conductividad tenga, mayor será la resistencia.
+Luego, el sensor procesará el voltaje de la señal de salida, que se enviará al microcontrolador, ayudándonos así a determinar el nivel de agua.
 
 .. warning:: 
-    The sensor cannot be fully submerged in water, please only leave the part where the ten traces are located in contact with water. In addition, energizing the sensor in a humid environment will speed up the corrosion of the probe and cut the life of the sensor, so we recommend that you only supply power when taking readings.
+    El sensor no debe sumergirse completamente en el agua, por favor, solo deje la parte donde se encuentran las diez trazas en contacto con el agua. Además, energizar el sensor en un entorno húmedo acelerará la corrosión de la sonda y reducirá la vida útil del sensor, por lo que recomendamos suministrar energía solo cuando se estén tomando lecturas.
 
 
 **Example**
 
-* :ref:`py_water` (For MicroPython User)
-* :ref:`ar_water` (For Arduino User)
-* :ref:`per_water_tank` (For Piper Make User)
+* :ref:`py_water` (Para usuarios de MicroPython)
+* :ref:`ar_water` (Para usuarios de Arduino)
+* :ref:`per_water_tank` (Para usuarios de Piper Make)

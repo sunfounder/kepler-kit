@@ -1,27 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el fascinante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte Experto**: Soluciona problemas posventa y enfrenta desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Acceso Exclusivo**: Disfruta de un acceso temprano a los anuncios y adelantos de nuevos productos.
+    - **Descuentos Especiales**: Aprovecha descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y Sorteos Festivos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-Lesson 3:  Understanding and Using Binary Numbers
+Lección 3: Comprender y Usar Números Binarios
 =================================================================
 
-This tutorial covers the basics of binary numbers and how they are used in computing, focusing on creating a binary counter with LEDs using the Raspberry Pi Pico W.
+Este tutorial cubre los conceptos básicos de los números binarios y su aplicación en la informática, con un enfoque en la creación de un contador binario con LEDs utilizando la Raspberry Pi Pico W.
 
-* **Binary Basics**: Explanation of binary numbers and their role in computing.
-* **Counting in Binary**: Demonstrates binary counting using 0 and 1.
-* **Binary Arithmetic**: Shows binary addition, subtraction, multiplication, and division.
-* **Data Representation**: Discusses how binary represents colors, pictures, and videos in computers.
-
+* **Fundamentos del Sistema Binario**: Explicación de los números binarios y su importancia en la informática.
+* **Conteo en Binario**: Demostración del conteo binario utilizando 0 y 1.
+* **Aritmética Binaria**: Ejemplos de suma, resta, multiplicación y división en binario.
+* **Representación de Datos**: Discusión sobre cómo los datos binarios representan colores, imágenes y videos en los sistemas informáticos.
 
 **Video**
 

@@ -1,68 +1,72 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Explora en profundidad Raspberry Pi, Arduino y ESP32 junto a otros aficionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Previsualizaciones exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_neopixel:
 
-3.3 - WS2812 RGB Strip
-=========================
+3.3 - Tira RGB WS2812
+==========================
 
-WS2812 is a intelligent control LED light source that the control circuit and RGB chip are integrated in a package of 5050 components. 
-It internal include intelligent digital port data latch and signal reshaping amplification drive circuit. 
-Also include a precision internal oscillator and a programmable constant current control part, 
-effectively ensuring the pixel point light color height consistent.
+WS2812 es una fuente de luz LED con control inteligente donde el circuito de 
+control y el chip RGB están integrados en un componente de 5050. Internamente, 
+incluye un puerto digital de almacenamiento de datos inteligente y un circuito 
+de amplificación para la remodelación de la señal. También incorpora un oscilador 
+interno de alta precisión y una parte de control de corriente constante programable, 
+asegurando que el color de cada punto de píxel sea altamente consistente.
 
-The data transfer protocol use single NZR communication mode. 
-After the pixel power-on reset, the DIN port receive data from controller, the first pixel collect initial 24bit data then sent to the internal data latch, the other data which reshaping by the internal signal reshaping amplification circuit sent to the next cascade pixel through the DO port. After transmission for each pixel, the signal to reduce 24bit. 
-pixel adopt auto reshaping transmit technology, making the pixel cascade number is not limited the signal transmission, only depend on the speed of signal transmission.
-
+El protocolo de transferencia de datos utiliza un modo de comunicación NZR único. 
+Después de que el píxel se enciende y se reinicia, el puerto DIN recibe datos del 
+controlador; el primer píxel recoge 24 bits de datos iniciales y los envía a un 
+almacenamiento interno, mientras que el resto de los datos se transmiten al siguiente 
+píxel en cascada a través del puerto DO, gracias a la circuitería interna de amplificación 
+de señal. La tecnología de transmisión con auto-remodelación permite que el número de píxeles en cascada no tenga limitaciones en cuanto a la transmisión de la señal, y depende solo de la velocidad de transmisión de ésta.
 
 * :ref:`cpn_ws2812`
 
-**Required Components**
+**Componentes necesarios**
 
-In this project, we need the following components. 
+En este proyecto, necesitamos los siguientes componentes.
 
-It's definitely convenient to buy a whole kit, here's the link: 
+Es muy conveniente comprar un kit completo; aquí está el enlace:
 
 .. list-table::
     :widths: 20 20 20
     :header-rows: 1
 
-    *   - Name	
-        - ITEMS IN THIS KIT
-        - PURCHASE LINK
-    *   - Kepler Kit	
+    *   - Nombre	
+        - ITEMS EN ESTE KIT
+        - LINK DE COMPRA
+    *   - Kit Kepler	
         - 450+
         - |link_kepler_kit|
 
-You can also buy them separately from the links below.
+También puedes comprarlos por separado en los enlaces a continuación.
 
 .. list-table::
     :widths: 5 20 5 20
     :header-rows: 1
 
-    *   - SN
-        - COMPONENT INTRODUCTION	
-        - QUANTITY
-        - PURCHASE LINK
+    *   - N°	
+        - INTRODUCCIÓN DEL COMPONENTE	
+        - CANTIDAD
+        - LINK DE COMPRA
 
     *   - 1
         - :ref:`cpn_pico_w`
         - 1
         - |link_picow_buy|
     *   - 2
-        - Micro USB Cable
+        - Cable Micro USB
         - 1
         - 
     *   - 3
@@ -71,38 +75,37 @@ You can also buy them separately from the links below.
         - |link_breadboard_buy|
     *   - 4
         - :ref:`cpn_wire`
-        - Several
+        - Varios
         - |link_wires_buy|
     *   - 5
         - :ref:`cpn_ws2812`
         - 1
         - |link_ws2812_buy|
 
-**Schematic**
+**Esquema**
 
 |sch_ws2812|
 
-**Wiring**
+**Conexión**
 
 |wiring_ws2812|
 
-
 .. warning::
-    One thing you need to pay attention to is current.
+    Un aspecto a tener en cuenta es la corriente.
 
-    Although the LED Strip with any number of LEDs can be used in Pico W, the power of its VBUS pin is limited.
-    Here, we will use eight LEDs, which are safe.
-    But if you want to use more LEDs, you need to add a separate power supply.
+    Aunque se puede utilizar una tira LED con cualquier número de LEDs en el Pico W, la potencia de su pin VBUS es limitada.
+    Aquí utilizaremos ocho LEDs, lo cual es seguro.
+    Pero si deseas usar más LEDs, necesitarás una fuente de alimentación separada.
     
 
-**Code**
+**Código**
 
 .. note::
 
-    * You can open the file ``3.3_rgb_led_strip.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip``. 
-    * Or copy this code into **Arduino IDE**.
-    * Then select the Raspberry Pi Pico board and the correct port before clicking the Upload button.
-    * The ``Adafruit_NeoPixel`` library is used here, you can install it from the **Library Manager**.
+    * Puedes abrir el archivo ``3.3_rgb_led_strip.ino`` en la ruta ``kepler-kit-main/arduino/3.3_rgb_led_strip``.
+    * O copiar este código en el **Arduino IDE**.
+    * Luego selecciona la placa Raspberry Pi Pico y el puerto correcto antes de hacer clic en el botón **Upload**.
+    * Aquí se utiliza la biblioteca ``Adafruit_NeoPixel``, que puedes instalar desde el **Library Manager**.
 
       .. image:: img/lib_neopixel.png
 
@@ -111,46 +114,45 @@ You can also buy them separately from the links below.
     <iframe src=https://create.arduino.cc/editor/sunfounder01/efe5d60f-ea0f-4446-bc5b-30c76197fedf/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Let's select some favorite colors and display them on the RGB LED Strip!
+Seleccionemos algunos colores favoritos y mostremos en la tira de LED RGB.
 
-**How it works?**
+**¿Cómo funciona?**
 
-Declare a Adafruit_NeoPixel type object,  it is connected to ``PIXEL_PIN``, 
-there are ``PIXEL_COUNT`` RGB LEDs on the strip.
+Declara un objeto de tipo Adafruit_NeoPixel, conectado a ``PIXEL_PIN``, donde hay ``PIXEL_COUNT`` LEDs RGB en la tira.
 
 .. code-block:: arduino
 
     #define PIXEL_PIN    0
     #define PIXEL_COUNT 8
 
-    // Declare our NeoPixel strip object:
+    // Declaramos nuestro objeto NeoPixel para la tira:
     Adafruit_NeoPixel strip(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
-    // Argument 1 = Number of pixels in NeoPixel strip
-    // Argument 2 = Arduino pin number (most are valid)
-    // Argument 3 = Pixel type flags, add together as needed:
-    //   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
-    //   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
-    //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
-    //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
-    //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
+    // Argumento 1 = Número de píxeles en la tira NeoPixel
+    // Argumento 2 = Número de pin de Arduino (la mayoría son válidos)
+    // Argumento 3 = Banderas de tipo de píxel, agrega según sea necesario:
+    //   NEO_KHZ800  800 KHz bitstream (la mayoría de productos NeoPixel con LEDs WS2812)
+    //   NEO_KHZ400  400 KHz (pixeles clásicos 'v1' (no v2) FLORA, controladores WS2811)
+    //   NEO_GRB     Pixeles cableados para bitstream GRB (la mayoría de productos NeoPixel)
+    //   NEO_RGB     Pixeles cableados para bitstream RGB (pixeles v1 FLORA, no v2)
+    //   NEO_RGBW    Pixeles cableados para bitstream RGBW (productos NeoPixel RGBW)
 
-Initialize strip object and initialize all pixels to 'off'.
+Inicializa el objeto strip y todos los píxeles a 'apagado'.
 
-Function
-    * ``strip.begin()`` : Initialize NeoPixel strip object (REQUIRED).
-    * ``strip.setPixelColor(index, color)`` : Set pixel's color (in RAM), the ``color`` must be a single 'packed' 32-bit value.
-    * ``strip.Color(red, green, blue)`` : Color as a single 'packed' 32-bit value.
-    * ``strip.show()`` : Update strip with new contents.
+Funciones
+    * ``strip.begin()`` : Inicializa el objeto de la tira NeoPixel (OBLIGATORIO).
+    * ``strip.setPixelColor(index, color)`` : Configura el color de un píxel (en RAM), el ``color`` debe ser un valor único de 32 bits 'empaquetado'.
+    * ``strip.Color(red, green, blue)`` : Color como un valor de 32 bits 'empaquetado'.
+    * ``strip.show()`` : Actualiza la tira con el nuevo contenido.
   
-**Learn More**
+**Aprende más**
 
-We can randomly generate colors and make a colorful flowing light.
+Podemos generar colores aleatorios y crear un efecto de luz fluida y colorida.
 
 .. note::
 
-    * You can open the file ``3.3_rgb_led_strip_flowing.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing``. 
-    * Or copy this code into **Arduino IDE**.
-    * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+    * Puedes abrir el archivo ``3.3_rgb_led_strip_flowing.ino`` en la ruta ``kepler-kit-main/arduino/3.3_rgb_led_strip_flowing``.
+    * O copiar este código en el **IDE de Arduino**.
+    * No olvides seleccionar la placa Raspberry Pi Pico y el puerto correcto antes de hacer clic en el botón **Upload**.
 
     
 
@@ -158,14 +160,13 @@ We can randomly generate colors and make a colorful flowing light.
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a3d7c520-b4f8-4445-9454-5fe7d2a24fd9/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-
-Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535).
+O puedes hacer que esta tira de LED WS2812 realice un ciclo de arcoíris alrededor de la rueda de color (rango 65535).
 
 .. note::
 
-   * You can open the file ``3.3_rgb_led_strip_rainbow.ino`` under the path of ``kepler-kit-main/arduino/3.3_rgb_led_strip_rainbow``. 
-   * Or copy this code into **Arduino IDE**.
-   * Don't forget to select the board(Raspberry Pi Pico) and the correct port before clicking the **Upload** button.
+   * Puedes abrir el archivo ``3.3_rgb_led_strip_rainbow.ino`` en la ruta ``kepler-kit-main/arduino/3.3_rgb_led_strip_rainbow``.
+   * O copiar este código en el **IDE de Arduino**.
+   * No olvides seleccionar la placa Raspberry Pi Pico y el puerto correcto antes de hacer clic en el botón **Upload**.
 
     
 
@@ -173,12 +174,7 @@ Or have this WS2812 LED Strip rainbow cycle around the color wheel (range 65535)
     
     <iframe src=https://create.arduino.cc/editor/sunfounder01/47d84804-3560-48fa-86df-49f8e2f6ad63/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>   
 
-
-* ``strip.getPixelColor(index)`` : Query the color of a previously-set pixel.
-* ``strip.ColorHSV(pixelHue)`` : Convert hue, saturation and value into a packed 32-bit RGB color that can be passed to ``setPixelColor()`` or other RGB-compatible functions.
-* ``strip.gamma32()`` : Provides a "truer" color before assigning to each pixel.
-
-
-
-
+* ``strip.getPixelColor(index)`` : Consulta el color de un píxel previamente configurado.
+* ``strip.ColorHSV(pixelHue)`` : Convierte el tono, la saturación y el valor en un color RGB de 32 bits empaquetado, que puede ser pasado a ``setPixelColor()`` u otras funciones compatibles con RGB.
+* ``strip.gamma32()`` : Proporciona un color "más verdadero" antes de asignarlo a cada píxel.
 
