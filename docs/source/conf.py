@@ -660,6 +660,10 @@ rst_epilog += """
  .. |link_it_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/kepler-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
+    
+ .. |link_es_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/kepler-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
 
 .. |link_download_arduino|  raw:: html
 
