@@ -113,8 +113,8 @@ El programa controlará el servo para que adopte el ángulo de deflexión corres
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-    # Inicializar PWM para el servo en el pin 16 con una frecuencia de 50Hz
-    servo = machine.PWM(machine.Pin(16))
+    # Inicializar PWM para el servo en el pin 15 con una frecuencia de 50Hz
+    servo = machine.PWM(machine.Pin(15))
     servo.freq(50)
 
     # Función para mapear un valor de un rango a otro
