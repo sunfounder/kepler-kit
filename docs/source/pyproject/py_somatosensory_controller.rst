@@ -114,8 +114,8 @@ Le programme contrôlera le servo pour effectuer l'angle de déviation correspon
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-    # Initialiser le PWM pour le servo sur la broche 16 avec une fréquence de 50Hz
-    servo = machine.PWM(machine.Pin(16))
+    # Initialiser le PWM pour le servo sur la broche 15 avec une fréquence de 50Hz
+    servo = machine.PWM(machine.Pin(15))
     servo.freq(50)
 
     # Fonction pour mapper une valeur d'une plage à une autre
