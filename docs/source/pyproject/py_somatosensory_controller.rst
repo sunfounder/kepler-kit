@@ -111,8 +111,8 @@ MPU6050は各方向の加速度値に基づいて姿勢角を計算します。
     i2c = I2C(1, sda=Pin(6), scl=Pin(7), freq=400000)
     mpu = MPU6050(i2c)
 
-    # Initialize PWM for the servo on pin 16 with a frequency of 50Hz
-    servo = machine.PWM(machine.Pin(16))
+    # Initialize PWM for the servo on pin 15 with a frequency of 50Hz
+    servo = machine.PWM(machine.Pin(15))
     servo.freq(50)
 
     # Function to map a value from one range to another
