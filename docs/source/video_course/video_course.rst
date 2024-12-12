@@ -17,6 +17,7 @@ Video Courses
 
 If you're finding the content in the online documentation a bit challenging to grasp, don't worry. 
 A step-by-step video course is here to make your learning journey smoother and more engaging.
+you can directly watch this series of |link_video_courses|.
 
 **project**
 
