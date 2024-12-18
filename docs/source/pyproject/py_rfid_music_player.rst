@@ -116,15 +116,6 @@ Sie können die Bauteile auch einzeln über die unten stehenden Links erwerben.
 
     .. code-block:: python
 
-       ###################################
-        # Use 'write.py' to write a score #
-        # for the card, this example will #
-        # play the score                  #
-        ###################################
-        # The music score of Ode an Joy:  #
-        # EEFGGFEDCCDEEDD EEFGGFEDCCDEDCC #
-        ###################################
-
         from mfrc522 import SimpleMFRC522
         import machine
         import time

@@ -25,7 +25,10 @@ Danke, dass Sie sich für unser |link_kepler_kit| entschieden haben.
         * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
-    
+        * |link_es_tutorials|
+        * |link_fr_tutorials|
+        * |link_it_tutorials|
+
     Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
 
 Das Kepler Kit ist ein vielseitiges Entwicklungskit, das vom Raspberry Pi Pico W-Mikrocontroller betrieben wird. Es enthält eine umfangreiche Auswahl an Hardwarekomponenten, darunter Sensoren (Ultraschall, RFID, MPU6050, Wasserstand), Anzeige-Module (LEDs, Punktmatrix, 7-Segment-Anzeige, I2C LCD1602) sowie Aktuatoren wie Motoren, Servos und Pumpen. Dieses Kit eignet sich sowohl für Anfänger als auch für erfahrene Nutzer und ist ideal zum Erlernen von Programmierung, Hardware-Interaktion und Projektentwicklung.
