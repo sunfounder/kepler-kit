@@ -641,6 +641,11 @@ rst_epilog += """
 
     <a href="https://www.youtube.com/@paulmcwhorter" target="_blank">Paul McWhorter</a>
     
+.. |link_video_courses| raw:: html
+
+    <a href="https://www.youtube.com/playlist?list=PLGs0VKk2DiYz8js1SJog21cDhkBqyAhC5" target="_blank">video courses on YouTube</a>
+    
+
 .. |link_heat_index| raw:: html
 
     <a href="https://en.wikipedia.org/wiki/Heat_index" target="_blank">heat index</a>
