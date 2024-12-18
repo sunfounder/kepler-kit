@@ -15,8 +15,13 @@
 Video Kurse
 ========================
 
-Wenn Sie den Inhalt der Online-Dokumentation etwas schwer verständlich finden, machen Sie sich keine Sorgen. 
-Ein schrittweiser Videokurs ist hier, um Ihren Lernprozess reibungsloser und ansprechender zu gestalten.
+Dies ist eine Reihe von MicroPython-Video-Tutorials, die von |link_paul| erstellt wurden und kostenlos auf |link_video_courses| verfügbar sind.
+
+Speziell für absolute Anfänger konzipiert, zeigt Ihnen diese Videoserie, wie Sie spannende Projekte mit dem Raspberry Pi Pico W erstellen können. Sie lernen nicht nur, wie man den Pico programmiert, sondern auch, wie man Schaltungen von Grund auf entwirft und baut. Es sind keine Vorkenntnisse erforderlich, da jede Lektion Sie Schritt für Schritt durch das Material führt.
+
+Unser Ziel ist es, Ihnen das Selbstvertrauen zu geben, eigene Projekte zu entwickeln. Diese Serie ist eine hervorragende Ressource für MINT-Programme und eignet sich für öffentliche und private Schulen, Homeschooling oder einfach für lebenslang Lernende, die die Welt der Elektronik und Programmierung erkunden möchten.
+
+Wir schätzen Ihr Feedback und freuen uns darauf, von Ihren Erfahrungen mit dem Kurs zu hören!
 
 **Projekt**
 

@@ -106,5 +106,5 @@ Der SW-Pin ist über einen 10K Pull-up-Widerstand angeschlossen. Der Grund dafü
 
 Nach dem Ausführen des Programms gibt die Shell die x,y,z-Werte des Joysticks aus.
 
-* Die Werte der x- und y-Achse sind analoge Werte, die zwischen 0 und 65535 variieren.
-* Die Z-Achse hat einen digitalen Wert mit einem Status von 1 oder 0.
+* Die Werte der X-Achse und Y-Achse sind analoge Werte, die von 0 bis 1023 variieren.
+* Die Z-Achse ist ein digitaler Wert mit einem Status von 1 oder 0.

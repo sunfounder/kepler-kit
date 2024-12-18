@@ -12,14 +12,25 @@
 
     👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!
 
-Für Arduino-Nutzer
+.. _projects_arduino:
+
+Arduino-Projekte
 ======================
 
-Dieses Kapitel beinhaltet die Installation der Arduino-IDE, das Hochladen von Code auf den Raspberry Pi mit der Arduino-IDE und eine Vielzahl von interessanten und praxisnahen Projekten, die Ihnen einen schnellen Einstieg in die Arduino-Programmierung ermöglichen.
+Dieser Abschnitt führt in die Arduino-Programmierung mit dem Pico W ein und zeigt Ihnen Schritt für Schritt, wie Sie die Arduino-IDE einrichten, die erforderlichen Bibliotheken installieren und spannende Projekte erstellen. Mit detaillierten Erklärungen und praktischen Übungen beherrschen Sie sowohl grundlegende als auch fortgeschrittene Arduino-basierte Hardware-Programmierung.
 
-Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
+**Quellcode**
 
-**1. Erste Schritte**
+* :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+
+* Oder schauen Sie sich den Code unter `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ an.
+
+
+1. Loslegen
+------------------------
+
+Richten Sie die Arduino-IDE ein und bereiten Sie sich darauf vor, Ihren Pico W zu programmieren. Erfahren Sie, wie Sie die IDE installieren, das Pico-W-Board konfigurieren und wichtige Bibliotheken für Ihre Projekte hinzufügen.  
+
 
 .. toctree::
     :maxdepth: 1
@@ -29,7 +40,10 @@ Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
     arduino_start/install_pico_w
     arduino_start/add_libraries_ar 
 
-**2. Ausgabe & Eingabe**
+2. Ausgabe & Eingabe
+-----------------------
+
+Arbeiten Sie mit LEDs, Sensoren und Schaltern, um die Grundlagen der Steuerung von Ausgabegeräten und der Erfassung von Eingaben aus der physischen Welt zu erlernen. Diese grundlegenden Übungen schaffen eine solide Grundlage für die Arduino-Programmierung.  
 
 .. toctree::
     :maxdepth: 1
@@ -51,7 +65,10 @@ Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
     ar_transistor
     ar_relay
 
-**3. Ton & Anzeige & Bewegung**
+3. Sound & Anzeige & Bewegung
+-------------------------------------
+
+Erforschen Sie, wie Sie Soundeffekte erzeugen, Daten anzeigen und Bewegung steuern können. Dieses Kapitel umfasst Projekte mit Summern, NeoPixel-LEDs, LCD-Bildschirmen, Motoren, Pumpen und Servos, um Ihre Hardware zum Leben zu erwecken.  
 
 .. toctree::
     :maxdepth: 1
@@ -64,7 +81,12 @@ Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
     ar_pump
     ar_servo
 
-**4. Controller**
+
+4. Controller
+---------------------
+
+Nutzen Sie Controller wie Joysticks, Keypads und Touch-Sensoren, um Ihren Projekten interaktive Funktionen hinzuzufügen. Lernen Sie, Eingaben von diesen Geräten zu verarbeiten und in kreative Ausgaben umzusetzen.  
+
 
 .. toctree::
     :maxdepth: 1
@@ -73,7 +95,10 @@ Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
     ar_keypad
     ar_mpr121
 
-**5. Mikrochip**
+5. Mikrochip
+---------------------
+
+Entdecken Sie die Leistungsfähigkeit von 74HC595-Schieberegistern für die fortgeschrittene LED-Steuerung, 7-Segment-Anzeigen und Punktmatrixmodule. Dieses Kapitel behandelt effiziente Techniken zum Umgang mit mehreren Ausgängen mit weniger Pins.  
 
 .. toctree::
     :maxdepth: 1
@@ -83,7 +108,10 @@ Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
     ar_74hc595_4dig
     ar_74hc595_matrix
 
-**6. Fortgeschritten**
+6. Fortgeschritten
+---------------------------------
+
+Tauchen Sie in fortgeschrittene Module und Konzepte ein, wie z. B. die Messung von Abständen mit Ultraschall, Umweltsensorik mit DHT11, Bewegungserfassung mit MPU6050 und drahtlose Kommunikation mit RFID- und IR-Fernbedienungen.  
 
 .. toctree::
     :maxdepth: 1
@@ -93,3 +121,4 @@ Wir empfehlen, die Kapitel in der angegebenen Reihenfolge durchzuarbeiten.
     ar_mpu6050
     ar_irremote
     ar_rfid
+

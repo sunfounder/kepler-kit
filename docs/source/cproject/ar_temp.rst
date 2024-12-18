@@ -89,11 +89,14 @@ In diesem Schaltkreis sind der 10K-Widerstand und der Thermistor in Reihe gescha
 
 Wenn die Temperatur steigt, sinkt der Widerstandswert des NTC-Thermistors, dann sinkt seine Spannung, so dass der Wert von GP28 sinkt; Wenn die Temperatur hoch genug ist, wird der Widerstand des Thermistors nahezu 0 sein, und der Wert von GP28 wird nahezu 0 sein. In diesem Fall spielt der 10K-Widerstand eine schützende Rolle, so dass 3,3V und GND nicht direkt miteinander verbunden sind, was zu einem Kurzschluss führen würde.
 
-Wenn die Temperatur fällt, wird der Wert von GP28 steigen. Wenn die Temperatur niedrig genug ist, wird der Widerstand des Thermistors unendlich sein, und seine Spannung wird nahe an 3,3V liegen (der 10K-Widerstand ist vernachlässigbar), und der Wert von GP28 wird nahe am Maximalwert von 65535 liegen.
+Wenn die Temperatur sinkt, wird der Wert von GP28 steigen. Bei einer ausreichend niedrigen Temperatur wird der Widerstand des Thermistors unendlich sein, und seine Spannung wird nahe 3,3V liegen (der 10K-Widerstand ist vernachlässigbar), und der Wert von GP28 wird nahe dem Maximalwert von 1023 sein.
 
 Die Berechnungsformel ist unten dargestellt.
 
-    (Vp/3,3V) x 65535 = Ap
+.. code-block::
+
+  Digitaler Wert = (Analogspannung / 3,3V) * 1023
+
 
 **Verdrahtung**
 

@@ -14,7 +14,7 @@
 
 .. _cpn_pico_w:
 
-Raspberry Pi Pico W
+Den Pico W kennenlernen
 =======================================
 
 |pico_w_side|
@@ -25,8 +25,7 @@ Der Raspberry Pi Pico W bietet eine 2,4 GHz 802.11 b/g/n WLAN-Unterstützung, ei
 Der Raspberry Pi Pico W kombiniert den RP2040 mit 2 MB Flash-Speicher und einem Spannungsversorgungschip, der Eingangsspannungen von 1,8 bis 5,5 V unterstützt. Er bietet 26 GPIO-Pins, von denen drei als analoge Eingänge fungieren können, auf Durchstecklöchern im 0,1-Zoll-Raster mit gegossenen Kanten. 
 Der Raspberry Pi Pico W ist sowohl einzeln als auch in 480er-Spulen für die automatisierte Montage erhältlich.
 
-Merkmale
---------------
+**Merkmale**
 
 * Abmessungen: 21 mm x 51 mm
 * RP2040-Mikrocontroller-Chip, entwickelt von Raspberry Pi in Großbritannien
@@ -47,8 +46,7 @@ Merkmale
 * Temperatursensor
 * Beschleunigte Ganzzahl- und Gleitkomma-Bibliotheken auf dem Chip
 
-Pico's Pins
-------------
+**Pico's Pins**
 
 |pico_pin|
 

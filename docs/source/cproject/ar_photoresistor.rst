@@ -78,15 +78,18 @@ Alternativ können Sie die Teile auch einzeln über die folgenden Links erwerben
 
 |sch_photoresistor|
 
-In dieser Schaltung sind der 10K-Widerstand und der Fotowiderstand in Reihe geschaltet. Der durch sie fließende Strom ist identisch. Der 10K-Widerstand dient als Schutz, und GP28 liest den Wert nach der Spannungsumwandlung des Fotowiderstands.
+In diesem Schaltkreis sind der 10K-Widerstand und der Fotowiderstand in Serie geschaltet, und der Strom, der durch sie fließt, ist derselbe. Der 10K-Widerstand dient als Schutz, und GP28 liest den Wert nach der Spannungsumwandlung des Fotowiderstands.
 
-Wenn das Licht intensiver wird, verringert sich der Widerstand des Fotowiderstands und damit auch seine Spannung. Daraufhin sinkt der Wert von GP28. Ist das Licht stark genug, nähert sich der Widerstand des Fotowiderstands dem Wert 0, und der Wert von GP28 wird ebenfalls nahezu 0 sein. In diesem Fall spielt der 10K-Widerstand eine schützende Rolle, sodass 3,3V und GND nicht direkt miteinander verbunden und somit ein Kurzschluss vermieden wird.
+Wenn das Licht stärker wird, verringert sich der Widerstand des Fotowiderstands, wodurch seine Spannung sinkt, und der Wert von GP28 wird ebenfalls sinken; wenn das Licht stark genug ist, wird der Widerstand des Fotowiderstands nahe 0 sein, und der Wert von GP28 wird nahe 0 sein. In diesem Moment spielt der 10K-Widerstand eine Schutzrolle, sodass 3,3V und GND nicht direkt verbunden werden, was zu einem Kurzschluss führen würde.
 
-In einer dunklen Umgebung steigt der Wert von GP28. Ist es dunkel genug, wird der Widerstand des Fotowiderstands unendlich groß, seine Spannung nähert sich 3,3V an (der 10K-Widerstand ist vernachlässigbar), und der Wert von GP28 erreicht nahezu den Maximalwert von 65535.
+Wenn Sie den Fotowiderstand in eine dunkle Umgebung bringen, wird der Wert von GP28 steigen. In einer ausreichend dunklen Umgebung wird der Widerstand des Fotowiderstands unendlich sein, und seine Spannung wird nahe 3,3V sein (der 10K-Widerstand ist vernachlässigbar), und der Wert von GP28 wird nahe dem Maximalwert von 1023 sein.
 
-Die Berechnungsformel lautet wie folgt:
+Die Berechnungsformel ist unten dargestellt.
 
-    (Vp/3,3V) x 65535 = Ap
+.. code-block::
+
+  Digitaler Wert = (Analogspannung / 3,3V) * 1023
+
 
 **Verkabelung**
 

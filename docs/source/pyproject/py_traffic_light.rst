@@ -85,7 +85,7 @@ Sie können die Einzelteile auch über die unten stehenden Links separat erwerbe
         - |link_74hc595_buy|
     *   - 8
         - :ref:`cpn_led`
-        - 1
+        - 3
         - |link_led_buy|
 
 **Schaltplan**

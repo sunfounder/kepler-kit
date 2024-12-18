@@ -97,13 +97,15 @@ Die Teile können auch einzeln über die folgenden Links gekauft werden.
 
 |sch_pot|
 
-Das Potentiometer ist ein analoges Bauelement und kann in zwei verschiedene Richtungen gedreht werden.
+Das Potentiometer ist ein analoges Gerät, das sich in zwei verschiedene Richtungen drehen lässt.
 
-Verbinden Sie den mittleren Pin des Potentiometers mit dem analogen Pin GP28. Der Raspberry Pi Pico W enthält einen mehrkanaligen, 16-Bit-Analog-Digital-Wandler. Das bedeutet, dass er die Eingangsspannung zwischen 0 und der Betriebsspannung (3,3V) auf einen Ganzzahlwert zwischen 0 und 65535 abbildet, sodass der Wert von GP28 zwischen 0 und 65535 liegt.
+Verbinden Sie den mittleren Pin des Potentiometers mit dem analogen Pin GP28. Der Raspberry Pi Pico W verfügt über einen Mehrkanal-Analog-Digital-Wandler mit 16 Bit. Das bedeutet, dass er die Eingangsspannung zwischen 0 und der Betriebsspannung (3,3V) auf einen ganzzahligen Wert zwischen 0 und 1023 abbildet, sodass der GP28-Wert im Bereich von 0 bis 1023 liegt.
 
-Die Berechnungsformel lautet wie folgt:
+Die Berechnungsformel ist unten dargestellt.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Digitaler Wert = (Analogspannung / 3,3V) * 1023
 
 Programmieren Sie anschließend den Wert von GP28 (Potentiometer) als PWM-Wert von GP15 (LED).
 Auf diese Weise werden Sie feststellen, dass sich die Helligkeit der LED beim Drehen des Potentiometers gleichzeitig verändert.
