@@ -14,7 +14,7 @@
 
 .. _nt_mqtt_Subscribe:
 
-6. Cloud Player with @MQTT
+8.6 Cloud Player with @MQTT
 =========================================
 
 It is recommended that you do the :ref:`nt_mqtt_publish` project first to complete the installation of some modules and to complete the configuration of the HiveMQ platform.

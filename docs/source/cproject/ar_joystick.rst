@@ -109,5 +109,5 @@ The SW pin is connected to a 10K pull-up resistor, the reason is to be able to g
 
 After the program runs, the Shell prints out the x,y,z values of joystick.
 
-* The x-axis and y-axis values are analog values that vary from 0 to 65535.
+* The x-axis and y-axis values are analog values that vary from 0 to 1023.
 * The Z-axis is a digital value with a status of 1 or 0.

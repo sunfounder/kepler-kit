@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-10. Plant Monitor in @SunFounder Controller
+8.10 Plant Monitor in @SunFounder Controller
 ================================================
 
 With this project, you will learn how to build a plant watering system using the Sunfounder Controller APP.

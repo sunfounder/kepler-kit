@@ -14,7 +14,7 @@
 
 .. _cpn_pico_w:
 
-Raspberry Pi Pico W
+Getting to Know Pico W
 =======================================
 
 |pico_w_side|
@@ -33,8 +33,7 @@ function as analogue inputs, on 0.1”-pitch through-hole pads with castellated 
 Raspberry Pi Pico W is available as an individual unit, or in 480-unit reels for automated
 assembly
 
-Features
---------------
+**Features**
 
 * 21 mm x 51 mm form factor
 * RP2040 microcontroller chip designed by Raspberry Pi in the UK
@@ -55,8 +54,7 @@ Features
 * Temperature sensor
 * Accelerated integer and floating-point libraries on-chip
 
-Pico's Pins
-------------
+**Pico's Pins**
 
 |pico_pin|
 

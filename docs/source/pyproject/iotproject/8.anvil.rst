@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-8. Building Web APP with @Anvil
+8.8 Building Web APP with @Anvil
 ===================================
 
 We will write a project to communicate bi-directionally between the Raspberry Pi Pico W and Anvil's servers.

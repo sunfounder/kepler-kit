@@ -14,7 +14,7 @@
 
 .. _iot_access:
 
-1. Access to the Network
+8.1 Access to the Network
 ===========================
 
 Raspberry Pi Pico W is very similar to Raspberry Pi Pico, with the same GPIO, microUSB port, and size. The only difference is the addition of the CYW43439 2.4-GHz Wi-Fi chip from Infineon.

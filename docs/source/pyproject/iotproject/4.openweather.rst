@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-4. Real-time Weather From @OpenWeatherMap 
+8.4 Real-time Weather From @OpenWeatherMap 
 ===========================================
 
 

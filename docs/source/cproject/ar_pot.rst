@@ -101,11 +101,13 @@ You can also buy them separately from the links below.
 
 The potentiometer is an analog device and when you turn it in 2 different directions.
 
-Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico W contains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 65535, so the GP28 value ranges from 0 to 65535.
+Connect the middle pin of the potentiometer to the analog pin GP28. The Raspberry Pi Pico W contains a multi-channel, 16-bit analog-to-digital converter. This means that it maps the input voltage between 0 and the operating voltage (3.3V) to an integer value between 0 and 1023, so the GP28 value ranges from 0 to 1023.
 
 The calculation formula is shown below.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Digital Value = (Analog Voltage/3.3V) * 1023
 
 Then program the value of GP28 (potentiometer) as the PWM value of GP15 (LED).
 This way you will find that by rotating the potentiometer, the brightness of the LED will change at the same time.

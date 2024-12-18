@@ -14,7 +14,7 @@
 
 .. _nt_mqtt_publish:
 
-5. Cloud Calling System with @MQTT
+8.5 Cloud Calling System with @MQTT
 ============================================
 
 Message Queuing Telemetry Transport (MQTT) is a simple messaging protocol.

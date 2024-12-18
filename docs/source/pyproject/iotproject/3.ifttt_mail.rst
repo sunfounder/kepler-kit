@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-3. Security System via @IFTTT
+8.3 Security System via @IFTTT
 ============================================
 With this project, we make a security device that uses a PIR Sensor to detect when a burglar or stray animal breaks into your home. You will receive an email alert if this is the case.
 

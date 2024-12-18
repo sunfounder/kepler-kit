@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-2. Follow the @CheerLights
+8.2 Follow the @CheerLights
 =======================================
 
 This is a romantic project, join the |link_cheerlights| LED color-changing community, which allows LEDs all over the world to change colors simultaneously.

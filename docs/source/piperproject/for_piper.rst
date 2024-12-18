@@ -12,8 +12,10 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-For Piper Make
-===================
+.. _projects_micropython:
+
+Piper Make Projects
+======================
 
 This chapter contains an introduction to Piper Make, how to connect and program Pico W win Piper Make, and several interesting projects to help you get up and running with Piper quickly.
 
@@ -21,6 +23,12 @@ We recommend that you read this chapter in order.
 
 Piper Make is a super easy and fun way to make projects using Raspberry Pi Pico W. It uses blocks like Scratch, so you don't need any programming experience to use it.
 The underlying principle is to use CircuitPython with auxiliary libraries.
+
+**Source Code**
+
+* :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+
+* Or check out the code at `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
 
 
 **1. Get Started**

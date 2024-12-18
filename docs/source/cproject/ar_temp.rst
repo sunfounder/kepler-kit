@@ -95,12 +95,14 @@ In this circuit, the 10K resistor and the thermistor are connected in series, an
 
 When the temperature increases, the resistance value of NTC thermistor decreases, then its voltage decreases, so the value from GP28 will decrease; If the temperature is high enough, the resistance of the thermistor will be close to 0, and the value of GP28 will be close to 0. At this time, the 10K resistor plays a protective role, so that 3.3V and GND are not connected together, resulting in a short circuit.
 
-When the temperature drops, the value of GP28 will increase. When the temperature is low enough, the resistance of the thermistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 65535.
+When the temperature drops, the value of GP28 will increase. When the temperature is low enough, the resistance of the thermistor will be infinite, and its voltage will be close to 3.3v (the 10K resistor is negligible), and the value of GP28 will be close to the maximum value of 1023.
 
 
 The calculation formula is shown below.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Digital Value = (Analog Voltage/3.3V) * 1023
 
 
 **Wiring**

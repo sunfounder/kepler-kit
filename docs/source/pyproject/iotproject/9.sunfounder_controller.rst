@@ -14,7 +14,7 @@
 
 .. _play_sc:
 
-9. Play in @SunFounder Controller
+8.9 Play in @SunFounder Controller
 ====================================
 
 In this project, you will learn how to build a remote project using Sunfounder Controller APP.
