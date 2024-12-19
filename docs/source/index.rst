@@ -37,7 +37,7 @@ Diese Dokumentation enthält Tutorials für drei Programmierumgebungen:
 
 * :ref:`projects_micropython`: Lernen Sie, Hardware mit MicroPython zu steuern, durch klare Schritt-für-Schritt-Beispiele und praktische Projekte.
 * :ref:`projects_arduino`: Entdecken Sie die Arduino-IDE-Programmierung mit C/C++, indem Sie strukturierte Übungen nutzen, um das volle Potenzial der Hardware zu entfalten.
-* :ref:`projects_micropython`: Tauchen Sie ein in eine blockbasierte Programmiererfahrung mit Piper Make – perfekt für jüngere Lernende und Anfänger in der Programmierung.
+* :ref:`projects_piper`: Tauchen Sie ein in eine blockbasierte Programmiererfahrung mit Piper Make – perfekt für jüngere Lernende und Anfänger in der Programmierung.
 
 Mit dem Kepler Kit haben Sie alles, was Sie brauchen, um Ihre Ideen zum Leben zu erwecken, sei es durch Code, Blöcke oder interaktive Projekte.
 
