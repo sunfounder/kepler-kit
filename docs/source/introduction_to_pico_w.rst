@@ -13,7 +13,7 @@
     👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 .. _cpn_pico_w:
 
-Raspberry Pi Pico W
+Conociendo el Pico W
 =======================================
 
 |pico_w_side|
@@ -33,8 +33,7 @@ un chip de alimentación que soporta voltajes de entrada de 1.8 a 5.5V. Proporci
 de 0.1” de separación y bordes acastillados. El Raspberry Pi Pico W está disponible como unidad 
 individual o en bobinas de 480 unidades para ensamblaje automatizado.
 
-Características
--------------------
+**Características**
 
 * Formato de 21 mm x 51 mm
 * Chip microcontrolador RP2040 diseñado por Raspberry Pi en el Reino Unido
@@ -55,8 +54,7 @@ Características
 * Sensor de temperatura
 * Bibliotecas de enteros y punto flotante aceleradas en chip
 
-Pines de Pico
-----------------
+**Pines de Pico**
 
 |pico_pin|
 

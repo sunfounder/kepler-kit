@@ -106,5 +106,5 @@ El pin SW está conectado a una resistencia pull-up de 10K, la razón es poder o
 Después de ejecutar el programa, la consola imprimirá los valores de x, y, z del joystick.
 
 
-* Los valores de los ejes x e y son valores analógicos que varían de 0 a 65535.
+* Los valores del eje X y del eje Y son valores analógicos que varían de 0 a 1023.
 * El eje Z es un valor digital con un estado de 1 o 0.

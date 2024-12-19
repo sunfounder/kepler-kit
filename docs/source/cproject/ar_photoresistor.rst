@@ -84,11 +84,14 @@ En este circuito, el resistor de 10K y el fotorresistor están conectados en ser
 
 Cuando la luz se intensifica, la resistencia del fotorresistor disminuye, entonces su voltaje también disminuye, y el valor de GP28 también disminuirá. Si la luz es lo suficientemente fuerte, la resistencia del fotorresistor se acercará a 0, y el valor de GP28 será cercano a 0. En este punto, el resistor de 10K desempeña un rol protector para evitar un cortocircuito al impedir que se unan 3.3V y GND.
 
-Si colocas el fotorresistor en la oscuridad, el valor de GP28 aumentará. En una situación lo suficientemente oscura, la resistencia del fotorresistor será infinita, y su voltaje se aproximará a 3.3V (el resistor de 10K es despreciable), y el valor de GP28 será cercano al valor máximo de 65535.
+Si colocas la fotorresistencia en una situación oscura, el valor de GP28 aumentará. En una situación lo suficientemente oscura, la resistencia de la fotorresistencia será infinita y su voltaje estará cerca de 3.3V (la resistencia de 10K es despreciable), y el valor de GP28 estará cerca del valor máximo de 1023.
 
 La fórmula de cálculo se muestra a continuación.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Valor Digital = (Voltaje Analógico / 3.3V) * 1023
+
 
 **Conexión**
 

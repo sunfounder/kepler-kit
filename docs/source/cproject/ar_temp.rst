@@ -88,15 +88,18 @@ También puedes comprarlos por separado en los enlaces a continuación.
 
 |sch_temp|
 
-En este circuito, la resistencia de 10K y el termistor están conectados en serie, y la corriente que los atraviesa es la misma. La resistencia de 10K actúa como protección, y el pin GP28 lee el valor tras la conversión de voltaje del termistor.
+En este circuito, la resistencia de 10K y el termistor están conectados en serie, y la corriente que pasa a través de ellos es la misma. La resistencia de 10K actúa como protección, y GP28 lee el valor después de la conversión de voltaje del termistor.
 
-Cuando aumenta la temperatura, el valor de resistencia del termistor NTC disminuye, y su voltaje baja, por lo que el valor de GP28 también disminuye. Si la temperatura es lo suficientemente alta, la resistencia del termistor se aproximará a 0 y el valor de GP28 será cercano a 0. En este momento, la resistencia de 10K juega un papel protector, evitando que se conecten los 3.3V y GND, lo cual provocaría un cortocircuito.
+Cuando la temperatura aumenta, el valor de resistencia del termistor NTC disminuye, lo que provoca que su voltaje disminuya, y el valor de GP28 también disminuirá; si la temperatura es lo suficientemente alta, la resistencia del termistor será cercana a 0, y el valor de GP28 será cercano a 0. En este momento, la resistencia de 10K desempeña un papel protector, evitando que 3.3V y GND se conecten directamente, lo que resultaría en un cortocircuito.
 
-Cuando la temperatura desciende, el valor de GP28 aumentará. En condiciones de frío extremo, la resistencia del termistor será infinita y su voltaje se acercará a 3.3V (la resistencia de 10K es despreciable), por lo que el valor de GP28 estará cerca del valor máximo de 65535.
+Cuando la temperatura baja, el valor de GP28 aumentará. Si la temperatura es lo suficientemente baja, la resistencia del termistor será infinita, y su voltaje será cercano a 3.3V (la resistencia de 10K es despreciable), y el valor de GP28 será cercano al valor máximo de 1023.
 
-La fórmula de cálculo se muestra a continuación:
+La fórmula de cálculo se muestra a continuación.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Valor Digital = (Voltaje Analógico / 3.3V) * 1023
+
 
 **Conexión**
 

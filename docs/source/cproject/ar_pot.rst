@@ -102,16 +102,19 @@ También puedes comprarlos por separado en los enlaces a continuación.
 
 |sch_pot|
 
-El potenciómetro es un dispositivo analógico y su comportamiento cambia al girarlo en dos direcciones diferentes.
+El potenciómetro es un dispositivo analógico, y cuando lo giras en dos direcciones diferentes.
 
-Conecta el pin central del potenciómetro al pin analógico GP28. La Raspberry Pi Pico W tiene un convertidor analógico a digital de múltiples canales y 16 bits, lo que significa que asigna el voltaje de entrada entre 0 y el voltaje de operación (3.3V) a un valor entero entre 0 y 65535. Así, el valor de GP28 oscilará entre 0 y 65535.
+Conecta el pin central del potenciómetro al pin analógico GP28. La Raspberry Pi Pico W contiene un convertidor analógico-digital de múltiples canales y 16 bits. Esto significa que convierte el voltaje de entrada entre 0 y el voltaje de operación (3.3V) en un valor entero entre 0 y 1023, por lo que el valor de GP28 varía entre 0 y 1023.
 
-La fórmula de cálculo es la siguiente:
+La fórmula de cálculo se muestra a continuación.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
 
-Luego, programa el valor de GP28 (potenciómetro) como el valor PWM de GP15 (LED). 
-De esta forma, verás que al girar el potenciómetro, la intensidad del LED cambia al mismo tiempo.
+  Valor Digital = (Voltaje Analógico / 3.3V) * 1023
+
+Luego programa el valor de GP28 (potenciómetro) como el valor PWM de GP15 (LED). 
+De esta manera, notarás que al girar el potenciómetro, el brillo del LED cambiará al mismo tiempo.
+
 
 **Conexión**
 

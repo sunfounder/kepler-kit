@@ -12,16 +12,27 @@
 
     👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-.. _micropython_user:
+.. _projects_micropython:
 
-Para Usuarios de MicroPython
-===================================
-En esta sección, aprenderás sobre la historia de MicroPython, cómo instalar MicroPython en el Pico W, la sintaxis básica y una docena de proyectos interesantes y prácticos que te ayudarán a aprender MicroPython rápidamente.
+Proyectos MicroPython
+======================
 
-Te recomendamos leer los capítulos en orden.
+En esta sección, explorarás los fundamentos de MicroPython, desde su historia hasta la instalación en el Pico W. También te sumergirás en la sintaxis básica y trabajarás en numerosos proyectos prácticos diseñados para ayudarte a dominar MicroPython paso a paso.
+
+Recomendamos leer los capítulos en orden para maximizar tu experiencia de aprendizaje.  
 
 
-**1. Primeros Pasos**
+**Código Fuente**
+
+* :download:`Kit SunFounder Kepler <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+
+* O revisa el código en `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+
+
+1. Primeros Pasos
+------------------------
+Aprende los conceptos básicos de MicroPython y configura tu entorno de desarrollo, incluyendo la instalación de Thonny, la carga de MicroPython en el Pico W y la exploración de su sintaxis básica.  
+
 
 .. toctree::
     :maxdepth: 1
@@ -35,7 +46,11 @@ Te recomendamos leer los capítulos en orden.
     python_start/syntax/micropython_basic_syntax
 
 
-**2. Salida y Entrada**
+
+2. Salida e Entrada
+----------------------
+Descubre cómo trabajar con dispositivos de salida como LEDs y dispositivos de entrada como botones y sensores. Este capítulo introduce los fundamentos de la computación física con proyectos prácticos.  
+
 
 .. toctree::
     :maxdepth: 1
@@ -57,7 +72,9 @@ Te recomendamos leer los capítulos en orden.
     py_transistor
     py_relay
 
-**3. Sonido, Pantalla y Movimiento**
+3. Sonido, Pantalla y Movimiento
+--------------------------------------
+Domina módulos como zumbadores, LEDs NeoPixel, pantallas LCD y actuadores como motores, bombas y servos. Crea proyectos interactivos que produzcan sonido, visuales y movimiento.  
 
 .. toctree::
     :maxdepth: 1
@@ -70,7 +87,9 @@ Te recomendamos leer los capítulos en orden.
     py_pump
     py_servo
 
-**4. Controlador**
+4. Controlador
+----------------------
+Aprende cómo usar controladores como joysticks, teclados y sensores táctiles para agregar interactividad y complejidad a tus proyectos.  
 
 .. toctree::
     :maxdepth: 1
@@ -79,7 +98,9 @@ Te recomendamos leer los capítulos en orden.
     py_keypad
     py_mpr121
 
-**5. Microchip**
+5. Microchip
+--------------
+Sumérgete en proyectos basados en microchips usando registros de desplazamiento 74HC595. Controla LEDs, pantallas de 7 segmentos, matrices de puntos y más con técnicas avanzadas.  
 
 .. toctree::
     :maxdepth: 1
@@ -89,7 +110,10 @@ Te recomendamos leer los capítulos en orden.
     py_74hc595_4dig
     py_74hc595_matrix
 
-**6. Avanzado**
+6. Avanzado
+--------------------
+Lleva tus proyectos al siguiente nivel con componentes avanzados como sensores ultrasónicos, módulos de temperatura y humedad DHT11, giroscopios MPU6050 y lectores RFID.  
+
 
 .. toctree::
     :maxdepth: 1
@@ -100,7 +124,11 @@ Te recomendamos leer los capítulos en orden.
     py_irremote
     py_rfid
 
-**7. Proyectos Divertidos**
+7. Proyectos Divertidos
+----------------------------
+
+Pon tus habilidades en práctica construyendo aplicaciones emocionantes y del mundo real como theremins de luz, contadores de pasajeros, reproductores de música RFID y controladores somatosensoriales. Estos proyectos son tanto divertidos como educativos.  
+
 
 .. toctree::
     :maxdepth: 1
@@ -118,4 +146,20 @@ Te recomendamos leer los capítulos en orden.
     py_somatosensory_controller
     py_digital_bubble_level
 
+8. Proyectos IoT
+------------------------
+Conecta tu Pico W a internet y explora el mundo del IoT (Internet de las Cosas). Construye proyectos como CheerLights, monitores de clima, sistemas de comunicación basados en MQTT e incluso un sistema de monitoreo de plantas.  
 
+.. toctree::
+    :maxdepth: 1
+
+    iotproject/1.access
+    iotproject/2.cheerlight
+    iotproject/3.ifttt_mail
+    iotproject/4.openweather
+    iotproject/5.mqtt_pub
+    iotproject/6.mqtt_sub
+    iotproject/7.web_page
+    iotproject/8.anvil
+    iotproject/9.sunfounder_controller
+    iotproject/10.plant_monitor

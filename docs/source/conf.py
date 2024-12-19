@@ -35,8 +35,15 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_rtd_theme',
 ]
+
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached'
+}
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -479,6 +486,8 @@ rst_epilog += """
 # pico pin
 rst_epilog += """
 .. |pico_w_side| image:: /img/pico_w_side.png
+    :width: 500
+
 .. |pico_pin| image:: /img/pico_pin.jpg
     :width: 800
 .. |pin_adc| image:: /img/pin_pic3.png
@@ -632,6 +641,14 @@ rst_epilog += """
 # open link in a new window
 
 rst_epilog += """
+
+.. |link_paul| raw:: html
+
+    <a href="https://www.youtube.com/@paulmcwhorter" target="_blank">Paul McWhorter</a>
+    
+.. |link_video_courses| raw:: html
+
+    <a href="https://www.youtube.com/playlist?list=PLGs0VKk2DiYz8js1SJog21cDhkBqyAhC5" target="_blank">video courses on YouTube</a>
 
 .. |link_heat_index| raw:: html
 
