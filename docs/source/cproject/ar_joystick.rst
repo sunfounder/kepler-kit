@@ -106,5 +106,5 @@ La broche SW est connectée à une résistance pull-up de 10KΩ, ce qui permet d
 Une fois le programme lancé, la console affichera les valeurs x, y, z du joystick.
 
 
-* Les valeurs des axes x et y sont des valeurs analogiques qui varient de 0 à 65535.
-* L'axe Z est une valeur numérique avec un état de 1 ou 0.
+* Les valeurs des axes X et Y sont des valeurs analogiques qui varient de 0 à 1023.
+* L'axe Z est une valeur numérique avec un statut de 1 ou 0.

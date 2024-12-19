@@ -14,7 +14,7 @@
 
 .. _cpn_pico_w:
 
-Raspberry Pi Pico W
+Découvrir le Pico W
 =======================================
 
 |pico_w_side|
@@ -33,8 +33,7 @@ en mode station et point d'accès. Un accès complet aux fonctionnalités résea
 
 
 
-Caractéristiques
-----------------------
+**Caractéristiques**
 
 * Format 21 mm x 51 mm
 * Microcontrôleur RP2040 conçu par Raspberry Pi au Royaume-Uni
@@ -55,8 +54,7 @@ Caractéristiques
 * Capteur de température
 * Bibliothèques accélérées pour les calculs entiers et à virgule flottante intégrées
 
-Les broches du Pico
---------------------------
+**Les broches du Pico**
 
 |pico_pin|
 

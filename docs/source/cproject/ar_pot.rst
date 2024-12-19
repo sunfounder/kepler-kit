@@ -97,16 +97,18 @@ Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 |sch_pot|
 
-Le potentiomètre est un dispositif analogique, et lorsque vous le tournez dans deux directions différentes.
+Le potentiomètre est un dispositif analogique que vous pouvez tourner dans deux directions différentes.
 
-Connectez la broche centrale du potentiomètre à la broche analogique GP28. Le Raspberry Pi Pico W contient un convertisseur analogique-numérique multicanal de 16 bits. Cela signifie qu'il mappe la tension d'entrée entre 0 et la tension de fonctionnement (3,3V) à une valeur entière comprise entre 0 et 65535, donc la valeur de GP28 varie de 0 à 65535.
+Connectez la broche centrale du potentiomètre à la broche analogique GP28. Le Raspberry Pi Pico W dispose d’un convertisseur analogique-numérique multi-canaux de 16 bits. Cela signifie qu’il convertit la tension d’entrée entre 0 et la tension de fonctionnement (3,3V) en une valeur entière comprise entre 0 et 1023, donc la valeur de GP28 varie de 0 à 1023.
 
-La formule de calcul est la suivante :
+La formule de calcul est indiquée ci-dessous.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
 
-Ensuite, programmez la valeur de GP28 (potentiomètre) comme valeur PWM de GP15 (LED).
-De cette manière, vous remarquerez qu'en tournant le potentiomètre, la luminosité de la LED changera en même temps.
+  Valeur numérique = (Tension analogique / 3,3V) * 1023
+
+Ensuite, programmez la valeur de GP28 (potentiomètre) comme la valeur PWM de GP15 (LED).  
+De cette manière, vous constaterez qu’en tournant le potentiomètre, la luminosité de la LED changera simultanément.
 
 **Câblage**
 

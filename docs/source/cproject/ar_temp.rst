@@ -88,15 +88,18 @@ Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 |sch_temp|
 
-Dans ce circuit, la résistance de 10KΩ et le thermistor sont connectés en série, et le courant qui les traverse est le même. La résistance de 10KΩ agit comme protection, et le GP28 lit la valeur après la conversion de la tension du thermistor.
+Dans ce circuit, la résistance de 10K et la thermistance sont connectées en série, et le courant qui les traverse est le même. La résistance de 10K agit comme une protection, et le GP28 lit la valeur après la conversion de la tension de la thermistance.
 
-Lorsque la température augmente, la résistance du thermistor NTC diminue, ce qui entraîne une baisse de sa tension, donc la valeur lue par GP28 diminuera également. Si la température est suffisamment élevée, la résistance du thermistor sera proche de 0, et la valeur de GP28 sera proche de 0. À ce moment-là, la résistance de 10KΩ joue un rôle de protection pour éviter que les 3,3V et la masse ne soient directement connectés, ce qui provoquerait un court-circuit.
+Lorsque la température augmente, la valeur de résistance de la thermistance NTC diminue, puis sa tension diminue, de sorte que la valeur de GP28 diminue ; si la température est suffisamment élevée, la résistance de la thermistance sera proche de 0, et la valeur de GP28 sera proche de 0. À ce moment-là, la résistance de 10K joue un rôle protecteur, empêchant que 3,3V et GND ne soient connectés ensemble, ce qui entraînerait un court-circuit.
 
-Lorsque la température baisse, la valeur de GP28 augmente. Lorsque la température est suffisamment basse, la résistance du thermistor devient presque infinie, sa tension se rapproche de 3,3V (la résistance de 10KΩ étant négligeable), et la valeur de GP28 atteint un maximum de 65535.
+Lorsque la température baisse, la valeur de GP28 augmentera. Lorsque la température est suffisamment basse, la résistance de la thermistance sera infinie, et sa tension sera proche de 3,3V (la résistance de 10K est négligeable), et la valeur de GP28 sera proche de la valeur maximale de 1023.
 
-La formule de calcul est la suivante :
+La formule de calcul est indiquée ci-dessous.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Valeur numérique = (Tension analogique / 3,3V) * 1023
+
 
 
 **Câblage**

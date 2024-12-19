@@ -12,6 +12,8 @@
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
+.. _projects_piper:
+
 Pour Piper Make
 ===================
 
@@ -21,6 +23,13 @@ Nous vous recommandons de lire ce chapitre dans l'ordre.
 
 Piper Make est un moyen super simple et amusant de créer des projets avec le Raspberry Pi Pico W. Il utilise des blocs similaires à Scratch, ce qui signifie que vous n'avez besoin d'aucune expérience en programmation pour l'utiliser.
 Le principe de base repose sur l'utilisation de CircuitPython avec des bibliothèques auxiliaires.
+
+**Code source**
+
+* :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+
+* Ou consultez le code sur `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+
 
 **1. Commencer**
 

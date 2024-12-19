@@ -12,17 +12,21 @@
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Pour les utilisateurs d'Arduino
-=====================================
+.. _projects_arduino:
 
-Ce chapitre comprend l'installation de l'Arduino IDE, le téléchargement de 
-code sur le Raspberry Pi avec l'Arduino IDE et une douzaine de projets 
-intéressants et pratiques pour vous aider à apprendre rapidement le code Arduino.
+Projets Arduino
+======================
+Cette section présente la programmation Arduino avec le Pico W, vous guidant à travers le processus d'installation de l'IDE Arduino, de l'ajout des bibliothèques nécessaires et de la réalisation de projets passionnants. Avec des explications détaillées et des exercices pratiques, vous maîtriserez aussi bien les bases que les concepts avancés de la programmation matérielle basée sur Arduino.
 
-Nous vous recommandons de lire les chapitres dans l'ordre.
+**Code Source**
 
+* :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
 
-**1. Prise en main**
+* Ou consultez le code sur `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_
+
+1. Démarrage
+------------------------
+Installez l'IDE Arduino et préparez-vous à programmer votre Pico W. Apprenez à installer l'IDE, configurer la carte Pico W, et ajouter les bibliothèques essentielles pour vos projets.
 
 .. toctree::
     :maxdepth: 1
@@ -32,7 +36,9 @@ Nous vous recommandons de lire les chapitres dans l'ordre.
     arduino_start/install_pico_w
     arduino_start/add_libraries_ar 
 
-**2. Sorties et entrées**
+2. Sortie & Entrée
+-----------------------
+Travaillez avec des LEDs, des capteurs et des interrupteurs pour apprendre les bases du contrôle des dispositifs de sortie et de la collecte des entrées du monde physique. Ces exercices fondamentaux établiront une base solide en programmation Arduino.  
 
 .. toctree::
     :maxdepth: 1
@@ -54,7 +60,9 @@ Nous vous recommandons de lire les chapitres dans l'ordre.
     ar_transistor
     ar_relay
 
-**3. Son, affichage et mouvement**
+3. Son, Affichage & Mouvement
+-------------------------------------
+Explorez comment créer des effets sonores, afficher des données et contrôler les mouvements. Ce chapitre comprend des projets avec des buzzers, LEDs NeoPixel, écrans LCD, moteurs, pompes et servos pour donner vie à votre matériel.  
 
 .. toctree::
     :maxdepth: 1
@@ -68,7 +76,9 @@ Nous vous recommandons de lire les chapitres dans l'ordre.
     ar_servo
 
 
-**4. Contrôleurs**
+4. Contrôleur
+---------------------
+Utilisez des contrôleurs tels que des joysticks, des claviers numériques et des capteurs tactiles pour ajouter des fonctionnalités interactives à vos projets. Apprenez à traiter les entrées de ces dispositifs et à les traduire en sorties créatives.  
 
 .. toctree::
     :maxdepth: 1
@@ -77,7 +87,9 @@ Nous vous recommandons de lire les chapitres dans l'ordre.
     ar_keypad
     ar_mpr121
 
-**5. Microcontrôleurs**
+5. Microchip
+---------------------
+Découvrez la puissance des registres à décalage 74HC595 pour le contrôle avancé des LEDs, des afficheurs 7 segments et des modules matriciels. Ce chapitre couvre des techniques efficaces pour gérer de multiples sorties avec moins de broches.  
 
 .. toctree::
     :maxdepth: 1
@@ -87,7 +99,9 @@ Nous vous recommandons de lire les chapitres dans l'ordre.
     ar_74hc595_4dig
     ar_74hc595_matrix
 
-**6. Avancé**
+6. Avancé
+----------------
+Plongez dans des modules et concepts avancés, tels que la mesure de distance ultrasonique, la détection environnementale avec le DHT11, le suivi des mouvements avec le MPU6050, et la communication sans fil avec RFID et télécommandes infrarouges.  
 
 .. toctree::
     :maxdepth: 1
@@ -97,4 +111,3 @@ Nous vous recommandons de lire les chapitres dans l'ordre.
     ar_mpu6050
     ar_irremote
     ar_rfid
-

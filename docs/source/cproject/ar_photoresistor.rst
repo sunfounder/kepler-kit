@@ -78,16 +78,18 @@ Vous pouvez également les acheter séparément via les liens ci-dessous.
 
 |sch_photoresistor|
 
-Dans ce circuit, la résistance de 10KΩ et la photorésistance sont connectées en série, et le courant qui les traverse est identique. La résistance de 10KΩ agit comme protection, et le GP28 lit la valeur après la conversion de la tension de la photorésistance.
+Dans ce circuit, la résistance de 10K et la photo-résistance sont connectées en série, et le courant qui les traverse est le même. La résistance de 10K agit comme une protection, et le GP28 lit la valeur après la conversion de la tension de la photo-résistance.
 
-Lorsque la lumière s'intensifie, la résistance de la photorésistance diminue, ce qui entraîne une baisse de sa tension ; par conséquent, la valeur lue par le GP28 diminue. Si la lumière est suffisamment forte, la résistance de la photorésistance se rapproche de 0, et la valeur du GP28 sera également proche de 0. À ce moment-là, la résistance de 10KΩ joue un rôle de protection pour éviter que le 3,3V et la masse (GND) ne se retrouvent directement connectés, ce qui entraînerait un court-circuit.
+Lorsque la lumière augmente, la résistance de la photo-résistance diminue, puis sa tension diminue, de sorte que la valeur de GP28 diminue ; si la lumière est suffisamment forte, la résistance de la photo-résistance sera proche de 0, et la valeur de GP28 sera proche de 0. À ce moment-là, la résistance de 10K joue un rôle protecteur, empêchant que 3,3V et GND ne soient connectés ensemble, ce qui entraînerait un court-circuit.
 
-Si vous placez la photorésistance dans un environnement sombre, la valeur du GP28 augmentera. Dans une obscurité totale, la résistance de la photorésistance deviendra infinie, sa tension sera proche de 3,3V (la résistance de 10KΩ devient négligeable), et la valeur du GP28 sera proche du maximum de 65535.
+Si vous placez la photo-résistance dans une situation sombre, la valeur de GP28 augmentera. Dans une situation suffisamment sombre, la résistance de la photo-résistance sera infinie, et sa tension sera proche de 3,3V (la résistance de 10K est négligeable), et la valeur de GP28 sera proche de la valeur maximale de 1023.
 
+La formule de calcul est indiquée ci-dessous.
 
-La formule de calcul est la suivante :
+.. code-block::
 
-    (Vp/3.3V) x 65535 = Ap
+  Valeur numérique = (Tension analogique / 3,3V) * 1023
+
 
 
 **Câblage**

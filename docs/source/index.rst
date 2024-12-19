@@ -31,19 +31,15 @@ Merci d'avoir choisi notre |link_kepler_kit|.
 
     Veuillez cliquer sur les liens correspondants pour accéder au document dans la langue de votre choix.
 
+Le Kit Kepler est un kit de développement polyvalent alimenté par le microcontrôleur Raspberry Pi Pico W. Il comprend une large gamme de composants matériels, notamment des capteurs (ultrasoniques, RFID, MPU6050, niveau d'eau), des modules d'affichage (LEDs, matrice de points, afficheur 7 segments, I2C LCD1602) et des actionneurs tels que des moteurs, des servos et des pompes. Conçu pour les débutants comme pour les utilisateurs expérimentés, ce kit est idéal pour apprendre la programmation, l'interaction matérielle et le développement de projets.
 
-Merci d'avoir choisi le SunFounder Kepler Kit
+Cette documentation comprend des tutoriels pour trois environnements de programmation :
 
-Il s'agit d'un kit d'apprentissage basé sur le Raspberry Pi Pico W.
+* :ref:`projects_micropython` : Apprenez à contrôler le matériel avec MicroPython grâce à des exemples clairs, étape par étape, et des projets pratiques.
+* :ref:`projects_arduino` : Explorez la programmation avec l'IDE Arduino en C/C++, en tirant parti d'exercices structurés pour exploiter pleinement le potentiel du matériel.
+* :ref:`projects_piper` : Plongez dans une expérience de programmation basée sur des blocs avec Piper Make, idéale pour les jeunes apprenants et ceux qui débutent en programmation.
 
-Le Raspberry Pi Pico W ajoute des interfaces sans fil en bande unique 2,4 GHz (802.11n) avec la puce Infineon CYW4343 tout en conservant le format du Pico. Ainsi, en plus de la fonction GPIO de base, il peut également se connecter au réseau, ce qui permet de l'utiliser pour des projets IoT.
-Par exemple, utiliser IFTTT pour un système de sécurité, construire un lecteur cloud et un système de sonnette de service cloud avec MQTT, et bien plus encore.
-
-Ce kit comprend une variété de composants, y compris des écrans, des sons, des pilotes, des contrôleurs et des capteurs, vous permettant de comprendre de manière complète les appareils électroniques.
-
-De plus, nous proposons trois langages de programmation. MicroPython, C/C++ (Arduino) et Piper Make sont tous disponibles. Pour vous aider à démarrer rapidement, chaque langage propose des projets ciblés et intéressants, afin que vous puissiez choisir celui qui correspond à vos besoins.
-
-N'hésitez pas à nous envoyer un e-mail si vous êtes intéressé par d'autres projets que nous ne proposons pas encore. Nous mettrons à jour nos tutoriels en ligne dès que possible.
+Avec le Kit Kepler, vous avez tout ce qu'il faut pour donner vie à vos idées, que ce soit par le code, les blocs ou des projets interactifs.
 
 Voici l'adresse e-mail : service@sunfounder.com.
 
@@ -62,16 +58,12 @@ Voici l'adresse e-mail : service@sunfounder.com.
 
     About This Kit <self>
     introduction_to_pico_w
-    download_the_code
-    bc_basic_circuit
+    video_course/video_course
     pyproject/for_micropython_user
-    iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
-    video_course/video_course
     component/what_is_included_in_this_kit
     faq
-
 
 Avis de Copyright
 --------------------------
