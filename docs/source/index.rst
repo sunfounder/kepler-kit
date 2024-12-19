@@ -37,7 +37,7 @@ This documentation includes tutorials for three programming environments:
 
 * :ref:`projects_micropython`: Learn to control hardware with MicroPython through clear, step-by-step examples and practical projects.
 * :ref:`projects_arduino`: Explore Arduino IDE programming with C/C++, leveraging structured exercises to unlock the full potential of the hardware.
-* :ref:`projects_micropython`: Dive into a block-based programming experience on Piper Make, perfect for younger learners and those new to programming.
+* :ref:`projects_piper`: Dive into a block-based programming experience on Piper Make, perfect for younger learners and those new to programming.
 
 With the Kepler Kit, you'll have everything you need to bring your ideas to life, whether through code, blocks, or interactive projects.
 

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-.. _projects_micropython:
+.. _projects_piper:
 
 Piper Make Projects
 ======================
