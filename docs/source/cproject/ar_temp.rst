@@ -88,15 +88,18 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 |sch_temp|
 
-In questo circuito, il resistore da 10K e il termistore sono collegati in serie e la corrente che li attraversa è la stessa. Il resistore da 10K funge da protezione, e il GP28 legge il valore dopo la conversione di tensione del termistore.
+In questo circuito, il resistore da 10K e il termistore sono collegati in serie e la corrente che li attraversa è la stessa. Il resistore da 10K funge da protezione e il GP28 legge il valore dopo la conversione di tensione del termistore.
 
-Quando la temperatura aumenta, il valore della resistenza del termistore NTC diminuisce, quindi la sua tensione diminuisce, e di conseguenza il valore letto da GP28 diminuirà; Se la temperatura è abbastanza alta, la resistenza del termistore sarà vicina a 0 e il valore di GP28 sarà vicino a 0. A questo punto, il resistore da 10K funge da protezione, evitando che i 3.3V e il GND si connettano insieme, causando un cortocircuito.
+Quando la temperatura aumenta, il valore di resistenza del termistore NTC diminuisce, quindi la sua tensione diminuisce, e di conseguenza il valore letto da GP28 diminuirà; se la temperatura è sufficientemente alta, la resistenza del termistore sarà vicina a 0 e il valore di GP28 sarà vicino a 0. In questo caso, il resistore da 10K svolge un ruolo protettivo, evitando che i 3,3V e il GND siano collegati insieme, provocando un cortocircuito.
 
-Quando la temperatura scende, il valore di GP28 aumenterà. Quando la temperatura è abbastanza bassa, la resistenza del termistore sarà infinita e la sua tensione sarà vicina a 3.3V (il resistore da 10K è trascurabile), e il valore di GP28 sarà vicino al valore massimo di 65535.
+Quando la temperatura diminuisce, il valore di GP28 aumenterà. Se la temperatura è abbastanza bassa, la resistenza del termistore sarà infinita, la sua tensione sarà vicina a 3,3V (il resistore da 10K è trascurabile) e il valore di GP28 sarà vicino al valore massimo di 1023.
 
 La formula di calcolo è mostrata di seguito.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Valore Digitale = (Tensione Analogica/3,3V) * 1023
+
 
 
 **Cablaggio**

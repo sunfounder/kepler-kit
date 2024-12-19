@@ -97,16 +97,18 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 |sch_pot|
 
-Il potenziometro è un dispositivo analogico e quando lo ruoti in due direzioni diverse, modifichi il valore di resistenza.
+Il potenziometro è un dispositivo analogico e quando lo si ruota in due direzioni diverse.
 
-Collega il pin centrale del potenziometro al pin analogico GP28. Il Raspberry Pi Pico W contiene un convertitore analogico-digitale multicanale a 16 bit. Questo significa che mappa la tensione di ingresso tra 0 e la tensione di funzionamento (3,3V) a un valore intero compreso tra 0 e 65535, quindi il valore di GP28 varia da 0 a 65535.
+Collega il pin centrale del potenziometro al pin analogico GP28. Il Raspberry Pi Pico W contiene un convertitore analogico-digitale multicanale a 16 bit. Ciò significa che mappa la tensione di ingresso tra 0 e la tensione operativa (3,3V) su un valore intero compreso tra 0 e 1023, quindi il valore di GP28 varia da 0 a 1023.
 
-La formula di calcolo è la seguente:
+La formula di calcolo è mostrata di seguito.
 
-    (Vp/3,3V) x 65535 = Ap
+.. code-block::
 
-Poi programma il valore di GP28 (potenziometro) come valore PWM di GP15 (LED).
-In questo modo noterai che ruotando il potenziometro, la luminosità del LED cambierà contemporaneamente.
+  Valore Digitale = (Tensione Analogica/3,3V) * 1023
+
+Quindi, programma il valore di GP28 (potenziometro) come valore PWM di GP15 (LED).  
+In questo modo scoprirai che ruotando il potenziometro, la luminosità del LED cambierà contemporaneamente.
 
 **Cablaggio**
 

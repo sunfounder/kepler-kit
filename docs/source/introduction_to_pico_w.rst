@@ -14,7 +14,7 @@
 
 .. _cpn_pico_w:
 
-Raspberry Pi Pico W
+Introduzione al Pico W
 =======================================
 
 |pico_w_side|
@@ -35,8 +35,7 @@ passanti con bordo castellato a passo 0,1”.
 Raspberry Pi Pico W è disponibile come unità singola o in bobine da 480 unità 
 per l'assemblaggio automatizzato.
 
-Caratteristiche
-------------------
+**Caratteristiche**
 
 * Fattore di forma da 21 mm x 51 mm
 * Microcontrollore RP2040 progettato da Raspberry Pi nel Regno Unito
@@ -57,8 +56,7 @@ Caratteristiche
 * Sensore di temperatura
 * Librerie on-chip accelerate per interi e floating-point
 
-Pin di Pico
----------------
+**Pin di Pico**
 
 |pico_pin|
 

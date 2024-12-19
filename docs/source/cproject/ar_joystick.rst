@@ -108,5 +108,5 @@ Il pin SW è collegato a una resistenza pull-up da 10KΩ per ottenere un livello
 Dopo l'esecuzione del programma, la Shell stamperà i valori x,y,z del joystick.
 
 
-* I valori degli assi x e y sono valori analogici che variano da 0 a 65535.
+* I valori dell'asse x e dell'asse y sono valori analogici che variano da 0 a 1023.
 * L'asse Z è un valore digitale con uno stato di 1 o 0.

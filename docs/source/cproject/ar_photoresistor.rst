@@ -77,15 +77,18 @@ Puoi anche acquistarli separatamente dai link qui sotto.
 
 |sch_photoresistor|
 
-In questo circuito, il resistore da 10K e il fotoresistore sono collegati in serie, e la corrente che li attraversa è la stessa. Il resistore da 10K funge da protezione, e il GP28 legge il valore dopo la conversione di tensione del fotoresistore.
+In questo circuito, il resistore da 10K e il fotoresistore sono collegati in serie e la corrente che li attraversa è la stessa. Il resistore da 10K funge da protezione e il GP28 legge il valore dopo la conversione di tensione del fotoresistore.
 
-Quando la luce aumenta, la resistenza del fotoresistore diminuisce, quindi la sua tensione diminuisce, e il valore letto da GP28 diminuirà; se la luce è sufficientemente intensa, la resistenza del fotoresistore sarà vicina a 0, e il valore di GP28 sarà vicino a 0. In questo caso, il resistore da 10K svolge un ruolo di protezione, impedendo che i 3,3V e il GND siano collegati insieme, causando un cortocircuito.
+Quando la luce aumenta, la resistenza del fotoresistore diminuisce, quindi la sua tensione diminuisce, e di conseguenza il valore letto da GP28 diminuirà; se la luce è sufficientemente forte, la resistenza del fotoresistore sarà vicina a 0 e il valore di GP28 sarà vicino a 0. In questo caso, il resistore da 10K svolge un ruolo protettivo, evitando che i 3,3V e il GND siano collegati insieme, provocando un cortocircuito.
 
-Se posizioni il fotoresistore in una situazione di oscurità, il valore di GP28 aumenterà. In una situazione di oscurità totale, la resistenza del fotoresistore sarà infinita, e la sua tensione sarà vicina a 3,3V (il resistore da 10K è trascurabile), e il valore di GP28 sarà vicino al valore massimo di 65535.
+Se si posiziona il fotoresistore in una situazione di oscurità, il valore di GP28 aumenterà. In una situazione sufficientemente buia, la resistenza del fotoresistore sarà infinita, la sua tensione sarà vicina a 3,3V (il resistore da 10K è trascurabile) e il valore di GP28 sarà vicino al valore massimo di 1023.
 
-La formula di calcolo è mostrata qui sotto.
+La formula di calcolo è mostrata di seguito.
 
-    (Vp/3.3V) x 65535 = Ap
+.. code-block::
+
+  Valore Digitale = (Tensione Analogica/3,3V) * 1023
+
 
 **Cablaggio**
 
