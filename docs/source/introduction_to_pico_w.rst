@@ -14,7 +14,7 @@
 
 .. _cpn_pico_w:
 
-Raspberry Pi Pico W
+Pico Wを知る
 =======================================
 
 |pico_w_side|

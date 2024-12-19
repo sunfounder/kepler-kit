@@ -12,16 +12,27 @@
 
     👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！
 
-.. _micropython_user:
+.. _projects_micropython:
 
-MicroPythonユーザーのために
-==============================
+MicroPythonプロジェクト
+============================
 
-このセクションでは、MicroPythonの歴史、Pico WにMicroPythonをインストールする方法、基本的な文法、そしてMicroPythonを素早く理解するための数々の実用的で面白いプロジェクトについて学びます。
+このセクションでは、MicroPythonの基礎を学びます。歴史から始まり、Pico Wへのインストール、基本的な構文の習得、そしてステップバイステップで進める実践的なプロジェクトを通じてMicroPythonをマスターします。
 
-章は順番に読むことをお勧めします。
+学習効果を最大化するために、章を順番に読むことをお勧めします。  
 
-**1. はじめに**
+
+**ソースコード**
+
+* :download:`SunFounder Kepler Kit <https://github.com/sunfounder/kepler-kit/archive/refs/heads/main.zip>`
+
+* または `Kepler Kit - GitHub <https://github.com/sunfounder/kepler-kit>`_ でコードを確認してください。
+
+
+1. 始めましょう
+------------------------
+MicroPythonの基礎を学び、開発環境をセットアップします。Thonnyのインストール、Pico WへのMicroPythonのアップロード、基本的な構文の探索を含みます。  
+
 
 .. toctree::
     :maxdepth: 1
@@ -33,7 +44,12 @@ MicroPythonユーザーのために
     python_start/quick_guide_thonny
     python_start/syntax/micropython_basic_syntax
 
-**2. 出力と入力**
+
+
+2. 出力＆入力
+----------------------
+LEDやボタン、センサーなどの出力デバイスと入力デバイスの扱い方を学びます。この章では、実践的なプロジェクトを通じてフィジカルコンピューティングの基礎を紹介します。  
+
 
 .. toctree::
     :maxdepth: 1
@@ -55,7 +71,9 @@ MicroPythonユーザーのために
     py_transistor
     py_relay
 
-**3. 音と表示と動き**
+3. サウンド＆ディスプレイ＆ムーブメント
+----------------------------------------
+ブザー、NeoPixel LED、LCDスクリーン、モーター、ポンプ、サーボなどのモジュールを使いこなします。音、ビジュアル、動きを生み出すインタラクティブなプロジェクトを作成しましょう。  
 
 .. toctree::
     :maxdepth: 1
@@ -68,7 +86,9 @@ MicroPythonユーザーのために
     py_pump
     py_servo
 
-**4. コントローラ**
+4. コントローラー
+----------------------
+ジョイスティック、キーパッド、タッチセンサーなどのコントローラーを使用して、プロジェクトにインタラクティブ性と複雑さを加えます。  
 
 .. toctree::
     :maxdepth: 1
@@ -77,7 +97,10 @@ MicroPythonユーザーのために
     py_keypad
     py_mpr121
 
-**5. マイクロチップ**
+5. マイクロチップ
+------------------
+
+74HC595シフトレジスタを使用したマイクロチップベースのプロジェクトに取り組みます。LED、7セグメントディスプレイ、ドットマトリックスなどを高度な技術で制御します。  
 
 .. toctree::
     :maxdepth: 1
@@ -87,7 +110,11 @@ MicroPythonユーザーのために
     py_74hc595_4dig
     py_74hc595_matrix
 
-**6. 上級編**
+6. 高度なプロジェクト
+----------------------
+
+超音波センサー、DHT11温湿度モジュール、MPU6050ジャイロスコープ、RFIDリーダーなどの高度なコンポーネントを使用してプロジェクトを次のレベルに引き上げます。  
+
 
 .. toctree::
     :maxdepth: 1
@@ -98,7 +125,10 @@ MicroPythonユーザーのために
     py_irremote
     py_rfid
 
-**7. 面白いプロジェクト**
+7. 楽しいプロジェクト
+----------------------
+光テルミン、乗客カウンター、RFID音楽プレーヤー、体感コントローラーなど、スキルを活用してエキサイティングで実用的なアプリケーションを構築します。これらのプロジェクトは楽しく教育的です。  
+
 
 .. toctree::
     :maxdepth: 1
@@ -115,3 +145,21 @@ MicroPythonユーザーのために
     py_reversing_aid
     py_somatosensory_controller
     py_digital_bubble_level
+
+8. IoTプロジェクト
+------------------------
+Pico Wをインターネットに接続し、IoT（モノのインターネット）の世界を探検します。CheerLights、天気モニター、MQTTベースの通信システム、さらには植物モニタリングシステムなどのプロジェクトを構築します。  
+
+.. toctree::
+    :maxdepth: 1
+
+    iotproject/1.access
+    iotproject/2.cheerlight
+    iotproject/3.ifttt_mail
+    iotproject/4.openweather
+    iotproject/5.mqtt_pub
+    iotproject/6.mqtt_sub
+    iotproject/7.web_page
+    iotproject/8.anvil
+    iotproject/9.sunfounder_controller
+    iotproject/10.plant_monitor

@@ -31,18 +31,16 @@ SunFounder |link_kepler_kit| をお選びいただき、ありがとうござい
 
     ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。
 
-SunFounder Kepler Kitをお選びいただき、ありがとうございます。
 
-このキットはRaspberry Pi Pico Wを基盤にした学習キットです。
+Kepler Kitは、Raspberry Pi Pico Wマイクロコントローラーによって駆動される多用途な開発キットです。超音波センサー、RFID、MPU6050、水位センサーなどのセンサー、LED、ドットマトリックス、7セグメントディスプレイ、I2C LCD1602などのディスプレイモジュール、モーター、サーボ、ポンプといったアクチュエータを含む幅広いハードウェアコンポーネントを備えています。初心者から経験豊富なユーザーまで幅広く対応しており、プログラミング、ハードウェアの操作、プロジェクト開発を学ぶのに最適なキットです。
 
-Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシングルバンド2.4GHz無線インターフェース（802.11n）を追加し、Picoの形状を維持しながら基本的なGPIO機能に加え、ネットワークにも接続できるため、IoTプロジェクトにも活用できます。
-例えば、セキュリティシステムのためにIFTTTを使ったり、MQTTを使ってクラウドプレーヤーやクラウドサービスのベルシステムを構築することができます。
+このドキュメントには、以下の3つのプログラミング環境向けのチュートリアルが含まれています：
 
-このキットには、ディスプレイ、音響、ドライバー、コントローラー、センサーなど、多様なコンポーネントが含まれており、電子機器に対する包括的な理解が得られます。
+* :ref:`projects_micropython`: 明確なステップバイステップの例と実践的なプロジェクトを通じて、MicroPythonでハードウェアを制御する方法を学びます。
+* :ref:`projects_arduino`: 構造化された演習を利用して、C/C++を使ったArduino IDEでのプログラミングを探求し、ハードウェアの可能性を最大限に引き出します。
+* :ref:`projects_piper`: Piper Makeでのブロックベースのプログラミング体験を深めます。若い学習者やプログラミング初心者に最適です。
 
-さらに、MicroPython、C/C++（Arduino）、Piper Makeの3つのプログラミング言語を提供しています。各言語には、独自で興味深いプロジェクトが用意されているので、あなたのニーズに合わせて選ぶことができます。
-
-当社がまだ提供していない他のプロジェクトに興味がある場合は、どうぞお気軽にメールでお知らせください。オンラインチュートリアルはできるだけ早く更新されます。
+Kepler Kitを使えば、コード、ブロック、またはインタラクティブなプロジェクトを通じて、アイデアを実現するために必要なすべてを手に入れることができます。
 
 こちらがメールアドレスです：service@sunfounder.com。
 
@@ -60,15 +58,13 @@ Raspberry Pi Pico Wは、Infineon CYW4343を使用してオンボードのシン
 
     このキットについて <self>
     introduction_to_pico_w
-    download_the_code
-    bc_basic_circuit
+    video_course/video_course
     pyproject/for_micropython_user
-    iotproject/for_iot
     cproject/for_arduino_user
     piperproject/for_piper
     component/what_is_included_in_this_kit
-    video_course/video_course
     faq
+
 
 著作権について
 --------------------------

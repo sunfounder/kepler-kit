@@ -189,7 +189,7 @@
         if count_flag == True:
             count = int((time.ticks_ms() - timeStart) / 10)  # Calculate the count in tenths of a second
         display(count)  # Update the display with the current count
-)
+
 
 魔法の杖を振ると、4桁の7セグメントディスプレイがカウントを開始し、再度振るとカウントが停止します。
 表示されたカウントが10.00になった場合、あなたの勝ちです。もう一度振るとゲームが続きます。

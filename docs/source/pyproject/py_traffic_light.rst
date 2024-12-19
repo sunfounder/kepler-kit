@@ -86,7 +86,7 @@
         - |link_74hc595_buy|
     *   - 8
         - :ref:`cpn_led`
-        - 1
+        - 3
         - |link_led_buy|
 
 
