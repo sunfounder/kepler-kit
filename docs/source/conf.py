@@ -656,7 +656,7 @@ rst_epilog += """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit " target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit " target="_blank">ici</a>
 
 .. |link_german_tutorials| raw:: html
 
@@ -769,7 +769,7 @@ rst_epilog += """
 
 .. |link_Kepler_Ultimate_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Purchase Link for Kepler Ultimate Kit</a>
+    <a href="https://www.sunfounder.com/collections/raspberry-pi-kit-for-beginner-1/products/sunfounder-raspberry-pi-pico-w-ultimate-starter-kit" target="_blank">Lien d'achat Kepler Ultimate Kit</a>
 
 .. |link_kepler_kit| raw:: html
 
