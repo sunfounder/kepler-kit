@@ -20,6 +20,8 @@ Webhook wird als grundlegendster Dienst verwendet.
 Ein POST-Request wird von Raspberry Pi Pico W an den IFTTT-Dienst gesendet.
 Mit IFTTT erstellen wir ein Applet, das den Webhook abfängt und eine E-Mail sendet.
 
+.. warning:: Die Preisrichtlinien von IFTTT wurden aktualisiert. Die Nutzung dieses Projekts kann zusätzliche Kosten verursachen. Bitte beachten Sie dies im Voraus.
+
 **1. Erforderliche Komponenten**
 
 Für dieses Projekt benötigen wir die folgenden Bauteile.
