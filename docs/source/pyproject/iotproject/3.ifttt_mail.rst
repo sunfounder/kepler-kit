@@ -21,6 +21,9 @@ Usaremos Webhook como el servicio más básico.
 Raspberry Pi Pico W enviará una solicitud POST al servicio de IFTTT.
 A través de IFTTT, crearemos un Applet que intercepte el webhook y envíe un correo electrónico.
 
+.. warning:: la política de precios de IFTTT ha sido actualizada. El uso de este proyecto puede implicar costos adicionales. Por favor, téngalo en cuenta con antelación.
+
+
 **1. Componentes Requeridos**
 
 Para este proyecto, necesitamos los siguientes componentes.
