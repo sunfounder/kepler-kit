@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -17,8 +17,6 @@
 
 We will write a project to communicate bi-directionally between the Raspberry Pi Pico W and Anvil's servers.
 The temperature and humidity transmitted from the Pico W will be displayed in real time in Anvil. Additionally, you can input messages in Anvil to be displayed on the Pico W's I2C LCD1602.
-
-|anvil|
 
 **1. Required Components**
 
@@ -77,7 +75,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 8
-        - 18650 Battery
+        - Power Pack
         - 1
         -  
     *   - 9

@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
 
@@ -18,7 +18,6 @@
 
 In this article, you will learn how to make Pico W a web server that allows you to operate the circuit and get readings from the sensor from a browser.
 
-|setup_web|
 
 **1. Required Components**
 
@@ -82,7 +81,7 @@ You can also buy them separately from the links below.
         - 1
         -  
     *   - 9
-        - 18650 Battery
+        - Power Pack
         - 1
         -  
     *   - 10

@@ -28,7 +28,7 @@ Specifically, it can replace 8 pins for digital signal output by writing an 8-bi
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Required Components**
 

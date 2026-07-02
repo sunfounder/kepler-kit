@@ -26,7 +26,7 @@ But this allows the passive buzzer to adjust its own oscillation frequency and c
 
 Let the passive buzzer emit a melody!
 
-* :ref:`Buzzer`
+* :ref:`cpn_buzzer`
 
 **Required Components**
 

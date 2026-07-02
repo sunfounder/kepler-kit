@@ -40,7 +40,7 @@ When you plug in the Pico W with a USB cable connected to a computer or socket, 
 * Output voltage: 3.3V
 * Size: 20mmx7mm
 * Interface model: PH2.0
-* There is a matching 1A battery holder as well as an 800mAh 18650 used together.
+* There is a matching 1A battery holder as well as an 800mAh Power Pack used together.
 
 
 **Schematic**

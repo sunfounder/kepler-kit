@@ -34,7 +34,7 @@ release = '1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.autosectionlabel',
     'sphinx_copybutton',
     'sphinx_rtd_theme',
 ]
@@ -59,7 +59,6 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -407,9 +406,7 @@ rst_epilog += """
 .. |fruit_piano| image:: /img/fruit_piano.png
 .. |sirem_alarm| image:: /img/sirem_alarm.png
 .. |guess_number| image:: /img/guess_number.png
-.. |setup_web| image:: /img/setup_web.jpg
-.. |anvil| image:: /img/anvil.jpg
-.. |plant_monitor| image:: /img/plant_monitor.jpg
+
 
 
 """
@@ -493,15 +490,6 @@ rst_epilog += """
 .. |pin_pwm| image:: /img/pin_pic.png
 .. |pin_i2c| image:: /img/pin_pic2.png
 """
-
-# basic circuit
-rst_epilog += """
-.. |bc1| image:: /img/bc1.png
-.. |bc2| image:: /img/bc2.png
-.. |bc2.5| image:: /img/bc2.5.png
-.. |bc3| image:: /img/bc3.png
-"""
-
 
 # piper start
 rst_epilog += """
