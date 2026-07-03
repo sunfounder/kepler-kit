@@ -17,8 +17,6 @@
 
 In diesem Artikel erfahren Sie, wie Sie den Pico W in einen Webserver verwandeln, über den Sie Schaltkreise steuern und Sensordaten direkt aus Ihrem Browser abrufen können.
 
-|setup_web|
-
 **1. Benötigte Komponenten**
 
 Für dieses Projekt benötigen Sie die folgenden Bauteile.
@@ -80,7 +78,7 @@ Die einzelnen Komponenten können Sie auch über die folgenden Links erwerben.
         - 1
         -  
     *   - 9
-        - 18650-Batterie
+        - Power Pack
         - 1
         -  
     *   - 10

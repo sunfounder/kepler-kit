@@ -17,8 +17,6 @@
 
 In diesem Projekt ermöglichen wir eine bidirektionale Kommunikation zwischen dem Raspberry Pi Pico W und den Anvil-Servern. Die vom Pico W gesendeten Temperatur- und Feuchtigkeitsdaten werden in Echtzeit in Anvil angezeigt. Darüber hinaus können Sie Nachrichten in Anvil eingeben, die auf dem I2C LCD1602 des Pico W dargestellt werden.
 
-|anvil|
-
 **1. Benötigte Komponenten**
 
 Für dieses Projekt benötigen wir folgende Bauteile.
@@ -75,7 +73,7 @@ Sie können die Komponenten natürlich auch einzeln über die untenstehenden Lin
         - 1
         - 
     *   - 8
-        - 18650 Batterie
+        - Power Pack
         - 1
         - 
     *   - 9

@@ -33,7 +33,4 @@ Obwohl die Löcher im Steckbrett scheinbar voneinander unabhängig sind, sind si
 
 Falls Sie mehr über Steckbretter erfahren möchten, verweisen wir auf: `Wie benutzt man ein Steckbrett - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Beispiel**
-
-* :ref:`bc_bb`
 

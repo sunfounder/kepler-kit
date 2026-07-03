@@ -81,7 +81,7 @@ Alternativ können Sie die einzelnen Komponenten auch über die unten aufgeführ
         - 1
         -  
     *   - 8
-        - 18650 Batterie
+        - Power Pack
         - 1
         -  
     *   - 9

@@ -87,7 +87,7 @@ Sie können die Komponenten auch einzeln über die folgenden Links erwerben.
         - 1
         -  
     *   - 7
-        - 18650-Akku
+        - Power Pack
         - 1
         -  
     *   - 8

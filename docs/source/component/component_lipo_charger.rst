@@ -38,7 +38,7 @@ Wenn das Pico W über ein USB-Kabel an einen Computer oder eine Steckdose angesc
 * Ausgangsspannung: 3,3V
 * Größe: 20mmx7mm
 * Schnittstellenmodell: PH2.0
-* Es gibt einen passenden 1A-Batteriehalter sowie einen 800mAh 18650, der zusammen verwendet werden kann.
+* Es gibt einen passenden 1A-Batteriehalter sowie einen 800mAh Power Pack, der zusammen verwendet werden kann.
 
 **Schaltplan**
 

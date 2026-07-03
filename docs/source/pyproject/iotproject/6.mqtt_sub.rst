@@ -83,7 +83,7 @@ Alternativ können Sie die Teile auch einzeln über die untenstehenden Links erw
         - 1
         -  
     *   - 9
-        - 18650-Batterie
+        - Power Pack
         - 1
         -  
     *   - 10

@@ -27,7 +27,7 @@ Dieses Kit enthält einen IC, den 74HC595, der die Nutzung von GPIO-Pins erhebli
 
 * `Binärzahl – Wikipedia <https://de.wikipedia.org/wiki/Bin%C3%A4rzahl>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Benötigte Komponenten**
 

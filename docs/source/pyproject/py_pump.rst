@@ -89,7 +89,7 @@ Sie können die Bauteile auch einzeln über die untenstehenden Links erwerben.
         - 1
         -  
     *   - 7
-        - 18650 Batterie
+        - Power Pack
         - 1
         -  
     *   - 8

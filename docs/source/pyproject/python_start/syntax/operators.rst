@@ -17,19 +17,6 @@ Operatoren
 
 Operatoren dienen zur Durchführung von Operationen auf Variablen und Werten.
 
-* :ref:`Arithmetische Operatoren`
-
-* :ref:`Zuweisungsoperatoren`
-
-* :ref:`Vergleichsoperatoren`
-
-* :ref:`Logische Operatoren`
-
-* :ref:`Identitätsoperatoren`
-
-* :ref:`Mitgliedschaftsoperatoren`
-
-* :ref:`Bitweise Operatoren`
 
 Arithmetische Operatoren
 ---------------------------
