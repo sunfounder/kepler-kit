@@ -27,7 +27,7 @@ Este kit incluye un IC, el 74HC595, que permite reducir considerablemente el uso
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Componentes Necesarios**
 

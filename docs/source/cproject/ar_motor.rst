@@ -81,7 +81,7 @@ También puedes comprarlos por separado en los enlaces a continuación.
         - 1
         -  
     *   - 8
-        - Batería 18650
+        - Power Pack
         - 1
         -  
     *   - 9

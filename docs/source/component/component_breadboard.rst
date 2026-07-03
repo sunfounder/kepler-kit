@@ -33,6 +33,4 @@ Aunque estos orificios en el protoboard parecen ser independientes, en realidad 
 
 Si deseas saber más sobre el uso del protoboard, consulta: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Ejemplo**
-
 * :ref:`bc_bb`

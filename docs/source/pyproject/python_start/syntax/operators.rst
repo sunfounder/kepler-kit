@@ -17,19 +17,6 @@ Operadores
 
 Los operadores se utilizan para realizar operaciones en variables y valores.
 
-* :ref:`Arithmetic operators`
-
-* :ref:`Assignment operators`
-
-* :ref:`Comparison operators`
-
-* :ref:`Logical operators`
-
-* :ref:`Identity operators`
-
-* :ref:`Membership operators`
-
-* :ref:`Bitwise operators`
 
 Arithmetic operators
 ---------------------------

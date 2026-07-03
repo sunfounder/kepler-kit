@@ -17,7 +17,6 @@
 
 En este artículo, aprenderás cómo convertir el Pico W en un servidor web que te permita operar el circuito y obtener lecturas del sensor desde un navegador.
 
-|setup_web|
 
 **1. Componentes Requeridos**
 
@@ -80,7 +79,7 @@ También puedes comprarlos por separado a través de los enlaces a continuación
         - 1
         -  
     *   - 9
-        - Batería 18650
+        - Power Pack
         - 1
         -  
     *   - 10

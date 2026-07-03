@@ -26,7 +26,7 @@ para la salida de señales digitales escribiendo un número binario de 8 bits.
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Componentes Requeridos**
 
