@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。
 
@@ -81,7 +81,7 @@ DCモーターは比較的大きな電流を必要とするため、安全上の
         - 1
         -  
     *   - 8
-        - 18650バッテリー
+        - パワーパック
         - 1
         -  
     *   - 9

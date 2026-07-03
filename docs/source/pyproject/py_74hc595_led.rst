@@ -27,7 +27,7 @@
 
 * `2進数 - ウィキペディア <https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%80%B2%E6%95%B0>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **必要なコンポーネント**
 

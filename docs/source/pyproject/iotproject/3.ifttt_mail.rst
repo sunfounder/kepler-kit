@@ -1,4 +1,4 @@
-.. note::
+﻿.. note::
 
     こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。
 
@@ -88,7 +88,7 @@ IFTTTを使用して、Webhookを傍受し、メールを送信するAppletを�
         - 1
         -  
     *   - 10
-        - 18650バッテリー
+        - パワーパック
         - 1
         -  
     *   - 11
