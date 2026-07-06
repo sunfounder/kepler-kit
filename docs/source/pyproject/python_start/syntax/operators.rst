@@ -16,19 +16,6 @@ Opérateurs
 ============
 Operators are used to perform operations on variables and values.
 
-* :ref:`Opérateurs Arithmétiques`
-
-* :ref:`Opérateurs d'Affectation`
-
-* :ref:`Opérateurs de Comparaison`
-
-* :ref:`Opérateurs Logiques`
-
-* :ref:`Opérateurs d'Identité`
-
-* :ref:`Opérateurs d'Appartenance`
-
-* :ref:`Opérateurs Binaires`
 
 Opérateurs Arithmétiques
 ------------------------------

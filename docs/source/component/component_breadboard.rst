@@ -33,9 +33,6 @@ Bien que ces trous semblent être indépendants les uns des autres, ils sont en 
 
 Pour en savoir plus sur les plaques d'essai, consultez : `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Exemple**
-
-* :ref:`bc_bb`
 
 
 

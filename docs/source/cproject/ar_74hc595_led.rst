@@ -28,7 +28,7 @@ Concrètement, il peut remplacer 8 broches pour la sortie de signaux numériques
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Composants requis**
 

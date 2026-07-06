@@ -59,7 +59,6 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -407,9 +406,6 @@ rst_epilog += """
 .. |fruit_piano| image:: /img/fruit_piano.png
 .. |sirem_alarm| image:: /img/sirem_alarm.png
 .. |guess_number| image:: /img/guess_number.png
-.. |setup_web| image:: /img/setup_web.jpg
-.. |anvil| image:: /img/anvil.jpg
-.. |plant_monitor| image:: /img/plant_monitor.jpg
 
 
 """
@@ -496,7 +492,6 @@ rst_epilog += """
 
 # basic circuit
 rst_epilog += """
-.. |bc1| image:: /img/bc1.png
 .. |bc2| image:: /img/bc2.png
 .. |bc2.5| image:: /img/bc2.5.png
 .. |bc3| image:: /img/bc3.png

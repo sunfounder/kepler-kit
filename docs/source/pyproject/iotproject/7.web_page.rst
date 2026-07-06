@@ -17,7 +17,6 @@
 
 Dans cet article, vous apprendrez à transformer votre Pico W en un serveur web permettant de contrôler le circuit et de récupérer les données du capteur via un navigateur.
 
-|setup_web|
 
 **1. Composants nécessaires**
 
@@ -80,7 +79,7 @@ Vous pouvez également les acheter séparément via les liens ci-dessous.
         - 1
         -  
     *   - 9
-        - Batterie 18650
+        - Power Pack
         - 1
         -  
     *   - 10
