@@ -17,19 +17,6 @@ Operatori
 
 Gli operatori vengono utilizzati per eseguire operazioni su variabili e valori.
 
-* :ref:`op_arithmetic`
-
-* :ref:`op_assignment`
-
-* :ref:`op_comparison`
-
-* :ref:`op_logical`
-
-* :ref:`op_identity`
-
-* :ref:`op_membership`
-
-* :ref:`op_bitwise`
 
 .. _op_arithmetic:
 

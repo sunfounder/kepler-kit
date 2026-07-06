@@ -33,6 +33,3 @@ Anche se questi fori sulla breadboard sembrano essere indipendenti l'uno dall'al
 
 Se vuoi saperne di più sulla breadboard, consulta: `How to Use a Breadboard - Science Buddies <https://www.sciencebuddies.org/science-fair-projects/references/how-to-use-a-breadboard#pth-smd>`_
 
-**Esempio**
-
-* :ref:`bc_bb`

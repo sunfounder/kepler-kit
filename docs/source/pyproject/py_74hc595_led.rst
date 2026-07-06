@@ -28,7 +28,7 @@ In particolare, può sostituire 8 pin per l'output del segnale digitale scrivend
 
 * `Binary number - Wikipedia <https://en.wikipedia.org/wiki/Binary_number>`_
 
-* :ref:`74HC595`
+* :ref:`cpn_74hc595`
 
 **Componenti Necessari**
 

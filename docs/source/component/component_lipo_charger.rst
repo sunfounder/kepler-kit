@@ -40,7 +40,7 @@ Quando colleghi il Pico W con un cavo USB a un computer o a una presa, la spia d
 * Tensione di uscita: 3.3V
 * Dimensioni: 20mmx7mm
 * Modello di interfaccia: PH2.0
-* È disponibile un portabatterie da 1A abbinato e una batteria 18650 da 800mAh da utilizzare insieme.
+* È disponibile un portabatterie da 1A abbinato e una Power Pack da 800mAh da utilizzare insieme.
 
 
 **Schema**
